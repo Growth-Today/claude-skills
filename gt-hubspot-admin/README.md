@@ -54,5 +54,5 @@ MIT — see [LICENSE](LICENSE). Free to use, copy, and adapt.
 ---
 
 Built by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering.
-Maintained by Brigitta Ruha ([LinkedIn](https://www.linkedin.com/in/brigittaruha/)).
+Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).
 More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
