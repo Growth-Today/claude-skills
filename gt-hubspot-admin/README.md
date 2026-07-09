@@ -7,7 +7,7 @@ A comprehensive HubSpot CRM administration skill for Claude, built by [Growth To
 Add it to your project with the [skills CLI](https://www.growthtoday.co/claude-skills):
 
 ```bash
-npx skills add Growth-Today/claude-skills gt-hubspot-admin
+npx skills add Growth-Today/claude-skills/gt-hubspot-admin
 ```
 
 Or copy the `gt-hubspot-admin/` folder into your project's `.claude/skills/` (or `~/.claude/skills/` for global use).
