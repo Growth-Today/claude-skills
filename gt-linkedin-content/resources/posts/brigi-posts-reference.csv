@@ -1,0 +1,1324 @@
+# Brigi best-performing posts — reference set for the GT LinkedIn Content skill.
+# Source: Brigi's actual top posts from the "upmarket era" (tactics -> systems,
+# stronger contrarian/number-led hooks, cleaner single-image design).
+# Use these as a starting-point reference for hooks, structures, and formats.
+# RULE FOR AI: study these hooks, structures, and formats as a standard to learn from.
+# The old, lower-engagement posts are intentionally not included so they are not used as a model.
+#B2BMarketing
+#LinkedInGrowth"
+#outbound #b2bsales"
+engagement_rank,date,hook,reactions,comments,shares,total_engagement,char_count,content_type,media_type,post_type,full_content
+1,2026-05-15,"6 months ago, it took us 40 hours every quarter to clean HubSpot .",518,978,7,3487,2840,listicle,none,image,"6 months ago, it took us 40 hours every quarter to clean HubSpot .
+Today, 32 Claude Code skills do it in 5 minutes. I'm sharing the full GitHub repo for free.
+
+Here's what's inside:
+
+Audit & Planning (2 skills)
+↳ hubspot-audit: scans your CRM and scores every issue
+↳ implementation-roadmap: turns the audit into a clear fix plan
+
+Database Hygiene (6 skills)
+↳ delete-no-email-contacts: removes contacts with no email
+↳ suppress-hard-bouncers: blocks bounced contacts so you don't burn your domain.
+↳ dedupe-companies: finds and merges duplicate company records.
+↳ reassign-orphan-records: moves contacts and deals from inactive owners to active reps.
+↳ suppress-ghost-contacts: suppress unresponsive contacts
+↳ suppress-unsubscribers: keeps you compliant and stops you wasting marketing spend.
+
+Data Enrichment (5 skills)
+↳ populate-company-names: fills in missing company names from existing data.
+↳ populate-industries: adds the right industry to every contact.
+↳ normalize-geo-values: cleans up country and state fields so they all match.
+↳ assign-unowned-contacts: routes unowned contacts to the right rep automatically.
+↳ repair-lifecycle-stages: fixes contacts stuck in the wrong sales stage.
+
+Segmentation & Scoring (3 skills)
+↳ define-icp-tiers: builds your ICP tiers based on company size, industry, and fit.
+↳ configure-lead-scoring: sets up a real lead score based on behavior and engagement.
+↳ setup-smart-lists: creates the lists you need for ICP, lifecycle, and engagement.
+
+Automation Workflows (4 skills)
+↳ new-contact-onboarding-workflow: cleans up every new contact
+↳ engagement-suppression-workflow: removes contacts who haven't engaged in months.
+↳ lifecycle-stage-workflow: moves contacts to the next stage when they actually do something.
+↳ bounce-threshold-workflow: suppresses contacts as soon as they bounce too many times.
+
+Ongoing Maintenance (12 skills)
+↳ weekly-portal-checkup: 5 minutes a week to keep things clean.
+↳ quarterly-portal-review: A full sweep every 3 months.
+↳ cleanup-lists, cleanup-forms, cleanup-workflows, cleanup-dashboards.
+↳ cleanup-properties, cleanup-lead-owners, cleanup-deal-pipelines.
+↳ review-bounce-contacts, populate-geo-data, setup-segment-lists.
+
+Every skill follows the same simple flow:
+Plan → Before → Execute → After
+
+You get the plan, get the CSV, so you can see what's about to change, then make changes and review and QA updated data in HubSpot.
+
+Today, you get all these skills for free.
+
+Comment ""HUBSPOT"" and I'll DM the repo link.
+(Make sure we're connected so I can DM you.)
+
+♻️ Repost this if your team uses HubSpot so they can benefit from this!
+
+P.S. We use these Claude Code skills from Anthropic when we audit our customers' CRMs and build their GTM systems. Book a call if you want one to connect your content, ads, and outbound into one compounding GTM motion."
+2,2026-04-24,I spent 42 hours collecting every Claude Code resource so you do not have to.,344,968,11,3303,1983,listicle,none,image,"I spent 42 hours collecting every Claude Code resource so you do not have to.
+41 free guides, courses, and copy-pastable skill files:
+
+For GTM leaders, AEs, RevOps, and operators who want actually to use it, not just read about it.
+
+Comment ""Claude,"" and I will DM you the full list.
+
+Here are the first 9 from my master list, organized by where you are starting from.
+
+If you are starting from zero:
+
+↳ 1. Claude 101 by Anthropic → free, start here, zero experience needed
+↳ 2. Claude Code In Action → hands-on from day one
+↳ 3. Introduction to Agent Skills by Anthropic → the most GTM-relevant free course they built
+
+If you want sales and GTM use cases:
+
+↳ 4. GTMnow → Claude Code for GTM Teams: 30+ ready-to-use prompts by GTMnow
+↳ 5. Databar → Claude Code for Sales Managers: deal reviews, coaching, pipeline
+↳ 6. Claude Code Cheat Sheet PDF → free, one page, pin it next to your screen
+
+If you want to start building today:
+
+↳ 7. AI Marketing Skills by Brian Wagner → 19 free skills on GitHub, easiest install on this list
+↳ 8. GTM Plugin by Manoj Bajaj → 62 free skills across outbound, sales, content, and CRM
+↳ 9. ATLAS by Growth Today → 6 Claude Code skills built for GTM operators. Free on GitHub.
+
+Bonus picks worth saving:
+
+↳ Brad Feld: Adventures in Claude → how a well-known VC runs his entire operation through Claude Code. Written by Brad Feld.
+↳ Sabrina Ramonov: Claude Code Full Course → the most complete beginner course out there. Free. Sabrina Ramonov 🍄 built this.
+↳ Clay Bootcamp: Claude Code Cohort → structured learning with live support, best if you want accountability. By Clay. 
+
+The full list of 41 and organized by category, level, and format → course, skill file, GitHub plugin, or prompt library.
+
+Comment ""Claude,"" and I will send it your way. Make sure we are connected so I can DM you.
+
+Save this before you scroll. You will want to come back to it.
+
+Repost this if someone in your network is still figuring out where to start with Claude Code. ♻️"
+3,2026-04-14,70 outbound tasks. We automated all of them last quarter. Here is the full list. Organized into 6 categories:,236,354,12,1358,1545,listicle,none,image,"70 outbound tasks. We automated all of them last quarter. Here is the full list. Organized into 6 categories:
+
+We used to touch every single one of these manually.
+
+Research. Personalization. Follow-ups. CRM cleanup.
+
+Then we asked one question: What actually needs a human to step in?
+
+The answer: a lot less than we thought.
+
+1: Prospecting
+↳ Clay pulls accounts + contacts automatically
+↳ Firmographics, tech stack, and intent signals. ZERO manual search
+
+2: Research
+↳ Clay + Apollo enrich every account before outreach
+↳ Company context, buying signals, and recent hiring in seconds
+
+3: Personalization
+↳ Claude generates first lines from firmographic + behavioral data
+↳ 500 personalized emails. Zero copy-pasting.
+
+4: Follow-ups
+↳ lemlist + EmailBison handle sequencing and timing automatically
+↳ Right message. Right channel. Right time.
+
+5: CRM hygiene
+↳ HubSpot auto-deduplicates, standardizes fields, cleans pipelines
+↳ No more end-of-quarter CRM cleanup sprints
+
+6: Pipeline reporting
+↳ Airtable dashboards show what is working in real time
+↳ No manual pulling. No spreadsheets.
+
+Result: our team only touches what actually needs a human to step in.
+
+Everything else automatically runs and is managed through the Claude command center.
+
+Comment ""70"" and I will send you the full list of all 70 tasks, organized by category, ready to use.
+
+Make sure we are connected.
+
+P.S. Save this before you scroll.
+
+♻️ Repost this if you have an outbound team in your network that is still doing any of these manually and would benefit from this."
+4,2026-05-14,Kill 80% of the repetitive work in your ABM motion.,233,351,2,1296,2693,framework,none,image,"Kill 80% of the repetitive work in your ABM motion.
+Get Growth Today’s 24 AI agents and run this for your ABM motion.
+
+Revenue team buys 3-10 AI tools, asks Revops to connect them, or add them to Claude Code, and call it AI-native ABM while the AEs still spend 60% of the week on the same manual work.
+
+Forget those back and forth. Use our AI agents instead:
+
+Here is a list of AI agents for the 7 stages of an ABM motion:
+
+1. Find Tier 1 Accounts
+↳ Builds lookalike account lists. Clay, Apollo.
+↳ Boolean-filters Sales Navigator. Evaboot.
+↳ Scores accounts against ICP and tiers them. Clay.
+↳ Fills missing firmographics + technographics. FullEnrich , Wiza, Prospeo.
+
+2. Source Buying Signals
+↳ Tracks job changes across the buying committee. PredictLeads.
+↳ Identify website visitors. RB2B, Vector, FactorsAI
+↳ Detects competitor visits + content engagement. Common Room.
+↳ Triggers sequences the moment a signal fires. Clay, n8n .
+
+3. Build Outbound Sequences
+↳ Draft personalized openers per persona. Claude Code, Clay.
+↳ Writes follow-ups in the context of prior replies. Lemlist, Smartlead.
+↳ Tests subject lines without manual A/B rules. Instantly
+↳ Rewrites tone per persona and channel. Claude Code.
+
+4. Email Infrastructure + Deliverability
+↳ Provisions domains, mailboxes, and DNS. n8n.
+↳ Warms up inboxes automatically. EmailBison, Instantly.
+↳ Rotates inboxes to protect deliverability. EmailBison.
+↳ Monitors blacklists and pauses burnt inboxes. EmailGuard, n8n.
+
+5. LinkedIn + Multichannel Outreach
+↳ Automates connection requests + DMs at scale. Lemlist, HeyReach.
+↳ Routes LinkedIn replies to the right rep. n8n, HubSpot.
+↳ Triggers LinkedIn Ads on outbound contact. LinkedIn Ads, Common Room.
+
+6. Handle Replies + Book Meetings
+↳ Classifies reply intent: interested, objection, not now
+↳ Drafts replies in seconds with full thread context
+↳ Routes hot leads to the right AE in real time. HubSpot, Slack.
+↳ Book meetings end-to-end with very little human touch. Chili Piper
+
+7. Learn + iterate
+↳ Auto-updates HubSpot on every meeting booked. n8n.
+↳ Refines ICP from replies. Clay.
+↳ Predicts campaign outcomes before launch. Claude Code.
+↳ Generates next campaign hypotheses from win/loss data. Anthropic's Claude
+
+Don’t fire your SDRs.
+Enable them with the best AI agents on the market.
+
+Each agent on this map is a Claude Code skill we ship to clients at Growth Today. Get the full repo/skill file. 
+
+Comment ""SKILLS"" and I'll send you the link to all 24.
+
+♻️ Repost so more people kill 80% of the repetitive sales work.
+
+P.S. We build AI-native ABM systems for B2B teams at Growth Today. Triggers, signals, agents, one stack. Book a time if you want this set up end-to-end."
+5,2026-04-10,When i started,237,319,7,1229,1416,anecdote_lesson,none,image,"When i started
+
+I spent quite a few months learning GTM the hard way.
+
+Then I realized that most beginners, like I was when I first started, skipped the basics and jumped straight to tactics and execution.
+
+(guilty as we speak 👼)
+
+↳ We get obsessed with tools, channels, and hacks before understanding the core: messaging clarity, ICP clarity, and how the sales motion works
+
+↳ We build content without knowing what buyers actually need vs. what makes us happy to post
+
+↳ We launch outbound campaigns talking about how good the product is, not what value it gives
+
+And then nothing works. And nobody knows why.
+
+Going back to the fundamentals: data foundation and clarity come before anything else.
+
+Messaging before campaigns. Strategy before execution.
+
+So I put together a playbook that covers exactly that.
+
+2026 GTM Playbook
+
+If you are just starting out, or you have been in the space long enough to know that something feels off. This is for you.
+
+Everything I wish someone had handed me when I started:
+↳ ICP definition that actually makes sense
+↳ Positioning without the jargon
+↳ Outbound that does not feel like spam
+↳ Inbound that works while you sleep
+↳ A 7-day launch plan to get moving
+
+Comment ""BOOK"" and I will send it your way.
+Make sure we are connected so I can DM you.
+
+P.S. We build and run these systems for 150+ B2B GTM teams at Growth Today.
+DM me if you want to see how it works in practice."
+6,2026-05-22,"Crunchbase, LinkedIn, Apollo are the “go-to” outbound databases 95% of the time.",138,239,2,865,1703,listicle,infographic,image,"Crunchbase, LinkedIn, Apollo are the “go-to” outbound databases 95% of the time.
+Here are 100+ unique data sources to prospect where others don’t:
+
+Crunchbase  for funding, LinkedIn for jobs, and Apollo.
+Every SDR with a credit card has access to all 3. By Monday afternoon, half the SDRs in your category sent an email to the same audience.
+
+Where the best results happen when you go after unique insights or data sources that others don’t:
+
+1. Custom signals (truly unique data - nobody can replicate it 😉)
+↳ Apify , custom scraped information using Python, Vercel 
+
+2. Owned behavioral signals
+↳ Vector, Trigify Common Room, Koala, Warmly, Factors.ai . Website visitor de-anonymization, LinkedIn engagement signals.
+
+3. firmographic + tech stack + SEC filings, 30-day window to use them
+↳ BuiltWith , Wappalyzer , StackShare, Apollo, ZoomInfo, Cognism , and Clearbit.
+↳ SEC filings. 10-K annual reports, 10-Q quarterlies, 8-K material events, DEF 14A executive compensation. Great fit for prospecting into enterprise, more unique.
+
+4. Most underused: community + content signals:
+↳ Slack discussion, Product Hunt launches, GitHub repo activity, Reddit, Hacker News discussions, and podcast guest networks
+
+5. Targeting SaaS:
+↳ saasyDB . For 1 credit, you get all contacts AND the company (vs. other tools, which is 1 credit/contact, company).
+↳ 70% cheaper than Apollo, Zoominfo, and Cognism, with 95% coverage on SaaS.
+
+We found 95 more like these.
+Have you tried any of these before?
+
+Comment ""DATASOURCES"" and I'll send you the the high resolution picture.
+
+P.S. For execution:
+1 trigger from Tier 2 or 3 = the reason to reach out
+3 signals from Tier 1 = proof they're in a buying window right now"
+7,2026-06-03,"$1M ARR, you needed these 5 GTM rules to stay alive. At $25M+ ARR, you'll be running 62. Here are all of them, mapped to your stage:",220,187,9,826,2283,framework,single_image,image,"$1M ARR, you needed these 5 GTM rules to stay alive. At $25M+ ARR, you'll be running 62. Here are all of them, mapped to your stage:
+
+→ $0-1M ARR · Founder-led survival (5 rules)
+↳ The founder posts 3x per week on LinkedIn from their personal profile.
+↳No SDR hire until the founder has personally closed a couple of deals.
+
+What kills you here: Hiring SDRs before founder-led work.
+
+→ $1-5M ARR · Repeatability (10 rules)
+↳ First AE closes most deals. SDR books, the founder still backs up enterprise + complex deals.
+↳ ICP scored by multiple signals, not firmographics alone.
+↳ First inbound-led motion
+↳ More content-oriented initiatives to keep building top of the funnel (e.g., nurture, webinars, IRLs)
+
+What kills you here: hiring SDRs before the founder's playbook is documented. Adding tools instead of fixing the process
+
+→ $5-10M ARR · Scaling (12 rules)
+↳ LinkedIn Ads $8-15k/month (≈1-2% of ARR).
+↳ Per-account AI research before every cold email, sub-$0.10 per account.
+↳ Multi-touch attribution. Last-touch is dead at this scale.
+↳ Tech stack: CRM + Clay + Instantly + Common Room + n8n. The 5-tool stack.
+
+What kills you here: treating $5M like $1M. Founder still in deals, no system.
+
+→ $10-25M ARR · Operating leverage (15 rules)
+↳ AI in GTM: 50%+ of research, scoring, and drafting is automated.
+↳ VP Marketing or Director-level hire. Deep specialization emerges: dedicated demand gen, performance marketing, product marketing, and ABM as separate roles (not generalists).
+↳ CAC payback target: under 18 months.
+
+What kills you here: ABM without GTM + RevOps support
+
+→ $25M+ ARR · Optimization (20 rules)
+↳ 3+ ICP segments mapped, prioritized by signals per segment.
+↳ Dedicated outbound team: 8-15 SDRs, 20-30 AEs (1 SDR : 2-3 AE ratio), regional split.
+↳ LinkedIn Ads $50-100k+/month (≈1-2% of ARR). Full-funnel: brand + TL + standard + retargeting + ABM + competitor conquest.
+↳ Customer Success owns expansion. Sales owns new logos.
+
+What kills you here: SDR factory without quality control: burning CAC and brand at the same time. Marketing in silos: demand gen, brand, content, and ABM without one owner.
+
+My design team put the rest of the tips in this awesome image. 
+Comment ""PLAYBOOK"" and I'll send you the high-resolution picture mapped to all 5 stages."
+8,2026-04-09,We run $1.3M+ ARR with 11 people and 38 tools. No ads. AI SDRs. Here’s the full stack you need:,129,218,2,793,1774,listicle,none,image,"We run $1.3M+ ARR with 11 people and 38 tools. No ads. AI SDRs. Here’s the full stack you need:
+
+Lead generation
+↳ Data: Clay, Apollo, Prospeo
+↳ Outbound: EmailBison, lemlist , Expandi
+↳ Intent signals: FactorsAI, RB2B , Trigify, Apify, PhantomBuster
+↳ Content: Scripe, Taplio, @Claude Code, Notion
+↳ SEO: AirOps, Ahrefs
+
+Lead capture
+↳ Website de-anonymization: FactorsAI + RB2B, Vector
+↳ Lead magnets: Lovable (mini-tools we built)
+↳ Email capture: Kit (newsletter)
+↳ Sales rooms: Claude Code + Fellow AI
+
+Lead management
+↳ CRM: HubSpot
+↳ AI agents: Aria + Rex (built on n8n + Claude through DigitalOcean )
+↳ Scoring: Clay + Claude + OpenAI
+↳ Nurture: Expandi, Lemlist, EmailBison
+
+Lead conversion
+↳ Calls: Google Meet + Fellow AI (notes)
+↳ Proposals: Dock
+↳ Contracts: DocuSign
+↳ Payments: Stripe + HubSpot + Mercury
+
+Internal ops
+↳ Project management: Asana
+↳ Comms: Slack + GSuite
+↳ Onboarding: Tally → Zapier → Notion (zero-touch)
+↳ Email infra: Airtable + N8N scripts (auto-scaling)
+↳ Admin AI: Alfred (OpenClaw + Asana + Slack)
+
+3 things that stand out when I look at this list:
+
+↳ Clay is in every layer. It is the connective tissue of our entire GTM motion.
+↳ We built 3 custom AI agents (Aria, Rex, Alfred) instead of hiring SDRs and admin staff.
+↳ Almost everything is automated or AI-assisted. Our team focuses on strategy, creativity, and client relationships. The tools handle the rest.
+
+What does your current GTM stack look like?
+
+P.S We build and optimize these systems for 150+ B2B GTM teams at Growth Today. There’s no tool we haven’t worked on, optimized, or rebuilt with Claude Code for prospecting for your AI-native GTM motion.
+
+Comment ""STACK"" below, and I'll send you the full Growth Today GTM stack and how every tool, every layer is connected :-)"
+9,2026-05-20,"Most B2B GTM runs channels in isolation. Demand gen, outbound, retention all in their own silos.",178,189,5,770,2125,framework,none,image,"Most B2B GTM runs channels in isolation. Demand gen, outbound, retention all in their own silos.
+Here are the 6 stages we connect into one loop, so each one makes the next cheaper.
+
+Here's the breakdown:
+
+→ Stage 1 · Generate demand
+↳ Content, paid, outbound, partnerships
+↳ Where does your buyer actually spend time? Start there.
+
+→ Stage 2 · Identify who's paying attention
+↳ Lead magnets, forms, social engagement, and organic followers
+↳ If traffic doesn't turn into something you own, you can't capture it
+
+→ Stage 3 · Stay in the room
+↳ SDR sequences, newsletter, community, events, retargeting
+↳ Most of the pipeline you need this quarter is already in your database
+↳ They're just not ready yet, so nurture + (always) stay top of mind
+
+→ Stage 4 · Earn the trust
+↳ Sales-led: get the call booked
+↳ Product-led: get them to first value (e.g Amplitude )
+↳ Before either happens, they've already read your case studies, watched your demo, and used your free tool
+
+→ Stage 5 · Score and route automatically
+↳ Clay and HubSpot score every inbound signal against your ICP
+↳ High fit goes to sales immediately
+↳ Low fit goes back into nurture
+↳ 90% of this doesn't need a human in the loop anymore
+
+→ Stage 6 · Land and expand
+↳ Retention is underrated as a growth channel
+↳ Clients who stay become your case studies (e.g Swarm, Clustr)
+↳ Case studies become your best top-of-funnel
+
+Why the whole thing compounds:
+
+↳ Cold outreach converts better when prospects already recognize the brand
+↳ The content that performs organically tells you what to put a budget behind
+↳ Your paid audiences and your outbound lists overlap more than most people realize
+↳ Every engagement signal from every stage sharpens the next campaign
+
+We use HubSpot and Clay for scoring and routing in stage 5. Common Room, Trigify, and Factors.ai  to pick up 1st-party engagement signals in stage 2.
+
+Each one makes the next stage more efficient.
+
+Not every path needs to be running. But every stage should have at least one.
+
+Which two stages in your loop aren't talking to each other yet?
+
+P.S. Comment ""LOOP"" and I'll DM the full map + tool stack!"
+10,2026-05-06,$1M+ in pipeline. From LinkedIn alone.,144,199,3,756,2555,listicle,none,image,"$1M+ in pipeline. From LinkedIn alone.
+Here's the full GTM tech stack behind it:
+
+1. Prospecting
+   
+Clay powers our entire prospecting motion (we're a Clay Enterprise Partner).
+   
+  ↳ Data + Enrichment: Clay, Apollo.io, Prospeo
+  ↳ Outbound (1:1, 1:many): EmailBison, lemlist, Expandi
+  ↳ 1st + 3rd party intent signals: Factors.ai, RB2B, Trigify.io, Apify, PhantomBuster, Vector 👻
+   
+2. Demand Generation
+   
+  LinkedIn and content on our website drive most of our inbound traffic.
+   
+  ↳ Content: Scripe, Taplio, Claude Code, Notion
+  ↳ AEO + SEO: AirOps, Ahrefs, Claude Code
+  ↳ Traffic capture + lead magnets: Lovable (mini-tools we built), Kit (newsletter), Tally
+   
+3. AI Agents + Lead Management
+   
+  We built 3 custom AI agents instead of just working with SDRs.
+   
+  ↳ A.R.I.A. (Automated Relationship + Intent Agent): Qualifies LinkedIn leads → nurtures → books
+  ↳ R.E.X. (Response + Engagement X-agent): Handles outbound replies + scores intent → customized follow-ups
+  ↳ Alfred: Internal admin AI (OpenClaw + Asana + Slack)
+   
+  Account tiering + contact scoring + CRM:
+   
+  ↳ Clay + Claude + OpenAI for scoring
+  ↳ HubSpot for CRM + pipeline
+   
+  The result: 80% of meetings booked without human touch.
+   
+4. Conversion
+   
+  We closed +$200K in new ARR last month.
+   
+  ↳ Calls + notes: Google Meet + Fellow AI
+  ↳ Proposals: Dock
+  ↳ Payments: Stripe + HubSpot + Mercury
+  ↳ Sales rooms: Claude Code + Fellow AI
+   
+5. Internal Ops
+   
+  11 FTEs. Almost everything is automated or AI-natively assisted.
+   
+  ↳ Project management: Asana
+  ↳ Comms: Slack + GSuite
+  ↳ Onboarding: Tally → Zapier → Notion (zero-touch)
+  ↳ Email infra: Airtable + n8n scripts (auto-scaling)
+  ↳ Internal database: Supabase
+   
+
+3 things that stand out when I look at this stack:
+
+↳ Clay is the connective layer of our entire GTM motion. HubSpot is the source of truth. 
+↳ We built 3 custom AI agents (Aria, Rex, Alfred). Sales manages them (human in the loop motion)
+↳ Almost everything is automated or AI-assisted. Our team focuses on strategy, creativity, and client relationships. The tools handle the rest.
+
+What does your current GTM stack look like?
+Repost if you found it useful or share with somebody who would benefit from this. 
+
+P.S. We build and optimize these systems for 150+ B2B GTM teams at Growth Today. There's no tool we haven't worked on, optimized, or rebuilt with Claude Code for AI-native GTM.
+
+Comment ""STACK"" below, and I'll send you the full Growth Today GTM playbook, every tool, every layer, every workflow connected 👇"
+11,2026-06-05,"Anthropic launched Claude Design on April 17th. Since then, every Growth Today LinkedIn post has been generated by it. Our output is up 4x. Now you can have the same:",91,202,1,702,1840,narrative_arc,single_image,image,"Anthropic launched Claude Design on April 17th. Since then, every Growth Today LinkedIn post has been generated by it. Our output is up 4x. Now you can have the same:
+
+I worked with both a designer and a dedicated copywriter, and I wasn't happy with the output.
+
+Slow. A lot of back and forth. Not always on brand. Not always in my voice.
+
+And even when the output came back, I'd spend another hour or two reviewing,
+making sure it was on-brand and matched the way I'd actually say it.
+
+So I sat down with @Gaze. I told her:
+
+""We know what we sell, who we sell to, and what works on LinkedIn in our space. Can you automate 90% of the research, ideation, and creation?""
+
+I showed her how I'd fine-tuned Claude  Design and walked her through the whole process. 
+Then we automated it.
+
+What used to take 4 hours takes 15-30 minutes per finished LinkedIn post: visual + copy. 
+Now get 2-4x more output, with better quality.
+
+3 things this changed for us:
+
+↳ We stopped briefing. We generate the full design through Claude (don't even need to touch Figma , unless it's animation or more complex).
+↳ We spend less time on back-and-forth revisions
+↳ We generate content for the whole team with one ask in 15 minutes: ""Can you generate this for @Jani@, @Nikola, @Prosper, @Simone, and @Alejandro in their own style?""
+
+Results:
+↳ 3x more impressions in the last 30 days, averaging 10k-47k per post
+↳ 20+ posts shipped this quarter through this exact pipeline
+↳ ~30 minutes from copy to scheduled PNG (Scripe handles the queue)
+
+We put together the full stack
+
+Comment ""STACK"" and I'll DM it to you.
+Make sure we're connected so I can send it over.
+
+Repost if someone else would benefit from this.
+
+P.S. If you don't have time to write the copy or tweak the design, let us do it for you and amplify your profile end-to-end. DM or book a time with us."
+12,2026-04-02,7 steps to build a fully autonomous outbound system with Claude Code. Here's the exact workflow. No manual research. No copy-pasting:,155,172,6,701,1952,listicle,none,document,"7 steps to build a fully autonomous outbound system with Claude Code. Here's the exact workflow. No manual research. No copy-pasting:
+
+Step 1: Score your TAM against your ICP
+↳ Claude scores every account 1-10 on firmographic + technographic fit
+↳ Filter runs automatically. Only ICP-fit accounts move forward
+
+Step 2: Detect buying signals
+↳ Hiring surges, funding rounds, G2 reviews, tech stack changes
+↳ Tools: Apify, Clay, PredictLeads, Lonescale, FactorsAI, Vector 👻 CommonRoom all connected via MCP
+
+Step 3: Find decision-makers
+↳ Apollo /Clay pulls contacts from HubSpot , Clay enriches, and routes them
+↳ Champion, Economic Buyer, Influencer, Blocker (mapped automatically)
+
+Step 4: Enrich across 3-8 providers
+↳ Waterfalling runs in the background: verified email + phone before anyone touches the account through Clay
+
+Step 5: Generate personalised copy
+↳ Claude infers your value proposition, differentiation, and what is currently converting
+
+Step 6: Push to campaign
+↳ Instantly.ai , Smartlead, EmailBison, Heyreach, lemlist
+↳ The right tool for the right tier is automatically routed
+
+Best of all?
+
+Step 7: Analyse what converts and feed this back to your sequencer
+↳ Call transcripts
+↳ Best-performing angles
+↳ Flow back into the skills automatically, so your system gets smarter and better over time.
+
+(without rebuilding anything from scratch or training anything again and again)
+
+The architecture is simple:
+
+You = Captain. You define the ICP, set the routing rules, and approve the plays.
+MCPs = bridge between you and your tools
+Claude = command center. Runs the full orchestration.
+
+From finding net new contacts, companies, scoring them, enriching the contacts, reaching out to them, and automatically adding them to the right campaigns.
+
+I put together the full playbook, including 5 orchestrated plays, key commands, and when to use what and how to get started.
+
+Comment ""Claude Code Sales OS"" and I'll DM you the full version."
+13,2026-04-17,6 Claude Skills. 11-tab GTM strategy playbook. Now you can run it on your own ICP for free:,89,193,1,673,2602,framework,none,image,"6 Claude Skills. 11-tab GTM strategy playbook. Now you can run it on your own ICP for free:
+
+Most GTM teams spend 2 weeks building what Claude builds in 90 minutes.
+
+ICP. Battlecard. Signal library. Messaging matrix. All of it.
+
+Here is the 6-skill system. Comment ""ATLAS"" and run it yourself today.
+
+Skill 1 → Market Research
+↳ Claude searches G2, Reddit, Inc., Trustpilot, and the web with Perplexity, Claygent
+↳ Maps your full competitive landscape before you brief anyone
+↳ Output: market overview + validated competitor list with differentiators and how to put these into practice in your GTM sequence
+
+Skill 2 → ICP Hypothesis
+↳ Test your stated ICP against your actual customer data through HubSpot, Salesforce
+↳ 80% of B2B teams focus more on who they want, and not enough on who buys from them, and double down on that IMMEDIATELY
+↳ Output: real ICP + pain per persona
+
+Skill 3 → Signal Library
+↳ 25+ buying signals across 7 categories + signal combo plays
+↳ 3+ stacked signals = 35-40% reply rate. Single signal = 6-8%.
+↳ Output: signal stack ready to load into Clay
+
+Skill 4 → Battlecard
+↳ Competitor displacement + objection handling per persona
+↳ Every cell must be sayable in 10 seconds on a live call
+↳ Output: AE-ready battlecard your team will actually use (your Growth, RevOps, Sales, and even Marketing team)
+
+Skill 5 → Messaging Matrix
+↳ 18 cold outreach variants from one ICP input (differentiated messaging by industry by persona, by company size, or what matters in your business)
+↳ Your solution framing never changes. Your copy changes by persona, industry, and size.
+↳ Output: 18 variants ready to use in any 1:1 or 1:many outreach
+
+Skill 6 → Assembly
+↳ Packages everything into a formatted .xlsx workbook automatically
+↳ Output: [YourCompany]_GTM_Playbook_v1.xlsx
+
+Three versions depending on what data you have today:
+↳ Bronze → Good enough to start.
+↳ Gold → AI was able to fully enriched customer list. Full confidence in the GTM playbook.
+↳ Gold+ → Gold + a sales call transcript. Every section was validated against what your buyers actually said.
+
+You do not need a strategy sprint.
+You do not need a consultant.
+You need a Claude workspace, your customer data, and 90 minutes.
+Our ATLAS does the rest.
+
+Comment ""ATLAS"" below.
+
+I will send you the 6 skill files → upload them to your own Claude workspace and run them on your ICP today. Free.
+
+P.S. If you want us to run ATLAS for your GTM motion and build what comes after it, visit our website at growthtoday.co and book a time with us, and we’ll show you what it looks like and execute the GTM plays for your market."
+14,2026-04-23,"We analyzed 85+M cold emails: Gong, Instantly.ai, Salesloft, Smartlead, Lavender, and our database. The top 10% of cold email senders book 8.1× more meetings than everyone else. Here’s how they do it:",102,188,1,671,1962,data_breakdown,none,image,"We analyzed 85+M cold emails: Gong, Instantly.ai, Salesloft, Smartlead, Lavender, and our database. The top 10% of cold email senders book 8.1× more meetings than everyone else. Here’s how they do it:
+
+Subject lines
+
+↳ Keep it under 5 words → 2–4 words gets 46% open rate, 10+ words gets 34%
+↳ Write it all lowercase → 11% more opens
+↳ Personalize the subject line → 133% more replies than a generic one
+↳ Remove: ""AI"", nuzzwords, numbers, and questions → -9%, -4%, -7% fewer open
+
+Email length
+
+↳ 1 sentence emails: 1.9% reply. 3 sentences: 2.9%. Write 3 sentences.
+↳ Keep it under 100 words. It gets ~50% higher reply rate than anything longer
+↳ Top reps use ""you / your / your team"" 29% more than average reps
+
+Personalization type
+
+↳ Activity-based (what they actually did): 24% direct reply rate
+↳ Company-level: 9%
+↳ No personalization: 2%
+↳ ""I noticed you are in SaaS"" is not personalization
+
+Words that hurt your reply rates
+
+↳ ""AI"" in the body: −36%
+↳ ""Platform"" or ""solution"": −26%
+↳ Buzzwords: −57%
+↳ Write the way you talk on a call (not the way you write a landing page)
+
+CTA
+
+↳ Asking for a meeting in Email 1: −44% reply rate
+↳ Making an offer: +28%
+↳ One CTA only. Don’t use multiple CTA-s.
+↳ The top CTA globally in 2025 was a soft ask, not ""book a 30-minute call""
+
+Sequences
+
+↳ 58% of all replies come from Email 1
+↳ First bump adds +49%
+↳ Email 5 drops −55% vs baseline
+↳ 1-sentence bump = 2× more replies than a longer bump
+↳ Breakup email: +89% vs a standard bump
+↳ Stop at 4–6 emails. End with a breakup, not another pitch.
+
+Comment ""BENCHMARK"" and I will send you the full data report.
+
+Repost if you know somebody who would benefit from this.
+
+5 sources. 85M+ emails analyzed. Every stat is cited with the dataset size.
+
+Over to you: which of these is the one you are getting wrong right now?
+
+P.S. We build and run cold email systems for 110+ B2B GTM teams at Growth Today. DM me if you want to see how we set this up for your campaigns."
+15,2026-05-25,"Teams that combine multiple signals close 3-4x more pipeline than teams running funding alerts. Here's the difference, and how to run ABM:",130,173,3,664,2473,framework,none,image,"Teams that combine multiple signals close 3-4x more pipeline than teams running funding alerts. Here's the difference, and how to run ABM:
+
+Triggers are public events.
+→ Series A closed. New VP Sales hired. Installed competitor.
+
+Signals are private behaviors from the buying committee.
+
+→ 3 buyers from one account on /pricing this week. Champion engaged 3x with your LinkedIn this week. VP of Marketing downloaded the content.
+
+The problem with triggers: they're public.
+Every SDR with a Crunchbase login can pull the same Series B list Monday morning.
+
+By Tuesday afternoon, 40 SDRs sent the same ""congrats on the raise"" email.
+
+Your prospect ignores all of them.
+
+→ Trigger window dies in 14 days. After that, you're another cold email.
+
+→ Signal window dies in 24-48 hours. If you don't use it in time, they might book a demo with someone else.
+
+Most teams never get past triggers.
+
+Only 25% of B2B teams use real intent data.
+The other 75% are still sending ""congrats on the raise"" emails.
+
+Here's how we run ABM at Growth Today:
+
+1 trigger = the reason to reach out.
+3 signals = proof they're considering it right now. (or have a need + urgency)
+
+One Tier 1 account, properly stacked:
+
+→ New VP Sales hired (trigger)
+→ 3 buyers from the company on /pricing this week (signal)
+→ Champion engaged 3x with your LinkedIn this week (signal)
+→ Marketing engaged through retargeting ads (signal)
+
+Four reasons to send an email. Each is strong on its own.
+
+Reply rates: 5-12% on a stacked signal account. 1-3% on a trigger-only account.
+
+The difference: your messaging reads like you've been paying attention. Not like you ran a Crunchbase  export.
+
+Here's where most ABM programs break:
+
+Sales chases the 5 trigger accounts. Marketing has no idea that those are the priority.
+The other 95 accounts on the Tier 1 list get nothing.
+
+→ No content
+→ No ads
+→ No retargeting
+
+When a buyer from one of those 95 finally gives you intent data, nobody sees it.
+
+The fix:
+
+Sales and Marketing run the same Tier 1 list together.
+
+→ Marketing covers all 95 with content, ads, and retargeting. ZenABM , HubSpot
+→ Sales puts higher effort on the trigger-stacked accounts. Clearbit Apify 6sense , CommonRoom etc.
+
+That's signal-based ABM.
+Not 5 news alerts on the same account in a CRM.
+
+Comment ""INTENT"" and I'll send you 63+ curated triggers and signals you can slice and dice for your stack.
+
+P.S. Book a time if you run ABM, but it's not connected, and you want to stop wasting money."
+16,2026-05-01,You can now run your entire Apollo from ONE Claude chat.,106,174,6,658,1583,listicle,none,image,"You can now run your entire Apollo from ONE Claude chat.
+I packaged everything into a single skill file.
+Comment ""APOLLO"" below, and I will send it over.
+
+Here's what you’ll get:
+
+Prospecting (free)
+
+↳ Find ICP leads by title, industry, headcount, and location
+↳ Target by tech stack Salesforce, HubSpot, Snowflake
+↳ Funded companies, while the buying intent is high
+↳ Named account decision makers from a list
+↳ Hiring signal targeting → find companies investing in your space
+
+Enrichment (uses Apollo.io credits)
+
+↳ Single contact → verified email, phone, full career history
+↳ Bulk enrich up to 10 contacts in one go
+↳ Company deep dive → tech stack, funding, headcount, recent news
+↳ Live job signal → what open roles reveal about buying intent
+
+CRM + Sequences (free)
+
+↳ Create, update, and look up contacts without logging in
+↳ Sequence health check → open rates, reply rates, last activity
+↳ Find the right sequence for any contact automatically
+↳ Add, remove, audit → full sequence management from one chat
+
+Full Workflows
+
+↳ Full outbound loop → find, enrich, create records, add to sequence. One prompt.
+↳ Pre-call research brief → everything on a company in 10 minutes
+↳ New market entry → find, enrich, and understand a segment before writing a word
+↳ Re-engagement → surface cold contacts sitting in your CRM doing nothing
+
+You just need to install Apollo in 30 seconds via Claude Connectors.
+
+Comment ""APOLLO,"" and I'll send the skill file.
+
+P.S. This is the same setup we use for GTM clients.
+One skill file, connected once. Apollo runs from Claude from that point on."
+17,2026-05-04,Every tool we use to run outbound for 110+ B2B GTM teams. Here’s the full stack across 10 layers:,210,123,12,639,2456,listicle,none,image,"Every tool we use to run outbound for 110+ B2B GTM teams. Here’s the full stack across 10 layers:
+
+1. List building
+
+↳ Clay: TAM sourcing, signal-based filtering, full TAM in one table
+↳ Apollo: TAM sourcing to complement Clay
+↳ LinkedIn Sales Nav: TAM sourcing to get more Tier 1, Tier 2 accounts
+
+2. Enrichment
+
+↳ Clay: waterfall enrichment across 50+ providers in one run
+↳ Prospeo + Icypeas, FullEnrich: email waterfall, verified contacts
+↳ ZeroBounce: validation before anything touches an inbox
+
+3. Deliverability
+
+↳ EmailGuard: inbox placement tests and blacklist checks every 24 hours
+↳ EmailBison: sending volume adjusts automatically based on real placement data
+↳ n8n + Airtable: limits scale up or down automatically based on inbox score
+↳ lemlist multi-channel sequencing
+↳ Heyreach, Expandi: for LinkedIn campaigns (cold + brand awareness)
+
+4. Signal stacking
+
+↳ Factors + RB2B, Vector 👻: website visitors identified and routed back into outbound
+↳ Trigify: LinkedIn engagements
+↳ Clay: hiring, funding, tech stack changes all in one table
+
+5. AI scoring
+
+↳ Clay + OpenAI  + Claude: accounts scored by ICP fit, signal strength, engagement
+↳ Tier A (8–10) → direct outreach
+↳ Tier B (5–7) → automated sequence
+↳ Tier C (<5) → ad audience or content nurture, not direct contact
+
+6. Outreach
+
+↳ Lemlist: omnichannel, multichannel (email, LinkedIn, voicenotes, WhatsApp)
+↳ EmailBison, Instantly, Smartlead: email-only
+
+7. CRM and automation
+
+↳ HubSpot: every contact, every tag, every stage in one place
+↳ N8N: signal triggers routed into CRM tasks automatically
+↳ Airtable: deliverability dashboard across all clients, real-time
+↳ Slack: automated report on every client, every morning
+
+8. AI agents
+
+↳ Aria: nurtures LinkedIn connections, qualifies intent, and books meetings
+↳ Rex: handles every outbound reply, follows up by signal strength
+↳ Both run 24/7 on N8N + Anthropic's Claude. AI SDRs.
+
+9. Content + SEO
+
+↳ AirOps, Ahrefs: content generation for AEO
+↳ Scripe, Taplio: LinkedIn Content
+
+10. Conversion
+
+↳ HubSpot: source of data + pipeline tracking
+↳ Dock: proposals and sales rooms
+↳ Fellow - AI Meeting Assistant: Every call is auto-transcribed and summarized
+↳ Calendly + Stripe: booking and payments
+
+This is the full stack at the moment.
+
+Which layer is the weakest in your current stack?
+
+P.S. We are the top 20 Clay Enterprise partners. DM me if you want us to audit which of these layers is missing in your current GTM motion."
+18,2026-06-09,March: 150k impressions,120,168,2,634,1773,framework,none,image,"March: 150k impressions
+April: 250k impressions
+May: 300k impressions
+
+Across the Growth Today team, we crossed 1.2M+ impressions in the last 90 days.
+
+Same people.
+Almost the same tools.
+The difference was in the structure.
+
+Here is the 4-part framework behind it:
+
+1. One idea. Full stop.
+
+↳ Not five insights crammed into one graphic
+↳ Not a paragraph disguised as a bullet
+↳ One claim, one proof, one visual
+
+If the reader can't understand it in 3 seconds, they scroll.
+
+2. Structure before design
+
+↳ The headline does the heavy lifting
+↳ Every line supports the headline
+↳ The takeaway is visible instantly
+
+Design should amplify the message.
+
+Not replace it.
+
+3. Scannable at a glance
+
+↳ Headline sits in the top third
+↳ Max ~30 words of body text
+↳ Eye flows vertically, not across
+↳ White space is structure, not decoration
+
+If someone needs to *read carefully*, you've already lost them.
+
+4. A reason to save
+
+↳ A checklist
+↳ A framework
+↳ A repeatable system
+
+Not inspiration.
+
+An asset.
+
+Something they’ll want to reference again in 3 weeks.
+
+Good design gets attention.
+Good structure gets results.
+
+Most GTM content has the first.
+
+Almost none have both.
+
+Our internal engine runs on tools like:
+Claude 
+Apify 
+Fellow - AI Meeting Assistant 
+Notion 
+Figma (for animations)
+
+But tools are not the differentiator.
+Structure is.
+
+Most teams are just posting.
+The best teams are building content systems that warm the pipeline before outbound even starts.
+
+Comment ""ENGINE"" and I’ll send the full breakdown.
+
+P.S. If you're posting consistently but LinkedIn isn't driving pipeline, you're likely missing the structure layer. DM me. We build and run LinkedIn content engines for B2B founders and high-growth GTM teams at Growth Today.
+
+19,2026-04-03,Here's the full list of the 32 of the best AI GTM and Claude Code Operators to learn from:,231,96,16,599,343,2761,listicle,none,document,Here's the full list of the 32 of the best AI GTM and Claude Code Operators to learn from:"
+20,2026-05-11,I've spent 2 years building on LinkedIn.,174,131,6,597,2967,listicle,none,image,"I've spent 2 years building on LinkedIn.
+If I started again today, I'd follow these 25 GTM experts first.
+This will save you a lot of trial and error.
+
+When I started, I had no clue who to follow. I just liked posts, copied tactics, and hoped something would resonate.
+
+Most of it (of course) didn't.
+
+So I started saving the people who actually knew what they were doing. Here's the list, by category.
+
+1️⃣ GTM Engineering + AI-native plays
+
+→ Florin Tatulea: Common Room signal-based GTM, real plays not just frameworks
+→ Sam Kuehnle: Loxo demand gen, founder POV on what's working in B2B SaaS
+→ Mark Roberge: Stage 2 Capital, the most-cited B2B sales thinking on LinkedIn
+→ Maja Voje: GTM strategy founder, AI-native motion design
+→ Sumit Gupta: how Notion, Snowflake, Dropbox use Claude for GTM
+
+2️⃣ B2B Outbound systems
+
+→ 💜 🔮 Will Allred: Lavender, cold email + AI personalization frameworks
+→ Trish Bertuzzi: Bridge Group, the OG outbound playbook designer
+→ Jed Mahrle PracticalProspecting, daily tactical breakdowns from real campaigns
+→ Morgan J. Ingram: multi-channel prospecting + sales development authority
+→ Leslie Venetz: sales-led growth + outbound playbooks
+
+3️⃣ LinkedIn Growth + content systems
+
+→ Marina Panova: LinkedIn growth for founders, original ""creators-to-follow"" framework
+→ Jasmin Alić: voice extraction for AI-assisted content that doesn't sound like AI
+→ Lara Acosta: founder personal brand + content systems
+→ Daniel Murray: Marketing Millennials, content distribution at scale
+→ Ruben Hassid: AI-assisted content engine that actually grows audience
+
+4️⃣ Personal brand + founder-led content
+
+→ Justin Welsh: solopreneur OS, the most-saved LinkedIn templates ever made
+→ Amelia Sordell: Klowt, personal branding for founders
+→ Anthony Natoli: Genesys, sales-led founder content
+→ Jason Vana: brand consultant POV on what content actually converts
+→ Ayesha Ameer: positioning + voice for technical founders
+
+5️⃣ Sales tools + automation
+
+→ Pouyan Salehi: Scratchpad, AI for sales productivity
+→ Ash Lewis: 3Eight, sales automation deep dives
+→ Sangram Vajre: Terminus co-founder, ABM + B2B sales authority
+→ Toni Hohlbein: Growblocks, GTM data + revenue ops
+→ Frank Sondors 🥓: Salesforge, AI sales agents
+
+6️⃣ Demand Gen + Marketing-Led GTM
+
+→ Chris Walker: Refine Labs, dark social + demand gen authority
+→ Dave Gerhardt: Exit Five, B2B marketing community + brand-led GTM
+→ Kyle Coleman: Copy ai, marketing-to-revenue alignment
+→ Tas Bober: Delphinium Solutions, B2B SaaS website strategy
+→ Adam Holmgren: DemandGen Maven, founder-led demand gen
+
+7️⃣ RevOps + Data-Led GTM
+
+→ Jeff Ignacio: RevOps Co-op, RevOps community + practitioner voice
+→ Rosalyn Santa Elena: RevOps strategist + advisor
+→ Sara McNamara: RevOps tools + workflows
+→ Mark Kosoglow: sales execution + RevOps
+→ Eddie Reynolds: Union Square Consulting, RevOps practitioner
+
+This list isn't complete.
+Who would you add?
+
+♻️ Repost to help someone build a better feed"
+21,2026-06-01,Our customers generate more pipeline from warm signals than from cold lists.,123,148,5,592,1839,framework,none,image,"Our customers generate more pipeline from warm signals than from cold lists. 
+Here's the 5-step framework we run for all of them:
+
+Most prospects don’t book immediately.
+They read, listen, and engage first.
+
+We see it every week with new clients: the warm signals are there.
+
+The way to achieve the same is simple.
+Here's the 5-step framework:
+
+1. Capture across channels (not just LinkedIn)
+↳ LinkedIn: profile views, comments, likes, connection requests
+↳ Website: anonymous visitors  Snitcher  , pricing page hits, competitor comparison visits
+↳ Content: who's reading your stuff (Trigify / Expandi / Vector 👻  / CommonRoom)
+↳ Account-level: job changes in the buying committee (Clay / Champify )
+↳ Email: opens, clicks, repeat reads in your sequencer
+
+2. Stack the signals (if you have a very strong inbound motion, otherwise skip)
+↳ 1 signal = reason to reach out
+↳ 3+ signals from the same account = prioritize
+↳ Multiple people from the same company = absolutely prioritize
+↳ Track signal velocity (how fast multiple signals appear on one account)
+
+3. Qualify against ICP
+↳ Role + seniority match
+↳ Company fit (size, industry, stage)
+↳ Buying authority + buying committee structure
+
+4. Reference the insight (not the signal)
+↳ Reference the specific insight (if it makes sense)
+↳ Don't pretend you don't know they engaged
+↳ Keep it short, contextual, and low-pressure
+↳ Multi-thread the account (if the top account + multiple engagements have happened)
+
+5. Track the right metrics
+↳ Chat-to-response and response to meeting conversion rate
+↳ Signal velocity (signal → meeting time)
+↳ Signal source mix (LinkedIn vs website vs content vs email)
+↳ Account-level pipeline coverage from signals
+
+♻️ Repost so more B2B teams stop ignoring warm signals.
+
+P.S. We build and run these outbound + content systems for $5M+ ARR B2B GTM teams."
+22,2026-06-10,"My LinkedIn content generated ORGANIC 500,000+ impressions in the last 90 days.",117,152,1,578,2328,framework,none,image,"My LinkedIn content generated ORGANIC 500,000+ impressions in the last 90 days.
+Not because I post more.
+Because I built a content engine.
+
+Every Friday at 6 a.m., our best‑performing posts are automatically researched and drafted.
+
+I only fine‑tune them.
+
+Here is the exact system behind it:
+
+Step 1: Foundation (built once)
+
+↳ Voice profile per person: Each team member has a defined writing voice and role
+↳ ICP map: We map buyer tiers and the GTM problems they actually care about
+↳ Content pillars: 3 repeatable themes tied to the pipeline
+↳ Hook + CTA frameworks: Best‑performing structures saved as Claude skills
+↳ Design system: Brand colors, layouts, and templates locked into Claude
+
+Tools:
+Claude
+Python
+
+Step 2: Research layer (runs weekly)
+
+↳ Apify scrapes LinkedIn to detect high‑performing posts in our niche
+↳ Fellow captures transcripts from client calls
+↳ Internal Slack debates often become the best post ideas.
+
+Client conversations are our highest‑signal source.
+
+Every Friday at 6am, the system delivers a draft for the whole team.
+
+Tools:
+Apify 
+Fellow - AI Meeting Assistant 
+Claude
+
+Step 3: Production (90% AI, 10% human)
+
+↳ 50+ hook variations generated and ranked by expected performance
+↳ Claude drafts the post in each author’s voice
+↳ Hook + body matching tests, which combination works best
+↳ A 5-dimensional rubric grades tone, clarity, insight, and rewrite suggestions
+
+Tools:
+
+Claude Code
+Scripe 
+
+Step 4: Repurpose the engine
+
+↳ One high‑performing LinkedIn post = one validated idea
+↳ The idea gets rebuilt for other formats
+↳ Our “best‑performing database” updates daily
+
+This compounds the system.
+
+Step 5: Maintenance
+
+↳ Python scripts maintain the automation via GitHub
+↳ Monthly refresh of tone, data, and frameworks
+↳ Weekly updates of best‑performing posts
+
+The longer this runs, the smarter the system gets.
+
+The real difference:
+
+Most teams use Claude like a better ChatGPT :
+Prompt. Copy. Paste. Forget.
+
+We built Claude Code as the operating system behind our content engine.
+That’s how one idea becomes a pipeline‑generating system.
+
+Have you started automating your content workflow yet?
+
+Comment ENGINE and I’ll send the full setup.
+
+P.S. If your team spends hours writing posts every week, you don’t need more writers. You need a content system. We can build that for you : - )"
+23,2026-06-12,LinkedIn has 1.3B users.,107,151,1,565,2476,framework,none,image,"LinkedIn has 1.3B users.
+
+Only ~1% post weekly.
+
+Even fewer turn it into a pipeline.
+
+In the last 90 days, our team generated 1.2M+ impressions from LinkedIn.
+
+Not from posting more.
+From running a system.
+
+Here’s the 8‑step LinkedIn engine B2B teams use to break into the top 1%:
+
+Step 1: Pick one market
+
+↳ One ICP
+↳ One problem
+↳ One GTM angle
+
+The fastest way to fail on LinkedIn is to try to speak to everyone.
+
+Step 2: Turn your profile into a landing page
+
+↳ Headline = who you help + outcome
+↳ Banner = one clear proof or system
+↳ Featured = lead magnet or case study
+
+Treat your profile like a billboard, not a résumé.
+
+Tools: Canva, Figma
+
+Step 3: Lock your content pillars
+
+↳ 3–4 topics maximum
+↳ Directly tied to your ICP’s problems
+↳ Each pillar connects to your offer
+
+Example pillars we use at Growth Today:
+
+↳ AI‑native GTM systems
+↳ Signal‑based outbound
+↳ GTM engineering workflows
+
+Step 4: Build hooks that stop the scroll
+
+The hook drives 80% of performance.
+
+Formats that consistently work:
+
+↳ “Most B2B teams get this wrong.”
+↳ “We tested this across X teams.”
+↳ “Here’s the system behind X result.”
+
+Tools: Scripe, Claude Code
+
+Step 5: Turn posts into assets
+
+The best posts are reference frameworks.
+
+↳ checklists
+↳ diagrams
+↳ systems
+↳ playbooks
+
+If someone can’t explain why they saved it, it won’t get saved.
+
+Step 6: Design for scanning
+
+↳ headline visible at 40% zoom
+↳ <30 words on the graphic
+↳ eye flows top → bottom
+
+Structure drives performance more than design.
+
+Tools: Figma, Canva 
+
+Step 7: Repurpose the winners
+
+One strong post becomes:
+
+↳ infographic
+↳ carousel
+↳ thread
+↳ newsletter
+↳ video
+
+We refresh top posts every 60–90 days.
+
+Tools: Claude
+
+Step 8: Systemize the engine
+
+Our stack runs weekly:
+↳ Apify scraping trending posts
+↳ Claude drafting frameworks
+↳ Scripe scheduling publishing
+↳ Figma generating visuals
+
+So when we post, it’s not random.
+It’s a predictable distribution.
+
+LinkedIn growth is not about posting more.
+It’s about building a content engine.
+
+A few other experts you can learn from:
+Justin Welsh(LinkedIn systems/solopreneur content)
+Alex Hormozi (framework style content)
+Katelyn Bourgoin (buyer psychology)
+Guillaume Moubeche (lemlist / outbound + LinkedIn) - great exampling bootstrapping from 0 to $53M ARR (where social played a huge role)
+Richard van der Blom (LinkedIn algorithm research)
+
+Repost if you found it useful.
+
+P.S. Comment ENGINE and I’ll send the full workflow behind our LinkedIn system."
+24,2026-05-08,My 2026 GTM tool picks. Every tool I'd use to build an AI-native GTM stack today:,140,124,3,527,1553,listicle,none,image,"My 2026 GTM tool picks. Every tool I'd use to build an AI-native GTM stack today:
+(by category)
+
+Signals
+Apify: Custom signals
+PhantomBuster: Social selling signals
+Warmly,: Website visitors
+Common Room: Unifies product, community + web signals
+ZenABM: LinkedIn ads signals
+
+Core Prospecting Database
+Apollo.io: All-in-one
+Clay: All-in-one + ads audiences
+Supabase: Database
+
+Lookalike Databases
+DiscoLike: Full web data beyond LinkedIn
+Ocean.io:Near-exact lookalike matching
+Clay: Semantic lookalikes
+
+Data Orchestration
+Clay: For AI-outbound + AI-RevOps
+Cargo 🧱: For AI-GTM
+
+Content
+Figma: Visual asset creation
+Notion: Content pipeline + skill management
+Scripe: LinkedIn analytics
+Fellow - AI Meeting Assistant: Demo recordings + interviews
+Apify: Engagement scraping to double down on what works
+
+Sequencers
+lemlist: LinkedIn outreach (voice notes, video, DMs)
+EmailBison: Cold email sequencing
+
+Contact Data
+AI Ark: Best contact accuracy
+Prospeo: Email finder + verification
+BetterContact: Phone + email waterfall
+FullEnrich: Multi-source enrichment waterfall
+
+Automation
+n8n: AI agentic workflows
+Make: Automation glue
+
+Sales
+Fellow: AI sales assistant
+HubSpot: Best + most scalable CRM
+Dock: Sales proposals + rooms
+Slack: Communication
+Chili Piper: Scheduling + routing
+Orum 🥇: Power dialer
+
+Tools on my list to try (YC W26 picks):
+→ Captain
+→ Autumn AI
+→ Fern
+→ Cardinal AI
+
+Anything else I should add here?
+
+P.S. We build and run AI-native GTM stacks for 150+ B2B teams at Growth Today. Follow me. Repost if your team would benefit from this."
+25,2026-06-15,Claude Code vs Clay vs n8n vs HubSpot,142,123,1,516,1675,framework,none,image,"Claude Code vs Clay vs n8n vs HubSpot
+Most serious GTM teams will want to graduate from a single tool to a comprehensive system. Here's the breakdown:
+
+Step 1: Claude Code
+↳ We use it to build the logic layer: skills, automations, scoring rules, CRM hygiene workflows
+↳ Best for: building GTM systems, outbound agents, ABM routing, repeatable ops work
+↳ If we need 32 HubSpot hygiene skills or 24 ABM agents, this is where we build them
+
+Step 2: Clay
+↳ We use it to source TAM, enrich accounts, stack signals, and score ICP fit
+↳ Best for: list building, enrichment, signal capture, account research
+↳ If we want one table with hiring, funding, website visits, and buying committee data, Clay does that job
+
+Step 3: n8n
+↳ We use it to move data between tools and trigger actions in real time
+↳ Best for: workflow automation, routing, alerts, and handoffs between sales and marketing
+↳ If a pricing page visit should create a task in HubSpot and alert Slack, n8n runs the flow
+
+Step 4: HubSpot
+↳ We use it as the system of record for contacts, stages, ownership, and pipeline
+↳ Best for: CRM, reporting, lifecycle tracking, team execution
+↳ If the data never lands in HubSpot cleanly, the rest of the stack breaks fast
+
+For most B2B teams we see, one operator or a small RevOps / GTM team builds the system.
+
+Some experts to follow:
+@Jan Oberha
+
+That team usually builds the workflows in Claude Code, structures the data in Clay, and connects everything.
+
+P.S: We build and fine-tune these engines for $15M B2B teams, and we work closely with your Sales / RevOps or BizDev leader. DM me if you need more 1) bandwidth or 2) want to fine-tune and operationalize what you’ve got."
