@@ -4,13 +4,13 @@ description: Comprehensive Salesforce CRM administration toolkit by Growth Today
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.1.0"
+  version: "1.2.0"
   category: crm-administration
 ---
 
 # GT Salesforce Admin
 
-Master orchestrator skill for Salesforce CRM administration. Wraps 45 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
+Master orchestrator skill for Salesforce CRM administration. Wraps 52 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 This is the Salesforce twin of `gt-hubspot-admin`. The structure mirrors it, but every playbook is ported to the Salesforce object model, API, and tooling. The key difference: Salesforce splits the pre-conversion Lead and the post-conversion Contact into two separate objects, uses Account and Opportunity instead of Company and Deal, has no native enrichment engine, and enforces data quality through Validation Rules, Matching Rules, and Duplicate Rules rather than HubSpot-style properties and workflows.
 
@@ -89,10 +89,13 @@ Each playbook lists its own specific prerequisites in its `## Prerequisites` sec
 - **`lead-lifecycle-flow`** — automate Lead Status progression and Lead-to-Opportunity conversion triggers, each fired by a specific event.
 - **`new-record-hygiene-flow`** — auto-enrich and stage new Leads and Contacts on creation. Sets Lead Status, copies Account name and industry, branches on completeness.
 
-### Opportunities & sales (2)
+### Opportunities & sales (5)
 
 - **`sales-process-and-stages`** — design Opportunity stages/Sales Processes as buyer commitments with probabilities, forecast categories, and required fields per stage.
 - **`lead-conversion-mapping`** — map custom Lead fields to Contact/Account/Opportunity so no data is lost on convert; dedupe on convert.
+- **`products-and-price-books`** — Products, Price Books, and Opportunity line items so Amount is built from what's sold; enables product reporting + quoting.
+- **`forecasting-setup`** — Collaborative Forecasting: forecast categories, types, quotas, and the forecast hierarchy.
+- **`campaigns-and-influence`** — Campaigns, Campaign Members, and Campaign Influence to measure marketing-sourced/influenced pipeline.
 
 ### Reporting (2)
 
@@ -104,18 +107,25 @@ Each playbook lists its own specific prerequisites in its `## Prerequisites` sec
 - **`flow-builder-patterns`** — which Flow type to use (before/after-save, scheduled, screen) and how to migrate off retired Workflow Rules / Process Builder.
 - **`lead-routing-assignment`** — assignment rules, queues, and Flow-based round-robin/territory routing with a fallback owner + SLA task.
 
-### Data model (4)
+### Data model (5)
 
 - **`validation-rules-setup`** — prevent bad data at entry with validation rules (required formats, conditional requirements, stage gates) + integration bypass.
 - **`record-types-and-page-layouts`** — support different processes on one object (record types drive Opportunity stages; layouts tailor fields per team).
 - **`formula-and-rollup-fields`** — auto-derive values (same-record formulas, child→parent roll-up summaries) instead of brittle Flows.
 - **`matching-and-duplicate-rules`** — prevent duplicates at create/edit (matching rules + alert/block duplicate rules); complements merge cleanup.
+- **`custom-object-setup`** — decide when a custom object is warranted and set it up (master-detail vs lookup, fields, layouts, reporting).
 
 ### Security & access (3)
 
 - **`audit-profiles-permission-sets`** — audit profiles vs permission sets vs permission set groups, flag dangerous perms (Modify/View All Data), and migrate to a least-privilege, permission-set-based model.
 - **`setup-roles-and-record-access`** — design the record-visibility model: role hierarchy, org-wide defaults (OWD), and sharing rules.
 - **`field-level-security-audit`** — map FLS per profile/permission set, protect sensitive fields, and remove accidental exposure.
+
+### Data management & integrations (3)
+
+- **`data-loader-and-imports`** — import/update/mass-transfer safely with Data Loader / Import Wizard: external-ID upsert, dedupe, backups.
+- **`salesforce-hubspot-sync`** — manage the SF↔HubSpot integration: direction + source of truth per field, inclusion lists, dedupe, error handling.
+- **`agentforce-ai-readiness`** — get the org data- and permission-ready for Agentforce/Einstein (clean data, field semantics, tight access, grounding scope).
 
 ### Ongoing maintenance (12)
 
