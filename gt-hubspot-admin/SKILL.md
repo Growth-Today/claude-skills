@@ -4,13 +4,13 @@ description: Comprehensive HubSpot CRM administration toolkit by Growth Today (g
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.1.0"
+  version: "1.2.0"
   category: crm-administration
 ---
 
 # GT HubSpot Admin
 
-Master orchestrator skill for HubSpot CRM administration. Wraps 56 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
+Master orchestrator skill for HubSpot CRM administration. Wraps 68 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 ## When to use this skill
 
@@ -67,7 +67,7 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`lead-status-taxonomy`** — define a clear lead status value set with entry/exit definitions and the MQL/SQL handoff trigger; distinct from lifecycle stage.
 - **`marketing-contacts-management`** — control marketing-contact status to cut billing waste: set unengaged/non-sendable contacts non-marketing and automate it.
 
-### Automation workflows (6)
+### Automation workflows (11)
 
 - **`bounce-monitoring-workflow`** — auto-suppress contacts above a configurable bounce threshold, alert on hard bounces, flag for weekly review.
 - **`engagement-suppression-workflow`** — two-tier sunset workflow that re-engages dormant contacts before suppression.
@@ -75,17 +75,29 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`new-contact-hygiene-workflow`** — auto-enrich and stage new contacts upon creation. Sets lifecycle stage, copies company name and industry, branches on completeness.
 - **`lead-routing-round-robin`** — automatically route qualified leads to reps via round-robin + criteria, with a fallback owner and SLA task/notification.
 - **`workflow-naming-governance`** — naming conventions, folders, ownership, and documentation so workflows don't conflict, duplicate, or run unmonitored.
+- **`territory-routing`** — route leads/accounts by geography, segment, industry, or named-account ownership, with round-robin inside each territory.
+- **`internal-notification-workflows`** — alert the right person at action-required moments (assignment, high-value deal, stuck record, SLA breach) without notification fatigue.
+- **`reengagement-reenrollment`** — dormant-contact re-engagement track + correct workflow re-enrollment settings (no loops, no spam).
+- **`data-formatting-automation`** — auto-normalize casing, whitespace, phone, and geo values on write so hygiene becomes self-healing.
+- **`programmable-automation-custom-code`** — custom-code and webhook workflow actions (Ops/Data Hub) for logic beyond standard actions, done safely.
 
-### Governance, permissions & security (3)
+### Governance, permissions & security (7)
 
 - **`users-teams-setup`** — structure users into teams (primary + additional) so routing, reporting rollups, and record visibility work. Audits users with no team.
 - **`permission-sets-roles`** — apply least-privilege access with reusable permission sets; define a role matrix by job function and minimize Super Admins.
 - **`security-health-audit`** — harden the account: minimize Super Admins, enforce 2FA/SSO, and reassign + deactivate stale users safely (frees seats).
+- **`asset-partitioning`** — team-based visibility of assets (lists, workflows, forms, reports) for multi-brand/region/BU accounts (Enterprise).
+- **`subscription-types-consent`** — granular subscription types + preference center + consent tracking to cut full unsubscribes and support compliance.
+- **`gdpr-data-privacy`** — enable GDPR features, lawful-basis + consent capture, data-subject requests (access/erase), and sensitive-data handling.
+- **`salesforce-sync-management`** — manage the HubSpot–Salesforce sync safely: directions, mappings, dedup, errors, and change coordination.
 
-### Reporting & dashboards (2)
+### Reporting & dashboards (5)
 
 - **`revops-core-dashboards`** — build the core RevOps dashboards (pipeline health, stage conversion, lifecycle velocity, forecast, data quality) scoped to the right audience.
 - **`custom-report-builder-guide`** — pick the right report type (single/cross-object/funnel/attribution/cohort) and build reports that reconcile with source-of-truth.
+- **`attribution-reporting-setup`** — show which sources/channels/touches drive deals and revenue; pick the attribution model deliberately.
+- **`funnel-cohort-reports`** — funnel (conversion/drop-off) and cohort (retention over time) reports, set up to be actionable.
+- **`sla-kpi-dashboards`** — SLA/KPI dashboards (response time, follow-up, stage aging, pipeline coverage, data quality) with clear thresholds.
 
 ### Data model & properties (6)
 
