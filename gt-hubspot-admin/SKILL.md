@@ -10,7 +10,7 @@ metadata:
 
 # GT HubSpot Admin
 
-Master orchestrator skill for HubSpot CRM administration. Wraps 32 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
+Master orchestrator skill for HubSpot CRM administration. Wraps 35 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 ## When to use this skill
 
@@ -69,11 +69,17 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`lifecycle-progression-workflow`** — automate Lead → MQL → SQL → Opportunity → Customer transitions, each triggered by a specific event.
 - **`new-contact-hygiene-workflow`** — auto-enrich and stage new contacts upon creation. Sets lifecycle stage, copies company name and industry, branches on completeness.
 
-### Ongoing maintenance (12)
+### Pipelines & deals (4)
+
+- **`deal-pipeline-architecture`** — design deal stages around buyer commitments (not rep actions), remove fake/zombie stages, set entry/exit criteria and win probabilities. Foundation for reliable forecasting.
+- **`deal-stage-required-fields`** — require the right deal properties before a deal can advance to each stage; restrict backward moves and lock closed deals. Enforces the pipeline's exit criteria.
+- **`deal-rotting-alerts`** — set a max age per stage, audit deals that exceed it, and build date-based workflows + a dashboard to surface and act on stale pipeline.
+- **`cleanup-deals`** — standardize deal data, remove test deals, address missing amounts/close dates. Coordinates with Salesforce sync.
+
+### Ongoing maintenance (11)
 
 - **`backfill-geo-data`** — enrich missing geographic data (country, state, city) on contacts and companies via workflows, external providers, or IP-based geolocation.
 - **`cleanup-dashboards`** — audit and consolidate reporting dashboards (manual — no dashboard API).
-- **`cleanup-deals`** — standardize pipelines, remove test deals, address missing amounts/close dates. Coordinates with Salesforce sync.
 - **`cleanup-forms`** — remove unused, test, or deprecated forms (zero submissions, not embedded, dev leftovers).
 - **`cleanup-lead-owners`** — remove non-employee users from HubSpot and reassign their orphaned records. Pairs with `assign-unowned-contacts`.
 - **`cleanup-lists`** — remove unused, empty, or duplicate list definitions (zero members, not used by workflow/email, overlapping criteria).
