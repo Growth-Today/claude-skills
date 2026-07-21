@@ -10,7 +10,7 @@ metadata:
 
 # GT Salesforce Admin
 
-Master orchestrator skill for Salesforce CRM administration. Wraps 35 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
+Master orchestrator skill for Salesforce CRM administration. Wraps 39 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 This is the Salesforce twin of `gt-hubspot-admin`. The structure mirrors it, but every playbook is ported to the Salesforce object model, API, and tooling. The key difference: Salesforce splits the pre-conversion Lead and the post-conversion Contact into two separate objects, uses Account and Opportunity instead of Company and Deal, has no native enrichment engine, and enforces data quality through Validation Rules, Matching Rules, and Duplicate Rules rather than HubSpot-style properties and workflows.
 
@@ -88,6 +88,13 @@ Each playbook lists its own specific prerequisites in its `## Prerequisites` sec
 - **`engagement-suppression-flow`** — two-stage sunset Flow that re-engages dormant records before suppression.
 - **`lead-lifecycle-flow`** — automate Lead Status progression and Lead-to-Opportunity conversion triggers, each fired by a specific event.
 - **`new-record-hygiene-flow`** — auto-enrich and stage new Leads and Contacts on creation. Sets Lead Status, copies Account name and industry, branches on completeness.
+
+### Data model (4)
+
+- **`validation-rules-setup`** — prevent bad data at entry with validation rules (required formats, conditional requirements, stage gates) + integration bypass.
+- **`record-types-and-page-layouts`** — support different processes on one object (record types drive Opportunity stages; layouts tailor fields per team).
+- **`formula-and-rollup-fields`** — auto-derive values (same-record formulas, child→parent roll-up summaries) instead of brittle Flows.
+- **`matching-and-duplicate-rules`** — prevent duplicates at create/edit (matching rules + alert/block duplicate rules); complements merge cleanup.
 
 ### Security & access (3)
 
