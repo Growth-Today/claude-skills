@@ -4,6 +4,23 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.2.0 — 2026-07-21
+
+**Summary:** P2 coverage additions from the review — rigorous measurement, EU messaging compliance, and sharper ABM routing. No restructure.
+
+**Added / expanded:**
+- `measurement-attribution.md`: **Incrementality & Lift Testing** (native Brand Lift with its budget minimums + settle window; DIY conversion incrementality via holdout / geo-lift — LinkedIn has no robust self-serve conversion-lift) and **View-Through Conversions** (window guidance, report VTC separately from CTC, weight below clicks, sanity-check with incrementality). This is the causal answer to "CTR ≠ pipeline."
+- `ad-formats.md`: **EU Sponsored-Messaging compliance** on Conversation Ads and Message Ads — blocked for EU members from Dec 2021 (ECJ/ePrivacy), consent-gated for opted-in EU members since ~Oct 2024; don't build an EU motion on these formats.
+
+**Changed:**
+- Tightened `abm-strategy` vs `ads-outbound-sync` descriptions + master routing to remove overlap: **abm-strategy = ABM planning** (structure, budget, formats, benchmarks); **ads-outbound-sync = ad-engagement → sales signals** (intent, BDR alerts, ZenABM/Fibbler sync). Clear "Do NOT use … (use the other)" boundaries.
+
+**Note:** Conversation/Message Ads were already documented in `ad-formats.md` — v2.2.0 only adds the EU-compliance nuance (no duplicate format section).
+
+**Sources:** LinkedIn Marketing Solutions Help (Brand Lift, Sponsored Messaging EU targeting), plus public incrementality-testing best-practice guidance — accessed 2026-07-21.
+
+---
+
 ## v2.1.0 — 2026-07-21
 
 **Summary:** P1 coverage additions from the critical review — the CRM-attribution loop and a structured account audit. Sub-skills now number 10.

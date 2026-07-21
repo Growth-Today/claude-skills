@@ -1,7 +1,10 @@
 ---
 name: gt-linkedin-ads
 description: "GT LinkedIn Ads — expert LinkedIn Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about LinkedIn advertising, LinkedIn campaign setup, LinkedIn ad targeting, LinkedIn bidding strategies, LinkedIn ad formats, LinkedIn retargeting, LinkedIn ABM campaigns, LinkedIn Thought Leader Ads, sequenced TLAs and Story Arcs, LinkedIn funnel architecture, LinkedIn ads measurement/attribution, LinkedIn ads troubleshooting, LinkedIn creative best practices, or any B2B paid social strategy involving LinkedIn. Triggers on: LinkedIn campaign, LinkedIn CPM, LinkedIn CTR, LinkedIn lead gen, B2B ads, demand gen on LinkedIn, sponsored content, thought leader ads, Predictive Audiences, Accelerate, Conversions API, LinkedIn ads not working. Do NOT use for LinkedIn organic content (use gt-linkedin-content) or LinkedIn outbound messaging (use gt-linkedin-outbound). More GT skills: growthtoday.co."
-version: v2.1.0
+version: v2.2.0
+# v2.2.0 (2026-07-21): P2 — incrementality & lift testing + view-through conversions (measurement),
+# EU Sponsored-Messaging compliance on Conversation/Message Ads, and tightened ABM sub-skill
+# boundaries (abm-strategy = planning; ads-outbound-sync = signal-to-sales).
 # v2.1.0 (2026-07-21): P1 additions — CRM-attribution reference (HubSpot + Salesforce, offline
 # conversions, Campaign Influence, U-shaped model) cross-linked to gt-hubspot-admin/gt-salesforce-admin;
 # new audit sub-skill + audit control catalog (triad parity with gt-meta-ads).
@@ -38,7 +41,7 @@ Expert LinkedIn Ads strategist with $25M+ in managed B2B ad spend. Route every r
 | User Intent | Sub-Skill | Path |
 |-------------|-----------|------|
 | Targeting, ICP, exclusions, ABM lists, remarketing, Predictive Audiences, career signals | **audiences** | `{SKILL_BASE}/.claude/skills/audiences/gt-SKILL.md` |
-| ABM + outbound coordination, ad engagement as sales triggers, BDR alert workflows | **ads-outbound-sync** | `{SKILL_BASE}/.claude/skills/ads-outbound-sync/gt-SKILL.md` |
+| Ad engagement → sales signals, intent detection, BDR alerts, ZenABM/Fibbler sync | **ads-outbound-sync** | `{SKILL_BASE}/.claude/skills/ads-outbound-sync/gt-SKILL.md` |
 | Bidding strategies, budget allocation, cost optimization | **bidding** | `{SKILL_BASE}/.claude/skills/bidding/gt-SKILL.md` |
 | Campaign structure, funnel architecture, retargeting, Accelerate AI campaigns | **campaign-setup** | `{SKILL_BASE}/.claude/skills/campaign-setup/gt-SKILL.md` |
 | Ad copywriting, headlines, CTAs, messaging frameworks | **copy** | `{SKILL_BASE}/.claude/skills/copy/gt-SKILL.md` |
@@ -46,7 +49,7 @@ Expert LinkedIn Ads strategist with $25M+ in managed B2B ad spend. Route every r
 | Measurement, attribution, KPIs, Insight Tag, CAPI, Revenue Attribution Report | **measurement** | `{SKILL_BASE}/.claude/skills/measurement/gt-SKILL.md` |
 | Troubleshooting, optimization, competitive research | **optimization** | `{SKILL_BASE}/.claude/skills/optimization/gt-SKILL.md` |
 | Account audit, health check, wasted-spend review, prioritized fix list | **audit** | `{SKILL_BASE}/.claude/skills/audit/gt-SKILL.md` |
-| ABM strategy, budget math, campaign structure for ABM | **abm-strategy** | `{SKILL_BASE}/.claude/skills/abm-strategy/gt-SKILL.md` |
+| ABM planning: campaign structure, budget math, ABM formats & benchmarks | **abm-strategy** | `{SKILL_BASE}/.claude/skills/abm-strategy/gt-SKILL.md` |
 
 ## Shared Reference Files
 

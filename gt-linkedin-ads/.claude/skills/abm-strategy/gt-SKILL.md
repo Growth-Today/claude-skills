@@ -1,6 +1,6 @@
 ---
 name: abm-strategy
-description: LinkedIn Ads ABM strategy including campaign structure, budget math, ad formats for ABM, and ads-to-outbound signaling. Use when the user asks about LinkedIn Ads for ABM, ABM ad budget math, ABM campaign structure, how many ads to run, intent-based campaign naming, ad engagement as BDR triggers, signal pipeline from ads to sales, or ABM-specific ad performance benchmarks. Triggers on "ABM ads", "ABM budget", "ABM campaign structure", "LinkedIn ABM", "how many ads", "ad budget math", "ads to outbound", "ad engagement triggers", "BDR trigger from ads", "intent signals from ads", "ABM ad formats", "ads signaling", "ZenABM", "Fibbler", "ads outbound signaling", "inbound-led outbound". Do NOT use for general LinkedIn targeting (use audiences) or general ad copy (use copy).
+description: LinkedIn Ads ABM planning — campaign structure, budget math, ABM ad-format mix, and ABM performance benchmarks. Use when the user asks how to structure ABM campaigns, ABM ad budget math, how many ads to run, COLD/WARM layers, account-list campaigns, ABM ad formats, or ABM-specific benchmarks. Triggers on "ABM ads", "ABM budget", "ABM campaign structure", "LinkedIn ABM", "how many ads", "ad budget math", "ABM ad formats", "account list campaign", "COLD WARM". Do NOT use for turning ad engagement into sales triggers / BDR alerts / intent signals (use ads-outbound-sync), general targeting (use audiences), or ad copy (use copy).
 ---
 
 # LinkedIn Ads ABM Strategy

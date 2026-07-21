@@ -99,6 +99,22 @@ RAR **connects your CRM to LinkedIn campaigns** and reports **revenue impact at 
 
 **Implication for optimization:** stop killing upper-funnel campaigns on CTR/CPL alone. Judge them on company-level pipeline over a 90–365 day window via RAR.
 
+## Incrementality & Lift Testing (the rigorous answer to "CTR ≠ pipeline")
+
+Correlation caveats aside, the only way to *prove* LinkedIn caused pipeline is a controlled test.
+
+- **Brand Lift (native, survey-based):** LinkedIn's own test — test vs control groups, measures ad recall, awareness, favorability, consideration, recommendation. Budget minimums are steep (~$60K USD for one brand-metric question, ~$90K for two, +$45K per extra question); results can move for ~15 days after the end date. Use for upper-funnel brand campaigns at enterprise budgets.
+- **Conversion incrementality (design-it-yourself):** LinkedIn has no robust self-serve conversion-lift product, so run a **holdout** (split the target audience — hold ~10–20% out of LinkedIn, compare conversion/pipeline rates) or a **geo-lift** (matched-market: run LinkedIn in some regions, not others). This is the honest way to answer "would these deals have closed anyway?"
+- **When to bother:** meaningful, sustained spend where the exec question is "is LinkedIn incremental?" Below that, lean on CRM-based attribution (see `crm-attribution.md`) rather than an underpowered test.
+
+## View-Through Conversions (VTC) — most B2B impact has no click
+
+On LinkedIn, the majority of influence is **view-through**: a buyer sees the ad, doesn't click, and converts later via search or direct. Click-only tracking therefore undercounts LinkedIn badly.
+
+- Set a **view-through window** (7–30 days typical for B2B) and report VTCs **separately** from click-through — never blend them into one "conversions" number.
+- Weight VTCs below CTCs when judging efficiency, but don't ignore them: they're the signal that upper-funnel is working (and echo the Revenue Attribution Report's finding that engagement attributes far more revenue than clicks).
+- Sanity-check with incrementality (above) before scaling spend on VTC-heavy campaigns.
+
 ## Measurement Timeline
 - Allow **2-4 weeks** minimum for meaningful data
 - Track long-term pipeline influence over **3-6 months**

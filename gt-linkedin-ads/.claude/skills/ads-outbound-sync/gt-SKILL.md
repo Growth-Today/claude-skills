@@ -1,6 +1,6 @@
 ---
 name: linkedin-ads-outbound-sync
-description: Synchronize LinkedIn Ads engagement with outbound sales for coordinated ABM plays. Use when the user asks about aligning LinkedIn ads with sales outreach, using ad engagement as sales triggers, ABM sales coordination, multi-channel ABM plays, or combining ads with email/calling sequences. Triggers on "ads outbound sync", "ABM sales alignment", "ad engagement triggers", "ads + outbound", "coordinate ads sales", "multi-channel ABM". Do NOT use for targeting setup (use audiences) or campaign structure (use campaign-setup).
+description: Turn LinkedIn ad engagement into sales signals and coordinate ABM ads with outbound. Use when the user asks about ad engagement as BDR/sales triggers, intent signals from ads, ads-to-outbound signaling, campaign-name intent encoding, BDR Slack alerts, ZenABM/Fibbler engagement-to-CRM sync, inbound-led outbound, or aligning LinkedIn ads with email/calling sequences. Triggers on "ad engagement triggers", "BDR trigger from ads", "intent signals from ads", "ads to outbound", "ads outbound signaling", "ZenABM", "Fibbler", "inbound-led outbound", "coordinate ads sales", "multi-channel ABM". Do NOT use for ABM campaign structure/budget/formats (use abm-strategy), targeting setup (use audiences), or campaign structure (use campaign-setup).
 ---
 
 # LinkedIn Ads + Outbound Sync
