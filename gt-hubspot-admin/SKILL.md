@@ -4,13 +4,13 @@ description: Comprehensive HubSpot CRM administration toolkit by Growth Today (g
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.0.3"
+  version: "1.1.0"
   category: crm-administration
 ---
 
 # GT HubSpot Admin
 
-Master orchestrator skill for HubSpot CRM administration. Wraps 41 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
+Master orchestrator skill for HubSpot CRM administration. Wraps 46 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 ## When to use this skill
 
@@ -56,24 +56,32 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`fix-lifecycle-stages`** — ensure all contacts and companies have appropriate lifecycle stages. Backfills missing, fixes stuck, prevents future gaps.
 - **`standardize-geo-values`** — convert inconsistent country/state/region formats to standardized values. Required for reliable geographic segmentation.
 
-### Segmentation & scoring (3)
+### Segmentation & scoring (4)
 
 - **`build-lead-scoring`** — build separate Fit and Engagement scoring models using HubSpot's new Lead Scoring tool. Replaces deprecated HubSpot Score property.
 - **`build-smart-lists`** — create foundational segmented lists (master sendable, ICP-based, persona, engagement, behavioral) — all active/dynamic.
 - **`create-icp-tiers`** — classify companies into ICP tiers based on firmographic data (industry + employee count). Creates custom property + 4 classification workflows.
+- **`lead-status-taxonomy`** — define a clear lead status value set with entry/exit definitions and the MQL/SQL handoff trigger; distinct from lifecycle stage.
 
-### Automation workflows (4)
+### Automation workflows (6)
 
 - **`bounce-monitoring-workflow`** — auto-suppress contacts above a configurable bounce threshold, alert on hard bounces, flag for weekly review.
 - **`engagement-suppression-workflow`** — two-tier sunset workflow that re-engages dormant contacts before suppression.
 - **`lifecycle-progression-workflow`** — automate Lead → MQL → SQL → Opportunity → Customer transitions, each triggered by a specific event.
 - **`new-contact-hygiene-workflow`** — auto-enrich and stage new contacts upon creation. Sets lifecycle stage, copies company name and industry, branches on completeness.
+- **`lead-routing-round-robin`** — automatically route qualified leads to reps via round-robin + criteria, with a fallback owner and SLA task/notification.
+- **`workflow-naming-governance`** — naming conventions, folders, ownership, and documentation so workflows don't conflict, duplicate, or run unmonitored.
 
 ### Governance, permissions & security (3)
 
 - **`users-teams-setup`** — structure users into teams (primary + additional) so routing, reporting rollups, and record visibility work. Audits users with no team.
 - **`permission-sets-roles`** — apply least-privilege access with reusable permission sets; define a role matrix by job function and minimize Super Admins.
 - **`security-health-audit`** — harden the account: minimize Super Admins, enforce 2FA/SSO, and reassign + deactivate stale users safely (frees seats).
+
+### Reporting & dashboards (2)
+
+- **`revops-core-dashboards`** — build the core RevOps dashboards (pipeline health, stage conversion, lifecycle velocity, forecast, data quality) scoped to the right audience.
+- **`custom-report-builder-guide`** — pick the right report type (single/cross-object/funnel/attribution/cohort) and build reports that reconcile with source-of-truth.
 
 ### Data model & properties (3)
 
