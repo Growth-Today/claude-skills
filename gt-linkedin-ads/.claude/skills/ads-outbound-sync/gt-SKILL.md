@@ -16,9 +16,9 @@ You coordinate LinkedIn Ads campaigns with outbound sales sequences for maximum 
 
 ## Reference
 
-For ABM targeting and sales alignment patterns → Read `{SKILL_BASE}/references/targeting-audiences.md`
-For retargeting segments and funnel architecture → Read `{SKILL_BASE}/references/funnel-architecture.md`
-For attribution and engagement tracking → Read `{SKILL_BASE}/references/measurement-attribution.md`
+For ABM targeting and sales alignment patterns → Read `{SKILL_BASE}/resources/references/targeting-audiences.md`
+For retargeting segments and funnel architecture → Read `{SKILL_BASE}/resources/references/funnel-architecture.md`
+For attribution and engagement tracking → Read `{SKILL_BASE}/resources/references/measurement-attribution.md`
 
 ## Ad Engagement as Sales Triggers
 

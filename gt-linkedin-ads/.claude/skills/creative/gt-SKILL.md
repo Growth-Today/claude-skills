@@ -17,9 +17,10 @@ You design creative strategies and select the right ad formats for each funnel s
 
 ## Reference
 
-For ad format specs, TLA strategies, and visual best practices → Read `{SKILL_BASE}/references/ad-formats.md`
-For creative strategy, content repurposing, and refresh cadence → Read `{SKILL_BASE}/references/creative-strategy.md`
-For competitive creative research → Read `{SKILL_BASE}/references/competitive-research.md`
+For ad format specs, TLA strategies, and visual best practices → Read `{SKILL_BASE}/resources/references/ad-formats.md`
+For creative strategy, content repurposing, and refresh cadence → Read `{SKILL_BASE}/resources/references/creative-strategy.md`
+For competitive creative research → Read `{SKILL_BASE}/resources/references/competitive-research.md`
+For AI creative (AI Ad Variants, Shutterstock) and Accelerate → Read `{SKILL_BASE}/resources/references/accelerate-ai-campaigns.md`
 
 ## Format Selection by Objective
 

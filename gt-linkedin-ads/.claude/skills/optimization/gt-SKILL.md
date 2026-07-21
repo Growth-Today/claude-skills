@@ -17,9 +17,9 @@ You diagnose and fix underperforming LinkedIn Ads campaigns using systematic tro
 
 ## Reference
 
-For systematic troubleshooting checklist (6 areas) → Read `{SKILL_BASE}/references/troubleshooting.md`
-For campaign health indicators and benchmarks → Read `{SKILL_BASE}/references/benchmarks.md`
-For competitive research via Ads Library → Read `{SKILL_BASE}/references/competitive-research.md`
+For systematic troubleshooting checklist (6 areas) → Read `{SKILL_BASE}/resources/references/troubleshooting.md`
+For campaign health indicators and benchmarks → Read `{SKILL_BASE}/resources/references/benchmarks.md`
+For competitive research via Ads Library → Read `{SKILL_BASE}/resources/references/competitive-research.md`
 
 ## Diagnostic Checklist
 

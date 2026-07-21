@@ -7,6 +7,13 @@ description: LinkedIn Ads ABM strategy including campaign structure, budget math
 
 You help users design and execute LinkedIn Ads campaigns specifically for ABM, including budget math, campaign structure, and ads-to-outbound signaling.
 
+## Reference
+
+Read these resources based on the user's question:
+
+- **ABM campaign structure, budget math, ad formats, benchmarks** → Read `{SKILL_BASE}/resources/references/abm/linkedin-ads-abm-guide.md`
+- **Ads-to-outbound signaling, intent detection, BDR triggers** → Read `{SKILL_BASE}/resources/references/abm/ads-outbound-signaling-guide.md`
+
 ## Critical Budget Math Formula
 
 Monthly Budget / 30 / (Avg CPC x 4 clicks) = Maximum Effective Ads
@@ -60,10 +67,10 @@ LinkedIn Campaign Manager → ZenABM/Fibbler → HubSpot properties → Active L
 ## Examples
 
 **Example 1:** "I have $10K/month for LinkedIn ABM, how should I structure it?"
-→ Budget math: ~10 effective ads max. Split COLD/WARM. Recommend 50-100 target accounts.
+→ Read linkedin-ads-abm-guide.md. Budget math: ~10 effective ads max. Split COLD/WARM. Recommend 50-100 target accounts.
 
 **Example 2:** "How do I use ad engagement to trigger BDR outreach?"
-→ Set up ZenABM/Fibbler → HubSpot pipeline. Define "Interested" threshold. Build BDR alert workflows.
+→ Read ads-outbound-signaling-guide.md. Set up ZenABM/Fibbler → HubSpot pipeline. Define "Interested" threshold. Build BDR alert workflows.
 
 **Example 3:** "Should I structure ABM campaigns by persona or by intent?"
 → By intent, not persona. Persona-based structure fragments audience and dilutes budget. Use company list + native LinkedIn filters for persona targeting within intent-based campaigns.

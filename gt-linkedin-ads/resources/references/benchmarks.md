@@ -120,6 +120,16 @@ Always benchmark against the specific ad format. The blended 0.44-0.65% sponsore
 - Average B2B deal involves 6-10 decision-makers
 
 
+## 2026 Attribution Benchmarks (Dreamdata)
+
+- **CAPI adoption:** ~75% of LinkedIn advertisers now run the Conversions API.
+- **CAPI lift:** ~20% lower CPA and ~31% more attributed conversions vs non-integrated accounts (some report ~39% lower cost per qualified lead).
+- **Engagement = revenue:** including paid *engagement* data (not just clicks) attributes ~7.7x more revenue — the data behind "CTR does not predict pipeline."
+- **Accelerate (LinkedIn claim):** ~42% better cost-per-action than classic campaigns.
+- Judge upper/mid-funnel on company-level pipeline over a 90–365 day window (Revenue Attribution Report), not on CTR.
+
+*Source: Dreamdata 2026 LinkedIn Ads B2B Benchmarks; LinkedIn Marketing Solutions.*
+
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

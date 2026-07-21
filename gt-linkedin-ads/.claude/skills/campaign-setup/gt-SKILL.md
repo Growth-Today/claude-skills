@@ -1,6 +1,6 @@
 ---
 name: linkedin-ads-campaign-setup
-description: Set up LinkedIn Ads campaign architecture with proper funnel layers, retargeting segments, and pre-launch checklists. Use when the user asks about LinkedIn campaign structure, funnel architecture, retargeting setup, campaign organization, LinkedIn Ads launch checklist, or how to structure LinkedIn ad campaigns. Triggers on "campaign setup", "campaign structure", "funnel architecture", "retargeting setup", "launch checklist", "campaign organization", "LinkedIn campaign". Do NOT use for bidding (use bidding), targeting (use audiences), or creative (use creative/copy).
+description: Set up LinkedIn Ads campaign architecture with proper funnel layers, retargeting segments, and pre-launch checklists. Use when the user asks about LinkedIn campaign structure, funnel architecture, retargeting setup, campaign organization, LinkedIn Ads launch checklist, Accelerate AI campaigns / AI campaign automation, or how to structure LinkedIn ad campaigns. Triggers on "campaign setup", "campaign structure", "funnel architecture", "retargeting setup", "launch checklist", "campaign organization", "LinkedIn campaign", "Accelerate", "AI campaign". Do NOT use for bidding (use bidding), targeting (use audiences), or creative (use creative/copy).
 ---
 
 # LinkedIn Ads Campaign Setup
@@ -17,8 +17,9 @@ You architect LinkedIn Ads campaigns with proper funnel structure, retargeting s
 
 ## Reference
 
-For funnel architecture, retargeting windows, and testing framework → Read `{SKILL_BASE}/references/funnel-architecture.md`
-For objective selection by ad type → Read `{SKILL_BASE}/references/bidding-objectives.md`
+For funnel architecture, retargeting windows, and testing framework → Read `{SKILL_BASE}/resources/references/funnel-architecture.md`
+For objective selection by ad type → Read `{SKILL_BASE}/resources/references/bidding-objectives.md`
+For Accelerate AI campaigns, AI creative, and real-time CRM data in Campaign Manager → Read `{SKILL_BASE}/resources/references/accelerate-ai-campaigns.md`
 
 ## Three-Layer Funnel
 

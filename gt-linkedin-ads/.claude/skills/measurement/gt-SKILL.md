@@ -1,6 +1,6 @@
 ---
 name: linkedin-ads-measurement
-description: Set up LinkedIn Ads measurement, attribution, KPIs, and conversion tracking. Use when the user asks about LinkedIn ads attribution, conversion tracking, LinkedIn Insight Tag, campaign KPIs, LinkedIn ads ROI, pipeline attribution, self-reported attribution, or how to measure LinkedIn Ads success. Triggers on "LinkedIn attribution", "conversion tracking", "Insight Tag", "campaign KPIs", "LinkedIn ROI", "pipeline attribution", "measure LinkedIn ads", "LinkedIn CAPI", "self-reported attribution". Do NOT use for bidding/budget (use bidding) or campaign structure (use campaign-setup).
+description: Set up LinkedIn Ads measurement, attribution, KPIs, and conversion tracking. Use when the user asks about LinkedIn ads attribution, conversion tracking, LinkedIn Insight Tag, campaign KPIs, LinkedIn ads ROI, pipeline attribution, self-reported attribution, Conversions API (CAPI) setup, the Revenue Attribution Report, or how to measure LinkedIn Ads success. Triggers on "LinkedIn attribution", "conversion tracking", "Insight Tag", "campaign KPIs", "LinkedIn ROI", "pipeline attribution", "measure LinkedIn ads", "LinkedIn CAPI", "Conversions API", "Revenue Attribution Report", "RAR", "self-reported attribution". Do NOT use for bidding/budget (use bidding) or campaign structure (use campaign-setup).
 ---
 
 # LinkedIn Ads Measurement & Attribution
@@ -18,8 +18,8 @@ You set up comprehensive measurement and attribution for LinkedIn Ads campaigns.
 
 ## Reference
 
-For measurement framework, attribution stack, and business metrics → Read `{SKILL_BASE}/references/measurement-attribution.md`
-For campaign health indicators and benchmarks → Read `{SKILL_BASE}/references/benchmarks.md`
+For measurement framework, attribution stack, and business metrics → Read `{SKILL_BASE}/resources/references/measurement-attribution.md`
+For campaign health indicators and benchmarks → Read `{SKILL_BASE}/resources/references/benchmarks.md`
 
 ## Core Equation
 

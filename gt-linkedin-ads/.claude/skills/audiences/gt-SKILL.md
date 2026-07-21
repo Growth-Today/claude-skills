@@ -1,6 +1,6 @@
 ---
 name: linkedin-ads-audiences
-description: Build and manage LinkedIn Ads audiences, targeting, exclusions, and ABM account lists. Use when the user asks about LinkedIn ad targeting, audience setup, ICP targeting on LinkedIn, exclusion lists, ABM targeting, company lists vs contact lists, audience sizes, remarketing audiences, or Audience Expansion. Triggers on "LinkedIn targeting", "LinkedIn audience", "exclusion list", "ABM targeting", "company list", "remarketing audience", "audience size", "Audience Expansion". Do NOT use for bidding/budget questions (use bidding) or creative (use creative/copy).
+description: Build and manage LinkedIn Ads audiences, targeting, exclusions, and ABM account lists. Use when the user asks about LinkedIn ad targeting, audience setup, ICP targeting on LinkedIn, exclusion lists, ABM targeting, company lists vs contact lists, audience sizes, remarketing audiences, Audience Expansion, Predictive Audiences, the lookalike sunset, or career-change / Career Journey targeting. Triggers on "LinkedIn targeting", "LinkedIn audience", "exclusion list", "ABM targeting", "company list", "remarketing audience", "audience size", "Audience Expansion", "Predictive Audiences", "lookalike audiences", "Career Journey", "career change targeting". Do NOT use for bidding/budget questions (use bidding) or creative (use creative/copy).
 ---
 
 # LinkedIn Ads Audiences & Targeting
@@ -17,8 +17,9 @@ You build high-performing LinkedIn audiences using ICP-aligned targeting, exclus
 
 ## Reference
 
-For ICP definition, targeting approaches, ABM setup, and exclusion strategy → Read `{SKILL_BASE}/references/targeting-audiences.md`
-For audience size benchmarks and match rates → Read `{SKILL_BASE}/references/benchmarks.md`
+For ICP definition, targeting approaches, ABM setup, and exclusion strategy → Read `{SKILL_BASE}/resources/references/targeting-audiences.md`
+For audience size benchmarks and match rates → Read `{SKILL_BASE}/resources/references/benchmarks.md`
+For Predictive Audiences, the lookalike sunset, and career-signal targeting → Read `{SKILL_BASE}/resources/references/predictive-audiences.md`
 
 ## Three High-Performing Audience Types
 

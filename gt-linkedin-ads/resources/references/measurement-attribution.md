@@ -79,6 +79,26 @@ Set up 90-day click/view windows to capture:
 - Blended pipeline impact
 - Compare multiple data sources for complete picture
 
+## 2026 Deep Dive — Conversions API (CAPI) & Revenue Attribution Report
+
+The two updates that most change LinkedIn measurement in 2025–2026. If you set up nothing else new, set up these two.
+
+### Conversions API (CAPI) — server-side conversions
+
+CAPI securely connects **first-party online AND offline data** to LinkedIn — website actions, **phone sales, and in-person/event conversions** — server-side, so it survives ad blockers and cookie loss. It integrates with **Salesforce, Google Tag Manager, Tealium, and Adobe**, and complements (does not replace) the Insight Tag — run both for overlap and resilience.
+
+**Why it matters (reported results):** CAPI users see roughly **20% lower CPA and ~31% more attributed conversions** vs non-integrated accounts; some report **~39% lower cost per qualified lead**. Dreamdata's 2026 benchmark finds **~75% of LinkedIn advertisers now use CAPI** — it is becoming table stakes, not an edge.
+
+**Setup priority:** Insight Tag → CAPI (via GTM or a CRM/CDP connector) → map offline conversions (closed-won, SQLs) back to LinkedIn so bidding optimizes toward revenue, not form-fills.
+
+### Revenue Attribution Report (RAR) — CRM revenue, not clicks
+
+RAR **connects your CRM to LinkedIn campaigns** and reports **revenue impact at the company level**, with review periods extended up to **365 days** — matching real B2B sales cycles instead of a 30-day click window. Combined with **real-time CRM data now shown inside Campaign Manager (since June 2025)**, you can optimize on pipeline and revenue directly.
+
+**The engagement insight:** Dreamdata 2026 found that **including paid engagement data (not just clicks/conversions) attributes ~7.7x more revenue** — i.e. LinkedIn's brand/engagement effect is real but invisible to click-only tracking. This is the data-backed version of the long-standing "CTR does not predict pipeline" caveat. LinkedIn's own team reported a **150x increase in attribution credit for upper/mid-funnel** campaigns after adopting these tools.
+
+**Implication for optimization:** stop killing upper-funnel campaigns on CTR/CPL alone. Judge them on company-level pipeline over a 90–365 day window via RAR.
+
 ## Measurement Timeline
 - Allow **2-4 weeks** minimum for meaningful data
 - Track long-term pipeline influence over **3-6 months**
