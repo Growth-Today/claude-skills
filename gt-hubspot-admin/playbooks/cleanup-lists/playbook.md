@@ -15,7 +15,7 @@ Audit HubSpot lists to remove clutter. Unused lists slow down the UI, confuse te
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - Note: Lists API access may return 403 on some plan tiers. If so, perform the audit manually in the UI.
 
 ## Step-by-Step Instructions
@@ -27,7 +27,7 @@ Pull all lists via the API:
 ```python
 from hubspot import HubSpot
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 lists = []
 offset = 0

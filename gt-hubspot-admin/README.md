@@ -28,7 +28,7 @@ gt-hubspot-admin/
 └── playbooks/               ← 32 playbooks, loaded on-demand
     ├── <playbook-name>/
     │   ├── playbook.md      ← step-by-step instructions
-    │   └── scripts/         ← optional Python scripts (uv + hubspot-api-client)
+    │   └── scripts/         ← optional Python scripts (requests + python-dotenv)
     └── ...
 ```
 

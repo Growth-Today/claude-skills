@@ -15,7 +15,7 @@ Remove or archive unused custom properties. Property bloat slows down forms, con
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 
 ## Step-by-Step Instructions
 
@@ -26,7 +26,7 @@ Pull properties for each object type:
 ```python
 from hubspot import HubSpot
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 for obj_type in ["contacts", "companies", "deals"]:
     props = api_client.crm.properties.core_api.get_all(

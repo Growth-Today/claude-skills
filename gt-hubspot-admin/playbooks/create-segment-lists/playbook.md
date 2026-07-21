@@ -15,7 +15,7 @@ Build a library of segment lists that enable targeted marketing, accurate report
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - ICP tier property created (run `/create-icp-tiers` first)
 - Lifecycle stages cleaned up (run `/fix-lifecycle-stages` first)
 
@@ -82,7 +82,7 @@ Use the Lists API to create active (smart) lists:
 ```python
 from hubspot import HubSpot
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 # Example: Create "All Customers" list
 api_client.crm.lists.lists_api.create(

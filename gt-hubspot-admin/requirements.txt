@@ -1,0 +1,6 @@
+# gt-hubspot-admin dependencies
+# Scripts (playbooks/*/scripts/*.py) call the HubSpot REST API directly:
+requests>=2.31
+python-dotenv>=1.0
+# The inline code examples inside each playbook.md use the official SDK:
+hubspot-api-client>=9.0

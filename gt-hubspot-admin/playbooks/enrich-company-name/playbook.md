@@ -42,7 +42,7 @@ from hubspot import HubSpot
 from dotenv import load_dotenv
 
 load_dotenv()
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 # Count contacts missing company name
 result = api_client.crm.contacts.search_api.do_search(
@@ -100,7 +100,7 @@ Use this if you need the data populated immediately rather than waiting for work
 # look up their associated company, copy the name
 from hubspot import HubSpot
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 # 1. Search for contacts missing company name
 # 2. For each, get associations to companies

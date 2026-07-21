@@ -14,14 +14,14 @@ Run a full diagnostic audit of a HubSpot CRM portal. This skill collects metrics
 
 ## Setup
 
-1. **Get the API token.** Check `.env` for `HUBSPOT_API_TOKEN`. If it is not set, ask the user to provide their HubSpot private app API token and store it in `.env`:
+1. **Get the API token.** Check `.env` for `HUBSPOT_ACCESS_TOKEN`. If it is not set, ask the user to provide their HubSpot private app API token and store it in `.env`:
    ```
-   HUBSPOT_API_TOKEN=pat-na1-xxxxxxxx
+   HUBSPOT_ACCESS_TOKEN=pat-na1-xxxxxxxx
    ```
 
 2. **Install dependencies.** Use `uv` (not pip):
    ```bash
-   uv pip install hubspot-api-client python-dotenv
+   uv pip install requests python-dotenv hubspot-api-client
    ```
 
 3. **Create the output directory** if it does not exist:
@@ -130,7 +130,7 @@ Write a single Python script (`scripts/audit_portal.py`) that:
 2. Initializes the HubSpot client:
    ```python
    from hubspot import HubSpot
-   api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+   api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
    ```
 3. Runs each dimension's queries sequentially (respect rate limits)
 4. Collects all results into a structured dict

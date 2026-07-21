@@ -28,7 +28,7 @@ Use the HubSpot API to search for contacts where `email_health_flag` is set:
 from hubspot import HubSpot
 from hubspot.crm.contacts import PublicObjectSearchRequest
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 search = PublicObjectSearchRequest(
     filter_groups=[{

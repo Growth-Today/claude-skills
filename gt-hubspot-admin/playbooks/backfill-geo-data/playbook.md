@@ -15,7 +15,7 @@ Fill in missing country, state, and city values on contacts and companies. Geogr
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - Standardized geo values already in place (run `/standardize-geo-values` first)
 
 ## Enrichment Methods
@@ -37,7 +37,7 @@ For contacts with a company domain but no geo data, look up the company's geogra
 from hubspot import HubSpot
 from hubspot.crm.contacts import PublicObjectSearchRequest
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 # Find contacts missing country but with company association
 search = PublicObjectSearchRequest(

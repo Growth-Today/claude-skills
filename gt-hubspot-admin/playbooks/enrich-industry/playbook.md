@@ -58,7 +58,7 @@ from hubspot import HubSpot
 from dotenv import load_dotenv
 
 load_dotenv()
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 # Count contacts missing industry
 result = api_client.crm.contacts.search_api.do_search(

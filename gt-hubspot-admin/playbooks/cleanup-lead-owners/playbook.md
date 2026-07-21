@@ -15,7 +15,7 @@ Remove departed employees from HubSpot and reassign their CRM records. Orphaned 
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - A list of current employees (to compare against HubSpot users)
 - A default owner or round-robin assignment rule for orphaned records
 
@@ -26,7 +26,7 @@ Remove departed employees from HubSpot and reassign their CRM records. Orphaned 
 ```python
 from hubspot import HubSpot
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 # Get all owners including deactivated
 active_owners = api_client.crm.owners.owners_api.get_page(limit=100)

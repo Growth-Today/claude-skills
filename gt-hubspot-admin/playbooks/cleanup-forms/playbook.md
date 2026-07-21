@@ -15,7 +15,7 @@ Audit HubSpot forms to remove unused and test forms. Stale forms clutter the for
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - Note: The Forms API may return 403 on some plan tiers. If so, perform the audit manually in the HubSpot UI under Marketing > Forms.
 
 ## Step-by-Step Instructions
@@ -27,7 +27,7 @@ Pull all forms via the API:
 ```python
 from hubspot import HubSpot
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 forms = api_client.marketing.forms.forms_api.get_page(limit=100)
 ```
 

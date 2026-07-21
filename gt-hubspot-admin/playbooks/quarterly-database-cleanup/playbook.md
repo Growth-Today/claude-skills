@@ -15,7 +15,7 @@ A structured quarterly audit that catches data drift before it becomes a crisis.
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - Previous quarter's report (for trend comparison) — optional on first run
 
 ## Audit Checklist

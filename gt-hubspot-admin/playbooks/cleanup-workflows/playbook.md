@@ -15,7 +15,7 @@ Audit HubSpot workflows to remove dead weight. Unused workflows clutter the auto
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - Note: The Workflows API may return 403 on some plan tiers. If so, audit manually in HubSpot UI under Automation > Workflows.
 
 ## Step-by-Step Instructions
@@ -27,7 +27,7 @@ Pull all workflows. The Automation API endpoint for workflows:
 ```python
 import requests
 
-headers = {"Authorization": f"Bearer {os.getenv('HUBSPOT_API_TOKEN')}"}
+headers = {"Authorization": f"Bearer {os.getenv('HUBSPOT_ACCESS_TOKEN')}"}
 response = requests.get(
     "https://api.hubapi.com/automation/v4/flows",
     headers=headers,

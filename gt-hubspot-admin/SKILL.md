@@ -4,7 +4,7 @@ description: Comprehensive HubSpot CRM administration toolkit by Growth Today (g
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.0.2"
+  version: "1.0.3"
   category: crm-administration
 ---
 
@@ -21,13 +21,13 @@ Trigger on ANY HubSpot portal administration request: cleanup, audit, enrichment
 1. Read the user's request.
 2. Match it to ONE OR MORE playbooks in the index below.
 3. Read the matching `playbooks/<name>/playbook.md` file in full before acting.
-4. If the playbook has a `scripts/` folder, those scripts are runnable Python files using the `hubspot-api-client` package via `uv`.
+4. If the playbook has a `scripts/` folder, those scripts are runnable Python files that call the HubSpot REST API via the `requests` library and read `.env` with `python-dotenv`. The inline code examples inside each `playbook.md` use the `hubspot-api-client` SDK instead — both read the same `HUBSPOT_ACCESS_TOKEN`.
 5. If the request spans multiple playbooks (e.g. "do a full quarterly cleanup"), use `playbooks/quarterly-database-cleanup/playbook.md` or `playbooks/hubspot-implementation-plan/playbook.md` as the meta-orchestrator.
 
 ## Prerequisites (apply to most playbooks)
 
-- HubSpot private app API token in `.env` as `HUBSPOT_API_TOKEN=pat-na1-xxxx`
-- Python with `hubspot-api-client` installed via `uv`
+- HubSpot private app API token as `HUBSPOT_ACCESS_TOKEN=pat-na1-xxxx`. Scripts load it from a `.env` file **in their own playbook folder** (`playbooks/<name>/.env`) via `python-dotenv` — copy the provided `.env.example` there. See `requirements.txt` at the skill root.
+- Python 3.10+ with dependencies installed: `pip install -r requirements.txt` (or `uv add requests python-dotenv hubspot-api-client`). `requests` + `python-dotenv` power the scripts; `hubspot-api-client` powers the SDK examples in the playbooks.
 - Read access to the relevant HubSpot scopes (CRM objects, lists, properties, workflows, owners — varies by playbook)
 
 Each playbook lists its own specific prerequisites and required scopes in its `## Prerequisites` section. Always check those before executing.

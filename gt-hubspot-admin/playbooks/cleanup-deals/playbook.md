@@ -15,7 +15,7 @@ Standardize deal data to make pipeline reporting accurate. Test deals, missing a
 ## Prerequisites
 
 - HubSpot API token in `.env`
-- Python with `hubspot-api-client` installed via `uv`
+- Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - Knowledge of which deal pipelines are active and which are synced from Salesforce
 
 ## Important: Salesforce Sync Considerations
@@ -35,7 +35,7 @@ Pull deal metrics via the API:
 from hubspot import HubSpot
 from hubspot.crm.deals import PublicObjectSearchRequest
 
-api_client = HubSpot(access_token=os.getenv("HUBSPOT_API_TOKEN"))
+api_client = HubSpot(access_token=os.getenv("HUBSPOT_ACCESS_TOKEN"))
 
 # Deals missing amount
 no_amount = PublicObjectSearchRequest(
