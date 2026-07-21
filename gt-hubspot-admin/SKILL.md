@@ -10,7 +10,7 @@ metadata:
 
 # GT HubSpot Admin
 
-Master orchestrator skill for HubSpot CRM administration. Wraps 38 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
+Master orchestrator skill for HubSpot CRM administration. Wraps 41 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 ## When to use this skill
 
@@ -68,6 +68,12 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`engagement-suppression-workflow`** — two-tier sunset workflow that re-engages dormant contacts before suppression.
 - **`lifecycle-progression-workflow`** — automate Lead → MQL → SQL → Opportunity → Customer transitions, each triggered by a specific event.
 - **`new-contact-hygiene-workflow`** — auto-enrich and stage new contacts upon creation. Sets lifecycle stage, copies company name and industry, branches on completeness.
+
+### Governance, permissions & security (3)
+
+- **`users-teams-setup`** — structure users into teams (primary + additional) so routing, reporting rollups, and record visibility work. Audits users with no team.
+- **`permission-sets-roles`** — apply least-privilege access with reusable permission sets; define a role matrix by job function and minimize Super Admins.
+- **`security-health-audit`** — harden the account: minimize Super Admins, enforce 2FA/SSO, and reassign + deactivate stale users safely (frees seats).
 
 ### Data model & properties (3)
 
