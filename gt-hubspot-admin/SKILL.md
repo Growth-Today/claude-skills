@@ -10,7 +10,7 @@ metadata:
 
 # GT HubSpot Admin
 
-Master orchestrator skill for HubSpot CRM administration. Wraps 46 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
+Master orchestrator skill for HubSpot CRM administration. Wraps 49 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 ## When to use this skill
 
@@ -83,11 +83,14 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`revops-core-dashboards`** — build the core RevOps dashboards (pipeline health, stage conversion, lifecycle velocity, forecast, data quality) scoped to the right audience.
 - **`custom-report-builder-guide`** — pick the right report type (single/cross-object/funnel/attribution/cohort) and build reports that reconcile with source-of-truth.
 
-### Data model & properties (3)
+### Data model & properties (6)
 
 - **`property-architecture-governance`** — bring order to property sprawl: naming conventions, property groups, correct field types, source-of-truth ownership, and a governance process. The "build" counterpart to `cleanup-properties`.
 - **`property-validation-rules`** — prevent bad data at entry: convert free-text to dropdowns, configure validation rules (email/phone/number formats), and set required fields.
 - **`import-data-onboarding`** — import external data cleanly: pre-import file cleanup, column mapping, dedup on import, association imports, and post-import validation + rollback.
+- **`custom-objects-setup`** — decide when a custom object is warranted (vs a property/existing object) and set up its schema, properties, associations, and pipeline (Enterprise).
+- **`association-labels-setup`** — label how records relate (decision maker, billing contact, parent/child) so relationships are usable in lists, workflows, and reports.
+- **`calculated-rollup-properties`** — auto-derive values with calculation (same-record formulas) and rollup (aggregate across associated records) properties; no brittle workflows.
 
 ### Pipelines & deals (4)
 
