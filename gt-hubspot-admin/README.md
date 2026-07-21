@@ -1,6 +1,6 @@
 # GT HubSpot Admin
 
-A comprehensive HubSpot CRM administration skill for Claude, built by [Growth Today](https://www.growthtoday.co). A single orchestrator routes to 32 specialised playbooks covering audit, database hygiene, enrichment, segmentation, scoring, automation, and ongoing maintenance.
+A comprehensive HubSpot CRM administration skill for Claude, built by [Growth Today](https://www.growthtoday.co). A master router orchestrates **68 playbooks across 7 sub-skills** covering audit, data hygiene, data model, segmentation, pipelines & deals, automation, reporting, and governance.
 
 ## Install
 
@@ -16,36 +16,47 @@ Not sure how to install or use Claude Skills? Full walkthrough here: **https://w
 
 ## What it does
 
-Trigger it with any HubSpot portal administration request — cleanup, audit, enrichment, suppression, deduplication, workflow building, list segmentation, lead scoring, owner management, lifecycle stage fixes, or routine maintenance. Claude reads the routing index, picks the matching playbook, and follows it step by step.
+Trigger it with any HubSpot portal administration request — cleanup, audit, enrichment, suppression, deduplication, data modelling, pipeline design, workflow and routing automation, reporting, lead scoring, owner and permission management, or routine maintenance. The master router matches the request to one or more sub-skills, each of which routes to the right playbook.
 
 ## Structure
 
 ```
 gt-hubspot-admin/
-├── SKILL.md                 ← orchestrator (auto-loaded by Claude)
+├── SKILL.md                 ← master router (auto-loaded by Claude)
+├── .claude/skills/          ← 7 sub-skills, each a gt-SKILL.md router for its domain
+│   ├── hubspot-data-hygiene/gt-SKILL.md
+│   ├── hubspot-data-model/gt-SKILL.md
+│   ├── hubspot-segmentation/gt-SKILL.md
+│   ├── hubspot-pipelines-deals/gt-SKILL.md
+│   ├── hubspot-automation/gt-SKILL.md
+│   ├── hubspot-reporting/gt-SKILL.md
+│   └── hubspot-governance/gt-SKILL.md
+├── playbooks/               ← 68 playbooks (shared; sub-skills route to them)
+│   └── <playbook-name>/
+│       ├── playbook.md      ← step-by-step instructions
+│       └── scripts/         ← optional Python scripts (requests + python-dotenv)
+├── requirements.txt         ← requests, python-dotenv, hubspot-api-client
+├── .env.example
 ├── README.md                ← this file
-├── LICENSE                  ← MIT
-└── playbooks/               ← 32 playbooks, loaded on-demand
-    ├── <playbook-name>/
-    │   ├── playbook.md      ← step-by-step instructions
-    │   └── scripts/         ← optional Python scripts (requests + python-dotenv)
-    └── ...
+└── LICENSE                  ← MIT
 ```
 
-## Coverage — 32 playbooks across 6 categories
+## Coverage — 68 playbooks across 7 sub-skills
 
-| Category | Playbooks |
+| Sub-skill | Playbooks |
 |---|---|
-| Audit & planning | hubspot-audit, hubspot-implementation-plan |
-| Database hygiene | delete-no-email-contacts, merge-duplicate-companies, reassign-deactivated-owners, suppress-ghost-contacts, suppress-global-unsubscribes, suppress-hard-bounced |
-| Data enrichment | assign-unowned-contacts, enrich-company-name, enrich-industry, fix-lifecycle-stages, standardize-geo-values |
-| Segmentation & scoring | build-lead-scoring, build-smart-lists, create-icp-tiers |
-| Automation workflows | bounce-monitoring-workflow, engagement-suppression-workflow, lifecycle-progression-workflow, new-contact-hygiene-workflow |
-| Ongoing maintenance | backfill-geo-data, cleanup-dashboards, cleanup-deals, cleanup-forms, cleanup-lead-owners, cleanup-lists, cleanup-properties, cleanup-workflows, create-segment-lists, quarterly-database-cleanup, review-bounced-contacts, weekly-cleanup-routine |
+| hubspot-data-hygiene | 17 |
+| hubspot-data-model | 7 |
+| hubspot-segmentation | 6 |
+| hubspot-pipelines-deals | 7 |
+| hubspot-automation | 11 |
+| hubspot-reporting | 6 |
+| hubspot-governance | 10 |
+| Cross-cutting (audit, implementation plan, weekly & quarterly routines) | 4 |
 
 ## Safety
 
-The scripts read your HubSpot access token from the `HUBSPOT_ACCESS_TOKEN` environment variable — no credentials are stored in the skill. Playbooks that modify or delete data follow a `before → execute → after` pattern with pre-flight counts and post-run validation. Review each playbook's stated automation level before running it against a live portal.
+The scripts read your HubSpot access token from the `HUBSPOT_ACCESS_TOKEN` environment variable (via a `.env` in each playbook folder) — no credentials are stored in the skill. Playbooks that modify or delete data follow a `before → execute → after` pattern with pre-flight counts and post-run validation. Review each playbook's stated automation level before running it against a live portal.
 
 ## License
 
