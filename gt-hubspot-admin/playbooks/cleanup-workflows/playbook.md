@@ -70,3 +70,7 @@ Before deleting, check:
 - Use folders in the workflows dashboard to organize by team, purpose, or status.
 - Prefix draft/test workflows with "[TEST]" so they are easy to identify later.
 - Review workflows quarterly as part of the database cleanup routine.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

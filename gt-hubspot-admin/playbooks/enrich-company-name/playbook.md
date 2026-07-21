@@ -163,3 +163,7 @@ print(f"Contacts still missing company name: {result.total}")
 - **Personal email domains exit on the NO branch.** Contacts with gmail.com, yahoo.com, hotmail.com, outlook.com, etc. will not get enriched. This is expected. They need manual enrichment or a third-party tool (ZoomInfo, Clearbit, Apollo) to determine their company.
 - **Company name is a prerequisite for ICP Tier classification.** Run this enrichment before creating ICP Tier workflows.
 - **Schedule the "after" verification script.** Workflow processing for large databases takes time. Do not check results immediately — schedule the verification for 2-4 hours after activation.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

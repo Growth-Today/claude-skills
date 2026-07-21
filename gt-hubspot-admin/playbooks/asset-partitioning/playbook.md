@@ -61,3 +61,7 @@ Pair with `permission-sets-roles` so access level (view/edit) and asset scope (w
 - **Depends on a real team structure** (`users-teams-setup`) — partitioning is only as good as the teams.
 - **Set new-asset defaults** or partitioning decays as people create ungrouped assets.
 - **Pairs with `permission-sets-roles`** for the full access picture.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

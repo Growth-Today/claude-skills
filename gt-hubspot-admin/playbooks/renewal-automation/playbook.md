@@ -69,3 +69,7 @@ Include the renewals pipeline in forecasting (`forecasting-goals-setup`) so recu
 - **Ownership + first task** turn an auto-created deal into actual follow-up.
 - **Forecast renewals separately** so recurring revenue is planned.
 - **Depends on `multiple-pipelines-setup`, `custom-objects-setup`, and `lead-routing-round-robin`.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

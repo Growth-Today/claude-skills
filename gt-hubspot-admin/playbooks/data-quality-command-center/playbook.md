@@ -66,3 +66,7 @@ Add a Command Center review to `weekly-cleanup-routine` (quick scan) and `quarte
 - **Automate the recurring** — formatting issues that keep returning belong in a workflow.
 - **Permissions-gated** — needs Super Admin or data quality tools access.
 - **Ties the whole data-hygiene group together** and feeds the Data Quality tile in `revops-core-dashboards`.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

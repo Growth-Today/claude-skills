@@ -127,3 +127,7 @@ For static lists (Competitors), create the list and manually add contacts or imp
 - Use a consistent naming convention: `[Category] - Segment Name` (e.g., `[ICP] - Tier 1`, `[Industry] - Manufacturing`).
 - Review segment membership quarterly — segments should grow or shrink in expected ways.
 - Use these lists as building blocks for email sends, ad audiences, and workflow enrollment triggers.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

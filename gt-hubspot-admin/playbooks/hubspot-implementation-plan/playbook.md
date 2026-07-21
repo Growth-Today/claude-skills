@@ -312,3 +312,7 @@ The most critical issues are:
 - Suggest starting with `/delete-no-email-contacts` as the first concrete action
 - Flag any findings that need custom skills (Step 6) and offer to create them
 - Provide the contribution quick-start if the user shows interest in contributing
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

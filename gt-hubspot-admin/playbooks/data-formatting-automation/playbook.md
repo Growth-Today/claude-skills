@@ -66,3 +66,7 @@ For normalizations beyond the built-in action (e.g. parsing/reformatting), use a
 - **Watch re-enrollment loops** — normalization writes can re-trigger; guard against it.
 - **Command Center is the feedback loop** — declining flags prove the automation works.
 - **Pairs with `property-validation-rules`, `standardize-geo-values`, `data-quality-command-center`.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

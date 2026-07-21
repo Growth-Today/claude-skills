@@ -66,3 +66,7 @@ Immediate revenue moments → Slack/real-time; follow-ups → task; FYIs → ema
 - **Context in the alert** — link + reason, so the person can act without digging.
 - **Pairs with routing, `deal-rotting-alerts`, and SLA dashboards** — notifications are how those become action.
 - **Fewer, better alerts** beat comprehensive noise.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

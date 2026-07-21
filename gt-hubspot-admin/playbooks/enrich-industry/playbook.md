@@ -148,3 +148,7 @@ print(f"Contacts still missing industry: {result.total}")
 - **If using a text field instead of dropdown:** Enrichment works, but you lose the ability to filter by exact dropdown values in lists. You can convert to a dropdown later but will need to clean up inconsistent text values first.
 - **Run this after company name enrichment.** Company name enrichment may trigger new company associations, which increases the number of contacts eligible for industry enrichment.
 - **Clone the company name workflow.** The structure is nearly identical. Clone it in HubSpot and swap the property references to save time.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

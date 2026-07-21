@@ -66,3 +66,7 @@ Adopt a rule: new workflows follow the naming convention, go in a folder, and ha
 - **Govern at activation.** The cheapest time to enforce the standard is before the workflow goes live.
 - **Pairs with `cleanup-workflows`** — clean up once, then this keeps it clean.
 - **Legible automation is safe automation** — you can only change what you can understand.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

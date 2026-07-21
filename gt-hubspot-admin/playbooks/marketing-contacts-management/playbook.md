@@ -83,3 +83,7 @@ Exclude contacts in active sequences/nurtures from the non-marketing rules so yo
 - **Timing matters** — changes hit at the next billing update; act before renewal.
 - **Heavy overlap with suppression** — coordinate with `suppress-*` playbooks and `contact-data-decay-review`.
 - **Protect active campaigns** — exclude in-sequence contacts from the rules.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

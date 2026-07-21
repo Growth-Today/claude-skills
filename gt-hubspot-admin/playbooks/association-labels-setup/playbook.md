@@ -83,3 +83,7 @@ Apply labels on key accounts (manually for top accounts, or via workflow/import 
 - **Small, defined label set.** There are per-type limits, and sprawl defeats the purpose.
 - **Create ≠ use.** A label that no list/workflow/report references is dead weight — operationalize it.
 - **Powers ABM + deal strategy** — pairs with `custom-objects-setup` (buying committee) and `deal-stage-required-fields` (require an identified decision maker).
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

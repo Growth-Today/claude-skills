@@ -76,3 +76,7 @@ This is a read-only review — no rollback needed. Any fixes identified are exec
 - Run every Monday morning.
 - Set a recurring 15-minute calendar block (5 minutes for the check, 10 minutes buffer for any follow-up).
 - If you miss a week, do not double up — just run the next scheduled check.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

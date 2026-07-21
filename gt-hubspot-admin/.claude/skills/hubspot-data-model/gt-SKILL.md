@@ -16,3 +16,7 @@ Design and govern the data layer: properties, objects, associations, validation,
 | Set up a custom object | `{SKILL_BASE}/playbooks/custom-objects-setup/playbook.md` |
 | Association labels (roles) | `{SKILL_BASE}/playbooks/association-labels-setup/playbook.md` |
 | Calculated & rollup properties | `{SKILL_BASE}/playbooks/calculated-rollup-properties/playbook.md` |
+
+---
+
+Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills

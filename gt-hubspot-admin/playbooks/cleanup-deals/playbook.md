@@ -86,3 +86,7 @@ Record: total deals, deals per pipeline stage, deals missing amount, deals missi
 
 - Establish a deal hygiene rule: deals without activity for 60 days get an automated reminder to the owner (build a simple workflow).
 - Require `amount` and `closedate` as mandatory deal properties to prevent future gaps.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

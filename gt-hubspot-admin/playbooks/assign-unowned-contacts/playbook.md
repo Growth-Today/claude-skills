@@ -187,3 +187,7 @@ print(f"Unowned marketing contacts: {result.total} (should be 0)")
 - **Pair with lead owner cleanup.** Once proper routing is in place, revisit contacts under the catch-all user and reassign them to real owners.
 - **HubSpot bulk edit limits.** For very large batches (10,000+), the UI bulk edit may time out. Use the API approach instead, which handles pagination and batching gracefully.
 - **New contacts need routing too.** After this one-time cleanup, implement a workflow or lead rotation rule to automatically assign owners to new marketing contacts going forward.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

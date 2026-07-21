@@ -96,3 +96,7 @@ Create a saved deal view / report: open deals where `deal_health = At risk` (or 
 - **Board highlight (passive) + workflow (active)** together beat either alone — one nudges, the other guarantees follow-up.
 - **Make it reportable.** A `deal_health` property turns rot into a dashboard metric, not just a task.
 - **Feeds the forecast.** Combined with `deal-stage-required-fields`, weighted pipeline finally reflects live, real deals.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

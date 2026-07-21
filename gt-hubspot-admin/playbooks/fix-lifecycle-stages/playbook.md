@@ -279,3 +279,7 @@ print(f"Companies missing lifecycle stage: {result.total} (should be 0)")
 - **Lifecycle stage and deals interact.** HubSpot can automatically advance lifecycle stage when deals are created or won. Your prevention workflows will not interfere because they only trigger when lifecycle stage is unknown.
 - **Batch edit limitations.** The UI may time out on very large bulk edits. Process one page at a time, or use the API approach for large volumes.
 - **The sub-list approach is important.** Do not skip context-aware assignment and set everyone to "Lead". Contacts associated with Customer or Opportunity companies deserve the correct stage.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

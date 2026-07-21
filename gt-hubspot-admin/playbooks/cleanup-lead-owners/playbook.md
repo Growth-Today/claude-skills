@@ -70,3 +70,7 @@ For each flagged owner, count how many contacts, companies, and deals they own.
 - Run this whenever an employee leaves the company — do not wait for quarterly cleanup.
 - Set up an offboarding checklist that includes HubSpot record reassignment.
 - Pairs with `/assign-unowned-contacts` for comprehensive ownership hygiene.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

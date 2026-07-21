@@ -112,3 +112,7 @@ Adopt a simple rule: new custom properties require a named owner and a reason, a
 - **Naming consistency > naming perfection.** Any documented convention beats an undocumented "best" one.
 - **Governance is the point.** Cleanup is one-time; the owner+reason+review rule is what keeps the model clean.
 - **This underpins everything downstream** — scoring, segmentation, reporting, and validation all assume trustworthy properties.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -64,3 +64,7 @@ Add forecast + goal-attainment tiles to the leadership dashboard (`revops-core-d
 - **Goals give the forecast meaning** — a number without a target isn't actionable.
 - **Surface it on a dashboard** — a forecast nobody sees doesn't drive behavior.
 - **Depends on `deal-pipeline-architecture` + `deal-stage-required-fields`.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

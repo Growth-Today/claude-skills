@@ -69,3 +69,7 @@ Wrap external calls in try/catch, handle timeouts, and log meaningfully. Documen
 - **Test before activating** — the test panel prevents shipping broken logic to live records.
 - **Webhook for send-only** — don't write code when a webhook action suffices.
 - **Operations/Data Hub gated** — confirm the tier before designing around it.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

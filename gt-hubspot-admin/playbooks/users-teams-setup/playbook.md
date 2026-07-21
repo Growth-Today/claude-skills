@@ -92,3 +92,7 @@ Adopt a rule: no user is added without a primary team and a permission set (see 
 - **Hierarchy is Enterprise-only** — don't design rollups you can't enforce on your tier.
 - **No user without a team.** A teamless user is invisible to team routing and misattributed in reports.
 - **Feeds routing + permissions + partitioning** — this playbook is the prerequisite for `lead-routing-round-robin`, `permission-sets-roles`, and `asset-partitioning`.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

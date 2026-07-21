@@ -75,3 +75,7 @@ Reconcile the report against a known number (e.g. total open pipeline in the dea
 - **Always reconcile.** A report that doesn't match a known total isn't trustworthy yet.
 - **Tier limits are real.** Revenue attribution and some cohort features need higher tiers — check before promising them.
 - **Feeds `revops-core-dashboards`** — this is the how-to behind those dashboard tiles.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

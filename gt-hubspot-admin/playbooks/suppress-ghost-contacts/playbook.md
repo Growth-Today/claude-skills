@@ -448,3 +448,7 @@ Create a `.env` file:
 ```
 HUBSPOT_ACCESS_TOKEN=pat-na1-xxxxxxxx
 ```
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

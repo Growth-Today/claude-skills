@@ -20,3 +20,7 @@ Build reliable, well-governed automation. Read the relevant playbook in full bef
 | Re-engagement & re-enrollment | `{SKILL_BASE}/playbooks/reengagement-reenrollment/playbook.md` |
 | Auto-normalize data formatting | `{SKILL_BASE}/playbooks/data-formatting-automation/playbook.md` |
 | Custom-code / webhook actions | `{SKILL_BASE}/playbooks/programmable-automation-custom-code/playbook.md` |
+
+---
+
+Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills

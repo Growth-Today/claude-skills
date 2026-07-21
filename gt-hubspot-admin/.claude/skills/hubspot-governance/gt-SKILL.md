@@ -19,3 +19,7 @@ Secure and govern the portal: users, access, privacy, integrations. Read the rel
 | Subscription types & consent | `{SKILL_BASE}/playbooks/subscription-types-consent/playbook.md` |
 | GDPR & data privacy | `{SKILL_BASE}/playbooks/gdpr-data-privacy/playbook.md` |
 | Salesforce sync management | `{SKILL_BASE}/playbooks/salesforce-sync-management/playbook.md` |
+
+---
+
+Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills

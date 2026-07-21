@@ -204,3 +204,7 @@ If you want to automatically progress contacts through lifecycle stages based on
 - **Tune the model after 30 days.** Review whether top-scored contacts are actually converting. Adjust point values based on real conversion data. Lead scoring is iterative, not one-and-done.
 - **Negative signals are as important as positive ones.** Hard bounces and global unsubscribes should carry heavy negative weight to push these contacts to the bottom regardless of other factors.
 - **ICP Tier is the highest-leverage scoring input.** It captures firmographic fit in a single property. Without it, the Fit score has no company-level signal and relies entirely on persona matching.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -72,3 +72,7 @@ For each custom property, record: name, label, object type, type, group, number 
 - Establish a property naming convention going forward (e.g., `team_purpose_detail`).
 - Limit who can create custom properties to prevent sprawl.
 - HubSpot has a property limit per object type — cleanup prevents hitting it.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

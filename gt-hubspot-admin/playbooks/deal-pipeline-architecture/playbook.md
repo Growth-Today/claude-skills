@@ -138,3 +138,7 @@ When you remove or merge a stage, move its open deals to the closest valid stage
 - **Probabilities only help if they're honest.** Reuse historical stage-conversion rates rather than round numbers where possible.
 - **Fewer pipelines is better.** Split by process, never by team/region — that's what teams and views are for.
 - **Pair this with `deal-stage-required-fields`** so each stage's exit criterion is actually enforced, and with `deal-rotting-alerts` so deals can't sit forever.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

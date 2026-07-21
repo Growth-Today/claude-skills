@@ -26,3 +26,7 @@ Keep the database clean, deliverable, and complete. Read the relevant playbook i
 | Backfill contact industry | `{SKILL_BASE}/playbooks/enrich-industry/playbook.md` |
 | Backfill geo data | `{SKILL_BASE}/playbooks/backfill-geo-data/playbook.md` |
 | Standardize country/state/region | `{SKILL_BASE}/playbooks/standardize-geo-values/playbook.md` |
+
+---
+
+Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills

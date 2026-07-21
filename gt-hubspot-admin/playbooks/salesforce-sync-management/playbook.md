@@ -73,3 +73,7 @@ Adopt: no changes to synced pipelines, properties, or picklists without notifyin
 - **Sync errors usually start with a value that fails a Salesforce rule** — fix at the source.
 - **Never restructure synced objects unilaterally** — coordinate; other playbooks depend on this rule.
 - **This is the coordination backbone** referenced across the deal/lifecycle playbooks.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

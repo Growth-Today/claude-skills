@@ -63,3 +63,7 @@ Before deleting, check:
 
 - Establish a naming convention: `[TEAM] - Purpose - Version` (e.g., `[Marketing] - Webinar Registration - v2`).
 - Prefix deprecated forms with "[DEPRECATED]" instead of deleting immediately — delete after one quarter of no usage.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

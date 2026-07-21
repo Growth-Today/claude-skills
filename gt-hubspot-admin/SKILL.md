@@ -4,7 +4,7 @@ description: Comprehensive HubSpot CRM administration toolkit by Growth Today (g
 license: MIT
 metadata:
   author: growthtoday
-  version: "2.0.0"
+  version: "2.0.1"
   category: crm-administration
 ---
 

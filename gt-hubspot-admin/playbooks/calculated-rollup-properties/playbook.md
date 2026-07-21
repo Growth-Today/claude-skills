@@ -73,3 +73,7 @@ Feed these into lead/account scoring, segmentation (e.g. "companies with >$50k o
 - **Source field types must be correct** — a "number" stored as text won't calculate. Fix types first (`property-architecture-governance`).
 - **Tier + association dependencies apply** — rollups need associations; some features need Pro/Enterprise.
 - **Feeds scoring, segmentation, and dashboards** with live, trustworthy derived metrics.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -65,3 +65,7 @@ Sanity-check that credited sources match reality (spot-check a known deal's jour
 - **Tier-gated** — revenue attribution is Marketing Hub Enterprise; plan around it.
 - **Always label the model** on the report so stakeholders don't misinterpret.
 - **Feeds `revops-core-dashboards`** and pairs with `custom-report-builder-guide`.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -102,3 +102,7 @@ This is a read-only audit — no rollback needed. Action items from the report a
 - Set a recurring calendar reminder for the first Monday of each quarter.
 - Assign an owner for each action item in the report.
 - Review the previous quarter's action items for completion before starting the new audit.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -95,3 +95,7 @@ Exclude existing-customer contacts and already-owned records from enrollment so 
 - **Assignment without an SLA task is half a solution** — pair rotation with a task/notification.
 - **Exclude owned + customer records** from enrollment to avoid hijacking live relationships.
 - **Depends on `users-teams-setup` and `lead-status-taxonomy`** — teams are the routing target, lead status is the trigger.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

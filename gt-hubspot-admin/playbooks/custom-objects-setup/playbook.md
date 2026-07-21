@@ -105,3 +105,7 @@ Define association labels where needed (`association-labels-setup`). If the obje
 - **Enterprise-only.** Don't design around custom objects on a non-Enterprise tier.
 - **Reuse before create.** Audit existing schemas so you don't build a second object for the same concept.
 - **Pairs with `association-labels-setup`, `calculated-rollup-properties`, and `property-architecture-governance`.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -86,3 +86,7 @@ Because imports and API writes bypass validation, add a scheduled re-run of `bef
 - **Front door + back door.** Rules stop manual/form entry; only monitoring catches import/API/workflow writes — do both.
 - **Require sparingly.** Over-requiring at capture pushes users to enter junk to get past the gate.
 - **Pairs with `property-architecture-governance`** (right types) and `import-data-onboarding` (the biggest bypass source).
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

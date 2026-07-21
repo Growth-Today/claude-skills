@@ -80,3 +80,7 @@ For each: choose the report type in the custom report builder (see `custom-repor
 - **Schedule delivery.** A dashboard nobody opens is worthless — push it to inboxes.
 - **The Data Quality Monitor closes the loop** — it makes hygiene visible and keeps the other playbooks honest.
 - **Pairs with `custom-report-builder-guide`** for the how-to on each report type.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

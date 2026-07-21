@@ -67,3 +67,7 @@ Route on the **company/account** where possible so all contacts on an account sh
 - **Route at the account level** to avoid split ownership across a company's contacts.
 - **Always a fallback** — the top routing gap is leads matching no territory.
 - **Layers on `lead-routing-round-robin`** using `users-teams-setup`, `standardize-geo-values`, `create-icp-tiers`.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

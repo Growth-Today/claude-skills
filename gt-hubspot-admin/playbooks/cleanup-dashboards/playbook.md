@@ -61,3 +61,7 @@ Consolidation targets:
 - Assign a dashboard owner for each core dashboard — someone responsible for keeping it current.
 - Review dashboards quarterly as part of the database cleanup routine.
 - If a report on a dashboard shows stale or broken data, fix the underlying report rather than creating a new dashboard.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

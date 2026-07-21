@@ -82,3 +82,7 @@ Decayed, unengaged contacts you're paying for → set non-marketing where approp
 - **Freshness protects deliverability** — stale targeting quietly lowers inbox placement.
 - **It saves money** — decayed unengaged contacts inflate the marketable bill.
 - **Sits between enrichment and suppression** in the data-hygiene group.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

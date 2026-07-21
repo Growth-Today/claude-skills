@@ -61,3 +61,7 @@ Review key workflows:
 - **Re-engage before you suppress** — a last nudge recovers some contacts and cleans the rest.
 - **One-time vs repeatable** is the core distinction for the re-enrollment toggle.
 - **Feeds `engagement-suppression-workflow` and `contact-data-decay-review`.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

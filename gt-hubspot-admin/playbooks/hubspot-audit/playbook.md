@@ -319,3 +319,7 @@ or jump straight to the first skill: `/delete-no-email-contacts`.
 - Highlight the top 3 most critical findings
 - Flag any findings that have no matching skill (Step 3 above)
 - Suggest running `/hubspot-implementation-plan` for the full phased plan
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

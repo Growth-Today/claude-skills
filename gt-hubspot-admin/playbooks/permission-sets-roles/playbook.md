@@ -100,3 +100,7 @@ Rule: new users get a **permission set by role + a primary team** (with `users-t
 - **Guard the settings-level permissions.** Property edit, workflow edit, and data quality tools cause the most accidental damage — restrict to admins.
 - **Least privilege is a process, not a one-time pass** — re-review during `quarterly-database-cleanup`.
 - **Depends on `users-teams-setup`** and pairs with `security-health-audit` for the full governance picture.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -85,3 +85,7 @@ Set a sensible default (e.g. "New") for records with no lead status, and re-map 
 - **One agreed handoff trigger** is what ends the marketing-vs-sales MQL argument — and what routing depends on.
 - **Keep the set small.** Every extra status is another thing to define, train, and report on.
 - **Feeds `lead-routing-round-robin` and the lifecycle dashboards** in `revops-core-dashboards`.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

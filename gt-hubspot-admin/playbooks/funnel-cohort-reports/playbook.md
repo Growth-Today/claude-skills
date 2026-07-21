@@ -64,3 +64,7 @@ For funnels: pair the worst drop-off with a fix (routing, nurture, stage-gating)
 - **Cohort needs a clean start date** — the grouping property is the whole basis.
 - **A report without an action is decoration** — tie each to a fix.
 - **Extends `custom-report-builder-guide`; feeds `revops-core-dashboards`.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

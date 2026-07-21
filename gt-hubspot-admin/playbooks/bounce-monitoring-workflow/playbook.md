@@ -148,3 +148,7 @@ For contacts flagged at your review threshold:
 3. **Delete** contacts with invalid domains or clearly fake emails.
 4. **Keep suppressed** contacts with valid domains but repeated soft bounces.
 5. Clear the bounce review property after review.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -64,3 +64,7 @@ Use sensitive-data controls / field-level permissions for regulated fields (`per
 - **Consent maps to subscription types** — the two systems work together.
 - **This is configuration, not legal advice** — confirm lawful bases + retention with counsel.
 - **Pairs with `subscription-types-consent`, `permission-sets-roles`, suppression playbooks.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

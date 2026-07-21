@@ -89,3 +89,7 @@ Integrate with a third-party enrichment service (Clearbit, ZoomInfo, Apollo, etc
 
 - IP-based geolocation (from form submissions) is already captured by HubSpot in `ip_city`, `ip_state`, `ip_country`. Copy these to the standard fields if the standard fields are empty.
 - Do not overwrite manually-entered geo data with enrichment data — always check "if empty" before writing.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

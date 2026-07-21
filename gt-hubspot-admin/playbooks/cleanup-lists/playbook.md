@@ -72,3 +72,7 @@ Cross-reference with workflows and email campaigns before deleting — a list wi
 - Run this quarterly as part of the database cleanup routine.
 - Establish a naming convention going forward (e.g., prefix with team name or purpose).
 - Archive lists by prefixing with "[ARCHIVE]" instead of deleting if you are unsure.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

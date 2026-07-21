@@ -225,3 +225,7 @@ for variant in variants:
 - **Root cause matters as much as cleanup.** The variants were likely created by imports, API integrations, or free-text form fields that bypassed dropdowns. Fixing the root cause (forms, import templates, integration mappings) is as important as fixing existing data.
 - **Export before editing (optional safety measure).** Before bulk editing, export affected contacts/companies with their current values as a backup CSV.
 - **Bulk edit limits vary by plan.** HubSpot may limit bulk edits to certain batch sizes (100-250 at a time). For large numbers, you may need to repeat the select-all-and-edit process multiple times, or use the API approach instead.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

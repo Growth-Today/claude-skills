@@ -80,3 +80,7 @@ For each flagged contact, check:
 ## Frequency
 
 Run weekly, ideally Monday morning. Should take 5-15 minutes depending on volume. If volume exceeds 50 contacts per week, investigate the root cause (bad list source, form spam, etc.).
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

@@ -80,3 +80,7 @@ Turn on/keep HubSpot's duplicate prevention, and fix the entry points (dedupe on
 - **Merges aren't bulk-undoable** — review before, don't mass-merge on weak signals.
 - **Prevention closes the loop** — dedup-on-import + email validation stop new duplicates.
 - **Complements `merge-duplicate-companies`** for full deduplication.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

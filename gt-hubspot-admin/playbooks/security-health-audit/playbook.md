@@ -80,3 +80,7 @@ For departed or never-logging-in users: **first** reassign their owned records (
 - **Super Admin sprawl is a security issue, not just a permissions one** — minimize it here and in `permission-sets-roles`.
 - **Deactivating stale users saves money** by recovering paid seats.
 - **Make it recurring.** Security drifts as people join and leave — audit on a schedule.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

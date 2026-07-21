@@ -310,3 +310,7 @@ for tier_value in ["tier_1_primary", "tier_2_secondary", "tier_3_tertiary", "not
 - **Do not manually edit ICP Tier values.** The workflows manage this property. If you need exceptions, create a separate "ICP Tier Override" property and adjust workflows to respect it.
 - **Include industry label variants.** HubSpot has multiple labels for the same vertical (e.g., "Manufacturing" vs "Industrial Automation" vs "Machinery" vs "Electrical/Electronic Manufacturing"). Check what values actually exist in your data and include all relevant variants in your workflow filters.
 - **Validate with a script after Breeze creates workflows.** If your HubSpot API token has the `automation-access` scope, you can read workflow definitions via the Workflows API and programmatically verify that triggers match your spec.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

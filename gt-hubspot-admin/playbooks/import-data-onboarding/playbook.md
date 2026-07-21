@@ -92,3 +92,7 @@ Import a 10–20 row sample first. Verify mapping, dedup behavior, and associati
 - **Test batch always.** A 20-row dry run surfaces mapping errors before they hit 50,000 rows.
 - **Imports bypass validation & stage-gating.** The import process must carry the discipline — plus post-import checks.
 - **Import history is your undo.** You can delete records from a specific import; know this before you run the big one.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

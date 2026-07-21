@@ -66,3 +66,7 @@ Group into an "Operations / SLA" dashboard, scoped to RevOps + managers, with sc
 - **Pair dashboards with alerts** — a red tile nobody sees changes nothing (`internal-notification-workflows`).
 - **SLAs are a business agreement** — align the teams before you measure them.
 - **Builds on `revops-core-dashboards`, `deal-rotting-alerts`, `lead-status-taxonomy`.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

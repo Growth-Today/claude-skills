@@ -175,3 +175,7 @@ To use this approach:
 - **Shorten the sunset window** (e.g., 90-120 days) for aggressive deliverability improvement.
 - **Lengthen the re-engagement window** (e.g., 45-60 days) if your email cadence is low.
 - **Exclude recent customers** — add a filter to skip contacts with lifecycle stage = Customer or with a closed-won deal in the last 12 months.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

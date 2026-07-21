@@ -177,3 +177,7 @@ TRIGGER: Contact create date is known
 - **Contacts created via import:** These fire the trigger. If imports include company name/industry, the copy action will overwrite with the associated company's values. Consider excluding imported contacts via a list filter.
 - **Contacts without company associations:** The copy action silently fails. The branch handles notification.
 - **Multiple associated companies:** HubSpot copies from the primary associated company only.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

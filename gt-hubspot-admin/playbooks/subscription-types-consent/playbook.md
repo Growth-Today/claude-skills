@@ -61,3 +61,7 @@ Assign each marketing email to the correct subscription type. Ensure existing co
 - **Subscription type = the consent unit** — every email maps to one; consent changes are logged.
 - **Small, real categories** — sprawl confuses contacts and dilutes the point.
 - **Pairs with `gdpr-data-privacy` and `suppress-global-unsubscribes`.**
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

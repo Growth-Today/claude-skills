@@ -64,3 +64,7 @@ Ensure new deals land in the correct pipeline (creation defaults / workflow). Fo
 - **Consolidated reporting matters** — don't let multiple pipelines hide the total forecast.
 - **Permissions are Enterprise** — don't design pipeline-level access you can't enforce.
 - **Extends `deal-pipeline-architecture`** to multi-motion orgs.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

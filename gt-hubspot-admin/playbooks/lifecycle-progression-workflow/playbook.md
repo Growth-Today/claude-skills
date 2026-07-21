@@ -156,3 +156,7 @@ Build each as a separate contact-based workflow.
 - **Backward movement:** HubSpot prevents lifecycle stage from going backward by default. If a deal is lost and the contact should return to MQL, you need a separate "regression" workflow that explicitly sets the stage.
 - **Multiple deals:** If a contact has multiple deals, the Opportunity-to-Customer workflow fires when any associated deal is closed-won. This is usually the desired behavior.
 - **Score decay:** If your lead scoring model includes decay, a contact's score may drop below the MQL threshold after promotion. This is fine — the lifecycle stage is already set and will not regress.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

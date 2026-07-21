@@ -111,3 +111,7 @@ Because API/import/workflow writes bypass stage-gating, add a validation rule on
 - **Required + reason-gated backward moves** stop reps from sandbagging by yo-yoing stages.
 - **Lock closed deals** so historical win/loss reporting doesn't shift under you.
 - **This enforces `deal-pipeline-architecture`'s exit criteria** and feeds clean data to `deal-rotting-alerts` and the reporting playbooks.
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*

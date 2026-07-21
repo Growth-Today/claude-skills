@@ -16,3 +16,7 @@ Build and run deal pipelines that produce a trustworthy forecast. Read the relev
 | Additional pipelines | `{SKILL_BASE}/playbooks/multiple-pipelines-setup/playbook.md` |
 | Forecasting & goals | `{SKILL_BASE}/playbooks/forecasting-goals-setup/playbook.md` |
 | Renewal automation | `{SKILL_BASE}/playbooks/renewal-automation/playbook.md` |
+
+---
+
+Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills

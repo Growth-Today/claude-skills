@@ -202,3 +202,7 @@ After all lists are created and processed:
 - **Each list should be active (dynamic), not static.** Static lists are snapshots that never update. Active lists update automatically as contact properties change, which is essential for ongoing segmentation.
 - **Plan for growth.** These 10 lists cover core use cases. As marketing operations mature, add more targeted lists: "MQL Ready" (score threshold), "Competitor Employees" (for exclusion), "Recent Form Submitters (Last 30 Days)" (for fast follow-up), or service/product-specific interest lists.
 - **Build a dashboard.** Create a dashboard with one KPI tile per list showing the current count. This gives at-a-glance visibility into segment health and makes it easy to spot sudden changes (e.g., Marketable list drops 50% = something broke).
+
+---
+
+*Part of [gt-hubspot-admin](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) by [Growth Today](https://www.growthtoday.co) · maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/).*
