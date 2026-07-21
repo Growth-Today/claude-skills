@@ -10,7 +10,7 @@ metadata:
 
 # GT HubSpot Admin
 
-Master orchestrator skill for HubSpot CRM administration. Wraps 49 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
+Master orchestrator skill for HubSpot CRM administration. Wraps 56 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 ## When to use this skill
 
@@ -39,7 +39,7 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`hubspot-audit`** — full diagnostic audit across 8 dimensions (contacts, companies, deals, engagement, data quality, deliverability) with grades and prioritized recommendations. Use when starting a CRM cleanup, onboarding a new client, or running quarterly health checks.
 - **`hubspot-implementation-plan`** — generate a phased implementation plan from an audit report. Creates prioritized, sequenced cleanup processes with effort estimates, dependencies, and automation feasibility. Use after `hubspot-audit`.
 
-### Database hygiene (6)
+### Database hygiene (9)
 
 - **`delete-no-email-contacts`** — delete contacts with no email address (cannot receive any communication, inflate billing). Fully automated via CRM Search and Batch Archive APIs.
 - **`merge-duplicate-companies`** — identify duplicate companies by domain and name, export audit CSVs, guide merging. API for discovery, manual UI or third-party tools for merging.
@@ -47,6 +47,9 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`suppress-ghost-contacts`** — suppress contacts who received marketing emails but never opened any. Hybrid: API for discovery, manual UI for suppression.
 - **`suppress-global-unsubscribes`** — suppress globally unsubscribed contacts for legal compliance and reduced billing. Hybrid: API for discovery, manual UI for suppression.
 - **`suppress-hard-bounced`** — suppress hard-bounced contacts to protect sender reputation. Hybrid: API for discovery, manual UI for suppression.
+- **`dedupe-contacts`** — find and merge duplicate contacts by email and name+company; documents trusted match rules. Complements `merge-duplicate-companies`.
+- **`data-quality-command-center`** — operate HubSpot's native Data Quality Command Center: monitor duplicates, formatting issues, and property anomalies, then automate recurring fixes.
+- **`contact-data-decay-review`** — find decayed records (stale activity, job changes, unengaged) and route to re-verify / enrich / re-engage / suppress before decay corrupts targeting.
 
 ### Data enrichment (5)
 
@@ -56,12 +59,13 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`fix-lifecycle-stages`** — ensure all contacts and companies have appropriate lifecycle stages. Backfills missing, fixes stuck, prevents future gaps.
 - **`standardize-geo-values`** — convert inconsistent country/state/region formats to standardized values. Required for reliable geographic segmentation.
 
-### Segmentation & scoring (4)
+### Segmentation & scoring (5)
 
 - **`build-lead-scoring`** — build separate Fit and Engagement scoring models using HubSpot's new Lead Scoring tool. Replaces deprecated HubSpot Score property.
 - **`build-smart-lists`** — create foundational segmented lists (master sendable, ICP-based, persona, engagement, behavioral) — all active/dynamic.
 - **`create-icp-tiers`** — classify companies into ICP tiers based on firmographic data (industry + employee count). Creates custom property + 4 classification workflows.
 - **`lead-status-taxonomy`** — define a clear lead status value set with entry/exit definitions and the MQL/SQL handoff trigger; distinct from lifecycle stage.
+- **`marketing-contacts-management`** — control marketing-contact status to cut billing waste: set unengaged/non-sendable contacts non-marketing and automate it.
 
 ### Automation workflows (6)
 
@@ -92,12 +96,15 @@ Each playbook lists its own specific prerequisites and required scopes in its `#
 - **`association-labels-setup`** — label how records relate (decision maker, billing contact, parent/child) so relationships are usable in lists, workflows, and reports.
 - **`calculated-rollup-properties`** — auto-derive values with calculation (same-record formulas) and rollup (aggregate across associated records) properties; no brittle workflows.
 
-### Pipelines & deals (4)
+### Pipelines & deals (7)
 
 - **`deal-pipeline-architecture`** — design deal stages around buyer commitments (not rep actions), remove fake/zombie stages, set entry/exit criteria and win probabilities. Foundation for reliable forecasting.
 - **`deal-stage-required-fields`** — require the right deal properties before a deal can advance to each stage; restrict backward moves and lock closed deals. Enforces the pipeline's exit criteria.
 - **`deal-rotting-alerts`** — set a max age per stage, audit deals that exceed it, and build date-based workflows + a dashboard to surface and act on stale pipeline.
 - **`cleanup-deals`** — standardize deal data, remove test deals, address missing amounts/close dates. Coordinates with Salesforce sync.
+- **`multiple-pipelines-setup`** — add additional deal pipelines only when the process genuinely differs; set distinct stages, permissions, and consolidated reporting.
+- **`forecasting-goals-setup`** — configure the forecast tool and team/rep goals; track attainment with sales analytics.
+- **`renewal-automation`** — auto-create renewal deals ahead of contract end, assign owners, and trigger the renewal motion so recurring revenue doesn't slip.
 
 ### Ongoing maintenance (11)
 
