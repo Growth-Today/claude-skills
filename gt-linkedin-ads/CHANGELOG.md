@@ -35,14 +35,14 @@ All notable changes to this skill. Newest first.
 
 ## v2.0.1 — 2026-07-21
 
-**Summary:** Removed all references to competitor services and re-anchored ABM benchmarks to the authoritative source. No GT strategy lost — the ABM guides were rewritten GT-native.
+**Summary:** ABM guides rewritten GT-native and benchmarks re-anchored to the authoritative source. No GT strategy lost.
 
 **Changed:**
-- Rewrote `resources/references/abm/linkedin-ads-abm-guide.md` GT-native: dropped every reference to a competitor agency, its credit block, and its operational tables (team-requirements/FTE plan, tool-stack cost table). Benchmarks now point to `benchmarks.md` (ZenABM 2026) with an evidence-discipline caveat (check objective/geo/methodology/sample/maturity before applying any figure).
-- Cleaned `resources/references/abm/ads-outbound-signaling-guide.md`: removed the "Source:" lines and the competitor credit block; content kept.
+- Rewrote `resources/references/abm/linkedin-ads-abm-guide.md` GT-native: benchmarks now point to `benchmarks.md` (ZenABM 2026) with an evidence-discipline caveat (check objective/geo/methodology/sample/maturity before applying any figure); removed non-GT third-party source material and operational tables (team-requirements/FTE plan, tool-stack cost table).
+- Cleaned `resources/references/abm/ads-outbound-signaling-guide.md`: removed third-party "Source:" lines and credit block; content kept.
 - Added a note on EU restrictions for Conversation/Message Ads.
 
-**Policy:** competitor agencies/services are never referenced in GT skills; SaaS tools (ZenABM, HubSpot, Clay, Fibbler, etc.) remain named as products.
+**Policy:** GT skills name only SaaS tools/products (ZenABM, HubSpot, Clay, Fibbler, etc.); they don't cite outside agencies/services.
 
 ---
 
