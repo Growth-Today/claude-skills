@@ -4,17 +4,13 @@ description: Comprehensive Salesforce CRM administration toolkit by Growth Today
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.0.0"
+  version: "1.0.1"
   category: crm-administration
 ---
 
 # GT Salesforce Admin
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
-
-Master orchestrator skill for Salesforce CRM administration. Wraps 32 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
-
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Master orchestrator skill for Salesforce CRM administration. Wraps 35 specialised playbooks covering audit, hygiene, enrichment, segmentation, automation, and ongoing maintenance.
 
 This is the Salesforce twin of `gt-hubspot-admin`. The structure mirrors it, but every playbook is ported to the Salesforce object model, API, and tooling. The key difference: Salesforce splits the pre-conversion Lead and the post-conversion Contact into two separate objects, uses Account and Opportunity instead of Company and Deal, has no native enrichment engine, and enforces data quality through Validation Rules, Matching Rules, and Duplicate Rules rather than HubSpot-style properties and workflows.
 
@@ -93,6 +89,12 @@ Each playbook lists its own specific prerequisites in its `## Prerequisites` sec
 - **`lead-lifecycle-flow`** — automate Lead Status progression and Lead-to-Opportunity conversion triggers, each fired by a specific event.
 - **`new-record-hygiene-flow`** — auto-enrich and stage new Leads and Contacts on creation. Sets Lead Status, copies Account name and industry, branches on completeness.
 
+### Security & access (3)
+
+- **`audit-profiles-permission-sets`** — audit profiles vs permission sets vs permission set groups, flag dangerous perms (Modify/View All Data), and migrate to a least-privilege, permission-set-based model.
+- **`setup-roles-and-record-access`** — design the record-visibility model: role hierarchy, org-wide defaults (OWD), and sharing rules.
+- **`field-level-security-audit`** — map FLS per profile/permission set, protect sensitive fields, and remove accidental exposure.
+
 ### Ongoing maintenance (12)
 
 - **`backfill-geo-data`** — enrich missing geographic data (country, state, city) on Leads, Contacts, and Accounts via Flow, external providers, or IP-based geolocation.
@@ -140,6 +142,8 @@ For anyone porting from `gt-hubspot-admin`, this is the 1:1 map. Same logic, dif
 - Salesforce has stronger native data-quality enforcement than HubSpot (Validation Rules, Matching Rules, Duplicate Rules) but no native enrichment, so enrichment playbooks always require a third-party source (Apollo, Clearbit, Default, Clay).
 - Some playbooks are fully API-automated; others are hybrid (API discovery + manual Setup execution) due to the fact that Matching Rules, Duplicate Rules, Validation Rules, and Flows are configured in Setup, not via the data API. Each playbook clearly states its automation level.
 - Always back up with Data Loader before any bulk delete or update. The Recycle Bin holds deleted records for 15 days only.
+
+---
 
 ---
 

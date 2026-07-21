@@ -1,0 +1,4 @@
+# gt-salesforce-admin dependencies
+# Scripts (e.g. playbooks/salesforce-audit/scripts/audit_org.py) use the Salesforce API:
+simple-salesforce>=1.12
+python-dotenv>=1.0
