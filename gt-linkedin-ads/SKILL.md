@@ -1,7 +1,12 @@
 ---
 name: gt-linkedin-ads
 description: "GT LinkedIn Ads — expert LinkedIn Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about LinkedIn advertising, LinkedIn campaign setup, LinkedIn ad targeting, LinkedIn bidding strategies, LinkedIn ad formats, LinkedIn retargeting, LinkedIn ABM campaigns, LinkedIn Thought Leader Ads, sequenced TLAs and Story Arcs, LinkedIn funnel architecture, LinkedIn ads measurement/attribution, LinkedIn ads troubleshooting, LinkedIn creative best practices, or any B2B paid social strategy involving LinkedIn. Triggers on: LinkedIn campaign, LinkedIn CPM, LinkedIn CTR, LinkedIn lead gen, B2B ads, demand gen on LinkedIn, sponsored content, thought leader ads, Predictive Audiences, Accelerate, Conversions API, LinkedIn ads not working. Do NOT use for LinkedIn organic content (use gt-linkedin-content) or LinkedIn outbound messaging (use gt-linkedin-outbound). More GT skills: growthtoday.co."
-version: v2.0.0
+version: v2.1.0
+# v2.1.0 (2026-07-21): P1 additions — CRM-attribution reference (HubSpot + Salesforce, offline
+# conversions, Campaign Influence, U-shaped model) cross-linked to gt-hubspot-admin/gt-salesforce-admin;
+# new audit sub-skill + audit control catalog (triad parity with gt-meta-ads).
+# v2.0.1 (2026-07-21): Removed all competitor-agency references + operational tables from the
+# ABM guides; ABM benchmarks re-anchored to ZenABM with evidence-discipline framing.
 # v2.0.0 (2026-07-21): Restructured into a master router + 9 sub-skills under .claude/skills/
 # (audiences, ads-outbound-sync, bidding, campaign-setup, copy, creative, measurement,
 # optimization, abm-strategy). Resources stay shared at resources/. No strategy content removed.
@@ -40,6 +45,7 @@ Expert LinkedIn Ads strategist with $25M+ in managed B2B ad spend. Route every r
 | Ad formats, visual design, Thought Leader Ads, Document Ads, AI creative | **creative** | `{SKILL_BASE}/.claude/skills/creative/gt-SKILL.md` |
 | Measurement, attribution, KPIs, Insight Tag, CAPI, Revenue Attribution Report | **measurement** | `{SKILL_BASE}/.claude/skills/measurement/gt-SKILL.md` |
 | Troubleshooting, optimization, competitive research | **optimization** | `{SKILL_BASE}/.claude/skills/optimization/gt-SKILL.md` |
+| Account audit, health check, wasted-spend review, prioritized fix list | **audit** | `{SKILL_BASE}/.claude/skills/audit/gt-SKILL.md` |
 | ABM strategy, budget math, campaign structure for ABM | **abm-strategy** | `{SKILL_BASE}/.claude/skills/abm-strategy/gt-SKILL.md` |
 
 ## Shared Reference Files
@@ -52,8 +58,10 @@ Expert LinkedIn Ads strategist with $25M+ in managed B2B ad spend. Route every r
 | `{SKILL_BASE}/resources/references/bidding-objectives.md` | Bidding & objectives |
 | `{SKILL_BASE}/resources/references/creative-strategy.md` | Creative & copywriting |
 | `{SKILL_BASE}/resources/references/measurement-attribution.md` | Measurement & attribution (incl. CAPI + RAR deep dive) |
+| `{SKILL_BASE}/resources/references/crm-attribution.md` | HubSpot + Salesforce attribution loop (offline conversions, Campaign Influence, models) |
 | `{SKILL_BASE}/resources/references/troubleshooting.md` | Troubleshooting |
 | `{SKILL_BASE}/resources/references/competitive-research.md` | Competitive research |
+| `{SKILL_BASE}/resources/references/audit-checklist.md` | LinkedIn Ads audit control catalog |
 | `{SKILL_BASE}/resources/references/predictive-audiences.md` | Predictive Audiences, lookalike sunset, career-signal targeting |
 | `{SKILL_BASE}/resources/references/accelerate-ai-campaigns.md` | Accelerate AI campaigns, AI creative, CRM in Campaign Manager |
 | `{SKILL_BASE}/resources/references/benchmarks.md` | Key benchmarks |

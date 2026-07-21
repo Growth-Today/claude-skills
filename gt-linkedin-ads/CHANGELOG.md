@@ -4,6 +4,31 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.1.0 — 2026-07-21
+
+**Summary:** P1 coverage additions from the critical review — the CRM-attribution loop and a structured account audit. Sub-skills now number 10.
+
+**Added:**
+- `resources/references/crm-attribution.md` — HubSpot 3-layer connection (native + CAPI + Insight Tag) with the offline-conversion loop on lifecycle-stage changes (~+30–50% SQL at same spend), Salesforce offline conversions + Campaign Influence for account-level attribution, the B2B U-shaped model default, and a 7–14d setup / 4–8wk learning timeline. Cross-linked to **gt-hubspot-admin** and **gt-salesforce-admin** for the CRM-side build. Wired into the `measurement` sub-skill.
+- `.claude/skills/audit/gt-SKILL.md` + `resources/references/audit-checklist.md` — a GT-native LinkedIn Ads **audit** sub-skill with a 28-control catalog across tracking, targeting, creative, bidding/budget/structure, and outcomes/governance, built on evidence discipline (mark n/a/unknown; benchmarks are conditional; betas aren't failures). Brings triad parity with `gt-meta-ads` (which already had an audit). Audit-catalog pattern is common in paid-media audits (incl. MIT-licensed AgriciDaniel/claude-ads); implemented GT-native.
+
+**Sources:** LinkedIn Marketing Solutions Help and HubSpot Knowledge Base (official docs), plus public B2B attribution best-practice guidance — accessed 2026-07-21.
+
+---
+
+## v2.0.1 — 2026-07-21
+
+**Summary:** Removed all references to competitor services and re-anchored ABM benchmarks to the authoritative source. No GT strategy lost — the ABM guides were rewritten GT-native.
+
+**Changed:**
+- Rewrote `resources/references/abm/linkedin-ads-abm-guide.md` GT-native: dropped every reference to a competitor agency, its credit block, and its operational tables (team-requirements/FTE plan, tool-stack cost table). Benchmarks now point to `benchmarks.md` (ZenABM 2026) with an evidence-discipline caveat (check objective/geo/methodology/sample/maturity before applying any figure).
+- Cleaned `resources/references/abm/ads-outbound-signaling-guide.md`: removed the "Source:" lines and the competitor credit block; content kept.
+- Added a note on EU restrictions for Conversation/Message Ads.
+
+**Policy:** competitor agencies/services are never referenced in GT skills; SaaS tools (ZenABM, HubSpot, Clay, Fibbler, etc.) remain named as products.
+
+---
+
 ## v2.0.0 — 2026-07-21
 
 **Summary:** MAJOR restructure into a master router + 9 sub-skills (multi-sub-skill layout), matching the pattern used by gt-linkedin-content and the CRM admin skills. Progressive disclosure — Claude loads only the relevant domain. No strategy content removed.
@@ -34,7 +59,7 @@ All notable changes to this skill. Newest first.
 - `resources/references/benchmarks.md` — 2026 Dreamdata attribution benchmark block.
 - Sub-skills `audiences`, `campaign-setup`, `creative` now route to the new references.
 
-**Sources:** LinkedIn Marketing Solutions Help, Dreamdata 2026 LinkedIn Ads B2B Benchmarks, AdExchanger, Search Engine Land, Social Media Today, Workshop Digital, NoGood, Coegi, AeroLeads, Firebrand, Funnel.io, Factors.ai — accessed 2026-07-21.
+**Sources:** LinkedIn Marketing Solutions Help (official docs), Dreamdata 2026 LinkedIn Ads B2B Benchmarks, and B2B marketing press (AdExchanger, Search Engine Land, Social Media Today) — accessed 2026-07-21.
 
 ---
 
@@ -43,7 +68,7 @@ All notable changes to this skill. Newest first.
 **Summary:** Repo reconciliation + attribution normalization. Brought the public repo copy in line with the org-deployed v1.2 and standardized every footer to the canonical Growth Today format. No strategy content changed.
 
 **Changed:**
-- Added the two ABM reference files that existed in the deployed build but were missing from the repo: `resources/references/abm/linkedin-ads-abm-guide.md` and `resources/references/abm/ads-outbound-signaling-guide.md` (original ColdIQ / Ivan Falco credit preserved).
+- Added the two ABM reference files that existed in the deployed build but were missing from the repo: `resources/references/abm/linkedin-ads-abm-guide.md` and `resources/references/abm/ads-outbound-signaling-guide.md` (external ABM source material; later rewritten GT-native in v2.0.1).
 - `resources/sub-skills/abm-strategy.md`: added the ABM reference-routing block and fixed the resource path to `{SKILL_BASE}/resources/references/abm/...`.
 - `SKILL.md`: added the two ABM reference files to the Reference Files table.
 - All files: footer standardized to the canonical `Created by [Growth Today] … More open Claude Skills …` format (replacing the older "Visit and download more skills" line).
@@ -88,7 +113,7 @@ All notable changes to this skill. Newest first.
 
 **Not changed (intentionally):** the GT-internal finding that single static images outperform animations/GIFs on Brigi and Jani's profiles is a GT-specific learning and was left as-is; the generic "moving elements increase clicks" line in creative.md is kept as a general-market note, not a GT recommendation. All audience, bidding, campaign-setup, copy, measurement, optimization, abm-strategy, and ABM guide content unchanged beyond the footer.
 
-**Sources:** Postiv AI, Ampy (goampy.com), ZenABM, TripleDart, Metadata.io, The B2B Playbook, Hey Sid, Rampiq, Reply.io, B2Linked (via agency roundups), accessed 2026-06-25.
+**Sources:** ZenABM and Metadata.io (published LinkedIn-ads benchmark/cost data) plus public LinkedIn-ads best-practice sources, accessed 2026-06-25.
 
 ---
 

@@ -281,13 +281,6 @@ What BDRs learn from conversations should flow BACK to ad strategy:
 | **Slack** | Real-time BDR alerts | Hot lead notifications with full context |
 | **SalesLoft / HubSpot Sales** | Outbound sequencing | Personalized multi-touch sequences based on intent |
 
-*Source: ColdIQ*
-
----
-
-> **Built by [ColdIQ](https://www.coldiq.com) & [Ivan Falco](https://www.linkedin.com/in/ivanfalco/en/).** For questions on implementation or anything not covered here, reach out to Ivan directly on [LinkedIn](https://www.linkedin.com/in/ivanfalco/en/).
-
-
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

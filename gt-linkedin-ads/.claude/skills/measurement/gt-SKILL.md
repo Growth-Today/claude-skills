@@ -18,6 +18,8 @@ You set up comprehensive measurement and attribution for LinkedIn Ads campaigns.
 
 ## Reference
 
+For the full HubSpot + Salesforce attribution loop (offline conversions, Campaign Influence, U-shaped model, setup timeline) → Read `{SKILL_BASE}/resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
+
 For measurement framework, attribution stack, and business metrics → Read `{SKILL_BASE}/resources/references/measurement-attribution.md`
 For campaign health indicators and benchmarks → Read `{SKILL_BASE}/resources/references/benchmarks.md`
 
