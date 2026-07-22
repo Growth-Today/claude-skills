@@ -4,6 +4,20 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.0.0 — 2026-07-22
+
+**Summary:** MAJOR restructure into a master router + 9 sub-skills (multi-sub-skill layout), matching gt-linkedin-ads and the CRM admin skills. Progressive disclosure; no strategy content removed. Triad parity.
+
+**Changed:**
+- `SKILL.md` is now a **master router**: dynamic `SKILL_BASE` Setup block (Glob for `**/gt-meta-ads/SKILL.md`), intent → sub-skill routing table, shared-reference table, Key Benchmarks, and the B2B guardrail up top.
+- The 9 sub-skills moved from `resources/sub-skills/*.md` to `.claude/skills/<name>/gt-SKILL.md`: tracking, campaign-setup, audiences, creative, creative-fatigue, learning-phase, lead-forms, measurement, audit. Each now carries a `name:` (meta-ads-*) it previously lacked.
+- Normalized all sub-skill resource references to `{SKILL_BASE}/resources/references/...`.
+- Removed the stray "(vs $8-20 B2C)" comparison from the CPM benchmark — benchmarks are B2B-only.
+
+**Validation:** 9 sub-skills referenced exactly once; every `{SKILL_BASE}` reference resolves; all names lowercase-hyphen ≤64; descriptions ≤1024; footers on every file; `.claude/` present in git; 0 competitor references.
+
+---
+
 ## v1.3.0 — 2026-07-22
 
 **Summary:** Phase 2 — the B2B guardrail. Codifies that generic/DTC Meta advice, tactics, and benchmarks do not transfer to B2B, so the skill (and anyone reading it) filters them out. Pure positioning + guardrail; no DTC content added.

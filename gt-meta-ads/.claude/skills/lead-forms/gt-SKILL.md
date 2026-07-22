@@ -1,4 +1,5 @@
 ---
+name: meta-ads-lead-forms
 description: Meta Ads Instant Forms and lead quality for B2B — form length tradeoffs, qualification, CRM sync, and lead nurture. Use for Instant Forms, lead ads, lead generation forms, lead quality, form length, qualifying questions, CRM sync, lead follow-up speed. Triggers on "Instant Form", "lead form", "lead ads", "lead quality", "form length", "qualifying questions", "CRM sync", "lead follow up", "junk leads". Do NOT use for tracking/CAPI (use tracking) or measurement reporting (use measurement).
 ---
 
@@ -57,10 +58,10 @@ Example 2: "Instant Form or landing page for B2B?"
 
 ## 2026 updates
 
-For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `resources/references/2026-ai-updates.md`.
+For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `{SKILL_BASE}/resources/references/2026-ai-updates.md`.
 ## CRM attribution
 
-For sending CRM outcomes back to Meta as offline conversions (HubSpot/Salesforce, Meta CAPI, fbclid matching) → Read `resources/references/crm-attribution.md`.
+For sending CRM outcomes back to Meta as offline conversions (HubSpot/Salesforce, Meta CAPI, fbclid matching) → Read `{SKILL_BASE}/resources/references/crm-attribution.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

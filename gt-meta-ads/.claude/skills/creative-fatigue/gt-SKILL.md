@@ -1,4 +1,5 @@
 ---
+name: meta-ads-creative-fatigue
 description: Meta Ads creative fatigue — detecting decline, frequency thresholds, refresh cadence, and creative volume to outrun fatigue. Use for creative fatigue, ad fatigue, declining CTR, rising frequency, creative refresh cadence, how often to refresh creative, ad saturation, audience oversaturation. Triggers on "creative fatigue", "ad fatigue", "declining CTR", "rising frequency", "refresh creative", "how often refresh", "ads stopped working", "oversaturation". Do NOT use for building new creative concepts (use creative).
 ---
 

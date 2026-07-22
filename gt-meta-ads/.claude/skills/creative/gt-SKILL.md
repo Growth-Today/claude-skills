@@ -1,4 +1,5 @@
 ---
+name: meta-ads-creative
 description: Meta Ads creative strategy for B2B — the primary performance lever, formats by funnel stage, hooks, UGC, video specs, and the creative library system. Use for Meta ad creative, creative strategy, video ads, hooks, UGC, creative testing, ad formats, Reels, thumbstop, mobile-first creative. Triggers on "creative strategy", "ad creative", "video ads", "hooks", "UGC", "creative testing", "Reels", "thumbstop rate", "creative library", "mobile-first". Do NOT use for fatigue/refresh cadence (use creative-fatigue) or format specs only (see creative-formats reference).
 ---
 
@@ -59,10 +60,10 @@ Example 2: "My ads were working and suddenly dropped off."
 
 ## 2026 updates
 
-For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `resources/references/2026-ai-updates.md`.
+For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `{SKILL_BASE}/resources/references/2026-ai-updates.md`.
 ## B2B guardrail
 
-Before applying any generic Meta tactic or benchmark here, check `resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
+Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

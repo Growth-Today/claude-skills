@@ -1,4 +1,5 @@
 ---
+name: meta-ads-measurement
 description: Meta Ads measurement for B2B — CAPI-backed reporting, pipeline attribution, KPIs by funnel stage, and optimising to pipeline not CPL. Use for Meta measurement, reporting, KPIs, pipeline attribution, cost per result, what metrics to track, measuring B2B Meta, optimise to pipeline. Triggers on "measurement", "reporting", "KPIs", "pipeline attribution", "cost per result", "what metrics", "measuring Meta", "CPL vs pipeline", "ROAS Meta". Do NOT use for Pixel/CAPI setup (use tracking) or fatigue metrics (use creative-fatigue).
 ---
 
@@ -58,13 +59,13 @@ The causal answer to "is Meta actually working?" Meta's **Conversion Lift** spli
 
 - **Requirements:** min ~7-day test, ≥10% of audience per cell, ~5,000+ users in the target group, 300+ conversions for significance; most tests run 3–4 weeks. Some Conversion Lift access needs a Meta Business Partner / rep.
 - **Use when** spend is meaningful and the exec question is incrementality; below that, lean on CRM-based attribution.
-- **For the CRM attribution loop** (offline conversions from HubSpot/Salesforce, fbclid matching, models) → Read `resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
+- **For the CRM attribution loop** (offline conversions from HubSpot/Salesforce, fbclid matching, models) → Read `{SKILL_BASE}/resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
 ## Tracking hygiene & reporting
 
-For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `resources/references/tracking-hygiene.md`.
+For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `{SKILL_BASE}/resources/references/tracking-hygiene.md`.
 ## B2B guardrail
 
-Before applying any generic Meta tactic or benchmark here, check `resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
+Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

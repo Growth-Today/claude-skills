@@ -1,4 +1,5 @@
 ---
+name: meta-ads-learning-phase
 description: Meta Ads learning phase — the 50-events rule, budget floors to exit learning, what resets it, and learning-limited diagnosis. Use for learning phase, 50 events, exiting learning, learning limited, budget to exit learning, what resets learning, edits resetting learning. Triggers on "learning phase", "50 events", "exit learning", "learning limited", "budget floor", "resets learning", "learning limited status". Do NOT use for bid strategy detail (covered in campaign-setup) or measurement (use measurement).
 ---
 
@@ -46,7 +47,7 @@ Example 2: "How much budget do I need on Meta?"
 
 ## 2026 updates
 
-For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `resources/references/2026-ai-updates.md`.
+For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `{SKILL_BASE}/resources/references/2026-ai-updates.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

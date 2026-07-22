@@ -1,4 +1,5 @@
 ---
+name: meta-ads-tracking
 description: Meta Ads tracking — Pixel, Conversions API (CAPI), conversion events, attribution windows, and iOS privacy impact. Use for Pixel setup, CAPI, Conversions API, conversion events, attribution windows, iOS 14 tracking, event match quality, deduplication. Triggers on "Pixel", "CAPI", "Conversions API", "conversion event", "attribution window", "iOS tracking", "event match quality", "server-side tracking". Do NOT use for lead form setup (use lead-forms) or measurement reporting (use measurement).
 ---
 
@@ -43,10 +44,10 @@ Example 2: "My Meta CPL looks great but the leads are junk."
 
 ## CRM attribution
 
-For sending CRM outcomes back to Meta as offline conversions (HubSpot/Salesforce, Meta CAPI, fbclid matching) → Read `resources/references/crm-attribution.md`.
+For sending CRM outcomes back to Meta as offline conversions (HubSpot/Salesforce, Meta CAPI, fbclid matching) → Read `{SKILL_BASE}/resources/references/crm-attribution.md`.
 ## Tracking hygiene & reporting
 
-For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `resources/references/tracking-hygiene.md`.
+For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `{SKILL_BASE}/resources/references/tracking-hygiene.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

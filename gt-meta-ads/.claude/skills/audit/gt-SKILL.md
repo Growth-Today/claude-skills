@@ -1,4 +1,5 @@
 ---
+name: meta-ads-audit
 description: Meta Ads account audit for B2B — systematic review across tracking, structure, audiences, creative, learning phase, and lead quality, with a prioritised fix list. Use for Meta ads audit, account audit, account health check, wasted spend review, what to fix first, inherited Meta account. Triggers on "Meta audit", "Facebook ads audit", "account audit", "audit my Meta", "account health check", "what to fix first", "inherited a Meta account". Routes into the other sub-skills for each fix.
 ---
 

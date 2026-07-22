@@ -1,4 +1,5 @@
 ---
+name: meta-ads-campaign-setup
 description: Meta Ads campaign structure for B2B — full-funnel architecture, CBO vs ABO, budget split across prospecting/consideration/retargeting, and exclusions. Use for Meta campaign structure, funnel, CBO, ABO, budget allocation, prospecting vs retargeting, campaign objectives, Advantage+ Sales. Triggers on "campaign structure", "Meta funnel", "CBO", "ABO", "budget split", "prospecting campaign", "retargeting campaign", "Advantage+ campaign". Do NOT use for audience targeting details (use audiences) or creative (use creative).
 ---
 
@@ -61,10 +62,10 @@ Example 2: "Should I use CBO or ABO?"
 
 ## 2026 updates
 
-For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `resources/references/2026-ai-updates.md`.
+For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `{SKILL_BASE}/resources/references/2026-ai-updates.md`.
 ## B2B guardrail
 
-Before applying any generic Meta tactic or benchmark here, check `resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
+Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

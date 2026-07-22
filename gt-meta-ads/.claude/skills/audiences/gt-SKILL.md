@@ -1,4 +1,5 @@
 ---
+name: meta-ads-audiences
 description: Meta Ads audiences for B2B — custom audiences, lookalikes, Advantage+ audience, broad targeting, exclusions, and overlap. Use for custom audiences, lookalike audiences, Advantage+ audience, broad targeting, detailed targeting, audience overlap, CRM list audiences, retargeting audiences. Triggers on "custom audience", "lookalike", "Advantage+ audience", "broad targeting", "detailed targeting", "audience overlap", "CRM list", "1% lookalike", "minimum audience size". Do NOT use for campaign budget structure (use campaign-setup).
 ---
 
@@ -54,7 +55,7 @@ Example 2: "Should I build lots of tightly targeted interest ad sets?"
 
 ## B2B guardrail
 
-Before applying any generic Meta tactic or benchmark here, check `resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
+Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
