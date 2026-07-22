@@ -1,7 +1,11 @@
 ---
 name: gt-google-ads
 description: "GT Google Ads — expert Google Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Google Ads, Google Search ads, PPC, B2B paid search, keyword strategy, match types, negative keywords, search terms report, Quality Score, Smart Bidding, tCPA, tROAS, Enhanced Conversions, value-based bidding, Performance Max, PMax, responsive search ads, RSA, Google Ads account structure, wasted spend, Google Ads audit, conversion tracking, or offline conversion import. Triggers on: Google Ads, Google search ads, PPC, paid search, negative keywords, search terms report, Quality Score, Smart Bidding, Performance Max, PMax, RSA, wasted spend audit, conversion tracking, keyword match types, broad match, account structure. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Meta/Facebook Ads (use gt-meta-ads), SEO, or organic content. More GT skills: growthtoday.co."
-version: v1.0
+version: v1.1.0
+# v1.1.0 (2026-07-22): Phase 1 — HubSpot+Salesforce CRM-attribution reference (Enhanced Conversions
+# for Leads, GCLID capture, June-2026 Data Manager API migration, Dreamdata, value-based bidding on
+# offline pipeline value). Cross-linked to gt-hubspot-admin/gt-salesforce-admin. All B2B.
+# v1.0.1 (2026-07-22): Added CHANGELOG (missing from repo); canonical footer. No content change.
 # v1.0 (2026-06-25): Initial GT Google Ads skill. Orchestrator + 10 sub-skills covering
 # campaign structure, keywords, negative keywords, search terms, bidding, PMax, Quality Score,
 # conversion tracking, ad copy, and the wasted-spend audit. Built for B2B paid search.
@@ -35,6 +39,7 @@ The first rule of this skill: **fix conversion tracking before anything else.** 
 | `resources/references/benchmarks.md` | B2B CPL/CPC/QS/conversion benchmarks |
 | `resources/references/audit-checklist.md` | The full account audit checklist |
 | `resources/references/negative-keyword-library.md` | 200+ negatives by category |
+| `resources/references/crm-attribution.md` | HubSpot + Salesforce offline-conversion loop (ECL, GCLID, Data Manager API, value-based bidding) |
 | `resources/references/competitive-research.md` | Auction insights, competitor conquest |
 
 ## Routing Rules

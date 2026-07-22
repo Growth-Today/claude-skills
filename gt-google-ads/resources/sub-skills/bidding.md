@@ -53,6 +53,9 @@ Example 2: "My campaign is 'limited by bid strategy' — what do I do?"
 → The tCPA is likely too aggressive vs actuals, or budget is capping. Loosen the target toward the 30-day actual CPA, check budget, confirm the conversion action is correct.
 
 
+## CRM attribution
+
+For the full HubSpot + Salesforce loop — Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

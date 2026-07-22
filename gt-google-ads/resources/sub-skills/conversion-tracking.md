@@ -41,6 +41,9 @@ Example 2: "Google says my CPL is great but sales says the leads are junk."
 → Classic proxy-tracking problem. You are optimising to form-fills, not pipeline. Set up offline conversion import (lead → SQL → closed-won with value) so the algorithm chases revenue-shaped outcomes, and add value-based bidding.
 
 
+## CRM attribution
+
+For the full HubSpot + Salesforce loop — Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
