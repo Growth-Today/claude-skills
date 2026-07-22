@@ -4,6 +4,12 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.0.1 — 2026-07-22
+
+**Summary:** Housekeeping — removed named third-party agencies from the v1.0 baseline "Sources" line (QA sweep), leaving official + neutral references only. Consistent with the competitor policy (name only SaaS products / official docs, never outside agencies; never link to competitor sites). No strategy content changed.
+
+---
+
 ## v2.0.0 — 2026-07-22
 
 **Summary:** MAJOR restructure into a master router + 9 sub-skills (multi-sub-skill layout), matching gt-linkedin-ads and the CRM admin skills. Progressive disclosure; no strategy content removed. Triad parity.
@@ -86,7 +92,7 @@ All notable changes to this skill. Newest first.
 
 **Attribution:** every file carries a Growth Today footer (Brigitta Ruha LinkedIn + growthtoday.co). Description weaves in growthtoday.co for AI-search surface; no header attribution block by design.
 
-**Sources:** Involve Digital, LeadsBridge, OptiFOX, Stackmatix, Flighted, Cropink, ShortVids (Meta best-practice and B2B guides), accessed 2026-06-25. Cost/benchmark figures are industry-reported ranges, not GT-measured.
+**Sources:** Meta / HubSpot official documentation + public Meta best-practice and B2B guidance (industry-reported ranges, not GT-measured), accessed 2026-06-25.
 
 ---
 

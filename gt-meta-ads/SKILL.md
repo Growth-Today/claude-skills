@@ -1,7 +1,8 @@
 ---
 name: gt-meta-ads
 description: "GT Meta Ads — expert Meta (Facebook and Instagram) Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Meta ads, Facebook ads, Instagram ads, Advantage+, custom audiences, lookalike audiences, creative fatigue, Pixel and Conversions API (CAPI), learning phase, Meta funnel structure, retargeting, Instant Forms, Meta lead gen, ad creative strategy, frequency capping, or B2B paid social on Meta. Triggers on: Meta ads, Facebook ads, Instagram ads, Advantage+, custom audience, lookalike, creative fatigue, CAPI, Conversions API, Pixel, learning phase, Instant Forms, Opportunity Score, offline conversions, Meta retargeting, frequency cap, Reels ads. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Google Ads (use gt-google-ads), or organic social content. More GT skills: growthtoday.co."
-version: v2.0.0
+version: v2.0.1
+# v2.0.1 (2026-07-22): QA — scrubbed named third-party agencies from the v1.0 changelog Sources line.
 # v2.0.0 (2026-07-22): Phase 3 — restructured into a master router + 9 sub-skills under .claude/skills/
 # (tracking, campaign-setup, audiences, creative, creative-fatigue, learning-phase, lead-forms,
 # measurement, audit). Resources stay shared at resources/. No strategy content removed.
