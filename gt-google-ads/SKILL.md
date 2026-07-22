@@ -1,7 +1,9 @@
 ---
 name: gt-google-ads
-description: "GT Google Ads — expert Google Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Google Ads, Google Search ads, PPC, B2B paid search, keyword strategy, match types, negative keywords, search terms report, Quality Score, Smart Bidding, tCPA, tROAS, Enhanced Conversions for Leads, value-based bidding, Journey-Aware Bidding, Performance Max, PMax, responsive search ads, RSA, account structure, wasted spend, Google Ads audit, conversion tracking, offline conversion import, or Consent Mode. Triggers on: Google Ads, Google search ads, PPC, paid search, negative keywords, search terms report, Quality Score, Smart Bidding, Journey-Aware Bidding, Performance Max, PMax, RSA, wasted spend audit, conversion tracking, offline conversions, Consent Mode, keyword match types, broad match, account structure. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Meta/Facebook Ads (use gt-meta-ads), SEO, or organic content. More GT skills: growthtoday.co."
-version: v2.0.0
+description: "GT Google Ads — expert Google Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Google Ads, Google Search ads, PPC, B2B paid search, keyword strategy, match types, negative keywords, search terms report, Quality Score, Smart Bidding, tCPA, tROAS, Enhanced Conversions for Leads, value-based bidding, Journey-Aware Bidding, Performance Max, PMax, RSA, account structure, wasted spend, audits, conversion tracking, offline conversions, Consent Mode, GAQL, or live account analysis and safe changes. Triggers on: Google Ads, paid search, negative keywords, search terms, Quality Score, Smart Bidding, Journey-Aware Bidding, Performance Max, RSA, wasted spend audit, conversion tracking, offline conversions, Consent Mode, GAQL, MCP, live data, forecast, safe write. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Meta/Facebook Ads (use gt-meta-ads), SEO, or organic content. More GT skills: growthtoday.co."
+version: v2.1.0
+# v2.1.0 (2026-07-22): Phase 4 — added a live-ops sub-skill + references (GAQL query templates,
+# B2B PPC math/forecasting, CEP safe-write protocol) for operating a live account read-only-by-default.
 # v2.0.0 (2026-07-22): Phase 3 — restructured into a master router + 10 sub-skills under .claude/skills/
 # (campaign-setup, keywords, negative-keywords, search-terms, bidding, pmax, quality-score,
 # conversion-tracking, ad-copy, audit). Resources stay shared at resources/. No strategy content removed.
@@ -41,6 +43,7 @@ The first rule: **fix conversion tracking before anything else.** If tracking is
 | Conversion tracking, offline import, Enhanced Conversions for Leads, Consent Mode | **conversion-tracking** | `{SKILL_BASE}/.claude/skills/conversion-tracking/gt-SKILL.md` |
 | Ad copy, Pain-Proof-CTA, RSA pin strategy, extensions | **ad-copy** | `{SKILL_BASE}/.claude/skills/ad-copy/gt-SKILL.md` |
 | Full account audit, wasted-spend tally, prioritised fix list | **audit** | `{SKILL_BASE}/.claude/skills/audit/gt-SKILL.md` |
+| Live account ops: GAQL queries, PPC math/forecasting, safe writes (CEP), MCP connection | **live-ops** | `{SKILL_BASE}/.claude/skills/live-ops/gt-SKILL.md` |
 
 ## Shared Reference Files
 
@@ -54,6 +57,9 @@ The first rule: **fix conversion tracking before anything else.** If tracking is
 | `{SKILL_BASE}/resources/references/audit-checklist.md` | The full account audit checklist |
 | `{SKILL_BASE}/resources/references/negative-keyword-library.md` | 200+ negatives by category |
 | `{SKILL_BASE}/resources/references/competitive-research.md` | Auction insights, competitor conquest |
+| `{SKILL_BASE}/resources/references/gaql-queries.md` | GAQL query templates for live analysis (B2B) |
+| `{SKILL_BASE}/resources/references/ppc-math.md` | PPC math & forecasting — break-even CPL/CPC, cost-per-SQL, budgets (B2B) |
+| `{SKILL_BASE}/resources/references/safe-write-cep.md` | Safe write operations — Confirm→Execute→Post-check |
 
 ## Routing Rules
 

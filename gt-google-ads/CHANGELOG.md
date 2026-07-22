@@ -4,6 +4,22 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.1.0 — 2026-07-22
+
+**Summary:** Phase 4 — a live-ops (operational) tier, so the skill can operate a live account, not just advise. Read-only by default; writes are gated. All B2B.
+
+**Added:**
+- `.claude/skills/live-ops/gt-SKILL.md` — the operational sub-skill: read-only live analysis via the Google Ads API/MCP, PPC math/forecasting, and guarded writes. Read-only is the default; connectors need explicit write scope.
+- `resources/references/gaql-queries.md` — B2B GAQL query templates (campaign performance, wasted-spend search terms, keyword+Quality Score, pipeline value, impression share, device/geo; values in micros).
+- `resources/references/ppc-math.md` — B2B math/forecasting: cost-per-SQL, break-even CPL/CPC from close rate + ACV, value-based-bidding values, budget projections, impression-share opportunity, Smart Bidding data floor.
+- `resources/references/safe-write-cep.md` — the **Confirm → Execute → Post-check** protocol for any account mutation; read-only/draft by default, one scoped change per confirmation, rollback stated.
+
+**Positioning:** analysis reads to CRM outcome (SQL/pipeline); forecasts are estimates, not promises; default posture is read-only.
+
+**Attribution:** live-ops patterns acknowledged from itallstartedwithaidea/google-ads-skills (Apache-2.0), reimplemented GT-native. Sub-skills: 10 → 11.
+
+---
+
 ## v2.0.0 — 2026-07-22
 
 **Summary:** MAJOR restructure into a master router + 10 sub-skills (multi-sub-skill layout), matching gt-linkedin-ads and gt-meta-ads. Progressive disclosure; no strategy content removed. Triad parity.
