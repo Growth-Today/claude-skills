@@ -1,7 +1,15 @@
 ---
 name: gt-meta-ads
 description: "GT Meta Ads — expert Meta (Facebook and Instagram) Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Meta ads, Facebook ads, Instagram ads, Advantage+, custom audiences, lookalike audiences, creative fatigue, Pixel and Conversions API (CAPI), learning phase, Meta funnel structure, retargeting, Instant Forms, Meta lead gen, ad creative strategy, frequency capping, or B2B paid social on Meta. Triggers on: Meta ads, Facebook ads, Instagram ads, Advantage+, ASC, custom audience, lookalike, creative fatigue, CAPI, Conversions API, Pixel, learning phase, Instant Forms, Meta retargeting, frequency cap, Reels ads. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Google Ads (use gt-google-ads), or organic social content. More GT skills: growthtoday.co."
-version: v1.0
+version: v1.2.0
+# v1.2.0 (2026-07-21): Phase 1 — tracking hygiene (domain verification, AEM, CAPI Gateway, EMQ,
+# standard-vs-custom events), UTM standardization, breakdown reporting; concrete HubSpot property
+# mapping (fbclid/email/phone, lifecycle-stage trigger) + Dreamdata path in CRM-attribution;
+# audit-checklist upgraded with evidence discipline. All B2B.
+# v1.1.0 (2026-07-21): P1 2026 expansion — Opportunity Score, Advantage+ 2026 updates + Predictive
+# Budget Allocation, gen-AI Creative Enhancements, Advantage+ Leads, Threads; HubSpot+Salesforce
+# CRM-attribution reference (Meta CAPI offline conversions); Conversion Lift incrementality.
+# v1.0.1 (2026-07-21): Added CHANGELOG (was missing from repo); canonical footer. No content change.
 # v1.0 (2026-06-25): Initial GT Meta Ads skill. Orchestrator + 9 sub-skills covering
 # tracking (Pixel/CAPI), funnel structure, audiences, creative, creative fatigue, learning
 # phase, Instant Forms lead quality, measurement, and the account audit. Built for B2B.
@@ -38,6 +46,9 @@ B2B caveat throughout: Meta CPLs look cheap next to LinkedIn, but lead quality i
 | `resources/references/benchmarks.md` | B2B CPM/CPL/frequency/creative-volume benchmarks |
 | `resources/references/audit-checklist.md` | The full account audit checklist |
 | `resources/references/creative-formats.md` | Format specs, funnel-stage format matching |
+| `resources/references/2026-ai-updates.md` | Opportunity Score, Advantage+ 2026, gen-AI creative, Advantage+ Leads, Threads |
+| `resources/references/crm-attribution.md` | HubSpot + Salesforce offline-conversion loop (Meta CAPI, fbclid matching, models) |
+| `resources/references/tracking-hygiene.md` | Signal-quality controls, UTM standardization, breakdown reporting (B2B) |
 
 ## Routing Rules
 

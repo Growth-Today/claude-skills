@@ -41,6 +41,12 @@ Example 2: "My Meta CPL looks great but the leads are junk."
 → You are optimising to a proxy (form-fill). Sync CRM outcomes back via offline conversions so Meta optimises toward qualified leads, and check event match quality is high enough for the signal to be reliable.
 
 
+## CRM attribution
+
+For sending CRM outcomes back to Meta as offline conversions (HubSpot/Salesforce, Meta CAPI, fbclid matching) → Read `resources/references/crm-attribution.md`.
+## Tracking hygiene & reporting
+
+For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `resources/references/tracking-hygiene.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

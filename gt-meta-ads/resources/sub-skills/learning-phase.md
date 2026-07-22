@@ -44,6 +44,9 @@ Example 2: "How much budget do I need on Meta?"
 → Enough per ad set to clear ~50 optimisation events/week. At a $20 CPA that is ~$140/day per ad set; scale by your real CPA and consolidate so budget is not spread thin.
 
 
+## 2026 updates
+
+For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `resources/references/2026-ai-updates.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

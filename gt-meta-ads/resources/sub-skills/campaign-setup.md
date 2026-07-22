@@ -1,5 +1,5 @@
 ---
-description: Meta Ads campaign structure for B2B — full-funnel architecture, CBO vs ABO, budget split across prospecting/consideration/retargeting, and exclusions. Use for Meta campaign structure, funnel, CBO, ABO, budget allocation, prospecting vs retargeting, campaign objectives, Advantage+ Shopping/Sales. Triggers on "campaign structure", "Meta funnel", "CBO", "ABO", "budget split", "prospecting campaign", "retargeting campaign", "Advantage+ campaign". Do NOT use for audience targeting details (use audiences) or creative (use creative).
+description: Meta Ads campaign structure for B2B — full-funnel architecture, CBO vs ABO, budget split across prospecting/consideration/retargeting, and exclusions. Use for Meta campaign structure, funnel, CBO, ABO, budget allocation, prospecting vs retargeting, campaign objectives, Advantage+ Sales. Triggers on "campaign structure", "Meta funnel", "CBO", "ABO", "budget split", "prospecting campaign", "retargeting campaign", "Advantage+ campaign". Do NOT use for audience targeting details (use audiences) or creative (use creative).
 ---
 
 # Meta Ads Campaign Setup (B2B)
@@ -48,7 +48,7 @@ You build a clean full-funnel structure, give the algorithm enough budget per ad
 
 ## Advantage+ note
 
-Advantage+ Sales/Shopping campaigns automate audience, placement, and budget. They are built for ecommerce; for B2B lead gen, a structured full-funnel with Instant Forms and CAPI usually controls lead quality better. Test Advantage+ as a prospecting engine, but watch lead quality closely.
+**Advantage+ Sales** automates audience, placement, and budget. **Advantage+ Shopping is an e-commerce/DTC product — out of scope for B2B; do not use it.** For B2B lead gen, a structured full-funnel with Instant Forms + CAPI + offline conversions controls lead quality far better than hands-off automation. You may test Advantage+ Sales as a prospecting engine, but judge it on SQL/pipeline and watch lead quality closely.
 
 ## Examples
 
@@ -59,6 +59,9 @@ Example 2: "Should I use CBO or ABO?"
 → CBO for prospecting (let Meta find efficiency), ABO for retargeting (guarantee budget on each warm audience). Either way, fund ad sets enough to clear 50 events/week.
 
 
+## 2026 updates
+
+For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `resources/references/2026-ai-updates.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

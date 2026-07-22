@@ -55,6 +55,12 @@ Example 2: "Instant Form or landing page for B2B?"
 → Instant Form for low-friction MOFU volume, landing page for high-ACV intent. Run both, compare on pipeline not CPL, and qualify hard if you lean on Instant Forms.
 
 
+## 2026 updates
+
+For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `resources/references/2026-ai-updates.md`.
+## CRM attribution
+
+For sending CRM outcomes back to Meta as offline conversions (HubSpot/Salesforce, Meta CAPI, fbclid matching) → Read `resources/references/crm-attribution.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

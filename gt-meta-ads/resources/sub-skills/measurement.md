@@ -52,6 +52,16 @@ Example 2: "My boss says Meta doesn't work because CPL is high."
 → Raw CPL is the wrong verdict. Measure to pipeline: sync CRM outcomes back, compare cost per SQL and pipeline created, and read the trend over a full B2B cycle before judging.
 
 
+## Incrementality — Meta Conversion Lift
+
+The causal answer to "is Meta actually working?" Meta's **Conversion Lift** splits the audience into treatment (sees ads) and control (doesn't) at the account level and measures the difference via Pixel/CAPI/offline uploads.
+
+- **Requirements:** min ~7-day test, ≥10% of audience per cell, ~5,000+ users in the target group, 300+ conversions for significance; most tests run 3–4 weeks. Some Conversion Lift access needs a Meta Business Partner / rep.
+- **Use when** spend is meaningful and the exec question is incrementality; below that, lean on CRM-based attribution.
+- **For the CRM attribution loop** (offline conversions from HubSpot/Salesforce, fbclid matching, models) → Read `resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
+## Tracking hygiene & reporting
+
+For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `resources/references/tracking-hygiene.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

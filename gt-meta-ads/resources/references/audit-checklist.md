@@ -2,6 +2,8 @@
 
 Score each finding by impact x effort and ship the top items first. The two anchors: is tracking sound, and is creative treated as the strategy. Fix in the priority order at the bottom.
 
+**Evidence discipline:** don't apply a benchmark without checking objective, geography, methodology, sample size, and account maturity; mark **n/a**/**unknown** where you can't see it; treat betas/new features and vendor performance claims as **discovery, not a failure**. All benchmarks here are B2B — never import DTC/e-commerce figures.
+
 ## 1. Tracking (highest priority)
 - [ ] Pixel installed and firing on the right events
 - [ ] Conversions API (CAPI) live, server-side
@@ -9,6 +11,11 @@ Score each finding by impact x effort and ship the top items first. The two anch
 - [ ] Event match quality healthy (hashed first-party data passed)
 - [ ] Conversion event is the real outcome (lead submit / demo), not page-load or landing-view
 - [ ] Attribution window consistent across campaigns (28-day click for long cycles)
+- [ ] Domain verified in Business Manager
+- [ ] Aggregated Event Measurement configured; the true B2B conversion prioritized (not page view)
+- [ ] Standard events used where possible (custom only for bespoke steps)
+- [ ] CAPI Gateway considered where no dev resource for full CAPI
+- [ ] `fbclid` captured + persisted on the contact for match quality (see crm-attribution)
 
 ## 2. Measurement loop
 - [ ] CRM outcomes synced back as offline conversions (lead to MQL to SQL to closed-won)
@@ -16,6 +23,9 @@ Score each finding by impact x effort and ship the top items first. The two anch
 - [ ] Platform numbers reconciled against CRM reality
 - [ ] Creative read by spend allocation, not ad-level CPA alone
 - [ ] Judged over a full B2B cycle, not first two weeks
+- [ ] UTM taxonomy consistent + validated (source/medium/campaign/content) so CRM reads it
+- [ ] Breakdown reporting run (placement / demographic / time) and read to SQL, not CPL
+- [ ] Incrementality checked before scaling (Conversion Lift / holdout) at meaningful spend
 
 ## 3. Creative
 - [ ] Modular creative library exists (hooks, bodies, CTAs)
