@@ -1,4 +1,5 @@
 ---
+name: google-ads-bidding
 description: B2B Google Ads bidding — Smart Bidding, tCPA, tROAS, Enhanced Conversions, value-based bidding, and bid-strategy diagnosis. Use for bidding strategy, Smart Bidding, target CPA, target ROAS, value-based bidding, bid limited status, Enhanced Conversions setup. Triggers on "bidding strategy", "Smart Bidding", "tCPA", "tROAS", "target CPA", "value-based bidding", "Enhanced Conversions", "bid limited", "maximize conversions". Do NOT use for conversion tracking setup itself (use conversion-tracking).
 ---
 
@@ -55,10 +56,10 @@ Example 2: "My campaign is 'limited by bid strategy' — what do I do?"
 
 ## CRM attribution
 
-For the full HubSpot + Salesforce loop — Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
+For the full HubSpot + Salesforce loop — Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `{SKILL_BASE}/resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
 ## 2026 AI bidding
 
-For Journey-Aware Bidding, Smart Bidding Exploration, and AI Max (B2B) → Read `resources/references/ai-bidding-2026.md`.
+For Journey-Aware Bidding, Smart Bidding Exploration, and AI Max (B2B) → Read `{SKILL_BASE}/resources/references/ai-bidding-2026.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

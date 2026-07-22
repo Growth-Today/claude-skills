@@ -1,63 +1,71 @@
 ---
 name: gt-google-ads
-description: "GT Google Ads — expert Google Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Google Ads, Google Search ads, PPC, B2B paid search, keyword strategy, match types, negative keywords, search terms report, Quality Score, Smart Bidding, tCPA, tROAS, Enhanced Conversions, value-based bidding, Performance Max, PMax, responsive search ads, RSA, Google Ads account structure, wasted spend, Google Ads audit, conversion tracking, or offline conversion import. Triggers on: Google Ads, Google search ads, PPC, paid search, negative keywords, search terms report, Quality Score, Smart Bidding, Performance Max, PMax, RSA, wasted spend audit, conversion tracking, keyword match types, broad match, account structure. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Meta/Facebook Ads (use gt-meta-ads), SEO, or organic content. More GT skills: growthtoday.co."
-version: v1.2.0
-# v1.2.0 (2026-07-22): Phase 2 — 2026 AI bidding (Journey-Aware Bidding, Smart Bidding Exploration,
-# AI Max), Consent Mode v2 (EU/EEA compliance), a B2B-vs-e-commerce guardrail, and an upgraded
-# audit-checklist with evidence discipline. All B2B.
-# v1.1.0 (2026-07-22): Phase 1 — HubSpot+Salesforce CRM-attribution reference (Enhanced Conversions
-# for Leads, GCLID capture, June-2026 Data Manager API migration, Dreamdata, value-based bidding on
-# offline pipeline value). Cross-linked to gt-hubspot-admin/gt-salesforce-admin. All B2B.
-# v1.0.1 (2026-07-22): Added CHANGELOG (missing from repo); canonical footer. No content change.
-# v1.0 (2026-06-25): Initial GT Google Ads skill. Orchestrator + 10 sub-skills covering
-# campaign structure, keywords, negative keywords, search terms, bidding, PMax, Quality Score,
-# conversion tracking, ad copy, and the wasted-spend audit. Built for B2B paid search.
+description: "GT Google Ads — expert Google Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Google Ads, Google Search ads, PPC, B2B paid search, keyword strategy, match types, negative keywords, search terms report, Quality Score, Smart Bidding, tCPA, tROAS, Enhanced Conversions for Leads, value-based bidding, Journey-Aware Bidding, Performance Max, PMax, responsive search ads, RSA, account structure, wasted spend, Google Ads audit, conversion tracking, offline conversion import, or Consent Mode. Triggers on: Google Ads, Google search ads, PPC, paid search, negative keywords, search terms report, Quality Score, Smart Bidding, Journey-Aware Bidding, Performance Max, PMax, RSA, wasted spend audit, conversion tracking, offline conversions, Consent Mode, keyword match types, broad match, account structure. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Meta/Facebook Ads (use gt-meta-ads), SEO, or organic content. More GT skills: growthtoday.co."
+version: v2.0.0
+# v2.0.0 (2026-07-22): Phase 3 — restructured into a master router + 10 sub-skills under .claude/skills/
+# (campaign-setup, keywords, negative-keywords, search-terms, bidding, pmax, quality-score,
+# conversion-tracking, ad-copy, audit). Resources stay shared at resources/. No strategy content removed.
+# v1.2.0 (2026-07-22): Phase 2 — 2026 AI bidding, Consent Mode v2, B2B guardrail, audit evidence discipline.
+# v1.1.0 (2026-07-22): Phase 1 — HubSpot+Salesforce CRM-attribution reference (ECL, GCLID, Data Manager
+# API migration, Dreamdata, value-based bidding on offline pipeline value).
+# v1.0.1 (2026-07-22): Added CHANGELOG (missing from repo); canonical footer. See CHANGELOG.md.
 ---
+
+## Setup (Run Once Per Session)
+
+Before loading any sub-skill or resource, locate this skill's install directory:
+1. Use Glob to search for `**/gt-google-ads/SKILL.md`
+2. The directory containing this SKILL.md is `SKILL_BASE`
+3. Sub-skills are at: `{SKILL_BASE}/.claude/skills/{sub-skill}/gt-SKILL.md`
+4. Shared resources are at: `{SKILL_BASE}/resources/...`
+
+Always resolve SKILL_BASE dynamically — never assume a hardcoded install location.
 
 # GT Google Ads — Orchestrator
 
-Expert B2B Google Ads strategist. Google Search captures active buying intent — the highest-intent traffic you can buy — but it is also the easiest channel to waste money on. This skill is built to do two jobs: stop the bleeding (wasted spend, broken tracking, missing guardrails) and then build a structure that turns search intent into pipeline, not just clicks.
+Expert B2B Google Ads strategist. Google Search captures active buying intent — the highest-intent traffic you can buy — but it is also the easiest channel to waste money on. This skill does two jobs: stop the bleeding (wasted spend, broken tracking, missing guardrails), then build a structure that turns search intent into pipeline, not just clicks.
 
-The first rule of this skill: **fix conversion tracking before anything else.** If tracking is wrong, every bid, every negative, every optimisation decision downstream is made on bad data. Audit tracking first, structure second, tactics third. **B2B only — most Google Ads advice online is e-commerce; before applying any generic tactic or benchmark, run it through `resources/references/b2b-guardrail.md`.**
+The first rule: **fix conversion tracking before anything else.** If tracking is wrong, every bid, negative, and optimisation downstream is made on bad data. Audit tracking first, structure second, tactics third. **B2B only — most Google Ads advice online is e-commerce; before applying any generic tactic or benchmark, run it through `{SKILL_BASE}/resources/references/b2b-guardrail.md`.**
 
 ## Sub-Skill Routing
 
-| Topic | Load |
-|-------|------|
-| Account structure, 3-tier funnel, brand vs non-brand, budget allocation | `resources/sub-skills/campaign-setup.md` |
-| Keyword strategy, match types, intent segmentation, competitor conquest | `resources/sub-skills/keywords.md` |
-| Negative keywords, exclusion buckets, n-gram mining, match-type strategy | `resources/sub-skills/negative-keywords.md` |
-| Search terms report mining, wasted-query detection, review cadence | `resources/sub-skills/search-terms.md` |
-| Smart Bidding, tCPA/tROAS, Enhanced Conversions, value-based bidding | `resources/sub-skills/bidding.md` |
-| Performance Max setup, guardrails, brand cannibalisation, asset groups | `resources/sub-skills/pmax.md` |
-| Quality Score diagnosis, message match, high-spend low-QS triage | `resources/sub-skills/quality-score.md` |
-| Conversion tracking, offline import, Enhanced Conversions for Leads | `resources/sub-skills/conversion-tracking.md` |
-| Ad copy, Pain-Proof-CTA, RSA pin strategy, extensions | `resources/sub-skills/ad-copy.md` |
-| Full account audit, wasted-spend tally, prioritised fix list | `resources/sub-skills/audit.md` |
+| User Intent | Sub-Skill | Path |
+|-------------|-----------|------|
+| Account structure, 3-tier funnel, brand vs non-brand, budget allocation | **campaign-setup** | `{SKILL_BASE}/.claude/skills/campaign-setup/gt-SKILL.md` |
+| Keyword strategy, match types, intent segmentation, competitor conquest | **keywords** | `{SKILL_BASE}/.claude/skills/keywords/gt-SKILL.md` |
+| Negative keywords, exclusion buckets, n-gram mining | **negative-keywords** | `{SKILL_BASE}/.claude/skills/negative-keywords/gt-SKILL.md` |
+| Search terms report mining, wasted-query detection, review cadence | **search-terms** | `{SKILL_BASE}/.claude/skills/search-terms/gt-SKILL.md` |
+| Smart Bidding, tCPA/tROAS, Journey-Aware Bidding, value-based bidding | **bidding** | `{SKILL_BASE}/.claude/skills/bidding/gt-SKILL.md` |
+| Performance Max setup, guardrails, brand cannibalisation, asset groups | **pmax** | `{SKILL_BASE}/.claude/skills/pmax/gt-SKILL.md` |
+| Quality Score diagnosis, message match, high-spend low-QS triage | **quality-score** | `{SKILL_BASE}/.claude/skills/quality-score/gt-SKILL.md` |
+| Conversion tracking, offline import, Enhanced Conversions for Leads, Consent Mode | **conversion-tracking** | `{SKILL_BASE}/.claude/skills/conversion-tracking/gt-SKILL.md` |
+| Ad copy, Pain-Proof-CTA, RSA pin strategy, extensions | **ad-copy** | `{SKILL_BASE}/.claude/skills/ad-copy/gt-SKILL.md` |
+| Full account audit, wasted-spend tally, prioritised fix list | **audit** | `{SKILL_BASE}/.claude/skills/audit/gt-SKILL.md` |
 
-## Reference Files
+## Shared Reference Files
 
 | Resource | When to load |
 |----------|-------------|
-| `resources/references/benchmarks.md` | B2B CPL/CPC/QS/conversion benchmarks |
-| `resources/references/audit-checklist.md` | The full account audit checklist |
-| `resources/references/negative-keyword-library.md` | 200+ negatives by category |
-| `resources/references/crm-attribution.md` | HubSpot + Salesforce offline-conversion loop (ECL, GCLID, Data Manager API, value-based bidding) |
-| `resources/references/ai-bidding-2026.md` | Journey-Aware Bidding, Smart Bidding Exploration, AI Max (B2B) |
-| `resources/references/consent-mode-v2.md` | EU/EEA Consent Mode v2 compliance |
-| `resources/references/b2b-guardrail.md` | What does NOT transfer from e-commerce Google Ads advice — read first |
-| `resources/references/competitive-research.md` | Auction insights, competitor conquest |
+| `{SKILL_BASE}/resources/references/b2b-guardrail.md` | What does NOT transfer from e-commerce Google Ads advice — read first |
+| `{SKILL_BASE}/resources/references/crm-attribution.md` | HubSpot + Salesforce offline-conversion loop (ECL, GCLID, Data Manager API, value-based bidding) |
+| `{SKILL_BASE}/resources/references/ai-bidding-2026.md` | Journey-Aware Bidding, Smart Bidding Exploration, AI Max (B2B) |
+| `{SKILL_BASE}/resources/references/consent-mode-v2.md` | EU/EEA Consent Mode v2 compliance |
+| `{SKILL_BASE}/resources/references/benchmarks.md` | B2B CPL/CPC/QS/conversion benchmarks |
+| `{SKILL_BASE}/resources/references/audit-checklist.md` | The full account audit checklist |
+| `{SKILL_BASE}/resources/references/negative-keyword-library.md` | 200+ negatives by category |
+| `{SKILL_BASE}/resources/references/competitive-research.md` | Auction insights, competitor conquest |
 
 ## Routing Rules
 
-- General question ("help me with Google Ads") → ask about budget, ICP, goals, current account state → route to audit first (find the leaks), then campaign-setup
-- "My Google Ads are not working" / "wasting money" → audit → conversion-tracking → negative-keywords (in that order; that is where the money is)
-- New account / starting from scratch → conversion-tracking → campaign-setup → keywords → negative-keywords (pre-launch list)
+- General question ("help me with Google Ads") → ask about budget, ICP, goals, current account state → route to **audit** first (find the leaks), then campaign-setup
+- "My Google Ads are not working" / "wasting money" → **audit** → conversion-tracking → negative-keywords (that is where the money is)
+- New account / from scratch → **conversion-tracking** → campaign-setup → keywords → negative-keywords (pre-launch list)
+- EU/EEA account → confirm **Consent Mode v2** early (conversion-tracking)
 - Multiple topics → load primary sub-skill first, reference others as needed
 
 ## Key Benchmarks
 
-Google Ads benchmarks vary enormously by vertical, intent, and ICP. Use these as gut-checks, not targets. The only number that matters is whether spend is producing pipeline.
+B2B only. Benchmarks vary enormously by vertical, intent, and ICP — use as gut-checks, not targets; check intent tier/industry/geo/deal size/maturity before applying any figure. The only number that matters is whether spend produces pipeline.
 
 | Metric | B2B Benchmark (2026) |
 |--------|---------------------|
@@ -70,9 +78,9 @@ Google Ads benchmarks vary enormously by vertical, intent, and ICP. Use these as
 | Smart Bidding data floor | ~30+ conversions/month for the algorithm to work well |
 | Search terms review cadence | Weekly on active accounts ($10k+/mo); biweekly below that |
 
-**Critical principle — structure beats tactics.** Most underperforming B2B accounts fail at account hierarchy, conversion tracking, or negative-keyword hygiene, not at ad copy. Audit foundations before micro-optimising bids. And treat Smart Bidding as a contract: it only performs when the conversion data is clean, attribution is consistent, and budgets are not throttled. Audit the inputs before blaming the algorithm.
+**Critical principle — structure beats tactics.** Most underperforming B2B accounts fail at account hierarchy, conversion tracking, or negative-keyword hygiene, not at ad copy. Audit foundations before micro-optimising bids. Treat Smart Bidding as a contract: it only performs when conversion data is clean, attribution is consistent, and budgets aren't throttled. Audit the inputs before blaming the algorithm.
 
-**The wasted-spend reality.** In 2026 Google pushes broad match and PMax harder than ever, which adds queries to the auctions you participate in, including irrelevant ones. The search terms report and a maintained negative-keyword list are the only things standing between you and donating budget to Google. This is the cheapest hour of work in paid media and the most consistently neglected.
+**The wasted-spend reality.** In 2026 Google pushes broad match and PMax harder than ever, adding queries — including irrelevant ones — to your auctions. The search terms report and a maintained negative-keyword list are the only things standing between you and donating budget to Google. Cheapest hour of work in paid media, most consistently neglected.
 
 ---
 

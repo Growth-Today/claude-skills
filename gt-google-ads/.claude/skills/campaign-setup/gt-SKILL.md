@@ -1,4 +1,5 @@
 ---
+name: google-ads-campaign-setup
 description: Design B2B Google Ads account structure, the 3-tier funnel, brand vs non-brand separation, and budget allocation. Use for account structure, campaign architecture, funnel design, budget split, brand campaigns. Triggers on "account structure", "campaign structure", "3-tier", "brand vs non-brand", "budget allocation", "how to structure Google Ads". Do NOT use for keyword selection (use keywords) or bidding (use bidding).
 ---
 

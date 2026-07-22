@@ -1,4 +1,5 @@
 ---
+name: google-ads-conversion-tracking
 description: B2B Google Ads conversion tracking — the highest priority audit, offline conversion import, Enhanced Conversions for Leads, and tracking the right action. Use for conversion tracking, offline conversion import, Enhanced Conversions, tracking setup, tracking the wrong action, page-load vs form-submit, attribution. Triggers on "conversion tracking", "offline conversion import", "Enhanced Conversions", "tracking setup", "tracking broken", "attribution model", "data-driven attribution", "track revenue not leads". Do NOT use for bid strategy mechanics (use bidding).
 ---
 
@@ -43,10 +44,10 @@ Example 2: "Google says my CPL is great but sales says the leads are junk."
 
 ## CRM attribution
 
-For the full HubSpot + Salesforce loop — Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
+For the full HubSpot + Salesforce loop — Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `{SKILL_BASE}/resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
 ## Consent Mode v2 (EU)
 
-If the account serves the EU/EEA → Read `resources/references/consent-mode-v2.md` (required since Mar 2024; run Advanced).
+If the account serves the EU/EEA → Read `{SKILL_BASE}/resources/references/consent-mode-v2.md` (required since Mar 2024; run Advanced).
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

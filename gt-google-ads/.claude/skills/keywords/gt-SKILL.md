@@ -1,4 +1,5 @@
 ---
+name: google-ads-keywords
 description: B2B Google Ads keyword strategy, match types, intent segmentation, the qualifier mechanic, and competitor conquest. Use for keyword selection, match types, broad/phrase/exact, keyword research, intent mapping, competitor keywords. Triggers on "keyword strategy", "match types", "broad match", "phrase match", "exact match", "keyword research", "competitor conquest", "qualifier keywords". Do NOT use for negative keywords (use negative-keywords) or search terms (use search-terms).
 ---
 

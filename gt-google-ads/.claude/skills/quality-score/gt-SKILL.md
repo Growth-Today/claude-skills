@@ -1,4 +1,5 @@
 ---
+name: google-ads-quality-score
 description: B2B Google Ads Quality Score diagnosis — high-spend low-QS triage, message match, and the relevance levers that lower CPC. Use for Quality Score, QS, ad relevance, expected CTR, landing page experience, lowering CPC through relevance. Triggers on "Quality Score", "QS", "ad relevance", "expected CTR", "landing page experience", "lower CPC", "overpaying per click". Do NOT use for ad copy writing itself (use ad-copy) or landing page conversion (use conversion-tracking).
 ---
 

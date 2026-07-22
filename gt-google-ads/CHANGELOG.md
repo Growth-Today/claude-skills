@@ -4,6 +4,19 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.0.0 — 2026-07-22
+
+**Summary:** MAJOR restructure into a master router + 10 sub-skills (multi-sub-skill layout), matching gt-linkedin-ads and gt-meta-ads. Progressive disclosure; no strategy content removed. Triad parity.
+
+**Changed:**
+- `SKILL.md` is now a **master router**: dynamic `SKILL_BASE` Setup block (Glob for `**/gt-google-ads/SKILL.md`), intent → sub-skill routing table, shared-reference table, Key Benchmarks, and the B2B guardrail up top.
+- The 10 sub-skills moved from `resources/sub-skills/*.md` to `.claude/skills/<name>/gt-SKILL.md`: campaign-setup, keywords, negative-keywords, search-terms, bidding, pmax, quality-score, conversion-tracking, ad-copy, audit. Each now carries a `name:` (google-ads-*) it previously lacked.
+- Normalized all sub-skill resource references to `{SKILL_BASE}/resources/references/...`.
+
+**Validation:** 10 sub-skills referenced exactly once; every `{SKILL_BASE}` reference resolves; all names lowercase-hyphen ≤64; descriptions ≤1024; footers on every file; `.claude/` present in git; 0 competitor references.
+
+---
+
 ## v1.2.0 — 2026-07-22
 
 **Summary:** Phase 2 — 2026 AI bidding, EU compliance, and the B2B guardrail. All B2B; no e-commerce/DTC.

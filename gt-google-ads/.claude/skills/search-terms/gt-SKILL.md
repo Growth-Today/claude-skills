@@ -1,4 +1,5 @@
 ---
+name: google-ads-search-terms
 description: B2B Google Ads search terms report process — mining wasted queries, promoting winners, and review cadence. Use for search terms report, query mining, finding wasted spend, zero-conversion queries, promoting search terms to keywords. Triggers on "search terms report", "search query report", "mine queries", "zero conversion queries", "wasted queries", "promote search terms". Do NOT use for building the negative list buckets (use negative-keywords).
 ---
 

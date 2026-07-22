@@ -1,4 +1,5 @@
 ---
+name: google-ads-ad-copy
 description: B2B Google Ads ad copy — the Pain-Proof-CTA framework, RSA pin strategy, extensions/assets, and message match. Use for ad copy, responsive search ads, RSA, headlines, descriptions, ad extensions, sitelinks, pinning, ad strength. Triggers on "ad copy", "RSA", "responsive search ads", "headlines", "ad extensions", "sitelinks", "pinning", "ad strength", "write Google ads". Do NOT use for Quality Score diagnosis (use quality-score) or landing pages/tracking (use conversion-tracking).
 ---
 

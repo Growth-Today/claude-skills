@@ -1,4 +1,5 @@
 ---
+name: google-ads-audit
 description: B2B Google Ads account audit — the systematic wasted-spend review, priority order of fixes, and the recoverable-spend tally. Use for Google Ads audit, account audit, wasted spend review, account health check, what to fix first, inherited account review. Triggers on "Google Ads audit", "account audit", "audit my account", "wasted spend", "account health check", "what to fix first", "inherited a Google Ads account". Routes into the other sub-skills for each fix.
 ---
 

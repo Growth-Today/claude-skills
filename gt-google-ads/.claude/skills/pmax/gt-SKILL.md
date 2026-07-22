@@ -1,4 +1,5 @@
 ---
+name: google-ads-pmax
 description: B2B Performance Max strategy — guardrails, brand cannibalisation, account-level negatives, asset group discipline, and when PMax works for B2B. Use for Performance Max, PMax, PMax guardrails, brand cannibalisation, asset groups, PMax negatives. Triggers on "Performance Max", "PMax", "PMax guardrails", "brand cannibalisation", "asset group", "should I run PMax". Do NOT use for standard Search structure (use campaign-setup).
 ---
 

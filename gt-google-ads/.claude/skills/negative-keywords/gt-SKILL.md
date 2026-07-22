@@ -1,4 +1,5 @@
 ---
+name: google-ads-negative-keywords
 description: B2B Google Ads negative keyword strategy, the four exclusion buckets, match-type strategy for negatives, n-gram mining, and over-negation risk. Use for negative keywords, exclusion lists, wasted spend from bad queries, negative match types, shared negative lists. Triggers on "negative keywords", "exclusion list", "block keywords", "negative match type", "shared negatives", "n-gram", "over-negation". Do NOT use for the search terms report process itself (use search-terms).
 ---
 
