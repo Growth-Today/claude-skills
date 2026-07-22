@@ -4,6 +4,18 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v1.3.0 — 2026-07-22
+
+**Summary:** Phase 2 — the B2B guardrail. Codifies that generic/DTC Meta advice, tactics, and benchmarks do not transfer to B2B, so the skill (and anyone reading it) filters them out. Pure positioning + guardrail; no DTC content added.
+
+**Added:**
+- `resources/references/b2b-vs-b2c-guardrail.md` — "What does NOT transfer from generic (DTC) Meta advice": judge on pipeline/SQL not ROAS; cheap leads are the trap; no catalog/Advantage+ Shopping/commerce; B2B frequency & creative economics differ; first-party + offline mandatory; interest-stacking/day-parting/lookalike-refresh are DTC hypotheses not rules; benchmarks are not shared. Plus the rule of thumb: if the success metric is ROAS/AOV/purchases, it's DTC — adapt to pipeline/SQL or drop.
+- Names B2B SaaS tooling (HubSpot, Dreamdata, Metadata.io); notes ZenABM is LinkedIn-only.
+
+**Wired:** referenced from the orchestrator's "B2B reality" note and from campaign-setup, audiences, creative, measurement.
+
+---
+
 ## v1.2.0 — 2026-07-21
 
 **Summary:** Phase 1 — measurement hygiene + audit depth, and concrete SaaS-grounded attribution. Everything B2B; no DTC/e-commerce assumptions or benchmarks.

@@ -52,6 +52,9 @@ Example 2: "Should I build lots of tightly targeted interest ad sets?"
 → No. In 2026 broad + strong creative beats narrow interest stacking, and many overlapping ad sets corrupt learning. Consolidate, feed first-party signal, and let creative filter.
 
 
+## B2B guardrail
+
+Before applying any generic Meta tactic or benchmark here, check `resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

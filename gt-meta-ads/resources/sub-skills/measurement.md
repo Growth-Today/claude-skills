@@ -62,6 +62,9 @@ The causal answer to "is Meta actually working?" Meta's **Conversion Lift** spli
 ## Tracking hygiene & reporting
 
 For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `resources/references/tracking-hygiene.md`.
+## B2B guardrail
+
+Before applying any generic Meta tactic or benchmark here, check `resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
