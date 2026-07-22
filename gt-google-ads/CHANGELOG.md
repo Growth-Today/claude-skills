@@ -4,6 +4,22 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v1.2.0 — 2026-07-22
+
+**Summary:** Phase 2 — 2026 AI bidding, EU compliance, and the B2B guardrail. All B2B; no e-commerce/DTC.
+
+**Added:**
+- `resources/references/ai-bidding-2026.md` — **Journey-Aware Bidding** (Search + tCPA learns from the full CRM lead-to-sale journey; needs offline conversions pushed tighter than weekly), **Smart Bidding Exploration** (+27% unique converting users on Search; demand-led pacing), and **AI Max** guidance (only safe on clean offline signal + value-based bidding). Wired into `bidding`.
+- `resources/references/consent-mode-v2.md` — required in the EU/EEA since Mar 2024 (Google-certified CMP); Basic vs Advanced (run Advanced in Europe or forfeit paid conversions); without it conversions unreported + audiences unusable. Wired into `conversion-tracking`.
+- `resources/references/b2b-guardrail.md` — what does NOT transfer from e-commerce Google Ads advice: judge on pipeline/cost-per-SQL not ROAS; no Shopping/retail-PMax/feed; respect the intent ladder; Broad Match/AI Max require offline conversions; protect low B2B conversion volume; benchmarks aren't shared. Referenced from the orchestrator up top.
+
+**Changed:**
+- `resources/references/audit-checklist.md` — evidence-discipline preamble + new controls: GCLID capture, Data Manager API migration, Consent Mode v2, value-based bidding on offline data, Journey-Aware Bidding readiness, Broad Match/AI Max gating, Auction Insights + device/geo breakdowns.
+
+**Sources:** Google Ads Help / Google blog (Journey-Aware Bidding, Smart Bidding Exploration, Consent Mode v2), certified-CMP docs — accessed 2026-07-22.
+
+---
+
 ## v1.1.0 — 2026-07-22
 
 **Summary:** Phase 1 — the CRM-attribution loop, the most on-brand upgrade (GT owns the HubSpot & Salesforce admin skills). All B2B.

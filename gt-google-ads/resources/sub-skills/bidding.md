@@ -56,6 +56,9 @@ Example 2: "My campaign is 'limited by bid strategy' — what do I do?"
 ## CRM attribution
 
 For the full HubSpot + Salesforce loop — Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
+## 2026 AI bidding
+
+For Journey-Aware Bidding, Smart Bidding Exploration, and AI Max (B2B) → Read `resources/references/ai-bidding-2026.md`.
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

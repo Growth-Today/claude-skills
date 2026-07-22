@@ -1,7 +1,10 @@
 ---
 name: gt-google-ads
 description: "GT Google Ads — expert Google Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Google Ads, Google Search ads, PPC, B2B paid search, keyword strategy, match types, negative keywords, search terms report, Quality Score, Smart Bidding, tCPA, tROAS, Enhanced Conversions, value-based bidding, Performance Max, PMax, responsive search ads, RSA, Google Ads account structure, wasted spend, Google Ads audit, conversion tracking, or offline conversion import. Triggers on: Google Ads, Google search ads, PPC, paid search, negative keywords, search terms report, Quality Score, Smart Bidding, Performance Max, PMax, RSA, wasted spend audit, conversion tracking, keyword match types, broad match, account structure. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Meta/Facebook Ads (use gt-meta-ads), SEO, or organic content. More GT skills: growthtoday.co."
-version: v1.1.0
+version: v1.2.0
+# v1.2.0 (2026-07-22): Phase 2 — 2026 AI bidding (Journey-Aware Bidding, Smart Bidding Exploration,
+# AI Max), Consent Mode v2 (EU/EEA compliance), a B2B-vs-e-commerce guardrail, and an upgraded
+# audit-checklist with evidence discipline. All B2B.
 # v1.1.0 (2026-07-22): Phase 1 — HubSpot+Salesforce CRM-attribution reference (Enhanced Conversions
 # for Leads, GCLID capture, June-2026 Data Manager API migration, Dreamdata, value-based bidding on
 # offline pipeline value). Cross-linked to gt-hubspot-admin/gt-salesforce-admin. All B2B.
@@ -15,7 +18,7 @@ version: v1.1.0
 
 Expert B2B Google Ads strategist. Google Search captures active buying intent — the highest-intent traffic you can buy — but it is also the easiest channel to waste money on. This skill is built to do two jobs: stop the bleeding (wasted spend, broken tracking, missing guardrails) and then build a structure that turns search intent into pipeline, not just clicks.
 
-The first rule of this skill: **fix conversion tracking before anything else.** If tracking is wrong, every bid, every negative, every optimisation decision downstream is made on bad data. Audit tracking first, structure second, tactics third.
+The first rule of this skill: **fix conversion tracking before anything else.** If tracking is wrong, every bid, every negative, every optimisation decision downstream is made on bad data. Audit tracking first, structure second, tactics third. **B2B only — most Google Ads advice online is e-commerce; before applying any generic tactic or benchmark, run it through `resources/references/b2b-guardrail.md`.**
 
 ## Sub-Skill Routing
 
@@ -40,6 +43,9 @@ The first rule of this skill: **fix conversion tracking before anything else.** 
 | `resources/references/audit-checklist.md` | The full account audit checklist |
 | `resources/references/negative-keyword-library.md` | 200+ negatives by category |
 | `resources/references/crm-attribution.md` | HubSpot + Salesforce offline-conversion loop (ECL, GCLID, Data Manager API, value-based bidding) |
+| `resources/references/ai-bidding-2026.md` | Journey-Aware Bidding, Smart Bidding Exploration, AI Max (B2B) |
+| `resources/references/consent-mode-v2.md` | EU/EEA Consent Mode v2 compliance |
+| `resources/references/b2b-guardrail.md` | What does NOT transfer from e-commerce Google Ads advice — read first |
 | `resources/references/competitive-research.md` | Auction insights, competitor conquest |
 
 ## Routing Rules

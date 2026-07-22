@@ -2,6 +2,8 @@
 
 A structured review to find wasted spend and structural problems. Score each finding by impact x effort and ship the top 10 in two weeks. Fix in the priority order at the bottom.
 
+**Evidence discipline:** don't apply a benchmark without checking intent tier, industry, geography, deal size, and account maturity; mark **n/a**/**unknown** where you can't see it; treat betas and vendor performance claims as **discovery, not a failure**. All benchmarks here are B2B — never import e-commerce/DTC figures.
+
 ## 1. Conversion tracking (highest priority)
 - [ ] Conversion action fires on the real action (form submit / demo booked), not page load
 - [ ] No duplicate or double-counted conversions
@@ -10,6 +12,9 @@ A structured review to find wasted spend and structural problems. Score each fin
 - [ ] Offline conversion import live (lead to MQL to SQL to opportunity to closed-won, with value)
 - [ ] Conversion values reflect real business value, not flat per-lead
 - [ ] The action feeding Smart Bidding is the correct one
+- [ ] GCLID captured on the form + stored on the CRM record (90-day expiry) for match quality
+- [ ] 2026: OCI/ECL uploads migrated to the Data Manager API (June 15 2026 cutoff for the classic Ads API)
+- [ ] Consent Mode v2 (Advanced) live if the account serves the EU/EEA — else conversions/audiences degrade
 
 ## 2. Account structure
 - [ ] Brand and non-brand in separate campaigns
@@ -43,6 +48,10 @@ A structured review to find wasted spend and structural problems. Score each fin
 - [ ] Portfolio strategies not blending different-intent campaigns
 - [ ] Budgets not throttling delivery on profitable campaigns
 
+- [ ] Value-based bidding on offline pipeline value where volume allows (not flat CPL)
+- [ ] Journey-Aware Bidding considered on tCPA Search once offline conversions flow sub-weekly
+- [ ] Broad Match / AI Max only where clean offline signal exists
+
 ## 6. Quality Score
 - [ ] High-spend keywords not stuck below QS 5
 - [ ] Low QS diagnosed to component (expected CTR / ad relevance / LP experience)
@@ -67,6 +76,9 @@ A structured review to find wasted spend and structural problems. Score each fin
 - [ ] Ad scheduling sane for a B2B offer (not 24/7 if no one converts at 2am)
 - [ ] Device performance reviewed (bid adjustments where warranted)
 - [ ] MCC / account alerts configured for spend spikes, tracking drops, disapprovals
+
+- [ ] Auction Insights reviewed (impression share, outranking, emerging competitors)
+- [ ] Device + geographic breakdowns reviewed and bid-adjusted/excluded to SQL, not clicks
 
 ## Output
 - [ ] Wasted-spend tally (actual dollar figure)
