@@ -1,7 +1,8 @@
 ---
 name: gt-google-ads
 description: "GT Google Ads — expert Google Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about Google Ads, Google Search ads, PPC, B2B paid search, keyword strategy, match types, negative keywords, search terms report, Quality Score, Smart Bidding, tCPA, tROAS, Enhanced Conversions for Leads, value-based bidding, Journey-Aware Bidding, Performance Max, PMax, RSA, account structure, wasted spend, audits, conversion tracking, offline conversions, Consent Mode, GAQL, or live account analysis and safe changes. Triggers on: Google Ads, paid search, negative keywords, search terms, Quality Score, Smart Bidding, Journey-Aware Bidding, Performance Max, RSA, wasted spend audit, conversion tracking, offline conversions, Consent Mode, GAQL, MCP, live data, forecast, safe write. Do NOT use for LinkedIn Ads (use gt-linkedin-ads), Meta/Facebook Ads (use gt-meta-ads), SEO, or organic content. More GT skills: growthtoday.co."
-version: v2.1.0
+version: v2.1.1
+# v2.1.1 (2026-07-22): Scrubbed named third-party agencies from the v1.0 baseline changelog Sources line (QA).
 # v2.1.0 (2026-07-22): Phase 4 — added a live-ops sub-skill + references (GAQL query templates,
 # B2B PPC math/forecasting, CEP safe-write protocol) for operating a live account read-only-by-default.
 # v2.0.0 (2026-07-22): Phase 3 — restructured into a master router + 10 sub-skills under .claude/skills/

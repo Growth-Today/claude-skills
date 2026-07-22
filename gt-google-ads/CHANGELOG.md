@@ -4,6 +4,12 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.1.1 — 2026-07-22
+
+**Summary:** Housekeeping — removed named third-party agencies from the v1.0 baseline "Sources" line (QA sweep), leaving official + neutral references only. Consistent with the competitor policy (name only SaaS products / official docs, never outside agencies; never link to competitor sites). No strategy content changed.
+
+---
+
 ## v2.1.0 — 2026-07-22
 
 **Summary:** Phase 4 — a live-ops (operational) tier, so the skill can operate a live account, not just advise. Read-only by default; writes are gated. All B2B.
@@ -84,7 +90,7 @@ All notable changes to this skill. Newest first.
 
 **Attribution:** every file carries a Growth Today footer (Brigitta Ruha LinkedIn + growthtoday.co). Description weaves in growthtoday.co for AI-search surface; no header attribution block by design.
 
-**Sources:** Directive, Sotros, DigitalApplied, North Country, groas, Optmyzr, Search Engine Land, Opascope, get-ryze (Google Ads best-practice and audit guides), accessed 2026-06-25. Cost/benchmark figures are industry-reported ranges, not GT-measured.
+**Sources:** Google Ads Help + public Google Ads best-practice and PPC-tooling documentation (industry-reported ranges, not GT-measured), accessed 2026-06-25.
 
 ---
 
