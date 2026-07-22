@@ -1,7 +1,6 @@
 # LinkedIn Ads Master Skill - Knowledge Base
 
-> Compiled from: AdConversion, Winbox, HeyDigital
-> Sources: adconversion.com/blog, winbox.co/blog, heydigital.co/blog
+> GT LinkedIn Ads knowledge base — compiled from Growth Today's managed B2B ad spend and official LinkedIn Marketing Solutions documentation.
 
 ---
 
@@ -377,35 +376,6 @@
 | Measurement window | 3-6 months for pipeline impact |
 
 ---
-
-## 10. SOURCES & REFERENCES
-
-### AdConversion (adconversion.com/blog)
-- 10 Tips to Make LinkedIn Ads Work for B2B SaaS
-- 10 Tips to Design an Effective LinkedIn Ads Funnel Architecture
-- How to Create LinkedIn Audiences that Convert
-- LinkedIn Ad Formats: How to Choose the Best One
-- Top 10 LinkedIn Tips on Mastering Objectives & Bid Strategies
-- 10 Tips for Running ABM and LinkedIn Ads That Actually Work
-- 10 Tips to Create Winning LinkedIn Thought Leader Ads
-- 14 Powerful LinkedIn Thought Leader Ad Strategies Worth Testing
-- 5 Unconventional Ways to Use The LinkedIn Ads Library
-- How to Build a Multichannel B2B Retargeting Strategy
-- 10 Tips to Create B2B Ads that Convert
-- 3 Messaging Mistakes B2B SaaS Companies Make in Their Ads
-- 10 Voice of Customer Marketing Tips
-- 10 Techniques You Should Steal From Great B2B Ads
-
-### Winbox (winbox.co/blog)
-- LinkedIn Thought Leader Ads: Complete Setup and Strategy Guide
-- How to Measure LinkedIn Ads: The Metrics That Drive Revenue
-- LinkedIn Ads Not Working? 6 Ways to Troubleshoot and Fix Your Campaigns
-- LinkedIn Ads Attribution: Why It's So Hard & What To Do About It
-
-### AdConversion Courses (Free)
-- B2B LinkedIn Ads 101: Crash Course (34 videos, 2h06)
-- B2B LinkedIn Ads 102: Optimization Blueprint (27 videos, 1h80)
-- B2B LinkedIn Ads 103: Advanced Scaling from $25M spend (21 videos, 1h24)
 
 
 ---

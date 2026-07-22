@@ -4,6 +4,18 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.2.2 — 2026-07-22
+
+**Summary:** QA sweep — removed competitor-agency references and traffic-driving blog links from the knowledge base. No strategy content changed.
+
+**Changed:**
+- `resources/linkedin-ads-knowledge-base.md`: removed a header that credited competitor agencies + their blog URLs, and deleted the "Section 10 — Sources & References" list of competitor-agency blog articles and courses. Replaced the header with a neutral GT + official-LinkedIn-docs provenance line.
+- `CHANGELOG.md`: trimmed a bare vendor blog URL to the report name (ZenABM kept as a named SaaS source, no link).
+
+**Policy:** name only SaaS products / official docs, never competitor agencies; never link out to competitor sites. Now 0 agency references and 0 external non-GT/official links.
+
+---
+
 ## v2.2.1 — 2026-07-22
 
 **Summary:** Housekeeping — removed named third-party agencies from two reference "Sources" lines (`predictive-audiences.md`, `accelerate-ai-campaigns.md`), leaving official docs + neutral "public best-practice guidance." Consistent with the competitor policy (name only SaaS products, never outside agencies). No strategy content changed.
@@ -173,7 +185,7 @@ All notable changes to this skill. Newest first.
 
 **Not changed (intentionally):** all sub-skills other than creative, all other reference files (ad-formats, creative-strategy, funnel-architecture, targeting-audiences, bidding-objectives, measurement-attribution, troubleshooting, competitive-research, both ABM guides), and the full knowledge base. Structure and strategy were already current; only benchmark numbers and TLA creative rules needed the 2026 refresh.
 
-**Source:** ZenABM 2026 LinkedIn ABM Benchmarks Report (zenabm.com/blog/linkedin-ads-ctr-benchmarks), accessed 2026-06-11.
+**Source:** ZenABM 2026 LinkedIn ABM Benchmarks Report (ZenABM is a SaaS tool), accessed 2026-06-11.
 
 ---
 

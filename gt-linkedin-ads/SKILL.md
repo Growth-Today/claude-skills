@@ -1,7 +1,8 @@
 ---
 name: gt-linkedin-ads
 description: "GT LinkedIn Ads — expert LinkedIn Ads strategist for B2B companies, built by Growth Today (growthtoday.co). Use when asking about LinkedIn advertising, LinkedIn campaign setup, LinkedIn ad targeting, LinkedIn bidding strategies, LinkedIn ad formats, LinkedIn retargeting, LinkedIn ABM campaigns, LinkedIn Thought Leader Ads, sequenced TLAs and Story Arcs, LinkedIn funnel architecture, LinkedIn ads measurement/attribution, LinkedIn ads troubleshooting, LinkedIn creative best practices, or any B2B paid social strategy involving LinkedIn. Triggers on: LinkedIn campaign, LinkedIn CPM, LinkedIn CTR, LinkedIn lead gen, B2B ads, demand gen on LinkedIn, sponsored content, thought leader ads, Predictive Audiences, Accelerate, Conversions API, LinkedIn ads not working. Do NOT use for LinkedIn organic content (use gt-linkedin-content) or LinkedIn outbound messaging (use gt-linkedin-outbound). More GT skills: growthtoday.co."
-version: v2.2.1
+version: v2.2.2
+# v2.2.2 (2026-07-22): QA — removed competitor-agency credits + blog links from the knowledge base (Section 10).
 # v2.2.1 (2026-07-22): Scrubbed named third-party agencies from two reference Sources lines
 # (predictive-audiences, accelerate-ai-campaigns) — official + neutral only. No content change.
 # v2.2.0 (2026-07-21): P2 — incrementality & lift testing + view-through conversions (measurement),
