@@ -1,0 +1,154 @@
+# Playbook 07 — Instantly Inbox Setup  ·  [Sales Ops]
+
+Set up sending inboxes in **Instantly** — the platform Growth Today is migrating to. This is the **infrastructure / inbox side only** (connecting mailboxes, warmup, deliverability settings). Sequences and copy live in `gt-cold-email`. Numbers in `../references/reference.md` §1, §5.
+
+> **This playbook replaces the old "Setting up Domains & Inboxes with ScaledMail + Instantly" SOP.** Everything you need to execute is here; no separate SOP required.
+
+---
+
+## Part 0 — Who does the setup (two paths)
+
+**Default: a vendor does it.** An approved vendor (e.g. ScaledMail — see `../references/approved-vendors.md`) buys the domains, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today only **hands off the domain-research output** (playbook 01) plus a brief, then **verifies on delivery**. Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us — worth it.
+
+**Fallback: in-house.** If we buy and build ourselves, GT purchases the domains (playbook 01), provisions mailboxes + DNS (playbook 02), and connects them in Instantly manually (Parts 2–4 below).
+
+**Either way, GT always owns:** QA, warmup configuration, placement tests, and the handoff to the GTM Engineer for campaigns.
+
+---
+
+## Part 1 — Vendor-managed setup (default path)
+
+1. **Create the Instantly workspace first** (the vendor form needs it): Instantly → Settings → Workspace Group → **Add sub-workspace** → confirm via email.
+2. **Buy the vendor plan** choosing **"bring my own domain."**
+3. **Fill the vendor config form:** domain(s); **destination = masking or a real landing page, NOT a bare redirect** (critical rule, playbook 02); domain-provider credentials; **sequencer credentials** (dedicated vendor login from the password manager — never a personal login); sender names; **Generate Mailboxes**; tags (e.g. `Vendor - Google - <sender>`, `Vendor - Microsoft - <sender>`, plus any special tag like "Newsletter only").
+4. **Brief the vendor** (client, plan + inbox counts with MS/Google split, sender names, domains + per-domain inbox counts, tags, sequencer = Instantly, workspace, sequencer login to use, any "don't touch" existing inboxes).
+5. **Update nameservers** when the vendor requests it (delegates DNS to them).
+6. **Vendor builds + first QA** — mailboxes + MX/SPF/DKIM/DMARC, usually 2–3 days; they send a completion confirmation.
+7. **GT QA on delivery** (see checklist): counts and MS/Google totals match the brief, all inboxes tagged, connected to the correct Instantly workspace, sending limits correct, placement OK.
+8. **Add to warmup** — Google/Microsoft **native accounts only** (no SMTP) can go into Instantly's Premium pool; request via your Instantly contact.
+9. **Set warmup + cold logic** (Part 3) and **placement tests** (Part 6).
+10. **After 14 days**, ramp to fully-warmed volumes and **notify the GTM Engineer + AM** that inboxes are ready.
+
+---
+
+## Part 2 — Connecting inboxes in Instantly (in-house path)
+
+Entry: **Email Accounts → Add New → Connect existing accounts →** pick provider.
+
+**Google Workspace**
+- **OAuth (recommended):** one login connects all accounts in the same Workspace.
+- **App password:** create an app password per account, use it as **both** the IMAP and SMTP password.
+- **Bulk CSV:** supported (app password per account).
+
+**Microsoft / Outlook**
+- **One-by-one only** (OAuth Microsoft connector; no bulk, no CSV).
+- **First** enable **Authenticated SMTP + IMAP** in the Microsoft Admin Center, then **wait ~1 hour**.
+- On connect, tick **"Consent on behalf of your organization"** (shown for org accounts).
+
+**Custom SMTP** (needs **both** IMAP and SMTP — SMTP-only is not allowed). Common hosts:
+
+| Provider | IMAP (port) | SMTP (port) |
+|---|---|---|
+| Gmail | imap.gmail.com (993) | smtp.gmail.com (587/465) |
+| Namecheap Private Email | mail.privateemail.com (993) | mail.privateemail.com (465/587) |
+| Zoho (paid) | imappro.zoho.com (993) | smtppro.zoho.com (465/587) |
+| Titan | imap.titan.email (993) | smtp.titan.email (465) |
+| IONOS | imap.ionos.com (993) | smtp.ionos.com (465) |
+| GoDaddy | imap.secureserver.net (993) | smtpout.secureserver.net (465) |
+
+---
+
+## Part 3 — Warmup configuration
+
+Enable via the **flame icon** (or bulk via the ⋯ menu); warmup starts at the next 00:00 UTC.
+
+**GT warmup values** (these override Instantly's generic defaults of 10/day, +1/day, 30% reply):
+
+| | Warming (first 14 days) | Fully warmed |
+|---|---|---|
+| **Google** | warmup 25/day, **+4/day** increase, cold 0 | warmup 30/day, cold 20 |
+| **Microsoft** | warmup 8/day, **+2/day** increase, cold 0 | warmup 13/day, cold 5 |
+
+- **Reply rate:** ScaledMail SOP uses **75%**; **GT prefers ramping to 100% after warmup** to lift reputation.
+- Keep **Read Emulation on** and the recommended Open Rate / Spam Protection / Mark Important defaults.
+- **Warmup pools:** Standard = green flame; **Premium = blue** (Google/MS only, higher quality); Basic = orange (SMTP overflow); **red = warmup disabled**. Put Google/MS native inboxes in Premium.
+- **Duration:** Instantly minimum is 2 weeks; **GT recommends 3–4 weeks** (`reference.md` §5). Launch only when **Health Score > 90%**.
+- **Warmup filter** (keep warmup mail out of the inbox): copy the account's warmup tag → Gmail filter (tag in Subject + Has-the-words → Skip Inbox, label "Warmup") / Outlook rule (subject-or-body contains tag → mark read, move to "Instantly Warmup").
+
+Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1 — this table must stay consistent with it.
+
+---
+
+## Part 4 — Advanced deliverability settings
+
+Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Advanced Deliverability**):
+
+- ✅ **Send first email as text-only** — also auto-disables open tracking, strips images, converts links to plain URLs. GT default.
+- ✅ **Open tracking OFF, link tracking OFF.**
+- **ESP / Provider Matching + Routing:** available, but **do not hard-code it** — route from the Lead-ESP × sending-vendor matrix (playbook 04). Instantly's Routing rules can enforce a decision once the matrix says so.
+- **Company send limit:** default **2 leads/day per domain**; set **extra-low into SEG orgs** (playbook 04, Part 3).
+- ✅ **Insert unsubscribe header** (compliance, playbook 03 Part 5).
+- **Stop on reply** (and Stop Company on Reply) — on.
+- **Slow ramp:** +2 campaign emails/day; **new accounts only** — never re-enable on an established sender (it resets it).
+- **Minimum time gap** between emails (default 9 min + 5 min random).
+
+---
+
+## Part 5 — Custom tracking domain (only if a client insists)
+
+**GT default = no custom tracking domain and no links in cold email** (playbook 02). Only when a client strongly insists, set up a **dedicated, never-shared** one:
+- CNAME → Host **`inst`**, Target **`prox.itrackly.com`**, TTL auto/3600.
+- Enter in Instantly (account → Settings → Custom tracking domain) as **`inst.yourdomain.com`** → **Check Status** → "CNAME Verified."
+
+---
+
+## Part 6 — Placement tests (Instantly native)
+
+Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists — with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements GT's own dashboard placement tests (playbook 05). GT convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
+
+---
+
+## ✅ INSTANTLY SETUP CHECKLIST (copy-paste)
+
+```
+PATH
+[ ] Setup path decided: vendor-managed (default) or in-house
+[ ] Instantly (sub)workspace created
+
+CONNECT
+[ ] Google: OAuth / app-password (IMAP+SMTP) / bulk CSV as appropriate
+[ ] Microsoft: SMTP+IMAP enabled in Admin Center, waited ~1h, connected one-by-one, org consent ticked
+[ ] Custom SMTP: both IMAP + SMTP set with correct host/port
+[ ] Destination = masking / real landing page — NOT a bare redirect
+[ ] Inboxes tagged; correct workspace; counts + MS/Google split match the brief
+
+WARMUP
+[ ] Warmup enabled; Google 25/day (+4), Microsoft 8/day (+2), cold 0 during warming
+[ ] Premium pool for Google/MS native inboxes; no SMTP in premium
+[ ] Read emulation on; recommended sub-settings kept
+[ ] Warmup filter set in Gmail/Outlook
+[ ] Warmed 14 days min (3–4 weeks recommended); Health Score > 90% before launch
+[ ] Fully-warmed ramp set: Google 30 warmup/20 cold, Microsoft 13 warmup/5 cold
+
+DELIVERABILITY
+[ ] First email text-only; open + link tracking OFF
+[ ] Company send limit set (default 2/domain/day; lower for SEG)
+[ ] Unsubscribe header on; stop-on-reply on
+[ ] Slow ramp on for NEW accounts only
+[ ] ESP routing left to the dashboard matrix (playbook 04) — not hard-coded
+[ ] Custom tracking domain: none (unless client insists → dedicated)
+
+VERIFY & HANDOFF
+[ ] MX/SPF/DKIM/DMARC verified (playbook 02)
+[ ] Instantly automated placement tests set up
+[ ] Sending limits verified per state (reference §1)
+[ ] GTM Engineer + AM notified inboxes are ready
+```
+
+---
+
+> **Internal reference (Growth Today team).** Master SOPs backing this playbook (access-gated, not for external readers): *"MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly"* (vendor path) and the in-house Namecheap purchase SOP. These are being retired in favor of this playbook — link retained only for transition.
+
+---
+
+*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

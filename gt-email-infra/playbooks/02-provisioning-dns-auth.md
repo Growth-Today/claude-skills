@@ -72,6 +72,8 @@ Platform-aware (`approved-vendors.md`): EmailBison today, migrating to Instantly
 - **Microsoft:** one-by-one only; confirm SMTP enabled and the 1-hour window elapsed; consent on behalf of the org.
 - After connecting: set send limits by state (`reference.md` §1), tag by client/domain/provider/region, and **leave open tracking OFF**.
 
+> **On Instantly?** For the full Instantly connect + warmup + advanced-deliverability setup (vendor-managed or in-house), use **playbook 07 — Instantly Inbox Setup**.
+
 ---
 
 ## Troubleshooting (folded in)

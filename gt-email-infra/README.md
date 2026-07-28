@@ -18,6 +18,7 @@ Ask it anything about cold email infrastructure and it routes by **role and task
 
 - **[Sales Ops] Domain research & purchasing** — on-brand naming rules, avoiding spam-trap patterns, and buying safely (multi-registrar spread, no bulk-buy fingerprint).
 - **[Sales Ops] Provisioning, DNS & auth** — Google Workspace / Microsoft 365 / custom-SMTP mailboxes, MX/SPF/DKIM/DMARC, masking vs. redirect, DNS-drift monitoring.
+- **[Sales Ops] Instantly inbox setup** — connect Google/Microsoft/custom-SMTP inboxes, warmup config, and advanced-deliverability settings (vendor-managed or in-house).
 - **[Sales Ops → GTM] Warmup & go-live** — warmup timelines, ramp schedules, and a hard launch gate.
 - **[GTM] Campaign building** — routing by the Lead-ESP × sending-vendor matrix (ESP-matching is dead as a rule), and isolating SEG leads onto dedicated domains.
 - **[GTM] Dashboard reading** — inbox classification, per-state limits, and turning each panel into an action.
@@ -42,7 +43,8 @@ gt-email-infra/
     ├── 03-warmup-and-go-live.md              [Sales Ops→GTM]  + HARD LAUNCH GATE
     ├── 04-campaign-building.md               [GTM Engineer]   + CAMPAIGN checklist
     ├── 05-dashboard-reading.md               [GTM Engineer]   + HEALTH-REVIEW checklist
-    └── 06-blacklist-bounce-audit.md          [GTM Engineer]   + AUDIT checklist
+    ├── 06-blacklist-bounce-audit.md          [GTM Engineer]   + AUDIT checklist
+    └── 07-instantly-setup.md                 [Sales Ops]      + INSTANTLY SETUP checklist
 ```
 
 Note: Growth Today runs this on **EmailBison** today and is **migrating to Instantly** (Smartlead is benchmarked as a third option). The concepts, thresholds, and diagnostics are ESP-agnostic — platform-specific steps are called out inline; adapt them to your own stack.

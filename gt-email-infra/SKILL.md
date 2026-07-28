@@ -28,6 +28,7 @@ If the question is "what should the email say", it's the wrong skill. If it's "h
 |---|---|---|
 | **Sales Ops** | Research and buy sending domains | `playbooks/01-domain-research-and-purchasing.md` |
 | **Sales Ops** | Provision mailboxes + DNS/auth (masking, not redirect) | `playbooks/02-provisioning-dns-auth.md` |
+| **Sales Ops** | Set up / connect inboxes in Instantly (vendor or in-house) | `playbooks/07-instantly-setup.md` |
 | **Sales Ops → GTM** | Warm up and take domains live | `playbooks/03-warmup-and-go-live.md` |
 | **GTM Engineer** | Build campaigns, route by ESP/SEG | `playbooks/04-campaign-building.md` |
 | **GTM Engineer** | Read the inbox-health dashboard, act on it | `playbooks/05-dashboard-reading.md` |
@@ -84,6 +85,7 @@ Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxe
 Who / what?
 ├─ Sales Ops: ideate or buy domains?          → playbooks/01-domain-research-and-purchasing.md
 ├─ Sales Ops: mailboxes / DNS / auth?         → playbooks/02-provisioning-dns-auth.md
+├─ Set up / connect inboxes in Instantly?      → playbooks/07-instantly-setup.md
 ├─ Warm up / go live?                          → playbooks/03-warmup-and-go-live.md
 ├─ GTM: build or route a campaign (ESP/SEG)?   → playbooks/04-campaign-building.md
 ├─ GTM: read the dashboard / act on health?    → playbooks/05-dashboard-reading.md
