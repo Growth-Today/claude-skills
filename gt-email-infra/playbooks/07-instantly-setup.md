@@ -10,7 +10,7 @@ Set up sending inboxes in **Instantly** — the platform Growth Today is migrati
 
 **Default: a vendor does it.** An approved vendor (e.g. ScaledMail — see `../references/approved-vendors.md`) buys the domains, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today only **hands off the domain-research output** (playbook 01) plus a brief, then **verifies on delivery**. Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us — worth it.
 
-**Fallback: in-house.** If we buy and build ourselves, GT purchases the domains (playbook 01), provisions mailboxes + DNS (playbook 02), and connects them in Instantly manually (Parts 2–4 below).
+**Fallback: in-house.** If we buy and build ourselves, GT purchases the domains (playbook 01), provisions mailboxes + DNS (playbook 02), and connects them in Instantly manually (Parts 2–4 below). Full in-house step-by-step (Namecheap purchase → Instantly connect → warmup): **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (Growth Today internal, access-gated).
 
 **Either way, GT always owns:** QA, warmup configuration, placement tests, and the handoff to the GTM Engineer for campaigns.
 
@@ -147,7 +147,7 @@ VERIFY & HANDOFF
 
 ---
 
-> **Internal reference (Growth Today team).** Master SOPs backing this playbook (access-gated, not for external readers): *"MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly"* (vendor path) and the in-house Namecheap purchase SOP. These are being retired in favor of this playbook — link retained only for transition.
+> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this playbook is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page — it is referenced by this skill.** This playbook is the primary source going forward; the Notion page is retained for the in-house detail (Namecheap purchase screens, nameserver delegation, Row Zero) not duplicated here.
 
 ---
 
