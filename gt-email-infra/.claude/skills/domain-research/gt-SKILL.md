@@ -100,7 +100,7 @@ VERIFY (public footprint)
 [ ] Creation dates staggered (not all same day/registrar)
 [ ] Destination will be masking / real landing page — NOT a bare 301/302
 [ ] Batch logged for the > 30-day age-before-link gate
-[ ] Handed to the provisioning sub-skill for provisioning
+[ ] Handed to the provisioning sub-skill
 ```
 
 ---

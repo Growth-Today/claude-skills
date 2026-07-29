@@ -67,7 +67,7 @@ Value: v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com
 
 ## Part 4 — Guard against silent DNS drift
 
-Correct-at-setup is not enough — the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Re-check MX/SPF/DKIM/DMARC on a schedule (the dashboard's DNS/auth-health panel, the dashboard-reading sub-skill, surfaces broken/never-checked records and should alert on a break). Treat a broken auth record as **P0**.
+Correct-at-setup is not enough — the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Re-check MX/SPF/DKIM/DMARC on a schedule (the DNS/auth-health panel in the dashboard-reading sub-skill surfaces broken/never-checked records and should alert on a break). Treat a broken auth record as **P0**.
 
 ---
 
@@ -121,7 +121,7 @@ DNS / AUTH
 ONGOING
 [ ] Domain enrolled in the DNS/auth-drift re-check (the dashboard-reading sub-skill)
 [ ] Connected to the sequencer; open tracking OFF; tags set
-[ ] Handed to the warmup-golive sub-skill for warmup
+[ ] Handed to the warmup-golive sub-skill
 ```
 
 ---

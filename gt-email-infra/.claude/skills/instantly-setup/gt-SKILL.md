@@ -94,7 +94,7 @@ Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Ad
 - ✅ **Open tracking OFF, link tracking OFF.**
 - **ESP / Provider Matching + Routing:** available, but **do not hard-code it** — route from the Lead-ESP × sending-vendor matrix (the campaign-building sub-skill). Instantly's Routing rules can enforce a decision once the matrix says so.
 - **Company send limit:** default **2 leads/day per domain**; set **extra-low into SEG orgs** (the campaign-building sub-skill, Part 3).
-- ✅ **Insert unsubscribe header** (compliance, the warmup-golive sub-skill Part 5).
+- ✅ **Insert unsubscribe header** (compliance — see the warmup-golive sub-skill, Part 5).
 - **Stop on reply** (and Stop Company on Reply) — on.
 - **Slow ramp:** +2 campaign emails/day; **new accounts only** — never re-enable on an established sender (it resets it).
 - **Minimum time gap** between emails (default 9 min + 5 min random).

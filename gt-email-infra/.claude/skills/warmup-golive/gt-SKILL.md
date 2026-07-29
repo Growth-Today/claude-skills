@@ -21,7 +21,7 @@ Take provisioned domains (the provisioning sub-skill) from cold to live safely. 
 
 > **Auto-warmup platforms.** Instantly and Smartlead manage warmup volume automatically — you set the behavior, not an absolute daily number. On EmailBison you set the warmup number explicitly (derive it from the ratio). Either way, keep warmup copy **neutral** so the warmup score reflects reputation, not campaign content.
 
-**Monitor during warmup:** warmup/health score trending up (target ≥ 97 for Active, `reference.md` §2), sent *and* received both increasing, no red/disabled warmup. A red or disabled warmup is almost always a DNS/bounce problem → the provisioning sub-skill troubleshooting.
+**Monitor during warmup:** warmup/health score trending up (target ≥ 97 for Active, `reference.md` §2), sent *and* received both increasing, no red/disabled warmup. A red or disabled warmup is almost always a DNS/bounce problem → see the provisioning sub-skill (troubleshooting).
 
 ---
 
