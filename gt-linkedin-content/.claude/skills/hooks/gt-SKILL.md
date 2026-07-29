@@ -17,11 +17,21 @@ Read the Topic Bank in `{SKILL_BASE}/resources/writing/writing-guide.md` when as
 
 ---
 
-## Hook performance (general best practice)
+## Hook performance (from an analysis of 12,000+ GTM posts)
 
 Hook-type spread is smaller than the big averages you see quoted. Those are means, inflated by a few viral posts. By **median** (the typical post) the differences are modest, so treat hook type as a nudge and match it to the funnel goal.
 
-What the data actually says (fuller lever detail in `performance-playbook.md`, section C2):
+Typical (median) reactions by hook family, across 12,000+ B2B GTM posts:
+
+| Hook family | Typical reactions (median) |
+|---|---|
+| Number / list | 30 |
+| Personal / story | 29 |
+| How-to | 24 |
+| Contrarian | 21 |
+| Question | 18 |
+
+What the data actually says:
 
 - **No hook type "dominates."** Number and list hooks are safe and solid but sit mid-pack by median, not far ahead. The old "number-lead = 400" figure was a mean inflated by viral hits.
 - **Contrarian is the most crowded and weakest family**; it only pays off once you have an established audience.

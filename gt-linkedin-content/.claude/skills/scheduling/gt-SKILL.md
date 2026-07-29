@@ -15,7 +15,17 @@ Related sub-skill (not a resource): the reply-to-every-comment tactics inside th
 
 ## Best posting times
 
-Read the **median** (the typical post), not the mean, when judging timing. **Re-check timing against the account's own analytics and refresh it quarterly: the algorithm and your audience shift.**
+Typical (median) reactions by weekday, across an analysis of 12,000+ B2B GTM posts. Read the median (the typical post), not the mean, when judging timing. **Re-check timing against the account's own analytics and refresh it quarterly: the algorithm and your audience shift.**
+
+| Day | Typical reactions (median) |
+|---|---|
+| Monday | 23 |
+| Tuesday | 23 |
+| Thursday | 23 |
+| Wednesday | 22 |
+| Friday | 22 |
+| Saturday | 18 |
+| Sunday | 14 |
 
 - **Early week is best.** Monday tends to be the strongest weekday, and Monday to Wednesday edges ahead. The spread is small, so treat it as a nudge, not a rule; weekdays are nearly flat.
 - **Weekends are the worst by median.** Watch out for the mean: Sunday's average can spike because almost nobody posts then, so one viral post drags it up. That gap is exactly the old "post on Sunday" myth, and why it is wrong.

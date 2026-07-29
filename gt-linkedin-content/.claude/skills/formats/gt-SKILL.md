@@ -11,14 +11,22 @@ You pick the right LinkedIn content format. The default is a single image, and t
 
 Load `{SKILL_BASE}/resources/platform/algorithm.md` for format specs and the algorithm view, and `{SKILL_BASE}/resources/performance/performance-playbook.md` for the Design lever.
 
-## Format performance (general best practice)
+## Format performance (from an analysis of 12,000+ GTM posts)
 
-Ranked by their typical effect on median reactions and comments:
+Typical (median) reactions and comments by format, across 12,000+ B2B GTM posts:
+
+| Format | Typical reactions / comments (median) |
+|---|---|
+| Multi-image carousel | 44 / 6 |
+| Single image | 28 / 6 |
+| Video | 27 / 5 |
+| Document (PDF carousel) | 22 / 5 |
+| Text-only | 13 / 2 |
 
 - **Single image is the workhorse.** It should be the default and carry the majority of posts.
 - **Video is a strong but situational lever** (see the video section): audience- and timing-dependent, and cooling in the GTM space.
 - **Text-only is the floor.** Text-only posts pull very few comments, so visualize them wherever you can.
-- **PDF documents actually perform fine** (near single image), so avoiding them is an ad-boostability choice, not a performance one. Multi-image carousels can over-index, a possible contrarian play.
+- **PDF documents actually perform fine** (near single image), so avoiding them is an ad-boostability choice, not a performance one. Multi-image carousels over-index in the raw data (44), a possible contrarian play.
 
 ## Growth Today format policy
 
