@@ -1,5 +1,7 @@
 # Playbook 02 — Provisioning, DNS & Authentication  ·  [Sales Ops]
 
+> **Reads:** `../references/reference.md` §1, §4, §6 · `../references/approved-vendors.md`  ·  **Related:** playbooks 01, 03, 07.
+
 Turn purchased domains (playbook 01) into sending-ready mailboxes with correct authentication. This is where two of our biggest historical mistakes live — **bare redirects** and **default tracking domains** — so read the "never" boxes. Numbers in `../references/reference.md` §6; vendors in `../references/approved-vendors.md`.
 
 ---

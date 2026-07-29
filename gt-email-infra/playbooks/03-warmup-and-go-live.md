@@ -1,5 +1,7 @@
 # Playbook 03 — Warmup & Go-Live  ·  [Sales Ops → GTM]
 
+> **Reads:** `../references/reference.md` §1, §2, §5 · `gt-list-building` (list verification)  ·  **Related:** playbooks 01, 02, 04.
+
 Take provisioned domains (playbook 02) from cold to live safely. The whole point is patience: warm long enough, age before you link, and cross a hard gate before the first send. Numbers in `../references/reference.md` §1, §5.
 
 ---

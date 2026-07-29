@@ -1,5 +1,7 @@
 # Playbook 01 — Domain Research & Purchasing  ·  [Sales Ops]
 
+> **Reads:** `../references/reference.md` §4, §5, §9 · `../references/approved-vendors.md`  ·  **Feeds:** playbook 02.
+
 How to ideate a clean list of sending domains and buy them safely, so a domain is never flagged *before it sends a single email*. This is the first step of any new infrastructure build. Numbers live in `../references/reference.md` §4, §5, §9; vendors in `../references/approved-vendors.md`.
 
 **Why this matters most.** A domain's *name* and *how it was bought* can get it blocklisted before it ever sends. A 2026 longitudinal study of ~1.52 million malicious domains (Mashood & Nabeel) found the tell-tale abuse signals are exactly the ones a careless cold-email setup produces: fresh domains (median flagged age 60 days), bulk purchases from one registrar on one day (**77.9%** of abusive domains sat in a single registrar+date batch), a handful of over-used registrars, and cheap TLDs. Domain sourcing — not delisting — is where deliverability is won or lost.

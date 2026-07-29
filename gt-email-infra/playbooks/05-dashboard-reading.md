@@ -1,5 +1,7 @@
 # Playbook 05 — Reading the Inbox-Health Dashboard  ·  [GTM Engineer]
 
+> **Reads:** `../references/reference.md` §1, §2, §3, §7  ·  **Related:** playbooks 04, 06.
+
 How to read the automated inbox-management dashboard and turn each panel into an action. Don't track health by hand — the system classifies every inbox and domain continuously; your job is to read it correctly and act. All thresholds live in `../references/reference.md` §1–§3.
 
 ---

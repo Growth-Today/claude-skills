@@ -1,5 +1,7 @@
 # Playbook 06 — Blacklist & Bounce Audit  ·  [GTM Engineer]
 
+> **Reads:** `../references/reference.md` §7  ·  **Related:** playbooks 05, 01 · `gt-list-building`.
+
 How to find where a bounce or blacklist problem *actually* comes from, so you fix the real cause instead of treating every bounce the same. The output is a clear root cause — **infrastructure, list/data, or copy** — and the right owner. Codes and thresholds in `../references/reference.md` §7.
 
 ---

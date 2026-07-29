@@ -1,5 +1,7 @@
 # Playbook 07 — Instantly Inbox Setup  ·  [Sales Ops]
 
+> **Reads:** `../references/reference.md` §1, §5 · `../references/approved-vendors.md`  ·  **Related:** playbooks 02, 03, 04.
+
 Set up sending inboxes in **Instantly** — the platform Growth Today is migrating to. This is the **infrastructure / inbox side only** (connecting mailboxes, warmup, deliverability settings). Sequences and copy live in `gt-cold-email`. Numbers in `../references/reference.md` §1, §5.
 
 > **This playbook replaces the old "Setting up Domains & Inboxes with ScaledMail + Instantly" SOP.** Everything you need to execute is here; no separate SOP required.
@@ -10,9 +12,9 @@ Set up sending inboxes in **Instantly** — the platform Growth Today is migrati
 
 **Default: a vendor does it.** An approved vendor (e.g. ScaledMail — see `../references/approved-vendors.md`) buys the domains, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today only **hands off the domain-research output** (playbook 01) plus a brief, then **verifies on delivery**. Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us — worth it.
 
-**Fallback: in-house.** If we buy and build ourselves, GT purchases the domains (playbook 01), provisions mailboxes + DNS (playbook 02), and connects them in Instantly manually (Parts 2–4 below). Full in-house step-by-step (Namecheap purchase → Instantly connect → warmup): **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (Growth Today internal, access-gated).
+**Fallback: in-house.** If we buy and build ourselves, Growth Today purchases the domains (playbook 01), provisions mailboxes + DNS (playbook 02), and connects them in Instantly manually (Parts 2–4 below). Full in-house step-by-step (Namecheap purchase → Instantly connect → warmup): **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (Growth Today internal, access-gated).
 
-**Either way, GT always owns:** QA, warmup configuration, placement tests, and the handoff to the GTM Engineer for campaigns.
+**Either way, Growth Today always owns:** QA, warmup configuration, placement tests, and the handoff to the GTM Engineer for campaigns.
 
 ---
 
@@ -24,7 +26,7 @@ Set up sending inboxes in **Instantly** — the platform Growth Today is migrati
 4. **Brief the vendor** (client, plan + inbox counts with MS/Google split, sender names, domains + per-domain inbox counts, tags, sequencer = Instantly, workspace, sequencer login to use, any "don't touch" existing inboxes).
 5. **Update nameservers** when the vendor requests it (delegates DNS to them).
 6. **Vendor builds + first QA** — mailboxes + MX/SPF/DKIM/DMARC, usually 2–3 days; they send a completion confirmation.
-7. **GT QA on delivery** (see checklist): counts and MS/Google totals match the brief, all inboxes tagged, connected to the correct Instantly workspace, sending limits correct, placement OK.
+7. **Growth Today QA on delivery** (see checklist): counts and MS/Google totals match the brief, all inboxes tagged, connected to the correct Instantly workspace, sending limits correct, placement OK.
 8. **Add to warmup** — Google/Microsoft **native accounts only** (no SMTP) can go into Instantly's Premium pool; request via your Instantly contact.
 9. **Set warmup + cold logic** (Part 3) and **placement tests** (Part 6).
 10. **After 14 days**, ramp to fully-warmed volumes and **notify the GTM Engineer + AM** that inboxes are ready.
@@ -62,17 +64,17 @@ Entry: **Email Accounts → Add New → Connect existing accounts →** pick pro
 
 Enable via the **flame icon** (or bulk via the ⋯ menu); warmup starts at the next 00:00 UTC.
 
-**GT warmup values** (these override Instantly's generic defaults of 10/day, +1/day, 30% reply):
+**Growth Today warmup values** (these override Instantly's generic defaults of 10/day, +1/day, 30% reply):
 
 | | Warming (first 14 days) | Fully warmed |
 |---|---|---|
 | **Google** | warmup 25/day, **+4/day** increase, cold 0 | warmup 30/day, cold 20 |
 | **Microsoft** | warmup 8/day, **+2/day** increase, cold 0 | warmup 13/day, cold 5 |
 
-- **Reply rate:** ScaledMail SOP uses **75%**; **GT prefers ramping to 100% after warmup** to lift reputation.
+- **Reply rate:** ScaledMail SOP uses **75%**; **Growth Today prefers ramping to 100% after warmup** to lift reputation.
 - Keep **Read Emulation on** and the recommended Open Rate / Spam Protection / Mark Important defaults.
 - **Warmup pools:** Standard = green flame; **Premium = blue** (Google/MS only, higher quality); Basic = orange (SMTP overflow); **red = warmup disabled**. Put Google/MS native inboxes in Premium.
-- **Duration:** Instantly minimum is 2 weeks; **GT recommends 3–4 weeks** (`reference.md` §5). Launch only when **Health Score > 90%**.
+- **Duration:** Instantly minimum is 2 weeks; **Growth Today recommends 3–4 weeks** (`reference.md` §5). Launch only when **Health Score > 90%**.
 - **Warmup filter** (keep warmup mail out of the inbox): copy the account's warmup tag → Gmail filter (tag in Subject + Has-the-words → Skip Inbox, label "Warmup") / Outlook rule (subject-or-body contains tag → mark read, move to "Instantly Warmup").
 
 Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1 — this table must stay consistent with it.
@@ -83,7 +85,7 @@ Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1
 
 Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Advanced Deliverability**):
 
-- ✅ **Send first email as text-only** — also auto-disables open tracking, strips images, converts links to plain URLs. GT default.
+- ✅ **Send first email as text-only** — also auto-disables open tracking, strips images, converts links to plain URLs. Growth Today default.
 - ✅ **Open tracking OFF, link tracking OFF.**
 - **ESP / Provider Matching + Routing:** available, but **do not hard-code it** — route from the Lead-ESP × sending-vendor matrix (playbook 04). Instantly's Routing rules can enforce a decision once the matrix says so.
 - **Company send limit:** default **2 leads/day per domain**; set **extra-low into SEG orgs** (playbook 04, Part 3).
@@ -96,7 +98,7 @@ Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Ad
 
 ## Part 5 — Custom tracking domain (only if a client insists)
 
-**GT default = no custom tracking domain and no links in cold email** (playbook 02). Only when a client strongly insists, set up a **dedicated, never-shared** one:
+**Growth Today default = no custom tracking domain and no links in cold email** (playbook 02). Only when a client strongly insists, set up a **dedicated, never-shared** one:
 - CNAME → Host **`inst`**, Target **`prox.itrackly.com`**, TTL auto/3600.
 - Enter in Instantly (account → Settings → Custom tracking domain) as **`inst.yourdomain.com`** → **Check Status** → "CNAME Verified."
 
@@ -104,7 +106,7 @@ Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Ad
 
 ## Part 6 — Placement tests (Instantly native)
 
-Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists — with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements GT's own dashboard placement tests (playbook 05). GT convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
+Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists — with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements Growth Today's own dashboard placement tests (playbook 05). Growth Today convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
 
 ---
 

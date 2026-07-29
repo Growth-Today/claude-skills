@@ -1,5 +1,7 @@
 # Playbook 04 — Campaign Building & ESP/SEG Routing  ·  [GTM Engineer]
 
+> **Reads:** `../references/reference.md` §1, §2, §7, §8  ·  **Related:** playbooks 05, 06 · `gt-list-building`.
+
 How to build a campaign that routes to the right inboxes and gets optimized from data — not from a 2024 rule of thumb. Numbers and taxonomy live in `../references/reference.md` §1, §2, §8.
 
 **The one mindset shift:** you are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and you find it on the dashboard, not by guessing.

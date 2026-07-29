@@ -39,7 +39,7 @@ External market benchmarks for cold email — the numbers that tell you **what's
 
 By provider: **Gmail ~2.95%**, **Outlook ~4.34%** (Outlook lists punish bad data harder).
 
-**Good / bad line:** keep bounce **under 2%** (benchmark pro-tip). GT operational: **> 3% → Burnt**, **> 5% → hard action** (`reference.md` §3).
+**Good / bad line:** keep bounce **under 2%** (benchmark pro-tip). Growth Today operational: **> 3% → Burnt**, **> 5% → hard action** (`reference.md` §3).
 
 **Strategic read.** Bounce is a **data-quality readout, not an infra problem** — a wave of hard bounces means the list wasn't valid when sent (see playbook 06). Above 2%, fix verification/enrichment first. Outlook-heavy segments bounce higher, so verify those lists harder.
 
@@ -127,7 +127,7 @@ Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bo
 | Median sender | **13.92** |
 | Danger (throttling risk) | **50+** |
 
-**Strategic read.** **Scale by adding mailboxes, never by pushing volume per mailbox** — ten inboxes at 40/day beat four at 100/day. Ties to GT per-state limits in `reference.md` §1 (Active Google cold 20 / Outlook 5).
+**Strategic read.** **Scale by adding mailboxes, never by pushing volume per mailbox** — ten inboxes at 40/day beat four at 100/day. Ties to Growth Today per-state limits in `reference.md` §1 (Active Google cold 20 / Outlook 5).
 
 ---
 
@@ -135,7 +135,7 @@ Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bo
 
 Use this to grade any client at a glance. "Direction" shows which way is better.
 
-| Metric | Direction | Best-in-class | Typical / median | Poor | GT target |
+| Metric | Direction | Best-in-class | Typical / median | Poor | Growth Today target |
 |---|---|---|---|---|---|
 | Contacts per positive reply | lower | ≤ 26–38 (top 5–10%) | 135 | ≥ 270–625 | < 70 |
 | Bounce rate | lower | 0.28% | 1.54% | 6.71% | < 2% (act > 3%) |

@@ -14,17 +14,17 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 - Google **1.5 : 1**
 - Microsoft / Outlook **2.5 : 1** (deliberately stricter)
 
-**Cold limit by inbox state:**
+**Limits by inbox state** (the standard Growth Today values these playbooks all derive from):
 
-| Inbox state | Google cold | Outlook cold |
-|---|---|---|
-| First 14 days (warming) | 0–1 * | 0–1 * |
-| After warmup (sending) | 20 | 5 |
-| Warmup Needed / Burnt (throttled) | 0–1 * | 0–1 * |
+| Inbox state | Google cold | Google warmup | Outlook cold | Outlook warmup |
+|---|---|---|---|---|
+| First 14 days (warming) | 0–1 * | 25 | 0–1 * | 8 |
+| After warmup (sending) | 20 | 30 | 5 | 13 |
+| Warmup Needed / Burnt (throttled) | 0–1 * | 25 | 0–1 * | 8 |
 
 \* During warming and when throttled, cold is effectively off. Instantly/Smartlead can set **0**; **EmailBison's minimum is 1** (it cannot do 0) — the failover gap below.
 
-**Warmup = cold × ratio** (worked example for a healthy sending inbox): Google 20 × 1.5 = **~30**; Outlook 5 × 2.5 = **~13**. Treat these as *derived* targets, not fixed constants — change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets it.
+**Warmup is governed by the warm-to-cold ratio, not a fixed constant.** The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**; Outlook 5 × 2.5 = **13**. Change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets warmup for you. During warming the ramp is Google **+4/day**, Outlook **+2/day** (see playbook 07).
 
 - **Failover gap (EmailBison):** cold can't be set to 0, so an unhealthy inbox is throttled to 1 rather than silenced — and a lead being prospected by that inbox keeps getting sent from it; Bison won't hand the lead to another healthy inbox on the campaign. Instantly *can*, which is the main reason for the migration.
 - Limits auto-adjust on day 15 (after the 14-day warmup floor).
