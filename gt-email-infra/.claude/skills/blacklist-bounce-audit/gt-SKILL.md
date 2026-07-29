@@ -1,8 +1,13 @@
-# Playbook 06 — Blacklist & Bounce Audit  ·  [GTM Engineer]
+---
+name: email-infra-bounce-audit
+description: "Audit a bounce or blacklist problem to root cause. Use to strip auto-replies before reading bounce rate, categorize bounces, read soft versus hard SMTP codes, de-scope SURBL, run the neutral-copy test, and trace the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, SURBL, Spamhaus, URIBL, hard bounce, soft bounce, bounce codes, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-building)."
+---
 
-> **Reads:** `../references/reference.md` §7  ·  **Related:** playbooks 05, 01 · `gt-list-building`.
+# Blacklist & Bounce Audit  ·  [GTM Engineer]
 
-How to find where a bounce or blacklist problem *actually* comes from, so you fix the real cause instead of treating every bounce the same. The output is a clear root cause — **infrastructure, list/data, or copy** — and the right owner. Codes and thresholds in `../references/reference.md` §7.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §7  ·  **Related:** dashboard-reading, domain-research · gt-list-building.
+
+How to find where a bounce or blacklist problem *actually* comes from, so you fix the real cause instead of treating every bounce the same. The output is a clear root cause — **infrastructure, list/data, or copy** — and the right owner. Codes and thresholds in `{SKILL_BASE}/resources/reference.md` §7.
 
 ---
 
@@ -68,7 +73,7 @@ Name the cause explicitly and route it:
 | **Infra / automation** | warmup ratio off, DNS/auth drift, throttling/failover | Automation/OpsLab team |
 | **List / data** | wave of hard 5.1.1 / bad-data bounces | Verification/enrichment — confirm which verifier ran, fix the step (`gt-list-building`) |
 | **Copy** | consistent spam placement everywhere, empty liquid, weak variance, spam words, aggressive volume | GTM Engineer rewrites (client conversation if they supplied/insisted on the copy) |
-| **Domain burned** | large share of inboxes on Spamhaus/URIBL-listed domains | Buy new domains + new infra (playbooks 01–02); recycle SEG-burnt domains first |
+| **Domain burned** | large share of inboxes on Spamhaus/URIBL-listed domains | Buy new domains + new infra (the domain-research and provisioning sub-skills); recycle SEG-burnt domains first |
 
 Also check before you conclude: spintax present? complaints/unsubs overall vs on these inboxes? any inbox used in another sequencer in parallel?
 
@@ -80,7 +85,7 @@ Also check before you conclude: spintax present? complaints/unsubs overall vs on
 
 - **Never request delisting before fixing the root cause** — you'll just get re-listed.
 - **Retire vs delist** per domain, decided after the neutral-copy test.
-- **Rest a burnt inbox:** cold off → re-test days 2–10 → retire after 10 with no recovery (playbook 05, Part 5).
+- **Rest a burnt inbox:** cold off → re-test days 2–10 → retire after 10 with no recovery (the dashboard-reading sub-skill, Part 5).
 
 ---
 

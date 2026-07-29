@@ -1,8 +1,13 @@
-# Playbook 02 — Provisioning, DNS & Authentication  ·  [Sales Ops]
+---
+name: email-infra-provisioning
+description: "Provision cold-email mailboxes and configure DNS and authentication. Use for Google Workspace, Microsoft 365, and custom-SMTP mailbox setup, MX/SPF/DKIM/DMARC records, masking versus redirect, custom tracking domains, and DNS-drift monitoring. Triggers on mailbox setup, DNS setup, MX, SPF, DKIM, DMARC, provisioning, masking, redirect, tracking domain, Google Workspace, Microsoft 365. Do NOT use for buying domains (use the domain-research sub-skill), Instantly inbox connection (use the instantly-setup sub-skill), or warmup (use the warmup-golive sub-skill)."
+---
 
-> **Reads:** `../references/reference.md` §1, §4, §6 · `../references/approved-vendors.md`  ·  **Related:** playbooks 01, 03, 07.
+# Provisioning, DNS & Authentication  ·  [Sales Ops]
 
-Turn purchased domains (playbook 01) into sending-ready mailboxes with correct authentication. This is where two of our biggest historical mistakes live — **bare redirects** and **default tracking domains** — so read the "never" boxes. Numbers in `../references/reference.md` §6; vendors in `../references/approved-vendors.md`.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §4, §6 · `{SKILL_BASE}/resources/approved-vendors.md`  ·  **Related:** domain-research, warmup-golive, instantly-setup.
+
+Turn purchased domains (the domain-research sub-skill) into sending-ready mailboxes with correct authentication. This is where two of our biggest historical mistakes live — **bare redirects** and **default tracking domains** — so read the "never" boxes. Numbers in `{SKILL_BASE}/resources/reference.md` §6; vendors in `{SKILL_BASE}/resources/approved-vendors.md`.
 
 ---
 
@@ -62,7 +67,7 @@ Value: v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com
 
 ## Part 4 — Guard against silent DNS drift
 
-Correct-at-setup is not enough — the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Re-check MX/SPF/DKIM/DMARC on a schedule (the dashboard's DNS/auth-health panel, playbook 05, surfaces broken/never-checked records and should alert on a break). Treat a broken auth record as **P0**.
+Correct-at-setup is not enough — the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Re-check MX/SPF/DKIM/DMARC on a schedule (the dashboard's DNS/auth-health panel, the dashboard-reading sub-skill, surfaces broken/never-checked records and should alert on a break). Treat a broken auth record as **P0**.
 
 ---
 
@@ -74,7 +79,7 @@ Platform-aware (`approved-vendors.md`): EmailBison today, migrating to Instantly
 - **Microsoft:** one-by-one only; confirm SMTP enabled and the 1-hour window elapsed; consent on behalf of the org.
 - After connecting: set send limits by state (`reference.md` §1), tag by client/domain/provider/region, and **leave open tracking OFF**.
 
-> **On Instantly?** For the full Instantly connect + warmup + advanced-deliverability setup (vendor-managed or in-house), use **playbook 07 — Instantly Inbox Setup**.
+> **On Instantly?** For the full Instantly connect + warmup + advanced-deliverability setup (vendor-managed or in-house), use **the instantly-setup sub-skill**.
 
 ---
 
@@ -87,7 +92,7 @@ Platform-aware (`approved-vendors.md`): EmailBison today, migrating to Instantly
 | "DKIM authentication failed" | Wrong/absent key or host → regenerate, paste exact value, correct host (`google._domainkey` / `selector1._domainkey`), wait up to 24 h |
 | "DMARC missing" | Never auto-created → add the `_dmarc` TXT above |
 | Microsoft won't connect | SMTP+IMAP not both enabled, or 1-hour window not elapsed → enable both, wait, retry (incognito) |
-| Warmup red / disabled | Usually a DNS/bounce problem → run the domain test, fix DNS, check blacklist (playbook 06), re-enable warmup |
+| Warmup red / disabled | Usually a DNS/bounce problem → run the domain test, fix DNS, check blacklist (the bounce-audit sub-skill), re-enable warmup |
 
 ---
 
@@ -114,9 +119,9 @@ DNS / AUTH
 [ ] Verified (dig / headers / sequencer domain test)
 
 ONGOING
-[ ] Domain enrolled in the DNS/auth-drift re-check (playbook 05)
+[ ] Domain enrolled in the DNS/auth-drift re-check (the dashboard-reading sub-skill)
 [ ] Connected to the sequencer; open tracking OFF; tags set
-[ ] Handed to playbook 03 for warmup
+[ ] Handed to the warmup-golive sub-skill for warmup
 ```
 
 ---

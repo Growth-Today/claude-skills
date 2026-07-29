@@ -1,6 +1,6 @@
 # Approved Vendors
 
-The tools and services Growth Today uses (or benchmarks) for cold-email infrastructure. Playbooks reference "an approved vendor" and point here rather than hard-coding a single name — swap in whichever approved option fits the engagement.
+The tools and services Growth Today uses (or benchmarks) for cold-email infrastructure. Sub-skills reference "an approved vendor" and point here rather than hard-coding a single name — swap in whichever approved option fits the engagement.
 
 > These are the vendors we consider fit for purpose. Pick per engagement; the *process* (multi-registrar spread, masking-not-redirect, warmup discipline) matters more than the specific brand.
 

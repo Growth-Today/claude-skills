@@ -1,8 +1,13 @@
-# Playbook 01 — Domain Research & Purchasing  ·  [Sales Ops]
+---
+name: email-infra-domain-research
+description: "Research and buy cold-email sending domains safely. Use for domain ideation, on-brand naming rules, avoiding spam-trap naming patterns, TLD choice, registrar spread, and buying domains without a bulk-registration fingerprint. Triggers on domain research, buy domains, sending domains, domain naming, secondary domains, registrars, ScaledMail, bulk domain purchase. Do NOT use for DNS/mailbox setup (use the provisioning sub-skill) or connecting inboxes in Instantly (use the instantly-setup sub-skill)."
+---
 
-> **Reads:** `../references/reference.md` §4, §5, §9 · `../references/approved-vendors.md`  ·  **Feeds:** playbook 02.
+# Domain Research & Purchasing  ·  [Sales Ops]
 
-How to ideate a clean list of sending domains and buy them safely, so a domain is never flagged *before it sends a single email*. This is the first step of any new infrastructure build. Numbers live in `../references/reference.md` §4, §5, §9; vendors in `../references/approved-vendors.md`.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §4, §5, §9 · `{SKILL_BASE}/resources/approved-vendors.md`  ·  **Feeds:** the provisioning sub-skill.
+
+How to ideate a clean list of sending domains and buy them safely, so a domain is never flagged *before it sends a single email*. This is the first step of any new infrastructure build. Numbers live in `{SKILL_BASE}/resources/reference.md` §4, §5, §9; vendors in `{SKILL_BASE}/resources/approved-vendors.md`.
 
 **Why this matters most.** A domain's *name* and *how it was bought* can get it blocklisted before it ever sends. A 2026 longitudinal study of ~1.52 million malicious domains (Mashood & Nabeel) found the tell-tale abuse signals are exactly the ones a careless cold-email setup produces: fresh domains (median flagged age 60 days), bulk purchases from one registrar on one day (**77.9%** of abusive domains sat in a single registrar+date batch), a handful of over-used registrars, and cheap TLDs. Domain sourcing — not delisting — is where deliverability is won or lost.
 
@@ -27,7 +32,7 @@ How to ideate a clean list of sending domains and buy them safely, so a domain i
 
 > **Naming is the default, not a hard lock.** Brand-tied naming is the standard. The GTM / account owner may deliberately choose a different route (e.g. buying aged, generic-named domains — see Part 3) as a trade-off; that's an owner decision, not a rule violation.
 
-> **Newsletter/event domains are the one exception.** For opt-in newsletter or event sends (not cold), brand-oriented descriptors are fine (e.g. `brandwebinars`, `brandevents`). This playbook is about **cold** sending domains — keep those to the brand word alone.
+> **Newsletter/event domains are the one exception.** For opt-in newsletter or event sends (not cold), brand-oriented descriptors are fine (e.g. `brandwebinars`, `brandevents`). This sub-skill is about **cold** sending domains — keep those to the brand word alone.
 
 ---
 
@@ -52,7 +57,7 @@ Use in Claude when generating a candidate list:
 
 **The fingerprint to avoid.** The 2026 malicious-domains study found **77.9%** of abusive domains belong to a single (registrar, creation-date) bulk batch, and a small set of registrars plus cheap TLDs (`.top/.xyz/.cc`) dominate abuse. Buying many domains at once, from one registrar, on one day looks *identical to that* to the filters — legitimacy doesn't save you.
 
-**How we buy (via an approved purchasing vendor — see `../references/approved-vendors.md`):**
+**How we buy (via an approved purchasing vendor — see `{SKILL_BASE}/resources/approved-vendors.md`):**
 - Buy across **multiple registrars**, spread over **~24h at 2–3h intervals**, staying **< 5 per registrar per day**.
 - Spread DNS across **multiple Cloudflare accounts** (no single hub-and-spoke footprint).
 - Typically **~1 day to buy + ~1 day to configure**; no impact on sales delivery.
@@ -67,7 +72,7 @@ Use in Claude when generating a candidate list:
 
 ## Part 4 — Hand-off to provisioning
 
-Once purchased, the domain goes to **playbook 02** for mailboxes + DNS/auth. Two things must be true before provisioning: the destination will be **masking or a real landing page (never a bare redirect)**, and the domain will not carry links/tracking in cold sends.
+Once purchased, the domain goes to **the provisioning sub-skill** for mailboxes + DNS/auth. Two things must be true before provisioning: the destination will be **masking or a real landing page (never a bare redirect)**, and the domain will not carry links/tracking in cold sends.
 
 ---
 
@@ -95,7 +100,7 @@ VERIFY (public footprint)
 [ ] Creation dates staggered (not all same day/registrar)
 [ ] Destination will be masking / real landing page — NOT a bare 301/302
 [ ] Batch logged for the > 30-day age-before-link gate
-[ ] Handed to playbook 02 for provisioning
+[ ] Handed to the provisioning sub-skill for provisioning
 ```
 
 ---

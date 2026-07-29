@@ -1,6 +1,6 @@
 # Email Infrastructure — Reference
 
-Single source of truth for every number, limit, timeline, threshold, and taxonomy used across this skill. All playbooks point here — never restate a number in a playbook; link to this file. If a value changes, change it here once.
+Single source of truth for every number, limit, timeline, threshold, and taxonomy used across this skill. All sub-skills point here — never restate a number in a sub-skill; link to this file. If a value changes, change it here once.
 
 > **Platform note.** Growth Today runs cold sending on **EmailBison today** and is **migrating to Instantly** (Smartlead is the third option we benchmark against). The classification/limit logic below is what our automated inbox-management system enforces today on Bison; the *targets* (warmup length, ratios, healthy thresholds) are platform-independent and carry over. Where a limit is platform-specific (e.g. EmailBison's minimum cold limit = 1, not 0), it is flagged.
 
@@ -14,7 +14,7 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 - Google **1.5 : 1**
 - Microsoft / Outlook **2.5 : 1** (deliberately stricter)
 
-**Limits by inbox state** (the standard Growth Today values these playbooks all derive from):
+**Limits by inbox state** (the standard Growth Today values these sub-skills all derive from):
 
 | Inbox state | Google cold | Google warmup | Outlook cold | Outlook warmup |
 |---|---|---|---|---|
@@ -24,7 +24,7 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 
 \* During warming and when throttled, cold is effectively off. Instantly/Smartlead can set **0**; **EmailBison's minimum is 1** (it cannot do 0) — the failover gap below.
 
-**Warmup is governed by the warm-to-cold ratio, not a fixed constant.** The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**; Outlook 5 × 2.5 = **13**. Change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets warmup for you. During warming the ramp is Google **+4/day**, Outlook **+2/day** (see playbook 07).
+**Warmup is governed by the warm-to-cold ratio, not a fixed constant.** The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**; Outlook 5 × 2.5 = **13**. Change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets warmup for you. During warming the ramp is Google **+4/day**, Outlook **+2/day** (see the instantly-setup sub-skill).
 
 - **Failover gap (EmailBison):** cold can't be set to 0, so an unhealthy inbox is throttled to 1 rather than silenced — and a lead being prospected by that inbox keeps getting sent from it; Bison won't hand the lead to another healthy inbox on the campaign. Instantly *can*, which is the main reason for the migration.
 - Limits auto-adjust on day 15 (after the 14-day warmup floor).
@@ -119,7 +119,7 @@ Scaling rules: increase volume **≤ 20%/week**; stagger new-domain launches (**
 | DKIM | Signature proving authenticity | Copy the exact key, no stray spaces |
 | DMARC | Policy for SPF/DKIM failures | Start `p=none` (monitor), tighten later |
 
-**Redirect vs masking:** a secondary domain must reach a real destination via **masking or a genuine landing page — never a bare 301/302 redirect** to the main site. Blocklists (SURBL) follow redirects, and many domains → one site is the exact spam fingerprint. See playbook 02.
+**Redirect vs masking:** a secondary domain must reach a real destination via **masking or a genuine landing page — never a bare 301/302 redirect** to the main site. Blocklists (SURBL) follow redirects, and many domains → one site is the exact spam fingerprint. See the provisioning sub-skill.
 
 **Silent DNS drift** is the real risk, not initial setup — records can be quietly broken by a provider later. Re-check MX/SPF/DKIM/DMARC on a schedule.
 
@@ -145,7 +145,7 @@ Scaling rules: increase volume **≤ 20%/week**; stagger new-domain launches (**
 
 Root cause by type: **hard 5XX → list/verification/data**; **soft 4XX → temporary/infra**; **5.7.1 → corporate filtering/SEG/reputation** (not the address).
 
-> **⚠️ Strip auto-replies BEFORE reading any bounce rate.** EmailBison miscounts out-of-office and auto-replies as bounces — this inflated one real audit by **~54%** (raw 2,687 "bounces" → 1,231 real). Reclassify OOO/auto-reply out of the bounce bucket first, or every bounce number you read is wrong. See playbook 06.
+> **⚠️ Strip auto-replies BEFORE reading any bounce rate.** EmailBison miscounts out-of-office and auto-replies as bounces — this inflated one real audit by **~54%** (raw 2,687 "bounces" → 1,231 real). Reclassify OOO/auto-reply out of the bounce bucket first, or every bounce number you read is wrong. See the bounce-audit sub-skill.
 
 ---
 
@@ -153,13 +153,13 @@ Root cause by type: **hard 5XX → list/verification/data**; **soft 4XX → temp
 
 **Recipient ESP** (who receives): **Google** (Gmail/Workspace), **Microsoft/Outlook** (Exchange Online), **Enterprise/SEG**, **Other** (Zoho, custom mail servers).
 
-**SEG (Secure Email Gateway)** — a filtering layer a company puts *in front of* Google/Microsoft: **Mimecast, Proofpoint, Barracuda**. A SEG block is the recipient's security policy working as designed, **not a defect on our side**. SEG leads get isolated onto dedicated domains (playbook 04).
+**SEG (Secure Email Gateway)** — a filtering layer a company puts *in front of* Google/Microsoft: **Mimecast, Proofpoint, Barracuda**. A SEG block is the recipient's security policy working as designed, **not a defect on our side**. SEG leads get isolated onto dedicated domains (the campaign-building sub-skill).
 
-**ESP matching is dead as a fixed rule.** Sending from the same provider the recipient uses was a 2024 tactic. Do **not** hard-code it. Decide keep/drop per segment from our own Lead-ESP × sending-vendor reply data on the dashboard (playbook 05).
+**ESP matching is dead as a fixed rule.** Sending from the same provider the recipient uses was a 2024 tactic. Do **not** hard-code it. Decide keep/drop per segment from our own Lead-ESP × sending-vendor reply data on the dashboard (the dashboard-reading sub-skill).
 
 ---
 
-## 9. Domain sourcing quick-reference (detail in playbook 01)
+## 9. Domain sourcing quick-reference (detail in the domain-research sub-skill)
 
 - **Naming:** keep the brand word; **drop prefixes** (`go/get/try/meet`); no hyphens, no numbers; `.com` first.
 - **Avoid** cheap TLDs `.top / .xyz / .cc` and the most-abused registrar/date bulk-buy pattern.

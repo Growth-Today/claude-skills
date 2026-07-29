@@ -1,8 +1,13 @@
-# Playbook 03 — Warmup & Go-Live  ·  [Sales Ops → GTM]
+---
+name: email-infra-warmup-golive
+description: "Warm up mailboxes and take domains live safely. Use for warmup timelines and settings, the age-before-link gate, going-live deliverability settings, ramp schedules, the hard launch gate, and cold-email compliance basics. Triggers on warmup, warm up mailbox, go live, launch checklist, ramp schedule, age domain, CAN-SPAM, GDPR. Do NOT use for connecting inboxes (use the instantly-setup or provisioning sub-skills) or campaign routing (use the campaign-building sub-skill)."
+---
 
-> **Reads:** `../references/reference.md` §1, §2, §5 · `gt-list-building` (list verification)  ·  **Related:** playbooks 01, 02, 04.
+# Warmup & Go-Live  ·  [Sales Ops → GTM]
 
-Take provisioned domains (playbook 02) from cold to live safely. The whole point is patience: warm long enough, age before you link, and cross a hard gate before the first send. Numbers in `../references/reference.md` §1, §5.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §5 · gt-list-building (list verification)  ·  **Related:** domain-research, provisioning, campaign-building.
+
+Take provisioned domains (the provisioning sub-skill) from cold to live safely. The whole point is patience: warm long enough, age before you link, and cross a hard gate before the first send. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
 
 ---
 
@@ -16,7 +21,7 @@ Take provisioned domains (playbook 02) from cold to live safely. The whole point
 
 > **Auto-warmup platforms.** Instantly and Smartlead manage warmup volume automatically — you set the behavior, not an absolute daily number. On EmailBison you set the warmup number explicitly (derive it from the ratio). Either way, keep warmup copy **neutral** so the warmup score reflects reputation, not campaign content.
 
-**Monitor during warmup:** warmup/health score trending up (target ≥ 97 for Active, `reference.md` §2), sent *and* received both increasing, no red/disabled warmup. A red or disabled warmup is almost always a DNS/bounce problem → playbook 02 troubleshooting.
+**Monitor during warmup:** warmup/health score trending up (target ≥ 97 for Active, `reference.md` §2), sent *and* received both increasing, no red/disabled warmup. A red or disabled warmup is almost always a DNS/bounce problem → the provisioning sub-skill troubleshooting.
 
 ---
 
@@ -24,7 +29,7 @@ Take provisioned domains (playbook 02) from cold to live safely. The whole point
 
 Warmup length is not the only clock. **Link/campaign only from domains > 30 days old AND past warmup** (`reference.md` §5). A fresh domain is in the most dangerous window regardless of warmup score — a too-new domain reads as suspect on its own, and linking from it is a documented blocklist trigger.
 
-Don't buy pre-aged domains to skip this (owner's call, playbook 01) — age our own.
+Don't buy pre-aged domains to skip this (owner's call, the domain-research sub-skill) — age our own.
 
 ---
 
@@ -35,9 +40,9 @@ When a domain clears the gate, take it live conservatively.
 **Deliverability settings (every platform):**
 - **First email plain text** — no HTML, no images (incl. signature images), no links. This is do-or-die: until you consistently reach the inbox, email #1 stays plain.
 - **Open tracking OFF** — tracking pixels hurt placement (and we don't use open rate as a metric anyway).
-- **No links / no tracking domain** by default (playbook 02).
-- **ESP routing:** set the routing rule from the **dashboard matrix** (playbook 04), **not** from ESP-matching-as-a-rule.
-- **Limit emails per company:** 2–3/day workspace-wide; extra-low concurrency into SEG orgs (playbook 04, Part 3).
+- **No links / no tracking domain** by default (the provisioning sub-skill).
+- **ESP routing:** set the routing rule from the **dashboard matrix** (the campaign-building sub-skill), **not** from ESP-matching-as-a-rule.
+- **Limit emails per company:** 2–3/day workspace-wide; extra-low concurrency into SEG orgs (the campaign-building sub-skill, Part 3).
 
 **Ramp (per mailbox/day, `reference.md` §5):**
 
@@ -60,7 +65,7 @@ INFRA
 [ ] Every mailbox warmed ≥ 14 days (ideally 3–4 weeks)
 [ ] Warmup/health scores healthy (≥ 97 target); no red/disabled warmup
 [ ] Domain > 30 days old (age-before-link gate)
-[ ] MX/SPF/DKIM/DMARC verified green (playbook 02)
+[ ] MX/SPF/DKIM/DMARC verified green (the provisioning sub-skill)
 [ ] Destination is masking / real landing page — NOT a bare redirect
 [ ] Blacklist pre-check clean on domains < 60 days (Spamhaus DBL / URIBL)
 
@@ -71,7 +76,7 @@ LIST & COPY
 [ ] Compliant: unsubscribe path + physical address (see reference/compliance)
 
 ROUTING
-[ ] Routing rule set from the dashboard matrix (playbook 04) — NOT ESP-matching
+[ ] Routing rule set from the dashboard matrix (the campaign-building sub-skill) — NOT ESP-matching
 [ ] SEG leads isolated onto dedicated domains
 [ ] Open tracking OFF; limit-per-company set; low concurrency into SEG orgs
 

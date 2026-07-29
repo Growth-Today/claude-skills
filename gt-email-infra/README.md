@@ -1,6 +1,6 @@
 # GT Email Infrastructure & Deliverability
 
-A cold email infrastructure and deliverability skill for Claude, built by [Growth Today](https://www.growthtoday.co). Covers the full lifecycle — organized around the two people who actually run it (**Sales Ops** and **GTM Engineer**), with every playbook ending in a copy-pasteable checklist.
+A cold email infrastructure and deliverability skill for Claude, built by [Growth Today](https://www.growthtoday.co). Organized around the two people who run it (**Sales Ops** and **GTM Engineer**) as role-tagged sub-skills, each ending in a copy-pasteable checklist.
 
 ## Install
 
@@ -14,40 +14,41 @@ Full walkthrough: **https://www.growthtoday.co/claude-skills/gt-email-infra**
 
 ## What it covers
 
-Ask it anything about cold email infrastructure and it routes by **role and task**:
+The orchestrator routes by role and task to the right sub-skill:
 
-- **[Sales Ops] Domain research & purchasing** — on-brand naming rules, avoiding spam-trap patterns, and buying safely (multi-registrar spread, no bulk-buy fingerprint).
-- **[Sales Ops] Provisioning, DNS & auth** — Google Workspace / Microsoft 365 / custom-SMTP mailboxes, MX/SPF/DKIM/DMARC, masking vs. redirect, DNS-drift monitoring.
-- **[Sales Ops] Instantly inbox setup** — connect Google/Microsoft/custom-SMTP inboxes, warmup config, and advanced-deliverability settings (vendor-managed or in-house).
-- **[Sales Ops → GTM] Warmup & go-live** — warmup timelines, ramp schedules, and a hard launch gate.
-- **[GTM] Campaign building** — routing by the Lead-ESP × sending-vendor matrix (ESP-matching is dead as a rule), and isolating SEG leads onto dedicated domains.
-- **[GTM] Dashboard reading** — inbox classification, per-state limits, and turning each panel into an action.
-- **[GTM] Blacklist & bounce audit** — strip auto-replies first, categorize bounces, read soft vs. hard SMTP codes, and trace the root cause to infra, list/data, or copy.
+- **[Sales Ops] domain-research** — on-brand naming rules, spam-trap avoidance, safe multi-registrar purchasing.
+- **[Sales Ops] provisioning** — Google / Microsoft / custom-SMTP mailboxes, MX/SPF/DKIM/DMARC, masking vs redirect, DNS-drift monitoring.
+- **[Sales Ops] instantly-setup** — connect inboxes, warmup config, advanced deliverability (vendor-managed or in-house).
+- **[Sales Ops → GTM] warmup-golive** — warmup timelines, ramp schedules, the hard launch gate.
+- **[GTM] campaign-building** — route by the Lead-ESP × sending-vendor matrix (ESP matching is dead as a rule); isolate SEG leads onto dedicated domains.
+- **[GTM] dashboard-reading** — inbox classification, per-state limits, turning each panel into an action.
+- **[GTM] blacklist-bounce-audit** — strip auto-replies first, categorize bounces, read SMTP codes, trace root cause.
 
-Plus references for all numbers/limits, approved vendors, and market performance benchmarks.
+Plus shared resources for all numbers/limits, approved vendors, and 2026 market benchmarks.
 
 ## Structure
 
 ```
 gt-email-infra/
-├── SKILL.md                                  ← router: roles, critical rules, sizing, GT point of view
+├── SKILL.md                     ← orchestrator: SKILL_BASE setup, routing, critical rules, GT point of view
 ├── README.md
 ├── LICENSE
-├── references/
-│   ├── reference.md                          ← all numbers, limits, timelines, thresholds, taxonomy
-│   ├── approved-vendors.md                   ← approved SMTP / sequencer / masking vendors
-│   └── benchmarks.md                          ← 2026 market benchmarks (results-side, good vs. bad)
-└── playbooks/
-    ├── 01-domain-research-and-purchasing.md  [Sales Ops]      + BUY checklist
-    ├── 02-provisioning-dns-auth.md           [Sales Ops]      + PROVISIONING checklist
-    ├── 03-warmup-and-go-live.md              [Sales Ops→GTM]  + HARD LAUNCH GATE
-    ├── 04-campaign-building.md               [GTM Engineer]   + CAMPAIGN checklist
-    ├── 05-dashboard-reading.md               [GTM Engineer]   + HEALTH-REVIEW checklist
-    ├── 06-blacklist-bounce-audit.md          [GTM Engineer]   + AUDIT checklist
-    └── 07-instantly-setup.md                 [Sales Ops]      + INSTANTLY SETUP checklist
+├── CHANGELOG.md
+├── .claude/skills/
+│   ├── domain-research/gt-SKILL.md        [Sales Ops]
+│   ├── provisioning/gt-SKILL.md           [Sales Ops]
+│   ├── instantly-setup/gt-SKILL.md        [Sales Ops]
+│   ├── warmup-golive/gt-SKILL.md          [Sales Ops → GTM]
+│   ├── campaign-building/gt-SKILL.md      [GTM Engineer]
+│   ├── dashboard-reading/gt-SKILL.md      [GTM Engineer]
+│   └── blacklist-bounce-audit/gt-SKILL.md [GTM Engineer]
+└── resources/
+    ├── reference.md             ← single source of numbers, limits, thresholds, taxonomy
+    ├── approved-vendors.md      ← approved SMTP / sequencer / masking vendors
+    └── benchmarks.md            ← 2026 market performance benchmarks
 ```
 
-Note: Growth Today runs this on **EmailBison** today and is **migrating to Instantly** (Smartlead is benchmarked as a third option). The concepts, thresholds, and diagnostics are ESP-agnostic — platform-specific steps are called out inline; adapt them to your own stack.
+Note: Growth Today runs this on **EmailBison** today and is **migrating to Instantly** (Smartlead is benchmarked as a third option). The concepts are ESP-agnostic — platform-specific steps are called out inline; adapt them to your own stack.
 
 ## License
 

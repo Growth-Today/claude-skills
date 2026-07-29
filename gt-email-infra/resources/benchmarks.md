@@ -41,7 +41,7 @@ By provider: **Gmail ~2.95%**, **Outlook ~4.34%** (Outlook lists punish bad data
 
 **Good / bad line:** keep bounce **under 2%** (benchmark pro-tip). Growth Today operational: **> 3% → Burnt**, **> 5% → hard action** (`reference.md` §3).
 
-**Strategic read.** Bounce is a **data-quality readout, not an infra problem** — a wave of hard bounces means the list wasn't valid when sent (see playbook 06). Above 2%, fix verification/enrichment first. Outlook-heavy segments bounce higher, so verify those lists harder.
+**Strategic read.** Bounce is a **data-quality readout, not an infra problem** — a wave of hard bounces means the list wasn't valid when sent (see the bounce-audit sub-skill). Above 2%, fix verification/enrichment first. Outlook-heavy segments bounce higher, so verify those lists harder.
 
 ---
 

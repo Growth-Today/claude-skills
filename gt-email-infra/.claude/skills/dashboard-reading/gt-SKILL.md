@@ -1,8 +1,13 @@
-# Playbook 05 — Reading the Inbox-Health Dashboard  ·  [GTM Engineer]
+---
+name: email-infra-dashboard-reading
+description: "Read the automated inbox-health dashboard and act on it. Use for inbox classification (Active, Warmup Needed, Burnt, New, Blacklisted), per-state send limits, reading each panel, the diagnosis order, and resting burnt inboxes. Triggers on inbox classification, inbox health, dashboard, warmup score, placement score, inbox tagging, burnt inbox, sending limits. Do NOT use for auditing a specific bounce or blacklist to root cause (use the bounce-audit sub-skill) or building campaigns (use the campaign-building sub-skill)."
+---
 
-> **Reads:** `../references/reference.md` §1, §2, §3, §7  ·  **Related:** playbooks 04, 06.
+# Reading the Inbox-Health Dashboard  ·  [GTM Engineer]
 
-How to read the automated inbox-management dashboard and turn each panel into an action. Don't track health by hand — the system classifies every inbox and domain continuously; your job is to read it correctly and act. All thresholds live in `../references/reference.md` §1–§3.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §3, §7  ·  **Related:** campaign-building, bounce-audit.
+
+How to read the automated inbox-management dashboard and turn each panel into an action. Don't track health by hand — the system classifies every inbox and domain continuously; your job is to read it correctly and act. All thresholds live in `{SKILL_BASE}/resources/reference.md` §1–§3.
 
 ---
 
@@ -16,7 +21,7 @@ Every inbox is auto-tagged. Exact thresholds in `reference.md` §2; the short ve
 | **Active** | placement > 70, bounce < 2%, reply ≥ 0.5%, warmup ≥ 97 | Safe to send at full cold limit |
 | **Warmup Needed** | anything not New/Active/Burnt (placement < 70 forces this) | Throttled to cold 0–1, stays attached; investigate placement |
 | **Burnt** | bounce > 3% AND reply < 0.5% AND warmup < 95 (all three) | Excluded from campaigns; rest & re-test (Part 5) |
-| **Blacklisted** | domain on Spamhaus DBL / URIBL | Volume cut; go to playbook 06 |
+| **Blacklisted** | domain on Spamhaus DBL / URIBL | Volume cut; go to the bounce-audit sub-skill |
 
 **No timeout:** an inbox can sit in Warmup Needed forever — there's no auto-escalation. Placement < 50 hard-forces Warmup Needed; when placement recovers, it returns to Active on its own.
 
@@ -26,15 +31,15 @@ Every inbox is auto-tagged. Exact thresholds in `reference.md` §2; the short ve
 
 **1. Inbox health.** Counts by tag (New / Active / Warmup Needed / Burnt / Blacklisted) per client and total. Read it as a distribution: a rising Warmup-Needed/Burnt share is an early warning before it shows up in campaign metrics.
 
-**2. Bounce intelligence.** Bounce split **by recipient ESP** and **by reason** (hard / block / soft), with **auto-replies stripped** (`reference.md` §7). Read the *categorized* number, never the raw one. A domain at 60% "bounce" tells you nothing until you see whether it's bad data (5.1.1), a Microsoft tenant block (5.4.1), a corporate/SEG block (5.7.1), or soft (4xx). Full workflow in playbook 06.
+**2. Bounce intelligence.** Bounce split **by recipient ESP** and **by reason** (hard / block / soft), with **auto-replies stripped** (`reference.md` §7). Read the *categorized* number, never the raw one. A domain at 60% "bounce" tells you nothing until you see whether it's bad data (5.1.1), a Microsoft tenant block (5.4.1), a corporate/SEG block (5.7.1), or soft (4xx). Full workflow in the bounce-audit sub-skill.
 
-**3. Vendor performance by ESP (the decision matrix).** Rows = recipient Lead ESP; columns = sending vendor / inbox ESP; toggle **Automated vs Human reply**. This is the panel playbook 04 routes from. Always read **Human reply**. Collapse to "Inbox ESP only" (Google/Outlook/SMTP) for a vendor-agnostic read.
+**3. Vendor performance by ESP (the decision matrix).** Rows = recipient Lead ESP; columns = sending vendor / inbox ESP; toggle **Automated vs Human reply**. This is the panel the campaign-building sub-skill routes from. Always read **Human reply**. Collapse to "Inbox ESP only" (Google/Outlook/SMTP) for a vendor-agnostic read.
 
 **4. Client overview.** One row per client: contacted, sends, active/warmup-needed/burnt/blacklisted, bounce, reply, human reply, unsub, placement, ESP mix. The at-a-glance triage view — drill into any row.
 
 **5. DNS / auth health.** MX / SPF / DKIM / DMARC status per domain, with counts of OK / broken / never-checked. The point is catching **silent drift** — a record a provider quietly broke — not just initial setup. A broken record should fire an alert; treat it as P0 (dead auth = mail binned).
 
-**6. Blacklist by vendor.** Domains on **Spamhaus DBL vs URIBL vs SURBL**, per client and per domain. **SURBL is monitor-only** — it should not tag an inbox Blacklisted or cut sending on its own (see playbook 06). If SURBL is still forcing Blacklisted status or firing alerts, that's a bug to fix, not a real listing.
+**6. Blacklist by vendor.** Domains on **Spamhaus DBL vs URIBL vs SURBL**, per client and per domain. **SURBL is monitor-only** — it should not tag an inbox Blacklisted or cut sending on its own (see the bounce-audit sub-skill). If SURBL is still forcing Blacklisted status or firing alerts, that's a bug to fix, not a real listing.
 
 ---
 
@@ -44,7 +49,7 @@ One metric alone rarely tells the story. Read in this order:
 
 - **Low reply?** → check **inbox placement** first (are you in spam?).
 - **Failing placement?** → check **warmup score** over the last week.
-- **High bounce?** → sender reputation declining *or* the domain is flagged — go to playbook 06.
+- **High bounce?** → sender reputation declining *or* the domain is flagged — go to the bounce-audit sub-skill.
 - **Everything healthy but no replies?** → it's the **offer/targeting or copy**, not deliverability.
 
 Timing: a **rising bounce rate is a leading indicator** (acts the same day) — a **blacklist listing is a lagging indicator** (damage already done). Watch bounces daily; never wait for a blacklist hit.
@@ -75,7 +80,7 @@ When an inbox goes Burnt, don't just leave it throttled forever. Write the caden
 - **Days 2–10:** re-test placement; if placement + warmup recover, it re-classifies toward Active automatically.
 - **After 10 days** with no recovery: retire the inbox.
 
-For a **SEG-burnt domain**, don't retire outright — recycle onto easy Google/Outlook leads and re-test first (playbook 04, Part 3).
+For a **SEG-burnt domain**, don't retire outright — recycle onto easy Google/Outlook leads and re-test first (the campaign-building sub-skill, Part 3).
 
 ---
 
@@ -88,7 +93,7 @@ For a **SEG-burnt domain**, don't retire outright — recycle onto easy Google/O
 [ ] Client overview triaged; drilled into any red row
 [ ] DNS/auth health: no broken/never-checked records (broken = P0)
 [ ] Blacklist-by-vendor: SURBL is monitor-only; only Spamhaus DBL/URIBL = real
-[ ] Diagnosis order applied to any anomaly (reply→placement→warmup; bounce→playbook 06)
+[ ] Diagnosis order applied to any anomaly (reply→placement→warmup; bounce→the bounce-audit sub-skill)
 [ ] Stranded-lead check on throttled inboxes (failover gap)
 [ ] Burnt inboxes on the rest-and-retest cadence
 ```

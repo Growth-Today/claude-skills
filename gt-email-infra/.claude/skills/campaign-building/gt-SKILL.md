@@ -1,8 +1,13 @@
-# Playbook 04 — Campaign Building & ESP/SEG Routing  ·  [GTM Engineer]
+---
+name: email-infra-campaign-building
+description: "Build cold-email campaigns and route by ESP and SEG. Use for campaign setup, the Lead-ESP by sending-vendor decision matrix (ESP matching is dead as a fixed rule), isolating SEG leads onto dedicated domains, and the launch gate. Triggers on build campaign, ESP matching, provider matching, SEG, Mimecast, Proofpoint, Barracuda, campaign routing, sending-vendor matrix. Do NOT use for writing copy or sequences (use gt-cold-email) or reading the dashboard (use the dashboard-reading sub-skill)."
+---
 
-> **Reads:** `../references/reference.md` §1, §2, §7, §8  ·  **Related:** playbooks 05, 06 · `gt-list-building`.
+# Campaign Building & ESP/SEG Routing  ·  [GTM Engineer]
 
-How to build a campaign that routes to the right inboxes and gets optimized from data — not from a 2024 rule of thumb. Numbers and taxonomy live in `../references/reference.md` §1, §2, §8.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §7, §8  ·  **Related:** dashboard-reading, bounce-audit · gt-list-building.
+
+How to build a campaign that routes to the right inboxes and gets optimized from data — not from a 2024 rule of thumb. Numbers and taxonomy live in `{SKILL_BASE}/resources/reference.md` §1, §2, §8.
 
 **The one mindset shift:** you are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and you find it on the dashboard, not by guessing.
 
@@ -20,7 +25,7 @@ Sending from the same provider the recipient uses (Google→Gmail, Outlook→Out
 
 ## Part 2 — The decision matrix (read it, then route)
 
-On the dashboard's vendor-performance panel (playbook 05), read **human reply rate** per cell. Rows = the recipient's ESP; columns = the sending vendor / inbox ESP.
+On the dashboard's vendor-performance panel (the dashboard-reading sub-skill), read **human reply rate** per cell. Rows = the recipient's ESP; columns = the sending vendor / inbox ESP.
 
 |  | Sending: Google | Sending: Outlook | Sending: SMTP/Custom |
 |---|---|---|---|
@@ -30,7 +35,7 @@ On the dashboard's vendor-performance panel (playbook 05), read **human reply ra
 | **Recipient: Other (Zoho/custom)** | cell | cell | cell |
 
 **How to read it**
-- **Metric = human reply, never total reply.** Automated replies (OOO/auto-responders) inflate the number and mean nothing. Use the Automated-vs-Human toggle and read Human. (Bounce and positive-reply don't belong in this matrix — see `reference.md` §7 and playbook 05.)
+- **Metric = human reply, never total reply.** Automated replies (OOO/auto-responders) inflate the number and mean nothing. Use the Automated-vs-Human toggle and read Human. (Bounce and positive-reply don't belong in this matrix — see `reference.md` §7 and the dashboard-reading sub-skill.)
 - **Winning cell** (high human reply, bounce in range) → push more leads/volume there.
 - **Losing cell** (near-zero human reply, or rising bounce) → pull leads out of that pairing; don't force it.
 - **Don't assume the diagonal wins.** Google→Google or Outlook→Outlook may or may not be best; let the cell decide.
@@ -50,7 +55,7 @@ Enterprise recipients behind a **Secure Email Gateway (Mimecast, Proofpoint, Bar
 3. **Low concurrency into one org** — don't fire many inboxes at a single company at once (SEGs block a domain that pushes many messages into the org in a short window).
 4. **No links, no tracking** (already our default) — SEGs weight these heavily.
 5. **Go multi-channel** — pair with LinkedIn/phone; email won't be your only path into SEG accounts.
-6. **Recycle, don't waste.** When bounce climbs on a SEG campaign, swap the domain out — then re-test it on easy **Google/Outlook** segments before retiring. A SEG-burnt domain often still performs on regular leads. Use placement + warmup score as the swap trigger (playbook 05).
+6. **Recycle, don't waste.** When bounce climbs on a SEG campaign, swap the domain out — then re-test it on easy **Google/Outlook** segments before retiring. A SEG-burnt domain often still performs on regular leads. Use placement + warmup score as the swap trigger (the dashboard-reading sub-skill).
 
 **Expectation-setting:** lower reply rates on SEG-heavy segments are the recipient's policy working as designed, not a broken setup. Prioritize reachable segments; shift weight off aggressively-gated ones rather than burning domains forcing them.
 
@@ -69,7 +74,7 @@ Build so the campaign is **visible to and managed by the inbox-management system
    - **Burnt** → excluded.
 5. **Naming convention:** `Segment – ESP`, e.g. `Webvisits – Google`, `Webvisits – Microsoft`; low volume (< 500 leads) → `Webvisits – All` (Both); by rep → `Webvisits – Andrew`.
 
-> **Failover caveat (EmailBison):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox — Bison won't move the lead to a healthy inbox on the campaign. Instantly does. Until migration, watch for leads stranded on throttled inboxes (playbook 05).
+> **Failover caveat (EmailBison):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox — Bison won't move the lead to a healthy inbox on the campaign. Instantly does. Until migration, watch for leads stranded on throttled inboxes (the dashboard-reading sub-skill).
 
 ---
 
@@ -80,7 +85,7 @@ These are non-negotiable gates, not suggestions:
 - [ ] **List 100% verified** (and re-verified if > 30 days old) — see `gt-list-building`.
 - [ ] **First email is plain text** — no HTML, no images (incl. signature), no links.
 - [ ] **Spintax / variance present** on subject + body.
-- [ ] **Blacklist pre-check** on any domain < 60 days old (Spamhaus DBL / URIBL) — see playbook 06.
+- [ ] **Blacklist pre-check** on any domain < 60 days old (Spamhaus DBL / URIBL) — see the bounce-audit sub-skill.
 - [ ] **SEG leads isolated** onto dedicated domains (Part 3) — not mixed into normal campaigns.
 - [ ] **Routing rule set from the matrix** (Part 2), not from ESP-matching.
 
