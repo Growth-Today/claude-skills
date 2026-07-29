@@ -1,8 +1,8 @@
-# LinkedIn Content Strategy: Hooks, Frameworks, and Profile Optimization
+# LinkedIn Content Strategy: Openers, Story Frameworks, and Profiles
 
-## Hook Writing Techniques
+## Writing the Opener
 
-The hook is the text visible before the "see more" fold, about 210 characters on mobile (2 to 3 lines). It's the most important element of any LinkedIn post.
+The hook is whatever shows above the "see more" fold, roughly 210 characters on mobile, two or three lines. Nothing else in the post carries as much weight.
 
 > **Primary reference:** for Growth Today's current hook system, load `{SKILL_BASE}/.claude/skills/hooks/gt-SKILL.md` first. It has the full performance-ranked hook table and the funnel-stage templates. The formulas below are supplementary.
 
@@ -25,7 +25,7 @@ Named, reusable templates. Fill with a real number supplied by the user, never a
 | Specific Result | "[Number] [result] in [timeframe]." | "We generated 657 leads for a $1M client." |
 | Before / After | "How it started: [bad]. How it's going: [good]." | "How it started: 1.2% reply rate. How it's going: 4.7%." |
 | Social Proof | "We run this for [X]+ [audience]. Here's the system." | "We run outbound for 110+ B2B teams. Here's the stack." |
-| Contrarian / Myth-buster | "[Common belief] is wrong. Here's what works." | "Cold email is dead is wrong. Here's what changed." |
+| Contrarian | "[Widely held belief] is off. Here is what actually works." | "Everyone says cold email is dead. Here is what really changed." |
 | Listicle Tease | "[N] [things] that [outcome]." | "8 cold email frameworks that booked 100+ meetings." |
 | Direct Address | "If you're a [role] doing [thing], read this." | "If you lead revenue at a Series B, read this." |
 
@@ -55,12 +55,12 @@ These live in the `hooks` sub-skill (organized by ToF/MoF/BoF). Use that skill t
 
 ### Hook Don'ts
 
-- Do not start with "I'm excited to announce". Generic, low engagement.
-- Do not use clickbait the post body does not deliver on.
-- Do not start with hashtags or @mentions.
-- Do not bury the hook after a preamble.
-- Do not use: leverage, unlock, game-changer, synergy, paradigm, revolutionary.
-- Do not start AND end with a question.
+- Skip "I'm excited to announce", it reads flat and earns little.
+- No clickbait the body cannot back up.
+- No hashtags or @mentions in the opener.
+- Do not warm up for a line first, open on the point.
+- Ban these words: leverage, unlock, game-changer, synergy, paradigm, revolutionary.
+- Do not open and close on a question both.
 
 ## Storytelling Frameworks for LinkedIn
 
@@ -115,7 +115,7 @@ Example hook: "How it started: 1.2% reply rate. How it's going: 4.7%."
 ### Storytelling Rules
 
 1. **Specificity beats generality.** "[X] meetings in 2025" (real figure), not "many meetings".
-2. **One post, one idea.** Never cover multiple topics.
+2. **One post, one idea.** Do not try to cover several topics at once.
 3. **7-word median line, 20-word hard ceiling.** A structural target from the dataset, not a reading-level rule.
 4. **Lead with result, not context.**
 5. **Step 1/2/3 plus arrows for process content.** The reader must see the structure, not just feel it.
@@ -140,11 +140,11 @@ None of it is black and white. Design, text, and hook all move the result. And i
 
 1. **Saves are a real signal**, often the strongest intent marker. Create dense, save-worthy graphics. (Saves are hard to measure from the outside, but they matter, especially for BoF.)
 2. **Dense single images dominate.** Invest in single-image infographics and cheat sheets (designed in your design tool), not carousels.
-3. **First 90 minutes matter most.** Be present and engaged right after posting.
-4. **Hook in 210 characters.** The first line decides if anyone reads the rest.
-5. **3 to 4 posts per week.** The sweet spot for growth without burnout.
-6. **Comments are a growth channel.** 15+ meaningful comments daily.
-7. **Newsletters compound.** Every subscriber is a guaranteed notification.
+3. **The opening 90 minutes carry the post.** Stay on it and reply right after you publish.
+4. **Win the first 210 characters.** The opener decides whether anyone reads on.
+5. **Three to four posts a week.** Enough to grow, not so much you burn out.
+6. **Your own comments are a channel.** Leave a dozen or more real ones a day.
+7. **Newsletters stack up.** Each subscriber is a guaranteed ping on every edition.
 8. **Niche beats broad.** The algorithm rewards topic consistency.
 9. **Vulnerability plus insight drives engagement.** A real failure plus a professional lesson.
 10. **Profile is a landing page.** Optimize it as a conversion funnel.

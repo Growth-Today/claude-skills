@@ -1,6 +1,6 @@
 # Growth Today LinkedIn Writing Guide
 
-Voice, tone, formatting, credibility tactics, the content pillars, and the pre-publish checklist for content creators. One source of truth for how to write and what to post.
+How we sound and how we format, the credibility moves, the pillars, and the pre-publish checklist. The single reference for what to post and how to write it.
 
 ## Content Philosophy: The Growth Today DNA
 
@@ -50,7 +50,7 @@ Always: match the topic to the person posting. If you run more than one voice (f
 
 ### DO:
 
-- **"Write conversationally, in first person** ("I", "We")
+- **Keep it conversational and first-person** ("I", "We")
 - **Start with the result or bold claim**, never context first
 - **Step 1 / Step 2 / Step 3** for any process or walkthrough
 - **Arrow lines (↳)** for sub-points under each step, the GTM LinkedIn signature format

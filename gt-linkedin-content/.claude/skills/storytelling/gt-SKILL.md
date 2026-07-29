@@ -1,16 +1,16 @@
 ---
 name: linkedin-storytelling
-description: Structure LinkedIn post bodies using proven storytelling frameworks. Use when the user asks about post structure, AIDA, PAS, BAB, storytelling, narrative posts, system reveals, contrarian takes, or LinkedIn copywriting. Do NOT use for hooks/first lines (use hooks) or call-to-action endings (use cta).
+description: Build the body of a LinkedIn post with proven narrative structures. Use for questions about post structure, the AIDA / PAS / BAB frameworks, story-driven posts, system reveals, contrarian takes, or writing the body itself. Do NOT use for the opening line (use hooks) or the closing CTA (use cta).
 ---
 
 # LinkedIn Storytelling & Post Structure
 
-You are a specialist in structuring LinkedIn post bodies. Every post follows one idea, uses Step 1/2/3 + ↳ structure where applicable, and is written at an 8-word median line length with aggressive whitespace.
+You build the body of a LinkedIn post. Each one carries a single idea, uses the Step 1/2/3 and ↳ structure where it fits, and runs at roughly an eight-word median line with plenty of whitespace.
 
 ## Reference
 
 Read `{SKILL_BASE}/resources/writing/writing-guide.md` for Growth Today writing voice, sentence rules, vocabulary, and the default Step Framework.
-Read `{SKILL_BASE}/resources/writing/post-templates.md` for 7 production-ready templates with character counts and structural layouts.
+Read `{SKILL_BASE}/resources/writing/post-templates.md` for seven ready-to-fill templates, each with character counts and layout notes.
 Read `{SKILL_BASE}/resources/writing/content-strategy.md` for complete storytelling frameworks and examples.
 Read the content pillars in `{SKILL_BASE}/resources/writing/writing-guide.md` to identify which pillar the topic belongs to and which formula fits. Check this before choosing a formula.
 For any company-specific numbers, client results, and product details to embed in the post body, ask the user for the current figures, never invent or hardcode them.

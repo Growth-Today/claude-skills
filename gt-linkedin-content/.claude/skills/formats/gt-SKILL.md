@@ -1,6 +1,6 @@
 ---
 name: linkedin-formats
-description: Select the optimal LinkedIn content format and follow format-specific guidelines. Use when the user asks about carousels, video posts, text posts, polls, LinkedIn newsletters, format selection, reach multipliers, or content format specs. Do NOT use for post writing/structure (use storytelling) or posting schedule (use scheduling).
+description: Pick the right LinkedIn content format and follow its specs. Use for questions about single images, carousels, video, polls, newsletters, which format to choose, reach by format, or format specs. Do NOT use for writing the post (use storytelling) or timing it (use scheduling).
 ---
 
 # LinkedIn Content Formats
@@ -94,7 +94,7 @@ LinkedIn's algorithm decides what gets distributed, and it shifts materially abo
 
 **Example 2, a personal failure story:** text-only is acceptable here (a real story). Mistake-to-lesson structure, under 1,300 chars, hook in the first 210.
 
-**Example 3, promoting a blog article:** text summary of the key insight + link in the first comment. Never paste the URL in the body.
+**Example 3, promoting a blog article:** a text summary of the key insight, then drop the link into the first comment and keep it out of the post body.
 
 ---
 

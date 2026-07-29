@@ -203,7 +203,7 @@ P.S. [Follow CTA: "I translate AI trends into GTM plays every week. Follow Growt
 
 ## Template G: The Case Study / Before-After (1,500-2,200 chars)
 
-**Best for:** client results (anonymized), campaign breakdowns, ROI stories, proof posts.
+**Best for:** anonymized client wins, campaign teardowns, ROI stories, and proof posts.
 **Why it works:** specific before-and-after numbers are the most credible proof on the platform. Result-led hooks (hard dollar figures, before to after) tend to cluster at the very top of performance. It moves a warm reader from "these people know their stuff" to "I want that result".
 
 ```

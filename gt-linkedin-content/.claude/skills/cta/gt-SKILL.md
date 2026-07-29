@@ -1,6 +1,6 @@
 ---
 name: linkedin-cta
-description: Design LinkedIn call-to-actions and P.S. sections that drive comments, reach, and follows. Use when the user asks about LinkedIn CTAs, comment prompts, repost or save prompts, follow prompts, P.S. sections, or comment-gate asks. Do NOT use for post body writing (use storytelling), hook or first lines (use hooks), or profile optimization (use profile).
+description: Write the closing ask on a LinkedIn post, the CTA and the P.S., to drive comments, saves, follows, and DMs. Use for questions about a post's CTA, comment prompts, repost or save asks, follow asks, the P.S., or a comment-gate. Do NOT use for the body (use storytelling), the opening line (use hooks), or the profile (use profile).
 ---
 
 # LinkedIn CTAs & P.S. Sections
@@ -47,7 +47,7 @@ Read it this way:
 ## CTA design rules
 
 - One CTA per post. Multiple CTAs dilute the action.
-- Be specific. "Comment your biggest hiring mistake" beats "let me know what you think".
+- Be specific. "Comment the worst hiring call you ever made" pulls more than a vague "thoughts?".
 - Lower the barrier. A one-word comment is easier than a paragraph.
 - Match the CTA to the content: framework or cheat sheet, ask for a save or comment-gate; opinion, ask a question; personal brand, ask for a follow.
 - Avoid a bare "Agree?". It invites a yes or no, not a real comment (it is one of the weakest closes).
@@ -100,7 +100,7 @@ Examples: "Over to you: what's your current ICP research setup?" / "which part w
 **BoF (conversion), maximize intent signals:**
 ```
 Comment "[KEYWORD]" and I'll send it over.
-Make sure we're connected so I can DM you.
+Connect with me first so I can send it over.
 P.S. [Service signal, Type 2]
 ```
 
@@ -116,7 +116,7 @@ Comment-gate posts pull roughly **2.5x the comments of a no-CTA post** once you 
 **Format:**
 ```
 Comment "[KEYWORD]" and I'll send it over.
-Make sure we're connected so I can DM you.
+Connect with me first so I can send it over.
 ```
 
 **Keyword choices:** "ICP" (ICP frameworks), "CLAY" (Clay templates), "STACK" (tech stack), "SYSTEM" (workflow reveals), "GTM" (GTM playbooks), "SIGNAL" (intent signal lists).
@@ -126,7 +126,7 @@ Make sure we're connected so I can DM you.
 **Example 1, BoF (Clay workflow template):**
 ```
 Comment "CLAY" and I'll send the table.
-Make sure we're connected so I can DM you.
+Connect with me first so I can send it over.
 
 P.S. We build signal-based outbound systems for B2B GTM teams at Growth Today.
 If you want us to build this for you, DM me "GTM".
