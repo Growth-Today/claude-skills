@@ -1,7 +1,7 @@
 ---
 name: gt-linkedin-content
 version: 1.26.0
-description: Expert LinkedIn organic content strategist for B2B founders and GTM leaders. Use when the user asks about LinkedIn posting strategy, LinkedIn algorithm, LinkedIn hooks, LinkedIn carousels, LinkedIn content writing, LinkedIn profile optimization, LinkedIn engagement strategy, LinkedIn newsletter, LinkedIn comment strategy, or growing a LinkedIn audience. Also triggers on "LinkedIn post", "LinkedIn content", "LinkedIn hook", "LinkedIn algorithm", "LinkedIn carousel", "LinkedIn profile", "LinkedIn engagement", "LinkedIn reach", "LinkedIn followers", "LinkedIn headline", "LinkedIn banner", "write a LinkedIn post", "LinkedIn strategy", "LinkedIn CTA", "comment gate", "LinkedIn P.S.", "best time to post", "posting frequency", "repurpose", "post structure", "content plan", "content pillar plan", "content matrix", "monthly content plan", "plan my LinkedIn month", "post ideas for the month", "content strategy plan", "team body copy", "auto-scheduled comments", "alt text", "fix this hook", "rewrite this post", "make it less AI", "P.S. line". Also handles recreating an existing design, analysing/transcribing an attached graphic and rebuilding it in the Growth Today brand (triggers include analyse this design, recreate this graphic, rebuild this in our brand, design brief, design instructions). Do NOT use for LinkedIn Ads (use linkedin-ads skill) or cold outreach to strangers (use the gt-linkedin-outbound skill for LinkedIn, or the cold-email skill for email). Warm social selling that converts audiences your content creates IS in scope (see social-selling-campaigns.md).
+description: Expert LinkedIn organic content strategist for B2B founders and GTM leaders. Use when the user asks about LinkedIn posting strategy, LinkedIn algorithm, LinkedIn hooks, LinkedIn carousels, LinkedIn content writing, LinkedIn profile optimization, LinkedIn engagement strategy, LinkedIn newsletter, LinkedIn comment strategy, or growing a LinkedIn audience. Also triggers on "LinkedIn post", "LinkedIn content", "LinkedIn hook", "LinkedIn algorithm", "LinkedIn carousel", "LinkedIn profile", "LinkedIn engagement", "LinkedIn reach", "LinkedIn followers", "LinkedIn headline", "LinkedIn banner", "write a LinkedIn post", "LinkedIn strategy", "LinkedIn CTA", "comment gate", "LinkedIn P.S.", "best time to post", "posting frequency", "repurpose", "post structure", "content plan", "content pillar plan", "content matrix", "monthly content plan", "plan my LinkedIn month", "post ideas for the month", "content strategy plan", "team body copy", "auto-scheduled comments", "alt text", "fix this hook", "rewrite this post", "make it less AI", "P.S. line". Also turns a post into a design brief for its visual (triggers include design brief, brief the visual, design instructions). Do NOT use for LinkedIn Ads (use linkedin-ads skill) or cold outreach to strangers (use the gt-linkedin-outbound skill for LinkedIn, or the cold-email skill for email). Warm social selling that converts audiences your content creates IS in scope (see social-selling-campaigns.md).
 ---
 
 ## Setup (Run Once Per Session)
@@ -52,7 +52,7 @@ Before writing or recommending any content, identify which funnel stage it serve
 | Profile optimization: headline, banner, about, featured, services, experience, recommendations | **profile** | Read `{SKILL_BASE}/.claude/skills/profile/gt-SKILL.md` |
 | Turning one piece into many formats, creator tools, newsletters | **repurposing** | Read `{SKILL_BASE}/.claude/skills/repurposing/gt-SKILL.md` |
 | Producing or fixing the parts of a locked post (hook, body copy, team body copy, P.S./CTA, auto-scheduled comments, alt text, formatting) with tuned prompts | **post-production** | Read `{SKILL_BASE}/.claude/skills/post-production/gt-SKILL.md` |
-| Turning a reference design (image or analyser spec) into a rebuild brief + drop-in copy for your design tool | **design-briefer** | Read `{SKILL_BASE}/.claude/skills/design-briefer/gt-SKILL.md` |
+| Turning a post into a design brief for its visual (structure + drop-in copy for your design tool) | **design-briefer** | Read `{SKILL_BASE}/.claude/skills/design-briefer/gt-SKILL.md` |
 
 ---
 
@@ -75,7 +75,7 @@ Before writing or recommending any content, identify which funnel stage it serve
   - **Jani** → Read `{SKILL_BASE}/resources/posts/jani-posts-reference.csv`. More direct, punchy voice.
 - **Hook formulas, storytelling frameworks, profile optimization** → Read `{SKILL_BASE}/resources/writing/content-strategy.md`
 - **Algorithm mechanics, format performance, posting strategy** → Read `{SKILL_BASE}/resources/platform/algorithm.md`
-- **Design family catalog: one vocabulary for recognizing what a graphic is (Venn vs comparison table vs workflow, and combinations), used by design-briefer** → Read `{SKILL_BASE}/resources/design/design-families.md`.
+- **Design family catalog: a general vocabulary for naming what a B2B LinkedIn graphic is (numbered list, hero stat, workflow, comparison table, and so on), used by design-briefer to keep a brief recognizable** → Read `{SKILL_BASE}/resources/design/design-families.md`
 - **Social selling: converting the warm audiences your content creates** (profile viewers, followers, connections, content engagers, plus the Sales Navigator + Expandi/Clay setup) → Read `{SKILL_BASE}/resources/social-selling/social-selling-campaigns.md`. For cold outreach to strangers, use the `gt-linkedin-outbound` skill instead.
 
 ---
@@ -224,7 +224,7 @@ Performance: 200-1,000 reactions · moderate comments
 7. **"What content should I write about?"** → Read `{SKILL_BASE}/resources/writing/writing-guide.md` (Topic Bank section) first, then check the AI Agents & Automation and ICP & Signal-Based GTM pillars for trending topics
 8. **"Give me post ideas for this week"** → Read `{SKILL_BASE}/resources/writing/writing-guide.md`, build a week across ToF/MoF/BoF using the Weekly Plan section, match topics to the person posting (Brigi vs Jani).
 9. **"Fix this hook" / "make a team body copy" / "generate the comments" / "write the alt text" / "make this less AI"** (a locked post's parts) → **post-production** (Read `{SKILL_BASE}/.claude/skills/post-production/gt-SKILL.md`). Feed the post's core insight into the body, comments, and alt text so they stay on message.
-10. **"Recreate/rebuild this design in our brand"** (user attaches a graphic they want to copy) → **design-briefer** (turn the reference into a rebuild brief + fitted copy) → design it in **your design tool**.
+10. **"Brief the visual for this post" / "give me a design brief"** → **design-briefer** (produces a brand-agnostic design brief + fitted copy) → build it in **your design tool**.
 
 ---
 

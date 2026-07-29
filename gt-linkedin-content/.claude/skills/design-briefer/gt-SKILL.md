@@ -1,65 +1,41 @@
 ---
 name: design-briefer
-description: Turn a reference design (an attached image OR a text layout spec) into a rebuild brief, design instructions for your design tool plus drop-in fitted text. Use when the user wants to recreate a graphic in their own brand, get design instructions, a design brief, or copy that fits a layout. Triggers include make a design like this, give me a design brief, rebuild this in our brand, design instructions for this, write text that fits this layout.
+description: Turn a LinkedIn post into a clear, brand-agnostic design brief for a designer or a design tool. Use when the user wants a design brief for a post, instructions for the visual, or copy that fits the layout. Triggers include give me a design brief, brief the visual for this post, what should the graphic look like, write the visual copy. Do NOT use to pick the format (use formats) or to write the post body (use storytelling).
 ---
 
 # Design Briefer
 
-You take a reference, either ONE attached image OR a plain-text layout spec, and
-produce a two-part rebuild package. The goal: someone can recreate a
-similar-looking graphic in the user's own brand WITHOUT the original.
-
-If you have a reference graphic to transcribe, first analyse its structure
-internally, then produce the brief. If you already have a text spec, build
-directly from it.
+You turn a LinkedIn post (or a topic and its key point) into a clear, brand-agnostic design brief: what the visual should say, how it should be structured, and the exact copy that fits. The goal is a brief a designer or a design tool can execute in any brand.
 
 ## Rules
 
-- Output in **English**, plain text with simple headers. No preamble, no critique.
-- **No colors and no locked fonts**, the user applies their own brand palette and
-  typefaces. Describe structure, hierarchy, and ratios; leave color/font as slots.
-- Measurements as **relative ratios first, with px estimates in parentheses**
-  (state the assumed canvas, e.g. LinkedIn 4:5 = 1080×1350).
-- **Count things explicitly**; preserve the reference's grid, row count, and
-  spacing rhythm.
-- **Name the design family** using `{SKILL_BASE}/resources/design/design-families.md`
-  (primary + secondary rule), so the rebuild stays inside a consistent design system.
+- Output in **English**, plain text, simple headers, no preamble.
+- **Brand-agnostic.** Describe structure, hierarchy, and layout. Leave colors and fonts as slots for the user's own brand (one accent, neutral text, light fills). Do not prescribe a specific look.
+- Give sizes as **relative hierarchy** (biggest, medium, small), not fixed pixels. Assume LinkedIn 4:5 (1080x1350) unless told otherwise.
+- **One idea per visual.** The graphic carries a single message and must read at thumbnail size.
 
 ## Output: two parts
 
-### PART 1: DESIGN INSTRUCTIONS (for your design tool)
+### PART 1: DESIGN BRIEF
 
-Cover, in order:
-- **FORMAT & TYPE**, orientation, aspect ratio, graphic type, one-line layout logic.
-- **STRUCTURE / GRID**, columns, rows, total cells, relative column widths.
-- **MARGINS & SPACING** (relative → px), outer margins; card-to-card gaps;
-  corner radius; label vs data column widths; row heights (uniform + any taller
-  header rows); inner cell padding; text alignment per zone.
-- **HEADLINE & HIERARCHY**, headline treatment (relative size, weight, badges),
-  subhead, and the full size hierarchy top→bottom. Give ratios, not fixed sizes.
-- **ICONS**, count, placement, style, relative size, uniformity rule.
-- **LOGOS / BRAND MARKS**, which rows/cells are logo slots, counts, layout.
-- **DECORATION**, any illustration/mascot/shape and its position.
-- End Part 1 with a one-line note: colors and fonts intentionally omitted, apply
-  brand (one accent for icons/badges, neutral dark text, light card fills).
+- **Goal + funnel stage.** What the visual is for: reach (ToF), proof or teaching (MoF), or save-bait or an offer (BoF).
+- **The one message.** The single point or number the visual must land. This is the visual headline, lead with a number where you can.
+- **Format and family.** The visual type that fits as a single image: dense infographic, two-column comparison, single hero stat, step or tool map, or cheat sheet. Name the design family from `{SKILL_BASE}/resources/design/design-families.md` so the visual stays recognizable and consistent.
+- **Structure.** A simple layout suggestion with a count: title plus 3 to 5 rows, two-column before and after, one hero stat with 3 supporting points, and so on.
+- **Hierarchy.** What is biggest (the headline or number), what is secondary, what is small.
+- **Must-include.** A logo slot, one accent for emphasis, and any icons or labels the content needs. Keep repeated elements uniform.
+- **Brand note.** Colors and fonts left as slots, the user applies their own brand.
 
-### PART 2: THE TEXT (drop-in copy that fits the grid)
+### PART 2: THE COPY (fits the layout)
 
-- Provide the exact copy for every text slot, organized by position (title,
-  subhead, column headers, each row label, each cell).
-- Copy must **fit the constraints** of the layout (line count and length per
-  cell) so it drops in without breaking the design.
-- Mark logo cells as [LOGO: name] rather than writing text there.
-- If the reference's own text is reused, clean it up so it's consistent and
-  grid-fitting; if a fresh topic is requested, write new copy in the same
-  structure and voice.
+- Provide the exact text for every slot: headline, subhead, each row or section label, each value.
+- Keep each piece short enough to fit (line count and length per slot) so it drops in without breaking the layout.
+- Mark logo slots as [LOGO].
+- Write in the user's voice, one idea per line, no filler.
 
 ## After output
 
-Offer, in one line, to hand Part 1 + Part 2 to your design tool (Figma, Canva,
-Claude, or similar, where your brand system, colors, and fonts live) to generate
-the final visual, or to adjust the copy length to fit a different canvas size.
-
+Offer, in one line, to hand the brief and copy to the user's design tool (Figma, Canva, Claude, or similar, where their brand system, colors, and fonts live) to generate the final visual, or to tighten the copy for a different canvas size.
 
 ---
 

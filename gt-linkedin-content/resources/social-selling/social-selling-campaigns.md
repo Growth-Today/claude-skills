@@ -15,10 +15,10 @@ Every one of these is downstream of content. No content, no audience.
 | **Profile Followers** | People who started following your profile | LinkedIn Boolean search with "Follower of", pulled into Expandi or Aimfox | Use Sales Navigator inclusion and exclusion logic to remove the irrelevant people |
 | **First-degree Connections** | Your existing 1st-degree network | Sales Navigator filtered to 1st-degree, messaged 1:1 and manually | Manual, you already know them |
 
-## The three flows (how Growth Today runs it)
+## The three flows
 
-### Flow 1: ICP buying-committee warm-up (we skip this)
-Proactively connecting with the buying committee at target ICP accounts. We skip it for ourselves, because we run so many other campaigns that LinkedIn's connection limit does not leave room for this one, too. It stays here as the one cold motion, and if you want to run it, use the `gt-linkedin-outbound` skill.
+### Flow 1: ICP buying-committee warm-up (optional, colder)
+Proactively connecting with the buying committee at target ICP accounts. This is the one colder motion, and it competes with your other campaigns for LinkedIn's connection limit, so many teams leave it out. If you want to run it, use the `gt-linkedin-outbound` skill.
 
 ### Flow 2: Audience-based (conversation starter, no scoring)
 New followers and profile visitors can't be qualified or scored up front, so you don't try. You start a conversation and let the reply tell you who is worth your time.
@@ -31,7 +31,7 @@ New followers and profile visitors can't be qualified or scored up front, so you
 ### Flow 3: Signal-based (you qualify and score)
 
 - **Sources**, side by side: your own posts, competitor posts, and influencer or thought-leadership posts.
-- Scrape these via Clay.
+- Scrape these via [Clay](https://clay.com/?via=6fa548).
 - **Qualify** everyone who engages: commenters, likers, reposters.
 - **Enrich** their companies and **score** the contacts by buying role: influencer, champion, end user, or blocker.
 - **Differentiate outreach by tier.** Tier 1 to 2 (high score) goes into an omnichannel Lemlist sequence and a rep works them directly. Tier 3 (lower score) goes into a lighter, email-based sequence.
@@ -144,9 +144,9 @@ Instead of messaging every profile viewer or engager the moment they act, captur
 | Tool | What it does here |
 |---|---|
 | **Sales Navigator** | The targeting layer. Persona and title filters, "Viewed your profile recently", 1st-degree filter. Also use "Posted within last 30 days" to target only active users and avoid wasting connection requests on dormant profiles. |
-| **Expandi / Aimfox** | The automation layer for the four warm audiences. Holds the Boolean searches, the campaign inputs, connection-request steps, and the conversation-starter sequences. Pulls engagers straight from a post URL. |
-| **Clay** | Enrichment and scoring. Turns raw engagement into an engagement score and a role, so you message the right people at the right time. |
-| **Lemlist** | The omnichannel sequence for Tier 1 to 2 in Flow 3 (LinkedIn plus email), worked alongside a rep. |
+| **[Expandi](https://expandi.io/?red=linkedin1) / [Aimfox](https://aimfox.cello.so/rtLBroLjz9r)** | The automation layer for the four warm audiences. Holds the Boolean searches, the campaign inputs, connection-request steps, and the conversation-starter sequences. Pulls engagers straight from a post URL. |
+| **[Clay](https://clay.com/?via=6fa548)** | Enrichment and scoring. Turns raw engagement into an engagement score and a role, so you message the right people at the right time. |
+| **[Lemlist](https://get.lemlist.com/vn5ghzsrp9qi)** | The omnichannel sequence for Tier 1 to 2 in Flow 3 (LinkedIn plus email), worked alongside a rep. |
 
 ## What feeds this: lead magnets
 

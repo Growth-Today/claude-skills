@@ -48,7 +48,7 @@ gt-linkedin-content/
     ├── writing/                ← voice, content strategy, post templates
     ├── performance/            ← what wins, scorecard, winning words
     ├── platform/               ← algorithm mechanics
-    ├── design/                 ← design-family vocabulary
+    ├── design/                 ← general design-family vocabulary
     ├── social-selling/         ← converting the audience your content builds
     └── posts/                  ← annotated example posts
 ```

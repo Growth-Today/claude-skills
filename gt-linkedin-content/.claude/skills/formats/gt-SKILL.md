@@ -81,8 +81,8 @@ Video?                                       → see the video section (situatio
 
 Once the format is chosen, the visual itself is built in **your design tool** (which holds your brand system). This skill does not generate a structured design brief, and it should not: that is a separate job.
 
-- **Brand-new post visual** → pick the format here, hand the content and format to your design tool.
-- **Recreating an existing graphic** (an attached reference you want rebuilt in your brand) → use **design-briefer** to turn the reference into a rebuild brief, then build it in your design tool.
+- **Pick the format here**, then hand the content and format to your design tool.
+- **Want a written brief first?** Use **design-briefer** to turn the post into a brand-agnostic design brief plus fitted copy, then build it in your design tool.
 
 ## Start from your own data
 
