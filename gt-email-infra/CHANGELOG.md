@@ -22,8 +22,13 @@ Major restructure and 2026 deliverability rebuild.
   replacing the old flat "Google 30 / Microsoft 10" figures.
 
 ### Added
-- **instantly-setup** sub-skill (vendor-managed + in-house paths), sourced from
-  the Instantly Help Center; replaces the ScaledMail + Instantly Notion SOP.
+- Per-sequencer setup sub-skills (vendor-managed + in-house paths), each sourced
+  from the vendor's live help center: **instantly-setup, emailbison-setup,
+  smartlead-setup, lemlist-setup** — replacing the ScaledMail + Instantly/Bison
+  and Lemlist Notion SOPs.
+- **setup-audit** sub-skill — connect a live workspace (any sequencer) and verify
+  all 20 config dimensions PASS/WARN/FAIL against the GT standard; the setup-side
+  counterpart to blacklist-bounce-audit.
 - **benchmarks.md** — 2026 market benchmarks (results-side vs automation-side).
 - **approved-vendors.md** — approved SMTP / sequencer / masking vendors.
 - **blacklist-bounce-audit**: folded in the executable EmailBison audit runbook (MCP/API pull with cursor pagination, the broken `?type=bounced` filter workaround, Hard/Soft/Block/Unknown SMTP-code classification incl. Microsoft-specific block codes, the report sections + CSV schema + chat summary, and a Known API Limitations table). Sanitized from a teammate's internal `gt-bounce-audit` runbook.

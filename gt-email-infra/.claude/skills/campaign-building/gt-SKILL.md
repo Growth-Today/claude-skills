@@ -74,7 +74,7 @@ Build so the campaign is **visible to and managed by the inbox-management system
    - **Burnt** → excluded.
 5. **Naming convention:** `Segment – ESP`, e.g. `Webvisits – Google`, `Webvisits – Microsoft`; low volume (< 500 leads) → `Webvisits – All` (Both); by rep → `Webvisits – Andrew`.
 
-> **Failover caveat (EmailBison):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox — Bison won't move the lead to a healthy inbox on the campaign. Instantly does. Until migration, watch for leads stranded on throttled inboxes (the dashboard-reading sub-skill).
+> **Failover caveat (EmailBison):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox — Bison won't move the lead to a healthy inbox on the campaign. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't. Watch for leads stranded on throttled inboxes (the dashboard-reading sub-skill).
 
 ---
 

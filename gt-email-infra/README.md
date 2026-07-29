@@ -18,7 +18,8 @@ The orchestrator routes by role and task to the right sub-skill:
 
 - **[Sales Ops] domain-research** — on-brand naming rules, spam-trap avoidance, safe multi-registrar purchasing.
 - **[Sales Ops] provisioning** — Google / Microsoft / custom-SMTP mailboxes, MX/SPF/DKIM/DMARC, masking vs redirect, DNS-drift monitoring.
-- **[Sales Ops] instantly-setup** — connect inboxes, warmup config, advanced deliverability (vendor-managed or in-house).
+- **[Sales Ops] setup sub-skills** — connect inboxes, warmup, and advanced deliverability per sequencer: **emailbison-setup, instantly-setup, smartlead-setup, lemlist-setup** (vendor-managed or in-house).
+- **[GTM] setup-audit** — connect a live workspace and verify every setting against the GT standard (PASS / WARN / FAIL + fixes).
 - **[Sales Ops → GTM] warmup-golive** — warmup timelines, ramp schedules, the hard launch gate.
 - **[GTM] campaign-building** — route by the Lead-ESP × sending-vendor matrix (ESP matching is dead as a rule); isolate SEG leads onto dedicated domains.
 - **[GTM] dashboard-reading** — inbox classification, per-state limits, turning each panel into an action.
@@ -37,10 +38,14 @@ gt-email-infra/
 ├── .claude/skills/
 │   ├── domain-research/gt-SKILL.md        [Sales Ops]
 │   ├── provisioning/gt-SKILL.md           [Sales Ops]
+│   ├── emailbison-setup/gt-SKILL.md       [Sales Ops]
 │   ├── instantly-setup/gt-SKILL.md        [Sales Ops]
+│   ├── smartlead-setup/gt-SKILL.md        [Sales Ops]
+│   ├── lemlist-setup/gt-SKILL.md          [Sales Ops]  (email + LinkedIn)
 │   ├── warmup-golive/gt-SKILL.md          [Sales Ops → GTM]
 │   ├── campaign-building/gt-SKILL.md      [GTM Engineer]
 │   ├── dashboard-reading/gt-SKILL.md      [GTM Engineer]
+│   ├── setup-audit/gt-SKILL.md            [GTM Engineer]  (live config audit)
 │   └── blacklist-bounce-audit/gt-SKILL.md [GTM Engineer]
 └── resources/
     ├── reference.md             ← single source of numbers, limits, thresholds, taxonomy
@@ -48,7 +53,7 @@ gt-email-infra/
     └── benchmarks.md            ← 2026 market performance benchmarks
 ```
 
-Note: Growth Today runs this on **EmailBison** today and is **migrating to Instantly** (Smartlead is benchmarked as a third option). The concepts are ESP-agnostic — platform-specific steps are called out inline; adapt them to your own stack.
+Note: this skill supports the sequencers Growth Today runs — **EmailBison, Instantly, Smartlead, and Lemlist** — via a setup sub-skill for each. The concepts are ESP-agnostic; platform-specific steps are called out inline. Adapt them to your own stack.
 
 ## License
 

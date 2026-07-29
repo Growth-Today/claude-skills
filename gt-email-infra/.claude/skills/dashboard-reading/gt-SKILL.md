@@ -68,7 +68,7 @@ Govern by the warm-to-cold **ratio**, set the cold limit by state (`reference.md
 | Active (sending) | 20 / 5 | ~30 / ~13 |
 | Warmup Needed / Burnt | 0–1 / 0–1 | reduced |
 
-> **Failover watch (EmailBison):** a throttled inbox stays attached at cold 1 and keeps sending to its in-flight leads; Bison won't reroute those leads to a healthy inbox on the campaign. Scan for leads stranded on Warmup-Needed inboxes — this is a real bounce driver and the reason for the Instantly migration.
+> **Failover watch (EmailBison):** a throttled inbox stays attached at cold 1 and keeps sending to its in-flight leads; Bison won't reroute those leads to a healthy inbox on the campaign. Scan for leads stranded on Warmup-Needed inboxes — a real bounce driver. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't.
 
 ---
 

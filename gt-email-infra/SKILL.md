@@ -1,7 +1,7 @@
 ---
 name: gt-email-infra
 version: v5
-description: "Email Infrastructure & Deliverability by Growth Today (growthtoday.co). Expert cold-email infrastructure and deliverability strategist. Use for infrastructure sizing, domain research and purchasing, DNS and auth (MX/SPF/DKIM/DMARC), masking versus redirect, mailbox provisioning (Google Workspace / Microsoft 365 / custom SMTP), Instantly inbox setup and warmup, going live, campaign building and ESP/SEG routing, inbox-health dashboards, and blacklist/bounce auditing. Runs on EmailBison, migrating to Instantly. Triggers on: email infra, buy or setup domains, DNS, MX, SPF, DKIM, DMARC, warmup, mailbox setup, EmailBison, Instantly, Smartlead, deliverability, inbox placement, scaling email, how many domains or mailboxes, ESP matching, SEG, Mimecast, Proofpoint, blacklist, SURBL, Spamhaus, bounce rate, bounce audit, why are my emails bouncing. Do NOT use for cold email copywriting or sequences (use gt-cold-email); the lead list (use gt-list-building); or marketing emails/newsletters."
+description: "Email Infrastructure & Deliverability by Growth Today (growthtoday.co). Expert cold-email infrastructure and deliverability strategist. Use for infrastructure sizing, domain research and purchasing, DNS and auth (MX/SPF/DKIM/DMARC), masking versus redirect, mailbox provisioning (Google Workspace / Microsoft 365 / custom SMTP), Instantly inbox setup and warmup, going live, campaign building and ESP/SEG routing, inbox-health dashboards, and blacklist/bounce auditing. Works across EmailBison, Instantly, Smartlead, and Lemlist. Triggers on: email infra, buy or setup domains, DNS, MX, SPF, DKIM, DMARC, warmup, mailbox setup, EmailBison, Instantly, Smartlead, deliverability, inbox placement, scaling email, how many domains or mailboxes, ESP matching, SEG, Mimecast, Proofpoint, blacklist, SURBL, Spamhaus, bounce rate, bounce audit, why are my emails bouncing. Do NOT use for cold email copywriting or sequences (use gt-cold-email); the lead list (use gt-list-building); or marketing emails/newsletters."
 ---
 
 ## Setup (Run Once Per Session)
@@ -18,7 +18,7 @@ Always resolve `SKILL_BASE` dynamically, never assume a hardcoded install locati
 
 Expert cold-email **infrastructure and deliverability** strategist. This skill is the *plumbing that gets cold email delivered* — not the message itself. Route by **who you are** and **what you're doing** to the one sub-skill that matches. Each sub-skill is self-contained and ends in a copy-pasteable checklist.
 
-Platform: Growth Today sends on **EmailBison today** and is **migrating to Instantly** (Smartlead is benchmarked as the third option). Concepts are ESP-agnostic; platform-specific steps are called out inline.
+Platform: this skill supports the sequencers Growth Today uses — **EmailBison, Instantly, Smartlead, and Lemlist**. Use the matching setup sub-skill for whichever you run. Concepts are ESP-agnostic; platform-specific steps are called out inline.
 
 ## When NOT to use this skill
 
@@ -35,10 +35,14 @@ Platform: Growth Today sends on **EmailBison today** and is **migrating to Insta
 |---|---|---|---|
 | **Sales Ops** | Research and buy sending domains | **domain-research** | `{SKILL_BASE}/.claude/skills/domain-research/gt-SKILL.md` |
 | **Sales Ops** | Provision mailboxes + DNS/auth (masking, not redirect) | **provisioning** | `{SKILL_BASE}/.claude/skills/provisioning/gt-SKILL.md` |
-| **Sales Ops** | Set up / connect inboxes in Instantly | **instantly-setup** | `{SKILL_BASE}/.claude/skills/instantly-setup/gt-SKILL.md` |
+| **Sales Ops** | Set up / connect inboxes in **EmailBison** | **emailbison-setup** | `{SKILL_BASE}/.claude/skills/emailbison-setup/gt-SKILL.md` |
+| **Sales Ops** | Set up / connect inboxes in **Instantly** | **instantly-setup** | `{SKILL_BASE}/.claude/skills/instantly-setup/gt-SKILL.md` |
+| **Sales Ops** | Set up / connect inboxes in **Smartlead** | **smartlead-setup** | `{SKILL_BASE}/.claude/skills/smartlead-setup/gt-SKILL.md` |
+| **Sales Ops** | Set up / connect inboxes in **Lemlist** (email + LinkedIn) | **lemlist-setup** | `{SKILL_BASE}/.claude/skills/lemlist-setup/gt-SKILL.md` |
 | **Sales Ops → GTM** | Warm up and take domains live | **warmup-golive** | `{SKILL_BASE}/.claude/skills/warmup-golive/gt-SKILL.md` |
 | **GTM Engineer** | Build campaigns, route by ESP/SEG | **campaign-building** | `{SKILL_BASE}/.claude/skills/campaign-building/gt-SKILL.md` |
 | **GTM Engineer** | Read the inbox-health dashboard, act on it | **dashboard-reading** | `{SKILL_BASE}/.claude/skills/dashboard-reading/gt-SKILL.md` |
+| **GTM Engineer** | Verify a workspace is set up correctly (live audit) | **setup-audit** | `{SKILL_BASE}/.claude/skills/setup-audit/gt-SKILL.md` |
 | **GTM Engineer** | Audit a bounce / blacklist to root cause | **blacklist-bounce-audit** | `{SKILL_BASE}/.claude/skills/blacklist-bounce-audit/gt-SKILL.md` |
 
 ---
@@ -79,7 +83,7 @@ Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxe
 - **Microsoft / Outlook:** expect weaker Outlook placement; check sudden drops against **Microsoft BCL recalibration** dates before blaming infra; conservative limits; short copy.
 - **SEG (Mimecast/Proofpoint/Barracuda):** a block is the recipient's policy working as designed. **Isolate SEG leads onto dedicated, never-reused domains**, low concurrency into one org, no links/tracking, go multi-channel, and **recycle burnt SEG domains** onto easy Google/Outlook segments before retiring.
 - **Bounces:** **strip OOO/auto-replies first** — Bison inflates bounce counts by counting them (~54% in one audit). Read the real number, then diagnose.
-- **Failover gap:** Bison can't set cold limit 0, so it strands leads on unhealthy inboxes — a real bounce driver and the key reason for the Instantly migration.
+- **Failover gap:** EmailBison can't set a cold limit of 0, so it strands leads on unhealthy inboxes — a real bounce driver. Instantly and Smartlead can set 0 and reroute the lead to a healthy inbox on the campaign.
 
 ---
 
@@ -87,12 +91,13 @@ Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxe
 
 Most real requests chain sub-skills. Common ones:
 
-1. **"Set up cold email infra for X/month"** → domain-research → provisioning → instantly-setup → warmup-golive (in order).
-2. **"Audit our deliverability / why are we bouncing?"** → blacklist-bounce-audit (root cause) + dashboard-reading (health context).
-3. **"Build / launch a campaign"** → campaign-building (route from the matrix), then the launch gate in warmup-golive.
-4. **"How many domains and mailboxes do I need?"** → `{SKILL_BASE}/resources/reference.md` §4 (sizing).
-5. **"Is this bounce/reply rate good?"** → `{SKILL_BASE}/resources/benchmarks.md`.
-6. **Single-topic question** → the one matching sub-skill above.
+1. **"Set up cold email infra for X/month"** → domain-research → provisioning → the matching platform setup sub-skill (emailbison / instantly / smartlead / lemlist) → warmup-golive (in order).
+2. **"Is this workspace set up correctly / audit our setup"** → setup-audit (live per-item PASS/WARN/FAIL).
+3. **"Audit our deliverability / why are we bouncing?"** → blacklist-bounce-audit (root cause) + dashboard-reading (health context).
+4. **"Build / launch a campaign"** → campaign-building (route from the matrix), then the launch gate in warmup-golive.
+5. **"How many domains and mailboxes do I need?"** → `{SKILL_BASE}/resources/reference.md` §4 (sizing).
+6. **"Is this bounce/reply rate good?"** → `{SKILL_BASE}/resources/benchmarks.md`.
+7. **Single-topic question** → the one matching sub-skill above.
 
 ---
 
@@ -102,10 +107,11 @@ Most real requests chain sub-skills. Common ones:
 Who / what?
 ├─ Sales Ops: ideate or buy domains?          → domain-research
 ├─ Sales Ops: mailboxes / DNS / auth?         → provisioning
-├─ Set up / connect inboxes in Instantly?      → instantly-setup
+├─ Set up / connect inboxes (Bison/Instantly/Smartlead/Lemlist)? → the matching *-setup sub-skill
 ├─ Warm up / go live?                          → warmup-golive
 ├─ GTM: build or route a campaign (ESP/SEG)?   → campaign-building
 ├─ GTM: read the dashboard / act on health?    → dashboard-reading
+├─ GTM: verify a workspace is set up right?     → setup-audit
 ├─ GTM: something bouncing / blacklisted?      → blacklist-bounce-audit
 ├─ Just need a number / limit / threshold?     → resources/reference.md
 └─ Is this metric good or bad vs the market?   → resources/benchmarks.md

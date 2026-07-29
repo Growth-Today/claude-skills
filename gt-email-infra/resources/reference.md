@@ -2,7 +2,7 @@
 
 Single source of truth for every number, limit, timeline, threshold, and taxonomy used across this skill. All sub-skills point here — never restate a number in a sub-skill; link to this file. If a value changes, change it here once.
 
-> **Platform note.** Growth Today runs cold sending on **EmailBison today** and is **migrating to Instantly** (Smartlead is the third option we benchmark against). The classification/limit logic below is what our automated inbox-management system enforces today on Bison; the *targets* (warmup length, ratios, healthy thresholds) are platform-independent and carry over. Where a limit is platform-specific (e.g. EmailBison's minimum cold limit = 1, not 0), it is flagged.
+> **Platform note.** This skill supports multiple sequencers — **EmailBison, Instantly, Smartlead, and Lemlist** (use the matching setup sub-skill for each). The *targets* below (warmup length, ratios, healthy thresholds) are platform-independent and carry over; platform-specific limits are flagged (e.g. EmailBison's minimum cold limit = 1, not 0). The classification/limit logic is what the automated inbox-management system enforces.
 
 ---
 
@@ -26,7 +26,7 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 
 **Warmup is governed by the warm-to-cold ratio, not a fixed constant.** The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**; Outlook 5 × 2.5 = **13**. Change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets warmup for you. During warming the ramp is Google **+4/day**, Outlook **+2/day** (see the instantly-setup sub-skill).
 
-- **Failover gap (EmailBison):** cold can't be set to 0, so an unhealthy inbox is throttled to 1 rather than silenced — and a lead being prospected by that inbox keeps getting sent from it; Bison won't hand the lead to another healthy inbox on the campaign. Instantly *can*, which is the main reason for the migration.
+- **Failover gap (EmailBison):** cold can't be set to 0, so an unhealthy inbox is throttled to 1 rather than silenced — and a lead being prospected by that inbox keeps getting sent from it; Bison won't hand the lead to another healthy inbox on the campaign. Instantly and Smartlead *can* set 0 and reroute the lead to a healthy inbox on the campaign.
 - Limits auto-adjust on day 15 (after the 14-day warmup floor).
 
 > **Do not** copy the old "Google 30/day, Microsoft 10/day safe limit" figure — it conflated cold+warmup and the Microsoft cold number was wrong. Govern by the ratio above.

@@ -33,11 +33,14 @@ Only these are approved. A vendor not on this list should not be used without GT
 
 ## Sequencers / sending platforms
 
-| Vendor | Status at Growth Today | Notes |
+Growth Today runs cold outreach across these approved sequencers — pick per engagement and use the matching setup sub-skill:
+
+| Vendor | Setup sub-skill | Notes |
 |---|---|---|
-| **EmailBison** | Current sending platform | The automated inbox-management system runs on it today |
-| **Instantly** | Migrating to | Can set cold limit 0 and continue a lead from a healthy inbox (closes the failover gap); auto-warmup |
-| **Smartlead** | Benchmarked | Third option we compare against; auto-warmup |
+| **EmailBison** | emailbison-setup | Warmup fully automated (set the max daily limit only); pairs with EmailGuard for placement tests; min cold limit = 1 (cannot be 0) |
+| **Instantly** | instantly-setup | Auto-warmup; can set cold limit 0 and reroute a lead to a healthy inbox; native placement tests |
+| **Smartlead** | smartlead-setup | Auto-warmup with smart-adjust; SmartDelivery placement tests |
+| **Lemlist** | lemlist-setup | Multichannel (email + LinkedIn); lemwarm warmup; Deliverability Hub |
 
 ## Placement testing & masking
 

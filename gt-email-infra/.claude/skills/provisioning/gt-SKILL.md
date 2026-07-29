@@ -73,7 +73,7 @@ Correct-at-setup is not enough — the real risk is a provider **quietly breakin
 
 ## Part 5 — Connect to the sequencer
 
-Platform-aware (`approved-vendors.md`): EmailBison today, migrating to Instantly, Smartlead benchmarked.
+Use the matching setup sub-skill for the full connect + warmup flow per platform: emailbison-setup, instantly-setup, smartlead-setup, or lemlist-setup (see `{SKILL_BASE}/resources/approved-vendors.md`).
 
 - **Google:** OAuth (recommended) or app password; bulk import supported for 10+.
 - **Microsoft:** one-by-one only; confirm SMTP enabled and the 1-hour window elapsed; consent on behalf of the org.

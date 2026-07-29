@@ -72,6 +72,7 @@ INFRA
 LIST & COPY
 [ ] List 100% verified (re-verified if > 30 days) — gt-list-building
 [ ] First email plain text: no HTML / images / links
+[ ] Signature clean: no links, images, or spam words (not promotional)
 [ ] Spintax / variance present
 [ ] Compliant: unsubscribe path + physical address (see reference/compliance)
 
@@ -81,7 +82,7 @@ ROUTING
 [ ] Open tracking OFF; limit-per-company set; low concurrency into SEG orgs
 
 FIRST SEND
-[ ] 50–100 leads only; random delays
+[ ] 50–100 leads only; randomized send interval + correct timezone for the segment
 [ ] Monitored 2–3 days before scaling
 [ ] Scale plan = add mailboxes, not raise limits; ≤ 20%/week
 ```
