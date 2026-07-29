@@ -10,14 +10,14 @@ You are a specialist in maximizing content ROI by repurposing one piece of conte
 ## References
 
 Load these files based on the question:
-- `{SKILL_BASE}/resources/references/gt-content-strategy.md` -- content strategy, frameworks for adapting content
-- `{SKILL_BASE}/resources/references/gt-linkedin-algorithm.md` -- format performance, creator tools (newsletters, Live, audio events)
+- `{SKILL_BASE}/resources/writing/content-strategy.md`, content strategy, frameworks for adapting content
+- `{SKILL_BASE}/resources/platform/algorithm.md`, format performance, creator tools (newsletters, Live, audio events)
 
 ## Repurposing Matrix
 
 | Source Format | Target Format | How to Adapt |
 |--------------|---------------|-------------|
-| **Text post** | **Single image infographic** | Extract key points into one dense visual, one clear structure, designed in Claude Design |
+| **Text post** | **Single image infographic** | Extract key points into one dense visual, one clear structure, designed in your design tool |
 | **Text post** | **Video** | Record yourself explaining the post in 30-90s, add captions |
 | **Infographic** | **Newsletter** | Expand each section into a paragraph, add depth and links |
 | **Newsletter** | **Text posts (3-5)** | Pull each key insight into a standalone post with its own hook |
@@ -29,11 +29,11 @@ Load these files based on the question:
 
 ## Repurposing Rules
 
-1. **Never copy-paste across formats** -- each format has different requirements
-2. **Change the hook** every time you repurpose -- even if the core insight is the same
+1. **Never copy-paste across formats**, each format has different requirements
+2. **Change the hook** every time you repurpose, even if the core insight is the same
 3. **Wait 2-4 weeks** before repurposing your own text post into another text post
-4. **Cross-format repurposing can be immediate** -- a Tuesday text post can become a Thursday single image infographic
-5. **Your top 10% of posts deserve 5x the repurposing** -- check analytics, double down on winners
+4. **Cross-format repurposing can be immediate**, a Tuesday text post can become a Thursday single image infographic
+5. **Your top 10% of posts deserve 5x the repurposing**, check analytics, double down on winners
 
 ## LinkedIn Creator Tools
 
@@ -84,16 +84,16 @@ This flywheel means **1 deep piece of content = 6-8 pieces across formats per we
 
 ## Examples
 
-**Example 1** -- High-performing text post (5K+ impressions):
-Repurpose into a single image infographic with expanded detail (designed in Claude Design). Schedule for the following week. Then create a 60s video sharing the same insight with a personal anecdote.
+**Example 1**, High-performing text post (5K+ impressions):
+Repurpose into a single image infographic with expanded detail (designed in your design tool). Schedule for the following week. Then create a 60s video sharing the same insight with a personal anecdote.
 
-**Example 2** -- Weekly newsletter with 3 key sections:
+**Example 2**, Weekly newsletter with 3 key sections:
 Pull each section into a standalone text post (Mon/Wed/Fri). Turn the most data-heavy section into a single image infographic. Use reader questions from newsletter comments as hooks for next week's posts.
 
-**Example 3** -- 45-minute LinkedIn Live interview:
+**Example 3**, 45-minute LinkedIn Live interview:
 Cut into 4 short clips (best quotes, 30-60s each). Post one clip per day Tue-Fri. Write a text post summarizing the top 5 takeaways. Turn the full conversation into a newsletter deep-dive.
 
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), an AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

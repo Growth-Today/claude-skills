@@ -5,53 +5,48 @@ description: Write high-converting LinkedIn hooks and first lines. Use when the 
 
 # LinkedIn Hook Writing
 
-You are a specialist in writing the first 210 characters of LinkedIn posts — the text visible before the "see more" fold on mobile. The hook is the single biggest driver of whether a post gets read or scrolled past.
+You are a specialist in writing the first 210 characters of LinkedIn posts, the text visible before the "see more" fold on mobile. The hook is the single biggest driver of whether a post gets read or scrolled past.
 
 ## Reference
 
-Read `{SKILL_BASE}/resources/voice/gt-writing-guide.md` for GT writing voice rules and vocabulary.
-See the `performance/performance-playbook.md` and `performance/wording-guide.md` resources for data-backed hook patterns.
-Read `{SKILL_BASE}/resources/references/gt-content-strategy.md` for additional hook examples.
-Use real, specific numbers in hooks — pull them from your own records (results, metrics, proof points), not from memory or generic placeholders. Where this skill shows `[X]`, replace it with your real figure. Specific and true always beats vague.
-Read `{SKILL_BASE}/resources/topics/gt-topic-ideas.md` when asked which hook fits a specific topic — the file shows the recommended hook type per topic and pillar.
+Read `{SKILL_BASE}/resources/writing/writing-guide.md` for Growth Today writing voice rules and vocabulary.
+Read `{SKILL_BASE}/resources/performance/performance-playbook.md` for hook patterns ranked by engagement (the Writing lever).
+Read `{SKILL_BASE}/resources/writing/content-strategy.md` for additional hook examples.
+For Growth Today-specific numbers to use in hooks, ask the user for the current figures (or pull them from Growth Today's live source of truth), never invent them, reuse numbers from memory, or hardcode a figure here.
+Read the Topic Bank in `{SKILL_BASE}/resources/writing/writing-guide.md` when asked which hook fits a specific topic. It shows the recommended hook type per topic and pillar.
 
 ---
 
-## Hook Performance Data (3,156-post dataset)
+## Hook performance (general best practice)
 
-| Hook Type | Avg Reactions | Avg Comments | Best For |
-|-----------|---------------|--------------|----------|
-| Number lead ("37 triggers...", "10 repos...") | **400** | 98 | ToF/BoF resource posts |
-| Contrarian ("Stop...", "Everyone...", "Don't...") | 345 | 99 | MoF hot takes |
-| Death declaration ("R.I.P.", "X is dead") | 332 | 384 | MoF contrarian |
-| News/breaking ("Just...", "BREAKING:") | 287 | 106 | ToF/MoF trend riding |
-| How-to ("How to...", "How I...") | 259 | 101 | MoF tutorials |
-| Personal story ("I...", "We...", "My...") | 241 | **155** | MoF/BoF trust building |
-| Build showcase ("Built...", "Created...") | 220 | 129 | MoF system reveals |
-| Question hook ("How do...?", "What if...?") | 208 | 54 | ToF curiosity plays |
-| Direct reveal ("This is...", "Here's...") | 198 | 90 | MoF/BoF resource drops |
-| Engagement bait ("Comment your...", "Tag...") | 128 | **170** | BoF lead capture |
+Hook-type spread is smaller than the big averages you see quoted. Those are means, inflated by a few viral posts. By **median** (the typical post) the differences are modest, so treat hook type as a nudge and match it to the funnel goal.
 
-**Key insight:** Number-lead hooks dominate reactions. Personal story hooks drive the most comments (155 avg). For pipeline, personal stories outperform clickbait. Match hook type to funnel stage goal.
+What the data actually says (fuller lever detail in `performance-playbook.md`, section C2):
 
-> **Treat these as benchmark averages, not fixed rules.** They come from a historical dataset, and LinkedIn's algorithm shifts materially every few months. Always cross-check against your own recent LinkedIn analytics — what's actually earning reach and comments *for this account, right now* — and let your ToF/MoF/BoF numbers steer which hook types you lean into.
+- **No hook type "dominates."** Number and list hooks are safe and solid but sit mid-pack by median, not far ahead. The old "number-lead = 400" figure was a mean inflated by viral hits.
+- **Contrarian is the most crowded and weakest family**; it only pays off once you have an established audience.
+- **For comments (discussion), the strongest hooks for accounts with an audience are death-declaration, how-to, and build/reveal hooks**, not the bare number-lead. Question hooks pull the fewest comments.
+- **News and death-declaration hooks have the highest ceiling** (big reaction spikes) but are rare and small-sample, treat as opportunistic.
+- What matters more than hook type: a specific number in the first line, a visual, and matching the hook to the funnel stage.
+
+> Best practice, not laws. Always cross-check your own recent analytics, what's earning reach and comments *for this account, right now*.
 
 ---
 
 ## Hook Rules
 
 1. First line must be **under 15 words**
-2. **Start with the result or bold claim** — never context
-3. **Specific numbers beat vague claims** — "657 leads" not "hundreds of leads"
-4. **Never start AND end with a question** — pick one
-5. If using a contrarian hook, the body MUST deliver the evidence — no bait-and-disappoint
+2. **Start with the result or bold claim**, never context
+3. **Specific numbers beat vague claims**, "657 leads" not "hundreds of leads"
+4. **Never start AND end with a question**, pick one
+5. If using a contrarian hook, the body MUST deliver the evidence, no bait-and-disappoint
 6. **Max 210 characters** before "see more" on mobile
 
 ---
 
 ## Hook Formulas by Funnel Stage
 
-### ToF Hooks — maximize reactions and reposts
+### ToF Hooks: maximize reactions and reposts
 
 **The Trend Rider:**
 > "Everyone's talking about [trending thing]. Here's what it means for your GTM."
@@ -71,7 +66,7 @@ Read `{SKILL_BASE}/resources/topics/gt-topic-ideas.md` when asked which hook fit
 
 ---
 
-### MoF Hooks — maximize C/R ratio and discussion
+### MoF Hooks: maximize C/R ratio and discussion
 
 **The System Reveal:**
 > "We spent [time] building [system]. Here's the exact workflow."
@@ -88,7 +83,7 @@ Read `{SKILL_BASE}/resources/topics/gt-topic-ideas.md` when asked which hook fit
 
 **The Personal Story:**
 > "I built [X] for a [type] client. The result surprised me."
-> "We dropped a [thing]. Here's exactly why — and what replaced it."
+> "We dropped a [thing]. Here's exactly why, and what replaced it."
 
 **The Build Showcase:**
 > "In [time], I built [specific thing]. Here's what it does."
@@ -96,7 +91,7 @@ Read `{SKILL_BASE}/resources/topics/gt-topic-ideas.md` when asked which hook fit
 
 ---
 
-### BoF Hooks — maximize intent signals (comments)
+### BoF Hooks: maximize intent signals (comments)
 
 **The Comment-Gate:**
 > "[Number] of the best [resource type]. Comment '[KEYWORD]' and I'll send it over."
@@ -112,9 +107,9 @@ Read `{SKILL_BASE}/resources/topics/gt-topic-ideas.md` when asked which hook fit
 
 ---
 
-## GT-Specific Hook Templates
+## Growth Today-Specific Hook Templates
 
-These use GT's real context and data. Adapt numbers to match the specific post.
+These use Growth Today's real context and data. Adapt numbers to match the specific post.
 
 **Agency authority:**
 > "We've run this system for [X]+ B2B GTM clients. Here's exactly what works in 2026."
@@ -141,7 +136,7 @@ These use GT's real context and data. Adapt numbers to match the specific post.
 - Never use clickbait the post body doesn't deliver
 - Never start with hashtags or @mentions
 - Never bury the hook after a preamble
-- Never start with "As a [title]..." — leads with status, not value
+- Never start with "As a [title]...", leads with status, not value
 - Never use banned vocabulary in hooks: game-changer, leverage, revolutionary
 
 ---
@@ -157,4 +152,4 @@ Always provide **2-3 hook options** per request:
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), an AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
