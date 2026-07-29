@@ -1,11 +1,11 @@
 ---
 name: linkedin-scheduling
-description: Optimize LinkedIn posting times, frequency, and the Distribution Window routine. Use when the user asks about best time to post on LinkedIn, posting frequency, content calendar, consistency, content velocity, the Distribution Window, or the golden hour / first hour after posting. Do NOT use for content writing (use storytelling) or format selection (use formats).
+description: Dial in when and how often to post, plus the first-hour routine that maximizes distribution. Use for questions about the best time to post, cadence, a content calendar, consistency, posting velocity, the distribution window, or the golden hour after publishing. Do NOT use for writing the post (use storytelling) or choosing a format (use formats).
 ---
 
 # LinkedIn Posting Schedule & Timing
 
-You are a specialist in LinkedIn posting cadence, timing, and the Distribution Window engagement routine that maximizes post distribution.
+You focus on posting cadence, timing, and the first-hour engagement routine that gives a post its best shot at wide distribution.
 
 ## Reference
 
@@ -45,35 +45,34 @@ An illustrative week, not a rule: two MoF, one BoF on the day your asset is read
 
 ## Posting frequency
 
-| Frequency | Impact | Best for |
+| Cadence | Effect | Fits |
 |-----------|--------|----------|
-| 1x/week | Baseline presence | Beginners, busy execs |
-| 3-4x/week | Optimal growth | Growing creators, founders |
-| 5x/week | Diminishing returns | Full-time creators only |
-| Daily (7x) | Can hurt quality | Not recommended |
+| Once a week | keeps a baseline presence | beginners, time-pressed execs |
+| Three to four a week | the growth sweet spot | founders and rising creators |
+| Five a week | returns start to taper | full-time creators only |
+| Daily | tends to erode quality | not advised |
 
-Sweet spot: 3 to 4 posts per week. Quality always beats quantity.
+Target three to four a week. Volume never beats quality.
 
 ## The Distribution Window (algorithm signal)
 
-The first 60 to 90 minutes are the **Distribution Window**: they determine 80%+ of total reach. The post is first shown to 8 to 15% of followers as a test. High early velocity expands distribution to followers-of-followers. 20 comments in 30 minutes beats 50 comments in 24 hours.
+The opening 60 to 90 minutes, the **Distribution Window**, set roughly four-fifths of a post's eventual reach. LinkedIn first tests it on a fraction of your followers, on the order of one in ten, and watches how fast engagement builds. Quick early traction opens the post up to followers-of-followers. A burst of comments in the first half hour does more than a slow trickle over a day.
 
-> This is the same Distribution Window covered in the `engagement` sub-skill. See that skill for the full reply-to-every-comment tactics. This section covers the timing and routine side.
+> This is the same window the `engagement` sub-skill covers from the reply-to-every-comment angle. Here we handle the timing and the routine.
 
-## The Distribution Window routine
+## The first-hour routine
 
-- T+0 min: post goes live
-- T+0-5: respond to every immediate comment
-- T+5-15: engage with 5 to 10 other posts in your niche
-- T+15-30: check back, respond to all new comments
-- T+30-60: keep engaging on others' posts and responding
-- T+1-2 hrs: final check, respond to the rest
+- The moment it is live, reply to whatever lands.
+- Over the next ten to fifteen minutes, go engage on five to ten posts in your niche.
+- Around the half-hour mark, come back and answer every new comment.
+- Through the rest of the first hour, keep engaging elsewhere and replying.
+- In the second hour, do a final pass to catch the rest.
 
-Why it works: your own engagement signals the algorithm that you are active, which boosts distribution. Replying fast encourages more comments, which carry up to 4x engagement weight (meaningful comments over 15 words).
+Why it works: your own activity tells the algorithm you are live, which lifts distribution, and fast replies pull more comments, the heaviest-weighted signal (a substantive comment, fifteen words and up, is worth several likes).
 
 ## Topic consistency
 
-Post on the same 2 to 3 topics consistently for higher distribution. The algorithm builds a creator topic graph per user. Pivoting too often resets your distribution baseline. Use the Growth Today pillar rotation, and do not post 3 AI-trend posts in a row.
+Stick to two or three recurring topics to build distribution. LinkedIn maps each creator to their subjects, and hopping around resets that map. Rotate the Growth Today pillars, and avoid stacking three AI-trend posts back to back.
 
 ## Examples
 
@@ -81,7 +80,7 @@ Post on the same 2 to 3 topics consistently for higher distribution. The algorit
 
 **Example 2, building the week's calendar:** ask what BoF assets are available (a real resource to deliver?). If yes, lock Thursday. Fill Monday to Wednesday with MoF from the pillar rotation. Use Friday for the lightest ToF trend post. Put the highest-effort post on the strongest weekday for this account, not on a fixed day.
 
-**Example 3, a creator struggling with consistency:** batch-write 4 posts up front. Schedule them for the audience's morning window using Taplio or the LinkedIn native scheduler. Spend the actual posting days doing Distribution Window engagement instead of writing.
+**Example 3, a creator who keeps falling off cadence:** write four posts in one sitting, queue them for the audience's morning window with a scheduling tool or LinkedIn's native scheduler, and spend the posting days on first-hour engagement rather than writing.
 
 ---
 

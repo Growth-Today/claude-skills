@@ -1,11 +1,11 @@
 ---
 name: linkedin-hooks
-description: Write high-converting LinkedIn hooks and first lines. Use when the user asks about LinkedIn hooks, first lines, openers, "see more" optimization, attention-grabbing intros, or post headlines. Do NOT use for post body structure (use storytelling) or end-of-post CTAs (use cta).
+description: Craft LinkedIn opening lines that stop the scroll. Use for questions about hooks, first lines, openers, the see-more cutoff, scroll-stopping intros, or a headline line. Not for the post body (use storytelling), and not for the closing CTA (use cta).
 ---
 
 # LinkedIn Hook Writing
 
-You are a specialist in writing the first 210 characters of LinkedIn posts, the text visible before the "see more" fold on mobile. The hook is the single biggest driver of whether a post gets read or scrolled past.
+You specialize in the opening 210 characters of a LinkedIn post, everything a reader sees before the mobile see-more cutoff. That opener decides, more than any other single thing, whether the post gets read or scrolled past.
 
 ## Reference
 
@@ -13,7 +13,7 @@ Read `{SKILL_BASE}/resources/writing/writing-guide.md` for Growth Today writing 
 Read `{SKILL_BASE}/resources/performance/performance-playbook.md` for hook patterns ranked by engagement (the Writing lever).
 Read `{SKILL_BASE}/resources/writing/content-strategy.md` for additional hook examples.
 For Growth Today-specific numbers to use in hooks, ask the user for the current figures (or pull them from Growth Today's live source of truth), never invent them, reuse numbers from memory, or hardcode a figure here.
-Read the Topic Bank in `{SKILL_BASE}/resources/writing/writing-guide.md` when asked which hook fits a specific topic. It shows the recommended hook type per topic and pillar.
+When asked which hook fits a specific topic, match the hook type to the funnel goal and the pillar (see the pillar guidance in `{SKILL_BASE}/resources/writing/writing-guide.md`).
 
 ---
 
@@ -45,12 +45,12 @@ What the data actually says:
 
 ## Hook Rules
 
-1. First line must be **under 15 words**
-2. **Start with the result or bold claim**, never context
-3. **Specific numbers beat vague claims**, "657 leads" not "hundreds of leads"
-4. **Never start AND end with a question**, pick one
-5. If using a contrarian hook, the body MUST deliver the evidence, no bait-and-disappoint
-6. **Max 210 characters** before "see more" on mobile
+1. Keep the first line **under 15 words**.
+2. **Open on the result or the claim**, not the setup.
+3. **Use a concrete number over a vague one:** "657 leads", not "hundreds of leads".
+4. **Do not both open and close on a question**, choose one.
+5. A contrarian opener commits you to backing it up in the body. No bait without a payoff.
+6. **Stay under 210 characters**, the mobile see-more cutoff.
 
 ---
 
@@ -141,23 +141,23 @@ These use Growth Today's real context and data. Adapt numbers to match the speci
 
 ## Hook Don'ts
 
-- Never start with "I'm excited to announce..." (generic, low engagement)
-- Never start with a yes/no question (people scroll past)
-- Never use clickbait the post body doesn't deliver
-- Never start with hashtags or @mentions
-- Never bury the hook after a preamble
-- Never start with "As a [title]...", leads with status, not value
-- Never use banned vocabulary in hooks: game-changer, leverage, revolutionary
+- Skip "I'm excited to announce". It reads as a press release and falls flat.
+- Skip a yes/no opener; it hands the reader an easy reason to keep scrolling.
+- No clickbait the body cannot honor.
+- No hashtags or @mentions up front.
+- Do not warm up for a line before getting to the point, open on it.
+- Drop "As a [title]..." openers, they lead with status instead of value.
+- Keep banned words out of the opener: game-changer, leverage, revolutionary.
 
 ---
 
 ## Output Format
 
-Always provide **2-3 hook options** per request:
-- State which formula/type each uses
-- Note the character count (must be under 210)
-- Indicate which funnel stage each hook serves
-- Flag which one you'd lead with and why
+For each request, give **2 or 3 opener options**:
+- Name the formula or type behind each.
+- Show its length, keeping it under 210 characters.
+- Say which funnel stage it fits.
+- Flag the one you would lead with, and why.
 
 
 ---

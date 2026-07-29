@@ -71,21 +71,20 @@ Once connected:
 
 **Message 1 (once connected):**
 ```
-Great to be connected!
-I usually share quick tips on [TOPIC].
-What caught your eye on my profile? Was it a specific post recently?
+Good to connect.
+I mostly post about [TOPIC]. Curious, was there a particular post of mine that brought you over?
 ```
 
 **Message 2 (a few days later, if no reply):**
 ```
-LMK how I can be useful to you
+Anything I can help you with? Happy to be useful.
 ```
 
 **Message 3 (last attempt):**
 ```
-alright I know your inbox is full, and this got buried
+Figure this one slipped down the pile, no worries.
 
-if you want to keep in touch via email, I'm sharing actionable strategies on [TOPIC] here: [LINK]
+If email suits you better, I send practical [TOPIC] breakdowns here: [LINK]
 ```
 
 After message 3, stop. Aggressive follow-up on LinkedIn wrecks your profile.
@@ -96,32 +95,32 @@ Short, proven variants for specific signals. Fill in the `{{fields}}`.
 
 **Profile Viewer Follow-Up** (warm reply rates run far above cold, roughly 28 to 35% vs 8 to 12%):
 ```
-Hey {{first_name}}, noticed you checked out my profile.
+Hi {{first_name}}, saw you stopped by my profile.
 
-What caught your attention?
+Anything in particular you were after?
 ```
 
 **Connection Acceptance Message:**
 ```
-Thanks for connecting, {{first_name}}.
+Appreciate the connect, {{first_name}}.
 
-Quick q, what's your biggest challenge with {{relevant_topic}} right now?
+Out of curiosity, where does {{relevant_topic}} hurt most for you right now?
 ```
 
 **Post Engager Follow-Up:**
 ```
-Hey {{first_name}}, saw you liked my post about {{topic}}.
+Hi {{first_name}}, you reacted to my post on {{topic}}.
 
-Is {{pain_point}} something you're dealing with at {{company}}?
+Is {{pain_point}} biting you over at {{company}}?
 ```
 
 **Warm Intro Request:**
 ```
-Hey {{first_name}}, noticed we both know {{mutual_connection}}.
+Hi {{first_name}}, looks like {{mutual_connection}} is a shared contact.
 
-I've been working with {{similar_company}} on {{topic}}.
+I have done some {{topic}} work with {{similar_company}}.
 
-Would you be open to a quick chat?
+Would a short call be worth your time?
 ```
 
 ## Scheduling
