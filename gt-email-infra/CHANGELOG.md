@@ -26,6 +26,7 @@ Major restructure and 2026 deliverability rebuild.
   the Instantly Help Center; replaces the ScaledMail + Instantly Notion SOP.
 - **benchmarks.md** — 2026 market benchmarks (results-side vs automation-side).
 - **approved-vendors.md** — approved SMTP / sequencer / masking vendors.
+- **blacklist-bounce-audit**: folded in the executable EmailBison audit runbook (MCP/API pull with cursor pagination, the broken `?type=bounced` filter workaround, Hard/Soft/Block/Unknown SMTP-code classification incl. Microsoft-specific block codes, the report sections + CSV schema + chat summary, and a Known API Limitations table). Sanitized from a teammate's internal `gt-bounce-audit` runbook.
 - Per-sub-skill **"Reads:"** dependency lines and a copy-pasteable **checklist**
   at the end of every sub-skill.
 - Composite **Routing Rules** in the orchestrator for chained requests.
