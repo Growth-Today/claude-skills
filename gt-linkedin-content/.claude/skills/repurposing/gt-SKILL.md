@@ -1,98 +1,77 @@
 ---
 name: linkedin-repurposing
-description: Repurpose LinkedIn content across formats and leverage creator tools. Use when the user asks about repurposing content, turning posts into single image infographics, LinkedIn newsletters, LinkedIn Live, audio events, collaborative articles, content recycling, or getting more mileage from existing content. Do NOT use for writing new original content (use storytelling) or format specs (use formats).
+description: Get more mileage from one idea by reshaping it across LinkedIn formats and using the platform's creator tools. Use when the user wants to recycle or repurpose a post, spin one piece into many, turn a post into an infographic, newsletter, video, or clips, or asks about LinkedIn newsletters, Live, audio events, or collaborative articles. Do NOT use to write a brand-new post (use storytelling) or to choose a format spec (use formats).
 ---
 
-# LinkedIn Content Repurposing & Creator Tools
+# LinkedIn Repurposing and Creator Tools
 
-You are a specialist in maximizing content ROI by repurposing one piece of content into multiple LinkedIn formats and leveraging LinkedIn's creator tools for compounding growth.
+One strong idea is worth more than one post. Your job here is to help a creator squeeze a full week of content out of a single asset, and to point them at the LinkedIn creator tools that compound reach over time. The principle: reuse the insight, never the wording.
 
 ## References
 
-Load these files based on the question:
-- `{SKILL_BASE}/resources/writing/content-strategy.md`, content strategy, frameworks for adapting content
-- `{SKILL_BASE}/resources/platform/algorithm.md`, format performance, creator tools (newsletters, Live, audio events)
+Pull these in as the question needs them:
+- `{SKILL_BASE}/resources/writing/content-strategy.md` for adapting an idea to a new frame.
+- `{SKILL_BASE}/resources/platform/algorithm.md` for how each format and creator tool behaves in the feed.
 
-## Repurposing Matrix
+## Reshaping one idea across formats
 
-| Source Format | Target Format | How to Adapt |
-|--------------|---------------|-------------|
-| **Text post** | **Single image infographic** | Extract key points into one dense visual, one clear structure, designed in your design tool |
-| **Text post** | **Video** | Record yourself explaining the post in 30-90s, add captions |
-| **Infographic** | **Newsletter** | Expand each section into a paragraph, add depth and links |
-| **Newsletter** | **Text posts (3-5)** | Pull each key insight into a standalone post with its own hook |
-| **Video** | **Text post** | Transcribe, extract the best quote or insight, rewrite as text |
-| **Blog article** | **Text post** | Summarize the #1 insight, link in comments |
-| **Podcast episode** | **Cheat sheet / infographic** | Pull 8-10 key quotes/insights, design as one dense single image |
-| **LinkedIn Live** | **Short clips (3-5)** | Cut best 30-60s moments, post as native video over next week |
-| **Client case study** | **Before/After post** | Use BAB framework: before state, after results, bridge |
+Pick the source you already have, then reshape the same insight into a format that fits a different reader and a different moment.
 
-## Repurposing Rules
+| You have | Turn it into | The move |
+|---|---|---|
+| A text post | A single dense visual | Lift the core points onto one designed image, one clear layout, built in your design tool |
+| A text post | A short talking-head clip | Say the idea out loud in under 90 seconds, captions on |
+| A visual | A newsletter edition | Give each block a paragraph, add the depth and links a post cannot carry |
+| A newsletter | Three to five posts | Break out each section as its own post with a fresh opening line |
+| A clip or video | A text post | Transcribe, keep the sharpest line, rebuild it as writing |
+| A blog article | A text post | Lead with the single best takeaway, drop the link in the first comment |
+| A podcast or talk | A cheat sheet | Harvest eight to ten quotable points and lay them out as one dense image |
+| A LinkedIn Live | A run of short clips | Slice the best moments and drip them out across the next week |
+| A client result | A before-and-after post | Frame the starting state, the outcome, and what bridged the two |
 
-1. **Never copy-paste across formats**, each format has different requirements
-2. **Change the hook** every time you repurpose, even if the core insight is the same
-3. **Wait 2-4 weeks** before repurposing your own text post into another text post
-4. **Cross-format repurposing can be immediate**, a Tuesday text post can become a Thursday single image infographic
-5. **Your top 10% of posts deserve 5x the repurposing**, check analytics, double down on winners
+## Rules so you recycle without cannibalizing
 
-## LinkedIn Creator Tools
+- Rewrite for the format. What works as a post fails as a newsletter and vice versa, so adapt the shape, do not paste.
+- Give it a new opening line every time. The underlying point can repeat, the hook cannot.
+- Space out same-format reuse. Leave a few weeks before a text post becomes another text post, so it reads as a fresh take, not a rerun.
+- Reshape across formats freely. A Tuesday post can become a Thursday visual with no waiting period, because the reader experiences them as different pieces.
+- Feed your winners first. Look at what already earned reach and comments, and put most of your repurposing effort into that small top slice.
 
-> **The numbers below (open rates, Live engagement multipliers, etc.) are benchmarks, not guarantees.** LinkedIn's algorithm and tool behavior shift every few months. Always cross-check against your own recent analytics before leaning into any one creator tool.
+## Creator tools worth the effort
 
-### Newsletters
-- Subscribers get **push notification + email** on every edition
-- Average open rates: **30-50%** (far higher than email marketing)
-- Indexed by Google (SEO benefit)
-- First newsletter auto-invites all connections
-- Recommended frequency: weekly or biweekly
-- Limitation: 1 newsletter at a time, can't export subscriber emails
+> Treat the figures below as rough, current benchmarks rather than promises. LinkedIn reshuffles how these tools behave every few months, so confirm against your own recent numbers before betting on any one of them.
 
-### LinkedIn Live
-- Gets **7x more reactions, 24x more comments** than native video
-- Requires third-party tool (StreamYard, Restream, OBS)
-- Promote 24-48 hours before + 1 hour before
-- Sweet spot: **30-60 minutes**
-- Repurpose recording into **3-5 short clips** over the following week
+**Newsletters.** Each edition pings subscribers by both notification and email, so it lands twice. Open rates tend to sit well above ordinary email marketing, often somewhere in the 30 to 50 percent band, and editions get indexed by search engines, which adds a slow SEO tail. Your first issue invites your whole network to subscribe. Run one weekly or every other week. The catch: you can only operate a single newsletter, and the subscriber list is not exportable.
 
-### Audio Events
-- Lower priority (deprioritized by LinkedIn in favor of video)
-- Keep to **30-45 minutes** max
-- Low attendance unless large following
+**LinkedIn Live.** A live session tends to pull far more reactions and dramatically more comments than a pre-recorded upload, so it is worth the setup. You will need an external streaming tool (StreamYard, Restream, OBS). Trail it the day before and again an hour out, keep the session to roughly half an hour to an hour, and mine the recording afterward for a handful of short clips to post through the following week.
 
-### Collaborative Articles
-- Earn **"Top Voice" badge** with 5-10+ contributions
-- Rank well in Google (LinkedIn domain authority)
-- Low effort: 2-4 paragraphs per contribution
-- Great for SEO and credibility signaling
+**Collaborative articles.** Contributing to these earns the Top Voice badge once you have added enough entries, and they rank well thanks to LinkedIn's domain authority. Each contribution is only a couple of paragraphs, so the effort-to-credibility ratio is strong.
 
-### Scheduled Posts
-- Native scheduling supported (up to 3 months ahead)
-- Batch-create content, schedule across the week
-- Eliminates need for third-party scheduling tools
+**Audio events.** Lower on the priority list, since LinkedIn now favors video. If you run one, keep it short, and expect thin turnout unless your following is already large.
 
-## The Content Flywheel
+**Native scheduling.** LinkedIn lets you queue posts months out, so batch a week or a month in one sitting and let it drip. No third-party scheduler required.
+
+## The compounding loop
+
+The point of all this is a loop, not a one-off:
 
 ```
-Write 1 newsletter/week
-  --> Extract 3-4 text posts from it
-    --> Turn best-performing post into a single image infographic
-      --> Record a 60s video on the same topic
-        --> Use comments/questions as inspiration for next newsletter
+One deep asset (say a weekly newsletter)
+  -> break out several posts from it
+    -> promote the best post into a designed visual
+      -> record a short clip on the same idea
+        -> let the comments and questions seed next week's asset
 ```
 
-This flywheel means **1 deep piece of content = 6-8 pieces across formats per week**.
+Run that loop and a single deep piece throws off six to eight posts a week across formats, with next week's topic handed to you by this week's replies.
 
 ## Examples
 
-**Example 1**, High-performing text post (5K+ impressions):
-Repurpose into a single image infographic with expanded detail (designed in your design tool). Schedule for the following week. Then create a 60s video sharing the same insight with a personal anecdote.
+**A post that outperformed (5K+ impressions).** Rebuild it as a designed visual with more detail, ship it the following week, then film a short clip that adds a personal story the written version did not have room for.
 
-**Example 2**, Weekly newsletter with 3 key sections:
-Pull each section into a standalone text post (Mon/Wed/Fri). Turn the most data-heavy section into a single image infographic. Use reader questions from newsletter comments as hooks for next week's posts.
+**A three-section newsletter.** Send each section out as its own post across the week, redraw the most number-heavy section as a visual, and turn the questions readers left in the comments into next week's hooks.
 
-**Example 3**, 45-minute LinkedIn Live interview:
-Cut into 4 short clips (best quotes, 30-60s each). Post one clip per day Tue-Fri. Write a text post summarizing the top 5 takeaways. Turn the full conversation into a newsletter deep-dive.
-
+**A 45-minute Live interview.** Cut four short clips from the best exchanges and post one a day from Tuesday to Friday, write a post that lists the top five takeaways, and grow the entire interview into an in-depth newsletter edition.
 
 ---
 
