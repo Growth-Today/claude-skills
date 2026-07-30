@@ -6,58 +6,91 @@
 
 ---
 
-## Benchmarks (from an analysis of 12,000+ GTM posts)
+## Benchmarks by follower band
 
-Typical (median) values across 12,000+ B2B GTM posts on LinkedIn. Median, not mean, since a few viral posts inflate the average. Treat these as the general bar across the space and cross-check your own recent analytics.
+From an analysis of 12,000+ B2B GTM posts on LinkedIn. The by-follower-band cuts below use about 8,900 original posts (reposts and quote posts excluded) from 233 creators whose follower counts were captured. Medians unless noted, since a few viral posts inflate the mean. The 50k+ band is only about 8 creators, so read it as indicative, not a population, and note that above roughly 50k results are driven more by the individual creator's system and community than by follower count. Always cross-check your own recent analytics.
 
-**By hook family** (median reactions):
+**Baseline by band**
 
-| Hook family | Median reactions |
-|---|---|
-| Number / list | 30 |
-| Personal / story | 29 |
-| How-to | 24 |
-| Contrarian | 21 |
-| Question | 18 |
+| Followers | Median reactions | Median comments | Comment/reaction ratio | Reactions per 1k followers |
+|---|---|---|---|---|
+| <2k | 9 | 1 | 0.11 | 7.5 |
+| 2-5k | 17 | 3 | 0.18 | 5.2 |
+| 5-10k | 21 | 4 | 0.19 | 3.0 |
+| 10-20k | 26 | 6 | 0.23 | 1.9 |
+| 20-50k | 44 | 14 | 0.31 | 1.5 |
+| 50k+ | 98 | 70 | 0.72 | 1.1 |
 
-The spread is modest, so hook type is a nudge, not a lever on its own.
+Two things move in opposite directions as you grow: absolute engagement climbs steeply, but engagement per follower falls (about 7x from smallest to largest, the normal size tradeoff). Comments climb faster than reactions (the ratio rises from 0.11 to 0.72), so the bigger the account, the more discussion-driven it is.
 
-**By format** (median reactions / comments):
+**Percentile tiers (the volatile tail)**
 
-| Format | Median reactions / comments |
-|---|---|
-| Multi-image carousel | 44 / 6 |
-| Single image | 28 / 6 |
-| Video | 27 / 5 |
-| Document (PDF) | 22 / 5 |
-| Text-only | 13 / 2 |
+The median hides the tail: most posts land near the floor and a few travel far. Read four tiers, typical (p50), strong (p75), top (p90), breakout (p99). Reactions:
 
-Single image is the workhorse, text-only is the floor.
+| Followers | Typical | Strong | Top | Breakout |
+|---|---|---|---|---|
+| <2k | 9 | 24 | 47 | 119 |
+| 2-5k | 17 | 31 | 55 | 138 |
+| 5-10k | 21 | 40 | 77 | 208 |
+| 10-20k | 26 | 49 | 93 | 254 |
+| 20-50k | 45 | 90 | 147 | 469 |
+| 50k+ | 98 | 178 | 337 | 1670 |
 
-**By CTA close** (median comments):
+Every band has a breakout roughly 13 to 17x its typical post, so even a small account has a real ceiling. Keep shipping, the tail is where the outsized posts live.
 
-| CTA close | Median comments |
-|---|---|
-| Repost or save ask | 41 |
-| Comment-gate | 29 |
-| Question | 7 |
-| Follow ask | 5 |
-| No explicit CTA | 3 |
+**Format by band** (median reactions)
 
-Once you have an audience, the comment-gate becomes the top comment driver, roughly 2.5 to 3x a no-CTA post.
+| Format | <2k | 2-5k | 5-10k | 10-20k | 20-50k | 50k+ |
+|---|---|---|---|---|---|---|
+| Single image | 15 | 18 | 23 | 28 | 45 | 113 |
+| Carousel (multi-image) | 22 | 32 | 60 | 48 | 81 | small n |
+| Video | 7 | 22 | 18 | 27 | 51 | 77 |
+| Text-only | 5 | 13 | 17 | 23 | 25 | 79 |
 
-**By weekday** (median reactions):
+Single image is the workhorse at every size and has the highest breakout ceiling. Carousel over-performs on the typical post (it often beats single image from 5 to 50k) but with a lower ceiling. Text-only is the floor everywhere. Video is situational and does not win at the top, a GTM-specific pattern: broad-market benchmarks rank video higher, but GTM audiences prefer dense visuals and frameworks.
 
-| Day | Median reactions |
-|---|---|
-| Monday to Thursday | 22 to 23 |
-| Friday | 22 |
-| Saturday | 18 |
-| Sunday | 14 |
+**CTA by band** (median comments)
 
-Early week edges ahead but the spread is small. The hour matters more than the day, roughly 10:00 to 14:00 UTC.
+| CTA close | <2k | 2-5k | 5-10k | 10-20k | 20-50k | 50k+ |
+|---|---|---|---|---|---|---|
+| Comment-gate | 2 | 5 | 8 | 24 | 103 | 216 |
+| Question / over-to-you | 1 | 4 | 3 | 9 | 12 | 80 |
+| No CTA | 1 | 3 | 4 | 5 | 12 | 60 |
 
-**By length:** median reactions barely move (22 to 24 across every bucket), so format and hook matter far more than length. A 100 to 500 word range is a safe default.
+The comment-gate is a scale play. Below about 10k it barely beats a no-CTA post, then it turns on around 10 to 20k and dominates at 20k+. Below 10k a gate also asks for a resource a smaller creator often has no time to build, so the audience threshold and the resourcing threshold move together. (Repost/save and follow asks were too thin to read reliably.)
+
+**Hook by band** (median reactions / comments)
+
+| Hook | <2k | 2-5k | 5-10k | 10-20k | 20-50k | 50k+ |
+|---|---|---|---|---|---|---|
+| Personal / story | 15 / 2 | 22 / 4 | 28 / 6 | 28 / 7 | 50 / 17 | 104 / 72 |
+| Number / list | 16 / 1 | 15 / 4 | 26 / 6 | 28 / 10 | 79 / 26 | 80 / 80 |
+| Statement | 9 / 1 | 16 / 3 | 20 / 4 | 26 / 6 | 40 / 13 | 99 / 70 |
+| How-to | small n | 19 / 3 | 20 / 5 | 24 / 9 | 45 / 12 | 110 / small n |
+| Contrarian | small n | 17 / 2 | 22 / 5 | 25 / 6 | small n | small n |
+| Question | 6 / 1 | 16 / 2 | 18 / 3 | 28 / 8 | 34 / 14 | small n |
+
+Personal/story wins at every size and drives comments, the most universal hook. Number/list scales strongly at 20k+. Contrarian is thin and overrated, and a bare question underperforms. Hook choice is more universal than CTA, which is size-dependent. Bigger accounts also post higher numbers partly because they write better and pack in more insight, so read the climb as content quality plus audience, not audience alone.
+
+**Length by band** (median reactions)
+
+| Length (chars) | <2k | 2-5k | 5-10k | 10-20k | 20-50k | 50k+ |
+|---|---|---|---|---|---|---|
+| <500 | 7 | 15 | 18 | 25 | 29 | 79 |
+| 500 to 1k | 10 | 21 | 21 | 26 | 39 | 74 |
+| 1 to 1.5k | 12 | 18 | 22 | 25 | 43 | 104 |
+| 1.5 to 2k | 13 | 14 | 22 | 26 | 42 | 104 |
+| 2 to 3k | 8 | 14 | 23 | 33 | 73 | 176 |
+
+Length interacts with size. Small accounts (<10k) do best tight, around 500 to 1,500 characters. Large accounts (20k+) do clearly better long, 2,000 to 3,000, where the extra room carries more insight. The overall-median view hides this, so set length by your size, not by a single rule.
+
+**Timing:** weekdays are roughly flat (Monday to Thursday median around 24 reactions, Friday 23), weekends run about a quarter lower (Saturday 18, Sunday 17). No single magic day.
+
+## What to do by size (three tiers)
+
+- **Small (<10k):** keep it tight (500 to 1,500 chars), lead with a single image, use a personal/story or number hook. The comment-gate barely pays yet, so do not lean on it. Build the audience instead, engage on others' posts daily, and help people, because engagement on LinkedIn is reciprocal. Expect a low hit rate, but the breakout tier is still about 13x, so keep shipping.
+- **Mid (10-50k):** the comment-gate turns on (24 to 103 median comments), carousel over-performs, and posts can run longer. Shift the goal from reach to discussion and optimize for comments.
+- **Large (50k+):** long-form (2 to 3k) wins, the comment-gate dominates, and your community is the engine. At this size the individual's system and community drive results far more than the follower number, so copy the system, not the size.
 
 The sections below read these numbers as levers.
 

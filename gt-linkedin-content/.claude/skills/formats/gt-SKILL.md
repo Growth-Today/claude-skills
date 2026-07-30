@@ -28,6 +28,21 @@ Typical (median) reactions and comments by format, across 12,000+ B2B GTM posts:
 - **Text-only is the floor.** Text-only posts pull very few comments, so visualize them wherever you can.
 - **PDF documents actually perform fine** (near single image), so avoiding them is an ad-boostability choice, not a performance one. Multi-image carousels over-index in the raw data (44), a possible contrarian play.
 
+## Format performance by follower band (median reactions)
+
+| Format | <2k | 2-5k | 5-10k | 10-20k | 20-50k | 50k+ |
+|---|---|---|---|---|---|---|
+| Single image | 15 | 18 | 23 | 28 | 45 | 113 |
+| Carousel (multi-image) | 22 | 32 | 60 | 48 | 81 | small n |
+| Video | 7 | 22 | 18 | 27 | 51 | 77 |
+| Text-only | 5 | 13 | 17 | 23 | 25 | 79 |
+
+- **Single image** is the workhorse at every size and has the highest breakout ceiling.
+- **Carousel** over-performs on the typical post (it often beats single image from 5 to 50k) but with a lower ceiling, an under-used lever.
+- **Text-only** is the floor everywhere.
+- **Video** is situational and does not win at the top, a GTM-specific pattern (broad-market benchmarks rank video higher; GTM audiences prefer dense visuals and frameworks).
+- Full by-band benchmarks and percentile tiers are in `performance-playbook.md`.
+
 ## Growth Today format policy
 
 - **Single image first** (PNG or JPG, 1080×1350px, 4:5) is the default, and a visual is mandatory on every post. A well-made animated MP4 loop (from Figma) or a quality GIF is also fine.
