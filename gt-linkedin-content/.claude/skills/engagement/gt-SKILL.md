@@ -13,16 +13,20 @@ Pull in as needed:
 - `{SKILL_BASE}/resources/platform/algorithm.md` for interaction weighting, dwell time, and the commenting mechanics.
 - `{SKILL_BASE}/resources/social-selling/social-selling-campaigns.md` for activity caps, warm-up, and turning warm audiences into conversations. For cold outreach, use the gt-linkedin-outbound skill.
 
-## What the algorithm counts most
+## Engagement weights (what the algorithm counts most)
 
-Ranked by how much each interaction moves a post, relative to a like:
+Each interaction carries a different weight. Rough values, relative to a like:
 
-- A **save** is the loudest signal there is, roughly five likes' worth, because it means someone plans to return.
-- A **real comment** (fifteen words and up) is about four likes' worth and starts to build a relationship.
-- A **share with a note** spreads the post into a new network, three to four likes' worth.
-- A **quick comment** still counts, maybe double a like, but it says less.
-- A **like** is the baseline.
-- A **"see more" tap** is a soft flicker of interest, worth under a like.
+| Signal | Rough weight | Why it counts |
+|---|---|---|
+| Save / bookmark | ~5x a like | the reader means to come back, the strongest intent signal |
+| Comment, 15+ words | ~4x | real attention, and it opens a relationship |
+| Share with a note | ~3 to 4x | carries the post into a whole new network |
+| Comment, under 15 words | ~2x | still helps, just says less |
+| Like / reaction | 1x (the baseline) | the floor |
+| "See more" tap | ~0.5 to 1x | a flicker of curiosity, low commitment |
+
+The takeaway: optimize for saves and real comments, not likes. Those are the signals that widen distribution.
 
 ## Your own commenting is a growth lever
 
@@ -40,9 +44,15 @@ Commenting is the highest-return activity on the platform, because it borrows ot
 - **Bring receipts:** "We ran this last quarter and landed [specific outcome]. The piece I would add is [insight]."
 - **Push back politely:** "Not what I have seen, honestly. In [context] it went the other way because [evidence]. Where do you think the difference is?"
 
-## Time-on-post
+## Dwell time optimization
 
-How long a reader stays with your post feeds its score even when they do not click anything. Ten seconds of reading registers as positive, an instant scroll-by as negative. Long, well-built posts and dense single-image infographics earn that extra time, so write things that reward a slow read: stories, walk-throughs, step-by-steps.
+How long a reader lingers on a post feeds its score even if they never tap a thing. Around ten seconds of reading reads as positive; an instant scroll-by reads as negative. To earn that time:
+
+- Write long enough to carry a real insight, and open with a hook that promises the payoff.
+- Use a dense single-image infographic, which forces a zoom and a pause.
+- Reward a slow read: tell a story, walk through a build, lay out numbered steps.
+- Keep lines short and whitespace generous so the eye keeps moving down instead of bouncing off.
+- Avoid a wall of text or a weak opener; both trigger the instant scroll-past.
 
 ## Activity limits and DM sequences (kept in one place)
 
@@ -55,7 +65,10 @@ One bridge for this skill: your comments and profile activity draw from the same
 
 ## Do not run pods
 
-For the last couple of years LinkedIn has been catching engagement pods and quietly throttling them, because the pattern reads as artificial. The version that lasts is a genuine circle of ten to twenty peers who actually engage with each other's work. Formal pods carry rising risk; organic mutual support does not.
+- LinkedIn has spent the last couple of years catching engagement pods and quietly throttling them, because the coordinated pattern looks artificial.
+- Formal pods carry rising risk: a flagged account loses distribution, it does not gain it.
+- The version that lasts is a real circle of ten to twenty peers who genuinely engage with each other's work.
+- Organic mutual support is safe; a scheduled pod is not.
 
 ## Examples
 
