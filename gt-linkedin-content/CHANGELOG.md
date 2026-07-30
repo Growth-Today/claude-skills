@@ -2,6 +2,14 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.1.4] - 2026-07-30
+
+### Added
+- design-families: fill-in-the-bracket brief templates (single graphic, carousel,
+  motion graphic), a match-the-format-to-the-content table, and build rules for
+  carousels and single graphics. The catalog now feeds the design-briefer sub-skill,
+  which references it for family naming.
+
 ## [2.1.3] - 2026-07-30
 
 ### Changed
