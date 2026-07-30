@@ -1,6 +1,6 @@
 # GTM LinkedIn Content, Performance Playbook
 
-**What this file is:** 5 growth levers in the GTM space curated by Growth Today, including their own metrics and analysis of analyzing 12,000 posts in 2026.
+5 growth levers in the GTM space curated by Growth Today, including their own metrics and analysis of analyzing 12,000 posts in 2026.
 
 ---
 
