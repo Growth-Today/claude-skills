@@ -31,8 +31,8 @@ Pick the source you already have, then reshape the same insight into a format th
 
 ## Rules so you recycle without cannibalizing
 
-- Rewrite for the format. What works as a post fails as a newsletter and vice versa, so adapt the shape, do not paste.
-- Give it a new opening line every time. The underlying point can repeat, the hook cannot.
+- Rewrite for the format for the specific medium. Each media has its own preference (i.e., YouTube vs. LinkedIn), so make sure to adapt the best performing content into that given medium channel's best practices. 
+- Give it a new opening line every time. The underlying point can repeat; the hook cannot.
 - Space out same-format reuse. Leave a few weeks before a text post becomes another text post, so it reads as a fresh take, not a rerun.
 - Reshape across formats freely. A Tuesday post can become a Thursday visual with no waiting period, because the reader experiences them as different pieces.
 - Feed your winners first. Look at what already earned reach and comments, and put most of your repurposing effort into that small top slice.
