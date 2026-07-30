@@ -2,6 +2,13 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.0.2] - 2026-07-30
+
+### Added
+- hooks sub-skill: a "Growth Today Hook Types (Battle-Tested on Real Posts)" section,
+  six hook types shown as structure-then-example code templates, plus a first-line
+  openers list and a curiosity-gap list. Output now returns 6 to 8 opener options.
+
 ## [2.0.1] - 2026-07-30
 
 ### Changed
