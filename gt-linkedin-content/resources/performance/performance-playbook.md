@@ -6,7 +6,7 @@
 
 ## Benchmarks by follower band
 
-From an analysis of 12,000+ B2B GTM posts on LinkedIn. Reposts and quote posts are excluded from 233 creators. Medians, unless noted, since a few viral posts inflate the mean. The 50k+ band is only about 8 creators, so read it as indicative, not a population, and note that above roughly 50k results are driven more by the individual creator's system and community than by follower count. Always cross-check your own recent analytics.
+From an analysis of 12,000+ B2B GTM posts on LinkedIn. Reposts and quote posts are excluded from 233 creators. Medians, unless noted, since a few viral posts inflate the mean.
 
 **Baseline by band**
 
@@ -19,7 +19,7 @@ From an analysis of 12,000+ B2B GTM posts on LinkedIn. Reposts and quote posts a
 | 20-50k | 44 | 14 | 0.31 | 1.5 |
 | 50k+ | 98 | 70 | 0.72 | 1.1 |
 
-Two things move in opposite directions as you grow: absolute engagement climbs steeply, but engagement per follower is smaller (about 7x from smallest to largest, the normal size tradeoff). Comments are higher than reactions (the ratio rises from 0.11 to 0.72), so the bigger the account, the better community they have. 
+As you grow: absolute engagement climbs steeply, but engagement per follower is smaller (about 7x from smallest to largest, the normal size tradeoff). Comments are higher than reactions (the ratio rises from 0.11 to 0.72), so the bigger the account, the better community they have. 
 
 **Percentile tiers**
 
@@ -32,7 +32,7 @@ Two things move in opposite directions as you grow: absolute engagement climbs s
 | 20-50k | 45 | 90 | 147 | 469 |
 | 50k+ | 98 | 178 | 337 | 1670 |
 
-Every band has a breakout roughly 13 to 17x its typical post, so even a small account has a real ceiling. Keep consistently posting to gain the long-term benefits of content. 
+Every band has a breakout roughly 13 to 17x its typical post, so keep consistently posting to gain the long-term benefits of content creation.  
 
 **Format by band** (median reactions)
 
@@ -43,7 +43,11 @@ Every band has a breakout roughly 13 to 17x its typical post, so even a small ac
 | Video | 7 | 22 | 18 | 27 | 51 | 77 |
 | Text-only | 5 | 13 | 17 | 23 | 25 | 79 |
 
-Single image is the workhorse at every size and has the highest breakout ceiling. Carousel overperforms on the typical post (it often overperforms a single image from 5 to 50k) but with a lower ceiling. Text-only is the floor everywhere. Video is situational and does not win at the top, a GTM-specific pattern: broad-market benchmarks rank video higher, but GTM audiences prefer useful, curated visuals and frameworks with results and actionable insights.
+- A single image is the workhorse at every size
+- Carousel overperforms on the typical post (it often overperforms a single image from 5 to 50k)
+- Text-only is the floor everywhere.
+- Video is situational
+- a GTM-specific pattern: broad-market benchmarks rank video higher, but GTM audiences prefer useful, curated visuals and frameworks with results and actionable insights.
 
 **CTA by band** (median comments)
 
@@ -80,7 +84,9 @@ The comment-gate, if the resource is useful and unique, has a significant impact
 | 1.5 to 2k | 13 | 14 | 22 | 26 | 42 | 104 |
 | 2 to 3k | 8 | 14 | 23 | 33 | 73 | 176 |
 
-Length interacts with size. Small accounts (<10k) do best tight, around 500 to 1,500 characters. Large accounts (20k+) write longer posts, 2,000 to 3,000, where the extra room carries more insight. The overall-median view hides this, so write with your prospect in your mind: to give them value. 
+- Small accounts (<10k) write shorter LinkedIn posts around 500 to 1,500 characters. 
+- Large accounts (20k+) write longer posts, 2,000 to 3,000, where there's extra room to add their unique insights.
+- The overall-median view hides this, so write with your prospect in your mind: to give them value. 
 
 **Timing:** weekdays are roughly flat (Monday to Thursday median around 24 reactions, Friday 23), weekends run about a quarter lower (Saturday 18, Sunday 17). No single magic day.
 
