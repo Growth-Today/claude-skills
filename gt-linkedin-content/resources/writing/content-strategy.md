@@ -2,7 +2,7 @@
 
 ## Writing the Opener
 
-The hook is whatever shows above the "see more" fold, roughly 210 characters on mobile, two or three lines. Nothing else in the post carries as much weight.
+The hook is 210 characters on mobile, two or three lines. 80% of your post results are defined by how well your hook is written. 
 
 > **Primary reference:** for Growth Today's current hook system, load `{SKILL_BASE}/.claude/skills/hooks/gt-SKILL.md` first. It has the full performance-ranked hook table and the funnel-stage templates. The formulas below are supplementary.
 
@@ -37,8 +37,6 @@ The hook is whatever shows above the "see more" fold, roughly 210 characters on 
 | Juxtaposition | "$0 ad spend. 40 meetings booked. Here's how." |
 | Implied insider knowledge | "What the top 1% of GTM teams do differently:" |
 
-> One caveat: the stat lead (number up front) tends to win, so lean on the gap only when withholding pays off, and never tease what the post fails to deliver.
-
 ### Growth Today Hook Rules
 
 1. First line must be **under 15 words**.
@@ -61,10 +59,6 @@ These live in the `hooks` sub-skill (organized by ToF/MoF/BoF). Use that skill t
 - Do not open and close on a question both.
 
 ## Storytelling Frameworks for LinkedIn
-
-> **Primary reference:** the production post structures Growth Today uses are the **6 formulas in the storytelling sub-skill** (System Reveal, Trend Explainer, Resource Drop, Contrarian Take, Journey Post, Tool Comparison). Use those to write.
->
-> The templates below are the classic frameworks written as Growth Today fill-in skeletons. They already bake in our structure (numbered steps, arrows, mandatory P.S.), so you can write straight from them, and each maps to one of the 6 formulas.
 
 ### AIDA / PAS / BAB templates
 
@@ -126,13 +120,9 @@ Profile work (headline, about, featured, banner, social proof) is its own routed
 
 ## How to judge a post (by funnel type)
 
-There is no single metric. Judge a post by the stage it serves:
-
 - **ToF:** reach signals (impressions, reactions). The job is awareness.
 - **MoF:** discussion (comments, comment-to-reaction ratio). The job is proving expertise.
 - **BoF:** intent (saves, comments requesting the resource, link clicks, DMs, bookings). The job is conversion.
-
-None of it is black and white. Design, text, and hook all move the result. And impressions get harder every quarter as more people post, so fresh angles matter: watch what's in demand now and lead with those angles before they saturate.
 
 ## Key Takeaways
 
