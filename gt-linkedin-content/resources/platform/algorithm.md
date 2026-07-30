@@ -26,12 +26,12 @@ Watch the metric that matches the job, not the vanity number.
 - **Middle of funnel (authority):** the ratio of comments to reactions, time spent on the post, and saves. Raw impressions matter less here.
 - **Bottom of funnel (action):** comments that show intent, saves, DMs, comment-gate keywords, and clicks. Like counts are the wrong scoreboard.
 
-## The four gates a post passes through
+## The four stages a post passes through
 
-1. **Screening.** Every post is sorted into spam, thin, or fine. The classifier looks for engagement bait, pod-like behavior, and policy breaks. Only "fine" posts move on.
-2. **The test audience.** The post goes to a slice of your followers, on the order of one in ten. The system watches how fast and how hard that slice engages. This early window, the first hour to ninety minutes, sets the ceiling for roughly four-fifths of the eventual reach.
-3. **Scoring.** Interactions are weighted and totalled. Clear the bar and the post is pushed out to followers-of-followers and into topic feeds.
-4. **The long tail.** Strong posts keep collecting impressions for one to three days, and genuinely evergreen ones can resurface later. Saves and shares are what stretch that tail.
+1. **Content quality filter.** Every post is sorted into spam, thin, or clear. The check looks for engagement bait, pod-like behaviour, and policy breaks. Only clear posts move on.
+2. **Initial distribution.** The post goes to a slice of your followers, on the order of one in ten, as a test. The system watches how fast and how hard that slice engages. This opening window, the first hour to ninety minutes, sets the ceiling for roughly four-fifths of the eventual reach.
+3. **Engagement scoring.** Interactions are weighted and totalled (weights below). Clear the bar and the post is pushed to followers-of-followers and into topic feeds. What decides this stage is dwell time and content velocity, both covered next.
+4. **Extended distribution.** Strong posts keep collecting impressions for one to three days, and genuinely evergreen ones resurface later. Saves and shares are what stretch that tail.
 
 ## What each interaction is worth
 
@@ -55,9 +55,9 @@ What actually holds attention, in order:
 4. **Length,** which is a minor lever. Winners tend to land somewhere between roughly 1,000 and 2,900 characters, but readability beats hitting a target count.
 5. **The visual,** which should look good enough to save. Across LinkedIn broadly carousels do well, but in the GTM niche single images and video tend to beat them.
 
-## Speed and focus
+## Content velocity and topic focus
 
-Early speed outranks eventual totals: twenty comments in the first half hour does more than fifty spread over a day, because the system front-loads distribution on those first signals. And staying on two or three recurring topics compounds, since LinkedIn maps each creator to the subjects they own. Jumping topics constantly resets that mapping.
+Content velocity, the speed of early engagement, outranks eventual totals: twenty comments in the first half hour does more than fifty spread over a day, because the system front-loads distribution on those first signals. And staying on two or three recurring topics compounds, since LinkedIn maps each creator to the subjects they own. Jumping topics constantly resets that mapping.
 
 ## How formats perform
 
@@ -79,6 +79,15 @@ A few specifics:
 - **Text-only:** aim for roughly 800 to 1,300 characters, get the hook in before the 210-character "see more" cutoff on mobile, one sentence per line with space between, simple unicode marks for lists.
 - **Native video:** go short and scroll-stopping or long and genuinely useful, not in between. Caption everything (most people watch muted), shoot vertical for short form, and let your own analytics pick the next one. Often the play is to point viewers to YouTube where video lives natively.
 - **Polls:** downgraded after years of low-value abuse. At most one a week, and two or three options beat four.
+
+**Match the content type to the format:**
+- Framework, tech stack, or cheat sheet, use a dense single-image infographic.
+- Comparison or before/after, use a two-column visual.
+- A real result or dashboard, use a proof visual with a bold number.
+- Personal story, text-only is acceptable; otherwise attach a visual.
+- Trend explainer, use a simple diagram.
+
+**Formats and hooks fatigue.** An edge decays once everyone copies it. When the feed fills with the same static infographic, attention moves to the next format (animation, then video). Watch your own numbers for the slide and rotate before a format tires out.
 
 ## Links belong in the first comment
 

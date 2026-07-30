@@ -20,11 +20,27 @@ Comment-gate (asking readers to comment a word to receive a resource) is usually
 
 Rank each author's posts by engagement and split into five tiers, then label what content triggers each tier. The thresholds are relative to the author's own baseline, so a ramping account is graded against itself, not against a bigger account. The value is the **what triggers it** column: it tells you which patterns to repeat.
 
-### Worked example: Brigi
+### Worked example: Brigi (23K followers)
+
+**Key metrics** (6-month scrape, 170 original posts):
+- About 100 reactions and 108 comments per post on average.
+- Best post pulled 754 reactions; best for discussion pulled 979 comments.
+- Averages around 1,750 characters; top posts range from roughly 700 to 2,800.
+
+**Character length:** a weak lever for her. Short punchy posts and long breakdowns both win, so match length to the pattern rather than to a target count.
+
+**Top-performing patterns** (hook, structure, engagement):
+- **Personal founder journey.** Hook: "When I started..." Structure: an honest starting point, the turning points, what it taught. ~750R / 720C. Her highest ceiling and a discussion driver.
+- **Before/after automation proof.** Hook: "6 months ago it took 40 hours to clean the CRM. Today it runs in 5 minutes." Structure: a time-anchored before, the automation, the result. ~520R / 980C.
+- **Resource giveaway (AI tooling).** Hook: "I spent 42 hours collecting every [resource] so you don't have to." Structure: an effort claim, what's inside, a comment-gate. ~340R / 970C, a comment magnet.
+- **Automation task-list.** Hook: "70 outbound tasks. We automated all of them last quarter." Structure: a bold number, the categorized list, the payoff. ~400R / 690C.
+- **ABM automation play.** Hook: "Kill 80% of the repetitive work in your ABM motion." Structure: the pain, the system, the result. ~230R / 350C.
+
+**Engagement tiers (what triggers each):**
 
 | Tier | What triggers it |
 |---|---|
-| S | personal founder-journey story, before/after, resource giveaway |
+| S | personal founder journey, before/after automation, resource giveaway |
 | A | revenue-stage rule frameworks, tool-stack reveals, ABM playbooks |
 | B | signal-based outbound frameworks, GTM-maturity reframes |
 | C | narrower tactical posts |
@@ -32,25 +48,29 @@ Rank each author's posts by engagement and split into five tiers, then label wha
 
 **Hooks by engagement:** number/list (strongest) > statement/reframe > contrarian > personal/we > question (skip it).
 
-**Top patterns** (the ceiling is the personal story, which also drives the most discussion):
-
-| Pattern | Example hook |
-|---|---|
-| Personal "when I started" journey | "When I started..." |
-| Before/after automation | "6 months ago it took 40 hours to clean HubSpot. Today a set of Claude Code skills do it in 5 minutes." |
-| Resource giveaway | "I spent 42 hours collecting every Claude Code resource so you don't have to." |
-| Revenue-stage rule framework | "$1M ARR, you needed these 5 GTM rules. At $25M+, different ones." |
-| Tool-stack / ABM | "Every tool we use to run outbound for 100+ B2B teams." |
-
-Length is a weak lever, match length to the pattern.
-
-**Untapped for this author:** cold email frameworks, more resource giveaways (the comment-gate format is repeatable), and video/reposting (both open levers).
+**Untapped for this author:** cold email frameworks, more resource giveaways (the comment-gate format repeats well), and video plus reposting (both open levers).
 
 ---
 
-### Worked example: Jani
+### Worked example: Jani (13K followers)
 
 His edge is the sharp reframe, where Brigi's is the personal story and automation proof.
+
+**Key metrics** (6-month scrape, 170 original posts):
+- About 78 reactions and 83 comments per post on average.
+- Best post pulled 220 reactions; best for discussion pulled 370 comments.
+- Averages around 1,700 characters; top posts range from roughly 1,300 to 2,900.
+
+**Character length:** a weak lever, same as Brigi. His winners skew a little longer (dense frameworks and stacks), so let the pattern set the length.
+
+**Top-performing patterns** (hook, structure, engagement):
+- **Resource giveaway (AI tooling).** Hook: "I spent 30 hours collecting every [resource] so you don't have to." Structure: an effort claim, what's inside, a comment-gate. ~180R / 370C, his top post for discussion.
+- **Stage-based rule reframe.** Hook: "The 5 rules that get you to $1M will kill you at $10M." Structure: the reframe, why each stage differs, the takeaway. ~220R / 200C, his best for reactions.
+- **Full tool-stack reveal.** Hook: "Every tool we use to run outbound for 110+ B2B GTM teams." Structure: the stack layer by layer, a verdict per layer. ~220R / 120C.
+- **Cold email frameworks.** Hook: "15 cold email frameworks mapped to 3 awareness stages." Structure: the mapping, one framework per stage. ~150R / 190C.
+- **Rebuild-the-stack list.** Hook: "If I had to rebuild the stack from scratch, these are the 10 tools." Structure: the shortlist, a one-line reason for each. ~185R / 140C.
+
+**Engagement tiers (what triggers each):**
 
 | Tier | What triggers it |
 |---|---|
@@ -62,19 +82,7 @@ His edge is the sharp reframe, where Brigi's is the personal story and automatio
 
 **Hooks by engagement:** how-to and number/list lead > personal/we > statement/contrarian. Death-declaration ("R.I.P. the old way") is small-sample but consistently strong.
 
-**Top patterns:**
-
-| Pattern | Example hook |
-|---|---|
-| Stage-based rule reframe | "The 5 rules that get you to $1M will kill you at $10M." |
-| Tool-stack list | "If I had to rebuild the stack from scratch, these are the 10 tools." |
-| Resource giveaway | "I spent 30 hours collecting every Claude Code resource." |
-| Cold email frameworks | "15 cold email frameworks mapped to 3 awareness stages." |
-| "R.I.P. / wrong question" contrarian | "What's the best GTM channel? Wrong question." |
-
-Length is a weak lever, match length to the pattern.
-
-**Untapped for this author:** personal "when I started" journey (his least-used format), before/after automation proof (he leans reframe, not proof), and video/reposting.
+**Untapped for this author:** the personal "when I started" journey (his least-used format), before/after automation proof (he leans reframe over proof), and video plus reposting.
 
 ---
 
@@ -86,9 +94,9 @@ Length is a weak lever, match length to the pattern.
 
 ## The engagement multiplier
 
-Top-tier posts combine: (1) a specific number or before/after in the hook, (2) a personal angle or stage reframe, (3) a framework, numbered list, or resource giveaway in the body, (4) on the niche (signal-based GTM, ICP, Clay, HubSpot, Claude Code, agents), and (5) built to cultivate discussion, so it out-comments likes.
+Top-tier posts combine: (1) a specific number or before/after in the hook, (2) a personal angle or a stage reframe, (3) a framework, numbered list, or resource giveaway in the body, (4) a topic in the niche (signal-based GTM, ICP, tech stack, AI agents and automation, AI/tech trends), and (5) a build that cultivates discussion, so it out-comments likes.
 
-Each quarter has different hyped topics (Clay to Claude to AI agents), so stay on top of the wave. See `performance-playbook.md` for topic trends and levers.
+The hot topic shifts every quarter, so capitalize on whatever is peaking now. See `performance-playbook.md` for how to spot and validate it.
 
 ---
 

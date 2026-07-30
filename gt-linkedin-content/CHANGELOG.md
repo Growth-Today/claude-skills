@@ -2,6 +2,19 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.0.4] - 2026-07-30
+
+### Changed
+- engagement-scorecard: added key metrics, character length, and top-performing
+  patterns (hook, structure, engagement) for Brigi (23K) and Jani (13K) as worked
+  showcase examples.
+- algorithm: named the four ranking stages (content quality filter, initial
+  distribution, engagement scoring, extended distribution), made content velocity
+  explicit, and added a content-type-to-format mapping plus a format-fatigue note.
+- content-strategy: first-line strategies and curiosity-gap techniques are now tables.
+- writing-guide: the weekly plan is now bulleted, and @tagging is reframed from
+  mandatory to a deliberate, engage-likely recommendation (master output note aligned).
+
 ## [2.0.3] - 2026-07-30
 
 ### Added
