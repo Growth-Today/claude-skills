@@ -41,6 +41,21 @@ What the data actually says:
 
 > Best practice, not laws. Always cross-check your own recent analytics, what's earning reach and comments *for this account, right now*.
 
+### Hook family by follower band (median reactions / comments)
+
+| Hook | <2k | 2-5k | 5-10k | 10-20k | 20-50k | 50k+ |
+|---|---|---|---|---|---|---|
+| Personal / story | 15 / 2 | 22 / 4 | 28 / 6 | 28 / 7 | 50 / 17 | 104 / 72 |
+| Number / list | 16 / 1 | 15 / 4 | 26 / 6 | 28 / 10 | 79 / 26 | 80 / 80 |
+| Statement | 9 / 1 | 16 / 3 | 20 / 4 | 26 / 6 | 40 / 13 | 99 / 70 |
+| How-to | small n | 19 / 3 | 20 / 5 | 24 / 9 | 45 / 12 | 110 / small n |
+| Contrarian | small n | 17 / 2 | 22 / 5 | 25 / 6 | small n | small n |
+| Question | 6 / 1 | 16 / 2 | 18 / 3 | 28 / 8 | 34 / 14 | small n |
+
+- **Personal/story wins at every size** and is a top comment driver, the most universal hook.
+- **Number/list scales strongly at 20k+.** Contrarian is thin and overrated; a bare question underperforms.
+- Hook choice is more universal than CTA (which is size-dependent). Full by-band benchmarks are in `performance-playbook.md`.
+
 ---
 
 ## Hook Rules

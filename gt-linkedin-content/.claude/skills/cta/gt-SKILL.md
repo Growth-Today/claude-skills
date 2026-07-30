@@ -44,6 +44,23 @@ Read it this way:
 
 > Best practice from analysis, not a law. Cross-check your own recent analytics and re-test.
 
+### The comment-gate is a scale play (by follower band)
+
+Median comments by follower band, from the same analysis. The comment-gate only pays once you have an audience:
+
+| Follower band | Comment-gate | Question | No CTA |
+|---|---|---|---|
+| <2k | 2 | 1 | 1 |
+| 2-5k | 5 | 4 | 3 |
+| 5-10k | 8 | 3 | 4 |
+| 10-20k | 24 | 9 | 5 |
+| 20-50k | 103 | 12 | 12 |
+| 50k+ | 216 | 80 | 60 |
+
+- **Under about 10k followers, the gate barely beats a no-CTA post.** It also asks for a resource a smaller creator often has no time to build, so do not lean on it yet. Grow the audience first.
+- **It turns on around 10 to 20k and dominates at 20k+**, where it becomes the single biggest comment driver.
+- Full by-band benchmarks (format, hook, length, percentile tiers) are in `performance-playbook.md`.
+
 ## CTA design rules
 
 - One CTA per post. Multiple CTAs dilute the action.

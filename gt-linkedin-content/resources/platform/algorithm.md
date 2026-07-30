@@ -89,6 +89,10 @@ A few specifics:
 
 **Formats and hooks fatigue.** An edge decays once everyone copies it. When the feed fills with the same static infographic, attention moves to the next format (animation, then video). Watch your own numbers for the slide and rotate before a format tires out.
 
+## Reach is a volatile tail (and it dilutes with size)
+
+Most posts land near a typical floor and a few travel far: across every follower band the breakout post (top 1%) runs roughly 13 to 17x the typical one, so judge by tiers (typical, strong, top, breakout), not by the average. Engagement per follower also falls as an account grows, even as absolute numbers climb (about 7x lower per follower from the smallest to the largest accounts), while comments climb faster than reactions, so bigger accounts are more discussion-driven. Full by-follower-band benchmarks (by format, CTA, hook, and length, with percentile tiers) are in `performance-playbook.md`.
+
 ## Links belong in the first comment
 
 A URL in the body drags reach down. Post the piece natively and drop the link in the first comment instead, which in practice does not carry the same penalty. Signal it with a "link in the comments" line.

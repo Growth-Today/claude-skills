@@ -2,6 +2,21 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.1.0] - 2026-07-30
+
+### Added
+- Benchmarks are now broken down by follower band (<2k, 2-5k, 5-10k, 10-20k,
+  20-50k, 50k+), from ~8,900 original GTM posts across 233 creators whose follower
+  counts were captured. performance-playbook: baseline per band (reactions,
+  comments, comment/reaction ratio, reactions per 1k followers), percentile tiers
+  (typical/strong/top/breakout), and format, CTA, hook, and length each by band,
+  plus a three-tier "what to do by size" summary. cta, hooks, and formats each get
+  their by-band table; algorithm gets a volatile-tail and per-follower-dilution note.
+- Key findings: engagement per follower falls ~7x from smallest to largest while
+  comments climb faster than reactions; the comment-gate only pays at ~10k+ and
+  dominates at 20k+; length interacts with size (small tight, large long); carousel
+  over-performs the typical post; video is weaker in GTM than broad-market benchmarks.
+
 ## [2.0.4] - 2026-07-30
 
 ### Changed
