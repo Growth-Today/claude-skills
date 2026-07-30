@@ -31,15 +31,13 @@ Pick the source you already have, then reshape the same insight into a format th
 
 ## Rules so you recycle without cannibalizing
 
-- Rewrite for the format for the specific medium. Each media has its own preference (i.e., YouTube vs. LinkedIn), so make sure to adapt the best performing content into that given medium channel's best practices. 
-- Give it a new opening line every time. The underlying point can repeat; the hook cannot.
-- Space out same-format reuse. Leave a few weeks before a text post becomes another text post, so it reads as a fresh take, not a rerun.
-- Reshape across formats freely. A Tuesday post can become a Thursday visual with no waiting period, because the reader experiences them as different pieces.
-- Feed your winners first. Look at what already earned reach and comments, and put most of your repurposing effort into that small top slice.
+- Rewrite for the format for the specific medium. - Each media has its own preference (i.e., YouTube vs. LinkedIn), so make sure to adapt the best performing content into that given medium channel's best practices. 
+- Change the opening line every time - the insight can be the same
+- Wait a few weeks before repurposing (min. 15-30 days) before you repurpose the same LinkedIn post into another LinkedIn post, so it reads as a fresh take, not a rerun.
+- Repurposing a LinkedIn post into a newsletter or video (so into the same/different format for a different medium) can be done immediately.
+- 80% of your success comes from 20% of your efforts. Make sure to repurpose the best winning posts. Double down on the winners on LinkedIn and for your other media. Look at what already earned reach and comments, and put most of your repurposing effort into that small top slice.
 
 ## Creator tools worth the effort
-
-> Treat the figures below as rough, current benchmarks rather than promises. LinkedIn reshuffles how these tools behave every few months, so confirm against your own recent numbers before betting on any one of them.
 
 **Newsletters.** Each edition pings subscribers by both notification and email, so it lands twice. Open rates tend to sit well above ordinary email marketing, often somewhere in the 30 to 50 percent band, and editions get indexed by search engines, which adds a slow SEO tail. Your first issue invites your whole network to subscribe. Run one weekly or every other week. The catch: you can only operate a single newsletter, and the subscriber list is not exportable.
 
