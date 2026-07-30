@@ -10,23 +10,23 @@ The numbers below are the **share of winning posts that use the word**, not raw 
 
 The vocabulary that shows up most in winning posts:
 
-| Word | In winning posts | Note |
-|---|---|---|
-| ai | 67% | table stakes, everyone uses it |
-| claude | 65% | the strongest real differentiator |
-| code | 52% | the Claude Code wave |
-| gtm | 47% | |
-| linkedin | 46% | |
-| data | 45% | |
-| outbound | 39% | |
-| tools | 32% | name the specific tool, not "a tool" |
-| build / built | 31% | |
+| Word | In winning posts | 
+|---|---|
+| ai | 67% |
+| claude | 65% |
+| code | 52% |
+| gtm | 47% | 
+| linkedin | 46% |
+| data | 45% |
+| outbound | 39% |
+| tools | 32% |
+| build / built | 31% | 
 
-Verbs that carry winning posts: run (37%), built (34%), use (32%), build (31%), building (29%), find (19%), send (18%), scale (16%), start (15%), reply (13%), write (13%).
+Verbs that show up in the winning posts: run (37%), built (34%), use (32%), build (31%), building (29%), find (19%), send (18%), scale (16%), start (15%), reply (13%), write (13%).
 
 Tool names are part of the language. The best operators name the exact tool: instantly, apollo, clay, rb2b, hubspot.
 
-**Add your niche vocabulary.** On top of the core words, layer the terms specific to your focus. For a signal-based, ICP-led niche that means words like **signal(s), icp, and hubspot**. The specific tools and terms you name are what mark you as an operator rather than a generalist.
+**Add your niche vocabulary.** On top of the core words, layer the terms specific to your focus. For a signal-based, ICP-led niche, that means words like **signal(s), icp, and hubspot**. The specific tools and terms you name are what mark you as an operator rather than a generalist.
 
 ## 2. Words to avoid
 
@@ -43,13 +43,10 @@ Second, words that show up in weaker posts but rarely in the winners:
 | message / reps / means | filler in this niche |
 | qualified / founders | abstract audience labels |
 | everyone | broad, low-signal |
-| your own brand name | a self-reference tracks with lower engagement |
 
 Be concrete and specific. Don't lean on a vague abstraction or your own brand name to carry a post.
 
 ## 3. Phrases
-
-These are patterns, not text to copy. The number is how many winning posts use the phrase:
 
 | Phrase | Winning posts |
 |---|---|
@@ -60,11 +57,9 @@ These are patterns, not text to copy. The number is how many winning posts use t
 | comment-gate CTA ("comment X and I'll send it", "dm me") | common closer |
 | builder voice ("we build", "the system") | agency and operator tone |
 
-Copy the pattern and fill it with your own specifics. Never reuse a literal competitor name or link. Raw phrase counts get skewed by one person's repeated boilerplate, so treat them as shapes to borrow.
+Copy the pattern and fill it with your own specifics. Never reuse a literal competitor name or link. Don't use these exact words; these are just patterns in the GTM space. The conclusion and pattern are what you want to reuse or decide when not to use. 
 
-## 4. Sentence shape
-
-From the winning posts:
+## 4. Sentences
 
 | Trait | Winning posts | Rule |
 |---|---|---|
