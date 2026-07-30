@@ -2,6 +2,15 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.1.3] - 2026-07-30
+
+### Changed
+- engagement-scorecard: reformatted for scannability, one-line intro, short how-to-score,
+  comment-gate, and tiering; per-author key metrics + tier breakdown + hooks ranked +
+  character length + top-performing patterns as Pattern 1/2/3 with bulleted hook,
+  structure, and engagement; added a combined Untapped opportunities section, the
+  engagement multiplier, and a reference block.
+
 ## [2.1.2] - 2026-07-30
 
 ### Added
