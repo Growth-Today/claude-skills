@@ -8,13 +8,15 @@ The hook is whatever shows above the "see more" fold, roughly 210 characters on 
 
 ### First Line Strategies
 
-Five ways to open, ranked by how they perform for Growth Today (the stat lead wins, the personal confession has the highest ceiling).
+Five ways to open, ranked by how they tend to perform (the stat lead wins most often, the personal confession has the highest ceiling).
 
-1. **Specific number + unexpected outcome** (strongest). A concrete figure plus a twist. "6 months ago it took us 40 hours to clean HubSpot. Today it takes 5 minutes."
-2. **Personal confession / vulnerability** (highest ceiling). A real, honest starting point. "When I started, I failed 7 times before this worked." Brigi's single best post opens this way.
-3. **Bold contrarian statement**. A sharp claim against the consensus. "Most B2B GTM runs channels in isolation. That's why pipeline stalls."
-4. **Reframing question**. Turn the reader's assumption around. "What's the best GTM channel? Wrong question."
-5. **Pattern interrupt**. Break the scroll rhythm with something unexpected. "R.I.P. the GTM stack with 200+ disconnected tools."
+| Opener | When it wins | Example |
+|---|---|---|
+| Specific number + unexpected outcome (strongest) | you have a concrete figure and a twist | "6 months ago it took us 40 hours to clean the CRM. Today it takes 5 minutes." |
+| Personal confession or vulnerability (highest ceiling) | you can open on a real, honest starting point | "When I started, I failed 7 times before this worked." Brigi's single best post opens this way. |
+| Bold contrarian statement | you have a sharp claim against the consensus | "Most B2B GTM runs channels in isolation. That's why pipeline stalls." |
+| Reframing question | you can flip the reader's assumption | "What's the best GTM channel? Wrong question." |
+| Pattern interrupt | you want to break the scroll rhythm | "R.I.P. the GTM stack with 200+ disconnected tools." |
 
 ### Hook Formulas
 
@@ -31,15 +33,17 @@ Named, reusable templates. Fill with a real number supplied by the user, never a
 
 ### Curiosity Gap Techniques
 
-Five ways to create intrigue. Each pairs a method with a Growth Today example.
+Five ways to open a loop the reader wants closed. Each pairs a method with an example.
 
-1. **Withhold the how.** State the result, hold the method. "We cut research time 60%. The 3-step system is below."
-2. **Numbered incompleteness.** "7 GTM frameworks. Most teams use 2."
-3. **Promise a specific reveal.** "The exact workflow. Step 4 is the one everyone skips."
-4. **Juxtaposition.** "$0 ad spend. 40 meetings booked. Here's how."
-5. **Implied insider knowledge.** "What the top 1% of GTM teams do differently:"
+| Technique | Example |
+|---|---|
+| Withhold the how (state the result, hold the method) | "We cut research time 60%. The 3-step system is below." |
+| Numbered incompleteness | "7 GTM frameworks. Most teams use 2." |
+| Promise a specific reveal | "The exact workflow. Step 4 is the one everyone skips." |
+| Juxtaposition | "$0 ad spend. 40 meetings booked. Here's how." |
+| Implied insider knowledge | "What the top 1% of GTM teams do differently:" |
 
-> One caveat: the stat lead (number up front) tends to win, so use the gap only when the payoff is worth withholding, and never tease what the post fails to deliver.
+> One caveat: the stat lead (number up front) tends to win, so lean on the gap only when withholding pays off, and never tease what the post fails to deliver.
 
 ### Growth Today Hook Rules
 

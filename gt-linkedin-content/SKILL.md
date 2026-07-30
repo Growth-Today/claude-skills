@@ -1,6 +1,6 @@
 ---
 name: gt-linkedin-content
-version: 2.0.3
+version: 2.0.4
 description: A specialist for organic LinkedIn content aimed at B2B founders and GTM teams. Reach for it on anything across the LinkedIn writing workflow, opening lines and hooks, post structure and storytelling, format choice, posting cadence and timing, comments and engagement, CTAs and comment-gates, profile optimization, repurposing, monthly content planning, and turning a post into its parts (team copy, engagement comments, alt text) or a design brief. Fires on phrases like write a LinkedIn post, LinkedIn hook, the algorithm, carousel, newsletter, best time to post, posting cadence, grow my LinkedIn, content plan, content pillar plan, plan my month, fix this hook, make it less AI, P.S. line, comment gate, alt text, design brief. Do NOT use for LinkedIn Ads (use the linkedin-ads skill) or cold outreach to strangers (LinkedIn cold DMs use gt-linkedin-outbound, cold email uses the cold-email skill). Warm social selling to the audience your content builds IS in scope (see social-selling-campaigns.md).
 ---
 
@@ -278,7 +278,7 @@ When generating a post, always output every field:
 4. **Formula used:** which of the 6 formulas
 5. **Hook type:** number-lead / contrarian / personal story / build showcase / and so on
 6. **Post copy:** the full text, plain only, no bold, italic, or markdown. Whitespace and ↳ arrows only. Bold unicode is fine inside a visual, never in the post copy.
-7. **@Tags (2 to 4):** the exact tools or people to tag, minimum 2, maximum 4, tagged where first mentioned in the body.
+7. **@Tags:** optional, not mandatory. Up to about 4, and only accounts likely to engage (a tool in the workflow, a named person, a partner or friend who will like it). Tag where first mentioned in the body. Do not over-tag, and do not tag a big account that will not respond.
 8. **Media recommendation:** the image type (dense single image, proof visual, or text-only for a genuine personal story). Every post needs a visual, built in your design tool. Always include a **visual headline**:
    - it carries at least one number (the biggest result figure in the post)
    - shape it as **[number] + [method or metric] + [outcome]**, e.g. "500 accounts. 7 signals. 0 guessing."

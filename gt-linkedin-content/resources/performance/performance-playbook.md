@@ -10,11 +10,54 @@
 
 Typical (median) values across 12,000+ B2B GTM posts on LinkedIn. Median, not mean, since a few viral posts inflate the average. Treat these as the general bar across the space and cross-check your own recent analytics.
 
-- **By hook family** (median reactions): Number / list 30, Personal / story 29, How-to 24, Contrarian 21, Question 18. The spread is modest, so hook type is a nudge, not a lever on its own.
-- **By format** (median reactions / comments): Multi-image carousel 44 / 6, Single image 28 / 6, Video 27 / 5, Document (PDF) 22 / 5, Text-only 13 / 2. Single image is the workhorse, text-only is the floor.
-- **By CTA close** (median comments): Repost or save ask 41, Comment-gate 29, Question 7, Follow ask 5, No explicit CTA 3. Once you have an audience the comment-gate becomes the top comment driver, roughly 2.5 to 3x a no-CTA post.
-- **By weekday** (median reactions): Monday to Thursday 22 to 23, Friday 22, Saturday 18, Sunday 14. Early week edges ahead but the spread is small. The hour matters more than the day, roughly 10:00 to 14:00 UTC.
-- **By length** (median reactions): barely moves at the median (22 to 24 across all buckets), so format and hook matter far more than length. A 100 to 500 word range is a safe default.
+**By hook family** (median reactions):
+
+| Hook family | Median reactions |
+|---|---|
+| Number / list | 30 |
+| Personal / story | 29 |
+| How-to | 24 |
+| Contrarian | 21 |
+| Question | 18 |
+
+The spread is modest, so hook type is a nudge, not a lever on its own.
+
+**By format** (median reactions / comments):
+
+| Format | Median reactions / comments |
+|---|---|
+| Multi-image carousel | 44 / 6 |
+| Single image | 28 / 6 |
+| Video | 27 / 5 |
+| Document (PDF) | 22 / 5 |
+| Text-only | 13 / 2 |
+
+Single image is the workhorse, text-only is the floor.
+
+**By CTA close** (median comments):
+
+| CTA close | Median comments |
+|---|---|
+| Repost or save ask | 41 |
+| Comment-gate | 29 |
+| Question | 7 |
+| Follow ask | 5 |
+| No explicit CTA | 3 |
+
+Once you have an audience, the comment-gate becomes the top comment driver, roughly 2.5 to 3x a no-CTA post.
+
+**By weekday** (median reactions):
+
+| Day | Median reactions |
+|---|---|
+| Monday to Thursday | 22 to 23 |
+| Friday | 22 |
+| Saturday | 18 |
+| Sunday | 14 |
+
+Early week edges ahead but the spread is small. The hour matters more than the day, roughly 10:00 to 14:00 UTC.
+
+**By length:** median reactions barely move (22 to 24 across every bucket), so format and hook matter far more than length. A 100 to 500 word range is a safe default.
 
 The sections below read these numbers as levers.
 
@@ -22,17 +65,31 @@ The sections below read these numbers as levers.
 
 ## A. Engagement and the comment edge
 
-Most accounts optimize for reactions, but comments are the stronger intent signal. A high comment-to-reaction ratio (as many comments as likes, or more) is rare and hard to build, because there's a natural drop-off from impressions to reach to saves to comments. Posts that spark discussion pull higher-intent readers.
+- Most accounts chase reactions, but comments are the stronger intent signal.
+- A high comment-to-reaction ratio (as many comments as likes, or more) is rare and hard to build, because there is a natural drop-off from impressions to reach to saves to comments.
+- Posts that spark discussion pull higher-intent readers.
+- Engagement rate per follower falls as an account grows: the biggest accounts win on absolute reach, not on per-follower engagement.
+- A smaller, well-cultivated audience can out-comment a much larger one. Size buys reach, not a community.
+- Bottom line: optimize for discussion, not vanity reach.
 
-Two general truths about audience size. First, engagement rate per follower falls as an account grows: the biggest accounts win on absolute reach, not on per-follower engagement. Second, a smaller, well-cultivated audience can out-comment much larger accounts. Size buys reach, it doesn't buy a community. Optimize for discussion, not vanity reach.
+**On the comment-gate specifically:**
+- It is usually the single biggest comment driver once you have an audience, roughly 2.5 to 3x a no-CTA post.
+- Its value is the ceiling, not the median: a few big hits carry the average, so treat it as an upside play with a modest floor.
+- Save it for genuine, high-value resource drops, not every post.
 
 ---
 
-## B. Topic waves (read the wave)
+## B. Capitalize on hot topics
 
-Topics move in waves. Over the last two years, Claude Code went from nothing to one of the fastest-rising topics, AI agents rose steadily, Clay content peaked and is now declining, and cold email stayed flat and saturated. Lead with the rising wave and differentiate hard on the crowded, flat topics.
+Topics rise and cool. Ride the ones climbing now, and bring a real angle to the crowded, flat ones instead of adding noise.
 
-On the "engagement is dropping" worry: median reactions have been roughly flat over two years and comments are slightly up. Without impression data, a drop in reach (if real) is not visible in engagement counts alone.
+- **What tends to be climbing:** AI tooling and AI agents have risen fast and stayed hot; individual tools spike and then cool; cold email has stayed flat and saturated.
+- **Lead with a rising topic.** On a saturated one, only post if you have a genuinely different take.
+- **How to tell a hot topic from a tired one, before you commit:**
+  - Read recent engagement, not all-time. Search the topic on LinkedIn or in a tool like Scripe and read the last few weeks. A topic that peaked a year ago can look strong on all-time and be dead now.
+  - Cross-check search demand. A quick keyword or SEO check (search volume, is it trending) shows whether interest is rising or fading.
+  - Watch your own recent posts on it. If engagement is sliding across your last few, the topic is tiring for your audience.
+- **On the "engagement is dropping" worry:** median reactions have been roughly flat over two years and comments are slightly up. Without impression data, a drop in reach (if real) does not show up in engagement counts alone.
 
 ---
 
@@ -40,13 +97,17 @@ On the "engagement is dropping" worry: median reactions have been roughly flat o
 
 ### C1. Strategy (pillars)
 
-Concentrate on a defined niche rather than posting broadly across every GTM topic. A tight, recognizable focus (for example signal-based GTM and ICP work) compounds: readers learn what you are for and discussion deepens. Track the topic waves above and lead with the rising ones.
+- Concentrate on a defined niche instead of posting across every GTM topic.
+- A tight, recognizable focus (for example signal-based GTM and ICP work) compounds: readers learn what you are for, and discussion deepens.
+- Track which topics are hot (section B) and lead with the rising ones.
 
 ### C2. Writing (hook + length)
 
-Number and list hooks outperform almost everywhere, so a smaller account should lead with a stat. Contrarian is the most crowded hook and the weakest on average. Announcement and contrarian hooks mostly pay off for accounts with an established base, so do not lead with them early. The hook mix across the space is stable (mostly statement hooks, some personal, few contrarian), so it is not a trend to chase.
-
-Length is a weak signal. Posts in the 100 to 500 word range tend to do well, but format and hook matter far more than length. Match length to the pattern.
+- Number and list hooks outperform almost everywhere, so a smaller account should lead with a stat.
+- Contrarian is the most crowded hook and the weakest on average.
+- Announcement and contrarian hooks mostly pay off once you have an established base, so do not lead with them early.
+- The hook mix across the space is stable (mostly statement hooks, some personal, few contrarian), so it is not a trend to chase.
+- Length is a weak signal. The 100 to 500 word range does well, but format and hook matter far more. Match length to the pattern.
 
 ### C3. Design (media)
 
@@ -60,11 +121,15 @@ The format mix has shifted: carousels are being abandoned, single image now domi
 
 ### C4. Post-type
 
-The space is doing more originals over time (reposts and quote posts are declining). Two general rules: strategic reposting of your own best content performs about as well as an original for far less work and is widely under-used, and quote posts are effectively dead. Regular original posts remain the workhorse.
+- The space is shifting to more originals over time; reposts and quote posts are declining.
+- Strategic reposting of your own best content performs about as well as an original, for far less work, and is widely under-used.
+- Quote posts are effectively dead.
+- Regular original posts remain the workhorse.
 
 ### C5. Engagement (metrics)
 
-Over time, median reactions are flat, median comments are up, and the comment-to-reaction ratio is rising. Optimize for comment-driving formats: comments are the strongest intent signal and the hardest metric to fake.
+- Over time, median reactions are flat, median comments are up, and the comment-to-reaction ratio is rising.
+- Optimize for comment-driving formats: comments are the strongest intent signal and the hardest metric to fake.
 
 ---
 

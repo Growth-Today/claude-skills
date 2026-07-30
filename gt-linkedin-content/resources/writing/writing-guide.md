@@ -35,14 +35,14 @@ Match each pillar to a formula and funnel stage, and keep the topics current by 
 
 Build a week like this using the pillars above:
 
-Monday: Pillar 3 or 4 (MoF, outbound tactic or ICP system reveal)
-Tuesday: Pillar 1 (MoF, AI agent or automation build showcase)
-Wednesday: Pillar 4 or 5 (MoF, ICP teardown or tool comparison)
-Thursday: Pillar 3 (BoF, resource drop with comment gate, if real asset available)
-Friday: Pillar 2 (ToF, AI trend explainer with GTM angle)
-Weekend (optional, only worth it once your audience is large enough to get weekend reach, see the timing note in algorithm.md): highest-effort evergreen, system reveal or journey post
+- **Monday:** Pillar 3 or 4 (MoF, an outbound tactic or an ICP system reveal).
+- **Tuesday:** Pillar 1 (MoF, an AI agent or automation build showcase).
+- **Wednesday:** Pillar 4 or 5 (MoF, an ICP teardown or a tool comparison).
+- **Thursday:** Pillar 3 (BoF, a resource drop with a comment-gate, if a real asset is ready).
+- **Friday:** Pillar 2 (ToF, an AI trend explainer with a GTM angle).
+- **Weekend (optional):** only worth it once your audience is large enough for weekend reach (see the timing note in algorithm.md). Save it for the highest-effort evergreen, a system reveal or a journey post.
 
-Always: match the topic to the person posting. If you run more than one voice (for example Brigi and Jani), give each the pillars that fit their remit.
+Always match the topic to the person posting. If you run more than one voice (for example Brigi and Jani), give each the pillars that fit their remit.
 
 ---
 
@@ -75,21 +75,20 @@ Always: match the topic to the person posting. If you run more than one voice (f
 
 ---
 
-## @Tagging Rule: Mandatory on Every Post
+## @Tagging (recommended, not mandatory)
 
-Every post must include 2-6 @tags. Never more than 4, LinkedIn penalizes over-tagging.
+Tagging helps only when the tagged account is likely to engage. LinkedIn reads a tag that gets no response as a weak signal, so a tag on someone who ignores it, especially a large account that never likes back, can hurt more than it helps. Use it deliberately, not on every post.
 
-**What to tag:**
-- Tools used in the workflow described (e.g. @Clay, @Instantly, @HubSpot, @n8n)
-- People mentioned by name in the post (e.g. @Jani Vrancsik if co-author)
-- Partner companies if directly relevant
+**Tag when:**
+- A tool genuinely appears in the workflow you describe (e.g. @Clay, @Instantly, @HubSpot, @n8n).
+- A person is named in the post (e.g. a co-author).
+- A partner or a friend who will actually like or comment, so the tag draws real early engagement.
 
-**Rules:**
-- Tag tools only if they appear in the post content, never force-tag for reach
-- 2 tags minimum on every post, 4 maximum
-- Tags go in the post body where the tool/person is first mentioned, not at the end
-- Never tag competitors
-- Never tag someone just for visibility, only if genuinely referenced
+**Keep it careful:**
+- Only a handful of tags, never a wall. Over-tagging is penalized.
+- Do not tag a big account that will not engage; a dead tag is a negative signal.
+- Put each tag where the tool or person is first mentioned in the body, not dumped at the end.
+- Never force-tag for reach, and never tag competitors.
 
 ---
 
