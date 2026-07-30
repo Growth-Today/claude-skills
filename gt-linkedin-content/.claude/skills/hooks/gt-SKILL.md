@@ -41,6 +41,21 @@ What the data actually says:
 
 > Best practice, not laws. Always cross-check your own recent analytics, what's earning reach and comments *for this account, right now*.
 
+### Hook effect at a glance (from the 12k analysis)
+
+Reach multiplier is median reactions relative to the overall median; C/R ratio (median comments divided by median reactions) is the discussion signal; avg engagement is mean reactions plus comments.
+
+| Hook type | Reach multiplier | C/R ratio | Avg engagement | Best for |
+|---|---|---|---|---|
+| Personal / story | 1.3x | 0.21 | 82 | Universal, wins at every size. Founder journey, before/after, vulnerability. |
+| Number / list | 1.2x | 0.29 | 82 | Best for discussion (highest C/R). Listicles, tool counts, frameworks; scales at 20k+. |
+| How-to | 1.1x | 0.24 | 58 | Solid discussion. System reveals, tutorials. |
+| Statement | 1.0x | 0.18 | 61 | The reliable default, but the lowest C/R. |
+| Contrarian | 0.9x | 0.24 | 56 | Only pays with an established audience; thin and overrated below that. |
+| Question | 0.8x | 0.22 | 43 | Weakest for reach. Use sparingly, and only to spark a specific reply. |
+
+Read it as two signals: reach multiplier is how far it spreads, C/R is how much discussion it converts. Number/list converts the most discussion, personal/story is the safest all-rounder, question and contrarian are the weakest for reach.
+
 ### Hook family by follower band (median reactions / comments)
 
 | Hook | <2k | 2-5k | 5-10k | 10-20k | 20-50k | 50k+ |
