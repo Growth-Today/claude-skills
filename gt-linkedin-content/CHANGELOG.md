@@ -2,6 +2,14 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.1.1] - 2026-07-30
+
+### Added
+- formats: an at-a-glance "design format effect" table (reach multiplier vs
+  text-only, avg engagement, best-for). hooks: an at-a-glance "hook effect" table
+  (reach multiplier, C/R ratio, avg engagement, best-for), so hook choice can be
+  read by both reach and discussion in one view.
+
 ## [2.1.0] - 2026-07-30
 
 ### Added

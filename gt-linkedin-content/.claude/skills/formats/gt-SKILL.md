@@ -28,6 +28,19 @@ Typical (median) reactions and comments by format, across 12,000+ B2B GTM posts:
 - **Text-only is the floor.** Text-only posts pull very few comments, so visualize them wherever you can.
 - **PDF documents actually perform fine** (near single image), so avoiding them is an ad-boostability choice, not a performance one. Multi-image carousels over-index in the raw data (44), a possible contrarian play.
 
+## Design format effect at a glance (from the 12k analysis)
+
+Reach multiplier is median reactions relative to text-only (the 1x floor); avg engagement is mean reactions plus comments per post.
+
+| Format | Reach multiplier | Avg engagement | Best for |
+|---|---|---|---|
+| Carousel (multi-image) | 2.9x | 75 | Highest typical reach. Frameworks, numbered lists, step-by-steps, save-bait. |
+| Single image | 1.6x | 79 | The default workhorse, and the highest ceiling. Infographics, proof visuals, cheat sheets. |
+| Video | 1.6x | 62 | Situational. Short demos or clips; does not win at the top in GTM. |
+| Text-only | 1.0x (baseline) | 38 | Genuine personal stories only. Otherwise the floor, add a visual. |
+
+Carousel has the highest typical reach, single image the highest ceiling (a bigger viral tail), so single image stays the default and carousel is the under-used lever.
+
 ## Format performance by follower band (median reactions)
 
 | Format | <2k | 2-5k | 5-10k | 10-20k | 20-50k | 50k+ |
