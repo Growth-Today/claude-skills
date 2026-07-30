@@ -15,7 +15,7 @@ Related sub-skill (not a resource): the reply-to-every-comment tactics inside th
 
 ## Best posting times
 
-Typical (median) reactions by weekday, across an analysis of 12,000+ B2B GTM posts. Read the median (the typical post), not the mean, when judging timing. **Re-check timing against the account's own analytics and refresh it quarterly: the algorithm and your audience shift.**
+Typical (median) reactions by weekday, across an analysis of 12,000+ B2B GTM posts. Read the median (the typical post), not the mean,**make sure to check your social analytics tool to validate your best peforming time since it depends on your audience**
 
 | Day | Typical reactions (median) |
 |---|---|
@@ -27,15 +27,15 @@ Typical (median) reactions by weekday, across an analysis of 12,000+ B2B GTM pos
 | Saturday | 18 |
 | Sunday | 14 |
 
-- **Early week is best.** Monday tends to be the strongest weekday, and Monday to Wednesday edges ahead. The spread is small, so treat it as a nudge, not a rule; weekdays are nearly flat.
-- **Weekends are the worst by median.** Watch out for the mean: Sunday's average can spike because almost nobody posts then, so one viral post drags it up. That gap is exactly the old "post on Sunday" myth, and why it is wrong.
+- **Early week is best.** Monday tends to be the strongest weekday, and Monday to Wednesday is OK.
+- **Weekends are the worst by median. Because on Sunday people rarely post, you can be successfull and your viral posts can go up, but they are not viral because of the angle, but can be viral because nobody else is using Sunday to post. Make sure to consider this factor when you draw conclusions. 
 - **The hour matters more than the day:** roughly **10:00 to 14:00 UTC** (about 6 to 10 AM ET, midday CET).
 
 So: post **Monday to Wednesday morning** in your audience's window (US audience: roughly 7 to 9 AM ET / 12 to 14 UTC), avoid weekends unless you have a large audience (20 to 30,000+ followers), and confirm the exact hour from the account's own analytics.
 
 ## Weekly mix (the mix matters, not the day)
 
-Aim for 3 to 4 posts a week, balanced by funnel stage, not pinned to specific days. Weekday differences are small (Monday to Wednesday morning has a slight edge), so post in that window but do not force a fixed pillar onto a fixed day, that is over-engineering.
+Aim for 3 to 4 posts a week, balanced by the funnel stage, not pinned to specific days. Weekday differences are small (Monday to Wednesday morning has a slight edge), so post in that window but do not force a fixed pillar onto a fixed day; that is over-engineering.
 
 - Mostly **MoF**, the workhorse: system reveals, ICP, tool comparisons.
 - One **BoF** when you have a real asset to give (resource drop or comment-gate).
