@@ -2,6 +2,13 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.0.1] - 2026-07-30
+
+### Changed
+- engagement sub-skill: restored the engagement-weight table (saves, comments,
+  shares, likes, and their relative value), gave dwell time its own section with a
+  short how-to-earn-it list, and moved the engagement-pods guidance into bullets.
+
 ## [2.0.0] - 2026-07-29
 
 ### Added
