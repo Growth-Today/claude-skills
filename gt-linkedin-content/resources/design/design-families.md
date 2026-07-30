@@ -1,8 +1,6 @@
 # Design Family Catalog
 
-One consistent way to name what a B2B LinkedIn graphic is. Name the pattern and its family. If a graphic clearly combines two, name it `Primary + Secondary` (secondary only if it takes about 20% or more of the canvas); three or more fused is a `Composite`, listed by dominance.
-
-The 50 patterns are ordered by how often they appear. Family "(none)" means there is no dedicated family for it: name it anyway, that is the useful signal.
+Structured design templates for creating highly engaging and aesthetic infographics, carousels, and animated visuals for LinkedIn posts. 
 
 | # | Pattern | Recognize it | Family |
 |---|---|---|---|
@@ -65,7 +63,7 @@ The 50 patterns are ordered by how often they appear. Family "(none)" means ther
 - **Flywheel vs Cycle:** compounding loop vs plain repeating loop.
 - **Cheat sheet vs Numbered list:** dense multi-block canvas vs one idea per line.
 - **Pyramid vs Funnel:** hierarchy of levels vs downward flow.
-- **Venn vs 2x2 matrix:** circles with a labeled overlap is a Venn, even if captioned "matrix".
+- **Venn vs 2x2 matrix:** circles with a labeled overlap are a Venn, even if captioned "matrix".
 
 ---
 
