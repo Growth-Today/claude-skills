@@ -8,8 +8,6 @@ The hook is whatever shows above the "see more" fold, roughly 210 characters on 
 
 ### First Line Strategies
 
-Five ways to open, ranked by how they tend to perform (the stat lead wins most often, the personal confession has the highest ceiling).
-
 | Opener | When it wins | Example |
 |---|---|---|
 | Specific number + unexpected outcome (strongest) | you have a concrete figure and a twist | "6 months ago it took us 40 hours to clean the CRM. Today it takes 5 minutes." |
@@ -19,8 +17,6 @@ Five ways to open, ranked by how they tend to perform (the stat lead wins most o
 | Pattern interrupt | you want to break the scroll rhythm | "R.I.P. the GTM stack with 200+ disconnected tools." |
 
 ### Hook Formulas
-
-Named, reusable templates. Fill with a real number supplied by the user, never an invented one.
 
 | Formula | Template | Example |
 |---|---|---|
@@ -32,8 +28,6 @@ Named, reusable templates. Fill with a real number supplied by the user, never a
 | Direct Address | "If you're a [role] doing [thing], read this." | "If you lead revenue at a Series B, read this." |
 
 ### Curiosity Gap Techniques
-
-Five ways to open a loop the reader wants closed. Each pairs a method with an example.
 
 | Technique | Example |
 |---|---|
