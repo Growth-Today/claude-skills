@@ -13,8 +13,6 @@ Read `{SKILL_BASE}/resources/writing/writing-guide.md` for P.S. rules and Growth
 
 ## CTA types by goal
 
-Pick one CTA, matched to what the post is for.
-
 | Goal | CTA type | Example |
 |---|---|---|
 | Comments / discussion (BoF) | Comment-gate | Comment "CLAY" and I'll send the table. |
@@ -24,8 +22,6 @@ Pick one CTA, matched to what the post is for.
 | Discussion (MoF) | Question / "over to you" | Over to you: what's your current setup? |
 
 ## CTA performance (from an analysis of 12,000+ GTM posts)
-
-Typical comments a post earns by how it closes, from an analysis of 12,000+ B2B GTM posts on LinkedIn. Median, not mean, since a few viral posts inflate the average.
 
 | CTA close | Typical comments (median) |
 |---|---|
@@ -38,15 +34,11 @@ Typical comments a post earns by how it closes, from an analysis of 12,000+ B2B 
 Read it this way:
 
 - **Once you have an audience, the comment-gate becomes the top comment driver**, roughly 2.5 to 3x a no-CTA post, with the highest ceiling (gated posts are the ones that tend to go viral).
-- **For very small accounts the effect is muted**: a repost or save ask can edge out the gate, which is why the raw median above puts repost/save on top. As the audience grows, the gate becomes the best comment lever.
+- **For very small accounts, the effect is muted**: a repost or save ask can edge out the gate, which is why the raw median above puts repost/save on top. As the audience grows, the gate becomes the best comment lever.
 - **For reach, a repost or save ask drives the most reactions** (the ToF lever), even though it earns fewer comments.
-- A follow ask and a bare "over to you" question sit below the gate for driving comments.
+- A follow and a bare "over to you" question sit below the gate for driving comments.
 
-> Best practice from analysis, not a law. Cross-check your own recent analytics and re-test.
-
-### The comment-gate is a scale play (by follower band)
-
-Median comments by follower band, from the same analysis. The comment-gate only pays once you have an audience:
+### The comment-gate is a scale play (by the follower band)
 
 | Follower band | Comment-gate | Question | No CTA |
 |---|---|---|---|
@@ -57,8 +49,8 @@ Median comments by follower band, from the same analysis. The comment-gate only 
 | 20-50k | 103 | 12 | 12 |
 | 50k+ | 216 | 80 | 60 |
 
-- **Under about 10k followers, the gate barely beats a no-CTA post.** It also asks for a resource a smaller creator often has no time to build, so do not lean on it yet. Grow the audience first.
-- **It turns on around 10 to 20k and dominates at 20k+**, where it becomes the single biggest comment driver.
+- **Smaller personal brands do not use gated resources, and their high-performing posts often include a question or no CTA at all.**
+- **It turns on around 10 to 20k and dominates at 20k+**, where useful gated resources become the single biggest comment driver.
 - Full by-band benchmarks (format, hook, length, percentile tiers) are in `performance-playbook.md`.
 
 ## CTA design rules
@@ -71,7 +63,7 @@ Median comments by follower band, from the same analysis. The comment-gate only 
 
 ## P.S., mandatory in every post
 
-P.S. appears in **63% of top-performing posts**. It is the single most common structural element. It is not optional.
+P.S. appears in **63% of top-performing posts**.
 
 **Type 1, resource offer (BoF):**
 ```
@@ -89,7 +81,7 @@ If you want us to set this up for you, DM me "GTM".
 **Type 3, follow CTA (ToF/MoF without a resource):**
 ```
 P.S. I break down exactly how we build these systems every week.
-Follow Growth Today if you want the next one.
+Follow Brigitta Ruha if you want the next one.
 ```
 
 **P.S. rules:**
