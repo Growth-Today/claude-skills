@@ -1,421 +1,134 @@
-# GTM LinkedIn Content — Performance Playbook
+# GTM LinkedIn Content, Performance Playbook
 
-**Source:** 3,156 posts from a set of leading B2B GTM founders and operators (2,759 originals, 333 reposts, 64 quotes), analyzed as external benchmarks.
+**What this file is:** the patterns that work across the GTM space on LinkedIn, split into the main growth levers (strategy, writing, design, post-type, engagement). Use it to decide what to post and how.
 
----
-
-## 1. DATASET OVERVIEW
-
-| Metric | Value |
-|--------|-------|
-| Total originals | 2,759 |
-| Avg reactions (originals) | 261 |
-| Median reactions | 150 |
-| Avg comments | 116 |
-| Median comments | 63 |
-| Max reactions (single post) | 16,786 |
-| Max comments (single post) | 8,602 |
-
-### Author Performance (originals only, anonymized)
-
-| Author | Posts | Avg Reactions | Median Reactions | Avg Comments |
-|--------|-------|---------------|------------------|--------------|
-| Creator A | 851 | 446 | 204 | 118 |
-| Creator B | 151 | 229 | 125 | 160 |
-| Creator C | 551 | 207 | 168 | 118 |
-| Creator D | 623 | 204 | 166 | 103 |
-| Creator E | 187 | 161 | 102 | 87 |
-| Creator F | 167 | 107 | 85 | 51 |
-| Creator G | 229 | 69 | 50 | 20 |
+> **Read the freshest quarter with care.** Recent posts haven't finished gathering engagement (7 to 14 days needed), so the newest data can look lower. Creative and topic fatigue are real too, so keep iterating on fresh angles.
 
 ---
 
-## 2. FUNNEL STAGE FRAMEWORK
+## Benchmarks (from an analysis of 12,000+ GTM posts)
 
-Every post in this dataset is classified into one of three funnel stages. The GPT should always know which stage it's writing for, because the winning formulas are completely different per stage.
+Typical (median) values across 12,000+ B2B GTM posts on LinkedIn. Median, not mean, since a few viral posts inflate the average. Treat these as the general bar across the space and cross-check your own recent analytics.
 
-### Stage Definitions
+- **By hook family** (median reactions): Number / list 30, Personal / story 29, How-to 24, Contrarian 21, Question 18. The spread is modest, so hook type is a nudge, not a lever on its own.
+- **By format** (median reactions / comments): Multi-image carousel 44 / 6, Single image 28 / 6, Video 27 / 5, Document (PDF) 22 / 5, Text-only 13 / 2. Single image is the workhorse, text-only is the floor.
+- **By CTA close** (median comments): Repost or save ask 41, Comment-gate 29, Question 7, Follow ask 5, No explicit CTA 3. Once you have an audience the comment-gate becomes the top comment driver, roughly 2.5 to 3x a no-CTA post.
+- **By weekday** (median reactions): Monday to Thursday 22 to 23, Friday 22, Saturday 18, Sunday 14. Early week edges ahead but the spread is small. The hour matters more than the day, roughly 10:00 to 14:00 UTC.
+- **By length** (median reactions): barely moves at the median (22 to 24 across all buckets), so format and hook matter far more than length. A 100 to 500 word range is a safe default.
 
-**ToF (Top of Funnel) — Awareness**
-Purpose: Grow audience, broad appeal, reach new followers.
-Signals in content: General AI/tech trends, "everyone" language, GitHub repos, learning roadmaps, hot takes, motivational milestones.
-Success metrics: Total reactions + reposts (reach).
-
-**MoF (Middle of Funnel) — Consideration**
-Purpose: Demonstrate expertise to the right audience. Make the reader think "they know their stuff."
-Signals in content: Step-by-step breakdowns, tool-specific workflows (Clay, Instantly, n8n), cold email tactics, ICP/persona deep dives, waterfall enrichment, ABM playbooks.
-Success metrics: Comment-to-reaction ratio (high ratio = real discussion, not drive-by likes). A MoF post with 200 reactions and 80 thoughtful comments outperforms a ToF post with 1,000 reactions and 10 generic comments for pipeline.
-
-**BoF (Bottom of Funnel) — Conversion**
-Purpose: Drive action. Social proof, lead magnets, case study results.
-Signals in content: "Comment X to get", case studies with revenue numbers, "here's the link", client results, free templates/guides, "DM me".
-Success metrics: Comments with intent signals (people requesting the resource).
-
-### Stage Performance Data
-
-| Stage | Count | Avg Reactions | Median Reactions | Avg Comments | C/R Ratio |
-|-------|-------|---------------|------------------|--------------|-----------|
-| ToF | 608 | 160 | 86 | 59 | 0.31 |
-| MoF | 1,973 | 291 | 165 | 111 | 0.48 |
-| BoF | 178 | 272 | 212 | 162 | 0.63 |
-
-**Key insight:** MoF posts outperform ToF on every metric except raw viral ceiling. BoF posts have the highest comment-to-reaction ratio (0.63) — proof that specificity drives intent. The dataset is overwhelmingly MoF (72%), which reflects the niche these founders operate in.
-
-### Top Performers by Stage
-
-**Best ToF posts** (sorted by reach: reactions + reposts):
-- "Everyone's talking about MCP..." — (high reach) — Explainer diagram of trending tech
-- "This will be bigger than the iPhone" — (high reach) — Bold prediction hook
-- Trending-tech explainer, repost variant — same formula, still worked
-
-**Best MoF posts** (sorted by comment-to-reaction ratio):
-- "If your ICP can't be defined by industry + company size..." — (very high comment ratio) — Tactical TAM playbook
-- "I've been building GTM systems for 2 venture-backed SaaS companies..." — (very high comment ratio) — Personal learnings from real work
-- "I built this ABM playbook for an 8-figure SaaS" — (high comment ratio) — Step-by-step system reveal
-- "We generated [X] leads for a recruitment client" — (high comment ratio) — Specific result + breakdown
-
-**Best BoF posts** (sorted by comments = intent signals):
-- "37 of the best-performing sales triggers..." — (high comments) — Resource lead magnet
-- "We generated [X] leads for a client. Here's what we did step-by-step" — (high comments) — Case study + breakdown
-- "Here is the link to the list..." — (high comments) — Direct resource delivery
-- "Here are the 3 emails that generated the most positive replies" — (high comments) — Template reveal
+The sections below read these numbers as levers.
 
 ---
 
-## 3. CONTENT TOPIC PERFORMANCE
+## A. Engagement and the comment edge
 
-Topics ranked by volume and engagement. The GPT should use these as the 7 primary content pillars.
+Most accounts optimize for reactions, but comments are the stronger intent signal. A high comment-to-reaction ratio (as many comments as likes, or more) is rare and hard to build, because there's a natural drop-off from impressions to reach to saves to comments. Posts that spark discussion pull higher-intent readers.
 
-### Pillar 1: AI Agents & Automation (n=610, highest volume)
-- Avg reactions: 388 | Avg comments: 124 | Reposts: 34
-- C/R ratio: 0.32 (leans ToF — broad interest)
-- What works: Architecture diagrams, framework comparisons (n8n vs Make vs LangGraph), "I built this agent" showcases, automation ROI breakdowns
-- Best for: ToF reach plays, MoF when combined with specific GTM use cases
-
-### Pillar 2: LinkedIn Growth & Content (n=437)
-- Avg reactions: 232 | Avg comments: 125 | Reposts: 9
-- C/R ratio: 0.54 (strong MoF)
-- What works: Campaign breakdowns, posting system reveals, content strategy frameworks, LinkedIn Ad performance data
-- Best for: MoF (audience is practitioners who want to replicate)
-
-### Pillar 3: Outbound Tactics (n=295)
-- Avg reactions: 167 | Avg comments: 96 | Reposts: 5
-- C/R ratio: 0.58 (high discussion = practitioners engaging)
-- What works: Cold email copy teardowns, subject line tests, deliverability guides, reply rate benchmarks, sequence structures
-- Best for: MoF and BoF (practitioners save and implement these)
-
-### Pillar 4: Agency/Business Building (n=263)
-- Avg reactions: 169 | Avg comments: 97 | Reposts: 5
-- C/R ratio: 0.57
-- What works: Revenue milestones, pricing strategy, scaling stories, team building, "how we got to $Xm" journeys
-- Best for: MoF (social proof) and BoF (trust building)
-
-### Pillar 5: AI/Tech Trends (n=204)
-- Avg reactions: 665 | Avg comments: 105 | Reposts: 59
-- C/R ratio: 0.16 (lowest — viral reach, minimal discussion)
-- What works: Trend explainers, "X is dead" declarations, new model comparisons, architecture diagrams
-- Best for: Pure ToF reach. Low pipeline value unless tied back to GTM application.
-
-### Pillar 6: ICP & Targeting (n=140)
-- Avg reactions: 165 | Avg comments: 99 | Reposts: 9
-- C/R ratio: 0.60 (very high — niche practitioners engage deeply)
-- What works: TAM building playbooks, persona frameworks, signal-based targeting, segmentation teardowns, "how we found the right accounts" stories
-- Best for: MoF (core expertise demonstration)
-
-### Pillar 7: Tool Stack & Reviews (n=133)
-- Avg reactions: 232 | Avg comments: 98 | Reposts: 9
-- C/R ratio: 0.42
-- What works: "Every tool we use to run our agency" stacks, head-to-head comparisons, "X just changed the game" announcements, integration tutorials
-- Best for: MoF (practitioners evaluating tools)
-
-### Supporting pillars (smaller volume but high-value):
-
-**Clay Workflows (n=115):** Avg 149R, C/R ratio 0.55. Niche but extremely high-intent audience. Every Clay post should be MoF.
-
-**Lead Gen & Data Quality (n=140):** Avg 161R, C/R ratio 0.46. Waterfall enrichment, email finding, bounce rate optimization.
-
-**ABM Strategy (n=11):** Small sample but highest C/R ratio in the dataset (1.36). ABM content drives disproportionate discussion.
-
-**Case Studies & Results (n=27):** Avg 169R, C/R ratio 0.62. Always BoF. Numbers + step-by-step always wins.
+Two general truths about audience size. First, engagement rate per follower falls as an account grows: the biggest accounts win on absolute reach, not on per-follower engagement. Second, a smaller, well-cultivated audience can out-comment much larger accounts. Size buys reach, it doesn't buy a community. Optimize for discussion, not vanity reach.
 
 ---
 
-## 4. WINNING FORMULAS
+## B. Topic waves (read the wave)
 
-### Formula 1: The System Reveal (MoF — highest consistency)
-**Structure:** Bold result claim → "Here's what we did" → Step-by-step breakdown → Each step = 1-2 sentences → CTA
-**Why it works:** Combines social proof (result) with actionable depth. High save rate.
-**Engagement pattern:** 200-600 reactions, 500-2000+ comments (people request the resource or ask clarifying questions)
-**Examples:**
-- "I built this ABM playbook for an 8-figure SaaS. And spent the last 3 months replicating it..." (617R, 2,329C)
-- "We generated 657 leads for a $1M recruitment client. Here's what we did step-by-step..." (321R, 926C)
-- "I just created 1:1 personalized microsites/sales decks for my most qualified LinkedIn connections, by combining Gamma's API and Clay. 100% automated." (329R, 1,078C)
+Topics move in waves. Over the last two years, Claude Code went from nothing to one of the fastest-rising topics, AI agents rose steadily, Clay content peaked and is now declining, and cold email stayed flat and saturated. Lead with the rising wave and differentiate hard on the crowded, flat topics.
 
-### Formula 2: The Trend Explainer (ToF — highest reach ceiling)
-**Structure:** Trending topic name → "Let me save you X hours of research" → Visual diagram/infographic → Simplified explanation → "Follow for more"
-**Why it works:** Rides algorithm waves. Low friction to engage.
-**Engagement pattern:** 1,000-16,000+ reactions, 100-500 comments (mostly generic)
-**Examples:**
-- "Everyone's talking about MCP. Let me save you 3 hours of research..." (6,711R)
-- "LLMs are overkill for 80% of business tasks. Enter SLMs..." (6,128R)
-- "Everyone's building AI agents, but few understand the Agentic frameworks..." (6,574R)
-
-### Formula 3: The Resource Drop (BoF — highest conversion)
-**Structure:** Specific result or problem statement → "Here's [resource type]" → Brief context on what it contains → "Comment [keyword] to get it" or direct link
-**Why it works:** Exchange value for engagement. Creates lead magnet effect.
-**Engagement pattern:** 200-1,300 reactions, 400-3,000 comments (intent signals)
-**Examples:**
-- "37 of the best-performing sales triggers to reach out at the right time." (1,308R, 2,855C)
-- "Here are the 3 emails that generated the most positive replies for us." (534R, 512C)
-- "7 examples of winning first email templates with real examples that generated hundreds of leads" (435R, 469C)
-
-### Formula 4: The Contrarian Take (MoF — high engagement per impression)
-**Structure:** "[Common belief] is wrong/dead/overrated" → Specific evidence from experience → Alternative approach → Proof point
-**Why it works:** Pattern interrupt. Opinionated content forces reactions.
-**Engagement pattern:** 150-800 reactions, high comment quality (debates)
-**Examples:**
-- "The end for Outreach and Salesloft?" (2,132R, 560C)
-- "Cold email is dead." (follow-up: "just kidding, here's how we're doing it")
-- "You don't need a fancy tech stack to get to $1M+." (high engagement, contrarian positioning)
-
-### Formula 5: The Journey Post (MoF/BoF — trust building)
-**Structure:** "How it started: [bad state]" → "How it's going: [impressive result]" → Lessons/milestones → Gratitude or next goal
-**Why it works:** Vulnerability + results = trust. People root for the journey.
-**Engagement pattern:** 200-2,700 reactions, high-quality comments (support + questions)
-**Examples:**
-- "How it started: 4,000 cold emails sent. 1 lead generated. How it's going: $4M+ ARR." (2,704R, 792C)
-- "We just crossed $400,000 MRR." (1,562R)
-- "I turn 31 today. My business made $557,000 last month. But before that, I failed 7 businesses in a row." (799R, 423C)
-
-### Formula 6: The Tool Comparison (MoF — high save rate)
-**Structure:** "I tested X platforms/tools" → Comparison criteria → Winner per category → Overall recommendation
-**Why it works:** Saves the reader research time. High practical value.
-**Engagement pattern:** 200-1,000 reactions, moderate comments (questions about specific use cases)
-**Examples:**
-- "I tested 4 automation platforms: Make, n8n, LangGraph, and Lindy." (939R, 803C)
-- "Every software we use to run our $3m/year agency" (1,207R, 390C)
-- "The tech stack that runs our 7-figure outbound agency" (992R, 295C)
+On the "engagement is dropping" worry: median reactions have been roughly flat over two years and comments are slightly up. Without impression data, a drop in reach (if real) is not visible in engagement counts alone.
 
 ---
 
-## 5. HOOK PATTERNS (ranked by avg reactions)
+## C. Levers
 
-| Hook Type | Count | Avg Reactions | Avg Comments | Best For |
-|-----------|-------|---------------|--------------|----------|
-| Number lead ("10 repos...", "37 triggers...") | 184 | 400 | 98 | ToF/BoF resource posts |
-| Contrarian ("Everyone...", "Stop...", "Don't...") | 175 | 345 | 99 | MoF hot takes |
-| Death declaration ("R.I.P.", "X is dead") | 11 | 332 | 384 | MoF contrarian |
-| News/breaking ("Just...", "BREAKING:") | 124 | 287 | 106 | ToF/MoF trend riding |
-| How-to ("How to...", "How I...") | 92 | 259 | 101 | MoF tutorials |
-| Personal story ("I...", "We...", "My...") | 382 | 241 | 155 | MoF/BoF trust building |
-| Build showcase ("Built...", "Created...") | 40 | 220 | 129 | MoF system reveals |
-| Question hook ("How do...?", "What if...?") | 212 | 208 | 54 | ToF curiosity plays |
-| Direct reveal ("This is...", "Here's...") | 121 | 198 | 90 | MoF/BoF resource drops |
-| Engagement bait ("Comment your...", "Tag...") | 24 | 128 | 170 | BoF lead capture |
+### C1. Strategy (pillars)
 
-**Key insight:** Number-lead hooks dominate reactions, but personal story hooks drive the most comments (155 avg). For pipeline, personal stories outperform clickbait.
+Concentrate on a defined niche rather than posting broadly across every GTM topic. A tight, recognizable focus (for example signal-based GTM and ICP work) compounds: readers learn what you are for and discussion deepens. Track the topic waves above and lead with the rising ones.
 
----
+### C2. Writing (hook + length)
 
-## 6. STRUCTURAL DNA
+Number and list hooks outperform almost everywhere, so a smaller account should lead with a stat. Contrarian is the most crowded hook and the weakest on average. Announcement and contrarian hooks mostly pay off for accounts with an established base, so do not lead with them early. The hook mix across the space is stable (mostly statement hooks, some personal, few contrarian), so it is not a trend to chase.
 
-### Media Type Performance
+Length is a weak signal. Posts in the 100 to 500 word range tend to do well, but format and hook matter far more than length. Match length to the pattern.
 
-| Format | Count | Avg Reactions | Median | Avg Comments |
-|--------|-------|---------------|--------|--------------|
-| Image | 1,445 | 345 | 176 | 118 |
-| Carousel | 529 | 206 | 166 | 89 |
-| Text only | 713 | 152 | 103 | 93 |
-| Article link | 72 | 40 | 30 | 5 |
+### C3. Design (media)
 
-**Rule:** Always include a visual. Image posts get 2.3x the reactions of text-only. Article links are engagement killers (LinkedIn suppresses external links).
+The format mix has shifted: carousels are being abandoned, single image now dominates, video is ticking back up, and text-only is declining. General rules:
 
-### Carousel Slide Count
+- **Single image** is the safe default.
+- **Article links** are the floor (LinkedIn suppresses off-platform links).
+- **Multi-image carousels** still over-index even as people drop them, so a well-made carousel is a possible contrarian play.
+- **PDF/document carousels** underperform on the median but can work for established accounts.
+- Infographics and document previews are the strongest visual types, plain photos are the floor.
 
-| Slides | Count | Avg Reactions | Median |
-|--------|-------|---------------|--------|
-| 1-8 | 164 | 186 | 138 |
-| 9-15 | 260 | 212 | 169 |
-| 16-25 | 56 | 197 | 167 |
-| 25+ | 49 | 244 | 217 |
+### C4. Post-type
 
-**Rule:** 9-15 slides is the sweet spot for volume and consistency. 25+ slides have the highest median but require more production effort.
+The space is doing more originals over time (reposts and quote posts are declining). Two general rules: strategic reposting of your own best content performs about as well as an original for far less work and is widely under-used, and quote posts are effectively dead. Regular original posts remain the workhorse.
 
-### Post Length
+### C5. Engagement (metrics)
 
-| Length | Count | Avg Reactions | Median |
-|--------|-------|---------------|--------|
-| Short (<100 words) | 706 | 136 | 84 |
-| Medium (100-250 words) | 1,199 | 242 | 143 |
-| Long (250-500 words) | 817 | 392 | 223 |
-| Very long (500+ words) | 37 | 344 | 245 |
-
-**Rule:** 250-500 words is the performance sweet spot. Long enough for depth, short enough for mobile reading. Short posts (<100w) consistently underperform.
-
-### Formatting Impact
-
-| Feature | Lift vs. Without |
-|---------|-----------------|
-| Line breaks (>5 newlines) | +212% reactions |
-| Whitespace breaks (double newlines) | +160% reactions |
-| Bold unicode text (𝗯𝗼𝗹𝗱) | +124% reactions |
-| Arrow characters (↳→➡) | +30% reactions |
-| Numbered lists | +8% reactions |
-| Emojis | -20% reactions |
-
-**Rules:**
-1. Always use generous whitespace. Never write wall-of-text posts.
-2. Bold unicode for key phrases is a significant amplifier.
-3. Arrows (↳) for structuring lists outperform bullet points.
-4. Emojis actually hurt performance. Use sparingly (0-2 per post max).
-
-### CTA Performance
-
-| CTA Type | Count | Avg Comments |
-|----------|-------|--------------|
-| Comment to get | 131 | 267 |
-| Repost ask | 70 | 109 |
-| No CTA | 1,811 | 97 |
-| Soft pointer (👇⬇️) | 348 | 95 |
-| Follow ask | 199 | 88 |
-| Link CTA | 90 | 87 |
-| Opinion ask ("Agree?") | 78 | 57 |
-
-**Rule:** "Comment [keyword] to get [resource]" generates 2.7x more comments than no CTA. But only use it for BoF posts with a real resource to deliver.
+Over time, median reactions are flat, median comments are up, and the comment-to-reaction ratio is rising. Optimize for comment-driving formats: comments are the strongest intent signal and the hardest metric to fake.
 
 ---
 
-## 7. TIMING
+## D. Funnel stage framework
 
-### Best Days (by avg reactions)
+Always know which stage you are writing for. The winning move differs per stage.
 
-| Day | Posts | Avg Reactions | Median |
-|-----|-------|---------------|--------|
-| Sunday | 154 | 513 | 172 |
-| Wednesday | 498 | 281 | 146 |
-| Saturday | 180 | 271 | 140 |
-| Monday | 487 | 262 | 157 |
-| Friday | 470 | 229 | 152 |
-| Thursday | 469 | 225 | 141 |
-| Tuesday | 501 | 220 | 152 |
+| Stage | Purpose | Success metric | Frequency |
+|---|---|---|---|
+| **ToF** | grow audience, broad reach | total reach | 1 to 2 per week max |
+| **MoF** | prove expertise | comment quality, discussion | 3 to 4 per week, the workhorse |
+| **BoF** | drive action (resources, results) | comments with intent | 1 to 2 per week, needs a real asset |
 
-**Insight:** Sunday has dramatically higher average reactions (513 vs ~250 weekday), likely due to less competition in the feed. Weekend posting is underutilized.
-
-### Best Hours (UTC)
-
-| Time (UTC) | Posts | Avg Reactions |
-|------------|-------|---------------|
-| 07:00 | 71 | 783 |
-| 06:00 | 155 | 605 |
-| 05:00 | 158 | 371 |
-| 12:00 | 357 | 333 |
-| 11:00 | 191 | 275 |
-
-**Insight:** Early morning UTC (06:00-07:00) = US late night / early morning, catches the European morning + US wake-up scroll. This is a 2-3x multiplier over afternoon posting.
-
-**Recommended posting windows:**
-- Primary: 06:00-07:00 UTC (7-8 AM CET / 1-2 AM ET) — catches EU morning + US overnight feed build
-- Secondary: 11:00-12:00 UTC (12-1 PM CET / 6-7 AM ET) — catches US morning
+BoF posts engage the hardest (specificity and intent beat broad reach), and BoF is under-produced relative to its return. It just needs a real asset to offer.
 
 ---
 
-## 8. VOICE CALIBRATION
+## E. Winning formulas
 
-### Composite Voice Profile
+Six structural patterns. Copy the shape, fill it with your own specifics. Never reuse a competitor's real numbers, names, or brand.
 
-Based on analysis of all 7 authors' writing patterns:
-
-| Metric | Range | Target |
-|--------|-------|--------|
-| Words per post | 130-235 | 180-250 |
-| Sentence length | 11-15 words | 12 words |
-| Emojis per post | 0.4-1.7 | 0-2 |
-| Arrows per post | 0.6-4.1 | 2-3 |
-| Questions per post | 0.5-1.7 | 1 |
-
-### Voice characteristics by author (for style matching):
-
-**Creator D** — Direct, metric-heavy, agency-operator tone. Leads with numbers. Heavy arrow usage (4.1/post). Top hook: "How it started: 4,000 cold emails sent. 1 lead generated."
-
-**Creator C** — Bold claims, trend-forward, systems thinker. Slightly longer posts (234 words avg). Top hook: "This will be bigger than the iPhone."
-
-**Creator B** — Builder/showcaser, specific + technical, lower emoji usage. Shortest sentence length (11.2 words). Top hook: "I spent months hiring 33 workers."
-
-**Creator E** — Concise and resource-focused (133 words avg). Minimal formatting. Lets the resource speak. Top hook: "37 of the best-performing sales triggers."
-
-**Creator A** — Highest output, AI-forward, educational tone. Diagram-heavy. Top hook: "2025 is the Year of LCMs and not LLMs."
-
-**Creator G** — Shortest posts (82 words avg), authentic/personal, GTM-practitioner voice. Top hook: "If your ICP can't be defined by industry + company size + location..."
-
-**Creator F** — Storytelling-driven, persuasive, mid-length posts. Top hook: "How do you land a demo call with a large enterprise SaaS company?"
-
-### Default writing rules:
-1. Sentences: 10-14 words. Never exceed 20.
-2. Paragraphs: 1-2 sentences max, then whitespace break.
-3. No walls of text. Every 2-3 lines, visual break.
-4. Arrows (↳ →) over bullet points.
-5. Bold unicode (𝗯𝗼𝗹𝗱) for 1-3 key phrases per post, never more.
-6. Maximum 2 emojis per post. Zero is fine.
-7. One question per post (either hook or CTA, not both).
-8. No hashtags in body. Maximum 3-5 at the very end if used at all.
-9. "We" > "I" for agency/team posts. "I" for personal story posts.
-10. Specific numbers always. Never "many" or "several" — always "37" or "657" or "$4M+".
+1. **System reveal** (MoF, most consistent): bold result, "here's what we did", numbered steps, CTA.
+2. **Trend explainer** (ToF, highest reach): trending topic, "here's what it means in 60 seconds", diagram, simple breakdown, follow CTA.
+3. **Resource drop** (BoF, highest conversion): specific result or problem, what the resource is, "comment WORD and I'll send it".
+4. **Contrarian take** (MoF, high discussion): common belief is wrong, evidence, what works instead, proof. Needs an established base to land.
+5. **Journey post** (MoF and BoF, trust): "how it started, how it's going", lessons.
+6. **Tool comparison** (MoF, high save): "I tested X tools", verdict per tool, overall winner.
 
 ---
 
-## 9. RECYCLING ENGINE
+## F. A proven content recipe
 
-### What makes a post recyclable:
-1. Evergreen topic (not tied to a specific news event or date)
-2. Performed well on at least one metric (reactions OR comments OR C/R ratio)
-3. Contains a reusable structure (not just a one-off hot take)
-4. Can be updated with new examples, data, or angles
+Derived from Brigi's and Jani's own top posts. A reliable recipe to write in:
 
-### Recycling methods:
+- Hook: stat or contrarian (lead with a number or a sharp reframe).
+- Body: framework or listicle, structured and scannable, never a wall of text.
+- Visual: single image (dense infographic or framework graphic).
+- Funnel: mostly MoF and BoF, little ToF. Sell expertise, not reach.
+- Lines: short, 7 to 8 words median.
+- Topics: signal-based GTM, ICP, Clay, HubSpot, plus the Claude/agent wave.
 
-**Angle swap:** Same topic, different perspective.
-- Original: "Here's how we set up ABM for an 8-figure SaaS"
-- Recycled: "The 3 biggest ABM mistakes we made before finding what works"
+Write to start conversations, not just collect likes. This recipe is a current-window winner, not a fixed rule. Format edges decay: once everyone ships static images, the edge moves to animation, then video. Watch for the shift and move before the crowd. Untested levers worth trying: strategic reposting of your best content, and video.
 
-**Example update:** Same structure, fresh data.
-- Original: "37 best-performing sales triggers"
-- Recycled: "12 new sales triggers we've been testing in Q1 2026"
-
-**Format shift:** Same content, different medium.
-- Original: Text post about waterfall enrichment
-- Recycled: Carousel with visual workflow diagram
-
-**Hook reframe:** Same body, different opening.
-- Original: "I built this ABM playbook for an 8-figure SaaS"
-- Recycled: "ABM doesn't work for most companies. Here's why (and what to do instead)."
-
-**Audience shift:** Same insight, different stakeholder.
-- Original: Written for GTM engineers about Clay workflows
-- Recycled: Simplified for founders about why their outbound isn't working
-
-### Recycling rules:
-- Wait minimum 6-8 weeks between recycled posts
-- Change at least 2 of: hook, examples, format, CTA
-- Never copy-paste. Always rewrite in current voice.
-- Track which posts have been recycled and when
+*Full voice and tone rules live in `writing-guide.md` and `winning-words.md`.*
 
 ---
 
-## 10. VISUAL FORMAT PATTERNS
+## G. Timing
 
-Based on media performance data, these visual formats consistently outperform. All visuals are single image and designed in Claude Design (GT brand system lives there):
+**There's no reliable day-of-week effect.** The old "post on Sunday" rule was an artifact of a few viral weekend posts. Medians are flat Monday to Friday and lower on weekends, and apparent weekend spikes are driven by one or two viral posts.
 
-**Diagram/Architecture visuals** (AI agents, workflows): Highest reactions in the dataset. Clean, labeled flowcharts on one dense single image.
+**Timing depends on who you target, not on a universal best hour.** If you talk to a US audience, US weekday mornings work well (about 2 PM CET, 8 AM ET). Always confirm from the account's own LinkedIn analytics, which show this directly.
 
-**Screenshot walkthroughs / proof visuals** (Clay, n8n, tool configs): High MoF value. Annotated real screenshots with arrows and callouts, GT title overlay.
+---
 
-**Before/After comparisons** (results, process improvements): Strong BoF format. Side-by-side on one image with clear metrics.
+## H. Recycling engine
 
-**List / cheat sheet graphics** (tools, triggers, resources): BoF lead magnets and high save-bait. Clean typography, numbered items, GT brand colors.
+A post is recyclable if it's evergreen, performed on at least one metric, has a reusable structure, and can be refreshed with new data or angles.
 
-**Avoid:** Stock photos, generic AI-generated imagery, busy visuals with too much unreadable data, article link previews (kill engagement), PDF carousels, cheap GIFs.
+Methods: angle swap, example update (fresh data, same structure), format shift (text to carousel or infographic), hook reframe, audience shift (GTM engineer to founder).
+
+Rules: wait 6 to 8 weeks between recycles, change at least two of hook, examples, format, or CTA, never copy-paste, and rewrite in the current voice.
 
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), an AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

@@ -1,99 +1,87 @@
 ---
 name: linkedin-scheduling
-description: Optimize LinkedIn posting times, frequency, and the Distribution Window routine. Use when the user asks about best time to post on LinkedIn, posting frequency, content calendar, consistency, content velocity, the Distribution Window, or the golden hour / first hour after posting. Do NOT use for content writing (use storytelling) or format selection (use formats).
+description: Dial in when and how often to post, plus the first-hour routine that maximizes distribution. Use for questions about the best time to post, cadence, a content calendar, consistency, posting velocity, the distribution window, or the golden hour after publishing. Do NOT use for writing the post (use storytelling) or choosing a format (use formats).
 ---
 
 # LinkedIn Posting Schedule & Timing
 
-You are a specialist in LinkedIn posting cadence, timing optimization, and the Distribution Window engagement routine that maximizes post distribution.
+You focus on posting cadence, timing, and the first-hour engagement routine that gives a post its best shot at wide distribution.
 
 ## Reference
 
-Load `{SKILL_BASE}/resources/references/gt-linkedin-algorithm.md` for the complete timing data, frequency benchmarks, and Distribution Window routine.
+Load `{SKILL_BASE}/resources/platform/algorithm.md` for the full timing note and the Distribution Window routine, and `{SKILL_BASE}/resources/performance/performance-playbook.md` for the timing data.
 
-## Best Posting Times — Data from 3,156-Post Dataset
+Related sub-skill (not a resource): the reply-to-every-comment tactics inside the Distribution Window live in the `engagement` sub-skill. This skill covers the timing and routine side.
 
-**Primary window: 06:00-07:00 UTC (7-8 AM CET / 1-2 AM ET)**
-2-3x multiplier vs afternoon posting. Catches EU morning feed build + US overnight feed.
+## Best posting times
 
-**Secondary window: 11:00-12:00 UTC (12-1 PM CET / 6-7 AM ET)**
-Catches US morning scroll.
+Typical (median) reactions by weekday, across an analysis of 12,000+ B2B GTM posts. Read the median (the typical post), not the mean, when judging timing. **Re-check timing against the account's own analytics and refresh it quarterly: the algorithm and your audience shift.**
 
-| Day | Avg Reactions | Notes |
-|-----|--------------|-------|
-| Sunday | 513 | Lowest feed competition. Best for highest-effort post of the week. |
-| Wednesday | 281 | Strong mid-week MoF slot |
-| Saturday | 271 | Less competition than weekdays |
-| Monday | 262 | Good opener for the week |
-| Friday | 229 | ToF and lighter content day |
-| Thursday | 225 | BoF resource drop day |
-| Tuesday | 220 | Solid MoF day |
+| Day | Typical reactions (median) |
+|---|---|
+| Monday | 23 |
+| Tuesday | 23 |
+| Thursday | 23 |
+| Wednesday | 22 |
+| Friday | 22 |
+| Saturday | 18 |
+| Sunday | 14 |
 
-Key insight: Sunday at 06:00-07:00 UTC is the highest-performing slot in the dataset (513R avg vs ~250 weekday). Reserve it for the week's highest-effort post.
+- **Early week is best.** Monday tends to be the strongest weekday, and Monday to Wednesday edges ahead. The spread is small, so treat it as a nudge, not a rule; weekdays are nearly flat.
+- **Weekends are the worst by median.** Watch out for the mean: Sunday's average can spike because almost nobody posts then, so one viral post drags it up. That gap is exactly the old "post on Sunday" myth, and why it is wrong.
+- **The hour matters more than the day:** roughly **10:00 to 14:00 UTC** (about 6 to 10 AM ET, midday CET).
 
-> **These times and days are benchmark averages, not fixed rules.** They come from a historical dataset optimized for GT's current audience, and both the LinkedIn algorithm and your own audience's active hours shift over time. Always cross-check against your own recent LinkedIn analytics — post when *your* audience is actually online — and re-test the windows every quarter.
+So: post **Monday to Wednesday morning** in your audience's window (US audience: roughly 7 to 9 AM ET / 12 to 14 UTC), avoid weekends unless you have a large audience (20 to 30,000+ followers), and confirm the exact hour from the account's own analytics.
 
-## Pillar-Based Weekly Cadence
+## Weekly mix (the mix matters, not the day)
 
-Match funnel stage to day for maximum impact per post type:
+Aim for 3 to 4 posts a week, balanced by funnel stage, not pinned to specific days. Weekday differences are small (Monday to Wednesday morning has a slight edge), so post in that window but do not force a fixed pillar onto a fixed day, that is over-engineering.
 
-| Day | Pillar | Funnel Stage | Why |
-|-----|--------|-------------|-----|
-| Monday | Outbound Tactics or ICP and Signal-Based GTM | MoF | B2B audience in work mode. Start with expertise. |
-| Tuesday | AI Agents and Automation or ICP | MoF | Mid-week depth. Clay workflows, system reveals, agent builds. |
-| Wednesday | Tech Stack and Tool Reveals or ICP | MoF | Practitioners evaluate tools mid-week. High save rate. |
-| Thursday | Outbound Tactics Resource Drop or Case Study | BoF | Best day for comment-gate posts with real resources. |
-| Friday | AI and Tech Trends | ToF | Lighter content before weekend. Trend explainers. |
-| Sunday | AI Agents or Journey Post | MoF/BoF | Lowest competition. Highest-effort post of the week. |
+- Mostly **MoF**, the workhorse: system reveals, ICP, tool comparisons.
+- One **BoF** when you have a real asset to give (resource drop or comment-gate).
+- An occasional **ToF** (an AI or tech trend) for reach.
 
-ToF posts (AI/Tech Trends pillar): Friday or Sunday.
-MoF posts (System Reveals, Tool Comparisons, ICP, Outbound): Monday, Tuesday, Wednesday, Sunday.
-BoF posts (Resource Drops, Comment Gates): Thursday.
+An illustrative week, not a rule: two MoF, one BoF on the day your asset is ready, one lighter ToF. Post each in the morning window and spend the first hour on the Distribution Window (below).
 
-## Posting Frequency
+## Posting frequency
 
-| Frequency | Impact | Best For |
+| Cadence | Effect | Fits |
 |-----------|--------|----------|
-| 1x/week | Baseline presence | Beginners, busy execs |
-| 3-4x/week | Optimal growth | Growing creators, founders |
-| 5x/week | Diminishing returns | Full-time creators only |
-| Daily (7x) | Can hurt quality | Not recommended |
+| Once a week | keeps a baseline presence | beginners, time-pressed execs |
+| Three to four a week | the growth sweet spot | founders and rising creators |
+| Five a week | returns start to taper | full-time creators only |
+| Daily | tends to erode quality | not advised |
 
-Sweet spot: 3-4 posts per week. Quality always beats quantity.
+Target three to four a week. Volume never beats quality.
 
-## The Distribution Window (Algorithm Signal)
+## The Distribution Window (algorithm signal)
 
-The first 60-90 minutes are the **Distribution Window** — they determine 80%+ of total reach. The post is initially shown to 8-15% of followers as a test. High early velocity = expanded distribution to followers-of-followers. 20 comments in 30 minutes beats 50 comments in 24 hours.
+The opening 60 to 90 minutes, the **Distribution Window**, set roughly four-fifths of a post's eventual reach. LinkedIn first tests it on a fraction of your followers, on the order of one in ten, and watches how fast engagement builds. Quick early traction opens the post up to followers-of-followers. A burst of comments in the first half hour does more than a slow trickle over a day.
 
-> This is the same Distribution Window covered in the `engagement` sub-skill — see that skill for the full reply-to-every-comment tactics. This section covers the timing/routine side.
+> This is the same window the `engagement` sub-skill covers from the reply-to-every-comment angle. Here we handle the timing and the routine.
 
-## The Distribution Window Routine
+## The first-hour routine
 
-T+0 min: Post goes live
-T+0-5: Respond to every immediate comment
-T+5-15: Engage with 5-10 other posts in your niche
-T+15-30: Check back, respond to all new comments
-T+30-60: Continue engaging on others' posts and responding
-T+1-2 hrs: Final check, respond to remaining comments
+- The moment it is live, reply to whatever lands.
+- Over the next ten to fifteen minutes, go engage on five to ten posts in your niche.
+- Around the half-hour mark, come back and answer every new comment.
+- Through the rest of the first hour, keep engaging elsewhere and replying.
+- In the second hour, do a final pass to catch the rest.
 
-Why it works: Your own engagement activity signals the algorithm that you are active, which boosts your post's distribution. Responding to comments quickly encourages more comments, which carry up to 4x engagement weight (meaningful comments over 15 words).
+Why it works: your own activity tells the algorithm you are live, which lifts distribution, and fast replies pull more comments, the heaviest-weighted signal (a substantive comment, fifteen words and up, is worth several likes).
 
-## Topic Consistency
+## Topic consistency
 
-Post on the same 2-3 topics consistently for higher distribution. The algorithm builds a creator topic graph per user. Pivoting topics too often resets your distribution baseline. Use the GT pillar rotation and do not post 3 AI trend posts in a row.
+Stick to two or three recurring topics to build distribution. LinkedIn maps each creator to their subjects, and hopping around resets that map. Rotate the Growth Today pillars, and avoid stacking three AI-trend posts back to back.
 
 ## Examples
 
-Example 1 - GT team member posting 3x/week:
-Tuesday MoF (Clay workflow or ICP teardown) + Thursday BoF (resource drop with comment gate) + Sunday MoF (system reveal or AI agent showcase). Post at 06:00-07:00 UTC each day. Block 60 min after each post for the Distribution Window.
+**Example 1, a Growth Today team member posting 3x/week:** Tuesday MoF (Clay workflow or ICP teardown) + Thursday BoF (resource drop with comment gate) + Wednesday MoF (system reveal or AI agent showcase). Post in the audience's window (for a US audience, about 7-8 AM ET), confirmed from analytics. Block 60 min after each post for the Distribution Window.
 
-Example 2 - Building the week's calendar:
-Ask what BoF assets are available (real resource to deliver?). If yes, lock Thursday. Fill Mon/Tue/Wed with MoF from the pillar rotation. Use Friday for the lightest ToF trend post. Reserve Sunday for the highest-effort post of the week.
+**Example 2, building the week's calendar:** ask what BoF assets are available (a real resource to deliver?). If yes, lock Thursday. Fill Monday to Wednesday with MoF from the pillar rotation. Use Friday for the lightest ToF trend post. Put the highest-effort post on the strongest weekday for this account, not on a fixed day.
 
-Example 3 - Creator struggling with consistency:
-Batch-write 4 posts on Sunday morning. Schedule at 06:00-07:00 UTC for Mon/Tue/Wed/Thu using Taplio or LinkedIn native scheduler. Spend actual posting days doing Distribution Window engagement instead of writing.
-
+**Example 3, a creator who keeps falling off cadence:** write four posts in one sitting, queue them for the audience's morning window with a scheduling tool or LinkedIn's native scheduler, and spend the posting days on first-hour engagement rather than writing.
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), an AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

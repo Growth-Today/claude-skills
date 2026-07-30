@@ -1,38 +1,38 @@
 ---
 name: gt-linkedin-content
-description: "GT LinkedIn Content by Growth Today (growthtoday.co). Expert LinkedIn organic content strategist for B2B founders and GTM leaders. Use for LinkedIn post writing, hooks, storytelling, post formats, single-image infographics, cheat sheets, CTAs and comment-gates, engagement and the distribution window, posting schedule and best times, profile optimization, and content repurposing. Triggers on: LinkedIn post, LinkedIn content, write a LinkedIn post, LinkedIn hook, LinkedIn algorithm, LinkedIn reach, LinkedIn engagement, LinkedIn followers, LinkedIn carousel, LinkedIn infographic, LinkedIn profile, LinkedIn headline, LinkedIn banner, LinkedIn newsletter, LinkedIn comment strategy, content pillars, hook formula, post structure, best time to post, posting cadence, personal branding, thought leadership, building in public, B2B content strategy, GTM content. Do NOT use for LinkedIn Ads (use gt-linkedin-ads) or LinkedIn outbound messaging / cold outreach sequences (use gt-linkedin-outbound)."
+version: 2.0.0
+description: A specialist for organic LinkedIn content aimed at B2B founders and GTM teams. Reach for it on anything across the LinkedIn writing workflow, opening lines and hooks, post structure and storytelling, format choice, posting cadence and timing, comments and engagement, CTAs and comment-gates, profile optimization, repurposing, monthly content planning, and turning a post into its parts (team copy, engagement comments, alt text) or a design brief. Fires on phrases like write a LinkedIn post, LinkedIn hook, the algorithm, carousel, newsletter, best time to post, posting cadence, grow my LinkedIn, content plan, content pillar plan, plan my month, fix this hook, make it less AI, P.S. line, comment gate, alt text, design brief. Do NOT use for LinkedIn Ads (use the linkedin-ads skill) or cold outreach to strangers (LinkedIn cold DMs use gt-linkedin-outbound, cold email uses the cold-email skill). Warm social selling to the audience your content builds IS in scope (see social-selling-campaigns.md).
 ---
 
-## Setup (Run Once Per Session)
+## Setup (once per session)
 
-Before loading any sub-skill or resource, locate this skill's install directory:
-1. Use Glob to search for `**/gt-linkedin-content/SKILL.md`
-2. The directory containing this SKILL.md is `SKILL_BASE`
-3. Sub-skills are at: `{SKILL_BASE}/.claude/skills/{sub-skill}/gt-SKILL.md`
-4. Resources are at: `{SKILL_BASE}/resources/...`
+Find where this skill is installed before you load anything beneath it:
+1. Glob for `**/gt-linkedin-content/SKILL.md`.
+2. The folder that holds it is your `SKILL_BASE`.
+3. Sub-skills sit under `{SKILL_BASE}/.claude/skills/{sub-skill}/gt-SKILL.md`.
+4. Resources sit under `{SKILL_BASE}/resources/...`.
 
-Always resolve SKILL_BASE dynamically — never assume a hardcoded install location.
+Work out `SKILL_BASE` at runtime, do not bake in a fixed path.
 
 # LinkedIn Content Orchestrator
 
-You are an expert LinkedIn content strategist who has helped B2B GTM teams grow audiences and generate pipeline from organic content. Every recommendation is backed by specific engagement data from 3,156 posts across 7 top GTM founders. Route every request to the most relevant sub-skill(s) below.
+This skill helps B2B GTM teams build an audience and turn organic LinkedIn content into pipeline. Everything in it is anchored to what genuinely earns reach and comments in the GTM space, not generic social-media advice. Hand each request to whichever sub-skill (or few) fit it best, using the routing below.
+
+Growth Today runs LinkedIn content as a service for B2B GTM teams. More open skills and guides: https://www.growthtoday.co/claude-skills
 
 ---
 
-## STEP 0 — ALWAYS CLASSIFY FUNNEL STAGE FIRST
+## STEP 0: ALWAYS CLASSIFY FUNNEL STAGE FIRST
 
-Before writing or recommending any content, identify which funnel stage it serves. This determines the formula, hook type, CTA, and success metric. Ask or infer if not specified.
+Before writing or recommending anything, decide which funnel stage it serves. The stage sets the formula, the hook, the CTA, and the metric you judge it by. Ask if it is unclear.
 
 | Stage | Purpose | Success Metric | Frequency |
 |-------|---------|----------------|-----------|
-| **ToF** — Top of Funnel | Grow audience, attract new followers, broad appeal | Total reactions + reposts (reach) | 1-2x/week max |
-| **MoF** — Middle of Funnel | Demonstrate expertise, make reader think "they know their stuff" | Comment-to-reaction ratio (C/R) | 3-4x/week — the workhorse |
-| **BoF** — Bottom of Funnel | Drive action: lead magnets, case study results, social proof | Comments with intent signals | 1-2x/week — requires real asset |
+| **ToF**, Top of Funnel | Grow audience, attract new followers, broad appeal | Total reactions + reposts (reach) | 1-2x/week max |
+| **MoF**, Middle of Funnel | Demonstrate expertise, make reader think "they know their stuff" | Comment-to-reaction ratio (C/R) | 3-4x/week, the workhorse |
+| **BoF**, Bottom of Funnel | Drive action: lead magnets, case study results, social proof | Comments with intent signals | 1-2x/week, requires real asset |
 
-**Performance data:**
-- ToF: 608 posts analyzed · avg 160 reactions · C/R ratio 0.31
-- MoF: 1,973 posts · avg 291 reactions · C/R ratio 0.48 — highest overall performer
-- BoF: 178 posts · avg 272 reactions · C/R ratio 0.63 — highest intent
+Read each stage by its own metric: ToF by reach, MoF by the comment-to-reaction ratio (the expertise signal), BoF by comments that carry intent. Full detail in `performance-playbook.md`.
 
 ---
 
@@ -40,38 +40,40 @@ Before writing or recommending any content, identify which funnel stage it serve
 
 | User Intent | Sub-Skill | Path |
 |-------------|-----------|------|
-| Writing first lines, attention-grabbing openers, "see more" optimization | **hooks** | Read `{SKILL_BASE}/.claude/skills/hooks/gt-SKILL.md` |
-| Post body structure, frameworks, narrative writing, Step 1/2/3 reveals | **storytelling** | Read `{SKILL_BASE}/.claude/skills/storytelling/gt-SKILL.md` |
-| Choosing between single image, video, poll; format specs | **formats** | Read `{SKILL_BASE}/.claude/skills/formats/gt-SKILL.md` |
-| When to post, how often, Sunday advantage, timing optimization | **scheduling** | Read `{SKILL_BASE}/.claude/skills/scheduling/gt-SKILL.md` |
-| Comment strategy, DM engagement, LinkedIn limits, community building | **engagement** | Read `{SKILL_BASE}/.claude/skills/engagement/gt-SKILL.md` |
-| End-of-post CTAs, P.S. types, comment-gate | **cta** | Read `{SKILL_BASE}/.claude/skills/cta/gt-SKILL.md` |
-| Profile optimization: headline, banner, about, featured, services, experience, recommendations | **profile** | Read `{SKILL_BASE}/.claude/skills/profile/gt-SKILL.md` |
-| Turning one piece into many formats, creator tools, newsletters | **repurposing** | Read `{SKILL_BASE}/.claude/skills/repurposing/gt-SKILL.md` |
+| Opening lines, scroll-stopping first lines, the see-more cutoff | **hooks** | Read `{SKILL_BASE}/.claude/skills/hooks/gt-SKILL.md` |
+| Body structure, narrative frameworks, the Step 1/2/3 reveal | **storytelling** | Read `{SKILL_BASE}/.claude/skills/storytelling/gt-SKILL.md` |
+| Choosing among single image, video, or poll, plus the specs for each | **formats** | Read `{SKILL_BASE}/.claude/skills/formats/gt-SKILL.md` |
+| Timing, cadence, and the first-hour routine | **scheduling** | Read `{SKILL_BASE}/.claude/skills/scheduling/gt-SKILL.md` |
+| Comment tactics, what engagement counts, dwell time, activity limits, community | **engagement** | Read `{SKILL_BASE}/.claude/skills/engagement/gt-SKILL.md` |
+| Closing CTAs, P.S. types, the comment-gate | **cta** | Read `{SKILL_BASE}/.claude/skills/cta/gt-SKILL.md` |
+| Profile work: headline, banner, about, featured, services, experience, recommendations | **profile** | Read `{SKILL_BASE}/.claude/skills/profile/gt-SKILL.md` |
+| Reshaping one idea across formats, plus the creator tools | **repurposing** | Read `{SKILL_BASE}/.claude/skills/repurposing/gt-SKILL.md` |
+| Producing or fixing a locked post's parts (hook, body, team body copy, P.S./CTA, engagement comments, alt text, formatting) | **post-production** | Read `{SKILL_BASE}/.claude/skills/post-production/gt-SKILL.md` |
+| Turning a post into a design brief for its visual (structure plus fitted copy) | **design-briefer** | Read `{SKILL_BASE}/.claude/skills/design-briefer/gt-SKILL.md` |
 
 ---
 
-## Writing About Your Own Company
+## Growth Today-Specific Numbers (Source Before Writing Growth Today Posts)
 
-When writing a post about your own company, use your real metrics, results, and proof points — pulled from your own records, not invented. Keep client results anonymized unless you have explicit permission to name them. This skill uses `[X]` placeholders wherever a company-specific number would go; replace them with your real figures.
+- **Growth Today metrics, AI agents, funnel data, team stats, positioning** are not bundled here. Before writing any post about Growth Today itself, get the current figures from the user (or Growth Today's live source of truth). Never invent, hardcode, or reuse a number from memory.
 
 ---
 
 ## Cross-Cutting Resources
 
-- **Post topic ideas per pillar, trending topics** → Read `{SKILL_BASE}/resources/topics/gt-topic-ideas.md` — load this when asked for ideation, "what should I post", or topic suggestions
-- **Writing voice, tone, formatting rules, content pillars, P.S. rules, pre-publish checklist** → Read `{SKILL_BASE}/resources/voice/gt-writing-guide.md`
-- **5 production-ready post structure templates with character counts** → Read `{SKILL_BASE}/resources/templates/gt-post-structure-templates.md`
-- **Wording guide: top vocabulary, banned words, power phrases, sentence structure** → Read `{SKILL_BASE}/resources/performance/wording-guide.md`
-- **Performance playbook: funnel stage patterns, topic patterns, hook patterns** → Read `{SKILL_BASE}/resources/performance/performance-playbook.md`
-- **Design briefs** → Read `{SKILL_BASE}/resources/design/design-brief-guide.md` — for handing a visual off to a designer
-- **Visual design note** → If you use a design tool (like Claude Design or Figma), it holds your brand system (colors, fonts). This skill decides *which format* to use (see the `formats` sub-skill); the design tool handles the actual styling.
-- **Example posts (starting-point reference for hooks, structure, format):**
-  - `{SKILL_BASE}/resources/posts/brigi-posts-reference.csv` — a set of strong B2B GTM posts (systems-led, contrarian/number-led hooks, single-image design). Study the hooks, structures, and formats.
-  - `{SKILL_BASE}/resources/posts/jani-posts-reference.csv` — a more direct, punchy, provocative voice on the same positioning.
-- **Hook formulas, storytelling frameworks, profile optimization** → Read `{SKILL_BASE}/resources/references/gt-content-strategy.md`
-- **Algorithm mechanics, format performance, posting strategy** → Read `{SKILL_BASE}/resources/references/gt-linkedin-algorithm.md`
-- **Platform limits, DM sequences, campaign targeting** → Read `{SKILL_BASE}/resources/references/gt-linkedin-campaigns.md`
+- **Writing voice, tone, formatting, the content pillars, P.S. rules, the weekly plan, and the pre-publish checklist** → Read `{SKILL_BASE}/resources/writing/writing-guide.md`. Treat it as the source of truth for what to post and how to write it. Load it for ideation, "what should I post", and any voice or formatting question.
+- **Seven ready-to-fill post structure templates with character counts** → Read `{SKILL_BASE}/resources/writing/post-templates.md`
+- **The S/A/B/C/D grading rubric, to score a draft before it ships** → Read `{SKILL_BASE}/resources/performance/engagement-scorecard.md`
+- **Word and phrase guidance: what to lean on, what to avoid, sentence shape** → Read `{SKILL_BASE}/resources/performance/winning-words.md`
+- **The performance playbook: benchmarks by hook, format, CTA, and weekday, plus the growth levers** → Read `{SKILL_BASE}/resources/performance/performance-playbook.md`
+- **Visual design** → Visuals are built in **your design tool** (Figma, Canva, Claude, or similar), which holds your brand system (colors, fonts) and styling. This skill chooses *which format* fits (see `formats`); the tool does the actual design.
+- **Example post sets (write to match these first):**
+  - **Brigi** → Read `{SKILL_BASE}/resources/posts/brigi-posts-reference.csv`.
+  - **Jani** → Read `{SKILL_BASE}/resources/posts/jani-posts-reference.csv`. A more direct, punchy voice.
+- **Hook formulas, storytelling frameworks, profile notes** → Read `{SKILL_BASE}/resources/writing/content-strategy.md`
+- **How the feed ranks content, format behavior, timing** → Read `{SKILL_BASE}/resources/platform/algorithm.md`
+- **Design-family vocabulary: a general way to name what a B2B LinkedIn graphic is (numbered list, hero stat, workflow, comparison table, and so on), used by design-briefer** → Read `{SKILL_BASE}/resources/design/design-families.md`
+- **Social selling: converting the warm audiences your content builds** (profile viewers, followers, connections, engagers, plus the Sales Navigator and Expandi/Clay setup) → Read `{SKILL_BASE}/resources/social-selling/social-selling-campaigns.md`. For cold outreach to strangers, use the `gt-linkedin-outbound` skill.
 
 ---
 
@@ -79,25 +81,25 @@ When writing a post about your own company, use your real metrics, results, and 
 
 | Pillar | Weight | Funnel | What Works |
 |--------|--------|--------|-----------|
-| **AI Agents & Automation** | 25% | ToF + MoF | Architecture reveals, "I built this agent" showcases, workflow comparisons (n8n vs Make vs Claude), automation ROI — covers marketing, sales, ops, delivery |
-| **AI / Tech Trends** | 15% | ToF | Trend explainers with GTM angle: "what this means for your outbound", new model breakdowns, "X is changing GTM as we know it" |
+| **AI Agents & Automation** | 25% | ToF + MoF | Architecture reveals, "I built this agent" showcases, workflow comparisons (n8n vs Make vs Claude), automation ROI, covers marketing, sales, ops, delivery |
+| **AI / Tech Trends** | 15% | ToF | Trend explainers with a GTM angle: "what this means for your outbound", new model breakdowns, "X is changing GTM as we know it" |
 | **Outbound Tactics** | 20% | MoF + BoF | Cold email teardowns, subject line tests, deliverability guides, sequence structures, reply rate benchmarks, signal-triggered outreach |
-| **ICP & Signal-Based GTM** | 15% | MoF | TAM building playbooks, persona frameworks, signal stacks, Clay workflow teardowns, waterfall enrichment — the core GT expertise |
+| **ICP & Signal-Based GTM** | 15% | MoF | TAM building playbooks, persona frameworks, signal stacks, Clay workflow teardowns, waterfall enrichment |
 | **Tech Stack & Tool Reveals** | 10% | MoF | "Every tool we use to run our agency", head-to-head comparisons, integration tutorials |
-| **LinkedIn Growth & Content** | 10% | MoF | Posting system reveals, campaign breakdowns, content strategy frameworks — also positions GT LinkedIn content services |
-| **Agency Building & Lessons/Frameworks** | 5% | MoF + BoF | Building in public (process, results, team), plus: breaking down frameworks and insights from big GTM leaders/research reports with GT commentary |
+| **LinkedIn Growth & Content** | 10% | MoF | Posting system reveals, campaign breakdowns, content strategy frameworks, also positions Growth Today LinkedIn content services |
+| **Agency Building & Lessons/Frameworks** | 5% | MoF + BoF | Building in public (process, results, team), plus breaking down frameworks from big GTM leaders and research reports with Growth Today commentary |
 
-> **Claude Code note:** Claude Code is a hot subset of AI Agents & Automation right now. Use it where specifically relevant — one of the top-performing posts in the category in the last 90 days was a "[name] automates entire outbound campaigns using Claude Code" style post (335 likes, 515 comments). But the pillar is broader than one tool.
+> **Claude Code note:** Claude Code is a hot corner of AI Agents & Automation right now. Use it where it genuinely fits; "[name] automates entire outbound campaigns using Claude Code" style posts tend to land well. The pillar is broader than any one tool, though.
 
-> **ABM opportunity:** Only 11 posts in the broader dataset but C/R ratio of 1.36 — the highest in the entire dataset. ABM content drives disproportionate discussion. Prioritize for ICP & Signal-Based GTM pillar.
+> **ABM opportunity:** ABM content is uncommon but sparks outsized discussion (a high comment-to-reaction ratio). Favor it inside the ICP & Signal-Based GTM pillar.
 
 ---
 
 ## 6 Winning Formulas
 
-Use these proven structures. Each validated across the 3,156-post dataset.
+Proven structures, each validated across the GTM space.
 
-### Formula 1: The System Reveal (MoF — highest consistency)
+### Formula 1: The System Reveal (MoF: highest consistency)
 ```
 [Bold result claim]
 [1-line context/credibility]
@@ -119,15 +121,14 @@ The result: [specific metric]
 
 P.S. [One of three types]
 ```
-Performance: 200-600 reactions · 500-2,000+ comments
-Reference: "I built this ABM playbook for an 8-figure SaaS" (617R, 2,329C)
+Tends to earn strong saves and a high comment-to-reaction ratio.
 
-### Formula 2: The Trend Explainer (ToF — highest reach ceiling)
+### Formula 2: The Trend Explainer (ToF: highest reach ceiling)
 ```
-[Trending topic — bold claim or "Everyone's talking about X"]
+[Trending topic, bold claim or "Everyone's talking about X"]
 [1-line promise: "Here's what it means for your GTM in 60 seconds."]
 
-[Visual required — diagram or explainer image]
+[Visual required, diagram or explainer image]
 
 [Simplified 3-5 point breakdown]
 ↳ Point 1
@@ -138,9 +139,9 @@ Reference: "I built this ABM playbook for an 8-figure SaaS" (617R, 2,329C)
 
 P.S. [Follow CTA type]
 ```
-Performance: 1,000-16,000+ reactions · 100-500 comments
+The reach play, keep the CTA soft.
 
-### Formula 3: The Resource Drop (BoF — highest conversion)
+### Formula 3: The Resource Drop (BoF: highest conversion)
 ```
 [Specific result or problem statement]
 [What the resource is + brief context]
@@ -150,13 +151,13 @@ Performance: 1,000-16,000+ reactions · 100-500 comments
 ↳ Highlight 2
 
 Comment "[KEYWORD]" and I'll send it over.
-Make sure we're connected so I can DM you.
+Connect with me first so I can send it over.
 
 P.S. [Service signal or resource offer]
 ```
-Performance: 200-1,300 reactions · 400-3,000 comments
+The top comment driver, only when you have a real asset to hand over.
 
-### Formula 4: The Contrarian Take (MoF — high engagement per impression)
+### Formula 4: The Contrarian Take (MoF: high engagement per impression)
 ```
 [Common belief] is [wrong/dead/overrated].
 
@@ -173,9 +174,9 @@ Over to you: [question]
 
 P.S. [Follow or service CTA]
 ```
-Performance: 150-800 reactions · high comment quality (debates)
+Splits the room and drives debate, needs an established audience to land.
 
-### Formula 5: The Journey Post (MoF/BoF — trust building)
+### Formula 5: The Journey Post (MoF/BoF: trust building)
 ```
 How it started: [specific bad state]
 How it's going: [specific impressive result]
@@ -186,17 +187,17 @@ How it's going: [specific impressive result]
 
 P.S. [Resource or service signal]
 ```
-Performance: 200-2,700 reactions · high-quality comments
+Vulnerability plus real numbers, the highest comment quality.
 
-### Formula 6: The Tool Comparison (MoF — high save rate)
+### Formula 6: The Tool Comparison (MoF: high save rate)
 ```
 I tested [X] [tools/platforms/approaches].
 
 Here's what I found:
 
-[Tool 1]: [Verdict — 1 line]
-[Tool 2]: [Verdict — 1 line]
-[Tool 3]: [Verdict — 1 line]
+[Tool 1]: [Verdict, 1 line]
+[Tool 2]: [Verdict, 1 line]
+[Tool 3]: [Verdict, 1 line]
 
 Overall winner for [use case]: [Pick]
 
@@ -204,20 +205,22 @@ Over to you: [question]
 
 P.S. [Follow or resource CTA]
 ```
-Performance: 200-1,000 reactions · moderate comments
+Highly save-worthy, be decisive and name a winner.
 
 ---
 
-## Routing Rules
+## Routing Common Requests
 
-1. **"Write me a LinkedIn post"** → Ask funnel stage if not specified. Then: **hooks** + **storytelling** + **cta**. Add **formats** if format unspecified.
+1. **"Write me a LinkedIn post"** → Confirm the funnel stage, then **hooks** + **storytelling** + **cta**. Add **formats** if the format is open.
 2. **"How do I get more reach?"** → **formats** + **scheduling** + **engagement**
 3. **"Optimize my LinkedIn profile"** → **profile**
 4. **"Review my LinkedIn post"** → **hooks** + **storytelling** + **cta**
-5. **Single-topic questions** → route to single most relevant sub-skill
-6. **"Create a visual for this post"** → **formats** (pick the format), then design it in **Claude Design**
-7. **"What content should I write about?"** → Read `{SKILL_BASE}/resources/topics/gt-topic-ideas.md` first, then check AI Agents & Automation pillar + ICP & Signal-Based GTM for trending topics
-8. **"Give me post ideas for this week"** → Read `{SKILL_BASE}/resources/topics/gt-topic-ideas.md`, build a week across ToF/MoF/BoF using the Quick Reference section, match topics to the person posting (Brigi vs Jani)
+5. **A single-topic question** → the one sub-skill that fits it best.
+6. **"Create a visual for this post"** → **formats** to pick the format, then build it in **your design tool**.
+7. **"What should I write about?"** → open `{SKILL_BASE}/resources/writing/writing-guide.md` for the pillars, then lean on the AI Agents and ICP pillars for what is trending.
+8. **"Give me post ideas for this week"** → open `{SKILL_BASE}/resources/writing/writing-guide.md`, build a week across ToF/MoF/BoF from the weekly plan, and match each topic to whoever is posting.
+9. **"Fix this hook" / "make a team body copy" / "generate the comments" / "write the alt text" / "make this less AI"** → **post-production**. Carry the post's core insight into the body, comments, and alt text so they stay on message.
+10. **"Brief the visual for this post" / "give me a design brief"** → **design-briefer** (a brand-agnostic brief plus fitted copy), then build it in **your design tool**.
 
 ---
 
@@ -226,101 +229,88 @@ Performance: 200-1,000 reactions · moderate comments
 ```
 Step 0: Identify funnel stage (ToF / MoF / BoF)
 Step 1: Identify content pillar
-Step 2: [hooks]       Generate 2-3 hook options using hook ranking data
-Step 3: [storytelling] Select formula + structure the body
-Step 4: [cta]         Add P.S. (mandatory) + CTA matched to funnel stage
-Step 5: [formats]     Recommend optimal format (single image infographic, proof visual, text-only)
-Step 6: [scheduling]  Suggest posting time (Sunday? Primary UTC window?)
-Step 7: [formats]     If visual: pick the format, then design it in Claude Design
+Step 2: [hooks]        Draft 2 to 3 opener options
+Step 3: [storytelling] Pick a formula and structure the body
+Step 4: [cta]          Add the P.S. (mandatory) and a CTA matched to the stage
+Step 5: [formats]      Recommend the format (dense single image, proof visual, text-only)
+Step 6: [scheduling]   Suggest a posting window
+Step 7: [formats]      If it needs a visual, pick the format, then build it in your design tool
 ```
 
 ---
 
 ## Key Numbers to Always Reference
 
-- Hook = first **210 characters** (before "see more" on mobile)
-- Image posts get **2.3x reactions** vs text-only
-- Post **3-4x/week** for optimal growth
-- Best times: **06:00-07:00 UTC** primary (7-8 AM CET)
-- **Sunday: 513 avg reactions vs ~250 weekday** — most underutilized slot
-- First **60-90 minutes** determine 80%+ of total reach
-- Comments >15 words weighted **4x** vs likes at 1x
-- Saves/bookmarks weighted **5x** — strongest signal
-- External links reduce reach by **40-60%**
-- Comment-gate posts: **267 avg comments** vs "Agree?" at 57
-- P.S. section: appears in **63% of top posts** — mandatory
-- Post length sweet spot: **250-500 words** = avg 392 reactions vs 136 for <100 words
+- The hook is the first **210 characters**, before the mobile "see more" cutoff.
+- A visual roughly **doubles** reactions over a text-only post.
+- **Three to four posts a week** is the growth sweet spot.
+- Timing follows your audience, so post when your buyers are scrolling. For a US audience that is roughly **8 AM ET (about 2 PM CET)**. Confirm from the account's own analytics.
+- Early week (**Tuesday to Wednesday**) edges ahead; **weekends are weakest**. Timing decays, so re-check live.
+- The first **60 to 90 minutes** set most of a post's eventual reach.
+- A substantive comment (over 15 words) is worth several times a like; a **save is the strongest signal of all**.
+- A link in the body cuts reach sharply, so move it to the first comment.
+- A comment-gate is the single biggest comment driver once you have an audience.
+- A **P.S. shows up in most top posts**, so treat it as mandatory.
+- Length is a minor lever; a few hundred words with a real insight beats a thin post.
 
 ---
 
-## Category Benchmarks (Last 90 Days)
+## Category Benchmarks
 
-These patterns come from the top-performing GTM creators in the category (analyzed as external benchmarks — see the performance/ and posts/ reference data). Use them as a framework, not as named callouts in GT content.
+Patterns that strong GTM content tends to win with. Use them as a framework, not as named callouts in a post.
 
-### What the top of the category wins with
-- **Highest-performing post type:** "Claude Code automates entire outbound campaigns" style — a specific tool + a concrete outcome + a video/demo offer
-- **Dominant formats:** Cheat sheets + tech-stack breakdowns — dense, multi-section, save-bait single images
-- **Comparison + proof:** "How X Is Viewed: By A vs By B" comparison visuals and real-dashboard proof visuals with a bold question overlay
-- **Dominant topics:** AI agents, GTM flywheel, ABM, signal-based outreach, tool comparisons
-
-### GT gaps to close (vs the top of the category)
-| Dimension | GT today | Category leaders |
-|---|---|---|
-| AI Agents content | Building | Dominant |
-| Comment-gate | Strong (3.7x data) | Strong |
-| Revenue/result transparency | Building | Heavy revenue-in-hooks |
-| Proof visuals (UI screenshots) | Missing | Mixed |
-| ABM content | Missing | Strong |
-| ICP & Signal content | Strong expertise | Moderate to strong |
+- **Highest-performing post type:** a specific tool plus a concrete outcome plus a demo, e.g. "Claude Code automates entire outbound campaigns".
+- **Dominant formats:** cheat sheets and tech-stack breakdowns, dense multi-section save-bait single images.
+- **Comparison and proof:** "how X is viewed by A vs by B" comparison visuals, and real-dashboard proof visuals with a bold question overlay.
+- **Dominant topics:** AI agents, the GTM flywheel, ABM, signal-based outreach, tool comparisons.
 
 ---
 
-## Required 9-Point Output Format
+## Required Output Format
 
-When generating a post, always output all 9 fields:
+When generating a post, always output every field:
 
 1. **Funnel stage:** ToF / MoF / BoF
-2. **Content pillar:** Which of the 7 pillars
-3. **Subkategória:** One of these two types:
-   - **BIP: [subcategory]** — Building in Public. Pick from: Process transparency, Tool transparency, Team transparency, Result transparency, LinkedIn funnel transparency, Internal AI usage
-   - **Taktikai: [topic]** — Educational/tactical content not GT-specific (e.g. "Outbound copy vs targeting", "ABM activation", "Signal-based ICP")
-4. **Formula used:** Which of the 6 formulas
-5. **Hook type:** Number lead / Contrarian / Personal story / Build showcase / etc.
-6. **Post copy:** Full post text — plain text only, no bold, no italic, no markdown. Whitespace + ↳ arrows only. Bold unicode allowed in visuals but NEVER in post copy.
-7. **@Tags (2-4):** List the exact tools and/or people to tag. Always 2 minimum, 4 maximum. Tag tools where first mentioned in the post body.
-8. **Media recommendation:** Image type / single image infographic / text-only (only for personal stories). Every post needs a visual, designed in Claude Design. Always output a **Visual headline** using this formula:
-   - Must contain at least one number (the biggest GT or result number from the post)
-   - Structure: **[Number] + [method/metric] + [0 X / result]** — e.g. "500 accounts. 7 signals. 0 guessing."
-   - Subtitle line: social proof number — e.g. "The system we run for [X]+ B2B GTM teams"
-   - Emphasis on the key number or result word (GT green gradient, applied in Claude Design)
-   - The headline IS the second hook — if it doesn't stop the scroll at thumbnail size, rewrite it
-   - Number-lead visuals average 400R vs 198R for text-only headlines — always lead with the number
-9. **CTA type:** Which pattern and why
-10. **Posting time:** Recommended window (day + UTC hour)
-11. **P.S. type:** Which of three P.S. types used and why
+2. **Content pillar:** which of the pillars
+3. **Subcategory:** one of two types:
+   - **Building in Public:** pick from process, tool, team, or result transparency, LinkedIn funnel transparency, or internal AI usage.
+   - **Tactical:** educational content that is not Growth Today-specific (e.g. "outbound copy vs targeting", "ABM activation", "signal-based ICP").
+4. **Formula used:** which of the 6 formulas
+5. **Hook type:** number-lead / contrarian / personal story / build showcase / and so on
+6. **Post copy:** the full text, plain only, no bold, italic, or markdown. Whitespace and ↳ arrows only. Bold unicode is fine inside a visual, never in the post copy.
+7. **@Tags (2 to 4):** the exact tools or people to tag, minimum 2, maximum 4, tagged where first mentioned in the body.
+8. **Media recommendation:** the image type (dense single image, proof visual, or text-only for a genuine personal story). Every post needs a visual, built in your design tool. Always include a **visual headline**:
+   - it carries at least one number (the biggest result figure in the post)
+   - shape it as **[number] + [method or metric] + [outcome]**, e.g. "500 accounts. 7 signals. 0 guessing."
+   - add a subtitle with a social-proof number, e.g. "the system we run for [X]+ B2B GTM teams"
+   - emphasize the key number or word in your brand accent, applied in your design tool
+   - the headline is the second hook; if it does not stop the scroll at thumbnail size, redo it
+   - lead the visual with the number, number-led visuals clearly outperform text-only headlines
+9. **CTA type:** which pattern, and why
+10. **Posting time:** the recommended window (day plus hour)
+11. **P.S. type:** which of the three P.S. types, and why
 
 ---
 
 ## Content Philosophy
 
-1. **Show the system** — teach frameworks people can implement immediately
-2. **Data over opinions** — every claim backed by specific numbers
-3. **Practitioner voice** — we've done this, not just read about it
-4. **Transparency** — share real client results, process, behind-the-scenes
-5. **Visuals multiply reach** — but personal stories can go text-only
+1. **Show the system.** Teach frameworks a reader can put to work right away.
+2. **Data over opinion.** Back each claim with a specific number.
+3. **Practitioner voice.** We have done this, not just read about it.
+4. **Transparency.** Share real results, process, and the behind-the-scenes.
+5. **Visuals multiply reach,** though a genuine personal story can run text-only.
 
 ## Response Quality Standards
 
-- Every post must include funnel stage, formula, and 9-point output
-- Always provide 2-3 hook alternatives, not just one
-- Include specific numbers (character counts, reach multipliers, timing)
-- Tailor advice to B2B GTM context — no generic social media tips
-- One idea per post, short sentences, median 7 words per line
-- Reference engagement data to justify recommendations
-- Always follow the GT writing voice guide
-- P.S. is mandatory in every post — never skip it
-
+- Every post carries a funnel stage, a formula, and the full output format.
+- Offer 2 to 3 opener options, never a single one.
+- Cite concrete numbers (character counts, reach multipliers, timing).
+- Keep it in the B2B GTM lane; skip generic social-media advice.
+- One idea a post, short lines, roughly seven words each.
+- Justify recommendations with engagement data.
+- Follow the Growth Today writing voice throughout.
+- The P.S. is mandatory, never drop it.
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), an AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
