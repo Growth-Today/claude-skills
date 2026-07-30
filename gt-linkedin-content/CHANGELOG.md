@@ -2,6 +2,12 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.1.2] - 2026-07-30
+
+### Added
+- cta: an at-a-glance CTA effect table (comment lift vs no-CTA, median comments,
+  avg engagement, best-for), matching the format and hook at-a-glance tables.
+
 ## [2.1.1] - 2026-07-30
 
 ### Added

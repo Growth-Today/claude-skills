@@ -38,6 +38,20 @@ Read it this way:
 - **For reach, a repost or save ask drives the most reactions** (the ToF lever), even though it earns fewer comments.
 - A follow and a bare "over to you" question sit below the gate for driving comments.
 
+### CTA effect at a glance (from the 12k analysis)
+
+The CTA's job is comments, so the key column is comment lift versus a no-CTA post. Avg engagement is mean reactions plus comments.
+
+| CTA type | Comment lift vs no-CTA | Median comments | Avg engagement | Best for |
+|---|---|---|---|---|
+| Repost / save ask | 12.8x (see note) | 51 | 179 | Reach plays. The number is inflated by selection: these asks cluster on already-strong posts, so treat it as indicative, not a lever that adds 12x on its own. |
+| Comment-gate | 4.5x | 18 | 200 | The reliable comment driver once you have an audience (10k+). Real resource drops only. |
+| Follow ask | 1.2x | 5 | 66 | Barely above no-CTA. Personal-brand growth, not comments. |
+| Question / over-to-you | 1.2x | 5 | 53 | Light discussion. Use a specific question, never a bare "agree?". |
+| No CTA | 1.0x (baseline) | 4 | 54 | The floor. |
+
+The comment-gate is the dependable lever, but it is size-dependent (see the by-band table below). Repost/save looks huge only because strong posts are the ones that tend to carry a save ask.
+
 ### The comment-gate is a scale play (by the follower band)
 
 | Follower band | Comment-gate | Question | No CTA |
