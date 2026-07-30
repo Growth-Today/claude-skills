@@ -1,14 +1,12 @@
 # GTM LinkedIn Content, Performance Playbook
 
-**What this file is:** the patterns that work across the GTM space on LinkedIn, split into the main growth levers (strategy, writing, design, post-type, engagement). Use it to decide what to post and how.
-
-> **Read the freshest quarter with care.** Recent posts haven't finished gathering engagement (7 to 14 days needed), so the newest data can look lower. Creative and topic fatigue are real too, so keep iterating on fresh angles.
+**What this file is:** 5 growth levers in the GTM space curated by Growth Today, including their own metrics and analysis of analyzing 12,000 posts in 2026.
 
 ---
 
 ## Benchmarks by follower band
 
-From an analysis of 12,000+ B2B GTM posts on LinkedIn. The by-follower-band cuts below use about 8,900 original posts (reposts and quote posts excluded) from 233 creators whose follower counts were captured. Medians unless noted, since a few viral posts inflate the mean. The 50k+ band is only about 8 creators, so read it as indicative, not a population, and note that above roughly 50k results are driven more by the individual creator's system and community than by follower count. Always cross-check your own recent analytics.
+From an analysis of 12,000+ B2B GTM posts on LinkedIn. Reposts and quote posts are excluded from 233 creators. Medians, unless noted, since a few viral posts inflate the mean. The 50k+ band is only about 8 creators, so read it as indicative, not a population, and note that above roughly 50k results are driven more by the individual creator's system and community than by follower count. Always cross-check your own recent analytics.
 
 **Baseline by band**
 
@@ -21,11 +19,9 @@ From an analysis of 12,000+ B2B GTM posts on LinkedIn. The by-follower-band cuts
 | 20-50k | 44 | 14 | 0.31 | 1.5 |
 | 50k+ | 98 | 70 | 0.72 | 1.1 |
 
-Two things move in opposite directions as you grow: absolute engagement climbs steeply, but engagement per follower falls (about 7x from smallest to largest, the normal size tradeoff). Comments climb faster than reactions (the ratio rises from 0.11 to 0.72), so the bigger the account, the more discussion-driven it is.
+Two things move in opposite directions as you grow: absolute engagement climbs steeply, but engagement per follower is smaller (about 7x from smallest to largest, the normal size tradeoff). Comments are higher than reactions (the ratio rises from 0.11 to 0.72), so the bigger the account, the better community they have. 
 
-**Percentile tiers (the volatile tail)**
-
-The median hides the tail: most posts land near the floor and a few travel far. Read four tiers, typical (p50), strong (p75), top (p90), breakout (p99). Reactions:
+**Percentile tiers**
 
 | Followers | Typical | Strong | Top | Breakout |
 |---|---|---|---|---|
@@ -36,7 +32,7 @@ The median hides the tail: most posts land near the floor and a few travel far. 
 | 20-50k | 45 | 90 | 147 | 469 |
 | 50k+ | 98 | 178 | 337 | 1670 |
 
-Every band has a breakout roughly 13 to 17x its typical post, so even a small account has a real ceiling. Keep shipping, the tail is where the outsized posts live.
+Every band has a breakout roughly 13 to 17x its typical post, so even a small account has a real ceiling. Keep consistently posting to gain the long-term benefits of content. 
 
 **Format by band** (median reactions)
 
@@ -47,7 +43,7 @@ Every band has a breakout roughly 13 to 17x its typical post, so even a small ac
 | Video | 7 | 22 | 18 | 27 | 51 | 77 |
 | Text-only | 5 | 13 | 17 | 23 | 25 | 79 |
 
-Single image is the workhorse at every size and has the highest breakout ceiling. Carousel over-performs on the typical post (it often beats single image from 5 to 50k) but with a lower ceiling. Text-only is the floor everywhere. Video is situational and does not win at the top, a GTM-specific pattern: broad-market benchmarks rank video higher, but GTM audiences prefer dense visuals and frameworks.
+Single image is the workhorse at every size and has the highest breakout ceiling. Carousel overperforms on the typical post (it often overperforms a single image from 5 to 50k) but with a lower ceiling. Text-only is the floor everywhere. Video is situational and does not win at the top, a GTM-specific pattern: broad-market benchmarks rank video higher, but GTM audiences prefer useful, curated visuals and frameworks with results and actionable insights.
 
 **CTA by band** (median comments)
 
@@ -57,7 +53,7 @@ Single image is the workhorse at every size and has the highest breakout ceiling
 | Question / over-to-you | 1 | 4 | 3 | 9 | 12 | 80 |
 | No CTA | 1 | 3 | 4 | 5 | 12 | 60 |
 
-The comment-gate is a scale play. Below about 10k it barely beats a no-CTA post, then it turns on around 10 to 20k and dominates at 20k+. Below 10k a gate also asks for a resource a smaller creator often has no time to build, so the audience threshold and the resourcing threshold move together. (Repost/save and follow asks were too thin to read reliably.)
+The comment-gate, if the resource is useful and unique, has a significant impact on scaling. Smaller personal brands underperform here. 
 
 **Hook by band** (median reactions / comments)
 
@@ -70,7 +66,9 @@ The comment-gate is a scale play. Below about 10k it barely beats a no-CTA post,
 | Contrarian | small n | 17 / 2 | 22 / 5 | 25 / 6 | small n | small n |
 | Question | 6 / 1 | 16 / 2 | 18 / 3 | 28 / 8 | 34 / 14 | small n |
 
-Personal/story wins at every size and drives comments, the most universal hook. Number/list scales strongly at 20k+. Contrarian is thin and overrated, and a bare question underperforms. Hook choice is more universal than CTA, which is size-dependent. Bigger accounts also post higher numbers partly because they write better and pack in more insight, so read the climb as content quality plus audience, not audience alone.
+- Personal/story wins at every size and drives comments - this is the most universal hook.
+- Number/list scales strongly at 20k+. Contrarian is thin and overrated, and a bare question underperforms.
+- Hook choice is more universal than CTA, which is size-dependent.
 
 **Length by band** (median reactions)
 
@@ -82,27 +80,35 @@ Personal/story wins at every size and drives comments, the most universal hook. 
 | 1.5 to 2k | 13 | 14 | 22 | 26 | 42 | 104 |
 | 2 to 3k | 8 | 14 | 23 | 33 | 73 | 176 |
 
-Length interacts with size. Small accounts (<10k) do best tight, around 500 to 1,500 characters. Large accounts (20k+) do clearly better long, 2,000 to 3,000, where the extra room carries more insight. The overall-median view hides this, so set length by your size, not by a single rule.
+Length interacts with size. Small accounts (<10k) do best tight, around 500 to 1,500 characters. Large accounts (20k+) write longer posts, 2,000 to 3,000, where the extra room carries more insight. The overall-median view hides this, so write with your prospect in your mind: to give them value. 
 
 **Timing:** weekdays are roughly flat (Monday to Thursday median around 24 reactions, Friday 23), weekends run about a quarter lower (Saturday 18, Sunday 17). No single magic day.
 
 ## What to do by size (three tiers)
 
-- **Small (<10k):** keep it tight (500 to 1,500 chars), lead with a single image, use a personal/story or number hook. The comment-gate barely pays yet, so do not lean on it. Build the audience instead, engage on others' posts daily, and help people, because engagement on LinkedIn is reciprocal. Expect a low hit rate, but the breakout tier is still about 13x, so keep shipping.
-- **Mid (10-50k):** the comment-gate turns on (24 to 103 median comments), carousel over-performs, and posts can run longer. Shift the goal from reach to discussion and optimize for comments.
-- **Large (50k+):** long-form (2 to 3k) wins, the comment-gate dominates, and your community is the engine. At this size the individual's system and community drive results far more than the follower number, so copy the system, not the size.
+**Small (<10k):** 
+- Keep it tight (500 to 1,500 chars), lead with a single image, use a personal/story or number hook
+- Create highly useful resources for your prospects
+- Build the audience instead, engage on others' posts daily, and help people, because engagement on LinkedIn is reciprocal. Expect a low hit rate, but the breakout tier is still about 13x, so keep shipping.
 
-The sections below read these numbers as levers.
+**Mid (20-80k):** 
+- double down on your best performing patterns
+- diversify your content formats and provide unique insights
+- Shift the goal from reach to discussion and optimize for comments.
+
+**Large (90k+):** 
+- Long-form (2 to 3k) wins, the comment-gate dominates, and your community and system is the engine
+- diversify into other content channels and repurpose the best-performing ones 
 
 ---
 
 ## A. Engagement and the comment edge
 
-- Most accounts chase reactions, but comments are the stronger intent signal.
+- Don't chase impressions and reactions, but comments are your stronger intent signal.
 - A high comment-to-reaction ratio (as many comments as likes, or more) is rare and hard to build, because there is a natural drop-off from impressions to reach to saves to comments.
-- Posts that spark discussion pull higher-intent readers.
-- Engagement rate per follower falls as an account grows: the biggest accounts win on absolute reach, not on per-follower engagement.
-- A smaller, well-cultivated audience can out-comment a much larger one. Size buys reach, not a community.
+- Posts that spark discussion pull higher-intent readers or a high-intent community, which positively influence your pipeline
+- Engagement rate per follower decreases as an account grows: the biggest accounts win on absolute reach, not on per-follower engagement.
+- A smaller, well-cultivated audience can out-comment a much larger one.
 - Bottom line: optimize for discussion, not vanity reach.
 
 **On the comment-gate specifically:**
@@ -114,15 +120,12 @@ The sections below read these numbers as levers.
 
 ## B. Capitalize on hot topics
 
-Topics rise and cool. Ride the ones climbing now, and bring a real angle to the crowded, flat ones instead of adding noise.
-
-- **What tends to be climbing:** AI tooling and AI agents have risen fast and stayed hot; individual tools spike and then cool; cold email has stayed flat and saturated.
-- **Lead with a rising topic.** On a saturated one, only post if you have a genuinely different take.
-- **How to tell a hot topic from a tired one, before you commit:**
-  - Read recent engagement, not all-time. Search the topic on LinkedIn or in a tool like Scripe and read the last few weeks. A topic that peaked a year ago can look strong on all-time and be dead now.
-  - Cross-check search demand. A quick keyword or SEO check (search volume, is it trending) shows whether interest is rising or fading.
-  - Watch your own recent posts on it. If engagement is sliding across your last few, the topic is tiring for your audience.
-- **On the "engagement is dropping" worry:** median reactions have been roughly flat over two years and comments are slightly up. Without impression data, a drop in reach (if real) does not show up in engagement counts alone.
+- **What tends to be climbing:** AI tech trends with unique insights over cold emailing are saturated
+- **Lead with a rising topic.** Only post if you have a genuinely different take.
+- **How to identify angle fatique (just like a creative):**
+  - Cross-check search demand through SEO/YouTube
+  - Cross-check your own posts' results over time: if engagement is decreasing, the angle isn't appealing enough to your audience anymore. 
+- **On the "engagement is dropping" worry:** median reactions have been roughly flat over two years, and comments are slightly up.
 
 ---
 
@@ -131,8 +134,8 @@ Topics rise and cool. Ride the ones climbing now, and bring a real angle to the 
 ### C1. Strategy (pillars)
 
 - Concentrate on a defined niche instead of posting across every GTM topic.
-- A tight, recognizable focus (for example signal-based GTM and ICP work) compounds: readers learn what you are for, and discussion deepens.
-- Track which topics are hot (section B) and lead with the rising ones.
+- A tight, recognizable focus (for example, signal-based GTM and ICP work) compounds: readers learn what you are for, and cultivate discussions
+- Track which topics are hot (section B) and lead with that and your unique differentiators
 
 ### C2. Writing (hook + length)
 
@@ -140,24 +143,20 @@ Topics rise and cool. Ride the ones climbing now, and bring a real angle to the 
 - Contrarian is the most crowded hook and the weakest on average.
 - Announcement and contrarian hooks mostly pay off once you have an established base, so do not lead with them early.
 - The hook mix across the space is stable (mostly statement hooks, some personal, few contrarian), so it is not a trend to chase.
-- Length is a weak signal. The 100 to 500 word range does well, but format and hook matter far more. Match length to the pattern.
+- Length is a weak signal. The 100 to 500 word range does well, but format and hook matter far more. 
 
 ### C3. Design (media)
 
-The format mix has shifted: carousels are being abandoned, single image now dominates, video is ticking back up, and text-only is declining. General rules:
-
-- **Single image** is the safe default.
-- **Article links** are the floor (LinkedIn suppresses off-platform links).
-- **Multi-image carousels** still over-index even as people drop them, so a well-made carousel is a possible contrarian play.
+- **Single image/animated images** is performing well
+- **Article links** OK or below average
+- **Multi-image carousels**, a well-made carousel is a possible contrarian play.
 - **PDF/document carousels** underperform on the median but can work for established accounts.
-- Infographics and document previews are the strongest visual types, plain photos are the floor.
 
 ### C4. Post-type
 
-- The space is shifting to more originals over time; reposts and quote posts are declining.
-- Strategic reposting of your own best content performs about as well as an original, for far less work, and is widely under-used.
+- The space is shifting to more originals over time; avoid AI slope
+- Strategic reposting of your own best content performs about as well as an original, for far less work, and is widely underused.
 - Quote posts are effectively dead.
-- Regular original posts remain the workhorse.
 
 ### C5. Engagement (metrics)
 
@@ -168,21 +167,15 @@ The format mix has shifted: carousels are being abandoned, single image now domi
 
 ## D. Funnel stage framework
 
-Always know which stage you are writing for. The winning move differs per stage.
-
 | Stage | Purpose | Success metric | Frequency |
 |---|---|---|---|
 | **ToF** | grow audience, broad reach | total reach | 1 to 2 per week max |
 | **MoF** | prove expertise | comment quality, discussion | 3 to 4 per week, the workhorse |
 | **BoF** | drive action (resources, results) | comments with intent | 1 to 2 per week, needs a real asset |
 
-BoF posts engage the hardest (specificity and intent beat broad reach), and BoF is under-produced relative to its return. It just needs a real asset to offer.
-
 ---
 
 ## E. Winning formulas
-
-Six structural patterns. Copy the shape, fill it with your own specifics. Never reuse a competitor's real numbers, names, or brand.
 
 1. **System reveal** (MoF, most consistent): bold result, "here's what we did", numbered steps, CTA.
 2. **Trend explainer** (ToF, highest reach): trending topic, "here's what it means in 60 seconds", diagram, simple breakdown, follow CTA.
@@ -199,12 +192,11 @@ Derived from Brigi's and Jani's own top posts. A reliable recipe to write in:
 
 - Hook: stat or contrarian (lead with a number or a sharp reframe).
 - Body: framework or listicle, structured and scannable, never a wall of text.
-- Visual: single image (dense infographic or framework graphic).
-- Funnel: mostly MoF and BoF, little ToF. Sell expertise, not reach.
+- Visual: single image or animated
+- Funnel: sell expertise, not reach.
 - Lines: short, 7 to 8 words median.
-- Topics: signal-based GTM, ICP, Clay, HubSpot, plus the Claude/agent wave.
+- Topics: signal-based GTM, ICP, Clay, HubSpot, plus Growth Today's agents
 
-Write to start conversations, not just collect likes. This recipe is a current-window winner, not a fixed rule. Format edges decay: once everyone ships static images, the edge moves to animation, then video. Watch for the shift and move before the crowd. Untested levers worth trying: strategic reposting of your best content, and video.
 
 *Full voice and tone rules live in `writing-guide.md` and `winning-words.md`.*
 
@@ -212,9 +204,9 @@ Write to start conversations, not just collect likes. This recipe is a current-w
 
 ## G. Timing
 
-**There's no reliable day-of-week effect.** The old "post on Sunday" rule was an artifact of a few viral weekend posts. Medians are flat Monday to Friday and lower on weekends, and apparent weekend spikes are driven by one or two viral posts.
+**There's no reliable day-of-week effect.** If your account is big enough, you have an opportunity to post on Sunday and create highly resourceful assets, but Sunday is still underperforming compared to weekdays. 
 
-**Timing depends on who you target, not on a universal best hour.** If you talk to a US audience, US weekday mornings work well (about 2 PM CET, 8 AM ET). Always confirm from the account's own LinkedIn analytics, which show this directly.
+**Timing depends on who you target, not on a universal best hour.** If you talk to a US audience, US weekday mornings work well (about 2 PM CET, 8 AM ET). 
 
 ---
 
@@ -222,9 +214,9 @@ Write to start conversations, not just collect likes. This recipe is a current-w
 
 A post is recyclable if it's evergreen, performed on at least one metric, has a reusable structure, and can be refreshed with new data or angles.
 
-Methods: angle swap, example update (fresh data, same structure), format shift (text to carousel or infographic), hook reframe, audience shift (GTM engineer to founder).
+Methods: change the angle, update it with fresh data (same structure), different format (text to carousel or infographic), hook reframe, update the audience (GTM engineer to founder).
 
-Rules: wait 6 to 8 weeks between recycles, change at least two of hook, examples, format, or CTA, never copy-paste, and rewrite in the current voice.
+Rules: wait 6 to 8 weeks between recycles, change at least two of the hooks, examples, format, or CTA, never copy-paste, and rewrite in the current voice.
 
 
 ---
