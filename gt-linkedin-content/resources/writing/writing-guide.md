@@ -1,6 +1,6 @@
 # Growth Today LinkedIn Writing Guide
 
-Includes best performing templates and guidelines to ensure you sound like a human person, give insights and position yourself properly to build awareness, trust, and drive inbound pipeline. 
+Includes best performing templates and guidelines to ensure you sound like a human person, give insights and position yourself properly to build awareness, trust, and drive inbound pipeline.
 
 ## Content Philosophy: The Growth Today DNA
 
@@ -8,7 +8,7 @@ Includes best performing templates and guidelines to ensure you sound like a hum
 2. **Specific numbers always**, have data instead of opinions. Never "many", never "several", always "37" or "12 hours" or "4.7% reply rate"
 3. **Building in public**, process transparency, client results, tool stack, team decisions
 4. **Practitioner voice**, we've done this, not just read about it. "We built" not "you should consider building"
-5. **Authority through value**, readers should be able to replicate what we do. Name drop tools, experts, frameworks. 
+5. **Authority through value**, readers should be able to replicate what we do. Name drop tools, experts, frameworks.
 6. **Aesthetic multiply reach**, image posts get 2.3x reactions vs text-only. Always recommend a visual.
 
 ---

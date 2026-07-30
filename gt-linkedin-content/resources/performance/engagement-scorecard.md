@@ -22,7 +22,7 @@
 | D | niche or technical posts with no reframe |
 
 **Hooks ranked:** number/list > statement/reframe > contrarian > personal/we > question (skip it).
-**Character length:** not really a growth level, short and long both win. The rule is to give value. 
+**Character length:** not really a growth lever, short and long both win. The rule is to give value.
 
 **Top-performing patterns**
 
@@ -109,7 +109,7 @@
 
 ## Engagement multiplier
 
-Top-tier posts always have these five things: 
+Top-tier posts always have these five things:
 - (1) a specific number or before/after in the hook
 - (2) a personal angle or a stage reframe
 - (3) a framework, numbered list, or resource giveaway

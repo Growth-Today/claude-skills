@@ -20,7 +20,7 @@ Proactively connecting with the buying committee at target ICP accounts. This is
 New followers and profile visitors don't always have strong intent, just shopping around. Start a conversation and let the reply tell you who is worth your time.
 
 - **New followers** come from a Sales Navigator link with your personas set as filters, so the persona filters have to be right.
-- **Profile visitors** Send a conversation starter message via Lemlist/Expandi/Aimfox. When someone replies, the sales rep follows up and converts them for meetings. 
+- **Profile visitors** Send a conversation starter message via Lemlist/Expandi/Aimfox. When someone replies, the sales rep follows up and converts them for meetings.
 
 ### Flow 3: Signal-based (you qualify and score)
 
@@ -124,7 +124,7 @@ Would a short call be worth your time?
 
 ## Setup
 
-The step-by-step build (Sales Navigator filters, Boolean strings, Expandi/Aimfox campaigns, QA checklists) sits outside this file, but three gotchas matter most: leave the connection-request note empty, allow duplicates on lead-magnet campaigns so every commenter gets the resource, and remember Expandi/Aimfox can only message people already connected to you (so every lead-magnet post says "make sure we're connected"). 
+The step-by-step build (Sales Navigator filters, Boolean strings, Expandi/Aimfox campaigns, QA checklists) sits outside this file, but three gotchas matter most: leave the connection-request note empty, allow duplicates on lead-magnet campaigns so every commenter gets the resource, and remember Expandi/Aimfox can only message people already connected to you (so every lead-magnet post says "make sure we're connected").
 
 **Rule of thumb: 10 to 25% of content engagers are qualified on average *
 

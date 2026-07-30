@@ -19,7 +19,7 @@ From an analysis of 12,000+ B2B GTM posts on LinkedIn. Reposts and quote posts a
 | 20-50k | 44 | 14 | 0.31 | 1.5 |
 | 50k+ | 98 | 70 | 0.72 | 1.1 |
 
-As you grow: absolute engagement climbs steeply, but engagement per follower is smaller (about 7x from smallest to largest, the normal size tradeoff). Comments are higher than reactions (the ratio rises from 0.11 to 0.72), so the bigger the account, the better community they have. 
+As you grow: absolute engagement climbs steeply, but engagement per follower is smaller (about 7x from smallest to largest, the normal size tradeoff). Comments are higher than reactions (the ratio rises from 0.11 to 0.72), so the bigger the account, the better community they have.
 
 **Percentile tiers**
 
@@ -32,7 +32,7 @@ As you grow: absolute engagement climbs steeply, but engagement per follower is 
 | 20-50k | 45 | 90 | 147 | 469 |
 | 50k+ | 98 | 178 | 337 | 1670 |
 
-Every band has a breakout roughly 13 to 17x its typical post, so keep consistently posting to gain the long-term benefits of content creation.  
+Every band has a breakout roughly 13 to 17x its typical post, so keep consistently posting to gain the long-term benefits of content creation.
 
 **Format by band** (median reactions)
 
@@ -57,7 +57,7 @@ Every band has a breakout roughly 13 to 17x its typical post, so keep consistent
 | Question / over-to-you | 1 | 4 | 3 | 9 | 12 | 80 |
 | No CTA | 1 | 3 | 4 | 5 | 12 | 60 |
 
-The comment-gate, if the resource is useful and unique, has a significant impact on scaling. Smaller personal brands underperform here. 
+The comment-gate, if the resource is useful and unique, has a significant impact on scaling. Smaller personal brands underperform here.
 
 **Hook by band** (median reactions / comments)
 
@@ -84,27 +84,27 @@ The comment-gate, if the resource is useful and unique, has a significant impact
 | 1.5 to 2k | 13 | 14 | 22 | 26 | 42 | 104 |
 | 2 to 3k | 8 | 14 | 23 | 33 | 73 | 176 |
 
-- Small accounts (<10k) write shorter LinkedIn posts around 500 to 1,500 characters. 
+- Small accounts (<10k) write shorter LinkedIn posts around 500 to 1,500 characters.
 - Large accounts (20k+) write longer posts, 2,000 to 3,000, where there's extra room to add their unique insights.
-- The overall-median view hides this, so write with your prospect in your mind: to give them value. 
+- The overall-median view hides this, so write with your prospect in your mind: to give them value.
 
 **Timing:** weekdays are roughly flat (Monday to Thursday median around 24 reactions, Friday 23), weekends run about a quarter lower (Saturday 18, Sunday 17). No single magic day.
 
 ## What to do by size (three tiers)
 
-**Small (<10k):** 
+**Small (<10k):**
 - Keep it tight (500 to 1,500 chars), lead with a single image, use a personal/story or number hook
 - Create highly useful resources for your prospects
 - Build the audience instead, engage on others' posts daily, and help people, because engagement on LinkedIn is reciprocal. Expect a low hit rate, but the breakout tier is still about 13x, so keep shipping.
 
-**Mid (20-80k):** 
+**Mid (10-50k):**
 - double down on your best performing patterns
 - diversify your content formats and provide unique insights
 - Shift the goal from reach to discussion and optimize for comments.
 
-**Large (90k+):** 
+**Large (50k+):**
 - Long-form (2 to 3k) wins, the comment-gate dominates, and your community and system is the engine
-- diversify into other content channels and repurpose the best-performing ones 
+- diversify into other content channels and repurpose the best-performing ones
 
 ---
 
@@ -128,9 +128,9 @@ The comment-gate, if the resource is useful and unique, has a significant impact
 
 - **What tends to be climbing:** AI tech trends with unique insights over cold emailing are saturated
 - **Lead with a rising topic.** Only post if you have a genuinely different take.
-- **How to identify angle fatique (just like a creative):**
+- **How to identify angle fatigue (just like a creative):**
   - Cross-check search demand through SEO/YouTube
-  - Cross-check your own posts' results over time: if engagement is decreasing, the angle isn't appealing enough to your audience anymore. 
+  - Cross-check your own posts' results over time: if engagement is decreasing, the angle isn't appealing enough to your audience anymore.
 - **On the "engagement is dropping" worry:** median reactions have been roughly flat over two years, and comments are slightly up.
 
 ---
@@ -149,7 +149,7 @@ The comment-gate, if the resource is useful and unique, has a significant impact
 - Contrarian is the most crowded hook and the weakest on average.
 - Announcement and contrarian hooks mostly pay off once you have an established base, so do not lead with them early.
 - The hook mix across the space is stable (mostly statement hooks, some personal, few contrarian), so it is not a trend to chase.
-- Length is a weak signal. The 100 to 500 word range does well, but format and hook matter far more. 
+- Length is a weak signal. The 100 to 500 word range does well, but format and hook matter far more.
 
 ### C3. Design (media)
 
@@ -210,9 +210,9 @@ Derived from Brigi's and Jani's own top posts. A reliable recipe to write in:
 
 ## G. Timing
 
-**There's no reliable day-of-week effect.** If your account is big enough, you have an opportunity to post on Sunday and create highly resourceful assets, but Sunday is still underperforming compared to weekdays. 
+**There's no reliable day-of-week effect.** If your account is big enough, you have an opportunity to post on Sunday and create highly resourceful assets, but Sunday is still underperforming compared to weekdays.
 
-**Timing depends on who you target, not on a universal best hour.** If you talk to a US audience, US weekday mornings work well (about 2 PM CET, 8 AM ET). 
+**Timing depends on who you target, not on a universal best hour.** If you talk to a US audience, US weekday mornings work well (about 2 PM CET, 8 AM ET).
 
 ---
 
