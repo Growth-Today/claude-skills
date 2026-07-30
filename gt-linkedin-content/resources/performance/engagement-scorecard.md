@@ -1,18 +1,6 @@
-# LinkedIn Engagement Scorecard
+# Growth Today LinkedIn Engagement Scorecard
 
-Grade your own posts against your own baseline, sort them into tiers, and repeat what the top tiers share. Brigi and Jani are the worked examples below.
-
-## How to score
-
-Judge each post by funnel stage and by saves, comments, and intent, not impressions. Comments matter more than reactions, so track how often a post pulls as many comments as reactions, or more.
-
-## Comment-gate
-
-Usually the biggest comment driver, but its value is the ceiling, not the median. Use it for genuine resource drops, not every post.
-
-## Tiering (S / A / B / C / D)
-
-Rank an author's posts by engagement, split into five tiers, and label what triggers each. Thresholds are relative to that author's own baseline, so a ramping account is graded against itself. The "what triggers it" column is the takeaway.
+5 proven post templates you can use to double down on LinkedIn based on true results from the Growth Today team, consistently achieving 160-900 reactions and a high C/R ratio.
 
 ---
 
@@ -20,8 +8,8 @@ Rank an author's posts by engagement, split into five tiers, and label what trig
 
 **Key metrics**
 - Avg 100 reactions, 108 comments per post.
-- Best: 754 reactions; best for discussion: 979 comments.
-- Avg 1,750 characters; top posts run 700 to 2,800.
+- Best: 754 reactions; 979 comments.
+- Avg 1,750 characters; top posts 700 to 2,800.
 
 **Engagement tier breakdown**
 
@@ -34,45 +22,43 @@ Rank an author's posts by engagement, split into five tiers, and label what trig
 | D | niche or technical posts with no reframe |
 
 **Hooks ranked:** number/list > statement/reframe > contrarian > personal/we > question (skip it).
-**Character length:** a weak lever, short and long both win. Match length to the pattern.
+**Character length:** not really a growth level, short and long both win. The rule is to give value. 
 
 **Top-performing patterns**
 
-Pattern 1: Personal founder journey
+**Pattern 1: Personal founder journey**
 - Hook: "When I started..."
-- Structure: an honest starting point, the turning points, what it taught.
-- Engagement: ~750R / 720C. Her highest ceiling and top discussion driver.
+- Structure: an honest starting point, the turning points, and what it taught.
+- Engagement: ~750R / 720C
 
-Pattern 2: Before/after automation proof
-- Hook: "6 months ago it took 40 hours to clean the CRM. Today it runs in 5 minutes."
+**Pattern 2: Before/after automation proof**
+- Hook: "6 months ago, it took 40 hours to clean the CRM. Today it runs in 5 minutes."
 - Structure: a time-anchored before, the automation, the result.
-- Engagement: ~520R / 980C.
+- Engagement: ~520R / 980C
 
-Pattern 3: Resource giveaway (AI tooling)
+**Pattern 3: Resource giveaway**
 - Hook: "I spent 42 hours collecting every [resource] so you don't have to."
 - Structure: an effort claim, what is inside, a comment-gate.
-- Engagement: ~340R / 970C, a comment magnet.
+- Engagement: ~340R / 970C
 
-Pattern 4: Automation task-list
+**Pattern 4: Automation task-list**
 - Hook: "70 outbound tasks. We automated all of them last quarter."
 - Structure: a bold number, the categorized list, the payoff.
-- Engagement: ~400R / 690C.
+- Engagement: ~400R / 690C
 
-Pattern 5: ABM automation play
+**Pattern 5: ABM automation play**
 - Hook: "Kill 80% of the repetitive work in your ABM motion."
 - Structure: the pain, the system, the result.
-- Engagement: ~230R / 350C.
+- Engagement: ~230R / 350C
 
 ---
 
 ## Jani, 170 posts analyzed (13K followers)
 
-His edge is the sharp reframe, where Brigi's is the personal story and automation proof.
-
 **Key metrics**
 - Avg 78 reactions, 83 comments per post.
-- Best: 220 reactions; best for discussion: 370 comments.
-- Avg 1,700 characters; top posts run 1,300 to 2,900.
+- Best: 220 reactions; 370 comments.
+- Avg 1,700 characters; top posts 1,300 to 2,900.
 
 **Engagement tier breakdown**
 
@@ -84,47 +70,51 @@ His edge is the sharp reframe, where Brigi's is the personal story and automatio
 | C | narrower tactical posts |
 | D | meta LinkedIn advice, SDR-life posts |
 
-**Hooks ranked:** how-to and number/list > personal/we > statement/contrarian. Death-declaration ("R.I.P. the old way") is small-sample but strong.
-**Character length:** a weak lever; his winners skew a little longer (dense frameworks and stacks).
+**Hooks ranked:** how-to and number/list > personal/we > statement/contrarian. Death-declaration ("R.I.P. the old way") is a small sample but strong.
+**Character length:** a weak lever; his winners are usually a little longer (lot of GTM insights with personal takeaways)
 
 **Top-performing patterns**
 
-Pattern 1: Resource giveaway (AI tooling)
+**Pattern 1: Resource giveaway**
 - Hook: "I spent 30 hours collecting every [resource] so you don't have to."
 - Structure: an effort claim, what is inside, a comment-gate.
-- Engagement: ~180R / 370C, his top post for discussion.
+- Engagement: ~180R / 370C
 
-Pattern 2: Stage-based rule reframe
+**Pattern 2: Stage-based rule reframe**
 - Hook: "The 5 rules that get you to $1M will kill you at $10M."
-- Structure: the reframe, why each stage differs, the takeaway.
-- Engagement: ~220R / 200C, his best for reactions.
+- Structure: the reframe, why each stage differs, and the takeaway.
+- Engagement: ~220R / 200
 
-Pattern 3: Full tool-stack reveal
+**Pattern 3: Full tool-stack reveal**
 - Hook: "Every tool we use to run outbound for 110+ B2B GTM teams."
 - Structure: the stack layer by layer, a verdict per layer.
-- Engagement: ~220R / 120C.
+- Engagement: ~220R / 120C
 
-Pattern 4: Cold email frameworks
+**Pattern 4: Cold email frameworks**
 - Hook: "15 cold email frameworks mapped to 3 awareness stages."
 - Structure: the mapping, one framework per stage.
-- Engagement: ~150R / 190C.
+- Engagement: ~150R / 190C
 
-Pattern 5: Rebuild-the-stack list
+**Pattern 5: Tech Trends list**
 - Hook: "If I had to rebuild the stack from scratch, these are the 10 tools."
 - Structure: the shortlist, a one-line reason for each.
-- Engagement: ~185R / 140C.
+- Engagement: ~185R / 140C
 
 ---
 
 ## Untapped opportunities
 
-- **Brigi:** cold email frameworks, more resource giveaways (the gate repeats well), and video plus reposting.
-- **Jani:** the personal "when I started" journey (his least-used format), before/after automation proof, and video plus reposting.
-- **Both:** reposting the best content (about as strong as an original for far less work) and video are open levers neither uses much.
+- **Brigi:** cold email frameworks, more resource giveaways, videos.
+- **Jani:** more personal journey posts, before/after, videos
 
 ## Engagement multiplier
 
-Top-tier posts stack five things: (1) a specific number or before/after in the hook, (2) a personal angle or a stage reframe, (3) a framework, numbered list, or resource giveaway in the body, (4) a niche topic (signal-based GTM, ICP, tech stack, AI agents, AI/tech trends), and (5) a build that invites discussion so it out-comments likes. The hot topic shifts each quarter, so capitalize on whatever is peaking now.
+Top-tier posts always have these five things: 
+- (1) a specific number or before/after in the hook
+- (2) a personal angle or a stage reframe
+- (3) a framework, numbered list, or resource giveaway
+- (4) a niche topic (signal-based GTM, ICP, tech stack, AI agents, AI/tech trends)
+- (5) a build that invites discussion
 
 ## Reference the data
 
