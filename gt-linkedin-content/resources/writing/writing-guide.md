@@ -1,6 +1,6 @@
 # Growth Today LinkedIn Writing Guide
 
-How we sound and how we format, the credibility moves, the pillars, and the pre-publish checklist. The single reference for what to post and how to write it.
+Includes best performing templates and guidelines to ensure you sound like a human person, give insights and position yourself properly to build awareness, trust, and drive inbound pipeline. 
 
 ## Content Philosophy: The Growth Today DNA
 
@@ -15,8 +15,6 @@ How we sound and how we format, the credibility moves, the pillars, and the pre-
 
 ## Content Pillars (Rotate These)
 
-General guidance for the content mix. Match a request to a pillar, then pick a formula and a funnel stage. Fill in company-specific numbers supplied by the user, never invent or hardcode them.
-
 | Pillar | Weight | Funnel | Examples |
 |--------|--------|--------|---------|
 | **AI Agents & Automation** | 25% | ToF + MoF | Marketing automation, sales automation, ops delivery automation, agentic GTM workflows, not just Claude Code, but all AI-powered process automation |
@@ -27,13 +25,9 @@ General guidance for the content mix. Match a request to a pillar, then pick a f
 | **LinkedIn Growth & Content** | 10% | MoF | Campaign breakdowns, content strategy reveals, posting system, also positions LinkedIn content as a service |
 | **Agency Building & Lessons/Frameworks** | 5% | MoF + BoF | Building in public (process, team, client results) + breaking down frameworks from big GTM leaders/research with your own commentary |
 
-Match each pillar to a formula and funnel stage, and keep the topics current by watching what is in demand in your market right now. Lead with fresh angles before they saturate, and never post a trending take you cannot back with a real number or a real build.
-
 ---
 
-## Weekly Plan
-
-Build a week like this using the pillars above:
+## Weekly Plan (Example)
 
 - **Monday:** Pillar 3 or 4 (MoF, an outbound tactic or an ICP system reveal).
 - **Tuesday:** Pillar 1 (MoF, an AI agent or automation build showcase).
@@ -41,8 +35,6 @@ Build a week like this using the pillars above:
 - **Thursday:** Pillar 3 (BoF, a resource drop with a comment-gate, if a real asset is ready).
 - **Friday:** Pillar 2 (ToF, an AI trend explainer with a GTM angle).
 - **Weekend (optional):** only worth it once your audience is large enough for weekend reach (see the timing note in algorithm.md). Save it for the highest-effort evergreen, a system reveal or a journey post.
-
-Always match the topic to the person posting. If you run more than one voice (for example Brigi and Jani), give each the pillars that fit their remit.
 
 ---
 
@@ -84,7 +76,7 @@ Tagging helps only when the tagged account is likely to engage. LinkedIn reads a
 - A person is named in the post (e.g. a co-author).
 - A partner or a friend who will actually like or comment, so the tag draws real early engagement.
 
-**Keep it careful:**
+**Be careful:**
 - Only a handful of tags, never a wall. Over-tagging is penalized.
 - Do not tag a big account that will not engage; a dead tag is a negative signal.
 - Put each tag where the tool or person is first mentioned in the body, not dumped at the end.
@@ -142,16 +134,12 @@ leverage · unlock · game-changer · synergy · align · deep dive · revolutio
 
 ## Numbers & Credibility Hierarchy
 
-Always use a number. If you don't have your own, use the next best:
-
 | Priority | Type | Example |
 |----------|------|---------|
 | 1 | Your own metric | "We've run this for [X]+ B2B clients" |
 | 2 | Client result | "Generated 40 meetings in 6 weeks for a Series B SaaS client" |
 | 3 | Campaign metric | "Reply rate went from 1.2% to 4.7% after switching the sequence" |
 | 4 | Industry benchmark | "The average cold email reply rate in 2026 is 1.8%. We're hitting 4%+" |
-
-**Company metrics and stack:** Always source these live, ask the user for the current numbers, client counts, or tool-stack details. Never hardcode a figure here, since those change and this file would drift.
 
 ---
 
