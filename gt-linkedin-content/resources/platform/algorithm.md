@@ -28,7 +28,7 @@ The feed used to push your posts to your connections and reward raw volume. It n
 
 1. **Content quality filter.** Your post is checked for whether it is too thin, includes spam, and how clean it is, and against engagement bait, pod-like behaviour, and policy breaks.
 2. **Initial distribution.** The post goes to a slice of your followers (10-20%), and LinkedIn checks if they engage with it. This opening window, the first hour to ninety minutes, sets the ceiling for roughly four-fifths of the eventual reach.
-3. **Engagement scoring.** Interactions are weighted and totalled (weights below). The post is pushed to followers-of-followers and into feeds. Dwell time and content velocity increase your content performance. 
+3. **Engagement scoring.** Interactions are weighted and totalled (weights below). The post is pushed to followers-of-followers and into feeds. Dwell time and content velocity increase your content performance.
 4. **Extended distribution.** Strong posts keep collecting impressions for one to three days. Saves and shares increase your results and give you extended reach.
 
 ## What each interaction is worth
@@ -85,7 +85,7 @@ A few specifics:
 
 ## Reach is a volatile tail (and it dilutes with size)
 
-- Across every follower band, the breakout post (top 1%) runs roughly 13 to 17x the typical one, so judge by tiers (typical, strong, top, breakout), not by the average. 
+- Across every follower band, the breakout post (top 1%) runs roughly 13 to 17x the typical one, so judge by tiers (typical, strong, top, breakout), not by the average.
 - Engagement per follower also falls as an account grows, even as absolute numbers climb (about 7x lower per follower from the smallest to the largest accounts), while comments climb faster than reactions, so bigger accounts are more discussion-driven.
 - Full by-follower-band benchmarks (by format, CTA, hook, and length, with percentile tiers) are in `performance-playbook.md`.
 
@@ -117,14 +117,14 @@ Three to four solid posts a week is the target. Quality wins over quantity every
 
 ## Comments as a growth lever
 
-- Leave 10 to 20 real comments a day 
+- Leave 10 to 20 real comments a day
 - Comment immediately within the first 30 minutes
 - Make each comment meaningful: strong opening line, some structure, and a question to keep it going.
 - **15+ words and up, always adding a thought or an experience.**
 
 ## Skip the pods
 
-- LinkedIn has spent the last couple of years getting good at spotting engagement pods and dampening them, because the pattern looks unnatural. 
+- LinkedIn has spent the last couple of years getting good at spotting engagement pods and dampening them, because the pattern looks unnatural.
 - The durable version is a real circle of ten to twenty peers who genuinely engage with each other.
 - Formal pods are a growing risk; organic mutual support is not.
 

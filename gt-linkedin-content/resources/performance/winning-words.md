@@ -10,17 +10,17 @@ The numbers below are the **share of winning posts that use the word**, not raw 
 
 The vocabulary that shows up most in winning posts:
 
-| Word | In winning posts | 
+| Word | In winning posts |
 |---|---|
 | ai | 67% |
 | claude | 65% |
 | code | 52% |
-| gtm | 47% | 
+| gtm | 47% |
 | linkedin | 46% |
 | data | 45% |
 | outbound | 39% |
 | tools | 32% |
-| build / built | 31% | 
+| build / built | 31% |
 
 Verbs that show up in the winning posts: run (37%), built (34%), use (32%), build (31%), building (29%), find (19%), send (18%), scale (16%), start (15%), reply (13%), write (13%).
 
@@ -57,7 +57,7 @@ Be concrete and specific. Don't lean on a vague abstraction or your own brand na
 | comment-gate CTA ("comment X and I'll send it", "dm me") | common closer |
 | builder voice ("we build", "the system") | agency and operator tone |
 
-Copy the pattern and fill it with your own specifics. Never reuse a literal competitor name or link. Don't use these exact words; these are just patterns in the GTM space. The conclusion and pattern are what you want to reuse or decide when not to use. 
+Copy the pattern and fill it with your own specifics. Never reuse a literal competitor name or link. Don't use these exact words; these are just patterns in the GTM space. The conclusion and pattern are what you want to reuse or decide when not to use.
 
 ## 4. Sentences
 

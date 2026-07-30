@@ -2,6 +2,13 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.1.6] - 2026-07-30
+
+### Fixed
+- Proofread pass on the resource files: typo fixes (fatigue, growth lever),
+  aligned the "what to do by size" tier labels with the by-band data (10-50k,
+  50k+), and stripped trailing whitespace.
+
 ## [2.1.5] - 2026-07-30
 
 ### Changed
