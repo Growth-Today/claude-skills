@@ -1,12 +1,8 @@
 # LinkedIn Social Selling Campaigns
 
-This is how you turn the warm audiences your organic content creates into conversations and pipeline. It is the bridge from the content engine to revenue.
-
-It is not cold outreach. Cold outreach to strangers (rented engine, anti-detect browsers, proxies, multi-account, cold connection requests) lives in the `gt-linkedin-outbound` skill, and that skill is the source of truth for it. Every audience here is warm: they viewed your profile, followed you, connected with you, or engaged with your posts. Content did the warming. This file is about catching that intent and starting a conversation.
+3 high-converting campaigns you can copy based on Growth Today results.
 
 ## The four warm audiences
-
-Every one of these is downstream of content. No content, no audience.
 
 | Audience | What it is | How you pull it | Qualification + Scoring |
 |---|---|---|---|
@@ -18,15 +14,13 @@ Every one of these is downstream of content. No content, no audience.
 ## The three flows
 
 ### Flow 1: ICP buying-committee warm-up (optional, colder)
-Proactively connecting with the buying committee at target ICP accounts. This is the one colder motion, and it competes with your other campaigns for LinkedIn's connection limit, so many teams leave it out. If you want to run it, use the `gt-linkedin-outbound` skill.
+Proactively connecting with the buying committee at target ICP accounts. This is the one colder motion, and it can compete with your other campaigns for LinkedIn's connection limit, so check whether or not you want to use it. If you want to run it, use the `gt-linkedin-outbound` skill.
 
 ### Flow 2: Audience-based (conversation starter, no scoring)
-New followers and profile visitors can't be qualified or scored up front, so you don't try. You start a conversation and let the reply tell you who is worth your time.
+New followers and profile visitors don't always have strong intent, just shopping around. Start a conversation and let the reply tell you who is worth your time.
 
 - **New followers** come from a Sales Navigator link with your personas set as filters, so the persona filters have to be right.
-- **Profile visitors** come from an Expandi link. Expandi refreshes the list automatically every 3 days.
-- Both get a conversation starter message via Lemlist. 
-- When someone replies, the owner monitors it. If they qualify, the sales rep follows up and converts them for meetings. 
+- **Profile visitors** Send a conversation starter message via Lemlist/Expandi/Aimfox. When someone replies, the sales rep follows up and converts them for meetings. 
 
 ### Flow 3: Signal-based (you qualify and score)
 
@@ -34,11 +28,9 @@ New followers and profile visitors can't be qualified or scored up front, so you
 - Scrape these via [Clay](https://clay.com/?via=6fa548).
 - **Qualify** everyone who engages: commenters, likers, reposters.
 - **Enrich** their companies and **score** the contacts by buying role: influencer, champion, end user, or blocker.
-- **Differentiate outreach by tier.** Tier 1 to 2 (high score) goes into an omnichannel Lemlist sequence and a rep works them directly. Tier 3 (lower score) goes into a lighter, email-based sequence.
+- **Differentiate outreach by tier.** Tier 1 to 2 (high score) goes into an omnichannel Lemlist sequence, and a rep works them directly. Tier 3 (lower score) goes into a lighter, email-based sequence.
 
 ## LinkedIn interaction limits
-
-These are account-wide caps and they match the `gt-linkedin-outbound` skill. Breaching them is the fastest way to get an account restricted, so this is the most important rule on the page.
 
 | Limit | Number |
 |---|---|
@@ -65,7 +57,7 @@ New or inactive accounts need a 2 to 3 week warm-up (14 to 21 days) before any a
 
 ## The conversation-starter sequence
 
-Leave the connection request note **empty** for these warm audiences. Acceptance is equal or higher without a note, and the note burns your one chance to sound human before they've said yes.
+Leave the connection request note **empty**. Acceptance is equal or higher without a note.
 
 Once connected:
 
@@ -84,7 +76,7 @@ Anything I can help you with? Happy to be useful.
 ```
 Figure this one slipped down the pile, no worries.
 
-If email suits you better, I send practical [TOPIC] breakdowns here: [LINK]
+If email suits you better, I can send practical [TOPIC] breakdowns here: [LINK]
 ```
 
 After message 3, stop. Aggressive follow-up on LinkedIn wrecks your profile.
@@ -132,11 +124,17 @@ Would a short call be worth your time?
 
 ## Setup
 
-The step-by-step build (Sales Navigator filters, Boolean strings, Expandi/Aimfox campaigns, QA checklists) sits outside this file, but three gotchas matter most: leave the connection-request note empty, allow duplicates on lead-magnet campaigns so every commenter gets the resource, and remember Expandi can only message people already connected to you (so every lead-magnet post says "make sure we're connected"). Rule of thumb: 10 to 15% of engagers are qualified, at most.
+The step-by-step build (Sales Navigator filters, Boolean strings, Expandi/Aimfox campaigns, QA checklists) sits outside this file, but three gotchas matter most: leave the connection-request note empty, allow duplicates on lead-magnet campaigns so every commenter gets the resource, and remember Expandi/Aimfox can only message people already connected to you (so every lead-magnet post says "make sure we're connected"). 
+
+**Rule of thumb: 10 to 25% of content engagers are qualified on average *
 
 ## Scoring with Clay (the upgrade)
 
-Instead of messaging every profile viewer or engager the moment they act, capture them and score first. Treat repeat engagement as a rising score: the more often someone engages, the hotter they are. Then message them once they cross a threshold, or straight away if they are already a clear ICP fit. Clay enriches the company and scores the contact by buying role, which feeds the tiering in Flow 3. This spends your daily limits on the people most likely to convert.
+- Instead of messaging every profile viewer or engager the moment they act, capture them and score first.
+- Treat repeat engagement as a rising score: the more often someone engages, the hotter they are.
+- Then message them once they cross a threshold, or straight away if they are already a clear ICP fit.
+- Clay enriches the company and scores the contact by buying role, which feeds the tiering in Flow 3.
+- This spends your daily limits on the people most likely to convert.
 
 ## Tooling
 
