@@ -51,6 +51,57 @@ P.S. [Mandatory, from cta sub-skill]
 
 ---
 
+## Core Frameworks (and when to reach for each)
+
+Five classic story structures underneath the six formulas below. Pick by what the post has to do. Each maps to one of the Growth Today formulas.
+
+### AIDA (Attention, Interest, Desire, Action)
+Reach for it on: teaching posts, launches, case studies. Maps to the System Reveal.
+```
+[Attention]  a bold opener or a hard result
+[Interest]   context that pulls the reader in further
+[Desire]     the system, framework, or change itself
+[Action]     one clear ask, a save, a comment, a follow
+```
+
+### PAS (Problem, Agitate, Solution)
+Reach for it on: pain-point posts, "here is how we fixed it" stories. Maps to the Contrarian Take.
+```
+[Problem]    name a pain the reader is living right now
+[Agitate]    show what leaving it alone costs, in money, time, or lost deals
+[Solution]   the approach or tool that clears it
+```
+
+### BAB (Before, After, Bridge)
+Reach for it on: transformation stories, process reveals. Maps to the Journey Post.
+```
+[Before]     the rough starting point, with specifics
+[After]      where it landed, with concrete numbers
+[Bridge]     the two or three moves that got you across
+```
+
+### Mistake to Lesson
+Reach for it on: honest reflections, founder stories, building in public. Maps to the Journey Post.
+```
+Open on the slip ("This one cost us.")
+What actually happened, with the specifics
+What it cost you, in time, money, or trust
+The lesson you pulled out of it
+The reframe, why you would not undo it
+```
+
+### Contrarian
+Reach for it on: thought leadership, debate posts, standing apart. Maps to the Contrarian Take.
+```
+Open on the claim ("[Common belief] is off.")
+Grant the usual view for a beat
+Lay out your evidence
+Reframe how to think about it
+Add the nuance, you are not calling it always wrong
+```
+
+---
+
 ## 6 Formulas: Choose Based on Funnel Stage
 
 ### Formula 1: System Reveal (MoF: highest consistency)
@@ -142,10 +193,10 @@ Bridges between sections, ranked roughly by how often they tend to appear in str
 
 ---
 
-## Examples
+## Examples (structure first, then the coded example)
 
-**Example 1, Formula 1: System Reveal (Clay + Claude ICP workflow)**
-
+**Formula 1: System Reveal (Clay + Claude ICP workflow).** Structure: bold result, one credibility line, Step 1/2/3 each with sub-points, then "The result:" with a metric.
+```
 We automated ICP research for every new client campaign.
 What used to take 3 days now runs in 4 hours. Here's the exact system:
 
@@ -162,11 +213,10 @@ Step 3: Output feeds directly into Instantly
 ↳ No SDR touches the list until there's a reply
 
 The result: 12 hours saved per campaign. Reply rates up 3.1x.
+```
 
----
-
-**Example 2, Formula 4: Contrarian Take (cold email personalization)**
-
+**Formula 4: Contrarian Take (cold email personalization).** Structure: the claim, acknowledge the common view, "here's what's actually happening" with evidence, "here's what works instead" with alternatives, a proof line, then an "over to you" question.
+```
 Personalization won't save a bad list.
 
 Most outbound teams spend weeks perfecting their copy.
@@ -186,11 +236,10 @@ We've seen this pattern across [X]+ B2B clients.
 The ones with 4%+ reply rates obsess over targeting. Not copy.
 
 Over to you: where does your team spend most of its setup time?
+```
 
----
-
-**Example 3, Formula 5: Journey Post (building in public)**
-
+**Formula 5: Journey Post (building in public).** Structure: "how it started" bad state, "how it's going" good state, numbered lessons each with a sub-point, then a closing conviction line.
+```
 How it started: every client onboarding took us 3 days manually.
 How it's going: 4 hours. Zero human touches.
 
@@ -210,6 +259,7 @@ Here's what we built:
 
 We didn't hire for this. We built it.
 And now every new client gets the same experience, every time.
+```
 
 ---
 

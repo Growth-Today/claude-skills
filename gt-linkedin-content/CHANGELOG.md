@@ -2,6 +2,14 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.0.3] - 2026-07-30
+
+### Added
+- storytelling sub-skill: a "Core Frameworks" section (AIDA, PAS, BAB,
+  Mistake-to-Lesson, Contrarian) with a coded structure and a when-to-reach-for-it
+  line each, mapped to the six formulas. Reformatted the worked examples as
+  structure-first, then a fenced code block.
+
 ## [2.0.2] - 2026-07-30
 
 ### Added
