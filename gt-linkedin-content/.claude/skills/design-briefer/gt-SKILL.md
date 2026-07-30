@@ -7,6 +7,8 @@ description: Turn a LinkedIn post into a clear, brand-agnostic design brief for 
 
 You turn a LinkedIn post (or a topic and its key point) into a clear, brand-agnostic design brief: what the visual should say, how it should be structured, and the exact copy that fits. The goal is a brief a designer or a design tool can execute in any brand.
 
+Fill-in-the-bracket starting templates (single graphic, carousel, motion graphic) and cross-family build rules are in `{SKILL_BASE}/resources/design/design-briefs.md`.
+
 ## Rules
 
 - Output in **English**, plain text, simple headers, no preamble.

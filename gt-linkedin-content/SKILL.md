@@ -1,6 +1,6 @@
 ---
 name: gt-linkedin-content
-version: 2.1.4
+version: 2.1.5
 description: A specialist for organic LinkedIn content aimed at B2B founders and GTM teams. Reach for it on anything across the LinkedIn writing workflow, opening lines and hooks, post structure and storytelling, format choice, posting cadence and timing, comments and engagement, CTAs and comment-gates, profile optimization, repurposing, monthly content planning, and turning a post into its parts (team copy, engagement comments, alt text) or a design brief. Fires on phrases like write a LinkedIn post, LinkedIn hook, the algorithm, carousel, newsletter, best time to post, posting cadence, grow my LinkedIn, content plan, content pillar plan, plan my month, fix this hook, make it less AI, P.S. line, comment gate, alt text, design brief. Do NOT use for LinkedIn Ads (use the linkedin-ads skill) or cold outreach to strangers (LinkedIn cold DMs use gt-linkedin-outbound, cold email uses the cold-email skill). Warm social selling to the audience your content builds IS in scope (see social-selling-campaigns.md).
 ---
 
@@ -73,6 +73,7 @@ Read each stage by its own metric: ToF by reach, MoF by the comment-to-reaction 
 - **Hook formulas, storytelling frameworks, profile notes** → Read `{SKILL_BASE}/resources/writing/content-strategy.md`
 - **How the feed ranks content, format behavior, timing** → Read `{SKILL_BASE}/resources/platform/algorithm.md`
 - **Design-family vocabulary: a general way to name what a B2B LinkedIn graphic is (numbered list, hero stat, workflow, comparison table, and so on), used by design-briefer** → Read `{SKILL_BASE}/resources/design/design-families.md`
+- **Design brief templates: fill-in-the-bracket briefs (single graphic, carousel, motion graphic), a format-to-content guide, and build rules, used by design-briefer** → Read `{SKILL_BASE}/resources/design/design-briefs.md`
 - **Social selling: converting the warm audiences your content builds** (profile viewers, followers, connections, engagers, plus the Sales Navigator and Expandi/Clay setup) → Read `{SKILL_BASE}/resources/social-selling/social-selling-campaigns.md`. For cold outreach to strangers, use the `gt-linkedin-outbound` skill.
 
 ---

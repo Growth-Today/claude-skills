@@ -2,6 +2,14 @@
 
 Notable changes to the `gt-linkedin-content` skill.
 
+## [2.1.5] - 2026-07-30
+
+### Changed
+- Split the design resource so each file has one job: design-families keeps the
+  naming catalog and points to the briefs; the brief templates, format-to-content
+  guide, and build rules move to a new design-briefs resource. design-briefer and
+  the router reference both.
+
 ## [2.1.4] - 2026-07-30
 
 ### Added
