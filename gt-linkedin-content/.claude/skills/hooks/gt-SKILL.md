@@ -139,6 +139,74 @@ These use Growth Today's real context and data. Adapt numbers to match the speci
 
 ---
 
+## Growth Today Hook Types (Battle-Tested on Real Posts)
+
+Six hook types pulled from Growth Today posts that actually landed, each sitting in the 200 to 2,500+ total-engagement range. Every one shows the structure first, then an example. Drop in a real figure the user supplies, never an invented one.
+
+### Type 1: Stack or tool reveal
+**Structure:** [what it runs on / how many tools] + [what it replaces or the result]
+```
+"Every tool we use to run a Clay agency, on one page."
+"6 tools replaced a 30-tool GTM stack. Here's the swap."
+```
+
+### Type 2: Build showcase with numbers
+**Structure:** [what we built] + [a concrete number] + [promise of the breakdown]
+```
+"We built 3 AI agents that run our outbound. Here's the architecture."
+"[X] Claude skills shipped over one weekend. The full list is below."
+```
+
+### Type 3: System to result
+**Structure:** [bold client result] + [the exact system behind it]
+```
+"We took a [client type] from [before] to [after]. Here's the system."
+"This ICP research system runs for [X]+ B2B teams. Here is how."
+```
+
+### Type 4: Contrarian reframe
+**Structure:** [the common belief] + [the sharper truth]
+```
+"More tools is exactly why your pipeline stalls."
+"Cold email is not dead. Your list is."
+```
+
+### Type 5: Comment-gated resource
+**Structure:** [bold claim plus a metric] + [a comment keyword to unlock it]
+```
+"[X] intent signals we use to time outreach. Comment SIGNAL and I will send the list."
+```
+
+### Type 6: How it started, how it's going
+**Structure:** [weak starting number] + [strong current number] + [what changed]
+```
+"How it started: 1.2% reply rate. How it's going: 4.7%. Here's the one change."
+```
+
+---
+
+## First-line openers
+
+Five dependable ways to open the first line, each with a Growth Today-flavored example:
+
+1. **A sharp contrarian line.** Put the unpopular position up front. "Most GTM teams run their channels in silos. That is the leak."
+2. **A number that surprises.** Pair a figure with a twist. "70 outbound tasks. One afternoon. Nobody touched a keyboard."
+3. **An honest admission.** Open on a real cost or failure. "Our first outbound build burned a whole quarter. Here is the fix."
+4. **A question that flips the premise.** "Best GTM channel? Wrong question."
+5. **A pattern break.** One or two words that halt the scroll. "Stop." or "Unpopular take:"
+
+---
+
+## Curiosity-gap moves
+
+Open a loop the reader needs closed, but only when the payoff earns the wait:
+
+- **Hold back the how.** Name the result, keep the method for the body. "We cut research time by 60%. The three steps are below."
+- **Point at what most people miss.** "There is a detail about the 2026 feed that almost nobody acts on."
+- **Leave the count unfinished.** "There are 3 kinds of GTM post. Most teams only run 2."
+
+---
+
 ## Hook Don'ts
 
 - Skip "I'm excited to announce". It reads as a press release and falls flat.
@@ -153,7 +221,7 @@ These use Growth Today's real context and data. Adapt numbers to match the speci
 
 ## Output Format
 
-For each request, give **2 or 3 opener options**:
+For each request, give **6 to 8 opener options**:
 - Name the formula or type behind each.
 - Show its length, keeping it under 210 characters.
 - Say which funnel stage it fits.
