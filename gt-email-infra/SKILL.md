@@ -1,6 +1,6 @@
 ---
 name: gt-email-infra
-version: v5
+version: v5.0.0
 description: "Email Infrastructure & Deliverability by Growth Today (growthtoday.co). Expert cold-email infrastructure and deliverability strategist. Use for infrastructure sizing, domain research and purchasing, DNS and auth (MX/SPF/DKIM/DMARC), masking versus redirect, mailbox provisioning (Google Workspace / Microsoft 365 / custom SMTP), Instantly inbox setup and warmup, going live, campaign building and ESP/SEG routing, inbox-health dashboards, and blacklist/bounce auditing. Works across EmailBison, Instantly, Smartlead, and Lemlist. Triggers on: email infra, buy or setup domains, DNS, MX, SPF, DKIM, DMARC, warmup, mailbox setup, EmailBison, Instantly, Smartlead, deliverability, inbox placement, scaling email, how many domains or mailboxes, ESP matching, SEG, Mimecast, Proofpoint, blacklist, SURBL, Spamhaus, bounce rate, bounce audit, why are my emails bouncing. Do NOT use for cold email copywriting or sequences (use gt-cold-email); the lead list (use gt-list-building); or marketing emails/newsletters."
 ---
 
@@ -14,17 +14,17 @@ Before loading any sub-skill or resource, locate this skill's install directory:
 
 Always resolve `SKILL_BASE` dynamically, never assume a hardcoded install location.
 
-# Email Infrastructure & Deliverability — Orchestrator
+# Email Infrastructure & Deliverability, Orchestrator
 
-Expert cold-email **infrastructure and deliverability** strategist. This skill is the *plumbing that gets cold email delivered* — not the message itself. Route by **who you are** and **what you're doing** to the one sub-skill that matches. Each sub-skill is self-contained and ends in a copy-pasteable checklist.
+Expert cold-email **infrastructure and deliverability** strategist. This skill is the *plumbing that gets cold email delivered*, not the message itself. Route by **who you are** and **what you're doing** to the one sub-skill that matches. Each sub-skill is self-contained and ends in a copy-pasteable checklist.
 
-Platform: this skill supports the sequencers Growth Today uses — **EmailBison, Instantly, Smartlead, and Lemlist**. Use the matching setup sub-skill for whichever you run. Concepts are ESP-agnostic; platform-specific steps are called out inline.
+Platform: this skill supports the sequencers Growth Today uses, **EmailBison, Instantly, Smartlead, and Lemlist**. Use the matching setup sub-skill for whichever you run. Concepts are ESP-agnostic; platform-specific steps are called out inline.
 
 ## When NOT to use this skill
 
-- Writing the email — subject lines, body, sequences, personalization → `gt-cold-email`.
+- Writing the email, subject lines, body, sequences, personalization → `gt-cold-email`.
 - Building or verifying the lead list → `gt-list-building`.
-- Marketing emails / newsletters — this is cold-outreach infrastructure only.
+- Marketing emails / newsletters, this is cold-outreach infrastructure only.
 - CRM setup or data hygiene → `gt-hubspot-admin` / `gt-salesforce-admin`.
 
 ---
@@ -57,20 +57,20 @@ Platform: this skill supports the sequencers Growth Today uses — **EmailBison,
 
 ## Critical Rules (Never Break)
 
-1. **Never** cold-send from the primary/brand domain — only dedicated secondary domains.
-2. **Max 2 mailboxes per domain.**
+1. **Never** cold-send from the primary/brand domain, only dedicated secondary domains.
+2. **Mailboxes per domain is provider-specific: Google 2–3, Microsoft up to ~25 (average).** Google stays lean for deliverability; Microsoft can host many per domain.
 3. **One domain = one workspace.**
-4. **Buy across multiple registrars**, spread over ~24h, **< 5 per registrar per day** — no single point of failure, no bulk-buy fingerprint.
+4. **Buy across multiple registrars**, spread over ~24h, **< 5 per registrar per day**: no single point of failure, no bulk-buy fingerprint.
 5. **Warm up ≥ 14 days / 2 weeks** (hard floor; recommended 3–4 weeks) before sending; **link only from domains > 30 days old**.
 6. **Never disable warmup** once campaigns are running.
-7. **Masking or a real landing page — never a bare 301/302 redirect** to the main site.
+7. **Masking or a real landing page, never a bare 301/302 redirect** to the main site.
 8. **No links and no custom tracking domain** in cold email by default (share via LinkedIn or an unlinked URL).
-9. **ESP matching is not a rule** — decide keep/drop from our own dashboard data.
+9. **ESP matching is not a rule**: decide keep/drop from our own dashboard data.
 10. Start conservative, scale gradually (**≤ 20%/week**).
 
 ## Sizing formula (detail in `{SKILL_BASE}/resources/reference.md` §4)
 
-Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxes → × 1.5 buffer → ÷ 2 = domains. Split **60% Google / 40% Microsoft**.
+Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxes → × 1.5 buffer. Domains: **Google mailboxes ÷ 2–3 + Microsoft mailboxes ÷ ~25** (Microsoft packs far more per domain). Split **60% Google / 40% Microsoft**.
 
 ## What we can and cannot see
 
@@ -79,11 +79,11 @@ Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxe
 
 ## Growth Today's point of view (our answers)
 
-- **SURBL:** de-scoped as a primary threat — Google and Microsoft barely weight it. The real fix is **domain sourcing**, not chasing delistings.
+- **SURBL:** de-scoped as a primary threat, Google and Microsoft barely weight it. The real fix is **domain sourcing**, not chasing delistings.
 - **Microsoft / Outlook:** expect weaker Outlook placement; check sudden drops against **Microsoft BCL recalibration** dates before blaming infra; conservative limits; short copy.
 - **SEG (Mimecast/Proofpoint/Barracuda):** a block is the recipient's policy working as designed. **Isolate SEG leads onto dedicated, never-reused domains**, low concurrency into one org, no links/tracking, go multi-channel, and **recycle burnt SEG domains** onto easy Google/Outlook segments before retiring.
-- **Bounces:** **strip OOO/auto-replies first** — Bison inflates bounce counts by counting them (~54% in one audit). Read the real number, then diagnose.
-- **Failover gap:** EmailBison can't set a cold limit of 0, so it strands leads on unhealthy inboxes — a real bounce driver. Instantly and Smartlead can set 0 and reroute the lead to a healthy inbox on the campaign.
+- **Bounces:** **strip OOO/auto-replies first**: Bison inflates bounce counts by counting them (~54% in one audit). Read the real number, then diagnose.
+- **Failover gap:** EmailBison can't set a cold limit of 0, so it strands leads on unhealthy inboxes, a real bounce driver. Instantly and Smartlead can set 0 and reroute the lead to a healthy inbox on the campaign.
 
 ---
 
@@ -105,18 +105,18 @@ Most real requests chain sub-skills. Common ones:
 
 ```
 Who / what?
-├─ Sales Ops: ideate or buy domains?          → domain-research
-├─ Sales Ops: mailboxes / DNS / auth?         → provisioning
+├─ Sales Ops: ideate or buy domains? → domain-research
+├─ Sales Ops: mailboxes / DNS / auth? → provisioning
 ├─ Set up / connect inboxes (Bison/Instantly/Smartlead/Lemlist)? → the matching *-setup sub-skill
-├─ Warm up / go live?                          → warmup-golive
-├─ GTM: build or route a campaign (ESP/SEG)?   → campaign-building
-├─ GTM: read the dashboard / act on health?    → dashboard-reading
-├─ GTM: verify a workspace is set up right?     → setup-audit
-├─ GTM: something bouncing / blacklisted?      → blacklist-bounce-audit
-├─ Just need a number / limit / threshold?     → resources/reference.md
-└─ Is this metric good or bad vs the market?   → resources/benchmarks.md
+├─ Warm up / go live? → warmup-golive
+├─ GTM: build or route a campaign (ESP/SEG)? → campaign-building
+├─ GTM: read the dashboard / act on health? → dashboard-reading
+├─ GTM: verify a workspace is set up right? → setup-audit
+├─ GTM: something bouncing / blacklisted? → blacklist-bounce-audit
+├─ Just need a number / limit / threshold? → resources/reference.md
+└─ Is this metric good or bad vs the market? → resources/benchmarks.md
 ```
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co), an AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

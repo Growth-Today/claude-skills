@@ -3,9 +3,9 @@ name: email-infra-instantly-setup
 description: "Set up and connect sending inboxes in Instantly (infrastructure side). Use for connecting Google, Microsoft, and custom-SMTP inboxes to Instantly, warmup configuration, advanced deliverability settings, and vendor-managed versus in-house setup. Triggers on Instantly setup, connect inboxes, Instantly warmup, advanced deliverability, ScaledMail, IMAP SMTP host, provider matching. Do NOT use for writing sequences or copy (use gt-cold-email) or buying domains (use the domain-research sub-skill)."
 ---
 
-# Instantly Inbox Setup  ·  [Sales Ops]
+# Instantly Inbox Setup · [Sales Ops]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5 · `{SKILL_BASE}/resources/approved-vendors.md`  ·  **Related:** provisioning, warmup-golive, campaign-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
 
 Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs). This is the **infrastructure / inbox side only** (connecting mailboxes, warmup, deliverability settings). Sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
 
@@ -13,9 +13,9 @@ Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs
 
 ---
 
-## Part 0 — Who does the setup (two paths)
+## Part 0, Who does the setup (two paths)
 
-**Default: a vendor does it.** An approved vendor (e.g. ScaledMail — see `{SKILL_BASE}/resources/approved-vendors.md`) buys the domains, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today only **hands off the domain-research output** (the domain-research sub-skill) plus a brief, then **verifies on delivery**. Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us — worth it.
+**Default: a vendor does it.** An approved vendor (e.g. ScaledMail, see `{SKILL_BASE}/resources/approved-vendors.md`) buys the domains, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today only **hands off the domain-research output** (the domain-research sub-skill) plus a brief, then **verifies on delivery**. Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us, worth it.
 
 **Fallback: in-house.** If we buy and build ourselves, Growth Today purchases the domains (the domain-research sub-skill), provisions mailboxes + DNS (the provisioning sub-skill), and connects them in Instantly manually (Parts 2–4 below). Full in-house step-by-step (Namecheap purchase → Instantly connect → warmup): **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (Growth Today internal, access-gated).
 
@@ -23,22 +23,22 @@ Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs
 
 ---
 
-## Part 1 — Vendor-managed setup (default path)
+## Part 1, Vendor-managed setup (default path)
 
 1. **Create the Instantly workspace first** (the vendor form needs it): Instantly → Settings → Workspace Group → **Add sub-workspace** → confirm via email.
 2. **Buy the vendor plan** choosing **"bring my own domain."**
-3. **Fill the vendor config form:** domain(s); **destination = masking or a real landing page, NOT a bare redirect** (critical rule, the provisioning sub-skill); domain-provider credentials; **sequencer credentials** (dedicated vendor login from the password manager — never a personal login); sender names; **Generate Mailboxes**; tags (e.g. `Vendor - Google - <sender>`, `Vendor - Microsoft - <sender>`, plus any special tag like "Newsletter only").
+3. **Fill the vendor config form:** domain(s); **destination = masking or a real landing page, NOT a bare redirect** (critical rule, the provisioning sub-skill); domain-provider credentials; **sequencer credentials** (dedicated vendor login from the password manager, never a personal login); sender names; **Generate Mailboxes**; tags (e.g. `Vendor - Google - <sender>`, `Vendor - Microsoft - <sender>`, plus any special tag like "Newsletter only").
 4. **Brief the vendor** (client, plan + inbox counts with MS/Google split, sender names, domains + per-domain inbox counts, tags, sequencer = Instantly, workspace, sequencer login to use, any "don't touch" existing inboxes).
 5. **Update nameservers** when the vendor requests it (delegates DNS to them).
-6. **Vendor builds + first QA** — mailboxes + MX/SPF/DKIM/DMARC, usually 2–3 days; they send a completion confirmation.
+6. **Vendor builds + first QA**: mailboxes + MX/SPF/DKIM/DMARC, usually 2–3 days; they send a completion confirmation.
 7. **Growth Today QA on delivery** (see checklist): counts and MS/Google totals match the brief, all inboxes tagged, connected to the correct Instantly workspace, sending limits correct, placement OK.
-8. **Add to warmup** — Google/Microsoft **native accounts only** (no SMTP) can go into Instantly's Premium pool; request via your Instantly contact.
+8. **Add to warmup**: Google/Microsoft **native accounts only** (no SMTP) can go into Instantly's Premium pool; request via your Instantly contact.
 9. **Set warmup + cold logic** (Part 3) and **placement tests** (Part 6).
 10. **After 14 days**, ramp to fully-warmed volumes and **notify the GTM Engineer + AM** that inboxes are ready.
 
 ---
 
-## Part 2 — Connecting inboxes in Instantly (in-house path)
+## Part 2, Connecting inboxes in Instantly (in-house path)
 
 Entry: **Email Accounts → Add New → Connect existing accounts →** pick provider.
 
@@ -52,7 +52,7 @@ Entry: **Email Accounts → Add New → Connect existing accounts →** pick pro
 - **First** enable **Authenticated SMTP + IMAP** in the Microsoft Admin Center, then **wait ~1 hour**.
 - On connect, tick **"Consent on behalf of your organization"** (shown for org accounts).
 
-**Custom SMTP** (needs **both** IMAP and SMTP — SMTP-only is not allowed). Common hosts:
+**Custom SMTP** (needs **both** IMAP and SMTP, SMTP-only is not allowed). Common hosts:
 
 | Provider | IMAP (port) | SMTP (port) |
 |---|---|---|
@@ -65,7 +65,7 @@ Entry: **Email Accounts → Add New → Connect existing accounts →** pick pro
 
 ---
 
-## Part 3 — Warmup configuration
+## Part 3, Warmup configuration
 
 Enable via the **flame icon** (or bulk via the ⋯ menu); warmup starts at the next 00:00 UTC.
 
@@ -82,26 +82,26 @@ Enable via the **flame icon** (or bulk via the ⋯ menu); warmup starts at the n
 - **Duration:** Instantly minimum is 2 weeks; **Growth Today recommends 3–4 weeks** (`reference.md` §5). Launch only when **Health Score > 90%**.
 - **Warmup filter** (keep warmup mail out of the inbox): copy the account's warmup tag → Gmail filter (tag in Subject + Has-the-words → Skip Inbox, label "Warmup") / Outlook rule (subject-or-body contains tag → mark read, move to "Instantly Warmup").
 
-Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1 — this table must stay consistent with it.
+Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1, this table must stay consistent with it.
 
 ---
 
-## Part 4 — Advanced deliverability settings
+## Part 4, Advanced deliverability settings
 
 Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Advanced Deliverability**):
 
-- ✅ **Send first email as text-only** — also auto-disables open tracking, strips images, converts links to plain URLs. Growth Today default.
+- ✅ **Send first email as text-only**: also auto-disables open tracking, strips images, converts links to plain URLs. Growth Today default.
 - ✅ **Open tracking OFF, link tracking OFF.**
-- **ESP / Provider Matching + Routing:** available, but **do not hard-code it** — route from the Lead-ESP × sending-vendor matrix (the campaign-building sub-skill). Instantly's Routing rules can enforce a decision once the matrix says so.
+- **ESP / Provider Matching + Routing:** available, but **do not hard-code it**: route from the Lead-ESP × sending-vendor matrix (the campaign-building sub-skill). Instantly's Routing rules can enforce a decision once the matrix says so.
 - **Company send limit:** default **2 leads/day per domain**; set **extra-low into SEG orgs** (the campaign-building sub-skill, Part 3).
-- ✅ **Insert unsubscribe header** (compliance — see the warmup-golive sub-skill, Part 5).
-- **Stop on reply** (and Stop Company on Reply) — on.
-- **Slow ramp:** +2 campaign emails/day; **new accounts only** — never re-enable on an established sender (it resets it).
+- ✅ **Insert unsubscribe header** (compliance, see the warmup-golive sub-skill, Part 5).
+- **Stop on reply** (and Stop Company on Reply), on.
+- **Slow ramp:** +2 campaign emails/day; **new accounts only**: never re-enable on an established sender (it resets it).
 - **Minimum time gap** between emails (default 9 min + 5 min random).
 
 ---
 
-## Part 5 — Custom tracking domain (only if a client insists)
+## Part 5, Custom tracking domain (only if a client insists)
 
 **Growth Today default = no custom tracking domain and no links in cold email** (the provisioning sub-skill). Only when a client strongly insists, set up a **dedicated, never-shared** one:
 - CNAME → Host **`inst`**, Target **`prox.itrackly.com`**, TTL auto/3600.
@@ -109,9 +109,9 @@ Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Ad
 
 ---
 
-## Part 6 — Placement tests (Instantly native)
+## Part 6, Placement tests (Instantly native)
 
-Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists — with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements Growth Today's own dashboard placement tests (the dashboard-reading sub-skill). Growth Today convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
+Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists, with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements Growth Today's own dashboard placement tests (the dashboard-reading sub-skill). Growth Today convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
 
 ---
 
@@ -126,7 +126,7 @@ CONNECT
 [ ] Google: OAuth / app-password (IMAP+SMTP) / bulk CSV as appropriate
 [ ] Microsoft: SMTP+IMAP enabled in Admin Center, waited ~1h, connected one-by-one, org consent ticked
 [ ] Custom SMTP: both IMAP + SMTP set with correct host/port
-[ ] Destination = masking / real landing page — NOT a bare redirect
+[ ] Destination = masking / real landing page, NOT a bare redirect
 [ ] Inboxes tagged; correct workspace; counts + MS/Google split match the brief
 
 WARMUP
@@ -142,7 +142,7 @@ DELIVERABILITY
 [ ] Company send limit set (default 2/domain/day; lower for SEG)
 [ ] Unsubscribe header on; stop-on-reply on
 [ ] Slow ramp on for NEW accounts only
-[ ] ESP routing left to the dashboard matrix (the campaign-building sub-skill) — not hard-coded
+[ ] ESP routing left to the dashboard matrix (the campaign-building sub-skill), not hard-coded
 [ ] Custom tracking domain: none (unless client insists → dedicated)
 
 VERIFY & HANDOFF
@@ -154,8 +154,8 @@ VERIFY & HANDOFF
 
 ---
 
-> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this sub-skill is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page — it is referenced by this skill.** This sub-skill is the primary source going forward; the Notion page is retained for the in-house detail (Namecheap purchase screens, nameserver delegation, Row Zero) not duplicated here.
+> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this sub-skill is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page, it is referenced by this skill.** This sub-skill is the primary source going forward; the Notion page is retained for the in-house detail (Namecheap purchase screens, nameserver delegation, Row Zero) not duplicated here.
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

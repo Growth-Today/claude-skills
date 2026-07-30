@@ -3,31 +3,31 @@ name: email-infra-provisioning
 description: "Provision cold-email mailboxes and configure DNS and authentication. Use for Google Workspace, Microsoft 365, and custom-SMTP mailbox setup, MX/SPF/DKIM/DMARC records, masking versus redirect, custom tracking domains, and DNS-drift monitoring. Triggers on mailbox setup, DNS setup, MX, SPF, DKIM, DMARC, provisioning, masking, redirect, tracking domain, Google Workspace, Microsoft 365. Do NOT use for buying domains (use the domain-research sub-skill), Instantly inbox connection (use the instantly-setup sub-skill), or warmup (use the warmup-golive sub-skill)."
 ---
 
-# Provisioning, DNS & Authentication  ·  [Sales Ops]
+# Provisioning, DNS & Authentication · [Sales Ops]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §4, §6 · `{SKILL_BASE}/resources/approved-vendors.md`  ·  **Related:** domain-research, warmup-golive, instantly-setup.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §4, §6 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** domain-research, warmup-golive, instantly-setup.
 
-Turn purchased domains (the domain-research sub-skill) into sending-ready mailboxes with correct authentication. This is where two of our biggest historical mistakes live — **bare redirects** and **default tracking domains** — so read the "never" boxes. Numbers in `{SKILL_BASE}/resources/reference.md` §6; vendors in `{SKILL_BASE}/resources/approved-vendors.md`.
+Turn purchased domains (the domain-research sub-skill) into sending-ready mailboxes with correct authentication. This is where two of our biggest historical mistakes live, **bare redirects** and **default tracking domains**, so read the "never" boxes. Numbers in `{SKILL_BASE}/resources/reference.md` §6; vendors in `{SKILL_BASE}/resources/approved-vendors.md`.
 
 ---
 
-## Part 1 — Mailboxes
+## Part 1, Mailboxes
 
-- **Max 2 mailboxes per domain** (hard rule — verify it never drifts above 2 during scale-ups).
+- **Mailboxes per domain (average): Google 2–3, Microsoft up to ~25.** Google stays lean for deliverability; Microsoft can host many per domain. Verify the per-provider density on scale-ups.
 - **One domain = one workspace.**
-- **Real first-name addresses:** `alex@`, `sarah@`, `james@` — keep names consistent across domains. **Never** `sales@`, `info@`, `noreply@`, `hello@`, `outreach@`.
-- **Profile picture** (professional headshot) on every mailbox — improves deliverability and reply rate; don't skip.
+- **Real first-name addresses:** `alex@`, `sarah@`, `james@`, keep names consistent across domains. **Never** `sales@`, `info@`, `noreply@`, `hello@`, `outreach@`.
+- **Profile picture** (professional headshot) on every mailbox, improves deliverability and reply rate; don't skip.
 - **Provider split 60% Google / 40% Microsoft** (`reference.md` §4).
 
 **Google Workspace (Business Starter):** add the secondary domain → verify via TXT → create the 2 users → configure DNS (Part 3).
 
 **Microsoft 365 (Business Basic):** add domain → verify via TXT → create users → **enable Authenticated SMTP + IMAP** (Admin Center → Users → Mail → Manage email apps) → **wait ~1 hour** before connecting to the sequencer. Microsoft connects **one-by-one** (no bulk import).
 
-**Custom SMTP vendors** (Winnr, MissionInbox, ScaledMail, InboxedUp, Lunatro/Azure, Maildoso — see approved-vendors): the vendor provisions mailboxes + SMTP/IMAP; you still verify DNS/auth (Part 3) and the destination rule (Part 2).
+**Custom SMTP vendors** (Winnr, MissionInbox, ScaledMail, InboxedUp, Lunatro/Azure, Maildoso, see approved-vendors): the vendor provisions mailboxes + SMTP/IMAP; you still verify DNS/auth (Part 3) and the destination rule (Part 2).
 
 ---
 
-## Part 2 — Destination: masking or a real landing page, NEVER a bare redirect
+## Part 2, Destination: masking or a real landing page, NEVER a bare redirect
 
 > **🔴 NEVER point a secondary domain at the main site with a bare 301/302 redirect.** Blocklists (SURBL) follow the redirect to the final site; many secondaries → one site is the exact spam fingerprint, and it gets domains listed *before any send*. It is the single most common pre-send blocklisting cause.
 
@@ -35,13 +35,13 @@ Turn purchased domains (the domain-research sub-skill) into sending-ready mailbo
 - **Masking** through an approved service (e.g. EmailGuard), **or**
 - a **real, distinct landing page** with clean content.
 
-**Vet the masking service** so it does not mark client content as duplicate to Google (an SEO hit for the client). No shared redirect IPs from the registrar/DNS provider — dedicated masking proxy or dedicated landing pages only.
+**Vet the masking service** so it does not mark client content as duplicate to Google (an SEO hit for the client). No shared redirect IPs from the registrar/DNS provider, dedicated masking proxy or dedicated landing pages only.
 
 > **🔴 No custom tracking domain and no links in cold email by default.** Tracking domains and click-wrapped links are strong spam/SEG triggers. Share via LinkedIn or an unlinked URL. Only a client who *strongly insists* gets a dedicated, never-shared tracking domain, phased in.
 
 ---
 
-## Part 3 — DNS & authentication (all 4 records)
+## Part 3, DNS & authentication (all 4 records)
 
 Every domain needs **MX, SPF, DKIM, DMARC**. Missing one can bin your mail. Details in `reference.md` §6.
 
@@ -53,9 +53,9 @@ Every domain needs **MX, SPF, DKIM, DMARC**. Missing one can bin your mail. Deta
 **DKIM:**
 - Google: generate in Admin → Apps → Gmail → Authenticate Email, add the TXT, then Start Authentication.
 - Microsoft: two CNAMEs (`selector1._domainkey`, `selector2._domainkey`).
-- Copy the exact key — no stray spaces or truncation.
+- Copy the exact key, no stray spaces or truncation.
 
-**DMARC** (add manually — never auto-created). Start in monitor mode and tighten later:
+**DMARC** (add manually, never auto-created). Start in monitor mode and tighten later:
 ```
 Host: _dmarc
 Value: v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com
@@ -65,13 +65,13 @@ Value: v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com
 
 ---
 
-## Part 4 — Guard against silent DNS drift
+## Part 4, Guard against silent DNS drift
 
-Correct-at-setup is not enough — the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Re-check MX/SPF/DKIM/DMARC on a schedule (the DNS/auth-health panel in the dashboard-reading sub-skill surfaces broken/never-checked records and should alert on a break). Treat a broken auth record as **P0**.
+Correct-at-setup is not enough, the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Re-check MX/SPF/DKIM/DMARC on a schedule (the DNS/auth-health panel in the dashboard-reading sub-skill surfaces broken/never-checked records and should alert on a break). Treat a broken auth record as **P0**.
 
 ---
 
-## Part 5 — Connect to the sequencer
+## Part 5, Connect to the sequencer
 
 Use the matching setup sub-skill for the full connect + warmup flow per platform: emailbison-setup, instantly-setup, smartlead-setup, or lemlist-setup (see `{SKILL_BASE}/resources/approved-vendors.md`).
 
@@ -100,14 +100,14 @@ Use the matching setup sub-skill for the full connect + warmup flow per platform
 
 ```
 MAILBOXES
-[ ] ≤ 2 mailboxes on the domain
+[ ] Mailboxes/domain within provider density (Google ~2–3, Microsoft ~25)
 [ ] Real first-name addresses (no sales@/info@/noreply@)
 [ ] Consistent names across domains
 [ ] Professional profile picture on each mailbox
 [ ] (Microsoft) Authenticated SMTP + IMAP enabled, waited ~1 hour
 
 DESTINATION
-[ ] Masking or a real landing page set up — NOT a bare 301/302 redirect
+[ ] Masking or a real landing page set up, NOT a bare 301/302 redirect
 [ ] Masking service vetted (no duplicate-content SEO hit; no shared redirect IPs)
 [ ] No custom tracking domain, no links in cold email (unless client insists → dedicated)
 
@@ -126,4 +126,4 @@ ONGOING
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

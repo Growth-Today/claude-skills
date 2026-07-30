@@ -1,6 +1,6 @@
 # Approved Vendors
 
-The tools and services Growth Today uses (or benchmarks) for cold-email infrastructure. Sub-skills reference "an approved vendor" and point here rather than hard-coding a single name — swap in whichever approved option fits the engagement.
+The tools and services Growth Today uses (or benchmarks) for cold-email infrastructure. Sub-skills reference "an approved vendor" and point here rather than hard-coding a single name, swap in whichever approved option fits the engagement.
 
 > These are the vendors we consider fit for purpose. Pick per engagement; the *process* (multi-registrar spread, masking-not-redirect, warmup discipline) matters more than the specific brand.
 
@@ -18,7 +18,7 @@ The buying vendor should always: spread across multiple registrars, keep **< 5 d
 
 ## Custom SMTP / mailbox vendors (approved)
 
-Approved providers for custom-SMTP sending infrastructure (as an alternative or complement to native Google Workspace / Microsoft 365 mailboxes). Pick per engagement; whichever is used, the same rules apply — masking not redirect, warmup discipline, and correct MX/SPF/DKIM/DMARC.
+Approved providers for custom-SMTP sending infrastructure (as an alternative or complement to native Google Workspace / Microsoft 365 mailboxes). Pick per engagement; whichever is used, the same rules apply, masking not redirect, warmup discipline, and correct MX/SPF/DKIM/DMARC.
 
 - **Winnr**
 - **MissionInbox**
@@ -33,7 +33,7 @@ Only these are approved. A vendor not on this list should not be used without GT
 
 ## Sequencers / sending platforms
 
-Growth Today runs cold outreach across these approved sequencers — pick per engagement and use the matching setup sub-skill:
+Growth Today runs cold outreach across these approved sequencers, pick per engagement and use the matching setup sub-skill:
 
 | Vendor | Setup sub-skill | Notes |
 |---|---|---|
@@ -57,4 +57,4 @@ Growth Today runs cold outreach across these approved sequencers — pick per en
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
