@@ -1,8 +1,10 @@
 # GT LinkedIn Content
 
-A LinkedIn organic content skill for Claude, built by [Growth Today](https://www.growthtoday.co). It turns Claude into a B2B LinkedIn content strategist for founders and GTM leaders: writing scroll-stopping hooks, structuring posts that get saved and shared, choosing the right visual format, timing posts for maximum reach, optimizing your profile as a conversion funnel, and repurposing one idea across many posts.
+A LinkedIn organic content strategist for Claude, built by [Growth Today](https://www.growthtoday.co), an AI-native GTM engineering firm. It turns Claude into a specialist for B2B LinkedIn content: hooks, post structure, formats, CTAs, engagement, posting cadence, profile optimization, repurposing, post production, and design briefs, grounded in what actually works for GTM audiences.
 
 ## Install
+
+Add it to your project with the [skills CLI](https://www.growthtoday.co/claude-skills):
 
 ```bash
 npx skills add Growth-Today/claude-skills/gt-linkedin-content
@@ -10,49 +12,55 @@ npx skills add Growth-Today/claude-skills/gt-linkedin-content
 
 Or copy the `gt-linkedin-content/` folder into your project's `.claude/skills/` (or `~/.claude/skills/` for global use).
 
-Full walkthrough: **https://www.growthtoday.co/claude-skills/gt-linkedin-content**
+New to Claude Skills? Full walkthrough: **https://www.growthtoday.co/claude-skills**
 
-## What it covers
+## What it does
 
-Ask it anything about LinkedIn organic content and it routes to the right sub-skill:
+Trigger it with any LinkedIn organic-content intent: "write a LinkedIn post", "fix this hook", "what format should this be", "best time to post", "write a P.S. / comment-gate", "optimize my LinkedIn profile", "repurpose this post", or "turn this into a design brief". The master skill classifies the funnel stage (top, middle, bottom), routes to the right sub-skill, and returns a structured post with a hook, body, CTA, format, and posting guidance.
 
-- **Hooks** — the first 210 characters that decide whether a post gets read; number-led, contrarian, and story hooks with formulas.
-- **Storytelling** — post structures and narrative frameworks that hold attention and build trust.
-- **Formats** — choosing between single image, infographic, cheat sheet, proof visual, or video; a single-image-first policy and why.
-- **CTAs & P.S.** — comment-gates, follow asks, and P.S. sections that convert, matched to funnel stage.
-- **Engagement** — the Distribution Window (first 60–90 minutes), comment strategy, and how to build reach.
-- **Scheduling** — posting cadence, best-time benchmarks, and the Distribution Window routine.
-- **Profile** — optimizing your headline, about, banner, and featured section as a conversion funnel.
-- **Repurposing** — getting many posts out of one newsletter, video, or idea.
+It is a multi-sub-skill skill, so Claude loads only the relevant part:
 
-Plus reference resources: LinkedIn algorithm mechanics, a writing/voice guide, post-structure templates, topic ideas by content pillar, a wording guide, a performance playbook, a designer brief guide, and example post sets to study.
+- **hooks** first lines and openers that earn the click
+- **storytelling** post body structure and narrative frameworks
+- **formats** single image, carousel, video, poll, and format specs
+- **scheduling** posting times, cadence, and the distribution window
+- **engagement** comments, engagement weights, and community building
+- **cta** end-of-post CTAs, P.S. types, and comment-gates
+- **profile** headline, banner, about, and featured optimization
+- **repurposing** turning one post into many formats
+- **post-production** producing and fixing the parts of a locked post (hook, body, CTA, comments, alt text)
+- **design-briefer** turning a post into a design brief for your design tool
+
+Not for LinkedIn Ads (use `gt-linkedin-ads`) or cold outreach (use `gt-linkedin-outbound`).
 
 ## Structure
 
 ```
 gt-linkedin-content/
-├── SKILL.md                       ← orchestrator (routing + rules)
-├── README.md
-├── LICENSE
-├── .claude/skills/
-│   ├── hooks/        storytelling/   formats/      cta/
-│   └── engagement/   scheduling/     profile/      repurposing/
-└── resources/
-    ├── references/   ← algorithm mechanics, content strategy, LinkedIn limits
-    ├── performance/  ← performance playbook + wording guide
-    ├── templates/    ← ready-to-use post structure templates
-    ├── topics/       ← topic ideas by content pillar
-    ├── voice/        ← writing voice and tone guide
-    ├── design/       ← designer brief guide
-    └── posts/        ← example post sets to study (hooks, structure, format)
+├── SKILL.md                    ← orchestrator (auto-loaded by Claude)
+├── README.md                   ← this file
+├── LICENSE                     ← MIT
+├── .claude/skills/             ← sub-skills, loaded on demand
+│   ├── hooks/ storytelling/ formats/ scheduling/
+│   ├── engagement/ cta/ profile/ repurposing/
+│   └── post-production/ design-briefer/
+└── resources/                  ← loaded on-demand
+    ├── writing/                ← voice, content strategy, post templates
+    ├── performance/            ← what wins, scorecard, winning words
+    ├── platform/               ← algorithm mechanics
+    ├── design/                 ← general design-family vocabulary
+    ├── social-selling/         ← converting the audience your content builds
+    └── posts/                  ← annotated example posts
 ```
 
-Note: the numbers in the reference data are benchmarks drawn from real B2B GTM content. LinkedIn's algorithm shifts every few months, so treat them as a starting point and always cross-check against your own analytics. Replace any `[X]` placeholder with your own real figures.
+## Work with us
+
+Growth Today runs LinkedIn content as a service for B2B GTM teams. If you want the engine behind this skill run for you, more open skills and guides are at **https://www.growthtoday.co/claude-skills**.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Free to use, copy, and adapt.
+MIT, see [LICENSE](LICENSE). Free to use, copy, and adapt.
 
 ---
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co), an AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills

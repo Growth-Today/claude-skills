@@ -32,6 +32,7 @@ New to Claude Skills? Full walkthrough: **https://www.growthtoday.co/claude-skil
 | **gt-google-ads** | B2B Google Ads strategy — search, PMax, negatives, Smart Bidding, wasted-spend audits | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-meta-ads** | B2B Meta (Facebook/Instagram) Ads — Advantage+, CAPI, creative, retargeting | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-ads** | B2B LinkedIn Ads — targeting, bidding, Thought Leader Ads, funnel architecture | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-linkedin-content** | B2B LinkedIn organic content — hooks, storytelling, formats, CTAs, engagement, scheduling, profile, repurposing, post-production, and design briefs | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-outbound** | LinkedIn outbound — DMs, connection requests, sequences, rented-engine setup | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-gtm-strategy-advisor** | GTM strategy guidance for B2B go-to-market motions | [→](https://www.growthtoday.co/claude-skills) |
 
