@@ -1,0 +1,3 @@
+# Code owners for the claude-skills repo
+# Any PR that touches gt-email-infra requires @brigi-ruha-gt to review + approve before it can be merged.
+/gt-email-infra/ @brigi-ruha-gt
