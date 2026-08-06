@@ -12,6 +12,51 @@ How to build a campaign that routes to the right inboxes and gets optimized from
 **The one mindset shift:** you are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and you find it on the dashboard, not by guessing.
 
 ---
+### Here's How To Run MX Analysis in Clay to Determine ESP Mix on Lead Lists
+
+First Rule: To ensure accuracy, run this MX analysis on a target account list or existing customer list. To know exactly what type of inboxes (Google vs. Microsoft vs. others) to optimize for.
+### Tools Needed:
+- Clay workspace
+- Company domains normalized (e.g. `growthtoday.co`)
+- Target account list or existing customer list
+
+Step 1: Add Enrichment Column in Clay
+- Column name: **`HTTP API`**
+
+Step 2: Set Up the HTTP API**
+
+- Paste this endpoint:
+    
+    ```
+    https://dns.google/resolve?name=domain&type=mx
+    ```
+    
+- Replace `domain` with the normalized company domain field in Clay.
+    - Example: https://dns.google/resolve?name=`{{company_domain}}`&type=mx
+
+Step 3: Rename This Column
+
+- Rename the `HTTP API` column to: **`get_mx`**
+
+Step 4: Add a Formula Column (copy-paste)
+- Column name: MX Provider
+
+```
+  javascript
+CopyEdit
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("google")) ? "google" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("outlook.com") || data?.data?.includes("office365")) ? "microsoft" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("pphosted.com") || data?.data?.includes("ppe-hosted") || data?.data?.includes("ppsmtp") || data?.data?.includes("sophos.com")) ? "proofpoint" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("mimecast")) ? "mimecast" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("barracuda")) ? "barracuda" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("fortimail") || data?.data?.includes("fortimailcloud.com")) ? "fortinet" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("emailsrvr.com")) ? "rackspace" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("trendmicro.com")) ? "trendmicro" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("securemx")) ? "securemx" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("mxthunder.net")) ? "mxthunder" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("mtaroutes.com")) ? "mtaroutes" :
+{{get_mx}}?.Answer?.length ? "other" : "no-email"
+```  
 
 ## Part 1, ESP matching is dead as a rule
 
@@ -74,7 +119,7 @@ Build so the campaign is **visible to and managed by the inbox-management system
  - **Burnt** → excluded.
 5. **Naming convention:** `Segment – ESP`, e.g. `Webvisits – Google`, `Webvisits – Microsoft`; low volume (< 500 leads) → `Webvisits – All` (Both); by rep → `Webvisits – Andrew`.
 
-> **Failover caveat (EmailBison):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox, Bison won't move the lead to a healthy inbox on the campaign. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't. Watch for leads stranded on throttled inboxes (the dashboard-reading sub-skill).
+> **Failover caveat (EmailBison only):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox, Bison won't move the lead to a healthy inbox on the campaign. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't. Watch for leads stranded on throttled inboxes (the dashboard-reading sub-skill).
 
 ---
 
