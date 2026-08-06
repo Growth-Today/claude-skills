@@ -1,15 +1,15 @@
 ---
-name: email-infra-bounce-audit
-description: "Audit a bounce or blacklist problem to root cause and produce a full bounce report. Use to pull replies via the EmailBison MCP/API, work around the broken type=bounced filter, strip auto-replies, classify bounces (Hard/Soft/Block) by SMTP/DSN code, de-scope SURBL, run the neutral-copy test, and trace the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, SURBL, Spamhaus, URIBL, hard bounce, soft bounce, block bounce, SMTP codes, DSN codes, bounce report, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-building)."
+name: emailbison-email-infra-bounce-audit
+description: "Audit a bounce or blacklist problem to its root cause and produce a full bounce report. Use to pull replies via the EmailBison MCP/API, work around the broken type=bounced filter, strip auto-replies, classify bounces (Hard/Soft/Block) by SMTP/DSN code, de-scope SURBL, run the neutral-copy test, and trace the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, SURBL, Spamhaus, URIBL, hard bounce, soft bounce, block bounce, SMTP codes, DSN codes, bounce report, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-building)."
 ---
 
 # Blacklist & Bounce Audit · [GTM Engineer]
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §7 · **Tools:** EmailBison MCP (`accounts_list`, `campaigns_list`, `replies_list`), optional Notion MCP · **Related:** dashboard-reading, domain-research · gt-list-building.
 
-Find where a bounce or blacklist problem *actually* comes from, then produce a report the team can act on. The output is a clear root cause, **infrastructure, list/data, or copy**, plus a full bounce breakdown and the right owner. Runs on any EmailBison workspace (specify the MCP server / API host). Codes and thresholds in `{SKILL_BASE}/resources/reference.md` §7.
+Find the source of a bounce or blacklist problem, then produce a report the team can act on. The output is a clear root cause, **infrastructure, list/data, or copy**, plus a full bounce breakdown and the right owner. Runs on any EmailBison workspace (specify the MCP server / API host). Codes and thresholds in `{SKILL_BASE}/resources/reference.md` §7.
 
-**When to run:** monthly/quarterly check-in · bounce rate crosses 3% · before scaling send volume · a client asks "why are my emails bouncing?" · after onboarding new domains/inboxes.
+**When to run:** monthly/quarterly check-in, when bounce rate crosses 3%, before scaling send volume, when a client asks "why are my emails bouncing?", after onboarding new domains/inboxes.
 
 **Ask if not provided:** which **EmailBison MCP server / API host** (the workspace), **output location** for the CSV + report, and an optional **Notion page URL** to push the report to. Always run against the correct workspace with that workspace's own IDs, never audit the wrong workspace by accident.
 
