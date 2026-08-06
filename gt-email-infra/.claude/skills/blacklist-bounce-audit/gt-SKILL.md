@@ -195,7 +195,17 @@ REPORT + FIX
 [ ] Root cause fixed BEFORE any delisting request
 [ ] Burnt inboxes on the rest-and-retest cadence
 ```
+----
+### Key Note: Email Guard Test (manual spam test)
+while the bounce audit is ongoing or after diagnostics during the ret -and-retest cadence, you need to run an inbox placement test to check up on the inbox health against copies
 
+1.This is a deliverability check to test:
+    1. Each copy, with a different email account.
+    2. Test with your own personal inbox too.
+
+2. Check copies directly on the content spam checker.
+    1. Each copy, with different variables.
+    
 ---
 
 *Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
