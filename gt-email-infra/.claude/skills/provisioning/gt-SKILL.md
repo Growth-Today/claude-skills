@@ -33,7 +33,7 @@ Turn purchased domains (the domain-research sub-skill) into sending-ready mailbo
 
 **Do instead:**
 - **Masking** through an approved service (e.g. EmailGuard), **or**
-- a **real, distinct landing page** with clean content.
+- a **real, distinct landing page** with clean content. Scaledmail currently does this for all client domains.
 
 **Vet the masking service** so it does not mark client content as duplicate to Google (an SEO hit for the client). No shared redirect IPs from the registrar/DNS provider, dedicated masking proxy or dedicated landing pages only.
 
@@ -77,6 +77,7 @@ Use the matching setup sub-skill for the full connect + warmup flow per platform
 
 - **Google:** OAuth (recommended) or app password; bulk import supported for 10+.
 - **Microsoft:** one-by-one only; confirm SMTP enabled and the 1-hour window elapsed; consent on behalf of the org.
+- Scaledmail currently connects all their inboxes via OAuth for both Microsoft and Google.
 - After connecting: set send limits by state (`reference.md` §1), tag by client/domain/provider/region, and **leave open tracking OFF**.
 
 > **On Instantly?** For the full Instantly connect + warmup + advanced-deliverability setup (vendor-managed or in-house), use **the instantly-setup sub-skill**.
