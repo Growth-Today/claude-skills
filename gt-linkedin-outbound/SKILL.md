@@ -1,7 +1,21 @@
 ---
 name: gt-linkedin-outbound
 description: Expert LinkedIn outbound strategist for B2B campaigns by Growth Today (growthtoday.co). Use for LinkedIn cold outreach, DM writing, connection requests, message sequences, personalization, copywriting frameworks, rented engine setup (multi-account infrastructure, daily limits, restrictions, anti-detect browsers, proxies), HeyReach/Expandi/Lemlist tooling, campaign strategy and decay, drip campaign setup, follow-up discipline, LinkedIn-first GTM, and 90-day LinkedIn pilots. Triggers on "LinkedIn DM", "LinkedIn message", "connection request", "connection note", "LinkedIn sequence", "rented engine", "LinkedIn warmup", "LinkedIn restriction", "HeyReach", "Expandi", "InMail", "follow up DM", "campaign decay", "drip campaign", "LinkedIn-first", "90-day pilot", "campaign plateau", "micro-segmentation", "4-state follow-up". Do NOT use for LinkedIn organic content/posting (use gt-linkedin-content), LinkedIn paid ads (use gt-linkedin-ads), or LinkedIn profile optimization unrelated to outbound.
+license: MIT
+metadata:
+  author: growthtoday
+  version: "2.0.0"
 ---
+
+## Setup (Run Once Per Session)
+
+Before loading any sub-skill or resource, locate this skill's install directory:
+1. Use Glob to search for `**/gt-linkedin-outbound/SKILL.md`
+2. The directory containing this SKILL.md is `SKILL_BASE`
+3. Sub-skills are at: `{SKILL_BASE}/.claude/skills/{sub-skill}/gt-SKILL.md`
+4. Resources are at: `{SKILL_BASE}/resources/{group}/...`
+
+Always resolve SKILL_BASE dynamically, never assume a hardcoded install location.
 
 # LinkedIn Outbound (Main Skill)
 
@@ -25,14 +39,14 @@ Every well-built LinkedIn outbound motion has four layers, in order. Skip a laye
 
 1. **Targeting & enrichment** - qualified, signal-layered prospect lists. If the data isn't rich enough to write a personalized first line, the targeting isn't ready yet.
 2. **Warming** - building familiarity *before* the connection request. Profile views, post engagement, thoughtful comments. By the time the request arrives, the sender's name shouldn't be brand new to the prospect.
-3. **Outreach & follow-up** - the sequence itself, run with conditional logic so the next step depends on what the prospect did (accepted vs. viewed vs. replied vs. silent). See `resources/dm-sequence.md`.
+3. **Outreach & follow-up** - the sequence itself, run with conditional logic so the next step depends on what the prospect did (accepted vs. viewed vs. replied vs. silent). See `{SKILL_BASE}/resources/sequences/dm-sequence.md`.
 4. **Conversion** - turning replies into booked meetings, with email as the support channel for prospects who engaged on LinkedIn but didn't convert there.
 
 When something is broken, identify which layer is broken first, then route to the relevant sub-skill.
 
 ### The 90-Day Expectation Frame
 
-Set internal and client expectations against this timeline (sourced from HeyReach's analysis of 96K+ campaigns; see `resources/heyreach-knowledge-base.md`):
+Set internal and client expectations against this timeline (sourced from HeyReach's analysis of 96K+ campaigns; see `{SKILL_BASE}/resources/knowledge/heyreach-knowledge-base.md`):
 
 - **Month 1** - Foundation and learning. Profiles optimized, sequences live, data starts flowing. Expect insights, not meetings yet.
 - **Month 2** - First consistent meeting flow. The system produces real conversations and some convert.
@@ -47,56 +61,40 @@ Every LinkedIn campaign follows a predictable arc:
 - **Weeks 2-3 (plateau):** High-intent prospects already responded; the rest are working through. Numbers dip. *This is normal, not failure.*
 - **Week 4+ (fatigue zone):** Without intervention, acceptance drops below 20%, accepted-but-silent ratio climbs above 60-70%, time-to-first-reply stretches past a week.
 
-The fix for the plateau is structural - micro-segmented lists, sender rotation, fresh angles - not "send more invites." See `resources/dm-sequence.md` and `resources/linkedin-metrics-benchmarks.md` for the operational response.
+The fix for the plateau is structural - micro-segmented lists, sender rotation, fresh angles - not "send more invites." See `{SKILL_BASE}/resources/sequences/dm-sequence.md` and `{SKILL_BASE}/resources/knowledge/linkedin-metrics-benchmarks.md` for the operational response.
 
 ## Routing Table
 
-When a request comes in, identify the type and delegate to the appropriate sub-skill:
+When a request comes in, identify the domain and load that sub-skill's router. Each router holds the finer per-topic index and reads its own resources on demand.
 
-| Request Type | Sub-Skill | Trigger Phrases | Load |
-|---|---|---|---|
-| Writing the connection request (the cold note) | **connection-request** | "connection note", "connection request copy", "first touch", "300 chars", "should I send a note" | Read `resources/connection-request.md` |
-| Writing the post-acceptance DM sequence | **dm-sequence** | "LinkedIn sequence", "DM 1 / DM 2", "what to send after they accept", "follow-up DM", "no reply on LinkedIn" | Read `resources/dm-sequence.md` |
-| Re-engaging dormant connections | **re-engagement** | "old connections", "re-engage LinkedIn", "they ghosted", "win back", "ramp re-engagement" | Read `resources/re-engagement.md` |
-| Connection note copywriting & no-note decision | **connection-notes** | "300 character note", "with note vs no note", "best connection note copy" | Read `resources/connection-notes.md` |
-| Personalization strategy & profile signals | **personalization** | "personalize at scale on LinkedIn", "profile signals", "Clay LinkedIn", "first line LinkedIn", "post-based hook" | Read `resources/personalization.md` |
-| Targeting VPs/C-Level/Directors | **atl-messaging** | "DM a CEO", "VP outreach LinkedIn", "executive LinkedIn", "C-suite DM", "ATL" | Read `resources/atl-messaging.md` |
-| Targeting Managers/ICs | **btl-messaging** | "DM a manager", "IC outreach LinkedIn", "end user DM", "BTL" | Read `resources/btl-messaging.md` |
-| Copywriting frameworks & DM principles | **copywriting** | "LinkedIn framework", "DM copy rules", "LinkedIn variations", "InMail copy", "voice note script" | Read `resources/copywriting.md` |
-| Account infrastructure (sourcing, browsers, proxies, daily limits, restrictions, warmup) | **rented-engine** | "rented engine", "LinkedIn accounts", "anti-detect browser", "Undetectable", "Multilogin", "mobile proxies", "HeyReach setup", "Expandi setup", "account restricted", "LinkedIn jail", "warmup LinkedIn", "how many connections per day" | Read `resources/rented-engine.md` |
-| Campaign-level strategy & lifecycle (decay, segmentation, multi-account math) | **campaign-strategy** | "campaign strategy", "campaign decay", "campaign plateau", "micro-segmentation", "multi-account math", "campaign launch plan", "why is my campaign decaying", "kill and relaunch" | Read `resources/campaign-strategy.md` |
-| Follow-up discipline (when to push, when to stop, weekly review) | **follow-up-system** | "how many follow-ups", "follow-up cadence", "follow-up review", "follow-up workflow", "follow-up restraint", "stop following up", "tag and exclude", "4-state model" | Read `resources/follow-up-system.md` |
-| Drip campaign setup, sequence templates, HeyReach build | **drip-campaigns** | "drip campaign", "sequence templates", "campaign template", "sequence cadence", "HeyReach setup", "lead import", "wait time between messages", "Day 0 Day 1 Day 3" | Read `resources/drip-campaigns.md` |
-| Strategic case for LinkedIn-first GTM, 90-day pilots, 4-layer engine | **linkedin-first-engine** | "LinkedIn-first", "LinkedIn primary channel", "LinkedIn vs email", "90-day pilot", "4-layer engine", "5-stage execution", "shift from cold email to LinkedIn", "make LinkedIn primary" | Read `resources/linkedin-first-engine.md` |
-| Benchmarks, metrics, performance | - | "what's a good acceptance rate", "LinkedIn benchmarks", "reply rate LinkedIn", "InMail benchmarks" | Read `resources/linkedin-metrics-benchmarks.md` |
+| Domain | Sub-skill | What it covers | Trigger phrases | Load |
+|---|---|---|---|---|
+| Copywriting | **copywriting** | DM/InMail frameworks and copy rules, the cold connection request, note vs no-note, personalization at scale and profile signals | "connection note", "connection request copy", "300 chars", "with note vs no note", "DM copy rules", "LinkedIn framework", "InMail copy", "voice note script", "personalize at scale", "profile signals", "Clay LinkedIn", "first line" | Read `{SKILL_BASE}/.claude/skills/copywriting/gt-SKILL.md` |
+| Sequences | **sequences** | post-acceptance DM sequence, drip build and templates, re-engaging dormant connections, follow-up discipline (4-state model) | "LinkedIn sequence", "DM 1 / DM 2", "what to send after they accept", "follow-up DM", "no reply", "drip campaign", "sequence templates", "Day 0 Day 1 Day 3", "how many follow-ups", "4-state model", "re-engage", "old connections", "they ghosted", "win back" | Read `{SKILL_BASE}/.claude/skills/sequences/gt-SKILL.md` |
+| Personas | **personas** | seniority-based messaging: VP/C-level/Director (ATL) vs Manager/IC/end-user (BTL) | "DM a CEO", "VP outreach", "executive LinkedIn", "C-suite DM", "ATL", "DM a manager", "IC outreach", "end user DM", "BTL" | Read `{SKILL_BASE}/.claude/skills/personas/gt-SKILL.md` |
+| Infrastructure | **infrastructure** | rented-engine sourcing, anti-detect browsers, proxies, daily limits, restrictions and recovery, warmup | "rented engine", "LinkedIn accounts", "anti-detect browser", "mobile proxies", "HeyReach setup", "Expandi setup", "account restricted", "LinkedIn jail", "warmup", "how many connections per day" | Read `{SKILL_BASE}/.claude/skills/infrastructure/gt-SKILL.md` |
+| Strategy | **strategy** | campaign lifecycle, decay, micro-segmentation, multi-account math, and the LinkedIn-first GTM case + 90-day pilot | "campaign strategy", "campaign decay", "campaign plateau", "micro-segmentation", "multi-account math", "kill and relaunch", "LinkedIn-first", "LinkedIn vs email", "90-day pilot", "4-layer engine", "make LinkedIn primary" | Read `{SKILL_BASE}/.claude/skills/strategy/gt-SKILL.md` |
+| Knowledge | **knowledge** | benchmarks and metrics, HeyReach published research, the Lemlist multi-channel knowledge base | "what's a good acceptance rate", "LinkedIn benchmarks", "reply rate", "InMail benchmarks", "HeyReach research", "Lemlist", "multi-channel", "email + LinkedIn coordination", "voice notes" | Read `{SKILL_BASE}/.claude/skills/knowledge/gt-SKILL.md` |
 
 ## Routing Logic
 
-1. **Check engine type first** - Is this a rented-engine campaign (multi-account, bought/customized profiles) or a personal/founder-led profile? Operational rules diverge sharply. If infrastructure/safety question → route to **rented-engine**.
-2. **Check persona** - VP/C-Level/Director → **atl-messaging**. Manager/IC → **btl-messaging**. These override the default copy sub-skills.
-3. **Check touchpoint position** - Connection note → **connection-request** or **connection-notes**. First DM after acceptance → **dm-sequence** (M1). Follow-up DM (no reply) → **dm-sequence** (M2B). Reviving an old connection → **re-engagement**.
-4. **Check zoom level** - Strategic / executive view (LinkedIn-first vs email, 90-day pilot, leadership case) → **linkedin-first-engine**. Campaign lifecycle / decay / segmentation → **campaign-strategy**. Drip sequence build / templates → **drip-campaigns**. Follow-up discipline / weekly review → **follow-up-system**.
-5. **Check specific ask** - Personalization at scale (Clay prompts, profile signals) → **personalization**. Frameworks/principles → **copywriting**.
-6. **Cross-cutting concerns** - Benchmarks, metrics, and channel-wide guidance are handled here in this main skill.
+1. **Check engine type first** - rented-engine (multi-account, bought/customized profiles) or a personal/founder-led profile? If the question is infrastructure or account safety, route to **infrastructure**.
+2. **Check persona** - VP/C-Level/Director or Manager/IC/end-user? Route to **personas**; the persona tone overrides the default copy guidance.
+3. **Check touchpoint position** - the cold note or first-line copy is **copywriting**; the post-acceptance flow, follow-ups, drips, and win-backs are **sequences**.
+4. **Check zoom level** - campaign lifecycle, decay, segmentation, or the LinkedIn-first leadership case is **strategy**.
+5. **Check specific ask** - benchmarks, metrics, published research, or multi-channel (Lemlist) is **knowledge**.
+6. **Cross-cutting concerns** - the core copy rules, account limits, benchmark quick-reference, and tooling table below apply across every sub-skill.
 
 ## Decision Tree
 
 ```
 User Request
-├─ Account infra / safety / restrictions / sourcing / browsers / proxies? → rented-engine
-├─ Target is VP/C-Level/Director? → atl-messaging
-├─ Target is Manager/IC/End-User? → btl-messaging
-├─ Writing the connection request (cold note)? → connection-request
-├─ Writing the post-acceptance DM sequence? → dm-sequence
-├─ Re-engaging old/dormant connections? → re-engagement
-├─ Connection note copy specifically (with/without note)? → connection-notes
-├─ Personalization at scale (Clay, profile signals)? → personalization
-├─ Named framework / DM rules / voice notes / InMail? → copywriting
-├─ Campaign-level strategy / decay / micro-segmentation? → campaign-strategy
-├─ Follow-up discipline / weekly review / how many bumps? → follow-up-system
-├─ Drip campaign build / sequence templates / HeyReach setup? → drip-campaigns
-├─ LinkedIn-first GTM / 90-day pilot / leadership case? → linkedin-first-engine
-└─ Benchmarks / metrics? → linkedin-metrics-benchmarks.md
+├─ Account infra / safety / restrictions / sourcing / browsers / proxies? → infrastructure
+├─ Target is VP/C-Level/Director or Manager/IC/end-user? → personas
+├─ Writing the cold connection note, DM copy, or personalization? → copywriting
+├─ Post-acceptance sequence, drip, follow-up cadence, or re-engaging old connections? → sequences
+├─ Campaign decay / segmentation / multi-account math / LinkedIn-first pivot / 90-day pilot? → strategy
+└─ Benchmarks / metrics / HeyReach research / Lemlist multi-channel? → knowledge
 ```
 
 ## Core Rules (Apply to ALL Sub-Skills)
@@ -135,7 +133,7 @@ User Request
 | Daily connection requests/account | - | 15-18 | 20 (ceiling) |
 | Account restriction rate | - | <5%/month | 0% |
 
-For full benchmarks, performance by signal type, and diagnostics → Read `resources/linkedin-metrics-benchmarks.md`
+For full benchmarks, performance by signal type, and diagnostics → Read `{SKILL_BASE}/resources/knowledge/linkedin-metrics-benchmarks.md`
 
 ## Cross-Cutting: Tooling Quick Reference
 
@@ -149,11 +147,11 @@ For full benchmarks, performance by signal type, and diagnostics → Read `resou
 | Sales Navigator | Required for any serious outbound - opens up the search filters |
 | Undetectable / Multilogin / Dolphin{anty} | Anti-detect browsers for rented engine |
 
-For deep tooling guidance → see `resources/rented-engine.md`
+For deep tooling guidance → see `{SKILL_BASE}/resources/infrastructure/rented-engine.md`
 
 ## External Sources
 
-For HeyReach's published research, frameworks, and template libraries that inform this skill (with embedding map showing which sub-skills consume which insights) → see `resources/heyreach-knowledge-base.md`.
+For HeyReach's published research, frameworks, and template libraries that inform this skill (with embedding map showing which sub-skills consume which insights) → see `{SKILL_BASE}/resources/knowledge/heyreach-knowledge-base.md`.
 
 ## Combines With
 
@@ -176,46 +174,44 @@ For HeyReach's published research, frameworks, and template libraries that infor
 ## Examples
 
 **Example 1: "Write me a LinkedIn message for a SaaS product targeting Heads of Sales"**
-→ Head of Sales = ATL persona. Route to **atl-messaging**. Then check whether they need a connection note (route to **connection-request**) and/or the post-acceptance sequence (route to **dm-sequence**). Apply ATL tone: peer-to-peer, strategic, max 50 words, no operational language.
+→ Head of Sales = ATL persona. Route to **personas** (ATL). Then check whether they need a connection note or the post-acceptance sequence (route to **copywriting** for the note, **sequences** for the flow). Apply ATL tone: peer-to-peer, strategic, max 50 words, no operational language.
 
 **Example 2: "We're getting 15% acceptance on LinkedIn - how do I improve it?"**
-→ Cross-cutting: benchmarks. Load `resources/linkedin-metrics-benchmarks.md`. Diagnose: probably copy (route to **connection-request**) or signal weakness (recommend engagement-first warming) or list quality (cross-skill: gt-list-building).
+→ Cross-cutting: benchmarks. Route to **knowledge** (`linkedin-metrics-benchmarks.md`). Diagnose: probably copy (route to **copywriting**) or signal weakness (recommend engagement-first warming) or list quality (cross-skill: gt-list-building).
 
 **Example 3: "One of our rented accounts just got a temporary restriction"**
-→ Route to **rented-engine**. Diagnose recent activity volume, recent profile changes, signal of bot detection. Walk through recovery flow.
+→ Route to **infrastructure**. Diagnose recent activity volume, recent profile changes, signal of bot detection. Walk through recovery flow.
 
 **Example 4: "Help me set up 5 rented LinkedIn accounts in HeyReach"**
-→ Route to **rented-engine**. Cover: sourcing (vendor selection), customization (headline/company/job title plan, 1 change per day), browser/proxy assignment, warmup schedule, daily limits.
+→ Route to **infrastructure**. Cover: sourcing (vendor selection), customization (headline/company/job title plan, 1 change per day), browser/proxy assignment, warmup schedule, daily limits.
 
 **Example 5: "How do I follow up with someone who accepted my connection 6 months ago and never replied?"**
-→ Route to **re-engagement**. Use new-angle approach: do not reference the old DM, lead with what's changed since.
+→ Route to **sequences** (re-engagement). Use new-angle approach: do not reference the old DM, lead with what's changed since.
 
 **Example 6: "Should I send a connection note or just hit Connect?"**
-→ Route to **connection-notes**. Default: no note. Exceptions: strong specific signal worth referencing.
+→ Route to **copywriting** (note vs no-note). Default: no note. Exceptions: strong specific signal worth referencing.
 
 **Example 7: "My campaign was crushing it for 10 days, now acceptance dropped from 28% to 18%. What's wrong?"**
-→ Route to **campaign-strategy**. This is the classic Phase 2 plateau. Diagnose: high-intent prospects already responded; the rest of the segment is harder. Fix: rotate fresh senders, A/B test a new angle, push non-responders to email. Don't add volume.
+→ Route to **strategy**. This is the classic Phase 2 plateau. Diagnose: high-intent prospects already responded; the rest of the segment is harder. Fix: rotate fresh senders, A/B test a new angle, push non-responders to email. Don't add volume.
 
 **Example 8: "How many follow-ups should I send on LinkedIn before giving up?"**
-→ Route to **follow-up-system**. Apply the 4-state model. Connection accepted but no reply → one follow-up max with 7+ day delay. Active on LinkedIn but ignoring you → don't nudge, wait for a new signal. Replied once then stalled → one contextual follow-up referencing the prior exchange. Then stop.
+→ Route to **sequences** (follow-up). Apply the 4-state model. Connection accepted but no reply → one follow-up max with 7+ day delay. Active on LinkedIn but ignoring you → don't nudge, wait for a new signal. Replied once then stalled → one contextual follow-up referencing the prior exchange. Then stop.
 
 **Example 9: "Walk me through setting up my first drip campaign in HeyReach"**
-→ Route to **drip-campaigns**. Cover: one goal per campaign, ICP precision, profile warmup, lead import, sender selection, sequence build (with auto-withdrawal at 14 days), three template structures. Cross-reference **rented-engine** for account setup if multi-account.
+→ Route to **sequences** (drip). Cover: one goal per campaign, ICP precision, profile warmup, lead import, sender selection, sequence build (with auto-withdrawal at 14 days), three template structures. Cross-reference **infrastructure** for account setup if multi-account.
 
 **Example 10: "We want to make LinkedIn our primary outbound channel instead of email - how do we structure the pivot?"**
-→ Route to **linkedin-first-engine**. Cover: team readiness assessment, 4-layer engine, 5-stage execution, foundation work, 90-day timeline for leadership, right metrics for LinkedIn-first teams. This is the strategic / leadership view.
+→ Route to **strategy** (linkedin-first-engine). Cover: team readiness assessment, 4-layer engine, 5-stage execution, foundation work, 90-day timeline for leadership, right metrics for LinkedIn-first teams. This is the strategic / leadership view.
 
 **Example 11: "What's a good InMail response rate for a recruitment agency?"**
-→ Route to `resources/linkedin-metrics-benchmarks.md` (InMail Benchmarks section). Recruitment InMail to passive candidates: 25-40% response. Active candidates ("Open to Work"): 35-50%. Executive search: 30-45%.
+→ Route to `{SKILL_BASE}/resources/knowledge/linkedin-metrics-benchmarks.md` (InMail Benchmarks section). Recruitment InMail to passive candidates: 25-40% response. Active candidates ("Open to Work"): 35-50%. Executive search: 30-45%.
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Restructured to v2.0.0 by Nikola Siljanoski. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
 
 ---
 
 ## Changelog
 
-### v1 — June 1, 2026
-- First versioned release packaged for team-wide distribution.
-- No changes to skill content; all 16 files included as-is (SKILL.md plus 15 sub-skill/resource files).
+Version history lives in `CHANGELOG.md` at the skill root (Keep a Changelog + SemVer).
