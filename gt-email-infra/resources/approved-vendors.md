@@ -46,7 +46,10 @@ Growth Today runs cold outreach across these approved sequencers, pick per engag
 
 | Vendor | Role |
 |---|---|
-| **EmailGuard** | Inbox-placement testing and domain masking |
+| **EmailGuard** | Inbox-placement testing and domain masking (used with EmailBison) |
+| **Instantly** | Native inbox-placement testing (used when Instantly is the sequencer) |
+
+Pick the placement-testing tool that matches the sequencer for the engagement. EmailGuard pairs with EmailBison; Instantly has built-in placement tests when it is the sending platform.
 
 ---
 
