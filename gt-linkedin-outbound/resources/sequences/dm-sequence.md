@@ -28,10 +28,10 @@ After M2, **stop.** A third DM rarely improves reply rate and damages account st
 ## Reference
 
 For full content, frameworks, and examples → see also:
-- ATL DM tone → `{SKILL_BASE}/copywriting/atl-messaging.md`
-- BTL DM tone → `{SKILL_BASE}/copywriting/btl-messaging.md`
-- Personalization at scale (Clay, profile signals) → `{SKILL_BASE}/personalization/personalization.md`
-- Frameworks adapted for LinkedIn → `{SKILL_BASE}/copywriting/copywriting.md`
+- ATL DM tone → `{SKILL_BASE}/resources/personas/atl-messaging.md`
+- BTL DM tone → `{SKILL_BASE}/resources/personas/btl-messaging.md`
+- Personalization at scale (Clay, profile signals) → `{SKILL_BASE}/resources/copywriting/personalization.md`
+- Frameworks adapted for LinkedIn → `{SKILL_BASE}/resources/copywriting/copywriting.md`
 
 ## Universal DM Rules
 
@@ -198,8 +198,8 @@ If M1 was about "the complexity of scaling SDR teams", M2B might pivot to "what 
 | Time to ask | M2 only - never M1 | M2 |
 | What kills it | Operational language ("save 3 hours/week") → instant delegation | Strategic language ("revenue impact") → too abstract |
 
-For ATL deep dive → `{SKILL_BASE}/copywriting/atl-messaging.md`
-For BTL deep dive → `{SKILL_BASE}/copywriting/btl-messaging.md`
+For ATL deep dive → `{SKILL_BASE}/resources/personas/atl-messaging.md`
+For BTL deep dive → `{SKILL_BASE}/resources/personas/btl-messaging.md`
 
 ---
 
@@ -331,15 +331,15 @@ The four post-acceptance states, with the right action for each:
 | **Replied to M1** | Any reply | Exit sequence. Move to live conversation in Unibox. M2A is sent within 24h, but the rest of the automation stops. |
 | **Profile viewed, no reply** | Their view appears in your visitor log within 7 days, no DM reply | Send M2B with a different angle. Profile views are a real engagement signal - they're curious. |
 | **Connected, totally silent** | No view, no reply, no engagement on your content for 5-7 days | Send M2B with a NEW angle. After M2B → stop. |
-| **Replied once, then stalled** | One reply, then 7+ days silence | One thoughtful contextual follow-up referencing the prior exchange. Then stop. See `copywriting/re-engagement.md`. |
+| **Replied once, then stalled** | One reply, then 7+ days silence | One thoughtful contextual follow-up referencing the prior exchange. Then stop. See `resources/sequences/re-engagement.md`. |
 
-The "active but silent" pattern is the dangerous middle ground - they're posting and engaging on LinkedIn but ignoring your DM. The reflex is to send another nudge. The right move is **don't**. Wait for a new external signal (a relevant post, a role change, engagement with your content) before re-engaging. See the full 4-State Follow-up Model in `copywriting/re-engagement.md`.
+The "active but silent" pattern is the dangerous middle ground - they're posting and engaging on LinkedIn but ignoring your DM. The reflex is to send another nudge. The right move is **don't**. Wait for a new external signal (a relevant post, a role change, engagement with your content) before re-engaging. See the full 4-State Follow-up Model in `resources/sequences/re-engagement.md`.
 
 ### Why "Active but silent" gets one nudge max
 
 LinkedIn is socially visible. Email persistence works because the inbox is impersonal - the sender is just another subject line. LinkedIn DMs sit next to the prospect's colleagues and friends in the same notification stream. Multiple unanswered nudges create social pressure and the dynamic flips from "do I want this?" to "how do I make this stop?" Reply rate craters and the sender profile gets quietly downgraded by the prospect's mental model.
 
-Source: HeyReach's analysis of the 4-state model - see `resources/heyreach-knowledge-base.md`.
+Source: HeyReach's analysis of the 4-state model - see `resources/knowledge/heyreach-knowledge-base.md`.
 
 ---
 
@@ -362,4 +362,4 @@ Diagnose in that order.
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

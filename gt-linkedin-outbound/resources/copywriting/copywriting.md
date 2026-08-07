@@ -213,7 +213,7 @@ Already covered in re-engagement sub-skill. Counterintuitive: easier-to-say-no q
 "Would it be unreasonable to [low-stakes ask]?"
 ```
 
-For deep usage → `{SKILL_BASE}/copywriting/re-engagement.md`
+For deep usage → `{SKILL_BASE}/resources/sequences/re-engagement.md`
 
 ---
 
@@ -306,7 +306,7 @@ InMail bypasses connection - you can message anyone, even without being connecte
 - Performance: usually 50-70% of DM reply rate (less warm)
 - Best use: ATL personas where connection request acceptance is too slow, or competitive accounts
 
-For deep email-style copy that translates to InMail → `gt-cold-email/resources/copywriting/copywriting-frameworks.md`
+For deep email-style copy that translates to InMail → `gt-cold-email/resources/resources/copywriting/copywriting.md`
 
 ---
 
@@ -333,7 +333,7 @@ A note variant with 5% lower acceptance but 2x reply rate is the better choice.
 
 ## Sequence Performance Logic
 
-For full sequence structure, timing, and templates → `{SKILL_BASE}/copywriting/examples/dm-sequence.md`
+For full sequence structure, timing, and templates → `{SKILL_BASE}/resources/sequences/dm-sequence.md`
 
 ### Performance per touchpoint
 
@@ -411,12 +411,12 @@ seeing patterns. Happy to share if relevant - no pitch attached.
 
 When the 9 GT frameworks above aren't producing the angle you need, HeyReach maintains a public library of LinkedIn copy templates worth scanning for inspiration:
 
-- **HeyReach Templates Hub** - https://www.heyreach.io/blog-categories/templates
-- **HeyReach Guides Hub** - https://www.heyreach.io/blog-categories/guides
+- **HeyReach Templates Hub**
+- **HeyReach Guides Hub**
 
 Their pre-built campaign templates inside the platform also map to angle categories worth keeping in mind: partnership proposal, engagement response, comment follow-up, new connection nurture, value-first outreach, social proof sequence, network expansion. Treat these as inspiration to be adapted into GT's voice - not copy-pasted into client campaigns. Most agency-grade templates available publicly skew generic and need real personalization to land.
 
-For the full mapping of HeyReach insights into the rest of this skill → see `resources/heyreach-knowledge-base.md`.
+For the full mapping of HeyReach insights into the rest of this skill → see `resources/knowledge/heyreach-knowledge-base.md`.
 
 ---
 
@@ -429,4 +429,4 @@ For the full mapping of HeyReach insights into the rest of this skill → see `r
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

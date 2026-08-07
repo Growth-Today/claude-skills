@@ -236,7 +236,7 @@ Other pre-send hygiene that compounds:
 
 After the request is sent, the next hygiene rule is **withdrawing pending invitations after 14 days.** A queue >1000 pending requests triggers LinkedIn's anti-spam systems and quietly suppresses your sender's reach. Most automation platforms (HeyReach included) auto-withdraw on a configurable schedule - set it to 14 days and forget it.
 
-Source: HeyReach's pre-send list hygiene guidance. See `resources/heyreach-knowledge-base.md`.
+Source: HeyReach's pre-send list hygiene guidance. See `resources/knowledge/heyreach-knowledge-base.md`.
 
 ---
 
@@ -260,4 +260,4 @@ Source: HeyReach's pre-send list hygiene guidance. See `resources/heyreach-knowl
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
