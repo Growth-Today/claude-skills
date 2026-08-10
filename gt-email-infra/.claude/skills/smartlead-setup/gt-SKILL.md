@@ -38,7 +38,7 @@ Email Accounts → select account → **Warm-up** tab → configure → **Enable
 
 - **Total Daily Emails:** 10–20 while campaigns run (raise after a campaign completes). Keep aligned with `{SKILL_BASE}/resources/reference.md` §1 targets.
 - **Daily Ramp Up:** enable for fresh domains (must be turned on **at the same time** as warmup); disable if already warmed/migrating.
-- **Reply Rate:** **20–30%** (don't exceed 30% unless expert).
+- **Reply Rate:** **70-75%** (don't set up less than 70%).
 - **Randomise Warmup Numbers:** on (human-like variation).
 - **Auto-Adjust Warmup/Sending Ratio:** optional smart-adjust, when on an active campaign the AI trims warmup (~7–10) and manages the ratio automatically.
 - **Weekdays-only** toggle available.
