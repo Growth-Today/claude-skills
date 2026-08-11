@@ -51,6 +51,7 @@ Set on **each inbox and each user**:
 - **ESP matching (Email Provider Matchmaker):** enable at team level if the account has **both** a Google and a Microsoft mailbox (Settings → Sending settings → Deliverability boost). Use as a lever the dashboard matrix supports (the campaign-building sub-skill), not a blind rule.
 - **Inbox rotation:** for multi-sender / higher volume, select multiple senders on the email step (round-robin); force a specific sender only where a named person must send a step.
 - **First email plain text**, no links (the warmup-golive sub-skill launch gate).
+- **Account signature clean:** no images, logos, or links in the account signature, signatures are handled in sequence steps only, sender names checked across all connected inboxes.
 - **Warning notifications ON:** high bounce rate + LinkedIn disconnection.
 
 ---
@@ -59,7 +60,7 @@ Set on **each inbox and each user**:
 
 - **Blocklist/unsubscribe:** turn ON "add unsubscribes to blocklist automatically"; add opt-out keywords (unsubscribe; stop; remove; not interested; …). Upload the client's existing blocklist (customers, active deals) and exclude those domains from Clay tables to save credits. Ask the client to unsubscribe leads as replies come in.
 - **CRM (HubSpot):** connect at **team level**; create contacts/companies on reply; map fields, users, activities; check Logs for sync errors.
-- **Preferences:** set opportunity value (confirm ACV with the AM), correct timezone (EU vs US), AI auto-tag replies ON, AI Inbox Manager OFF, OOO auto-tag ON.
+- **Preferences:** default opportunity value $3,000 unless the AM confirms a different ACV, correct timezone (EU vs US), AI auto-tag replies ON, AI Inbox Manager OFF, OOO auto-tag ON, lead preferences OFF.
 - **Custom tracking domain (only if a client insists):** CNAME **Host = a subdomain you choose** → **Target `custom.lemlist.com`** + a TXT verification record; Cloudflare set to DNS-only. GT default = none.
 
 ---
@@ -68,7 +69,9 @@ Set on **each inbox and each user**:
 
 If an inbox is used in Lemlist, prevent double-sending from another sequencer: set its cold send to **0 in Instantly / 1 in EmailBison** and **tag it "Lemlist."**
 
-Placement/health: check the **Deliverability Hub** (delivery + bounce rate by provider/mailbox/domain, warmup score, manual inbox-placement tests, threshold alerts).
+**Bi-directional:** if a lead replies positive or neutral in EmailBison, stop that lead in Lemlist so they don't receive both sequences (see the internal Bi-directional Sync SOP).
+
+Placement/health: check the **Deliverability Hub** (delivery + bounce rate by provider/mailbox/domain, warmup score, manual inbox-placement tests, threshold alerts). Log every inbox and domain in **EMS (Row Zero)** with warmup status and warmup start date.
 
 ---
 
@@ -94,13 +97,17 @@ DELIVERABILITY
 [ ] Warning notifications ON (bounce, LinkedIn disconnect)
 [ ] No custom tracking domain (unless client insists -> dedicated)
 [ ] Cross-sequencer: cold 0 in Instantly / 1 in Bison, tag "Lemlist"
+[ ] Signature clean (no images/logos/links), sender names correct
 
 CRM & BLOCKLIST
 [ ] HubSpot connected at team level; field/user/activity mapping; logs clean
 [ ] Blocklist auto-add ON + opt-out keywords; client blocklist uploaded
 [ ] Preferences: opportunity value, timezone, AI auto-tag on / Inbox Manager off
+[ ] Opportunity value $3,000 unless AM confirms, lead preferences OFF
+[ ] Positive/neutral reply in EmailBison stops the lead in Lemlist
 [ ] DNS verified (SPF/DKIM/DMARC) per inbox (the provisioning sub-skill)
 [ ] GTM Engineer + AM notified inboxes are ready
+[ ] All inboxes and domains logged in EMS (Row Zero) with warmup status and start date
 ```
 
 ---

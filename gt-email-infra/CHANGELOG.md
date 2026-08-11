@@ -5,6 +5,21 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); versions use
 [SemVer](https://semver.org/) (patch = fix, minor = additive, major = breaking
 layout/restructure).
 
+## [v5.1.0] - 2026-08-11
+
+Lemlist sub-skill additions from the internal Notion SOP.
+
+### Added
+- **lemlist-setup:** default opportunity value ($3,000 unless the AM confirms
+ a different ACV) and lead preferences OFF.
+- **lemlist-setup:** account-signature and sender-name checks (no images,
+ logos, or links in the account signature, signatures live in sequence steps
+ only, sender names checked across all connected inboxes).
+- **lemlist-setup:** bi-directional cross-sequencer rule, a positive/neutral
+ reply in EmailBison stops that lead in Lemlist.
+- **lemlist-setup:** EMS (Row Zero) logging for every inbox and domain,
+ warmup status and warmup start date.
+
 ## [v5.0.0] - 2026-07-30
 
 Major restructure and 2026 deliverability rebuild.
