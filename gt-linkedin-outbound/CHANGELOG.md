@@ -19,6 +19,8 @@ Major restructure into a router plus six sub-skills. Restructured by Nikola Silj
   rules for its domain.
 - README.md and LICENSE (MIT, Growth Today), which the deployed copy had dropped.
   README documents the new grouped structure and the install note.
+- .gitignore for the skill folder (ignores `.DS_Store`, other OS noise, and
+  packaged `*.zip`/`*.skill` build artifacts) so they never get committed.
 - resources/knowledge/lemlist-knowledge-base.md: the dedicated multi-channel
   reference, built on the same structure as the HeyReach knowledge base and
   sourced from the internal sequencing SOP. Covers Lemlist's role, the
