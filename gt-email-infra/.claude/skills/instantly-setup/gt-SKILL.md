@@ -15,7 +15,7 @@ Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs
 
 ## Part 0, Who does the setup (two paths)
 
-**Default: a vendor does it.** An approved vendor (e.g. ScaledMail, see `{SKILL_BASE}/resources/approved-vendors.md`) buys the domains, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today only **hands off the domain-research output** (the domain-research sub-skill) plus a brief, then **verifies on delivery**. Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us, worth it.
+**ScaledMail does it.** ScaledMail **buys the domains and connects the inboxes**, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today keeps **domain research and verification only** — hand off the domain-research output plus a brief, then **verify on delivery**. Buying a batch ourselves at a single registrar is what we are moving away from: it produces exactly the bulk pattern spam filters look for (`reference.md` §9). Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us, worth it.
 
 **Fallback: in-house.** If we buy and build ourselves, Growth Today purchases the domains (the domain-research sub-skill), provisions mailboxes + DNS (the provisioning sub-skill), and connects them in Instantly manually (Parts 2–4 below). Full in-house step-by-step (Namecheap purchase → Instantly connect → warmup): **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (Growth Today internal, access-gated).
 
@@ -154,7 +154,7 @@ VERIFY & HANDOFF
 
 ---
 
-> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this sub-skill is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page, it is referenced by this skill.** This sub-skill is the primary source going forward; the Notion page is retained for the in-house detail (Namecheap purchase screens, nameserver delegation, Row Zero) not duplicated here.
+> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this sub-skill is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page, it is referenced by this skill.** This sub-skill is the primary source going forward; the Notion page is retained for the in-house detail (screenshots and vendor walkthroughs) not duplicated here. **Inbox documentation is now OpsLab's, handled automatically — Row Zero is retired and must not be used.**
 
 ---
 

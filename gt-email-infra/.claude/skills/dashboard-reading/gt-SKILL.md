@@ -43,6 +43,23 @@ Every inbox is auto-tagged. Exact thresholds in `reference.md` §2; the short ve
 
 ---
 
+## Part 2b, Known data-quality problems (read this before trusting a number)
+
+The dashboard has open defects. Until OpsLab closes them, some numbers on screen are wrong:
+
+| What | Problem |
+|---|---|
+| **Bounce rate** | The formula is disputed. Stord read **1.47%** on the dashboard for the last 30 days and **4%** in the sequencer for the same window. Do not quote a dashboard bounce figure without checking it at source. |
+| **Alerts** | **80 of the last 200 alerts failed to send** (rate-limited). Alerts are both noisy and unreliable — silence does not mean nothing happened. |
+| **Placement tests** | Many fail with a score of 0 and no reason given. A 0 may mean bounced, never delivered, or a broken test. |
+| **Unsubscribes** | Shows 0%, which is not credible — do-not-contact requests are probably not being captured. |
+| **Rotation** | The rotation engine is switched off with empty batches, and its daily-limit settings duplicate the ones on the Clients page. |
+| **Blacklist** | Spamhaus and URIBL were never working; every listing shown came from SURBL. See `reference.md` §2. |
+
+Report anything that looks wrong to OpsLab rather than working around it.
+
+---
+
 ## Part 3, Reading signals together (diagnosis order)
 
 One metric alone rarely tells the story. Read in this order:
@@ -58,15 +75,16 @@ Timing: a **rising bounce rate is a leading indicator** (acts the same day), a *
 
 ---
 
-## Part 4, Send limits by state (act on the tag)
+## Part 4, Send limits by state (read-only — OpsLab sets these)
 
-Govern by the warm-to-cold **ratio**, set the cold limit by state (`reference.md` §1):
+**OpsLab sets these limits. Your job is to check them, not change them.** Governed by the warm-to-cold **ratio**, with the cold limit driven by inbox state (`reference.md` §1). If an inbox is on the wrong limit, report it with the inbox list — do not fix it yourself.
 
 | State | Cold (Google / Outlook) | Warmup target |
 |---|---|---|
 | Warming (first 14 days) | 0–1 / 0–1 | cold × ratio (G 1.5 / O 2.5) |
 | Active (sending) | 20 / 5 | ~30 / ~13 |
 | Warmup Needed / Burnt | 0–1 / 0–1 | reduced |
+| New Inbox | 1 / 1 | — |
 
 > **Failover watch (EmailBison):** a throttled inbox stays attached at cold 1 and keeps sending to its in-flight leads; Bison won't reroute those leads to a healthy inbox on the campaign. Scan for leads stranded on Warmup-Needed inboxes, a real bounce driver. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't.
 

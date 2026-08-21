@@ -58,10 +58,11 @@ Use in Claude when generating a candidate list:
 **The fingerprint to avoid.** The 2026 malicious-domains study found **77.9%** of abusive domains belong to a single (registrar, creation-date) bulk batch, and a small set of registrars plus cheap TLDs (`.top/.xyz/.cc`) dominate abuse. Buying many domains at once, from one registrar, on one day looks *identical to that* to the filters, legitimacy doesn't save you.
 
 **How we buy (via an approved purchasing vendor, see `{SKILL_BASE}/resources/approved-vendors.md`):**
-- Buy across **multiple registrars**, spread over **~24h at 2–3h intervals**, staying **< 5 per registrar per day**.
+- Buy across **multiple registrars**, spread across **multiple days**, staying at **max 4 domains per registrar per day**.
+  - **Batch size sets the calendar.** At 4/registrar/day, a 30–50 domain batch (GT's usual size) needs 8–13 registrar-days and a 150-domain batch needs 38. There is no way to do this inside 24 hours, so plan the days rather than compressing the buy.
 - Spread DNS across **multiple Cloudflare accounts** (no single hub-and-spoke footprint).
 - Typically **~1 day to buy + ~1 day to configure**; no impact on sales delivery.
-- Duties split: a buying team places orders; a separate team configures. In-house, we keep **name research + placing the order**; the vendor buys and sets up.
+- **Duties split: ScaledMail buys the domains and connects the inboxes. Growth Today keeps name research and verification.** We no longer place the orders ourselves.
 - Our visibility is public info only (WHOIS, DNS, registration dates), enough to verify the spread actually landed.
 
 **Aged domains, owner's call.** Pre-aged domains come from specialized, pricier providers and usually have generic (off-brand) names. By default we **age our own** via the **> 30-day + warmup gate** (`reference.md` §5) rather than buy aged. The GTM / account owner may choose to buy aged domains as a deliberate trade-off (faster reputation vs. higher cost and off-brand naming).
@@ -89,11 +90,11 @@ NAMING
 
 PURCHASE (spread)
 [ ] Split across multiple registrars
-[ ] Spread over ~24h at 2–3h intervals
-[ ] < 5 domains per registrar per day
+[ ] Spread across multiple DAYS (not hours)
+[ ] Max 4 domains per registrar per day
 [ ] DNS spread across multiple Cloudflare accounts
 [ ] Aged-domain choice confirmed with GTM/account owner (default = age our own)
-[ ] Order placed via an approved vendor; name research kept in-house
+[ ] Ordered by ScaledMail; GT kept name research + verification only
 
 VERIFY (public footprint)
 [ ] WHOIS shows different registrars across the batch

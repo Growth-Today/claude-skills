@@ -55,11 +55,16 @@ Every domain needs **MX, SPF, DKIM, DMARC**. Missing one can bin your mail. Deta
 - Microsoft: two CNAMEs (`selector1._domainkey`, `selector2._domainkey`).
 - Copy the exact key, no stray spaces or truncation.
 
-**DMARC** (add manually, never auto-created). Start in monitor mode and tighten later:
+**DMARC** (add manually, never auto-created). **`p=reject` is the GT standard** — these are
+dedicated cold-sending domains we fully control, so there is no legitimate mail to break and no
+reason to sit in monitor mode:
 ```
 Host: _dmarc
-Value: v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com
+Value: v=DMARC1; p=reject; rua=mailto:dmarc@yourdomain.com
 ```
+Use `p=none` only as a short verification phase during first setup, then move to `p=reject`.
+(Google, Yahoo and Microsoft still only *require* `p=none`; enforcement is best practice and is
+what GT already runs in production.)
 
 **Verify:** `dig TXT yourdomain.com` (SPF), email headers show `dkim=pass`, `dig TXT _dmarc.yourdomain.com` (DMARC); or the sequencer's built-in domain test + a placement/mail test.
 
@@ -77,7 +82,7 @@ Use the matching setup sub-skill for the full connect + warmup flow per platform
 
 - **Google:** OAuth (recommended) or app password; bulk import supported for 10+.
 - **Microsoft:** one-by-one only; confirm SMTP enabled and the 1-hour window elapsed; consent on behalf of the org.
-- After connecting: set send limits by state (`reference.md` §1), tag by client/domain/provider/region, and **leave open tracking OFF**.
+- After connecting, **at first setup only**: set the starting send limits by state (`reference.md` §1), tag by client/domain/provider/region, and **leave open tracking OFF**. Once the inbox is live and OpsLab is classifying it, limits and tags are **OpsLab-owned** — see the read-only boundary in the root skill.
 
 > **On Instantly?** For the full Instantly connect + warmup + advanced-deliverability setup (vendor-managed or in-house), use **the instantly-setup sub-skill**.
 

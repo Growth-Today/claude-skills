@@ -37,12 +37,12 @@ Grade each against the Growth Today standard (`{SKILL_BASE}/resources/reference.
 | 1 | **Inbox count** | matches the brief (count + MS/Google split) | fewer/more than briefed → reconcile with the vendor |
 | 2 | **Mailboxes per domain** | Google ≤ ~2–3; Microsoft ≤ ~25 (average) | Google drifted well past 3 → redistribute; verify per provider |
 | 3 | **Connection** | all Connected; real-name addresses | disconnected / role addresses (sales@, info@) → reconnect/replace |
-| 4 | **Warmup on** | enabled on every inbox; not disabled on live inboxes | any inbox warmup off → enable |
+| 4 | **Warmup on** | enabled on every inbox; not disabled on live inboxes | any inbox warmup off → **report to OpsLab with the inbox list. Do not enable it yourself on a live inbox** (read-only boundary) |
 | 5 | **Warmup age** | warmed ≥ 14 days (ideally 3–4 wks) before linking; domain > 30 days | linked too early → hold/age |
-| 6 | **Cold limits by state** | Active Google 20 / Outlook 5; warming & unhealthy 0–1 (Bison floor 1); ratio Google 1.5 / Outlook 2.5 (`reference.md` §1) | inboxes on wrong limit (e.g. 30) → correct |
+| 6 | **Cold limits by state** | Active Google 20 / Outlook 5; warming & unhealthy 0–1 (Bison floor 1); **New Inbox 1**; ratio Google 1.5 / Outlook 2.5 (`reference.md` §1) | inboxes on wrong limit (e.g. 30) → **flag to OpsLab with the inbox list. GT does not set limits** (read-only boundary) |
 | 7 | **Randomized interval** | a randomized send gap set (e.g. ~5 min + jitter), correct per platform | fixed/too-tight interval → randomize |
 | 8 | **Timezone** | sending window matches the segment (US vs EU) | wrong timezone → fix schedule |
-| 9 | **DNS/auth** | MX/SPF/DKIM/DMARC green per domain; one SPF record | broken/missing/duplicate SPF → fix (the provisioning sub-skill) |
+| 9 | **DNS/auth** | MX/SPF/DKIM/DMARC green per domain; exactly one SPF record; **DMARC at `p=reject`** | broken/missing/duplicate SPF → fix (the provisioning sub-skill). DMARC: FAIL if absent · WARN at `p=none` · PASS at `quarantine`/`reject` |
 | 10 | **Destination** | masking or real landing page, not a bare 301/302 redirect | bare redirect → switch to masking |
 | 11 | **Tracking** | open + link tracking OFF; no custom tracking domain (unless client insists) | tracking on / shared tracking domain → turn off |
 | 12 | **First email** | plain text, no HTML, images, or links | HTML/links/images in email 1 → strip |
@@ -51,7 +51,7 @@ Grade each against the Growth Today standard (`{SKILL_BASE}/resources/reference.
 | 15 | **ESP routing** | set from the dashboard matrix, not a hard ESP-matching rule | blind ESP-matching on → review vs matrix (the campaign-building sub-skill) |
 | 16 | **Company send limit** | capped (e.g. 2/company/day; lower for SEG orgs) | uncapped → set |
 | 17 | **Spintax / variance** | present on subject + body | none → add |
-| 18 | **Cross-sequencer** | inbox used elsewhere set to cold 0 (Instantly) / 1 (Bison) + tagged | double-sending risk → throttle + tag |
+| 18 | **Cross-sequencer** | inbox used elsewhere set to cold 0 (Instantly) / 1 (Bison) + tagged | double-sending risk → **report to OpsLab** (throttling and tagging are theirs) |
 | 19 | **% automated replies** | tracked and stripped before reading bounce/reply | not accounted for → strip (the blacklist-bounce-audit sub-skill) |
 | 20 | **Warning alerts** | high-bounce (+ LinkedIn disconnect on Lemlist) alerts ON | off → enable |
 

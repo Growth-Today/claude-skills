@@ -55,12 +55,44 @@ Platform: this skill supports the sequencers Growth Today uses, **EmailBison, In
 
 ---
 
+## 🔒 OpsLab-owned: read-only
+
+The **OpsLab app** is the source of truth for the automated inbox layer. This skill holds that
+knowledge and exposes it as a **read-only checklist**. It is never a second source of truth, and
+the OpsLab dashboard stays primary.
+
+**GTM engineers and Sales Ops do not change these. Read the state, report the gap, escalate.**
+
+| Area | We may | We may NOT |
+|---|---|---|
+| Inbox classification / tagging | read the tag and act on it | change a tag or override a state |
+| Sending limits (cold + warmup) | read and check against `reference.md` §1 | set, raise, lower or "correct" a limit |
+| Warmup config (once live) | read warmup score and on/off | enable, disable or retune on a live inbox |
+| Campaign routing | read the performance matrix | change routing rules |
+| Blacklist monitoring | read listings | change what counts as a listing |
+| Placement tests | read scores | change cadence or thresholds |
+| Bounce classification | read categorised bounce | reclassify |
+| Weekly DNS re-check | read the result | build a second scheduled checker |
+| Inbox documentation | read it | keep a parallel tracker |
+| Disconnected-inbox automation | read alerts | change the automation |
+| SURBL logic | read | switch SURBL scoring back on anywhere |
+
+**The one time we do set these:** at first setup, before an inbox is live and being classified,
+Sales Ops or the vendor sets the starting warmup and cold values (see the instantly-setup
+sub-skill). **That window closes at go-live.** After that, limits, warmup and tags are OpsLab's.
+
+**Access:** no token given to a GTM engineer may change sending limits, warmup config, tagging or
+routing. Instantly's account-update endpoint can change daily limits and is deliberately out of
+scope — a permission test must confirm it is refused before any settings check ships.
+
+---
+
 ## Critical Rules (Never Break)
 
 1. **Never** cold-send from the primary/brand domain, only dedicated secondary domains.
 2. **Mailboxes per domain is provider-specific: Google 2–3, Microsoft up to ~25 (average).** Google stays lean for deliverability; Microsoft can host many per domain.
 3. **One domain = one workspace.**
-4. **Buy across multiple registrars**, spread over ~24h, **< 5 per registrar per day**: no single point of failure, no bulk-buy fingerprint.
+4. **Buy across multiple registrars, spread across multiple days, max 4 per registrar per day.** ScaledMail owns the buying; GT verifies it happened.
 5. **Warm up ≥ 14 days / 2 weeks** (hard floor; recommended 3–4 weeks) before sending; **link only from domains > 30 days old**.
 6. **Never disable warmup** once campaigns are running.
 7. **Masking or a real landing page, never a bare 301/302 redirect** to the main site.
@@ -75,7 +107,7 @@ Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxe
 ## What we can and cannot see
 
 - **We can see and control:** each domain's public footprint (WHOIS, registrar, creation date, DNS, nameservers, masking host) and our own per-inbox/per-domain sending metrics (bounce, reply, placement, warmup).
-- **We cannot inspect or split:** the vendor's shared warmup/seed pool (EmailBison + EmailGuard under one shared Growth Today account). Risk is low; escalation path if ever needed: DNS-footprint check across clients → written per-tenant isolation from the vendor → worst case a separate workspace + placement-test account per client.
+- **We cannot inspect or split:** the vendor's shared warmup/seed pool (EmailBison + EmailGuard under one shared Growth Today account). **This risk materialised in June–July 2026: 13 of 17 audited clients were listed on SURBL at once, and the shared warmup/seed pool is the suspected cause.** The escalation path is no longer hypothetical: DNS-footprint check across clients → written per-tenant isolation from the vendor → separate workspace + placement-test account per client.
 
 ## Growth Today's point of view (our answers)
 

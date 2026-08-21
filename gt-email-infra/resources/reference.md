@@ -39,15 +39,23 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 
 | State | Rule |
 |---|---|
-| **New Inbox** | Total emails ever sent **< 100**. (Campaign routing also excludes any inbox **< 14 days** old by creation date.) |
+| **New Inbox** | Total emails ever sent **< 100**. (Campaign routing also excludes any inbox **< 14 days** old by creation date.) **Cold send limit = 1/day** for both Google and Outlook. |
 | **Active** | Placement **> 70/100** AND bounce **< 2%** AND reply **≥ 0.5%** AND warmup score **≥ 97**. |
 | **Burnt** | Bounce **> 3%** AND reply **< 0.5%** AND warmup score **< 95** (all three). |
 | **Warmup Needed** | Anything that is not New / Active / Burnt. |
-| **Blacklisted** | Domain listed on a blacklist that counts (Spamhaus DBL / URIBL). Volume auto-reduced. |
+| **Blacklisted** | Domain listed on a blacklist that counts (Spamhaus DBL / URIBL). Volume auto-reduced. **See the warning below — this has not been working.** |
 
 **Placement overrides:** placement **< 70** forces Warmup Needed even if everything else is strong; placement **< 50** hard-forces Warmup Needed. When placement recovers, the inbox returns to Active automatically.
 
 **No timeout:** an inbox can sit in Warmup Needed indefinitely, there is no auto-escalation to Burnt. Burnt requires all three thresholds concurrently.
+
+> **⚠️ Blacklisted has never actually worked as written.** OpsLab confirmed that Spamhaus and
+> URIBL were both silently failing in the app — URIBL was blocking them, and Spamhaus returned
+> "clean" for every domain. **Every Blacklisted tag GT has ever seen came from SURBL alone**, the
+> one list that is now being demoted to monitor-only. The agreed fix turns Spamhaus DBL and URIBL
+> on (both free — GT supplies a free Spamhaus DQS key, registered as *Individual*, not
+> *Organisation*) and adds a self-test so a list going quiet is caught automatically.
+> Until that ships, treat any Blacklisted tag as **SURBL-derived and probably not actionable**.
 
 ---
 
@@ -71,21 +79,51 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 Work backwards: **monthly goal → daily volume → mailboxes → domains.**
 
 1. Monthly email goal ÷ **20 working days** = daily volume.
-2. Daily volume ÷ **20 (conservative) or 25 (aggressive)** per mailbox = mailboxes.
-3. Mailboxes **× 1.5** (buffer for rotation, warmup, issues) = mailboxes with buffer.
-4. Domains: **Google mailboxes ÷ 2–3** + **Microsoft mailboxes ÷ ~25** (Microsoft packs far more mailboxes per domain than Google, so domain count is Google-dominated).
+2. Daily volume ÷ **14 per mailbox** = mailboxes needed.
+3. Mailboxes **× 1.5** (buffer for rotation, warmup, issues) = mailboxes to buy.
+4. Domains: **Google mailboxes ÷ 2–3** + **Microsoft mailboxes ÷ ~25**.
 5. Provider split: **60% Google Workspace, 40% Microsoft 365.**
 
-| Monthly goal | Daily volume | Mailboxes (w/ buffer) | Domains |
-|---|---|---|---|
-| 3,000 | 150 | 10–12 | 3–4 |
-| 7,500 | 375 | 18–23 | 5–6 |
-| 15,000 | 750 | 38–45 | 10–12 |
-| 30,000 | 1,500 | 75–90 | 20–24 |
+> **Where 14 comes from.** It is not a guess — it falls out of §1 and the 60/40 split:
+> `0.60 × 20 (Google cold) + 0.40 × 5 (Outlook cold) = 14 emails/mailbox/day`.
+> **Do not use 20 or 25.** Those came from the old Google 30 / Microsoft 10 limits that §1
+> tells you not to copy (`0.60 × 30 + 0.40 × 10 = 22`, which is where "20–25" came from).
+> Using 20 under-buys by ~43%; using 25 under-buys by ~79%.
+> If the split changes, recompute: `blended = split_google × 20 + (1 − split_google) × 5`.
 
-Domains assume the 60/40 split with Google at ~2–3 mailboxes/domain and Microsoft at ~25/domain, so the count is driven mostly by the Google side.
+| Monthly goal | Daily volume | Mailboxes needed | **Mailboxes to buy (×1.5)** | Google / Microsoft | Domains |
+|---|---|---|---|---|---|
+| 3,000 | 150 | 11 | **17** | 10 / 7 | 5 |
+| 7,500 | 375 | 27 | **42** | 25 / 17 | 11 |
+| 15,000 | 750 | 54 | **82** | 49 / 33 | 22 |
+| 30,000 | 1,500 | 108 | **162** | 97 / 65 | 42 |
 
-**Mailboxes per domain (average): Google 2–3, Microsoft up to ~25.** Google stays lean for deliverability; Microsoft can host many mailboxes per domain. Verify the per-provider density on scale-ups.
+The buffer applies to **every** row. (The previous version of this table applied it to the first
+row only, which is why the larger tiers looked cheap.)
+
+**Mailboxes per domain (average): Google 2–3, Microsoft up to ~25.** Google stays lean for
+deliverability; Microsoft can host many mailboxes per domain. Domain count is therefore driven
+almost entirely by the Google side. Verify the per-provider density on scale-ups.
+
+### Days to Clear (how fast the campaign must finish)
+
+The table above assumes a 20-working-day month. Campaigns that must clear faster need
+proportionally more daily capacity — a list run in 5 days needs **4× the daily volume** of the
+same list run over 20.
+
+| Days to clear | Campaign type | Why |
+|---|---|---|
+| **1** | Website visitor · app install · churn | Act the same day or the signal is dead |
+| **5** | Hiring signals | Roles close quickly, prospect inside a week |
+| **20** | One-off campaigns | Standard month; initial tests |
+| **45** | Evergreen / high volume | Long-running, balanced against other campaigns |
+
+**Formula when a campaign has a deadline:** `daily volume = contacts × sequence steps ÷ days to clear`,
+then continue from step 2 above.
+
+**Campaign types:**
+- **Evergreen** — auto-populates a set number of accounts/contacts to prospect daily or weekly, runs on autopilot. *Example: contacts at companies that installed HubSpot last week.*
+- **One-off** — built once for a specific list. *Example: members of the Pavilion Slack community.*
 
 ---
 
@@ -119,7 +157,7 @@ Scaling rules: increase volume **≤ 20%/week**; stagger new-domain launches (**
 | MX | Routes incoming mail to the provider | Set at provisioning |
 | SPF | Which servers may send for the domain | **Only ONE** SPF TXT record per domain; keep total DNS lookups ≤ 10 |
 | DKIM | Signature proving authenticity | Copy the exact key, no stray spaces |
-| DMARC | Policy for SPF/DKIM failures | Start `p=none` (monitor), tighten later |
+| DMARC | Policy for SPF/DKIM failures | **`p=reject` is the GT standard.** `p=none` only as a short verification phase at first setup |
 
 **Redirect vs masking:** a secondary domain must reach a real destination via **masking or a genuine landing page, never a bare 301/302 redirect** to the main site. Blocklists (SURBL) follow redirects, and many domains → one site is the exact spam fingerprint. See the provisioning sub-skill.
 
@@ -165,7 +203,9 @@ Root cause by type: **hard 5XX → list/verification/data**; **soft 4XX → temp
 
 - **Naming:** keep the brand word; **drop prefixes** (`go/get/try/meet`); no hyphens, no numbers; `.com` first.
 - **Avoid** cheap TLDs `.top / .xyz / .cc` and the most-abused registrar/date bulk-buy pattern.
-- **Buy** across multiple registrars, spread over ~24h at 2–3h intervals, **< 5 per registrar per day**; spread DNS across multiple Cloudflare accounts (ScaledMail does this).
+- **Buy** across multiple registrars, spread across **multiple days**, **max 4 domains per registrar per day**; spread DNS across multiple Cloudflare accounts. **ScaledMail owns purchasing, spread and timing** — GT's job is to verify it happened.
+  - Batch size sets the calendar, not the other way round. At 4/registrar/day a 50-domain batch cannot be finished in one day, and a 150-domain batch certainly cannot.
+- **Most-abused registrars** (use, but never bulk on one): GNAME, Dynadot, NameSilo, Namecheap. Abuse concentrates there because they are popular and cheap, not because they are defective.
 - **Links:** no custom tracking domain and no links in cold email by default; share via LinkedIn or an unlinked URL.
 
 *Source basis: Spamhaus/Mashood-Nabeel malicious-domains study (Jun 2026), median flagged attacker domain age 60 days; 77.9% sit in a single registrar+date bulk batch; most-abused registrars and `.top/.xyz/.cc` TLDs.*

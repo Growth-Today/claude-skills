@@ -5,6 +5,13 @@ description: "Set up and connect sending inboxes in EmailBison (infrastructure s
 
 # EmailBison Inbox Setup · [Sales Ops]
 
+> **⚠️ EmailBison is being retired.** Growth Today is moving to Instantly. The migration is
+> approved and under way, and all EmailBison campaigns finish by **end of August 2026**, after
+> which Bison is switched off. Keep using this sub-skill for campaigns still running on Bison;
+> **start anything new in Instantly** (the instantly-setup sub-skill). Do not invest further
+> effort in Bison-specific process.
+
+
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
 
 Set up sending inboxes in **EmailBison** (one of the sequencers Growth Today runs). Infrastructure/inbox side only, sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5. Steps below reflect the EmailBison / Bisonsphere help center; where a value is set only in the app UI, that is flagged.
