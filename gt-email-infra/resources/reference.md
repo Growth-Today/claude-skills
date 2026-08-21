@@ -31,6 +31,24 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 
 > **Do not** copy the old "Google 30/day, Microsoft 10/day safe limit" figure, it conflated cold+warmup and the Microsoft cold number was wrong. Govern by the ratio above.
 
+### §1 keys (referenced by executable tables)
+
+Executable check rows cite these keys instead of repeating the number. **If a value changes, change it here and every check follows.** Never restate one of these figures inside a sub-skill.
+
+| Key | Value | Meaning |
+|---|---|---|
+| `google_cold` | 20 | Google cold sends/day, inbox fully warmed and Active |
+| `google_warmup` | 30 | Google warmup/day at the same state |
+| `outlook_cold` | 5 | Outlook cold sends/day, fully warmed and Active |
+| `outlook_warmup` | 15 | Outlook warmup/day at the same state |
+| `cold_warming` | 0–1 | Cold limit during the first 21 days, and when throttled (Instantly/Smartlead 0; EmailBison floor 1) |
+| `cold_new_inbox` | 1 | Cold limit for a New Inbox, both providers |
+| `ratio_google` | 1.5 | Warm-to-cold ratio, Google |
+| `ratio_outlook` | 3 | Warm-to-cold ratio, Microsoft/Outlook |
+| `ramp_google` | +4/day | Warmup increment during warming |
+| `ramp_outlook` | +2/day | Warmup increment during warming |
+| `blended_per_mailbox` | 14 | `0.60 × google_cold + 0.40 × outlook_cold` — the sizing divisor (§4) |
+
 ---
 
 ## 2. Inbox classification (state definitions)
@@ -46,6 +64,22 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | **Blacklisted** | Domain listed on a blacklist that counts (Spamhaus DBL / URIBL). Volume auto-reduced. **See the warning below — this has not been working.** |
 
 **Placement overrides:** placement **< 70** forces Warmup Needed even if everything else is strong; placement **< 50** hard-forces Warmup Needed. When placement recovers, the inbox returns to Active automatically.
+
+### §2 keys (referenced by executable tables)
+
+| Key | Value | Meaning |
+|---|---|---|
+| `new_inbox_sends` | < 100 | Lifetime sends below which an inbox is New |
+| `new_inbox_age_days` | 14 | OpsLab campaign-routing exclusion age. **Not** the GT warmup floor — that is `warmup_floor_days` in §5 |
+| `warmup_floor_days` | 21 | GT's hard warmup floor before any cold send (§5) |
+| `placement_active` | > 70 | Placement score required for Active |
+| `placement_forced_warmup` | < 50 | Hard-forces Warmup Needed |
+| `bounce_active` | < 2% | Bounce ceiling for Active |
+| `bounce_burnt` | > 3% | Bounce floor for Burnt (all three Burnt conditions must hold) |
+| `reply_active` | ≥ 0.5% | Reply floor for Active |
+| `warmup_score_active` | ≥ 97 | Warmup score for Active |
+| `warmup_score_burnt` | < 95 | Warmup score for Burnt |
+| `blacklists_that_count` | Spamhaus DBL, URIBL | The only two. No other list is a blacklist reason |
 
 **No timeout:** an inbox can sit in Warmup Needed indefinitely, there is no auto-escalation to Burnt. Burnt requires all three thresholds concurrently.
 

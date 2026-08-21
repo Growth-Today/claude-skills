@@ -13,15 +13,24 @@ How to read the automated inbox-management dashboard and turn each panel into an
 
 ## Part 1, Inbox classification (what the tags mean)
 
-Every inbox is auto-tagged. Exact thresholds in `reference.md` §2; the short version:
+Every inbox is auto-tagged by OpsLab. Exact thresholds in `reference.md` §2.
 
-| Tag | Meaning | What you do |
-|---|---|---|
-| **New Inbox** | < 100 lifetime sends (excluded from campaigns until ≥ 14 days old) | Don't scale it; let it graduate |
-| **Active** | placement > 70, bounce < 2%, reply ≥ 0.5%, warmup ≥ 97 | Safe to send at full cold limit |
-| **Warmup Needed** | anything not New/Active/Burnt (placement < 70 forces this) | Throttled to cold 0–1, stays attached; investigate placement |
-| **Burnt** | bounce > 3% AND reply < 0.5% AND warmup < 95 (all three) | Excluded from campaigns; rest & re-test (Part 5) |
-| **Blacklisted** | domain on Spamhaus DBL / URIBL | Volume cut; go to the bounce-audit sub-skill |
+**This table is executable as a verification, never as a change.** With the sequencer MCP
+connected, you can recompute what each inbox's state *should* be and compare it to the tag
+OpsLab actually applied. A mismatch is a finding to report — it is how OpsLab bugs get caught —
+and it is never something GT retags. Every row here is `Write? never`.
+
+| Tag | Threshold (`reference.md` §2 keys) | Verify with | What you do |
+|---|---|---|---|
+| **New Inbox** | lifetime sends < `new_inbox_sends`; routing also excludes age < `new_inbox_age_days` | `list_accounts` → `timestamp_created` · `analytics_daily_account` → lifetime sent | Don't scale it; let it graduate |
+| **Active** | placement `placement_active` · bounce `bounce_active` · reply `reply_active` · warmup `warmup_score_active` | `list_accounts` → `stat_warmup_score` · `inbox_placement_analytics_*` · `get_campaign_analytics` | Safe to send at full cold limit |
+| **Warmup Needed** | anything not New/Active/Burnt; placement `placement_forced_warmup` hard-forces it | same reads as Active | Throttled to cold 0–1, stays attached; investigate placement |
+| **Burnt** | bounce `bounce_burnt` AND reply < `reply_active` AND warmup `warmup_score_burnt` — **all three** | same reads as Active | Excluded from campaigns; rest & re-test (Part 5) |
+| **Blacklisted** | domain on `blacklists_that_count` (Spamhaus DBL / URIBL) — nothing else | check at source; the app's own blacklist read has been unreliable (Part 2b) | Volume cut; go to the bounce-audit sub-skill |
+
+> **What a mismatch means.** If an inbox reads Active on the dashboard but the live numbers put
+> it in Burnt, that is a classification-engine finding for OpsLab, not a tag for you to correct.
+> Report the inbox list and the computed state. Same in reverse.
 
 **No timeout:** an inbox can sit in Warmup Needed forever, there's no auto-escalation. Placement < 50 hard-forces Warmup Needed; when placement recovers, it returns to Active on its own.
 
@@ -77,14 +86,23 @@ Timing: a **rising bounce rate is a leading indicator** (acts the same day), a *
 
 ## Part 4, Send limits by state (read-only — OpsLab sets these)
 
-**OpsLab sets these limits. Your job is to check them, not change them.** Governed by the warm-to-cold **ratio**, with the cold limit driven by inbox state (`reference.md` §1). If an inbox is on the wrong limit, report it with the inbox list — do not fix it yourself.
+**OpsLab sets these limits. Your job is to check them, not change them.** Governed by the
+warm-to-cold **ratio**, with the cold limit driven by inbox state (`reference.md` §1). If an inbox
+is on the wrong limit, report it with the inbox list — do not fix it yourself.
 
-| State | Cold (Google / Outlook) | Warmup target |
-|---|---|---|
-| Warming (first 21 days) | 0–1 / 0–1 | cold × ratio (G 1.5 / O 3) |
-| Active (sending) | 20 / 5 | ~30 / ~15 |
-| Warmup Needed / Burnt | 0–1 / 0–1 | reduced |
-| New Inbox | 1 / 1 | — |
+**Executable as a verification.** `list_accounts → daily_limit` and `warmup.limit` give you the
+live values; compare them to the §1 keys below. **Every row is `Write? never`** — `update_account`
+and `manage_account_state` are out of bounds for a GTM engineer regardless of what the audit finds.
+
+| State | Cold (Google / Outlook) | Warmup target | Verify with |
+|---|---|---|---|
+| Warming (first `warmup_floor_days`) | §1 `cold_warming` | cold × §1 `ratio_google` / `ratio_outlook` | `list_accounts` → `daily_limit`, `warmup.limit`, `timestamp_created` |
+| Active (sending) | §1 `google_cold` / `outlook_cold` | §1 `google_warmup` / `outlook_warmup` | same |
+| Warmup Needed / Burnt | §1 `cold_warming` | reduced | same + `warmup_status` |
+| New Inbox | §1 `cold_new_inbox` | — | same + lifetime sends |
+
+Numbers are deliberately not repeated here. Read the current values from the §1 key table at run
+time — that is what stops this page drifting from the standard the way the old sizing SOP did.
 
 > **Failover watch (EmailBison):** a throttled inbox stays attached at cold 1 and keeps sending to its in-flight leads; Bison won't reroute those leads to a healthy inbox on the campaign. Scan for leads stranded on Warmup-Needed inboxes, a real bounce driver. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't.
 
