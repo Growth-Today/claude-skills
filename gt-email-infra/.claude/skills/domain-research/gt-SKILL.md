@@ -5,7 +5,21 @@ description: "Research and buy cold-email sending domains safely. Use for domain
 
 # Domain Research & Purchasing · [Sales Ops]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §4, §5, §9 · `{SKILL_BASE}/resources/approved-vendors.md` · **Feeds:** the provisioning sub-skill.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §4, §5, §9 · `{SKILL_BASE}/resources/approved-vendors.md` · **Runs:** `{SKILL_BASE}/playbooks/sizing-calculator`, `{SKILL_BASE}/playbooks/dns-auth-audit` · **Feeds:** the provisioning sub-skill.
+
+## Ask first (don't generate names without these)
+
+Domain ideation goes wrong when it starts from the brand word alone. Collect these five before suggesting anything:
+
+| # | Ask | Why it changes the answer |
+|---|---|---|
+| 1 | **Client's primary website / brand domain** | Every secondary has to be a recognisable variant of it, and you need it to check you aren't duplicating something they already own |
+| 2 | **Domains they already own** (including parked and previously-used ones) | Near-duplicates of an owned domain are the most common wasted purchase. Also: a previously-burnt domain must not be recycled quietly |
+| 3 | **How many domains** | Don't guess. Run `playbooks/sizing-calculator` from the monthly goal or the contacts × steps ÷ deadline — the answer is usually larger than people expect |
+| 4 | **Vertical / motion** — cold outbound, newsletter, events, or enterprise/ABM | Changes the naming register. Enterprise buyers read `-hq` and `-team` variants as fine; a newsletter list does not want an outreach-shaped domain |
+| 5 | **Anything the client will refuse** | Legal, trademark, or a competitor's near-name. Cheaper to ask than to un-buy |
+
+Items 1 and 2 are the two inputs that have been supplied by hand on every build so far. Ask for them up front rather than discovering them at purchase time.
 
 How to ideate a clean list of sending domains and buy them safely, so a domain is never flagged *before it sends a single email*. This is the first step of any new infrastructure build. Numbers live in `{SKILL_BASE}/resources/reference.md` §4, §5, §9; vendors in `{SKILL_BASE}/resources/approved-vendors.md`.
 
@@ -97,7 +111,7 @@ PURCHASE (spread - ScaledMail does this; GT spot-checks)
 [ ] Aged-domain choice confirmed with GTM/account owner (default = age our own)
 [ ] Ordered by ScaledMail; GT kept name research + verification only
 
-VERIFY (public footprint)
+VERIFY (public footprint - GT's spot-check on ScaledMail)
 [ ] WHOIS shows different registrars across the batch
 [ ] Creation dates staggered (not all same day/registrar)
 [ ] Destination will be masking / real landing page, NOT a bare 301/302 (GT runs no client redirects today - confirm, don't assume)

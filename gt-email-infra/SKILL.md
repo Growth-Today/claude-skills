@@ -55,6 +55,26 @@ Platform: this skill supports the sequencers Growth Today uses, **EmailBison, In
 
 ---
 
+## ▶️ Playbooks (run these, don't do them by hand)
+
+A playbook is an executable version of a checklist: an interview that collects the inputs, a script that does the work, and an after-state that proves it landed. Read `playbook.md` first — it contains the interview questions — then run the script.
+
+| Playbook | What it does | Needs | Status |
+|---|---|---|---|
+| **dns-auth-audit** | MX / SPF (record count + recursive lookup budget) / DKIM across 14 selectors / DMARC policy vs the GT standard / stray Lync SRV, plus MX→provider and SEG detection. `after.py` diffs against a saved baseline to catch silent drift. | nothing — public DNS only | ✅ tested on 6 live GT domains |
+| **sizing-calculator** | Monthly goal *or* contacts × steps ÷ days-to-clear → daily volume → mailboxes → mailboxes to buy → Google/Microsoft split → domains. Parses the cold limits out of `reference.md` §1 rather than hardcoding them. | nothing — stdlib only | ✅ reproduces the §4 table exactly (`--validate`) |
+
+```bash
+cd {SKILL_BASE}/playbooks/<name>/scripts
+uv run execute.py --help          # every playbook is self-documenting
+```
+
+`uv` reads the PEP-723 header in each script, so there is nothing to install. `pip install -r requirements.txt` is the fallback.
+
+> **Scope note.** Both playbooks above are **read-only and provider-independent** — they query public DNS or do arithmetic. Anything that touches a sending platform is governed by the OpsLab boundary below: reads are fine, writes to sending limits, warmup config, tagging or routing are not GT's to make.
+
+---
+
 ## 🔒 OpsLab-owned: read-only
 
 The **OpsLab app** is the source of truth for the automated inbox layer. This skill holds that
@@ -102,7 +122,19 @@ scope — a permission test must confirm it is refused before any settings check
 
 ## Sizing formula (detail in `{SKILL_BASE}/resources/reference.md` §4)
 
-Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxes → × 1.5 buffer. Domains: **Google mailboxes ÷ 2–3 + Microsoft mailboxes ÷ ~25** (Microsoft packs far more per domain). Split **60% Google / 40% Microsoft**.
+Monthly goal ÷ 20 workdays = daily volume → **÷ 14 per mailbox** = mailboxes → × 1.5 buffer. Domains: **Google mailboxes ÷ 2–3 + Microsoft mailboxes ÷ ~25** (Microsoft packs far more per domain). Split **60% Google / 40% Microsoft**.
+
+> **Do not divide by 20–25.** That divisor came from the deprecated Google 30 / Microsoft 10 limits and under-buys by 43–79%. The correct blended figure falls out of §1: `0.60 × 20 + 0.40 × 5 = 14`.
+
+**Don't do this by hand — run it:**
+
+```bash
+cd {SKILL_BASE}/playbooks/sizing-calculator/scripts
+uv run execute.py --monthly-goal 15000
+uv run execute.py --contacts 9000 --steps 4 --days-to-clear hiring
+```
+
+The script reads the cold limits out of `reference.md` §1 at run time, so it cannot drift from the standard the way the old spreadsheet did.
 
 ## What we can and cannot see
 

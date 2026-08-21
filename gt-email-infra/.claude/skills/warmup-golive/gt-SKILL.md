@@ -5,7 +5,16 @@ description: "Warm up mailboxes and take domains live safely. Use for warmup tim
 
 # Warmup & Go-Live · [Sales Ops → GTM]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §5 · gt-list-building (list verification) · **Related:** domain-research, provisioning, campaign-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §5 · gt-list-building (list verification) · **Runs:** `{SKILL_BASE}/playbooks/dns-auth-audit` · **Related:** domain-research, provisioning, campaign-building.
+
+> **Launch gate, first step.** Before anything else on this page, run the DNS audit across every
+> sending domain and require a clean exit:
+> ```bash
+> cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
+> uv run execute.py --file domains.txt --csv <client>_launch.csv   # exit 0 = clear, 2 = blocked
+> ```
+> A FAIL on MX, SPF or DMARC is launch-blocking. The exit code is designed to be used as a gate,
+> so this can sit in front of go-live rather than beside it.
 
 Take provisioned domains (the provisioning sub-skill) from cold to live safely. The whole point is patience: warm long enough, age before you link, and cross a hard gate before the first send. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
 

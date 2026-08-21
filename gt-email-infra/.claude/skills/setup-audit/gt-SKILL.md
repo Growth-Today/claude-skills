@@ -5,7 +5,7 @@ description: "Audit a live sequencer workspace to verify inboxes are set up corr
 
 # Setup Audit, Verify a Workspace · [GTM Engineer]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §6 · `{SKILL_BASE}/resources/approved-vendors.md` · the platform setup sub-skills · **Related:** emailbison-setup, instantly-setup, smartlead-setup, lemlist-setup, dashboard-reading.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §6 · `{SKILL_BASE}/resources/approved-vendors.md` · the platform setup sub-skills · **Runs:** `{SKILL_BASE}/playbooks/dns-auth-audit` · **Related:** emailbison-setup, instantly-setup, smartlead-setup, lemlist-setup, dashboard-reading.
 
 Connect a client's sequencer workspace, pull the **live configuration**, and check every setting against the Growth Today standard, so you (or an agent) can say, item by item, *"this is set up right"* or *"this was missed, here's the fix."* This is the setup-side counterpart to the blacklist-bounce-audit sub-skill: not a static checklist, a **live verification** you run on a real workspace.
 
@@ -20,7 +20,12 @@ Connect a client's sequencer workspace, pull the **live configuration**, and che
 Platform-aware, use the connected sequencer's MCP/API. Pull:
 1. **Inboxes:** every sending account, its provider (Google/Microsoft/SMTP), connection status, tags, warmup on/off + score, cold + warmup daily limits, lifetime sent, creation date.
 2. **Domains:** distinct sending domains and how many mailboxes each has.
-3. **DNS/auth:** MX/SPF/DKIM/DMARC status per domain (or note the sequencer doesn't expose it → check externally).
+3. **DNS/auth:** MX/SPF/DKIM/DMARC status per domain. Most sequencers don't expose this, so **don't check it by hand** — run the playbook:
+   ```bash
+   cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
+   uv run execute.py --file domains.txt --csv <client>_baseline.csv
+   ```
+   It needs no credentials, grades every domain PASS/WARN/FAIL, classifies the provider from MX (which is also how you spot a recipient-side SEG), and writes a CSV you can diff next month with `after.py`. Save the CSV per client — drift is the real risk, and you can only see drift against a baseline.
 4. **Campaigns:** per campaign, tracking on/off, first-email content type (plain/HTML), sending interval + schedule/timezone, company send limit, unsubscribe/stop-on-reply settings, ESP routing.
 5. **Account settings:** custom tracking domain present? warning notifications on? (Lemlist: LinkedIn limits, blocklist, HubSpot sync.)
 
@@ -34,7 +39,7 @@ Grade each against the Growth Today standard (`{SKILL_BASE}/resources/reference.
 
 | # | Check | PASS if… | Common FAIL / fix |
 |---|---|---|---|
-| 1 | **Inbox count** | matches the brief (count + MS/Google split) | fewer/more than briefed → reconcile with the vendor |
+| 1 | **Inbox count** | matches the brief (count + MS/Google split) | fewer/more than briefed → reconcile with the vendor. If the brief itself is in doubt, re-derive it with `playbooks/sizing-calculator` before arguing with ScaledMail — several old briefs were sized on the deprecated ÷20–25 divisor and under-buy by 43–79% |
 | 2 | **Mailboxes per domain** | Google ≤ ~2–3; Microsoft ≤ ~25 (average) | Google drifted well past 3 → redistribute; verify per provider |
 | 3 | **Connection** | all Connected; real-name addresses | disconnected / role addresses (sales@, info@) → reconnect/replace |
 | 4 | **Warmup on** | enabled on every inbox; not disabled on live inboxes | any inbox warmup off → **report to OpsLab with the inbox list. Do not enable it yourself on a live inbox** (read-only boundary) |
@@ -42,7 +47,7 @@ Grade each against the Growth Today standard (`{SKILL_BASE}/resources/reference.
 | 6 | **Cold limits by state** | Active Google 20 / Outlook 5; warming & unhealthy 0–1 (Bison floor 1); **New Inbox 1**; ratio Google 1.5 / Outlook 3 (`reference.md` §1) | inboxes on wrong limit (e.g. 30) → **flag to OpsLab with the inbox list. GT does not set limits** (read-only boundary) |
 | 7 | **Randomized interval** | a randomized send gap set (e.g. ~5 min + jitter), correct per platform | fixed/too-tight interval → randomize |
 | 8 | **Timezone** | sending window matches the segment (US vs EU) | wrong timezone → fix schedule |
-| 9 | **DNS/auth** | MX/SPF/DKIM/DMARC green per domain; exactly one SPF record; **DMARC at `p=reject`** | broken/missing/duplicate SPF → fix (the provisioning sub-skill). DMARC: FAIL if absent · WARN at `p=none` · PASS at `quarantine`/`reject` |
+| 9 | **DNS/auth** | MX/SPF/DKIM/DMARC green per domain; exactly one SPF record within the 10-lookup budget; **DMARC at `p=reject`** | **Run `playbooks/dns-auth-audit` — do not click through MXToolBox.** Broken/missing/duplicate SPF, or an over-budget include chain → fix at the DNS host (the provisioning sub-skill). DMARC: FAIL if absent · WARN at `p=none` or `p=quarantine` · PASS at `p=reject` (`reference.md` §6). A record that was healthy and is now broken is **P0** |
 | 10 | **Destination** | masking or real landing page, not a bare 301/302 redirect | bare redirect → switch to masking. *GT runs no client redirects today, so this normally passes; a FAIL means an inherited or client-held domain* |
 | 11 | **Tracking** | open + link tracking OFF; no custom tracking domain (unless client insists) | tracking on / shared tracking domain → turn off |
 | 12 | **First email** | plain text, no HTML, images, or links | HTML/links/images in email 1 → strip |

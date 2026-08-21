@@ -68,13 +68,41 @@ Use `p=none` only as a short verification phase during first setup, then move to
 (Google, Yahoo and Microsoft still only *require* `p=none`; enforcement is best practice and is
 what GT already runs in production.)
 
-**Verify:** `dig TXT yourdomain.com` (SPF), email headers show `dkim=pass`, `dig TXT _dmarc.yourdomain.com` (DMARC); or the sequencer's built-in domain test + a placement/mail test.
+**Verify — run the playbook, don't click through a web tool:**
+
+```bash
+cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
+uv run execute.py newdomain.com anotherdomain.com --csv <client>_baseline.csv
+```
+
+It checks all four records plus two things a manual pass reliably misses: a **second SPF record**
+(both get ignored, while every UI tool still shows a green tick) and an **over-budget include chain**
+(more than 10 lookups is a permerror under RFC 7208). It also flags stray Lync/Skype SRV records
+copy-pasted from the Microsoft 365 guide.
+
+Keep the CSV. It is the baseline Part 4 diffs against.
+
+By hand, if you must: `dig TXT yourdomain.com` (SPF), headers show `dkim=pass`,
+`dig TXT _dmarc.yourdomain.com` (DMARC). Inside a sequencer? Use its built-in domain check.
 
 ---
 
 ## Part 4, Guard against silent DNS drift
 
-Correct-at-setup is not enough, the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Re-check MX/SPF/DKIM/DMARC on a schedule (the DNS/auth-health panel in the dashboard-reading sub-skill surfaces broken/never-checked records and should alert on a break). Treat a broken auth record as **P0**.
+Correct-at-setup is not enough, the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Treat a broken auth record as **P0**.
+
+**OpsLab owns the scheduled weekly re-check** — read its result in the DNS/auth-health panel (the dashboard-reading sub-skill), and do not build a competing scheduler.
+
+What you *can* run on demand, on any domain, without credentials:
+
+```bash
+cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
+uv run after.py --csv <client>_baseline.csv
+```
+
+This re-queries every domain in the baseline and reports each record as FIXED, STILL FAIL,
+REGRESSED or CHANGED. **REGRESSED is the alarm** — a record that was healthy and is now broken
+means the provider changed something underneath you, and nothing in the sequencer will tell you.
 
 ---
 

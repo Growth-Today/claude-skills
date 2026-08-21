@@ -1,0 +1,15 @@
+# gt-email-infra dependencies
+#
+# Every script under playbooks/*/scripts/ carries its own PEP-723 header, so
+# `uv run <script>` needs nothing installed. This file is the pip fallback.
+
+# DNS/auth audit — queries MX/SPF/DKIM/DMARC/SRV directly, no third-party API
+dnspython>=2.6
+
+# Domain footprint checks (registrar + creation date via RDAP; destination check)
+requests>=2.31
+
+# Reading API keys from .env when a playbook talks to an ESP
+python-dotenv>=1.0
+
+# sizing-calculator has NO dependencies — standard library only, on purpose.
