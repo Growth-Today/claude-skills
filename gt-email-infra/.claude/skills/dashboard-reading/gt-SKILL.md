@@ -81,8 +81,8 @@ Timing: a **rising bounce rate is a leading indicator** (acts the same day), a *
 
 | State | Cold (Google / Outlook) | Warmup target |
 |---|---|---|
-| Warming (first 14 days) | 0–1 / 0–1 | cold × ratio (G 1.5 / O 2.5) |
-| Active (sending) | 20 / 5 | ~30 / ~13 |
+| Warming (first 21 days) | 0–1 / 0–1 | cold × ratio (G 1.5 / O 3) |
+| Active (sending) | 20 / 5 | ~30 / ~15 |
 | Warmup Needed / Burnt | 0–1 / 0–1 | reduced |
 | New Inbox | 1 / 1 | — |
 

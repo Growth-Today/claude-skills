@@ -12,22 +12,22 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 
 **Warm-to-cold ratio target:**
 - Google **1.5 : 1**
-- Microsoft / Outlook **2.5 : 1** (deliberately stricter)
+- Microsoft / Outlook **3 : 1** (deliberately stricter)
 
 **Limits by inbox state** (the standard Growth Today values these sub-skills all derive from):
 
 | Inbox state | Google cold | Google warmup | Outlook cold | Outlook warmup |
 |---|---|---|---|---|
-| First 14 days (warming) | 0–1 * | 25 | 0–1 * | 8 |
-| After warmup (sending) | 20 | 30 | 5 | 13 |
+| First 21 days (warming) | 0–1 * | 25 | 0–1 * | 8 |
+| After warmup (sending) | 20 | 30 | 5 | 15 |
 | Warmup Needed / Burnt (throttled) | 0–1 * | 25 | 0–1 * | 8 |
 
 \* During warming and when throttled, cold is effectively off. Instantly/Smartlead can set **0**; **EmailBison's minimum is 1** (it cannot do 0), the failover gap below.
 
-**Warmup is governed by the warm-to-cold ratio, not a fixed constant.** The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**; Outlook 5 × 2.5 = **13**. Change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets warmup for you. During warming the ramp is Google **+4/day**, Outlook **+2/day** (see the instantly-setup sub-skill).
+**Warmup is governed by the warm-to-cold ratio, not a fixed constant.** The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**; Outlook 5 × 3 = **15**. Change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets warmup for you. During warming the ramp is Google **+4/day**, Outlook **+2/day** (see the instantly-setup sub-skill).
 
 - **Failover gap (EmailBison):** cold can't be set to 0, so an unhealthy inbox is throttled to 1 rather than silenced, and a lead being prospected by that inbox keeps getting sent from it; Bison won't hand the lead to another healthy inbox on the campaign. Instantly and Smartlead *can* set 0 and reroute the lead to a healthy inbox on the campaign.
-- Limits auto-adjust on day 15 (after the 14-day warmup floor).
+- Limits auto-adjust on day 22 (after the 21-day warmup floor).
 
 > **Do not** copy the old "Google 30/day, Microsoft 10/day safe limit" figure, it conflated cold+warmup and the Microsoft cold number was wrong. Govern by the ratio above.
 
@@ -48,6 +48,13 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 **Placement overrides:** placement **< 70** forces Warmup Needed even if everything else is strong; placement **< 50** hard-forces Warmup Needed. When placement recovers, the inbox returns to Active automatically.
 
 **No timeout:** an inbox can sit in Warmup Needed indefinitely, there is no auto-escalation to Burnt. Burnt requires all three thresholds concurrently.
+
+> **⚠️ The 14-day exclusion and the 21-day warmup floor are two different things.**
+> OpsLab's campaign routing releases a New Inbox at **14 days** old. Growth Today's warmup floor
+> is **21 days** (§5). So an inbox can become *eligible* in the system a week before GT policy
+> says it should send. **Do not attach an inbox to a campaign just because the system allows it** —
+> check warmup age against §5 first. The 14-day rule is OpsLab-owned; raise it with them if we
+> want the two aligned.
 
 > **⚠️ Blacklisted has never actually worked as written.** OpsLab confirmed that Spamhaus and
 > URIBL were both silently failing in the app — URIBL was blocking them, and Spamhaus returned
@@ -131,8 +138,8 @@ then continue from step 2 above.
 
 | Item | Value |
 |---|---|
-| Minimum warmup before sending | **14 days / 2 weeks** (hard floor) |
-| Recommended warmup | **3–4 weeks** |
+| Minimum warmup before sending | **21 days / 3 weeks** (hard floor) |
+| Recommended warmup | **3–4 weeks** (21 days is the floor; go to 4 weeks on a cautious build) |
 | Age-before-link gate | Link/campaign only from domains **> 30 days old AND past warmup** |
 | Never | Disable warmup once campaigns are running |
 

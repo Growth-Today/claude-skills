@@ -13,11 +13,11 @@ Take provisioned domains (the provisioning sub-skill) from cold to live safely. 
 
 ## Part 1, Warmup
 
-- **Minimum 14 days / 2 weeks** before any cold send (hard floor). **Recommended 3–4 weeks.**
+- **Minimum 21 days / 3 weeks** before any cold send (hard floor). **4 weeks on a cautious build.**
 - **Never disable warmup** once campaigns are running.
 - Warmup runs on every mailbox from day one of provisioning.
 
-**Warmup volume = cold limit × the warm-to-cold ratio** (`reference.md` §1): Google **1.5:1**, Outlook **2.5:1**. During the first 14 days cold is effectively 0–1, so warmup carries the load.
+**Warmup volume = cold limit × the warm-to-cold ratio** (`reference.md` §1): Google **1.5:1**, Outlook **3:1**. During the first 21 days cold is effectively 0–1, so warmup carries the load.
 
 > **Auto-warmup platforms.** Instantly and Smartlead manage warmup volume automatically, you set the behavior, not an absolute daily number. On EmailBison you set the warmup number explicitly (derive it from the ratio). Either way, keep warmup copy **neutral** so the warmup score reflects reputation, not campaign content.
 
@@ -62,7 +62,7 @@ These are gates, not suggestions. If any is unchecked, do not launch.
 
 ```
 INFRA
-[ ] Every mailbox warmed ≥ 14 days (ideally 3–4 weeks)
+[ ] Every mailbox warmed >= 21 days (4 weeks on a cautious build)
 [ ] Warmup/health scores healthy (≥ 97 target); no red/disabled warmup
 [ ] Domain > 30 days old (age-before-link gate)
 [ ] MX/SPF/DKIM/DMARC verified green (the provisioning sub-skill)

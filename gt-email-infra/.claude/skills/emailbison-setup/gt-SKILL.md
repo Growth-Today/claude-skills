@@ -48,12 +48,12 @@ Email Accounts → **Connect email account** → pick the provider.
 
 ## Part 2, Warmup
 
-**You set only the max daily warmup limit, Bison automates the rest** (ramp, reply rate, timing). Set the max to the Growth Today target in `{SKILL_BASE}/resources/reference.md` §1 (Google warmup ~30, Microsoft ~13 for a fully-warmed sending inbox; during warming cold is 0–1).
+**You set only the max daily warmup limit, Bison automates the rest** (ramp, reply rate, timing). Set the max to the Growth Today target in `{SKILL_BASE}/resources/reference.md` §1 (Google warmup ~30, Microsoft ~15 for a fully-warmed sending inbox; during warming cold is 0–1).
 
 - **Ramp (automatic):** starts ~2/day, increases ~50%/day to your max, then flexes ~±20%/day to mimic human variation.
 - **Ratio:** Google **1.5:1** warmup-to-cold; Microsoft stricter (Bison's own guidance: 2–4 warmup/day, max 3 warmup replies), keep aligned with `reference.md` §1.
 - **Reply rate** is under Advanced Settings but Bison strongly advises leaving it at default.
-- **Duration:** warm **≥ 2 weeks** before any cold send (Growth Today recommends 3–4 weeks, `reference.md` §5); monitor scores over 3 / 7 / 10–14-day windows; if low, cut cold temporarily and raise volume only as scores recover.
+- **Duration:** warm **≥ 21 days / 3 weeks** before any cold send (`reference.md` §5); monitor scores over 3 / 7 / 10–14-day windows; if low, cut cold temporarily and raise volume only as scores recover.
 - **Pool + filter phrase:** the warmup pool is private/self-healing; the filter phrase is a fixed per-workspace random string (not editable), no deliverability impact.
 
 > **EmailBison cold-limit floor = 1 (not 0).** An unhealthy inbox is throttled to 1, not silenced, a lead on it keeps getting sent from it (the failover gap; see the dashboard-reading and campaign-building sub-skills). Confirm the current app behavior, as this is a Growth Today operational finding, not a documented help-center value.
@@ -95,7 +95,7 @@ CONNECT
 
 WARMUP
 [ ] Max daily warmup limit set to GT target (reference §1); Bison automates ramp/reply/timing
-[ ] Warmed >= 2 weeks (3-4 recommended); scores healthy on 3/7/10-14d windows
+[ ] Warmed >= 21 days; scores healthy on 3/7/10-14d windows
 [ ] Cold limit correct per state (Active Google 20 / Outlook 5; unhealthy throttled to 1)
 
 DELIVERABILITY

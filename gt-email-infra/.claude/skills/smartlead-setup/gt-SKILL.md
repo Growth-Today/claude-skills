@@ -43,7 +43,7 @@ Email Accounts → select account → **Warm-up** tab → configure → **Enable
 - **Auto-Adjust Warmup/Sending Ratio:** optional smart-adjust, when on an active campaign the AI trims warmup (~7–10) and manages the ratio automatically.
 - **Weekdays-only** toggle available.
 - **Warmup identifier:** unique 2-word phrase used as an inbox filter/rule (no visible subject tag).
-- **Duration:** warm **≥ 2 weeks** (Growth Today recommends 3–4, `reference.md` §5), Smartlead doesn't publish a minimum, so use the GT gate.
+- **Duration:** warm **≥ 21 days / 3 weeks** (GT floor, `reference.md` §5). Smartlead doesn't publish a minimum, so use the GT gate.
 
 ---
 
@@ -84,7 +84,7 @@ CONNECT
 WARMUP
 [ ] Warmup enabled; Daily Ramp Up on (with warmup) for fresh domains; reply rate 20-30%
 [ ] Total daily volume aligned with GT targets (reference §1); randomise on
-[ ] Warmed >= 2 weeks (3-4 recommended)
+[ ] Warmed >= 21 days
 [ ] Cold limit correct per state (Active Google 20 / Outlook 5)
 
 DELIVERABILITY

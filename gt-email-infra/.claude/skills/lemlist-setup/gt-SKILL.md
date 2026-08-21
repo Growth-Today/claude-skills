@@ -38,7 +38,7 @@ Settings → Sending settings → **connect email address** → pick provider.
 
 - Lemwarm dashboard → Connect email → start.
 - **Ramp increment: +1/day**; **max ~20/day** (Growth Today setting). Lemwarm emails **don't** count toward the Lemlist daily send limit, but keep **total per mailbox ≤ 60–70/day** (Lemlist + lemwarm + manual replies).
-- **Duration:** warm **≥ 2 weeks** (Growth Today recommends 3–4, `reference.md` §5). Lemlist's own deliverability-score gates: <65 pause & fix DNS; 65–90 warmup only; >90 ready for campaigns.
+- **Duration:** warm **≥ 21 days / 3 weeks** (GT floor, `reference.md` §5). Lemlist's own deliverability-score gates: <65 pause & fix DNS; 65–90 warmup only; >90 ready for campaigns.
 - lemwarm is a **separate Lemlist product/plan**: confirm it's active for the account.
 
 ---
@@ -85,7 +85,7 @@ INBOXES & LINKEDIN
 WARMUP
 [ ] lemwarm ONLY if not warmed elsewhere; +1/day ramp, ~20/day cap
 [ ] Total per mailbox <= 60-70/day (Lemlist + lemwarm + manual)
-[ ] Warmed >= 2 weeks (3-4 recommended); deliverability score > 90 before campaigns
+[ ] Warmed >= 21 days; deliverability score > 90 before campaigns
 
 DELIVERABILITY
 [ ] Open + link tracking OFF; first email plain text

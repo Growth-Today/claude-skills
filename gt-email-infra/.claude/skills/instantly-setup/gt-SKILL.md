@@ -34,7 +34,7 @@ Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs
 7. **Growth Today QA on delivery** (see checklist): counts and MS/Google totals match the brief, all inboxes tagged, connected to the correct Instantly workspace, sending limits correct, placement OK.
 8. **Add to warmup**: Google/Microsoft **native accounts only** (no SMTP) can go into Instantly's Premium pool; request via your Instantly contact.
 9. **Set warmup + cold logic** (Part 3) and **placement tests** (Part 6).
-10. **After 14 days**, ramp to fully-warmed volumes and **notify the GTM Engineer + AM** that inboxes are ready.
+10. **After 21 days**, ramp to fully-warmed volumes and **notify the GTM Engineer + AM** that inboxes are ready.
 
 ---
 
@@ -71,15 +71,15 @@ Enable via the **flame icon** (or bulk via the ⋯ menu); warmup starts at the n
 
 **Growth Today warmup values** (these override Instantly's generic defaults of 10/day, +1/day, 30% reply):
 
-| | Warming (first 14 days) | Fully warmed |
+| | Warming (first 21 days) | Fully warmed |
 |---|---|---|
 | **Google** | warmup 25/day, **+4/day** increase, cold 0 | warmup 30/day, cold 20 |
-| **Microsoft** | warmup 8/day, **+2/day** increase, cold 0 | warmup 13/day, cold 5 |
+| **Microsoft** | warmup 8/day, **+2/day** increase, cold 0 | warmup 15/day, cold 5 |
 
 - **Reply rate:** ScaledMail SOP uses **75%**; **Growth Today prefers ramping to 100% after warmup** to lift reputation.
 - Keep **Read Emulation on** and the recommended Open Rate / Spam Protection / Mark Important defaults.
 - **Warmup pools:** Standard = green flame; **Premium = blue** (Google/MS only, higher quality); Basic = orange (SMTP overflow); **red = warmup disabled**. Put Google/MS native inboxes in Premium.
-- **Duration:** Instantly minimum is 2 weeks; **Growth Today recommends 3–4 weeks** (`reference.md` §5). Launch only when **Health Score > 90%**.
+- **Duration:** Instantly's own minimum is 2 weeks, but **Growth Today's floor is 21 days / 3 weeks** (`reference.md` §5), 4 weeks on a cautious build. Launch only when **Health Score > 90%**.
 - **Warmup filter** (keep warmup mail out of the inbox): copy the account's warmup tag → Gmail filter (tag in Subject + Has-the-words → Skip Inbox, label "Warmup") / Outlook rule (subject-or-body contains tag → mark read, move to "Instantly Warmup").
 
 Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1, this table must stay consistent with it.
@@ -134,8 +134,8 @@ WARMUP
 [ ] Premium pool for Google/MS native inboxes; no SMTP in premium
 [ ] Read emulation on; recommended sub-settings kept
 [ ] Warmup filter set in Gmail/Outlook
-[ ] Warmed 14 days min (3–4 weeks recommended); Health Score > 90% before launch
-[ ] Fully-warmed ramp set: Google 30 warmup/20 cold, Microsoft 13 warmup/5 cold
+[ ] Warmed 21 days min (4 weeks on a cautious build); Health Score > 90% before launch
+[ ] Fully-warmed ramp set: Google 30 warmup/20 cold, Microsoft 15 warmup/5 cold
 
 DELIVERABILITY
 [ ] First email text-only; open + link tracking OFF

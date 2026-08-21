@@ -93,7 +93,7 @@ scope — a permission test must confirm it is refused before any settings check
 2. **Mailboxes per domain is provider-specific: Google 2–3, Microsoft up to ~25 (average).** Google stays lean for deliverability; Microsoft can host many per domain.
 3. **One domain = one workspace.**
 4. **Buy across multiple registrars, spread across multiple days, max 4 per registrar per day.** ScaledMail owns the buying; GT verifies it happened.
-5. **Warm up ≥ 14 days / 2 weeks** (hard floor; recommended 3–4 weeks) before sending; **link only from domains > 30 days old**.
+5. **Warm up ≥ 21 days / 3 weeks** (hard floor; 4 weeks on a cautious build) before sending; **link only from domains > 30 days old**.
 6. **Never disable warmup** once campaigns are running.
 7. **Masking or a real landing page, never a bare 301/302 redirect** to the main site.
 8. **No links and no custom tracking domain** in cold email by default (share via LinkedIn or an unlinked URL).

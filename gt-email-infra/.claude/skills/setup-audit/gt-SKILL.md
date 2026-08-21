@@ -38,8 +38,8 @@ Grade each against the Growth Today standard (`{SKILL_BASE}/resources/reference.
 | 2 | **Mailboxes per domain** | Google ≤ ~2–3; Microsoft ≤ ~25 (average) | Google drifted well past 3 → redistribute; verify per provider |
 | 3 | **Connection** | all Connected; real-name addresses | disconnected / role addresses (sales@, info@) → reconnect/replace |
 | 4 | **Warmup on** | enabled on every inbox; not disabled on live inboxes | any inbox warmup off → **report to OpsLab with the inbox list. Do not enable it yourself on a live inbox** (read-only boundary) |
-| 5 | **Warmup age** | warmed ≥ 14 days (ideally 3–4 wks) before linking; domain > 30 days | linked too early → hold/age |
-| 6 | **Cold limits by state** | Active Google 20 / Outlook 5; warming & unhealthy 0–1 (Bison floor 1); **New Inbox 1**; ratio Google 1.5 / Outlook 2.5 (`reference.md` §1) | inboxes on wrong limit (e.g. 30) → **flag to OpsLab with the inbox list. GT does not set limits** (read-only boundary) |
+| 5 | **Warmup age** | warmed ≥ **21 days** before linking; domain > 30 days | linked too early → hold/age |
+| 6 | **Cold limits by state** | Active Google 20 / Outlook 5; warming & unhealthy 0–1 (Bison floor 1); **New Inbox 1**; ratio Google 1.5 / Outlook 3 (`reference.md` §1) | inboxes on wrong limit (e.g. 30) → **flag to OpsLab with the inbox list. GT does not set limits** (read-only boundary) |
 | 7 | **Randomized interval** | a randomized send gap set (e.g. ~5 min + jitter), correct per platform | fixed/too-tight interval → randomize |
 | 8 | **Timezone** | sending window matches the segment (US vs EU) | wrong timezone → fix schedule |
 | 9 | **DNS/auth** | MX/SPF/DKIM/DMARC green per domain; exactly one SPF record; **DMARC at `p=reject`** | broken/missing/duplicate SPF → fix (the provisioning sub-skill). DMARC: FAIL if absent · WARN at `p=none` · PASS at `quarantine`/`reject` |
