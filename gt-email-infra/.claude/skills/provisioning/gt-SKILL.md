@@ -29,7 +29,9 @@ Turn purchased domains (the domain-research sub-skill) into sending-ready mailbo
 
 ## Part 2, Destination: masking or a real landing page, NEVER a bare redirect
 
-> **🔴 NEVER point a secondary domain at the main site with a bare 301/302 redirect.** Blocklists (SURBL) follow the redirect to the final site; many secondaries → one site is the exact spam fingerprint, and it gets domains listed *before any send*. It is the single most common pre-send blocklisting cause.
+> **🔴 NEVER point a secondary domain at the main site with a bare 301/302 redirect.** Blocklists follow the redirect to the final site; many secondaries → one site is the exact bulk-sender fingerprint, and it can get domains listed *before any send*.
+>
+> **Current state (Aug 2026): GT runs no redirects for clients**, so this is a standard we are already holding — treat the check below as a confirmation, not a live defect hunt. What *is* open is masking: Instantly has no built-in masking, so moving off EmailBison removes what we had. Owner: Fezekile (`approved-vendors.md`).
 
 **Do instead:**
 - **Masking** through an approved service (e.g. EmailGuard), **or**

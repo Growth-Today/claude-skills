@@ -44,5 +44,5 @@ Major restructure and 2026 deliverability rebuild.
  sending-vendor matrix.
 - **No links / no custom tracking domain** in cold email by default.
 - **Strip OOO/auto-replies before reading any bounce rate** (~54% inflation).
-- **SURBL de-scoped to monitor-only**; only Spamhaus DBL + URIBL count.
+- **Blacklist scope cut to Spamhaus DBL + URIBL only**; no other list is a blacklist reason.
 - Multi-registrar purchasing spread; failover gap flagged.

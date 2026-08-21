@@ -43,7 +43,7 @@ Grade each against the Growth Today standard (`{SKILL_BASE}/resources/reference.
 | 7 | **Randomized interval** | a randomized send gap set (e.g. ~5 min + jitter), correct per platform | fixed/too-tight interval → randomize |
 | 8 | **Timezone** | sending window matches the segment (US vs EU) | wrong timezone → fix schedule |
 | 9 | **DNS/auth** | MX/SPF/DKIM/DMARC green per domain; exactly one SPF record; **DMARC at `p=reject`** | broken/missing/duplicate SPF → fix (the provisioning sub-skill). DMARC: FAIL if absent · WARN at `p=none` · PASS at `quarantine`/`reject` |
-| 10 | **Destination** | masking or real landing page, not a bare 301/302 redirect | bare redirect → switch to masking |
+| 10 | **Destination** | masking or real landing page, not a bare 301/302 redirect | bare redirect → switch to masking. *GT runs no client redirects today, so this normally passes; a FAIL means an inherited or client-held domain* |
 | 11 | **Tracking** | open + link tracking OFF; no custom tracking domain (unless client insists) | tracking on / shared tracking domain → turn off |
 | 12 | **First email** | plain text, no HTML, images, or links | HTML/links/images in email 1 → strip |
 | 13 | **Signature** | no links, images, or spam words; not promotional | linked/imaged/spammy signature → clean |

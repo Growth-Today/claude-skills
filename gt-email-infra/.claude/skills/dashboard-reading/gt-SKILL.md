@@ -39,7 +39,7 @@ Every inbox is auto-tagged. Exact thresholds in `reference.md` §2; the short ve
 
 **5. DNS / auth health.** MX / SPF / DKIM / DMARC status per domain, with counts of OK / broken / never-checked. The point is catching **silent drift**, a record a provider quietly broke, not just initial setup. A broken record should fire an alert; treat it as P0 (dead auth = mail binned).
 
-**6. Blacklist by vendor.** Domains on **Spamhaus DBL vs URIBL vs SURBL**, per client and per domain. **SURBL is monitor-only**: it should not tag an inbox Blacklisted or cut sending on its own (see the bounce-audit sub-skill). If SURBL is still forcing Blacklisted status or firing alerts, that's a bug to fix, not a real listing.
+**6. Blacklist by vendor.** Domains on **Spamhaus DBL and URIBL**, per client and per domain. Those two lists are the only blacklist reasons GT recognises. Any other list shown in the panel is **not a reason to tag an inbox Blacklisted, cut sending, or fire an alert** — if one still does, that's a bug to report, not a real listing (see the bounce-audit sub-skill).
 
 ---
 
@@ -54,7 +54,7 @@ The dashboard has open defects. Until OpsLab closes them, some numbers on screen
 | **Placement tests** | Many fail with a score of 0 and no reason given. A 0 may mean bounced, never delivered, or a broken test. |
 | **Unsubscribes** | Shows 0%, which is not credible — do-not-contact requests are probably not being captured. |
 | **Rotation** | The rotation engine is switched off with empty batches, and its daily-limit settings duplicate the ones on the Clients page. |
-| **Blacklist** | Spamhaus and URIBL were never working; every listing shown came from SURBL. See `reference.md` §2. |
+| **Blacklist** | Spamhaus and URIBL were never actually working, so every listing the dashboard has ever shown came from a list GT no longer tracks. Treat historical Blacklisted tags as unverified. See `reference.md` §2. |
 
 Report anything that looks wrong to OpsLab rather than working around it.
 
@@ -110,7 +110,7 @@ For a **SEG-burnt domain**, don't retire outright, recycle onto easy Google/Outl
 [ ] Vendor-performance matrix read on HUMAN reply; volume shifted to winners
 [ ] Client overview triaged; drilled into any red row
 [ ] DNS/auth health: no broken/never-checked records (broken = P0)
-[ ] Blacklist-by-vendor: SURBL is monitor-only; only Spamhaus DBL/URIBL = real
+[ ] Blacklist-by-vendor: only Spamhaus DBL / URIBL count; any other list is not a reason
 [ ] Diagnosis order applied to any anomaly (reply→placement→warmup; bounce→the bounce-audit sub-skill)
 [ ] Stranded-lead check on throttled inboxes (failover gap)
 [ ] Burnt inboxes on the rest-and-retest cadence

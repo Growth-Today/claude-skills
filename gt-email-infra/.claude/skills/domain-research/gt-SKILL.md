@@ -63,6 +63,7 @@ Use in Claude when generating a candidate list:
 - Spread DNS across **multiple Cloudflare accounts** (no single hub-and-spoke footprint).
 - Typically **~1 day to buy + ~1 day to configure**; no impact on sales delivery.
 - **Duties split: ScaledMail buys the domains and connects the inboxes. Growth Today keeps name research and verification.** We no longer place the orders ourselves.
+- **ScaledMail is already spreading purchases across registrars and dates** (confirmed Aug 2026), and also spreads DNS across multiple Cloudflare accounts. So this is a **spot-check on delivery**, not a gap to close: pull WHOIS on the delivered batch and confirm the spread landed.
 - Our visibility is public info only (WHOIS, DNS, registration dates), enough to verify the spread actually landed.
 
 **Aged domains, owner's call.** Pre-aged domains come from specialized, pricier providers and usually have generic (off-brand) names. By default we **age our own** via the **> 30-day + warmup gate** (`reference.md` §5) rather than buy aged. The GTM / account owner may choose to buy aged domains as a deliberate trade-off (faster reputation vs. higher cost and off-brand naming).
@@ -88,7 +89,7 @@ NAMING
 [ ] No duplicates or near-duplicates of owned domains
 [ ] 2× the needed count generated (availability buffer)
 
-PURCHASE (spread)
+PURCHASE (spread - ScaledMail does this; GT spot-checks)
 [ ] Split across multiple registrars
 [ ] Spread across multiple DAYS (not hours)
 [ ] Max 4 domains per registrar per day
@@ -99,7 +100,7 @@ PURCHASE (spread)
 VERIFY (public footprint)
 [ ] WHOIS shows different registrars across the batch
 [ ] Creation dates staggered (not all same day/registrar)
-[ ] Destination will be masking / real landing page, NOT a bare 301/302
+[ ] Destination will be masking / real landing page, NOT a bare 301/302 (GT runs no client redirects today - confirm, don't assume)
 [ ] Batch logged for the > 30-day age-before-link gate
 [ ] Handed to the provisioning sub-skill
 ```

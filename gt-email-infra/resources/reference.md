@@ -58,11 +58,12 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 
 > **⚠️ Blacklisted has never actually worked as written.** OpsLab confirmed that Spamhaus and
 > URIBL were both silently failing in the app — URIBL was blocking them, and Spamhaus returned
-> "clean" for every domain. **Every Blacklisted tag GT has ever seen came from SURBL alone**, the
-> one list that is now being demoted to monitor-only. The agreed fix turns Spamhaus DBL and URIBL
-> on (both free — GT supplies a free Spamhaus DQS key, registered as *Individual*, not
+> "clean" for every domain, so every Blacklisted tag GT has ever seen came from a list we no
+> longer track. **Only Spamhaus DBL and URIBL count as a blacklist reason.** The agreed fix turns
+> both on (they are free — GT supplies a free Spamhaus DQS key, registered as *Individual*, not
 > *Organisation*) and adds a self-test so a list going quiet is caught automatically.
-> Until that ships, treat any Blacklisted tag as **SURBL-derived and probably not actionable**.
+> Until that ships, a Blacklisted tag is **not evidence of a real listing** — verify at source
+> (Spamhaus DBL / URIBL) before acting on it.
 
 ---
 
@@ -166,7 +167,7 @@ Scaling rules: increase volume **≤ 20%/week**; stagger new-domain launches (**
 | DKIM | Signature proving authenticity | Copy the exact key, no stray spaces |
 | DMARC | Policy for SPF/DKIM failures | **`p=reject` is the GT standard.** `p=none` only as a short verification phase at first setup |
 
-**Redirect vs masking:** a secondary domain must reach a real destination via **masking or a genuine landing page, never a bare 301/302 redirect** to the main site. Blocklists (SURBL) follow redirects, and many domains → one site is the exact spam fingerprint. See the provisioning sub-skill.
+**Redirect vs masking:** a secondary domain must reach a real destination via **masking or a genuine landing page, never a bare 301/302 redirect** to the main site — many domains resolving to one site is the exact bulk-sender fingerprint. **Current state (Aug 2026): GT runs no client redirects**, so this is a standard to hold, not an open defect. The live question is what replaces EmailBison's masking once we are fully on Instantly — see `approved-vendors.md`. See the provisioning sub-skill.
 
 **Silent DNS drift** is the real risk, not initial setup, records can be quietly broken by a provider later. Re-check MX/SPF/DKIM/DMARC on a schedule.
 
@@ -210,7 +211,7 @@ Root cause by type: **hard 5XX → list/verification/data**; **soft 4XX → temp
 
 - **Naming:** keep the brand word; **drop prefixes** (`go/get/try/meet`); no hyphens, no numbers; `.com` first.
 - **Avoid** cheap TLDs `.top / .xyz / .cc` and the most-abused registrar/date bulk-buy pattern.
-- **Buy** across multiple registrars, spread across **multiple days**, **max 4 domains per registrar per day**; spread DNS across multiple Cloudflare accounts. **ScaledMail owns purchasing, spread and timing** — GT's job is to verify it happened.
+- **Buy** across multiple registrars, spread across **multiple days**, **max 4 domains per registrar per day**; spread DNS across multiple Cloudflare accounts. **ScaledMail owns purchasing, spread and timing, and is already spreading across registrars and dates** — GT's job is spot-check verification on delivery, not chasing a gap.
   - Batch size sets the calendar, not the other way round. At 4/registrar/day a 50-domain batch cannot be finished in one day, and a 150-domain batch certainly cannot.
 - **Most-abused registrars** (use, but never bulk on one): GNAME, Dynadot, NameSilo, Namecheap. Abuse concentrates there because they are popular and cheap, not because they are defective.
 - **Links:** no custom tracking domain and no links in cold email by default; share via LinkedIn or an unlinked URL.

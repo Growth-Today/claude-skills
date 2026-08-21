@@ -66,7 +66,7 @@ INFRA
 [ ] Warmup/health scores healthy (≥ 97 target); no red/disabled warmup
 [ ] Domain > 30 days old (age-before-link gate)
 [ ] MX/SPF/DKIM/DMARC verified green (the provisioning sub-skill)
-[ ] Destination is masking / real landing page, NOT a bare redirect
+[ ] Destination is masking / real landing page, NOT a bare redirect (GT runs no client redirects - confirm)
 [ ] Blacklist pre-check clean on domains < 60 days (Spamhaus DBL / URIBL)
 
 LIST & COPY

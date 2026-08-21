@@ -1,7 +1,7 @@
 ---
 name: gt-email-infra
 version: v5.0.0
-description: "Email Infrastructure & Deliverability by Growth Today (growthtoday.co). Expert cold-email infrastructure and deliverability strategist. Use for infrastructure sizing, domain research and purchasing, DNS and auth (MX/SPF/DKIM/DMARC), masking versus redirect, mailbox provisioning (Google Workspace / Microsoft 365 / custom SMTP), Instantly inbox setup and warmup, going live, campaign building and ESP/SEG routing, inbox-health dashboards, and blacklist/bounce auditing. Works across EmailBison, Instantly, Smartlead, and Lemlist. Triggers on: email infra, buy or setup domains, DNS, MX, SPF, DKIM, DMARC, warmup, mailbox setup, EmailBison, Instantly, Smartlead, deliverability, inbox placement, scaling email, how many domains or mailboxes, ESP matching, SEG, Mimecast, Proofpoint, blacklist, SURBL, Spamhaus, bounce rate, bounce audit, why are my emails bouncing. Do NOT use for cold email copywriting or sequences (use gt-cold-email); the lead list (use gt-list-building); or marketing emails/newsletters."
+description: "Email Infrastructure & Deliverability by Growth Today (growthtoday.co). Expert cold-email infrastructure and deliverability strategist. Use for infrastructure sizing, domain research and purchasing, DNS and auth (MX/SPF/DKIM/DMARC), masking versus redirect, mailbox provisioning (Google Workspace / Microsoft 365 / custom SMTP), Instantly inbox setup and warmup, going live, campaign building and ESP/SEG routing, inbox-health dashboards, and blacklist/bounce auditing. Works across EmailBison, Instantly, Smartlead, and Lemlist. Triggers on: email infra, buy or setup domains, DNS, MX, SPF, DKIM, DMARC, warmup, mailbox setup, EmailBison, Instantly, Smartlead, deliverability, inbox placement, scaling email, how many domains or mailboxes, ESP matching, SEG, Mimecast, Proofpoint, blacklist, Spamhaus, URIBL, bounce rate, bounce audit, why are my emails bouncing. Do NOT use for cold email copywriting or sequences (use gt-cold-email); the lead list (use gt-list-building); or marketing emails/newsletters."
 ---
 
 ## Setup (Run Once Per Session)
@@ -75,7 +75,7 @@ the OpsLab dashboard stays primary.
 | Weekly DNS re-check | read the result | build a second scheduled checker |
 | Inbox documentation | read it | keep a parallel tracker |
 | Disconnected-inbox automation | read alerts | change the automation |
-| SURBL logic | read | switch SURBL scoring back on anywhere |
+| Which lists count as a blacklist | read listings (Spamhaus DBL / URIBL only) | add a list back, or score/tag/alert on any other list |
 
 **The one time we do set these:** at first setup, before an inbox is live and being classified,
 Sales Ops or the vendor sets the starting warmup and cold values (see the instantly-setup
@@ -95,7 +95,7 @@ scope — a permission test must confirm it is refused before any settings check
 4. **Buy across multiple registrars, spread across multiple days, max 4 per registrar per day.** ScaledMail owns the buying; GT verifies it happened.
 5. **Warm up ≥ 21 days / 3 weeks** (hard floor; 4 weeks on a cautious build) before sending; **link only from domains > 30 days old**.
 6. **Never disable warmup** once campaigns are running.
-7. **Masking or a real landing page, never a bare 301/302 redirect** to the main site.
+7. **Masking or a real landing page, never a bare 301/302 redirect** to the main site. *(Currently held: GT runs no client redirects. The open item is replacing EmailBison's masking — see `approved-vendors.md`.)*
 8. **No links and no custom tracking domain** in cold email by default (share via LinkedIn or an unlinked URL).
 9. **ESP matching is not a rule**: decide keep/drop from our own dashboard data.
 10. Start conservative, scale gradually (**≤ 20%/week**).
@@ -107,11 +107,11 @@ Monthly goal ÷ 20 workdays = daily volume → ÷ 20–25 per mailbox = mailboxe
 ## What we can and cannot see
 
 - **We can see and control:** each domain's public footprint (WHOIS, registrar, creation date, DNS, nameservers, masking host) and our own per-inbox/per-domain sending metrics (bounce, reply, placement, warmup).
-- **We cannot inspect or split:** the vendor's shared warmup/seed pool (EmailBison + EmailGuard under one shared Growth Today account). **This risk materialised in June–July 2026: 13 of 17 audited clients were listed on SURBL at once, and the shared warmup/seed pool is the suspected cause.** The escalation path is no longer hypothetical: DNS-footprint check across clients → written per-tenant isolation from the vendor → separate workspace + placement-test account per client.
+- **We cannot inspect or split:** the vendor's shared warmup/seed pool (EmailBison + EmailGuard under one shared Growth Today account). **This risk materialised in June–July 2026: 13 of 17 audited clients were flagged at once on a shared-pool blocklist, and the shared warmup/seed pool is the suspected cause.** The escalation path is no longer hypothetical: DNS-footprint check across clients → written per-tenant isolation from the vendor → separate workspace + placement-test account per client.
 
 ## Growth Today's point of view (our answers)
 
-- **SURBL:** de-scoped as a primary threat, Google and Microsoft barely weight it. The real fix is **domain sourcing**, not chasing delistings.
+- **Blacklists:** **only Spamhaus DBL and URIBL count.** Everything else is out of scope — Google and Microsoft barely weight the other lists and OpsLab does not track them. The real fix is **domain sourcing**, not chasing delistings.
 - **Microsoft / Outlook:** expect weaker Outlook placement; check sudden drops against **Microsoft BCL recalibration** dates before blaming infra; conservative limits; short copy.
 - **SEG (Mimecast/Proofpoint/Barracuda):** a block is the recipient's policy working as designed. **Isolate SEG leads onto dedicated, never-reused domains**, low concurrency into one org, no links/tracking, go multi-channel, and **recycle burnt SEG domains** onto easy Google/Outlook segments before retiring.
 - **Bounces:** **strip OOO/auto-replies first**: Bison inflates bounce counts by counting them (~54% in one audit). Read the real number, then diagnose.

@@ -1,6 +1,6 @@
 ---
 name: email-infra-bounce-audit
-description: "Audit a bounce or blacklist problem to root cause and produce a full bounce report. Use to pull replies via the EmailBison MCP/API, work around the broken type=bounced filter, strip auto-replies, classify bounces (Hard/Soft/Block) by SMTP/DSN code, de-scope SURBL, run the neutral-copy test, and trace the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, SURBL, Spamhaus, URIBL, hard bounce, soft bounce, block bounce, SMTP codes, DSN codes, bounce report, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-building)."
+description: "Audit a bounce or blacklist problem to root cause and produce a full bounce report. Use to pull replies via the EmailBison MCP/API, work around the broken type=bounced filter, strip auto-replies, classify bounces (Hard/Soft/Block) by SMTP/DSN code, run the neutral-copy test, and trace the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, Spamhaus, URIBL, hard bounce, soft bounce, block bounce, SMTP codes, DSN codes, bounce report, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-building)."
 ---
 
 # Blacklist & Bounce Audit · [GTM Engineer]
@@ -75,10 +75,10 @@ Parse `text_body` / `html_body`, extract the SMTP status + DSN code, and bucket.
 
 # Part B, Read the results (diagnosis)
 
-## Blacklist read (SURBL is de-scoped)
+## Blacklist read (two lists only)
 
-- **Only Spamhaus DBL and URIBL count.** Listed there → treat the domain as compromised.
-- **SURBL is monitor-only.** Google/Microsoft barely weight it. A SURBL listing must **not** tag an inbox Blacklisted or cut sending on its own, if it does, that's a bug, not a real problem. Don't chase SURBL delistings.
+- **Only Spamhaus DBL and URIBL count.** Listed there → treat the domain as compromised. Nothing else is a blacklist reason.
+- **Do not act on any other list.** Google and Microsoft barely weight the rest, and OpsLab does not track them. A hit on another list must **not** tag an inbox Blacklisted, cut sending, or fire an alert — if it does, report the bug. Don't chase those delistings.
 - **One flag is domain-level, not inbox-level**: a single SEG/blacklist hit poisons the whole domain.
 - **Pre-launch gate:** blacklist-check every domain **< 60 days old** before it sends (Spamhaus DBL / URIBL).
 - **Microsoft drops:** before blaming infra for an Outlook cluster, check dates against **Microsoft BCL recalibration**: a provider-side threshold change can junk mail with no change on your end.
@@ -183,7 +183,7 @@ CLASSIFY
 [ ] Rates computed against leads_contacted (not emails_sent)
 
 DIAGNOSE
-[ ] Blacklist read: only Spamhaus DBL + URIBL count; SURBL monitor-only
+[ ] Blacklist read: only Spamhaus DBL + URIBL count; no other list is a reason
 [ ] Domains < 60 days blacklist-pre-checked
 [ ] Outlook drops checked against Microsoft BCL recalibration dates
 [ ] Neutral-copy test run on each flagged domain (copy vs infra)
