@@ -12,7 +12,25 @@ How to build a campaign that routes to the right inboxes and gets optimized from
 **The one mindset shift:** you are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and you find it on the dashboard, not by guessing.
 
 ---
-### Here's How To Run MX Analysis in Clay to Determine ESP Mix on Lead Lists
+### Determining the recipient ESP mix on a lead list
+
+**Fastest path — run the playbook, no Clay credits:**
+
+```bash
+cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
+uv run execute.py --esp-mix --file lead_domains.txt --csv acme_esp_mix.csv
+```
+
+Queries MX directly and prints the distribution, the SEG share, and a `no-email`
+count (domains with no MX at all — guaranteed hard bounces, strip them before sending).
+It uses the **same provider list** as the Clay formula below; the two are kept in
+lockstep in `MX_PROVIDERS` inside `execute.py`. Add a provider in one place, add it
+in the other.
+
+Use Clay instead when the domains already live in a Clay table and you want the ESP
+as a column alongside the rest of the enrichment.
+
+### Clay version — How To Run MX Analysis in Clay to Determine ESP Mix on Lead Lists
 
 First Rule: To ensure accuracy, run this MX analysis on a target account list or existing customer list. To know exactly what type of inboxes (Google vs. Microsoft vs. others) to optimize for.
 ### Tools Needed:

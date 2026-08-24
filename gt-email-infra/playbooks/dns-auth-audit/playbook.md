@@ -53,6 +53,23 @@ If yes, pass it and skip straight to the after-state diff.
 4. Route the fixes (DNS host for records; OpsLab if it's a drift on a live inbox — see the read-only boundary in `SKILL.md`).
 5. Run `after.py` to prove the fix landed and nothing else regressed.
 
+## Two modes
+
+| Mode | Whose domains | Answers |
+|---|---|---|
+| default | **ours** (sending) | Is this domain safe to send from? |
+| `--esp-mix` | **theirs** (recipients) | What are we sending into, and how much of it is behind a SEG? |
+
+`--esp-mix` replaces the manual Clay MX-analysis column in campaign-building (added by
+PR #29) with a direct DNS lookup — same provider list, no Clay credits, no HTTP API
+column. It also separates **`no-email`** (no MX at all, so guaranteed hard bounces —
+strip before sending) from **`other`** (mail routed somewhere we don't recognise),
+a distinction the audit column didn't make.
+
+```bash
+uv run execute.py --esp-mix --file lead_domains.txt --csv acme_esp_mix.csv
+```
+
 ## Execute
 
 ```bash
@@ -77,7 +94,9 @@ Exit code is `0` when nothing failed and `2` when something did, so it drops int
 | **DMARC** | `p=reject` | `p=none` or `p=quarantine` — GT standard is reject | no record, or an unparseable policy |
 | **SRV-hygiene** | clean | — | stray Lync/Skype SRV present |
 
-Provider classification comes from the MX hostnames, which is also how you spot a **SEG** (Mimecast, Proofpoint, Barracuda) on the recipient side. That feeds ESP routing in the campaign-building sub-skill.
+Provider classification comes from the MX hostnames. The table lives in `MX_PROVIDERS` in `execute.py` and covers **google · microsoft · proofpoint · mimecast · barracuda · fortinet · rackspace · trendmicro · securemx · mxthunder · mtaroutes · zoho**, plus `other` and `no-email`. Six of those are security gateways and get a `[SEG]` marker, which is what campaign routing isolates on.
+
+> **Keep it in sync.** This list mirrors the Clay MX-analysis formula in campaign-building (PR #29). They must not diverge — add a provider in both places.
 
 ## After State
 

@@ -18,6 +18,14 @@ Usage:
     uv run execute.py acme.com acmehq.com
     uv run execute.py --file domains.txt
     uv run execute.py --file domains.txt --csv dns_audit.csv
+    uv run execute.py --esp-mix --file lead_domains.txt   # recipient ESP mix
+
+Two modes:
+  (default)   audit OUR sending domains  -> per-domain PASS/WARN/FAIL
+  --esp-mix   profile RECIPIENT domains  -> ESP distribution for campaign routing
+
+--esp-mix replaces the manual Clay MX-analysis column (campaign-building, PR #29)
+with a direct DNS lookup. Same provider list, no Clay credits, no HTTP API column.
 
 Exit code: 0 = no FAIL, 2 = at least one FAIL (usable as a launch gate).
 """
@@ -80,22 +88,44 @@ def spf_lookups(record, depth=0, seen=None):
     return n
 
 
+# MX hostname -> provider. Order matters: first match wins.
+#
+# This table is the single source of truth for MX->ESP classification and is
+# kept in lockstep with the Clay formula in the campaign-building sub-skill
+# (added by PR #29). If you add a provider in one place, add it in the other.
+# `seg` marks a security gateway, which is what campaign routing isolates on.
+MX_PROVIDERS = [
+    ("google",     ["google"],                                              False),
+    ("microsoft",  ["outlook.com", "office365", "protection.outlook"],      False),
+    ("proofpoint", ["pphosted.com", "ppe-hosted", "ppsmtp", "sophos.com"],  True),
+    ("mimecast",   ["mimecast"],                                            True),
+    ("barracuda",  ["barracuda"],                                           True),
+    ("fortinet",   ["fortimail", "fortimailcloud.com"],                     True),
+    ("rackspace",  ["emailsrvr.com"],                                       False),
+    ("trendmicro", ["trendmicro.com"],                                      True),
+    ("securemx",   ["securemx"],                                            True),
+    ("mxthunder",  ["mxthunder.net"],                                       True),
+    ("mtaroutes",  ["mtaroutes.com"],                                       True),
+    ("zoho",       ["zoho"],                                                False),
+]
+
+
 def classify_mx(mx_records):
-    """Map MX hostnames to a sending/receiving provider (PR #29 logic)."""
+    """Map MX hostnames to a provider.
+
+    Mirrors the Clay MX-analysis formula in campaign-building (PR #29) so the
+    two never disagree. Returns (provider, is_seg).
+
+    'no-email' means the domain has no MX at all — it cannot receive mail, which
+    is different from 'other' (mail is routed somewhere we don't recognise).
+    """
+    if not mx_records:
+        return "no-email", False
     j = " ".join(mx_records).lower()
-    if "google" in j:
-        return "Google"
-    if "outlook" in j or "protection.outlook" in j:
-        return "Microsoft"
-    if "mimecast" in j:
-        return "Mimecast (SEG)"
-    if "pphosted" in j or "ppe-hosted" in j:
-        return "Proofpoint (SEG)"
-    if "barracuda" in j:
-        return "Barracuda (SEG)"
-    if "zoho" in j:
-        return "Zoho"
-    return "Other/unknown"
+    for name, needles, seg in MX_PROVIDERS:
+        if any(n in j for n in needles):
+            return name, seg
+    return "other", False
 
 
 # ── Audit ────────────────────────────────────────────────────────
@@ -108,12 +138,12 @@ def audit(domain):
 
     # MX + provider classification
     mx = q(domain, "MX")
+    provider, is_seg = classify_mx(mx)
     if not mx:
         row("MX", "FAIL", "no MX record — domain cannot receive mail")
-        provider = "none"
     else:
-        provider = classify_mx(mx)
-        row("MX", "PASS", f"{len(mx)} record(s) -> {provider}")
+        row("MX", "PASS",
+            f"{len(mx)} record(s) -> {provider}{' [SEG]' if is_seg else ''}")
 
     # SPF: exactly one record, inside the lookup budget
     spf = [t for t in q(domain, "TXT") if t.lower().startswith("v=spf1")]
@@ -168,6 +198,44 @@ def audit(domain):
     return provider, rows
 
 
+# ── ESP mix (recipient-side profiling) ───────────────────────────
+
+def esp_mix(domains, csv_path):
+    """Profile a LEAD list by recipient ESP. Answers 'what are we sending into?'"""
+    from collections import Counter
+
+    counts, seg_domains, rows = Counter(), [], []
+    for d in domains:
+        provider, is_seg = classify_mx(q(d, "MX"))
+        counts[provider] += 1
+        if is_seg:
+            seg_domains.append((d, provider))
+        rows.append({"domain": d, "provider": provider, "seg": is_seg})
+
+    total = len(domains)
+    print("=" * 68)
+    print(f"RECIPIENT ESP MIX — {total} domain(s)")
+    print("=" * 68)
+    for provider, n in counts.most_common():
+        seg = next((s for nm, _, s in MX_PROVIDERS if nm == provider), False)
+        print(f"  {provider:12} {n:>5}  {n/total:>6.1%}{'   [SEG]' if seg else ''}")
+
+    seg_n = len(seg_domains)
+    print("-" * 68)
+    print(f"  SEG-protected: {seg_n} ({seg_n/total:.1%}) — isolate these onto "
+          f"dedicated domains (campaign-building Part 3)")
+    if counts.get("no-email"):
+        print(f"  no-email: {counts['no-email']} — no MX at all. Remove before "
+              f"sending; these are guaranteed hard bounces")
+
+    with open(csv_path, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["domain", "provider", "seg"])
+        w.writeheader()
+        w.writerows(rows)
+    print(f"\n  Written: {csv_path}")
+    print("=" * 68)
+
+
 # ── Main ─────────────────────────────────────────────────────────
 
 def main():
@@ -175,6 +243,8 @@ def main():
     ap.add_argument("domains", nargs="*", help="Domains to audit")
     ap.add_argument("--file", help="Text file with one domain per line")
     ap.add_argument("--csv", default="dns_audit.csv", help="CSV audit trail (default: dns_audit.csv)")
+    ap.add_argument("--esp-mix", action="store_true",
+                    help="Profile RECIPIENT domains by ESP instead of auditing our own")
     args = ap.parse_args()
 
     domains = list(args.domains)
@@ -183,6 +253,10 @@ def main():
             domains += [ln.strip() for ln in fh if ln.strip() and not ln.startswith("#")]
     if not domains:
         ap.error("no domains given — pass them as arguments or with --file")
+
+    if args.esp_mix:
+        esp_mix(domains, args.csv if args.csv != "dns_audit.csv" else "esp_mix.csv")
+        return
 
     print("=" * 68)
     print("DNS / AUTH AUDIT")
