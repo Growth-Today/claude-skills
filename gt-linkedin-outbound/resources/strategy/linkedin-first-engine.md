@@ -74,7 +74,7 @@ Rule of thumb: if your data isn't rich enough to write a personalized first line
 - One timely signal (something happening right now)
 - One homework detail (something that proves you didn't templated this)
 
-For tactical targeting, see `personalization/personalization.md` and the GT signal-sourcing skill.
+For tactical targeting, see `resources/copywriting/personalization.md` and the GT signal-sourcing skill.
 
 ### Layer 2: Warming
 
@@ -95,7 +95,7 @@ Conditional logic at each step - the next action depends on what the prospect di
 
 Follow-ups fire automatically at set intervals (3-5 days). No rep tracks who's due manually.
 
-For execution detail, see `copywriting/examples/connection-request.md`, `copywriting/examples/dm-sequence.md`, and `resources/follow-up-system.md`.
+For execution detail, see `resources/copywriting/connection-request.md`, `resources/sequences/dm-sequence.md`, and `resources/sequences/follow-up-system.md`.
 
 ### Layer 4: Conversion
 
@@ -175,7 +175,7 @@ One hour per rep, maybe two. Lifts acceptance rates from Day 1.
 
 Before writing a single message, define the structure for each touchpoint and build a template library for each.
 
-Sound peer-to-peer, not seller-to-buyer. For tactical templates by persona, see `copywriting/atl-messaging.md`, `copywriting/btl-messaging.md`, and `copywriting/copywriting.md`.
+Sound peer-to-peer, not seller-to-buyer. For tactical templates by persona, see `resources/personas/atl-messaging.md`, `resources/personas/btl-messaging.md`, and `copywriting/copywriting.md`.
 
 ### 4. Establish safe activity thresholds
 
@@ -183,7 +183,7 @@ LinkedIn monitors activity patterns. Accounts that exceed safe thresholds get re
 
 Define daily limits for connection requests, messages, profile views, and post engagements. Make them non-negotiable so the team stays comfortably within LinkedIn's safety boundaries at all times.
 
-For full account safety operating procedure, see `rented-engine/rented-engine.md`.
+For full account safety operating procedure, see `resources/infrastructure/rented-engine.md`.
 
 ## Right Metrics for a LinkedIn-First Team
 
@@ -219,9 +219,9 @@ When something is broken, two metrics together tell you where:
 | Low | Low | - | **Targeting** problem | ICP, profile, list quality - fix the foundation before touching downstream copy |
 | High | Low | - | **Messaging** problem | List is right, opener isn't landing - test new angles, sharpen personalization |
 | High | High | Few | **Conversion** problem | Meeting CTA isn't direct enough, or extension to email isn't happening |
-| Decent | Decent | Volume too low | **Infrastructure** problem | Need more accounts in rotation, or daily activity too conservative - see `rented-engine/rented-engine.md` |
+| Decent | Decent | Volume too low | **Infrastructure** problem | Need more accounts in rotation, or daily activity too conservative - see `resources/infrastructure/rented-engine.md` |
 
-For full diagnostics, see `resources/linkedin-metrics-benchmarks.md`.
+For full diagnostics, see `resources/knowledge/linkedin-metrics-benchmarks.md`.
 
 ## The 90-Day Timeline (For Leadership)
 
@@ -262,7 +262,7 @@ Systems get complex; principles stick.
 
 Pick one ICP segment. Build one campaign with signal-based targeting and personalized messaging. Set it up in HeyReach with the right limits, sequences, and follow-up logic. Launch it. Measure honestly. Give it 90 days and the willingness to optimize based on what the data tells you. Then let the results make the case.
 
-For the campaign-level setup, see `resources/campaign-strategy.md` and `resources/drip-campaigns.md`. For the copy that goes inside, see `copywriting/examples/connection-request.md`, `copywriting/examples/dm-sequence.md`, and `personalization/personalization.md`. For the infrastructure, see `rented-engine/rented-engine.md`.
+For the campaign-level setup, see `resources/strategy/campaign-strategy.md` and `resources/sequences/drip-campaigns.md`. For the copy that goes inside, see `resources/copywriting/connection-request.md`, `resources/sequences/dm-sequence.md`, and `resources/copywriting/personalization.md`. For the infrastructure, see `resources/infrastructure/rented-engine.md`.
 
 ## Combines With
 
@@ -275,6 +275,6 @@ For the campaign-level setup, see `resources/campaign-strategy.md` and `resource
 
 ---
 
-*Source: Adapted from HeyReach's "LinkedIn sales strategy: How to turn LinkedIn into your team's #1 pipeline channel" - https://www.heyreach.io/blog/linkedin-sales-strategy. See also `resources/heyreach-knowledge-base.md` for the full external reference map.*
+*Source: Adapted from HeyReach's "LinkedIn sales strategy: How to turn LinkedIn into your team's #1 pipeline channel". See also `resources/knowledge/heyreach-knowledge-base.md` for the full external reference map.*
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

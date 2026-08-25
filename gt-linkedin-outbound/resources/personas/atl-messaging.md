@@ -31,9 +31,9 @@ ATL on LinkedIn requires more discipline than email because the visibility is hi
 
 ## Reference
 
-- DM sequence structure → `{SKILL_BASE}/copywriting/examples/dm-sequence.md`
-- Connection note copy → `{SKILL_BASE}/copywriting/examples/connection-notes.md`
-- Personalization signals → `{SKILL_BASE}/personalization/personalization.md`
+- DM sequence structure → `{SKILL_BASE}/resources/sequences/dm-sequence.md`
+- Connection note copy → `{SKILL_BASE}/resources/copywriting/connection-notes.md`
+- Personalization signals → `{SKILL_BASE}/resources/copywriting/personalization.md`
 
 ## ATL Rules on LinkedIn
 
@@ -91,7 +91,7 @@ If the buying motion is bottom-up (PLG) → target BTL instead.
 
 ## Handling ATL Silence (the "Active but No Reply" Pattern)
 
-ATL prospects exhibit one specific behavior more than any other audience: they accept the connection, post on LinkedIn weekly, engage with peer content actively - and ignore your DM for weeks. This is **State 3** in the 4-State Follow-up Model (see `copywriting/re-engagement.md`).
+ATL prospects exhibit one specific behavior more than any other audience: they accept the connection, post on LinkedIn weekly, engage with peer content actively - and ignore your DM for weeks. This is **State 3** in the 4-State Follow-up Model (see `resources/sequences/re-engagement.md`).
 
 The instinct on a senior prospect is to nudge with a stronger opener or better insight. Don't. ATL silence almost never means "I missed it." It means "not now, not from this angle." Sending another nudge changes the dynamic from "this person operates in my world" to "this person doesn't read social cues."
 
@@ -102,7 +102,7 @@ What to do instead:
 3. **Re-engage only on a real signal** - they post about a problem your offering solves, change roles, engage with your or your team's content, or their company has a relevant material event.
 4. **Cap re-engagement attempts** at one per quarter for ATL. Anything more frequent damages the relationship - and ATL relationships compound over years, not campaigns.
 
-The single best ATL re-engagement opener is one that references something they posted *that week*, not something you sent them three months ago. See `copywriting/re-engagement.md` for the framing.
+The single best ATL re-engagement opener is one that references something they posted *that week*, not something you sent them three months ago. See `resources/sequences/re-engagement.md` for the framing.
 
 ## Examples
 
@@ -213,7 +213,7 @@ LinkedIn supports voice notes (up to 60s) and video DMs. For ATL, the rules are 
 
 **Video DMs:** Almost never use for ATL. Senior people perceive video DMs as performative and time-consuming to evaluate. Stick to text + voice for this persona.
 
-For full multi-format guidance → `{SKILL_BASE}/copywriting/copywriting.md`
+For full multi-format guidance → `{SKILL_BASE}/resources/copywriting/copywriting.md`
 
 ---
 
@@ -240,4 +240,4 @@ Senior people reply in patterns. Recognize them:
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

@@ -7,7 +7,7 @@ description: External reference library of HeyReach resources - guides, template
 
 # HeyReach Knowledge Base
 
-HeyReach is the LinkedIn outreach platform GT defaults to (see `rented-engine/rented-engine.md` for the full tooling rationale). Their content team publishes the highest-signal LinkedIn outbound material in the industry - much of it backed by their internal dataset of 96,000+ analyzed campaigns. This file catalogs the resources we draw from, what each adds, and which sub-skill consumes the insight.
+HeyReach is the LinkedIn outreach platform GT defaults to (see `resources/infrastructure/rented-engine.md` for the full tooling rationale). Their content team publishes the highest-signal LinkedIn outbound material in the industry - much of it backed by their internal dataset of 96,000+ analyzed campaigns. This file catalogs the resources we draw from, what each adds, and which sub-skill consumes the insight.
 
 When the underlying article updates, this file is the place to revisit before pushing changes into the sub-skills.
 
@@ -23,7 +23,6 @@ When the underlying article updates, this file is the place to revisit before pu
 
 ## Source 1 - LinkedIn Outreach Strategy (2026)
 
-**URL:** https://www.heyreach.io/blog/linkedin-outreach-strategy
 **Author:** Umer Ishaq (HeyReach)
 
 ### What this source uniquely contributes
@@ -41,22 +40,21 @@ When the underlying article updates, this file is the place to revisit before pu
 
 | Sub-skill | What was added |
 |---|---|
-| `copywriting/examples/dm-sequence.md` | Phase-based campaign decay framing in the sequence-management section |
-| `copywriting/re-engagement.md` | Decay signal thresholds for triggering re-engagement |
-| `copywriting/examples/connection-notes.md` | "Active in last 30 days" Sales Nav filter as a pre-send hygiene step |
-| `resources/linkedin-metrics-benchmarks.md` | Decay signal thresholds in diagnostics; phase performance logic |
-| `rented-engine/rented-engine.md` | LinkedIn's 20-40/day per-account cap referenced against GT's 15-18 operating range |
+| `resources/sequences/dm-sequence.md` | Phase-based campaign decay framing in the sequence-management section |
+| `resources/sequences/re-engagement.md` | Decay signal thresholds for triggering re-engagement |
+| `resources/copywriting/connection-notes.md` | "Active in last 30 days" Sales Nav filter as a pre-send hygiene step |
+| `resources/knowledge/linkedin-metrics-benchmarks.md` | Decay signal thresholds in diagnostics; phase performance logic |
+| `resources/infrastructure/rented-engine.md` | LinkedIn's 20-40/day per-account cap referenced against GT's 15-18 operating range |
 | `copywriting/copywriting.md` | "No external links in M1/M2" rule added to universal copy rules |
 
 ### Full sub-skill version
 
-→ `resources/campaign-strategy.md` - the full playbook, GT-voiced, covering decay curve, micro-segmentation, multi-account math, and the 3-day setup checklist.
+→ `resources/strategy/campaign-strategy.md` - the full playbook, GT-voiced, covering decay curve, micro-segmentation, multi-account math, and the 3-day setup checklist.
 
 ---
 
 ## Source 2 - How to Follow Up on LinkedIn
 
-**URL:** https://www.heyreach.io/blog/how-to-follow-up-on-linkedin
 **Author:** Nađa Komnenić (HeyReach)
 
 ### What this source uniquely contributes
@@ -75,20 +73,19 @@ When the underlying article updates, this file is the place to revisit before pu
 
 | Sub-skill | What was added |
 |---|---|
-| `copywriting/re-engagement.md` | Full 4-State model as the central re-engagement framework |
-| `copywriting/examples/dm-sequence.md` | State-aware branching at the no-reply step instead of a single linear M2 |
-| `resources/linkedin-metrics-benchmarks.md` | The 7+ day no-reply threshold for state transition; weekly review cadence |
-| `copywriting/atl-messaging.md` | "Active, no reply" handling for senior prospects who view but don't respond |
+| `resources/sequences/re-engagement.md` | Full 4-State model as the central re-engagement framework |
+| `resources/sequences/dm-sequence.md` | State-aware branching at the no-reply step instead of a single linear M2 |
+| `resources/knowledge/linkedin-metrics-benchmarks.md` | The 7+ day no-reply threshold for state transition; weekly review cadence |
+| `resources/personas/atl-messaging.md` | "Active, no reply" handling for senior prospects who view but don't respond |
 
 ### Full sub-skill version
 
-→ `resources/follow-up-system.md` - the full playbook on follow-up discipline. Covers the 4-state model in depth, follow-up priority rule, tag-and-list workflow, and the 30-minute weekly review.
+→ `resources/sequences/follow-up-system.md` - the full playbook on follow-up discipline. Covers the 4-state model in depth, follow-up priority rule, tag-and-list workflow, and the 30-minute weekly review.
 
 ---
 
 ## Source 3 - LinkedIn Drip Campaigns
 
-**URL:** https://www.heyreach.io/blog/linkedin-drip-campaigns
 **Author:** Bojana Vojnović (HeyReach)
 
 ### What this source uniquely contributes
@@ -97,7 +94,7 @@ When the underlying article updates, this file is the place to revisit before pu
 - **Wpromote / State of B2B Digital Marketing stat.** 89% of B2B marketers use LinkedIn for lead generation; 62% report LinkedIn actually generates leads. Useful for proposals and client onboarding decks.
 - **Channel comparison stat.** LinkedIn message reply rates can reach ~10.3% vs. ~5.1% typical cold email. Lower than HeyReach's own dataset but closer to what mixed-quality outreach looks like in the wild - useful as a conservative benchmark when projecting client outcomes.
 - **HeyReach campaign template library (7 pre-built sequences).** Partnership proposal · Engagement response sequence · Comment follow-up sequence · New connection nurture · Value-first outreach · Social proof sequence · Expand your network sequence. These are starting points for HeyReach users, not GT-blessed copy - but the names map cleanly to angle categories worth keeping in mind.
-- **Three full sequence cadences.** The article gives complete day-by-day templates (Day 0 → 1 → 3 → 5 → 8 / Day 0 → 1 → 2 → 5 → 8 → 12 / Day 0 → 1 → 4 → 7 → 10) showing how others structure spacing. GT's standard cadence is in `copywriting/examples/dm-sequence.md`; these are useful as comparison points.
+- **Three full sequence cadences.** The article gives complete day-by-day templates (Day 0 → 1 → 3 → 5 → 8 / Day 0 → 1 → 2 → 5 → 8 → 12 / Day 0 → 1 → 4 → 7 → 10) showing how others structure spacing. GT's standard cadence is in `resources/sequences/dm-sequence.md`; these are useful as comparison points.
 - **Lead import sources.** HeyReach can pull leads from LinkedIn search, Sales Navigator URLs, post reactors, webinar attendees, and CSV - wider than most teams realize.
 - **Mid-campaign editing rule.** Message copy can be edited inside an active campaign; sequence steps cannot. Plan accordingly: structure first, copy iterates.
 
@@ -105,20 +102,19 @@ When the underlying article updates, this file is the place to revisit before pu
 
 | Sub-skill | What was added |
 |---|---|
-| `resources/linkedin-metrics-benchmarks.md` | Aspirational vs. realistic benchmark distinction (LeadLoft 50%+/30%+ vs. HeyReach 21%/22%) |
-| `rented-engine/rented-engine.md` | Lead import source list under HeyReach operating notes |
-| `personalization/personalization.md` | Confirmed examples of company-, role-change-, and recent-activity-based personalization |
+| `resources/knowledge/linkedin-metrics-benchmarks.md` | Aspirational vs. realistic benchmark distinction (LeadLoft 50%+/30%+ vs. HeyReach 21%/22%) |
+| `resources/infrastructure/rented-engine.md` | Lead import source list under HeyReach operating notes |
+| `resources/copywriting/personalization.md` | Confirmed examples of company-, role-change-, and recent-activity-based personalization |
 | `copywriting/copywriting.md` | Note that mid-campaign copy edits are possible but step structure is locked |
 
 ### Full sub-skill version
 
-→ `resources/drip-campaigns.md` - the full step-by-step build guide for drip campaigns in HeyReach (or similar tools). Covers lead import, sender selection, sequence templates, three full daily-cadence templates, and six common mistakes.
+→ `resources/sequences/drip-campaigns.md` - the full step-by-step build guide for drip campaigns in HeyReach (or similar tools). Covers lead import, sender selection, sequence templates, three full daily-cadence templates, and six common mistakes.
 
 ---
 
 ## Source 4 - LinkedIn Sales Strategy (LinkedIn-First Engine)
 
-**URL:** https://www.heyreach.io/blog/linkedin-sales-strategy
 **Author:** Bojana Vojnović (HeyReach)
 
 ### What this source uniquely contributes
@@ -145,22 +141,21 @@ When the underlying article updates, this file is the place to revisit before pu
 
 | Sub-skill | What was added |
 |---|---|
-| `resources/linkedin-metrics-benchmarks.md` | The 96K-campaign dataset numbers as primary benchmarks; diagnostic decision tree as core diagnostic framework |
+| `resources/knowledge/linkedin-metrics-benchmarks.md` | The 96K-campaign dataset numbers as primary benchmarks; diagnostic decision tree as core diagnostic framework |
 | `SKILL.md` | The four-layer engine as the main mental model; 90-day timeline added to core principles |
-| `copywriting/examples/dm-sequence.md` | Conditional branching logic (connected/no-reply vs. profile-viewed vs. replied) |
-| `personalization/personalization.md` | "Two hooks minimum" rule (one timely signal + one homework detail) |
-| `rented-engine/rented-engine.md` | Sender rotation math (5 × 25 = 125 daily) and rotation as the structural lever |
-| `copywriting/re-engagement.md` | "10.7% of campaigns generate zero replies" justifies M2 design |
+| `resources/sequences/dm-sequence.md` | Conditional branching logic (connected/no-reply vs. profile-viewed vs. replied) |
+| `resources/copywriting/personalization.md` | "Two hooks minimum" rule (one timely signal + one homework detail) |
+| `resources/infrastructure/rented-engine.md` | Sender rotation math (5 × 25 = 125 daily) and rotation as the structural lever |
+| `resources/sequences/re-engagement.md` | "10.7% of campaigns generate zero replies" justifies M2 design |
 
 ### Full sub-skill version
 
-→ `resources/linkedin-first-engine.md` - the full strategic playbook for making LinkedIn the primary outbound channel. Covers the 4-layer engine, 5-stage execution, team readiness assessment, foundation work, right metrics, and the 90-day pilot timeline.
+→ `resources/strategy/linkedin-first-engine.md` - the full strategic playbook for making LinkedIn the primary outbound channel. Covers the 4-layer engine, 5-stage execution, team readiness assessment, foundation work, right metrics, and the 90-day pilot timeline.
 
 ---
 
 ## Source 5 - HeyReach Templates Hub
 
-**URL:** https://www.heyreach.io/blog-categories/templates
 
 A category page indexing HeyReach's template articles. Useful as a discovery surface when looking for an angle GT hasn't yet documented (e.g., webinar attendee follow-up, post engager outreach, mutual-connection introductions). Treat templates here as inspiration to be adapted - not copy-pasted into GT campaigns.
 
@@ -172,13 +167,12 @@ A category page indexing HeyReach's template articles. Useful as a discovery sur
 
 ## Source 6 - HeyReach Guides Hub
 
-**URL:** https://www.heyreach.io/blog-categories/guides
 
 A category page indexing HeyReach's guide-format articles. Useful for deep dives on specific tactics - Sales Navigator masterclass, multichannel coordination, profile optimization, and so on. When a sub-skill needs further depth on a tactic, this is the first place to check before searching elsewhere.
 
 ### Embedded into
 
-Referenced as the canonical follow-on resource at the end of `SKILL.md` and `rented-engine/rented-engine.md`.
+Referenced as the canonical follow-on resource at the end of `SKILL.md` and `resources/infrastructure/rented-engine.md`.
 
 ---
 
@@ -196,7 +190,7 @@ For transparency:
 
 ## Refresh cadence
 
-Re-check sources 1-4 quarterly. HeyReach updates their flagship articles with new benchmark data and 2026 algorithm changes ~2x per year. When the 96K-campaign dataset gets updated, `resources/linkedin-metrics-benchmarks.md` is the primary file to revise.
+Re-check sources 1-4 quarterly. HeyReach updates their flagship articles with new benchmark data and 2026 algorithm changes ~2x per year. When the 96K-campaign dataset gets updated, `resources/knowledge/linkedin-metrics-benchmarks.md` is the primary file to revise.
 
 ---
 
@@ -211,4 +205,4 @@ Re-check sources 1-4 quarterly. HeyReach updates their flagship articles with ne
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

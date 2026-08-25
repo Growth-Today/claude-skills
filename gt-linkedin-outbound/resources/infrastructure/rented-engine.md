@@ -233,7 +233,7 @@ The fastest way to scale connection volume safely is **across accounts, not with
 
 HeyReach (and similar platforms) auto-rotate sends across all senders attached to a campaign - no rep needs to track who sent what. All replies surface in a unified inbox.
 
-Source: HeyReach's sender rotation framing. See `resources/heyreach-knowledge-base.md`.
+Source: HeyReach's sender rotation framing. See `resources/knowledge/heyreach-knowledge-base.md`.
 
 ### Why we stay under the ceiling
 
@@ -297,7 +297,7 @@ The tool layer that automates connection requests and DMs.
 2. **Proxy** - HeyReach must connect through the same proxy as the anti-detect browser. Note: HeyReach is cloud-based with geo-matched proxy servers built in, so the platform itself doesn't need a manual proxy setup - but the LinkedIn account session must come from a proxy that matches the profile's stated location.
 3. **Daily limits** - configure hard caps in HeyReach matching your operational limits (15-18 connection requests/day). HeyReach enforces these limits automatically and stops activity before a breach. Limits are distributed proportionally across all campaigns the sender is enrolled in, so multiple campaigns can't accidentally compound and breach the daily ceiling.
 4. **Sender rotation** - attach 3-10 senders to the same campaign. HeyReach auto-rotates which account sends each request, distributing load and surfacing all replies in a unified inbox (Unibox).
-5. **Sequence template** - connection request (with or without note) → 30-60s wait → M1 (after acceptance) → 3-5 day wait → M2B (if no reply). Use **conditional branches** for connected-no-reply vs. profile-viewed vs. replied paths - see `copywriting/examples/dm-sequence.md` state-aware branching section.
+5. **Sequence template** - connection request (with or without note) → 30-60s wait → M1 (after acceptance) → 3-5 day wait → M2B (if no reply). Use **conditional branches** for connected-no-reply vs. profile-viewed vs. replied paths - see `resources/sequences/dm-sequence.md` state-aware branching section.
 6. **Auto-withdrawal of pending invitations** - set HeyReach to auto-withdraw pending connection requests after 14 days. Pending invitations sitting in LinkedIn's queue past 14 days hurt account health; a queue >1000 pending triggers anti-spam systems.
 7. **Working hours** - restrict sends to 9am-5pm in the account's stated time zone (sending at 3am US time from a "US-based account" is a detection signal).
 8. **Reply detection** - connect to the inbox so replies pause the sequence automatically. All replies across senders surface in Unibox.
@@ -412,4 +412,4 @@ Founder profiles are inherently lower-risk because LinkedIn's signals - long acc
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

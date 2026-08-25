@@ -39,7 +39,7 @@ One hook is enough for an opener; the second hook is what carries the conversati
 
 If the enrichment can't produce two hooks for a prospect, the right move is usually to drop them from the list rather than send a one-hook message. Volume from low-signal rows drags down the segment-level numbers and burns connections that could have been re-engaged later with better context.
 
-Source: HeyReach's two-hook rule. See `resources/heyreach-knowledge-base.md`.
+Source: HeyReach's two-hook rule. See `resources/knowledge/heyreach-knowledge-base.md`.
 
 ## The 6 Data Buckets (Ranked by Value)
 
@@ -337,4 +337,4 @@ Curious whether that's the picture at [Company] too?
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
