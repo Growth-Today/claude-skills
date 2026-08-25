@@ -87,7 +87,7 @@ CONNECT
 [ ] Inboxes tagged; correct single workspace
 
 WARMUP
-[ ] Max daily warmup limit set to GT target (reference §1); Bison automates ramp/reply/timing
+[ ] Max daily warmup limit set to Growth Today target (reference §1); Bison automates ramp/reply/timing
 [ ] Warmed >= 2 weeks (3-4 recommended); scores healthy on 3/7/10-14d windows
 [ ] Cold limit correct per state (Active Google 20 / Outlook 5; unhealthy throttled to 1)
 

@@ -27,8 +27,8 @@ Major restructure and 2026 deliverability rebuild.
  smartlead-setup, lemlist-setup**, replacing the ScaledMail + Instantly/Bison
  and Lemlist Notion SOPs.
 - **setup-audit** sub-skill, connect a live workspace (any sequencer) and verify
- all 20 config dimensions PASS/WARN/FAIL against the GT standard; the setup-side
- counterpart to blacklist-bounce-audit.
+ all 20 config dimensions PASS/WARN/FAIL against the Growth Today standard; the
+ setup-side counterpart to blacklist-bounce-audit.
 - **benchmarks.md**: 2026 market benchmarks (results-side vs automation-side).
 - **approved-vendors.md**: approved SMTP / sequencer / masking vendors.
 - **blacklist-bounce-audit**: folded in the executable EmailBison audit runbook (MCP/API pull with cursor pagination, the broken `?type=bounced` filter workaround, Hard/Soft/Block/Unknown SMTP-code classification incl. Microsoft-specific block codes, the report sections + CSV schema + chat summary, and a Known API Limitations table). Sanitized from a teammate's internal `gt-bounce-audit` runbook.
@@ -46,3 +46,7 @@ Major restructure and 2026 deliverability rebuild.
 - **Strip OOO/auto-replies before reading any bounce rate** (~54% inflation).
 - **SURBL de-scoped to monitor-only**; only Spamhaus DBL + URIBL count.
 - Multi-registrar purchasing spread; failover gap flagged.
+
+---
+
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

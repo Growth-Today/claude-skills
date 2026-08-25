@@ -1,4 +1,4 @@
-# GT Email Infrastructure & Deliverability
+# Growth Today Email Infrastructure & Deliverability
 
 A cold email infrastructure and deliverability skill for Claude, built by [Growth Today](https://www.growthtoday.co). Organized around the two people who run it (**Sales Ops** and **GTM Engineer**) as role-tagged sub-skills, each ending in a copy-pasteable checklist.
 
@@ -31,7 +31,7 @@ Plus shared resources for all numbers/limits, approved vendors, and 2026 market 
 
 ```
 gt-email-infra/
-├── SKILL.md ← orchestrator: SKILL_BASE setup, routing, critical rules, GT point of view
+├── SKILL.md ← orchestrator: SKILL_BASE setup, routing, critical rules, Growth Today point of view
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md

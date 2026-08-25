@@ -60,7 +60,7 @@ Set on **each inbox and each user**:
 - **Blocklist/unsubscribe:** turn ON "add unsubscribes to blocklist automatically"; add opt-out keywords (unsubscribe; stop; remove; not interested; …). Upload the client's existing blocklist (customers, active deals) and exclude those domains from Clay tables to save credits. Ask the client to unsubscribe leads as replies come in.
 - **CRM (HubSpot):** connect at **team level**; create contacts/companies on reply; map fields, users, activities; check Logs for sync errors.
 - **Preferences:** set opportunity value (confirm ACV with the AM), correct timezone (EU vs US), AI auto-tag replies ON, AI Inbox Manager OFF, OOO auto-tag ON.
-- **Custom tracking domain (only if a client insists):** CNAME **Host = a subdomain you choose** → **Target `custom.lemlist.com`** + a TXT verification record; Cloudflare set to DNS-only. GT default = none.
+- **Custom tracking domain (only if a client insists):** CNAME **Host = a subdomain you choose** → **Target `custom.lemlist.com`** + a TXT verification record; Cloudflare set to DNS-only. Growth Today default = none.
 
 ---
 

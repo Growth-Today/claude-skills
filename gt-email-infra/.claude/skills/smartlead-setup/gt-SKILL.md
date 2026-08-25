@@ -43,18 +43,18 @@ Email Accounts → select account → **Warm-up** tab → configure → **Enable
 - **Auto-Adjust Warmup/Sending Ratio:** optional smart-adjust, when on an active campaign the AI trims warmup (~7–10) and manages the ratio automatically.
 - **Weekdays-only** toggle available.
 - **Warmup identifier:** unique 2-word phrase used as an inbox filter/rule (no visible subject tag).
-- **Duration:** warm **≥ 2 weeks** (Growth Today recommends 3–4, `reference.md` §5), Smartlead doesn't publish a minimum, so use the GT gate.
+- **Duration:** warm **≥ 2 weeks** (Growth Today recommends 3–4, `reference.md` §5), Smartlead doesn't publish a minimum, so use the Growth Today gate.
 
 ---
 
 ## Part 3, Advanced deliverability (campaign options)
 
-- **Plain text (no HTML)**: toggle in **draft only** (can't change after start). Enabling it **auto-disables open tracking, click tracking, and unsubscribe links.** GT default: first email plain text.
+- **Plain text (no HTML)**: toggle in **draft only** (can't change after start). Enabling it **auto-disables open tracking, click tracking, and unsubscribe links.** Growth Today default: first email plain text.
 - **Disable open tracking / click tracking**: available separately.
 - **Enhanced Email Sending (ESP matching)**: provider matching exists, but decide from the dashboard matrix (the campaign-building sub-skill), not as a fixed rule.
 - **Company-level auto-pause**: stop messaging other people at a company once one replies.
 - **Stop conditions**: halt on reply / click / open.
-- **High Bounce Rate Auto-Protection**: auto-pauses a campaign over a bounce threshold (industry standard <5%; GT acts earlier, `reference.md` §3).
+- **High Bounce Rate Auto-Protection**: auto-pauses a campaign over a bounce threshold (industry standard <5%; Growth Today acts earlier, `reference.md` §3).
 - **Unsubscribe Header**: one-click list-unsubscribe header; note it needs HTML, so it conflicts with full plain-text/"Optimize Email Delivery."
 - **Send interval:** the campaign's "email sent every X" must be **≥ 2 minutes greater** than the mailbox-level minimum gap (≈5-min minimum) or sends get skipped; set a randomized interval + correct timezone.
 
@@ -83,7 +83,7 @@ CONNECT
 
 WARMUP
 [ ] Warmup enabled; Daily Ramp Up on (with warmup) for fresh domains; reply rate 20-30%
-[ ] Total daily volume aligned with GT targets (reference §1); randomise on
+[ ] Total daily volume aligned with Growth Today targets (reference §1); randomise on
 [ ] Warmed >= 2 weeks (3-4 recommended)
 [ ] Cold limit correct per state (Active Google 20 / Outlook 5)
 
