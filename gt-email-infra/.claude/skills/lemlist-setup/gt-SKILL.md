@@ -5,7 +5,7 @@ description: "Set up and connect sending inboxes in Lemlist (infrastructure side
 
 # Lemlist Inbox Setup · [Sales Ops]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5, §10 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
 
 Set up sending inboxes in **Lemlist** (one of the sequencers Growth Today runs). Lemlist is **multichannel** (email + LinkedIn), so this covers LinkedIn limits too. Infrastructure/inbox side only, sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
 
@@ -60,7 +60,7 @@ Set on **each inbox and each user**:
 
 - **Blocklist/unsubscribe:** turn ON "add unsubscribes to blocklist automatically"; add opt-out keywords (unsubscribe; stop; remove; not interested; …). Upload the client's existing blocklist (customers, active deals) and exclude those domains from Clay tables to save credits. Ask the client to unsubscribe leads as replies come in.
 - **CRM (HubSpot):** connect at **team level**; create contacts/companies on reply; map fields, users, activities; check Logs for sync errors.
-- **Preferences:** default opportunity value $3,000 unless the AM confirms a different ACV, correct timezone (EU vs US), AI auto-tag replies ON, AI Inbox Manager OFF, OOO auto-tag ON, lead preferences OFF.
+- **Preferences:** default opportunity value (`{SKILL_BASE}/resources/reference.md` §10) unless the AM confirms a different ACV, correct timezone (EU vs US), AI auto-tag replies ON, AI Inbox Manager OFF, OOO auto-tag ON, lead preferences OFF.
 - **Custom tracking domain (only if a client insists):** CNAME **Host = a subdomain you choose** → **Target `custom.lemlist.com`** + a TXT verification record; Cloudflare set to DNS-only. GT default = none.
 
 ---
@@ -69,9 +69,9 @@ Set on **each inbox and each user**:
 
 If an inbox is used in Lemlist, prevent double-sending from another sequencer: set its cold send to **0 in Instantly / 1 in EmailBison** and **tag it "Lemlist."**
 
-**Bi-directional:** if a lead replies positive or neutral in EmailBison, stop that lead in Lemlist so they don't receive both sequences (see the internal Bi-directional Sync SOP).
+**Bi-directional:** the rule runs both ways, regardless of which two sequencers are in play. Whichever sequencer's lead gets a positive or neutral reply first, stop that same lead in the other sequencer(s) so it doesn't keep getting sequenced elsewhere. Check reply status before each send cycle (via the platform's own reply/webhook data where available) and pause or remove the lead in the other tool the same day the reply lands.
 
-Placement/health: check the **Deliverability Hub** (delivery + bounce rate by provider/mailbox/domain, warmup score, manual inbox-placement tests, threshold alerts). Log every inbox and domain in **EMS (Row Zero)** with warmup status and warmup start date.
+Placement/health: check the **Deliverability Hub** (delivery + bounce rate by provider/mailbox/domain, warmup score, manual inbox-placement tests, threshold alerts).
 
 ---
 
@@ -102,12 +102,10 @@ DELIVERABILITY
 CRM & BLOCKLIST
 [ ] HubSpot connected at team level; field/user/activity mapping; logs clean
 [ ] Blocklist auto-add ON + opt-out keywords; client blocklist uploaded
-[ ] Preferences: opportunity value, timezone, AI auto-tag on / Inbox Manager off
-[ ] Opportunity value $3,000 unless AM confirms, lead preferences OFF
-[ ] Positive/neutral reply in EmailBison stops the lead in Lemlist
+[ ] Preferences: opportunity value (reference.md §10) unless AM confirms, timezone, AI auto-tag on / Inbox Manager off, lead preferences OFF
+[ ] Positive/neutral reply in one sequencer stops the lead in the other(s)
 [ ] DNS verified (SPF/DKIM/DMARC) per inbox (the provisioning sub-skill)
 [ ] GTM Engineer + AM notified inboxes are ready
-[ ] All inboxes and domains logged in EMS (Row Zero) with warmup status and start date
 ```
 
 ---

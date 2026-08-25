@@ -172,4 +172,12 @@ Root cause by type: **hard 5XX → list/verification/data**; **soft 4XX → temp
 
 ---
 
+## 10. CRM preference defaults
+
+| Preference | Default | Notes |
+|---|---|---|
+| Opportunity value | **$4,500** | Unless the AM confirms a different ACV for the account. Matches the live Instantly workspace/campaign default; keep this row the single source, sub-skills link here rather than hardcoding the figure. |
+
+---
+
 *Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
