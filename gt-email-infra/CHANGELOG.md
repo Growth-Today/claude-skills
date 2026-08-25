@@ -5,6 +5,63 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); versions use
 [SemVer](https://semver.org/) (patch = fix, minor = additive, major = breaking
 layout/restructure).
 
+## [v5.1.0] - 2026-08-25
+
+Knowledge corrections, the first executable playbooks, and a terminology rename.
+
+### Added
+- **`playbooks/`** — the skill's first runnable steps, following the
+ `gt-hubspot-admin` convention (`playbook.md` with an interview section +
+ `scripts/` carrying PEP-723 headers, so `uv run` needs no install).
+ - **dns-auth-audit** — MX / SPF (record count + recursive RFC 7208 lookup
+ budget) / DKIM across 14 selectors / DMARC against the GT standard / stray
+ Lync SRV. `--esp-mix` profiles a recipient list by ESP, replacing the manual
+ Clay MX column. `after.py` diffs a re-run against a saved baseline to catch
+ silent drift. Exit 2 on FAIL, so it works as a launch gate.
+ - **sizing-calculator** — goal (or contacts × steps ÷ days-to-clear) →
+ mailboxes → domains. Parses the cold limits out of §1 at run time instead of
+ hardcoding them. `--validate` reproduces the §4 table.
+- **`requirements.txt`**, **`.env.example`**, **`.gitignore`**.
+- **reference.md §1 and §2 key tables** — addressable keys (`google_cold`,
+ `cold_warming`, `warmup_floor_days`, `placement_active`, …) so executable
+ checks cite a key instead of copying a number.
+- **instantly-setup Part 4b** — required Unibox settings. *Save undelivered
+ emails in Unibox* is OFF by default and gates what the reporting can see.
+- **setup-audit dimension 21** — Unibox settings check.
+
+### Changed
+- **setup-audit Part B is now executable**: six columns (Check · Source ·
+ Call → field · Pass if · On fail · Write?). 13 of 21 rows verified against a
+ live Instantly workspace; 2 confirmed not exposed by the API (signature,
+ sender name); the rest labelled honestly.
+- **Renamed OpsLab → "email infra management system"** throughout. The
+ Supabase + Railway + n8n stack is Growth Today's own, and the plainer name
+ reads better for an agent.
+- **dashboard-reading Parts 1 and 4** reframed as verify-only tables.
+- **dashboard-reading Part 2b** rewritten from a defect list to fixed vs still
+ open, reflecting the 20–25 Aug QA.
+- **Warmup floor 14 → 21 days**; Outlook fully-warmed warmup 13 → 15; Outlook
+ warm-to-cold ratio 2.5:1 → 3:1.
+- **Sizing divisor 20–25 → 14.** The old figure came from deprecated Google 30
+ / Microsoft 10 limits and under-bought inventory by 43–79%.
+- **DMARC standard is `p=reject`.**
+- **Purchasing** — multi-day spread, max 4 per registrar per day, owned by
+ ScaledMail; GT verifies on delivery.
+- **MX→ESP classification** now mirrors the 12-provider Clay formula from
+ PR #29, with a SEG flag and a `no-email` case.
+
+### Removed
+- **SURBL** as a blacklist reason, everywhere. Only Spamhaus DBL and URIBL
+ count. It is not tracked by the email infra management system, and leaving it
+ in as "monitor-only" is how it kept reappearing in checklists.
+
+### Fixed
+- Three write instructions in `setup-audit` that breached the read-only
+ boundary (warmup enable, limit correction, throttle + tag) now report instead.
+- `SKILL.md` still carried the deprecated ÷20–25 sizing divisor after
+ `reference.md` §4 had been corrected.
+- `setup-audit` dimension 9 passed `p=quarantine`; realigned to §6.
+
 ## [v5.0.0] - 2026-07-30
 
 Major restructure and 2026 deliverability rebuild.
