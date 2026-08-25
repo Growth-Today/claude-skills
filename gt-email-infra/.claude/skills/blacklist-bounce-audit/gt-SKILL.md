@@ -78,7 +78,7 @@ Parse `text_body` / `html_body`, extract the SMTP status + DSN code, and bucket.
 ## Blacklist read (two lists only)
 
 - **Only Spamhaus DBL and URIBL count.** Listed there → treat the domain as compromised. Nothing else is a blacklist reason.
-- **Do not act on any other list.** Google and Microsoft barely weight the rest, and OpsLab does not track them. A hit on another list must **not** tag an inbox Blacklisted, cut sending, or fire an alert — if it does, report the bug. Don't chase those delistings.
+- **Do not act on any other list.** Google and Microsoft barely weight the rest, and the email infra management system does not track them. A hit on another list must **not** tag an inbox Blacklisted, cut sending, or fire an alert — if it does, report the bug. Don't chase those delistings.
 - **One flag is domain-level, not inbox-level**: a single SEG/blacklist hit poisons the whole domain.
 - **Pre-launch gate:** blacklist-check every domain **< 60 days old** before it sends (Spamhaus DBL / URIBL).
 - **Microsoft drops:** before blaming infra for an Outlook cluster, check dates against **Microsoft BCL recalibration**: a provider-side threshold change can junk mail with no change on your end.
@@ -94,7 +94,7 @@ The diagnostic behind most "is it the copy or the domain?" confusion. Run on eac
 
 | Root cause | Signal | Owner / action |
 |---|---|---|
-| **Infra / automation** | warmup ratio off, DNS/auth drift, throttling/failover | Automation/OpsLab team |
+| **Infra / automation** | warmup ratio off, DNS/auth drift, throttling/failover | Email infra management system |
 | **List / data** | wave of Hard `5.1.1` / bad-data bounces | Verification/enrichment, confirm which verifier ran, fix the step (`gt-list-building`) |
 | **Copy** | consistent spam placement everywhere, empty liquid, weak variance, spam words, aggressive volume | GTM Engineer rewrites (client conversation if they supplied the copy) |
 | **Domain burned** | large share of inboxes on Spamhaus/URIBL-listed domains | Buy new domains + new infra (the domain-research and provisioning sub-skills); recycle SEG-burnt domains first |

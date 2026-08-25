@@ -50,7 +50,7 @@ If yes, pass it and skip straight to the after-state diff.
 1. Collect the domain list.
 2. Run `execute.py` — audits every domain, prints per-dimension verdicts, writes a CSV baseline.
 3. Triage: FAIL on MX, SPF or DMARC is launch-blocking. WARN is a judgement call.
-4. Route the fixes (DNS host for records; OpsLab if it's a drift on a live inbox — see the read-only boundary in `SKILL.md`).
+4. Route the fixes (DNS host for records; the email infra management system if it's a drift on a live inbox — see the read-only boundary in `SKILL.md`).
 5. Run `after.py` to prove the fix landed and nothing else regressed.
 
 ## Two modes
@@ -121,7 +121,7 @@ Re-queries every domain in the baseline and reports each dimension as FIXED, STI
 - **"SPF found" is not "SPF works."** Count the records and walk the chain. Both failure modes present as a green tick in every UI tool.
 - **DKIM WARN is not DKIM FAIL.** Fourteen selectors covers Google, Microsoft and the common vendors, but a custom selector is legitimate. Verify in the provider UI before raising it.
 - **Set the baseline early.** The audit's value compounds only if you have something to diff against. Save the CSV per client, per month.
-- **Fixing a live inbox's records is a DNS-host action, not an OpsLab one** — but if the *drift alert* came from the OpsLab weekly re-check, report it there too. Don't build a competing scheduler.
+- **Fixing a live inbox's records is a DNS-host action, not a system-side one** — but if the *drift alert* came from the email infra management system's weekly re-check, report it there too. Don't build a competing scheduler.
 
 ---
 

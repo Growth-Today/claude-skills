@@ -13,11 +13,11 @@ How to read the automated inbox-management dashboard and turn each panel into an
 
 ## Part 1, Inbox classification (what the tags mean)
 
-Every inbox is auto-tagged by OpsLab. Exact thresholds in `reference.md` §2.
+Every inbox is auto-tagged by the email infra management system. Exact thresholds in `reference.md` §2.
 
 **This table is executable as a verification, never as a change.** With the sequencer MCP
 connected, you can recompute what each inbox's state *should* be and compare it to the tag
-OpsLab actually applied. A mismatch is a finding to report — it is how OpsLab bugs get caught —
+the system actually applied. A mismatch is a finding to report — it is how bugs in the system get caught —
 and it is never something GT retags. Every row here is `Write? never`.
 
 | Tag | Threshold (`reference.md` §2 keys) | Verify with | What you do |
@@ -29,7 +29,7 @@ and it is never something GT retags. Every row here is `Write? never`.
 | **Blacklisted** | domain on `blacklists_that_count` (Spamhaus DBL / URIBL) — nothing else | check at source; the app's own blacklist read has been unreliable (Part 2b) | Volume cut; go to the bounce-audit sub-skill |
 
 > **What a mismatch means.** If an inbox reads Active on the dashboard but the live numbers put
-> it in Burnt, that is a classification-engine finding for OpsLab, not a tag for you to correct.
+> it in Burnt, that is a classification-engine finding to raise, not a tag for you to correct.
 > Report the inbox list and the computed state. Same in reverse.
 
 **No timeout:** an inbox can sit in Warmup Needed forever, there's no auto-escalation. Placement < 50 hard-forces Warmup Needed; when placement recovers, it returns to Active on its own.
@@ -54,18 +54,18 @@ and it is never something GT retags. Every row here is `Write? never`.
 
 ## Part 2b, Known data-quality problems (read this before trusting a number)
 
-The dashboard has open defects. Until OpsLab closes them, some numbers on screen are wrong:
+The dashboard has open defects. Until they are fixed, some numbers on screen are wrong:
 
 | What | Problem |
 |---|---|
-| **Bounce rate** | The formula is disputed. Stord read **1.47%** on the dashboard for the last 30 days and **4%** in the sequencer for the same window. Do not quote a dashboard bounce figure without checking it at source. |
+| **Bounce rate** | The formula is disputed. Stord read **1.47%** on the dashboard for the last 30 days and **4%** in the sequencer for the same window. **Check the Instantly Unibox setting first** — if *Save undelivered emails in Unibox* is off (and it is off by default), undelivered mail never reaches the system, which would explain the low number. See instantly-setup Part 4b. Don't quote a dashboard bounce figure without checking it at source. |
 | **Alerts** | **80 of the last 200 alerts failed to send** (rate-limited). Alerts are both noisy and unreliable — silence does not mean nothing happened. |
 | **Placement tests** | Many fail with a score of 0 and no reason given. A 0 may mean bounced, never delivered, or a broken test. |
-| **Unsubscribes** | Shows 0%, which is not credible — do-not-contact requests are probably not being captured. |
+| **Unsubscribes** | Shows 0%, which is not credible — do-not-contact requests are probably not being captured. Same first check as bounce: the Unibox toggles decide what the system can see at all. |
 | **Rotation** | The rotation engine is switched off with empty batches, and its daily-limit settings duplicate the ones on the Clients page. |
 | **Blacklist** | Spamhaus and URIBL were never actually working, so every listing the dashboard has ever shown came from a list GT no longer tracks. Treat historical Blacklisted tags as unverified. See `reference.md` §2. |
 
-Report anything that looks wrong to OpsLab rather than working around it.
+Report anything that looks wrong so the system gets fixed, rather than working around it.
 
 ---
 
@@ -84,9 +84,9 @@ Timing: a **rising bounce rate is a leading indicator** (acts the same day), a *
 
 ---
 
-## Part 4, Send limits by state (read-only — OpsLab sets these)
+## Part 4, Send limits by state (read-only — the email infra management system sets these)
 
-**OpsLab sets these limits. Your job is to check them, not change them.** Governed by the
+**The email infra management system sets these limits. Your job is to check them, not change them.** Governed by the
 warm-to-cold **ratio**, with the cold limit driven by inbox state (`reference.md` §1). If an inbox
 is on the wrong limit, report it with the inbox list — do not fix it yourself.
 

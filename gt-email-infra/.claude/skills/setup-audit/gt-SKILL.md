@@ -60,9 +60,9 @@ identical; substitute that platform's equivalent read and note the substitution 
 | 1 | **Inbox count** | MCP | `list_accounts` → count, group by `provider_code` | matches the brief, count and Google/Microsoft split | WARN → reconcile with ScaledMail. If the brief itself is doubtful, re-derive with `playbooks/sizing-calculator` first — older briefs used the deprecated ÷20–25 divisor and under-buy by 43–79% | n/a |
 | 2 | **Mailboxes per domain** | MCP | `list_accounts` → `email`, split on `@`, count per domain | Google ≤ ~3 · Microsoft ≤ ~25 | WARN → redistribute on the next build | n/a |
 | 3 | **Connection** | MCP | `list_accounts` → `status`, `setup_pending`, `email` | `status == 1` and `setup_pending == false` on every inbox; no role addresses (`sales@`, `info@`, `hello@`) | FAIL → reconnect, or replace the role address | setup-only |
-| 4 | **Warmup on** | MCP | `list_accounts` → `warmup_status` | `warmup_status == 1` on every live inbox | FAIL → **report to OpsLab with the inbox list. Do not enable it yourself on a live inbox** | never |
-| 5 | **Warmup age** | MCP | `list_accounts` → `timestamp_created` | age ≥ §2 `warmup_floor_days` before any cold send; domain > 30 days before carrying a link | FAIL → hold and age. Note the trap: OpsLab releases at §2 `new_inbox_age_days`, GT's floor is longer | n/a |
-| 6 | **Cold limits by state** | MCP | `list_accounts` → `daily_limit`, `warmup.limit`, `warmup.increment` | matches §1 `google_cold` / `outlook_cold` for the inbox's state; warming and throttled at §1 `cold_warming`; New Inbox at §1 `cold_new_inbox`; warmup ≈ cold × §1 `ratio_google` / `ratio_outlook` | FAIL → **list the inboxes and report to OpsLab. GT does not set limits** | never |
+| 4 | **Warmup on** | MCP | `list_accounts` → `warmup_status` | `warmup_status == 1` on every live inbox | FAIL → **report it against the email infra management system with the inbox list. Do not enable it yourself on a live inbox** | never |
+| 5 | **Warmup age** | MCP | `list_accounts` → `timestamp_created` | age ≥ §2 `warmup_floor_days` before any cold send; domain > 30 days before carrying a link | FAIL → hold and age. Note the trap: the email infra management system releases at §2 `new_inbox_age_days`, GT's floor is longer | n/a |
+| 6 | **Cold limits by state** | MCP | `list_accounts` → `daily_limit`, `warmup.limit`, `warmup.increment` | matches §1 `google_cold` / `outlook_cold` for the inbox's state; warming and throttled at §1 `cold_warming`; New Inbox at §1 `cold_new_inbox`; warmup ≈ cold × §1 `ratio_google` / `ratio_outlook` | FAIL → **list the inboxes and report to the email infra management system. GT does not set limits** | never |
 | 7 | **Randomized interval** | MCP | `list_accounts` → `sending_gap` | a gap is set and is not near-zero; jitter enabled per platform | WARN → randomize | setup-only |
 | 8 | **Timezone** | MCP | `list_campaigns` → `campaign_schedule.schedules[].timezone`, `.timing`, `.days` | window matches the client's segment (US vs EU); weekdays only | FAIL → fix the schedule | setup-only |
 | 9 | **DNS / auth** | PLAYBOOK | `playbooks/dns-auth-audit` → `uv run execute.py --file domains.txt` | exit code 0; exactly one SPF inside the 10-lookup budget; DMARC `p=reject` (§6) | FAIL → fix at the DNS host (provisioning). **A record that was healthy and is now broken is P0** | n/a |
@@ -74,9 +74,10 @@ identical; substitute that platform's equivalent read and note the substitution 
 | 15 | **ESP routing** | MCP ⚠️ | `get_campaign` → ESP-matching field *(field name unconfirmed — see the note below)* | no blind ESP matching; routing follows the dashboard matrix | WARN → review against the matrix (campaign-building) | never |
 | 16 | **Company send limit** | MCP ⚠️ | `get_campaign` → per-company cap *(field name unconfirmed — see the note below)* | a cap is set (≈ 2/company/day; lower for SEG orgs) | FAIL → set a cap | setup-only |
 | 17 | **Spintax / variance** | MCP | `list_campaigns` → `variants[].subject` and `.body` | `{{RANDOM \| … }}` present on subject **and** body; more than one variant per step | WARN → add variance | setup-only |
-| 18 | **Cross-sequencer** | MANUAL | requires reading two platforms — no single call | an inbox live in another sequencer is at cold 0 (Instantly) / 1 (EmailBison) and tagged | FAIL → **report to OpsLab** (throttling and tagging are theirs) | never |
+| 18 | **Cross-sequencer** | MANUAL | requires reading two platforms — no single call | an inbox live in another sequencer is at cold 0 (Instantly) / 1 (EmailBison) and tagged | FAIL → **report it against the email infra management system** (throttling and tagging live there) | never |
 | 19 | **% automated replies** | MCP | `list_emails` → reply bodies, strip OOO before any rate | auto-replies stripped before bounce/reply is quoted | WARN → strip (blacklist-bounce-audit). Needs a live campaign | n/a |
 | 20 | **Warning alerts** | MANUAL | not exposed by the account or workspace read | high-bounce alerts ON (plus LinkedIn-disconnect on Lemlist) | WARN → enable in the UI | setup-only |
+| 21 | **Unibox settings** | MANUAL | not in `workspace_get` — checked in Settings → Unibox | **Save undelivered emails = ON** · Show auto-replies = ON · Save non-Instantly = OFF · Only notify in CRM = OFF | FAIL → switch on. With undelivered off, the bounce number the system reports is wrong, not just incomplete | setup-only |
 
 > **⚠️ Rows 15 and 16.** Instantly returns campaign fields **only once they have been configured** —
 > an unset field is simply absent from the response, not present-and-empty. On every GT campaign
@@ -84,9 +85,9 @@ identical; substitute that platform's equivalent read and note the substitution 
 > answer anyway, and confirm the exact field name against a campaign where the setting *is* on
 > before hardening the row.
 
-> **🔒 Read-only reminder.** Rows 4, 6, 15 and 18 sit inside OpsLab-owned territory. The audit
+> **🔒 Read-only reminder.** Rows 4, 6, 15 and 18 sit inside the email infra management system's territory. The audit
 > reads them and reports the gap. It never fixes them — see the read-only boundary in `SKILL.md`.
-> `setup-only` means writable at first provisioning; once an inbox is live and OpsLab is
+> `setup-only` means writable at first provisioning; once an inbox is live and the email infra management system is
 > classifying it, that window is closed.
 
 ---
@@ -97,7 +98,7 @@ Present a per-dimension result the team (or an agent) can act on:
 
 ```
 ## Setup Audit, [Workspace] ([Sequencer]), [Date]
-Source: MCP [connected / not connected] · X of 20 checked automatically, Y by hand, Z not checked
+Source: MCP [connected / not connected] · X of 21 checked automatically, Y by hand, Z not checked
 Baseline: X inboxes across Y domains (Google Z / Microsoft W) vs brief [match/mismatch]
 
 ✅ PASS (n): [dimensions that are correct]
@@ -105,7 +106,7 @@ Baseline: X inboxes across Y domains (Google Z / Microsoft W) vs brief [match/mi
 ❌ FAIL (n): [dimension + exact inboxes/campaigns + the fix]
 ⬜ NOT CHECKED (n): [dimension + why — no MCP, no data, field unconfirmed]
 
-🔒 OpsLab items found (read-only — reported, not fixed):
+🔒 Email infra management system items found (read-only — reported, not fixed):
 - [dimension + inbox list]
 
 Top fixes (priority order):
@@ -121,8 +122,8 @@ Rules: **numbers first**, name the exact inboxes/campaigns for every WARN/FAIL, 
 1. **Never report a skipped row as a pass.** If the MCP wasn't connected, the field was absent, or
    there was no data, it goes under NOT CHECKED with the reason. An audit that quietly drops
    rows reads as cleaner than it is, which is worse than no audit.
-2. **Separate OpsLab findings from GT findings.** Anything on a `Write? never` row goes in its own
-   block, addressed to OpsLab. Mixing them invites someone to "just fix" a sending limit.
+2. **Separate system findings from GT findings.** Anything on a `Write? never` row goes in its own
+   block, addressed to whoever maintains the email infra management system. Mixing them invites someone to "just fix" a sending limit.
 
 ---
 
@@ -132,7 +133,7 @@ Condensed from an actual MCP-driven run, as a pattern to imitate.
 
 ```
 ## Setup Audit — GT (Instantly) — 21 Aug 2026
-Source: Instantly MCP connected · 13 of 20 automatic · 3 inconclusive · 4 manual
+Source: Instantly MCP connected · 13 of 21 automatic · 3 inconclusive · 5 manual
 Baseline: 25 inboxes / 13 domains · 25 Google / 0 Microsoft · created 2026-08-15 (6 days) · 0 active campaigns
 
 ✅ PASS (9): mailboxes-per-domain (max 2) · connection (25/25 status=1) · interval (sending_gap=10)
@@ -143,21 +144,21 @@ Baseline: 25 inboxes / 13 domains · 25 Google / 0 Microsoft · created 2026-08-
 
 ❌ FAIL (3) — one root cause:
    4  warmup_status=0 on all 25; stat_warmup_score=0; warmup analytics empty
-   5  6 days old vs §2 warmup_floor_days = 21 (also under OpsLab's 14-day exclusion)
+   5  6 days old vs §2 warmup_floor_days = 21 (also under the system's 14-day exclusion)
    6  daily_limit=20 = §1 google_cold (the ACTIVE value) on inboxes still in the warming window
    → 25 inboxes set to send 20 cold/day each with warmup off, 6 days after creation.
      Nothing has sent yet — caught pre-launch, which is the point.
      Warmup config itself is correct: warmup.limit=30 = §1 google_warmup, increment=4 = §1 ramp_google.
 
-🔒 OpsLab (reported, not fixed — rows 4 and 6 are Write? never):
+🔒 Email infra management system (reported, not fixed — rows 4 and 6 are Write? never):
    "All 25 inboxes have warmup disabled and daily_limit=20 inside the warming window.
     Requesting warmup enabled and cold set to the warming value until 2026-09-05. List attached."
 
-⬜ NOT CHECKED (7): destination · signature (confirmed not in the API) · ESP routing (field absent)
+⬜ NOT CHECKED (8): destination · signature (confirmed not in the API) · Unibox toggles (UI only) · ESP routing (field absent)
    · company cap (field absent) · cross-sequencer (needs 2nd platform) · auto-replies (no live
    campaign) · alerts (not exposed)
 
-Overall: not ready to launch. 3 blockers, all warmup, all OpsLab-owned.
+Overall: not ready to launch. 3 blockers, all warmup, all owned by the email infra management system.
 ```
 
 **Three things this example is showing you:**
@@ -166,7 +167,7 @@ Overall: not ready to launch. 3 blockers, all warmup, all OpsLab-owned.
    technically accurate and practically useless.
 2. **NOT CHECKED is an outcome, not an omission.** Seven rows, each with a reason. A report that
    showed "13 of 13 passed" would read cleaner and be a lie by omission.
-3. **The OpsLab block is pre-drafted as a message.** The finding travels to its owner without
+3. **The system block is pre-drafted as a message.** The finding travels to its owner without
    anyone being tempted to fix a sending limit in place.
 
 ---
@@ -177,9 +178,9 @@ Overall: not ready to launch. 3 blockers, all warmup, all OpsLab-owned.
 [ ] Correct workspace / sequencer confirmed; live config pulled
 [ ] MCP connection status stated (and which rows fell back to manual)
 [ ] Baseline reported (inbox + domain count vs brief, provider split)
-[ ] All 20 dimensions graded PASS / WARN / FAIL / NOT CHECKED
+[ ] All 21 dimensions graded PASS / WARN / FAIL / NOT CHECKED
 [ ] Thresholds read from reference.md §1/§2 keys, not from memory
-[ ] No write executed on any `Write? never` row; OpsLab findings listed separately
+[ ] No write executed on any `Write? never` row; system findings listed separately
 [ ] Every WARN/FAIL names the exact inboxes/campaigns + the fix
 [ ] Launch-blocking FAILs flagged (DNS, redirect, warmup off, tracking on, HTML email 1)
 [ ] Report delivered; top fixes prioritized

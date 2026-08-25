@@ -70,7 +70,7 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | Key | Value | Meaning |
 |---|---|---|
 | `new_inbox_sends` | < 100 | Lifetime sends below which an inbox is New |
-| `new_inbox_age_days` | 14 | OpsLab campaign-routing exclusion age. **Not** the GT warmup floor — that is `warmup_floor_days` in §5 |
+| `new_inbox_age_days` | 14 | Campaign-routing exclusion age in the email infra management system. **Not** the GT warmup floor — that is `warmup_floor_days` in §5 |
 | `warmup_floor_days` | 21 | GT's hard warmup floor before any cold send (§5) |
 | `placement_active` | > 70 | Placement score required for Active |
 | `placement_forced_warmup` | < 50 | Hard-forces Warmup Needed |
@@ -84,13 +84,13 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 **No timeout:** an inbox can sit in Warmup Needed indefinitely, there is no auto-escalation to Burnt. Burnt requires all three thresholds concurrently.
 
 > **⚠️ The 14-day exclusion and the 21-day warmup floor are two different things.**
-> OpsLab's campaign routing releases a New Inbox at **14 days** old. Growth Today's warmup floor
+> The email infra management system's campaign routing releases a New Inbox at **14 days** old. Growth Today's warmup floor
 > is **21 days** (§5). So an inbox can become *eligible* in the system a week before GT policy
 > says it should send. **Do not attach an inbox to a campaign just because the system allows it** —
-> check warmup age against §5 first. The 14-day rule is OpsLab-owned; raise it with them if we
+> check warmup age against §5 first. The 14-day rule lives in the email infra management system; raise it with the team that maintains it if we
 > want the two aligned.
 
-> **⚠️ Blacklisted has never actually worked as written.** OpsLab confirmed that Spamhaus and
+> **⚠️ Blacklisted has never actually worked as written.** The email infra management system review confirmed that Spamhaus and
 > URIBL were both silently failing in the app — URIBL was blocking them, and Spamhaus returned
 > "clean" for every domain, so every Blacklisted tag GT has ever seen came from a list we no
 > longer track. **Only Spamhaus DBL and URIBL count as a blacklist reason.** The agreed fix turns

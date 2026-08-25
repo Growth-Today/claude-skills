@@ -101,6 +101,28 @@ Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Ad
 
 ---
 
+## Part 4b, Unibox settings (required — the reporting depends on these)
+
+**Settings → Unibox.** These four toggles decide what the email infra management system can
+actually see. Get them wrong and the dashboard reports numbers that look fine and aren't.
+
+| Toggle | GT setting | Why |
+|---|---|---|
+| **Save undelivered emails in Unibox** | ✅ **ON** | **The important one.** Off by default. If it's off, undelivered mail never lands in Unibox, so bounces can't be counted from Instantly and the bounce rate reads low |
+| **Show auto-replies in Unibox** | ✅ ON | You need to see them to strip them. Auto-replies inflate reply counts and, on EmailBison, inflated bounce counts by ~54% in one audit. Visible, then excluded — not hidden |
+| **Save non-Instantly emails in Unibox** | ⬜ OFF | Pulls in unrelated mailbox traffic. Noise, and a privacy question on client mailboxes |
+| **Only show notification in CRM** | ⬜ OFF | Keep replies visible in Unibox, not only in the CRM |
+
+> **Why this is a setup step and not a preference.** The dashboard's bounce figure is disputed —
+> one client read **1.47%** on the dashboard and **4%** in the sequencer for the same 30 days, and
+> unsubscribes show **0%**, which isn't credible. An inbox with *Save undelivered emails* switched
+> off is the most likely reason: the data never reaches the system, so it reports what it can see
+> rather than what happened. Check this toggle before investigating a bounce discrepancy.
+
+Set it on **every workspace**, including client sub-workspaces. It is per workspace, not global.
+
+---
+
 ## Part 5, Custom tracking domain (only if a client insists)
 
 **Growth Today default = no custom tracking domain and no links in cold email** (the provisioning sub-skill). Only when a client strongly insists, set up a **dedicated, never-shared** one:
@@ -137,6 +159,13 @@ WARMUP
 [ ] Warmed 21 days min (4 weeks on a cautious build); Health Score > 90% before launch
 [ ] Fully-warmed ramp set: Google 30 warmup/20 cold, Microsoft 15 warmup/5 cold
 
+UNIBOX (Settings -> Unibox) - reporting depends on these
+[ ] Save undelivered emails in Unibox = ON   <- off by default, breaks bounce reporting
+[ ] Show auto-replies in Unibox = ON         <- see them, then strip them
+[ ] Save non-Instantly emails in Unibox = OFF
+[ ] Only show notification in CRM = OFF
+[ ] Checked on EVERY workspace, including client sub-workspaces
+
 DELIVERABILITY
 [ ] First email text-only; open + link tracking OFF
 [ ] Company send limit set (default 2/domain/day; lower for SEG)
@@ -154,7 +183,7 @@ VERIFY & HANDOFF
 
 ---
 
-> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this sub-skill is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page, it is referenced by this skill.** This sub-skill is the primary source going forward; the Notion page is retained for the in-house detail (screenshots and vendor walkthroughs) not duplicated here. **Inbox documentation is now OpsLab's, handled automatically — Row Zero is retired and must not be used.**
+> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this sub-skill is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page, it is referenced by this skill.** This sub-skill is the primary source going forward; the Notion page is retained for the in-house detail (screenshots and vendor walkthroughs) not duplicated here. **Inbox documentation now lives in the email infra management system, handled automatically — Row Zero is retired and must not be used.**
 
 ---
 

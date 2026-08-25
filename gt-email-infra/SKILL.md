@@ -71,15 +71,21 @@ uv run execute.py --help          # every playbook is self-documenting
 
 `uv` reads the PEP-723 header in each script, so there is nothing to install. `pip install -r requirements.txt` is the fallback.
 
-> **Scope note.** Both playbooks above are **read-only and provider-independent** — they query public DNS or do arithmetic. Anything that touches a sending platform is governed by the OpsLab boundary below: reads are fine, writes to sending limits, warmup config, tagging or routing are not GT's to make.
+> **Scope note.** Both playbooks above are **read-only and provider-independent** — they query public DNS or do arithmetic. Anything that touches a sending platform is governed by the email infra management system boundary below: reads are fine, writes to sending limits, warmup config, tagging or routing are not GT's to make.
 
 ---
 
-## 🔒 OpsLab-owned: read-only
+## 🔒 Email infra management system: read-only
 
-The **OpsLab app** is the source of truth for the automated inbox layer. This skill holds that
-knowledge and exposes it as a **read-only checklist**. It is never a second source of truth, and
-the OpsLab dashboard stays primary.
+The **email infra management system** is Growth Today's own stack — Supabase, Railway and n8n crons.
+It is the source of truth for the automated inbox layer. This skill holds that knowledge and
+exposes it as a **read-only checklist**. It is never a second source of truth, and the system's
+dashboard stays primary.
+
+**Read-only is not about ownership, it's about having one answer.** The system is ours, so the
+rule is not "someone else's tool, hands off". It is that the moment a GTM engineer changes a
+sending limit in Instantly by hand, the system's number and Instantly's number disagree and
+nobody knows which is right. That is how we ended up with four inbox trackers.
 
 **GTM engineers and Sales Ops do not change these. Read the state, report the gap, escalate.**
 
@@ -99,7 +105,7 @@ the OpsLab dashboard stays primary.
 
 **The one time we do set these:** at first setup, before an inbox is live and being classified,
 Sales Ops or the vendor sets the starting warmup and cold values (see the instantly-setup
-sub-skill). **That window closes at go-live.** After that, limits, warmup and tags are OpsLab's.
+sub-skill). **That window closes at go-live.** After that, limits, warmup and tags belong to the email infra management system.
 
 **Access:** no token given to a GTM engineer may change sending limits, warmup config, tagging or
 routing. Instantly's account-update endpoint can change daily limits and is deliberately out of
@@ -143,7 +149,7 @@ The script reads the cold limits out of `reference.md` §1 at run time, so it ca
 
 ## Growth Today's point of view (our answers)
 
-- **Blacklists:** **only Spamhaus DBL and URIBL count.** Everything else is out of scope — Google and Microsoft barely weight the other lists and OpsLab does not track them. The real fix is **domain sourcing**, not chasing delistings.
+- **Blacklists:** **only Spamhaus DBL and URIBL count.** Everything else is out of scope — Google and Microsoft barely weight the other lists and the email infra management system does not track them. The real fix is **domain sourcing**, not chasing delistings.
 - **Microsoft / Outlook:** expect weaker Outlook placement; check sudden drops against **Microsoft BCL recalibration** dates before blaming infra; conservative limits; short copy.
 - **SEG (Mimecast/Proofpoint/Barracuda):** a block is the recipient's policy working as designed. **Isolate SEG leads onto dedicated, never-reused domains**, low concurrency into one org, no links/tracking, go multi-channel, and **recycle burnt SEG domains** onto easy Google/Outlook segments before retiring.
 - **Bounces:** **strip OOO/auto-replies first**: Bison inflates bounce counts by counting them (~54% in one audit). Read the real number, then diagnose.

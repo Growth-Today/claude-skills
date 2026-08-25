@@ -91,7 +91,7 @@ By hand, if you must: `dig TXT yourdomain.com` (SPF), headers show `dkim=pass`,
 
 Correct-at-setup is not enough, the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Treat a broken auth record as **P0**.
 
-**OpsLab owns the scheduled weekly re-check** — read its result in the DNS/auth-health panel (the dashboard-reading sub-skill), and do not build a competing scheduler.
+**The email infra management system owns the scheduled weekly re-check** — read its result in the DNS/auth-health panel (the dashboard-reading sub-skill), and do not build a competing scheduler.
 
 What you *can* run on demand, on any domain, without credentials:
 
@@ -112,7 +112,7 @@ Use the matching setup sub-skill for the full connect + warmup flow per platform
 
 - **Google:** OAuth (recommended) or app password; bulk import supported for 10+.
 - **Microsoft:** one-by-one only; confirm SMTP enabled and the 1-hour window elapsed; consent on behalf of the org.
-- After connecting, **at first setup only**: set the starting send limits by state (`reference.md` §1), tag by client/domain/provider/region, and **leave open tracking OFF**. Once the inbox is live and OpsLab is classifying it, limits and tags are **OpsLab-owned** — see the read-only boundary in the root skill.
+- After connecting, **at first setup only**: set the starting send limits by state (`reference.md` §1), tag by client/domain/provider/region, and **leave open tracking OFF**. Once the inbox is live and the email infra management system is classifying it, limits and tags are **owned by the email infra management system** — see the read-only boundary in the root skill.
 
 > **On Instantly?** For the full Instantly connect + warmup + advanced-deliverability setup (vendor-managed or in-house), use **the instantly-setup sub-skill**.
 
