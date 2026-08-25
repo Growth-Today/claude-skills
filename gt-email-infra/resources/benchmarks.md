@@ -57,7 +57,7 @@ By provider: **Gmail ~2.95%**, **Outlook ~4.34%** (Outlook lists punish bad data
 | 6 | 0.35% |
 | 7 | 0.33% |
 
-Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bottom 10% send **1**; top 10% run 5-9.
+Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bottom 10% send **1**; the longest 10% run 5-9.
 
 **Strategic read.** The first email does the heavy lifting; returns fall off a cliff after 3–4 steps. Run **~3 steps**, follow up **1–2 days** after email 1 (the interested need the nudge fast; the rest won't convert). Don't over-invest in long sequences.
 
@@ -73,7 +73,7 @@ Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bo
 | 150–199 words | 76 |
 | 200+ words | 85 |
 
-**Strategic read.** Shortest wins. Cutting from ~98 words to **under 50** can move you **8 contacts per reply** better. Matters most for Outlook audiences (keep the first email short and reply-seeking). Note the non-monotonic dip at 150–199, but under-50 is still the clear winner.
+**Strategic read.** Shortest wins. Cutting from ~98 words to **under 50** can move you **6 contacts per reply** better. Matters most for Outlook audiences (keep the first email short and reply-seeking). Note the non-monotonic dip at 150–199, but under-50 is still the clear winner.
 
 ---
 
@@ -141,8 +141,8 @@ Use this to grade any client at a glance. "Direction" shows which way is better.
 | Bounce rate | lower | 0.28% | 1.54% | 6.71% | < 2% (act > 3%) |
 | First-email reply rate | higher | > 1.18% | ~1.18% | < 0.5% | ≥ 0.5% (see reference §2) |
 | Reply within 72h | higher |, | 94% of all replies |, | re-segment if silent past 72h |
-| Email length (first email) | shorter | < 50 words | ~135 words region | 100–149 words | < 50 words, plain text |
-| Sequence length | ~3 | 3 steps | 3 | 1 (bottom 10%) or 9 (top 5%) | ~3 steps |
+| Email length (first email) | shorter | < 50 words | ~98 words | 100–149 words | < 50 words, plain text |
+| Sequence length | ~3 | 3 steps | 3 | 1 (bottom 10%) or 5-9 (longest 10%) | ~3 steps |
 | Daily volume / mailbox | lower risk | < 50 | 13.92 | 50+ | ≤ Active limits (ref §1) |
 | Personalization (first email) | higher | 100% | 75% | 14% | 100% where data allows |
 
