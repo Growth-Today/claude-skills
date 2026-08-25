@@ -113,11 +113,13 @@ actually see. Get them wrong and the dashboard reports numbers that look fine an
 | **Save non-Instantly emails in Unibox** | ⬜ OFF | Pulls in unrelated mailbox traffic. Noise, and a privacy question on client mailboxes |
 | **Only show notification in CRM** | ⬜ OFF | Keep replies visible in Unibox, not only in the CRM |
 
-> **Why this is a setup step and not a preference.** The dashboard's bounce figure is disputed —
-> one client read **1.47%** on the dashboard and **4%** in the sequencer for the same 30 days, and
-> unsubscribes show **0%**, which isn't credible. An inbox with *Save undelivered emails* switched
-> off is the most likely reason: the data never reaches the system, so it reports what it can see
-> rather than what happened. Check this toggle before investigating a bounce discrepancy.
+> **Why this is a setup step and not a preference.** Undelivered mail that never lands in Unibox
+> can't be read out of Instantly by anything downstream. Turn it on at setup and the bounce data is
+> there when you need it; leave it off and you find out later, when a number looks too good.
+>
+> *(For the record: the 1.47%-vs-4% bounce gap we chased in August was **not** caused by this. It
+> was historical Instantly data from campaigns that ran until Dec 2025, plus an ESP filter mixing
+> Bison rows in. Both fixed 24 Aug. The toggle is still worth setting — it just wasn't that bug.)*
 
 Set it on **every workspace**, including client sub-workspaces. It is per workspace, not global.
 

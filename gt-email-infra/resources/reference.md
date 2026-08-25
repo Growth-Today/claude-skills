@@ -76,7 +76,7 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | `placement_forced_warmup` | < 50 | Hard-forces Warmup Needed |
 | `bounce_active` | < 2% | Bounce ceiling for Active |
 | `bounce_burnt` | > 3% | Bounce floor for Burnt (all three Burnt conditions must hold) |
-| `reply_active` | ≥ 0.5% | Reply floor for Active |
+| `reply_active` | ≥ 0.5% | Reply floor for Active. ⏸️ **Under review (Aug 2026):** this one threshold can tag an otherwise-healthy inbox as Warmup Needed, which then stops it attaching to campaigns. A proposal to drop it from the Warmup Needed definition is open. Check before quoting |
 | `warmup_score_active` | ≥ 97 | Warmup score for Active |
 | `warmup_score_burnt` | < 95 | Warmup score for Burnt |
 | `blacklists_that_count` | Spamhaus DBL, URIBL | The only two. No other list is a blacklist reason |

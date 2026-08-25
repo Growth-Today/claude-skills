@@ -26,7 +26,7 @@ and it is never something GT retags. Every row here is `Write? never`.
 | **Active** | placement `placement_active` · bounce `bounce_active` · reply `reply_active` · warmup `warmup_score_active` | `list_accounts` → `stat_warmup_score` · `inbox_placement_analytics_*` · `get_campaign_analytics` | Safe to send at full cold limit |
 | **Warmup Needed** | anything not New/Active/Burnt; placement `placement_forced_warmup` hard-forces it | same reads as Active | Throttled to cold 0–1, stays attached; investigate placement |
 | **Burnt** | bounce `bounce_burnt` AND reply < `reply_active` AND warmup `warmup_score_burnt` — **all three** | same reads as Active | Excluded from campaigns; rest & re-test (Part 5) |
-| **Blacklisted** | domain on `blacklists_that_count` (Spamhaus DBL / URIBL) — nothing else | check at source; the app's own blacklist read has been unreliable (Part 2b) | Volume cut; go to the bounce-audit sub-skill |
+| **Blacklisted** | domain on `blacklists_that_count` (Spamhaus DBL / URIBL) — nothing else | check at source (Spamhaus DBL / URIBL). The blacklist card itself now follows the client filter correctly (Part 2b) | Volume cut; go to the bounce-audit sub-skill |
 
 > **What a mismatch means.** If an inbox reads Active on the dashboard but the live numbers put
 > it in Burnt, that is a classification-engine finding to raise, not a tag for you to correct.
@@ -52,20 +52,47 @@ and it is never something GT retags. Every row here is `Write? never`.
 
 ---
 
-## Part 2b, Known data-quality problems (read this before trusting a number)
+## Part 2b, What was fixed, and what is still open
 
-The dashboard has open defects. Until they are fixed, some numbers on screen are wrong:
+The dashboard had a run of data problems through July and August 2026. **Most were fixed and
+signed off by GT's own QA between 20 and 25 August.** Read this before repeating an old warning
+to a client.
 
-| What | Problem |
+### Fixed and verified
+
+| What | Status |
 |---|---|
-| **Bounce rate** | The formula is disputed. Stord read **1.47%** on the dashboard for the last 30 days and **4%** in the sequencer for the same window. **Check the Instantly Unibox setting first** — if *Save undelivered emails in Unibox* is off (and it is off by default), undelivered mail never reaches the system, which would explain the low number. See instantly-setup Part 4b. Don't quote a dashboard bounce figure without checking it at source. |
-| **Alerts** | **80 of the last 200 alerts failed to send** (rate-limited). Alerts are both noisy and unreliable — silence does not mean nothing happened. |
-| **Placement tests** | Many fail with a score of 0 and no reason given. A 0 may mean bounced, never delivered, or a broken test. |
-| **Unsubscribes** | Shows 0%, which is not credible — do-not-contact requests are probably not being captured. Same first check as bounce: the Unibox toggles decide what the system can see at all. |
-| **Rotation** | The rotation engine is switched off with empty batches, and its daily-limit settings duplicate the ones on the Clients page. |
-| **Blacklist** | Spamhaus and URIBL were never actually working, so every listing the dashboard has ever shown came from a list GT no longer tracks. Treat historical Blacklisted tags as unverified. See `reference.md` §2. |
+| **Bounce rate** | ✅ Fixed. The Bison view now matches Bison exactly. The Instantly view is driven by campaign-level records with a **source selector** (Campaign records / Inbox counters) above the cards. Verified by GT on Ramp, Quickbox and Growth Today. The old "dashboard says 1.47%, sequencer says 4%" gap turned out to be **historical data** — GT ran Instantly campaigns until Dec 2025 — plus an ESP filter that was mixing Bison rows in. Both corrected |
+| **Bounce column logic** | ✅ Shows Instantly where data exists, otherwise Bison. It no longer combines the two, so the headline and the per-sequencer breakdown agree |
+| **Inbox counts** | ✅ Reflect what is actually in each sequencer today. Removed accounts no longer inflate the number; their history is kept for all-time stats |
+| **Blacklist card** | ✅ Follows the client filter. A clean client shows no card |
+| **Campaign tags** | ✅ Include and Exclude can no longer contradict each other. Senders stop silently detaching |
+| **Inbox tagging** | ✅ Applied correctly — confirmed by GT on 25 Aug |
+| **Placement tests** | ✅ Running on the weekly automated schedule (Fri–Sun, professional accounts, Google + Outlook) across client workspaces |
 
-Report anything that looks wrong so the system gets fixed, rather than working around it.
+**Reading the Instantly bounce card:** the 30-day and 7-day figures on the *Campaign records*
+source fill in as daily tracking accumulates — 7 days completes within a week, 30 days within a
+month. An empty recent window on a workspace with no recent Instantly sending is correct, not a bug.
+
+### Still open
+
+| What | Status |
+|---|---|
+| **"Warmup Needed" definition** | ⏸️ Under discussion. The tag uses warmup score, placement, bounce **and a 0.5% reply rate**. Mailboxes that are healthy on the first three still get tagged Warmup Needed on reply rate alone, and then don't attach to campaigns. Simone has proposed dropping the reply threshold. **Until this is decided, a Warmup Needed tag does not necessarily mean the warmup is bad** — check which of the four conditions actually failed |
+| **Placement tests: Cavalry, TDCX** | ⏸️ Instantly returns **402 Payment Required** when creating recurring tests. That's a billing/plan limit on Instantly's side, not a system fault — the Inbox Placement Tests add-on needs checking on those workspaces |
+| **Inbox count "inc. retired"** | ⏸️ Minor. Reads 151 for Growth Today; historical-data question raised by Gaze, not yet answered |
+| **Weekly Inbox Health Report** | ⏸️ The 21 Aug report was Bison data. Whether an Instantly version is configured is still an open question from Fezekile |
+
+### A limits finding worth knowing
+
+On one client, **100 of 136 mailboxes were capped at 5/day and 32 at 20/day**, giving the whole
+workspace a ceiling of roughly **1,180 emails/day**. The system did not set those limits — the
+audit log has no record, and its limits automation has never been switched on for that
+environment. They came from the original Instantly setup.
+
+Two things follow. **Volume complaints are often a limits problem, not a tagging problem** — check
+the caps before blaming classification. And because the limits automation is off, sending limits
+today are whatever a human set at setup, which is exactly what `setup-audit` dimension 6 checks.
 
 ---
 
