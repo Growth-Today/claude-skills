@@ -94,7 +94,8 @@ nobody knows which is right. That is how we ended up with four inbox trackers.
 | Inbox classification / tagging | read the tag and act on it | change a tag or override a state |
 | Sending limits (cold + warmup) | read and check against `reference.md` §1 | set, raise, lower or "correct" a limit |
 | Warmup config (once live) | read warmup score and on/off | enable, disable or retune on a live inbox |
-| Campaign routing | read the performance matrix | change routing rules |
+| Connecting inboxes to a sequencer | read connection state (`status`, `setup_pending`) | connect, reconnect or swap an inbox by hand |
+| Campaign build and routing | read the campaign config and the performance matrix | build, edit or re-route a campaign by hand |
 | Blacklist monitoring | read listings | change what counts as a listing |
 | Placement tests | read scores | change cadence or thresholds |
 | Bounce classification | read categorised bounce | reclassify |
@@ -187,18 +188,20 @@ SALES OPS — build the infrastructure
 1  Size the build              domain-research         ▶ playbooks/sizing-calculator
 2  Ideate + buy the domains    domain-research         ·  knowledge (no registrar API)
 3  Mailboxes + DNS / auth      provisioning            ▶ playbooks/dns-auth-audit
-4  Connect to the sequencer    <esp>-setup             ▶ MCP  list_accounts, get_account
+4  Connect to the sequencer    <esp>-setup             🔒 done in the system · verify at 6
 5  Warm up, then go live       warmup-golive           ▶ dns-auth-audit as the launch gate
-                                                       ▶ MCP  get_warmup_analytics  🔒 read
+                                                       ·  warmup score read in the dashboard  🔒
         │
         ▼   handover — infrastructure is live
 GTM ENGINEER — run campaigns on it
 ─────────────────────────────────────────────────────────────────────────────────────────
 6  Verify before launch        setup-audit             ▶ 21-row table: MCP + DNS playbook
-7  Build + route the campaign  campaign-building       ▶ dns-auth-audit --esp-mix
+7  Build + route the campaign  campaign-building       ▶ dns-auth-audit --esp-mix (profile the list)
+                                                       🔒 the build and the routing themselves
 8  Watch inbox health          dashboard-reading       ▶ MCP  list_accounts,
                                                           get_campaign_analytics  🔒 read
-9  Bouncing or blacklisted     blacklist-bounce-audit  ▶ MCP  replies_list + DNSBL lookup
+9  Bouncing or blacklisted     blacklist-bounce-audit  ▶ EmailBison API replies + DNSBL
+                                                          (REST, no MCP connector yet)
         │
         └──▶ fix at 3 (repair / replace domains)  or  re-verify at 6
 

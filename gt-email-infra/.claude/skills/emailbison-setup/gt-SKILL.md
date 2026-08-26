@@ -14,6 +14,8 @@ description: "Set up and connect sending inboxes in EmailBison (infrastructure s
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
 
+> 🔒 **Read-only area.** Connecting an inbox to the sequencer is done from the **email infra management system**. Follow this sub-skill for the standard each inbox must meet and to read and verify live state (setup-audit rows 1–7); do not connect, reconnect or swap inboxes by hand.
+
 Set up sending inboxes in **EmailBison** (one of the sequencers Growth Today runs). Infrastructure/inbox side only, sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5. Steps below reflect the EmailBison / Bisonsphere help center; where a value is set only in the app UI, that is flagged.
 
 ---

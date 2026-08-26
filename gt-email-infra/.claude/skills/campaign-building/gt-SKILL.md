@@ -7,6 +7,8 @@ description: "Build cold-email campaigns and route by ESP and SEG. Use for campa
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §7, §8 · **Related:** dashboard-reading, bounce-audit · gt-list-building.
 
+> 🔒 **Read-only area.** The campaign build and the routing are done from the **email infra management system**, not by hand in the sequencer. Use this sub-skill to decide *what* the campaign and routing should be, read the live config to check it, and report the gap. Do not edit a campaign or a routing rule in Instantly / EmailBison / Smartlead / Lemlist directly — that creates a second source of truth. The `--esp-mix` profiling below is read-only and safe to run.
+
 How to build a campaign that routes to the right inboxes and gets optimized from data, not from a 2024 rule of thumb. Numbers and taxonomy live in `{SKILL_BASE}/resources/reference.md` §1, §2, §8.
 
 **The one mindset shift:** you are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and you find it on the dashboard, not by guessing.
