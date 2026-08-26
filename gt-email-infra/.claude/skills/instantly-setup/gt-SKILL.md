@@ -1,6 +1,6 @@
 ---
 name: email-infra-instantly-setup
-description: "Set up and connect sending inboxes in Instantly (infrastructure side). Use for connecting Google, Microsoft, and custom-SMTP inboxes to Instantly, warmup configuration, advanced deliverability settings, and vendor-managed versus in-house setup. Triggers on Instantly setup, connect inboxes, Instantly warmup, advanced deliverability, ScaledMail, IMAP SMTP host, provider matching. Do NOT use for writing sequences or copy (use gt-cold-email) or buying domains (use the domain-research sub-skill)."
+description: "Set up and connect sending inboxes in Instantly (infrastructure side). Use for connecting Google, Microsoft and custom-SMTP inboxes, warmup configuration, advanced deliverability settings, the required Unibox toggles (Save undelivered emails is off by default and gates what the reporting can see), and vendor-managed versus in-house setup. Triggers on Instantly setup, connect inboxes, Instantly warmup, advanced deliverability, Unibox, Unibox settings, save undelivered emails, show auto-replies, ScaledMail, IMAP SMTP host, provider matching. Do NOT use for writing sequences or copy (use gt-cold-email) or buying domains (use the domain-research sub-skill)."
 ---
 
 # Instantly Inbox Setup · [Sales Ops]

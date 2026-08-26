@@ -1,6 +1,6 @@
 ---
 name: email-infra-warmup-golive
-description: "Warm up mailboxes and take domains live safely. Use for warmup timelines and settings, the age-before-link gate, going-live deliverability settings, ramp schedules, the hard launch gate, and cold-email compliance basics. Triggers on warmup, warm up mailbox, go live, launch checklist, ramp schedule, age domain, CAN-SPAM, GDPR. Do NOT use for connecting inboxes (use the instantly-setup or provisioning sub-skills) or campaign routing (use the campaign-building sub-skill)."
+description: "Warm up mailboxes and take domains live safely. Use for warmup timelines and settings, the age-before-link gate, going-live deliverability settings, ramp schedules, the hard launch gate (which runs the dns-auth-audit playbook across every sending domain and blocks on a failure), and cold-email compliance basics. Triggers on warmup, warm up mailbox, go live, launch checklist, ready to launch, pre-launch check, ramp schedule, age domain, 21 days, CAN-SPAM, GDPR. Do NOT use for connecting inboxes (use the instantly-setup or provisioning sub-skills) or campaign routing (use the campaign-building sub-skill)."
 ---
 
 # Warmup & Go-Live · [Sales Ops → GTM]

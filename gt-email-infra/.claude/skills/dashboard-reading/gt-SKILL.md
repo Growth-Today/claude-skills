@@ -1,6 +1,6 @@
 ---
 name: email-infra-dashboard-reading
-description: "Read the automated inbox-health dashboard and act on it. Use for inbox classification (Active, Warmup Needed, Burnt, New, Blacklisted), per-state send limits, reading each panel, the diagnosis order, and resting burnt inboxes. Triggers on inbox classification, inbox health, dashboard, warmup score, placement score, inbox tagging, burnt inbox, sending limits. Do NOT use for auditing a specific bounce or blacklist to root cause (use the bounce-audit sub-skill) or building campaigns (use the campaign-building sub-skill)."
+description: "Read the inbox-health dashboard from the email infra management system and act on it. Use for inbox classification (Active, Warmup Needed, Burnt, New, Blacklisted), per-state send limits, reading each panel, the diagnosis order, and resting burnt inboxes. Classification and limit tables are verify-only: recompute the expected state and report a mismatch, never retag or change a limit. Triggers on inbox classification, inbox health, dashboard, warmup score, placement score, inbox tagging, burnt inbox, sending limits, verify the tags, why is this inbox warmup needed. Do NOT use for auditing a specific bounce or blacklist to root cause (use the blacklist-bounce-audit sub-skill) or building campaigns (use the campaign-building sub-skill)."
 ---
 
 # Reading the Inbox-Health Dashboard · [GTM Engineer]

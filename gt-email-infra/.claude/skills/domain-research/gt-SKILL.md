@@ -1,6 +1,6 @@
 ---
 name: email-infra-domain-research
-description: "Research and buy cold-email sending domains safely. Use for domain ideation, on-brand naming rules, avoiding spam-trap naming patterns, TLD choice, registrar spread, and buying domains without a bulk-registration fingerprint. Triggers on domain research, buy domains, sending domains, domain naming, secondary domains, registrars, ScaledMail, bulk domain purchase. Do NOT use for DNS/mailbox setup (use the provisioning sub-skill) or connecting inboxes in Instantly (use the instantly-setup sub-skill)."
+description: "Research and buy cold-email sending domains safely, and size the build. Use for domain ideation, on-brand naming rules, avoiding spam-trap naming patterns, TLD choice, registrar spread, buying without a bulk-registration fingerprint, and sizing mailboxes and domains with the sizing-calculator playbook. Triggers on domain research, buy domains, sending domains, domain naming, secondary domains, registrars, ScaledMail, how many domains, how many mailboxes, infrastructure sizing, size the build. Do NOT use for DNS/mailbox setup (use the provisioning sub-skill) or connecting inboxes in Instantly (use the instantly-setup sub-skill)."
 ---
 
 # Domain Research & Purchasing · [Sales Ops]

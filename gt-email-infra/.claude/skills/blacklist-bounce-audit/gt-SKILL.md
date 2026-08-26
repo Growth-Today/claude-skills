@@ -1,6 +1,6 @@
 ---
 name: email-infra-bounce-audit
-description: "Audit a bounce or blacklist problem to root cause and produce a full bounce report. Use to pull replies via the EmailBison MCP/API, work around the broken type=bounced filter, strip auto-replies, classify bounces (Hard/Soft/Block) by SMTP/DSN code, run the neutral-copy test, and trace the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, Spamhaus, URIBL, hard bounce, soft bounce, block bounce, SMTP codes, DSN codes, bounce report, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-building)."
+description: "Audit a bounce or blacklist problem to root cause and produce a full bounce report. Use for pulling replies via the EmailBison MCP/API, working around the broken type=bounced filter, stripping auto-replies, classifying bounces (Hard/Soft/Block) by SMTP/DSN code, running the neutral-copy test, and tracing the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, Spamhaus, URIBL, hard bounce, soft bounce, block bounce, SMTP codes, DSN codes, bounce report, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-building)."
 ---
 
 # Blacklist & Bounce Audit · [GTM Engineer]

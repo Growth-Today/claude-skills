@@ -1,6 +1,6 @@
 ---
 name: email-infra-campaign-building
-description: "Build cold-email campaigns and route by ESP and SEG. Use for campaign setup, the Lead-ESP by sending-vendor decision matrix (ESP matching is dead as a fixed rule), isolating SEG leads onto dedicated domains, and the launch gate. Triggers on build campaign, ESP matching, provider matching, SEG, Mimecast, Proofpoint, Barracuda, campaign routing, sending-vendor matrix. Do NOT use for writing copy or sequences (use gt-cold-email) or reading the dashboard (use the dashboard-reading sub-skill)."
+description: "Build cold-email campaigns and route by ESP and SEG. Use for campaign setup, the Lead-ESP by sending-vendor decision matrix (ESP matching is dead as a fixed rule), profiling a lead list by recipient ESP with the dns-auth-audit playbook in --esp-mix mode, isolating SEG leads onto dedicated domains, and the launch gate. Triggers on build campaign, ESP matching, provider matching, ESP mix, profile the lead list, what ESP are these leads on, SEG, Mimecast, Proofpoint, Barracuda, campaign routing, sending-vendor matrix. Do NOT use for writing copy or sequences (use gt-cold-email) or reading the dashboard (use the dashboard-reading sub-skill)."
 ---
 
 # Campaign Building & ESP/SEG Routing · [GTM Engineer]

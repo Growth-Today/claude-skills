@@ -1,6 +1,6 @@
 ---
 name: email-infra-provisioning
-description: "Provision cold-email mailboxes and configure DNS and authentication. Use for Google Workspace, Microsoft 365, and custom-SMTP mailbox setup, MX/SPF/DKIM/DMARC records, masking versus redirect, custom tracking domains, and DNS-drift monitoring. Triggers on mailbox setup, DNS setup, MX, SPF, DKIM, DMARC, provisioning, masking, redirect, tracking domain, Google Workspace, Microsoft 365. Do NOT use for buying domains (use the domain-research sub-skill), Instantly inbox connection (use the instantly-setup sub-skill), or warmup (use the warmup-golive sub-skill)."
+description: "Provision cold-email mailboxes and configure DNS and authentication. Use for Google Workspace, Microsoft 365 and custom-SMTP mailbox setup, MX/SPF/DKIM/DMARC records, masking versus redirect, custom tracking domains, and DNS-drift monitoring via the dns-auth-audit playbook. Triggers on mailbox setup, DNS setup, MX, SPF, DKIM, DMARC, check my DNS, verify SPF, DMARC policy, p=reject, DNS drift, provisioning, masking, redirect, tracking domain, Google Workspace, Microsoft 365. Do NOT use for buying domains (use the domain-research sub-skill), Instantly inbox connection (use the instantly-setup sub-skill), or warmup (use the warmup-golive sub-skill)."
 ---
 
 # Provisioning, DNS & Authentication · [Sales Ops]
