@@ -177,6 +177,40 @@ Most real requests chain sub-skills. Common ones:
 
 ---
 
+## How the SOP Runs (End to End)
+
+The Decision Tree below answers *"where do I go?"*. This answers *"what is the whole job, in order, and which parts run themselves?"*
+
+```
+SALES OPS — build the infrastructure
+─────────────────────────────────────────────────────────────────────────────────────────
+1  Size the build              domain-research         ▶ playbooks/sizing-calculator
+2  Ideate + buy the domains    domain-research         ·  knowledge (no registrar API)
+3  Mailboxes + DNS / auth      provisioning            ▶ playbooks/dns-auth-audit
+4  Connect to the sequencer    <esp>-setup             ▶ MCP  list_accounts, get_account
+5  Warm up, then go live       warmup-golive           ▶ dns-auth-audit as the launch gate
+                                                       ▶ MCP  get_warmup_analytics  🔒 read
+        │
+        ▼   handover — infrastructure is live
+GTM ENGINEER — run campaigns on it
+─────────────────────────────────────────────────────────────────────────────────────────
+6  Verify before launch        setup-audit             ▶ 21-row table: MCP + DNS playbook
+7  Build + route the campaign  campaign-building       ▶ dns-auth-audit --esp-mix
+8  Watch inbox health          dashboard-reading       ▶ MCP  list_accounts,
+                                                          get_campaign_analytics  🔒 read
+9  Bouncing or blacklisted     blacklist-bounce-audit  ▶ MCP  replies_list + DNSBL lookup
+        │
+        └──▶ fix at 3 (repair / replace domains)  or  re-verify at 6
+
+▶ executable — a playbook or a named MCP call, not prose
+· knowledge only — no API exists for this step
+🔒 read-only — the email infra management system owns the write; never set it from here
+```
+
+Numbers and thresholds for every step live in one place: `{SKILL_BASE}/resources/reference.md`. Steps quote the key (`google_cold`, `warmup_floor_days`), never a copied number.
+
+---
+
 ## Decision Tree
 
 ```
