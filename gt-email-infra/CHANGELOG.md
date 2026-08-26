@@ -42,8 +42,14 @@ Knowledge corrections, the first executable playbooks, and a terminology rename.
  open, reflecting the 20–25 Aug QA.
 - **Warmup floor 14 → 21 days**; Outlook fully-warmed warmup 13 → 15; Outlook
  warm-to-cold ratio 2.5:1 → 3:1.
-- **Sizing divisor 20–25 → 14.** The old figure came from deprecated Google 30
- / Microsoft 10 limits and under-bought inventory by 43–79%.
+- **Sizing no longer publishes a fixed divisor.** The provider mix is a
+ per-client decision, so §4 now gives the formula
+ (`google_share × 20 + microsoft_share × 5`) plus a scenario grid, and the
+ mix is a required input rather than an assumption. The old "20–25" was two
+ different figures collapsed into a range — 20 is Growth Today's per-mailbox
+ number for a Google inbox, 25 is ScaledMail's — and both describe a Google
+ mailbox, while a Microsoft one sends 5. At 15k/month the answer ranges from
+ 57 mailboxes (all Google) to 129 (25/75).
 - **DMARC standard is `p=reject`.**
 - **Purchasing** — multi-day spread, max 4 per registrar per day, owned by
  ScaledMail; GT verifies on delivery.
@@ -58,8 +64,8 @@ Knowledge corrections, the first executable playbooks, and a terminology rename.
 ### Fixed
 - Three write instructions in `setup-audit` that breached the read-only
  boundary (warmup enable, limit correction, throttle + tag) now report instead.
-- `SKILL.md` still carried the deprecated ÷20–25 sizing divisor after
- `reference.md` §4 had been corrected.
+- `SKILL.md` and `reference.md` §4 disagreed on the sizing divisor; both now
+ point at the same formula instead of a number.
 - `setup-audit` dimension 9 passed `p=quarantine`; realigned to §6.
 
 ## [v5.0.0] - 2026-07-30

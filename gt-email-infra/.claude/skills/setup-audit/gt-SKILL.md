@@ -57,7 +57,7 @@ identical; substitute that platform's equivalent read and note the substitution 
 
 | # | Check | Source | Call → field | Pass if | On fail | Write? |
 |---|---|---|---|---|---|---|
-| 1 | **Inbox count** | MCP | `list_accounts` → count, group by `provider_code` | matches the brief, count and Google/Microsoft split | WARN → reconcile with ScaledMail. If the brief itself is doubtful, re-derive with `playbooks/sizing-calculator` first — older briefs used the deprecated ÷20–25 divisor and under-buy by 43–79% | n/a |
+| 1 | **Inbox count** | MCP | `list_accounts` → count, group by `provider_code` | matches the brief, count and Google/Microsoft split | WARN → reconcile with ScaledMail. If the brief itself is doubtful, re-derive with `playbooks/sizing-calculator` first, using **this client's actual Google/Microsoft split** — older briefs assumed an all-Google fleet, which under-buys badly on a Microsoft-heavy client | n/a |
 | 2 | **Mailboxes per domain** | MCP | `list_accounts` → `email`, split on `@`, count per domain | Google ≤ ~3 · Microsoft ≤ ~25 | WARN → redistribute on the next build | n/a |
 | 3 | **Connection** | MCP | `list_accounts` → `status`, `setup_pending`, `email` | `status == 1` and `setup_pending == false` on every inbox; no role addresses (`sales@`, `info@`, `hello@`) | FAIL → reconnect, or replace the role address | setup-only |
 | 4 | **Warmup on** | MCP | `list_accounts` → `warmup_status` | `warmup_status == 1` on every live inbox | FAIL → **report it against the email infra management system with the inbox list. Do not enable it yourself on a live inbox** | never |

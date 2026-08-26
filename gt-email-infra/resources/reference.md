@@ -30,6 +30,11 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 - Limits auto-adjust on day 22 (after the 21-day warmup floor).
 
 > **Do not** copy the old "Google 30/day, Microsoft 10/day safe limit" figure, it conflated cold+warmup and the Microsoft cold number was wrong. Govern by the ratio above.
+>
+> **Where the Google number comes from.** **20/day is Growth Today's own figure.** ScaledMail
+> quotes **25/day** for a Google mailbox. We deliberately run the lower one — it's the more
+> conservative of the two and it's what every Google inbox in our workspace is actually set to.
+> If someone cites 25, that's the vendor's number, not ours.
 
 ### §1 keys (referenced by executable tables)
 
@@ -47,7 +52,7 @@ Executable check rows cite these keys instead of repeating the number. **If a va
 | `ratio_outlook` | 3 | Warm-to-cold ratio, Microsoft/Outlook |
 | `ramp_google` | +4/day | Warmup increment during warming |
 | `ramp_outlook` | +2/day | Warmup increment during warming |
-| `blended_per_mailbox` | 14 | `0.60 × google_cold + 0.40 × outlook_cold` — the sizing divisor (§4) |
+| `blended_per_mailbox` | *computed* | `google_share × google_cold + microsoft_share × outlook_cold`. **Not a constant** — the provider mix is a per-client decision, so this is calculated per client. See §4 |
 
 ---
 
@@ -121,17 +126,44 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 Work backwards: **monthly goal → daily volume → mailboxes → domains.**
 
 1. Monthly email goal ÷ **20 working days** = daily volume.
-2. Daily volume ÷ **14 per mailbox** = mailboxes needed.
-3. Mailboxes **× 1.5** (buffer for rotation, warmup, issues) = mailboxes to buy.
-4. Domains: **Google mailboxes ÷ 2–3** + **Microsoft mailboxes ÷ ~25**.
-5. Provider split: **60% Google Workspace, 40% Microsoft 365.**
+2. **Ask the client's Google / Microsoft mix**, then compute the blended cold capacity:
+   `blended = google_share × 20 + microsoft_share × 5` (§1 keys `google_cold`, `outlook_cold`).
+3. Daily volume ÷ blended = mailboxes needed.
+4. Mailboxes **× 1.5** (buffer for rotation, warmup, issues) = mailboxes to buy.
+5. Domains: **Google mailboxes ÷ 2–3** + **Microsoft mailboxes ÷ ~25**.
 
-> **Where 14 comes from.** It is not a guess — it falls out of §1 and the 60/40 split:
-> `0.60 × 20 (Google cold) + 0.40 × 5 (Outlook cold) = 14 emails/mailbox/day`.
-> **Do not use 20 or 25.** Those came from the old Google 30 / Microsoft 10 limits that §1
-> tells you not to copy (`0.60 × 30 + 0.40 × 10 = 22`, which is where "20–25" came from).
-> Using 20 under-buys by ~43%; using 25 under-buys by ~79%.
-> If the split changes, recompute: `blended = split_google × 20 + (1 − split_google) × 5`.
+> ### 🔑 There is no single divisor. Step 2 is an input, not an assumption.
+>
+> The provider mix is a **per-client decision** driven by the client's industry and market —
+> some need more Microsoft, some more Google. That means the emails-per-mailbox figure changes
+> per client and **any fixed number in this file would be wrong for most of them.**
+>
+> A Google mailbox sends **20** cold/day. A Microsoft mailbox sends **5** — a quarter as much.
+> So the mix drives the answer more than the goal does:
+
+| Google share | Blended cold / mailbox / day | 15,000/mo → mailboxes to buy |
+|---|---|---|
+| 100% Google | **20.0** | 57 |
+| 75 / 25 | 16.25 | 71 |
+| 60 / 40 | 14.0 | 81 |
+| 50 / 50 | 12.5 | 90 |
+| 25 / 75 | 8.75 | 129 |
+
+> **Same client, same goal, 57 to 129 mailboxes.** That spread is why you ask for the mix before
+> you size anything. If someone hands you a single number without stating the split, the number
+> is meaningless.
+>
+> **Don't compute this by hand.** The calculator takes the split as a flag and reads the limits
+> from §1, so it can't drift from the standard:
+>
+> ```bash
+> uv run playbooks/sizing-calculator/scripts/execute.py --monthly-goal 15000 --split-google 0.5
+> ```
+
+### Worked example at a 60/40 split
+
+Shown because it's a common starting point for a mixed build, **not** because it's the default.
+Substitute the client's real mix.
 
 | Monthly goal | Daily volume | Mailboxes needed | **Mailboxes to buy (×1.5)** | Google / Microsoft | Domains |
 |---|---|---|---|---|---|

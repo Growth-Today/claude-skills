@@ -16,13 +16,24 @@ Work backwards from what the client wants to send to what we have to buy. Replac
 
 This is not here to save arithmetic. It is here because **the arithmetic was wrong for a long time and nobody noticed.**
 
-The Notion SOP told you to divide daily volume by "20–25 emails per mailbox." That figure was derived from a deprecated pair of limits — Google 30/day and Microsoft 10/day — which `reference.md` §1 explicitly tells you not to use, because it conflated cold and warmup volume and the Microsoft number was simply wrong. Check it: `0.60 × 30 + 0.40 × 10 = 22`, sitting right in the middle of "20–25." That is where the number came from.
+The Notion SOP told you to divide daily volume by "20–25 emails per mailbox." Two figures got
+collapsed into a range there: **20 is Growth Today's own per-mailbox number for a Google inbox,
+25 is ScaledMail's.** We run the lower one.
 
-The correct blended figure from the current limits is `0.60 × 20 + 0.40 × 5 = 14`.
+But the deeper problem isn't which of the two you pick — it's that **both describe a Google
+mailbox, and a Microsoft mailbox sends 5.** Applying either to a mixed fleet assumes every
+inbox is Google-like. Our own workspace runs roughly half Microsoft, where the real blended
+figure is 12.5.
 
-**Dividing by 20 under-buys inventory by about 43%. Dividing by 25 under-buys by about 79%.** Every campaign sized with that SOP was planned on infrastructure that could not carry it, which shows up later as inboxes being pushed past their limits — the exact thing that burns them.
+**How much it matters:** at 15,000/month, an all-Google client needs **57** mailboxes and a
+25/75 client needs **129**. Same goal, same formula, 2.3× the inventory. Size a Microsoft-heavy
+client on the Google number and you plan infrastructure that cannot carry the campaign — which
+shows up later as inboxes pushed past their limits, the exact thing that burns them.
 
-So the script does not contain the limits. It **parses them out of `resources/reference.md` §1 at run time.** A hardcoded number can drift from the standard; a parsed one cannot. That property is the deliverable.
+So the script does not contain the limits or a fixed split. It **parses the limits out of
+`resources/reference.md` §1 at run time** and **takes the split as a required judgement call**
+via `--split-google`. A hardcoded number drifts from the standard; a parsed one cannot, and a
+split you have to state is a split you have to think about.
 
 ## Prerequisites
 

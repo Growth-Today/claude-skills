@@ -128,9 +128,15 @@ scope — a permission test must confirm it is refused before any settings check
 
 ## Sizing formula (detail in `{SKILL_BASE}/resources/reference.md` §4)
 
-Monthly goal ÷ 20 workdays = daily volume → **÷ 14 per mailbox** = mailboxes → × 1.5 buffer. Domains: **Google mailboxes ÷ 2–3 + Microsoft mailboxes ÷ ~25** (Microsoft packs far more per domain). Split **60% Google / 40% Microsoft**.
+Monthly goal ÷ 20 workdays = daily volume → **÷ blended cold per mailbox** = mailboxes → × 1.5 buffer. Domains: **Google mailboxes ÷ 2–3 + Microsoft mailboxes ÷ ~25** (Microsoft packs far more per domain).
 
-> **Do not divide by 20–25.** That divisor came from the deprecated Google 30 / Microsoft 10 limits and under-buys by 43–79%. The correct blended figure falls out of §1: `0.60 × 20 + 0.40 × 5 = 14`.
+> **There is no fixed divisor. Ask the client's provider mix first.**
+> `blended = google_share × 20 + microsoft_share × 5`
+>
+> A Google mailbox sends 20 cold/day, a Microsoft one sends 5. The mix is a per-client call driven
+> by industry and market, so the same 15k/month goal needs anywhere from **57 mailboxes** (all
+> Google) to **129** (25/75). Quoting one number without stating the split is meaningless.
+> Full grid in `reference.md` §4.
 
 **Don't do this by hand — run it:**
 
