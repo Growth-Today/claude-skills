@@ -186,7 +186,7 @@ The Decision Tree below answers *"where do I go?"*. This answers *"what is the w
 SALES OPS — build the infrastructure
 ─────────────────────────────────────────────────────────────────────────────────────────
 1  Size the build              domain-research         ▶ playbooks/sizing-calculator
-2  Ideate + buy the domains    domain-research         ·  knowledge (no registrar API)
+2  Ideate + brief ScaledMail   domain-research         ·  ScaledMail buys them, not us
 3  Mailboxes + DNS / auth      provisioning            ▶ playbooks/dns-auth-audit
 4  Connect to the sequencer    <esp>-setup             🔒 done in the system · verify at 6
 5  Warm up, then go live       warmup-golive           ▶ dns-auth-audit as the launch gate
@@ -205,9 +205,9 @@ GTM ENGINEER — run campaigns on it
         │
         └──▶ fix at 3 (repair / replace domains)  or  re-verify at 6
 
-▶ executable — a playbook or a named MCP call, not prose
-· knowledge only — no API exists for this step
-🔒 read-only — the email infra management system owns the write; never set it from here
+▶ you can actually run this — a playbook or a named call, not a description of one
+·  nothing to run — no API for this, so the skill holds the rules
+🔒 read it, don't change it — the email infra management system owns this setting
 ```
 
 Numbers and thresholds for every step live in one place: `{SKILL_BASE}/resources/reference.md`. Steps quote the key (`google_cold`, `warmup_floor_days`), never a copied number.

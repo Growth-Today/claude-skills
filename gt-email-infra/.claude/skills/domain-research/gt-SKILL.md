@@ -1,9 +1,9 @@
 ---
 name: email-infra-domain-research
-description: "Research and buy cold-email sending domains safely, and size the build. Use for domain ideation, on-brand naming rules, avoiding spam-trap naming patterns, TLD choice, registrar spread, buying without a bulk-registration fingerprint, and sizing mailboxes and domains with the sizing-calculator playbook. Triggers on domain research, buy domains, sending domains, domain naming, secondary domains, registrars, ScaledMail, how many domains, how many mailboxes, infrastructure sizing, size the build. Do NOT use for DNS/mailbox setup (use the provisioning sub-skill) or connecting inboxes in Instantly (use the instantly-setup sub-skill)."
+description: "Pick cold-email sending domains, brief ScaledMail to buy them, and size the build. Use for domain ideation, on-brand naming rules, avoiding spam-trap naming patterns, TLD choice, checking the registrar and date spread ScaledMail delivers, and sizing mailboxes and domains with the sizing-calculator playbook. Triggers on domain research, buy domains, sending domains, domain naming, secondary domains, registrars, ScaledMail, how many domains, how many mailboxes, infrastructure sizing, size the build. Do NOT use for DNS/mailbox setup (use the provisioning sub-skill) or connecting inboxes in Instantly (use the instantly-setup sub-skill)."
 ---
 
-# Domain Research & Purchasing · [Sales Ops]
+# Domain Research & Briefing the Buy · [Sales Ops]
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §4, §5, §9 · `{SKILL_BASE}/resources/approved-vendors.md` · **Runs:** `{SKILL_BASE}/playbooks/sizing-calculator`, `{SKILL_BASE}/playbooks/dns-auth-audit` · **Feeds:** the provisioning sub-skill.
 
@@ -67,7 +67,7 @@ Use in Claude when generating a candidate list:
 
 ---
 
-## Part 3, Purchasing (spread, don't bulk-buy)
+## Part 3, The buy (ScaledMail spreads it, we check the spread)
 
 **The fingerprint to avoid.** The 2026 malicious-domains study found **77.9%** of abusive domains belong to a single (registrar, creation-date) bulk batch, and a small set of registrars plus cheap TLDs (`.top/.xyz/.cc`) dominate abuse. Buying many domains at once, from one registrar, on one day looks *identical to that* to the filters, legitimacy doesn't save you.
 
