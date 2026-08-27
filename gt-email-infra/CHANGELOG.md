@@ -5,9 +5,58 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); versions use
 [SemVer](https://semver.org/) (patch = fix, minor = additive, major = breaking
 layout/restructure).
 
-## [v5.1.0] - 2026-08-25
+## [v5.1.0] - 2026-08-26
 
-Knowledge corrections, the first executable playbooks, and a terminology rename.
+Knowledge corrections, the first executable playbooks, a terminology rename,
+and an adversarial pass over all of it.
+
+### Fixed after the adversarial pass
+Two independent reviewers were pointed at this branch and told to break it.
+Thirteen findings held up; all are fixed here.
+
+- **The launch gate did not gate.** `dns-auth-audit` exited 2 only on FAIL, so
+ a `p=quarantine` DMARC and a missing DKIM key both cleared go-live. MX, SPF,
+ DKIM and DMARC must now all be PASS. SRV hygiene moved FAIL → WARN and out of
+ the gate — no mail filter reads a SIP record. `test_gate.py` proves all ten
+ states, including the two that must still exit 0.
+- **A revoked DKIM key reported PASS.** `"p=" in rec` matched any TXT record
+ containing those two characters. Now requires `v=DKIM1` with a real key.
+- **A DNS timeout was reported as a missing record** on MX, SPF and DMARC —
+ a hard FAIL on a healthy domain. The lookup now says which one happened.
+- **Null MX (RFC 7505) classified as `other`,** so domains that publish "we
+ accept no mail" survived the `--esp-mix` strip and hard-bounced. Fixed in the
+ script and in the Clay formula. `--esp-mix` also takes the domain off each
+ email address now — a lead list is addresses, not domains.
+- **`after.py` missed the drift it exists to catch.** PASS → WARN (p=reject
+ dropping to p=none, a DKIM key vanishing) printed `[CHANGED]` and exited 0.
+ Any downgrade is now a REGRESSION.
+- **provisioning shipped `p=none`** in its copy-paste checklist, against §6 and
+ its own Part 3.
+- **§4's sizing grid and the calculator disagreed on three of five rows,** and
+ `--validate` could not catch it because its expected values were hand-copied.
+ One rounding rule now, and validate parses both tables out of the doc.
+- **`--split-google` silently defaulted to 0.60** while its own playbook called
+ it a required judgement call. Now required, with an error that says why.
+- **EmailBison calls were written as MCP tools.** There is no connector; REST
+ is the primary path, with the Instantly equivalents named alongside.
+- **Bounce codes:** 5.4.1 was "address invalid" here and "Microsoft tenant
+ block" elsewhere; 5.2.2 was Block in one file and Soft in two. §7 now carries
+ a "permanent, but NOT a bad address" table, and the audit thresholds are keys.
+- **Three vendor scores treated as one gate.** Instantly's Health Score and
+ Lemlist's deliverability score are vendor scales, not `warmup_score_active`.
+- **Rows 15 and 16** moved MCP → MANUAL; a live read returns neither field.
+- **Unsourced numbers removed** — "~43% under-bought", "inflated by ~54%" (it
+ was more than double), "~3× the reply chance" (the table says 1.3×), "top 10%
+ sit near 27–33" (the table says 38), and a bare 80/20.
+
+### Changed after Nikola's review
+- **Connecting inboxes and campaign build/routing are read-only** — both are
+ done from the email infra management system. Seven setup-audit rows moved
+ `setup-only` → `never`.
+- **ScaledMail buys the domains.** Step 2 of the flow is "ideate and brief
+ ScaledMail", and domain-research's headings say so.
+- **Voice pass.** Consultant filler, sections that opened by explaining
+ themselves, and the same aphorism restated across four files.
 
 ### Added
 - **`playbooks/`** — the skill's first runnable steps, following the
