@@ -58,7 +58,7 @@ Email Accounts → select account → **Warm-up** tab → configure → **Enable
 - **Stop conditions**: halt on reply / click / open.
 - **High Bounce Rate Auto-Protection**: auto-pauses a campaign over a bounce threshold (industry standard <5%; GT acts earlier, `reference.md` §3).
 - **Unsubscribe Header**: one-click list-unsubscribe header; note it needs HTML, so it conflicts with full plain-text/"Optimize Email Delivery."
-- **Send interval:** the campaign's "email sent every X" must be **≥ 2 minutes greater** than the mailbox-level minimum gap (≈5-min minimum) or sends get skipped; set a randomized interval + correct timezone.
+- **Send interval:** the campaign's "email sent every X" must be **≥ 2 minutes greater** than the mailbox-level minimum gap (≈5-min minimum) or sends get skipped. Set the correct timezone. 🔒 The interval itself comes from the email infra management system — if the campaign value breaks that rule, report it rather than retuning the mailbox gap.
 
 ---
 
@@ -92,7 +92,7 @@ WARMUP
 DELIVERABILITY
 [ ] First email plain text (set in draft); open + link tracking OFF
 [ ] Company auto-pause on; stop-on-reply on; high-bounce auto-protection on
-[ ] Send interval randomized (campaign interval >= mailbox min + 2 min); correct timezone
+[ ] Send interval checked (campaign interval >= mailbox min + 2 min); correct timezone (🔒 interval set by the system)
 [ ] ESP routing from the dashboard matrix, not hard-coded
 [ ] No custom tracking domain (unless client insists -> dedicated)
 

@@ -69,7 +69,7 @@ Email Accounts → **Connect email account** → pick the provider.
 - **No links / no custom tracking domain** in cold email by default (the provisioning sub-skill).
 - **First email plain text** (the warmup-golive sub-skill launch gate).
 - **ESP routing:** decide from the dashboard matrix (the campaign-building sub-skill), not a hard ESP-matching rule.
-- **Campaign schedule** defaults to weekdays 8am–5pm EST, set the correct timezone + a randomized send interval for the segment.
+- **Campaign schedule** defaults to weekdays 8am–5pm EST. Set the correct timezone for the segment. 🔒 The **send interval is not yours to set** — pacing comes from the email infra management system along with the limits. Check it and report a wrong one.
 
 ---
 
@@ -103,7 +103,7 @@ WARMUP
 DELIVERABILITY
 [ ] Open tracking OFF; no unsubscribe link (plain-text opt-out); first email plain text
 [ ] No custom tracking domain (unless client insists -> dedicated)
-[ ] Correct timezone + randomized send interval
+[ ] Correct timezone · send interval checked against the system (🔒 don't set it here)
 [ ] ESP routing from the dashboard matrix, not hard-coded
 
 VERIFY

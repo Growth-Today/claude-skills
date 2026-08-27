@@ -92,7 +92,7 @@ ROUTING
 [ ] Open tracking OFF; limit-per-company set; low concurrency into SEG orgs
 
 FIRST SEND
-[ ] 50–100 leads only; randomized send interval + correct timezone for the segment
+[ ] 50–100 leads only; correct timezone for the segment; send interval verified (🔒 the system sets it)
 [ ] Monitored 2–3 days before scaling
 [ ] Scale plan = add mailboxes, not raise limits; ≤ 20%/week
 ```
