@@ -158,9 +158,11 @@ def audit(domain):
         rows.append((dim, verdict, detail))
 
     # MX + provider classification
-    mx = q(domain, "MX")
+    mx, mx_status = q_status(domain, "MX")
     provider, is_seg = classify_mx(mx)
-    if not mx:
+    if mx_status == "error":
+        row("MX", "FAIL", "MX lookup failed (timeout or SERVFAIL) — could NOT verify. Re-run")
+    elif not mx:
         row("MX", "FAIL", "no MX record — domain cannot receive mail")
     elif provider == "no-email":
         row("MX", "FAIL",
@@ -171,8 +173,11 @@ def audit(domain):
             f"{len(mx)} record(s) -> {provider}{' [SEG]' if is_seg else ''}")
 
     # SPF: exactly one record, inside the lookup budget
-    spf = [t for t in q(domain, "TXT") if t.lower().startswith("v=spf1")]
-    if len(spf) == 0:
+    txt, txt_status = q_status(domain, "TXT")
+    spf = [t for t in txt if t.lower().startswith("v=spf1")]
+    if txt_status == "error":
+        row("SPF", "FAIL", "TXT lookup failed (timeout or SERVFAIL) — could NOT verify. Re-run")
+    elif len(spf) == 0:
         row("SPF", "FAIL", "no SPF record")
     elif len(spf) > 1:
         row("SPF", "FAIL", f"{len(spf)} SPF records — RFC allows exactly 1, both are ignored")
@@ -225,8 +230,11 @@ def audit(domain):
             "selector, confirm it in the provider UI and record it here — otherwise mail is unsigned")
 
     # DMARC + policy strength against the GT standard
-    dm = [t for t in q("_dmarc." + domain, "TXT") if t.lower().startswith("v=dmarc1")]
-    if not dm:
+    dm_txt, dm_status = q_status("_dmarc." + domain, "TXT")
+    dm = [t for t in dm_txt if t.lower().startswith("v=dmarc1")]
+    if dm_status == "error":
+        row("DMARC", "FAIL", "DMARC lookup failed (timeout or SERVFAIL) — could NOT verify. Re-run")
+    elif not dm:
         row("DMARC", "FAIL", "no DMARC record")
     else:
         pol = next(

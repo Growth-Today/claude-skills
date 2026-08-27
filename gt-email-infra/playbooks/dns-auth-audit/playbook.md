@@ -94,6 +94,26 @@ Exit code is `0` when nothing failed and `2` when something did, so it drops int
 | **DMARC** | `p=reject` | `p=none` or `p=quarantine` — GT standard is reject | no record, or an unparseable policy |
 | **SRV-hygiene** | clean | stray Lync/Skype SRV present — tidy it up, but no mail filter reads it | — |
 
+**Proving the gate.** `scripts/test_gate.py` stubs DNS and asserts what each state does to
+the exit code — no network, runs in a second. Run it after any change to the verdict logic.
+
+```
+case                         verdict  exit  result
+------------------------------------------------------------
+clean domain                 PASS     0     ok
+DMARC p=quarantine           WARN     2     ok
+DMARC missing                FAIL     2     ok
+DKIM missing                 FAIL     2     ok
+DKIM revoked (empty p=)      FAIL     2     ok
+null MX                      FAIL     2     ok
+no MX                        FAIL     2     ok
+two SPF records              FAIL     2     ok
+TXT lookup timed out         FAIL     2     ok
+stray Lync SRV only          WARN     0     ok
+------------------------------------------------------------
+10/10 passed
+```
+
 **The gate.** MX, SPF, DKIM and DMARC must all be **PASS** for exit 0. A WARN on any of the four
 blocks launch, because the two WARNs that exist there — a `p=quarantine` DMARC and an unresolved
 DKIM selector — are exactly the states you do not want to launch on. SRV hygiene is outside the
