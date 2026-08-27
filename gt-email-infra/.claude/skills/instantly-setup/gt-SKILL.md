@@ -81,7 +81,7 @@ Enable via the **flame icon** (or bulk via the ⋯ menu); warmup starts at the n
 - **Reply rate:** ScaledMail SOP uses **75%**; **Growth Today prefers ramping to 100% after warmup** to lift reputation.
 - Keep **Read Emulation on** and the recommended Open Rate / Spam Protection / Mark Important defaults.
 - **Warmup pools:** Standard = green flame; **Premium = blue** (Google/MS only, higher quality); Basic = orange (SMTP overflow); **red = warmup disabled**. Put Google/MS native inboxes in Premium.
-- **Duration:** Instantly's own minimum is 2 weeks, but **Growth Today's floor is 21 days / 3 weeks** (`reference.md` §5), 4 weeks on a cautious build. Launch only when **Health Score > 90%**.
+- **Duration:** Instantly's own minimum is 2 weeks, but **Growth Today's floor is 21 days / 3 weeks** (`reference.md` §5), 4 weeks on a cautious build. Launch only when Instantly's **Health Score > 90%** *and* §2 `warmup_score_active` is met. Those are two different scales, not one number written two ways: Health Score is Instantly's own 0-100 read on the account, `warmup_score_active` is the threshold our classifier uses to call an inbox Active. Instantly can say 92 while the classifier still says not Active. Both have to be true.
 - **Warmup filter** (keep warmup mail out of the inbox): copy the account's warmup tag → Gmail filter (tag in Subject + Has-the-words → Skip Inbox, label "Warmup") / Outlook rule (subject-or-body contains tag → mark read, move to "Instantly Warmup").
 
 Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1, this table must stay consistent with it.
@@ -160,7 +160,7 @@ WARMUP
 [ ] Premium pool for Google/MS native inboxes; no SMTP in premium
 [ ] Read emulation on; recommended sub-settings kept
 [ ] Warmup filter set in Gmail/Outlook
-[ ] Warmed 21 days min (4 weeks on a cautious build); Health Score > 90% before launch
+[ ] Warmed 21 days min (4 weeks on a cautious build); Instantly Health Score > 90% AND §2 `warmup_score_active` met
 [ ] Fully-warmed ramp set: Google 30 warmup/20 cold, Microsoft 15 warmup/5 cold
 
 UNIBOX (Settings -> Unibox) - reporting depends on these

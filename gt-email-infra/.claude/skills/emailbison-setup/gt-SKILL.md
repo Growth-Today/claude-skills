@@ -52,8 +52,8 @@ Email Accounts → **Connect email account** → pick the provider.
 
 **You set only the max daily warmup limit, Bison automates the rest** (ramp, reply rate, timing). Set the max to the Growth Today target in `{SKILL_BASE}/resources/reference.md` §1 (Google warmup ~30, Microsoft ~15 for a fully-warmed sending inbox; during warming cold is 0–1).
 
-- **Ramp (automatic):** starts ~2/day, increases ~50%/day to your max, then flexes ~±20%/day to mimic human variation.
-- **Ratio:** Google **1.5:1** warmup-to-cold; Microsoft stricter (Bison's own guidance: 2–4 warmup/day, max 3 warmup replies), keep aligned with `reference.md` §1.
+- **Ramp (automatic, Bison's own behaviour):** starts ~2/day, steps up to *the max you set*, then flexes ~±20%/day to look human. Bison controls the step; **you control the ceiling** — set it to §1 `google_warmup` / `outlook_warmup`.
+- **Ratio:** Google **1.5:1** warmup-to-cold. Microsoft is stricter, and Bison's own onboarding suggests 2–4 warmup/day with max 3 warmup replies — **that is Bison's advice for a brand-new inbox, not our target.** The ceiling for a warmed inbox is §1 `outlook_warmup`; if you leave it at Bison's starting suggestion, the inbox never gets there.
 - **Reply rate** is under Advanced Settings but Bison strongly advises leaving it at default.
 - **Duration:** warm **≥ 21 days / 3 weeks** before any cold send (`reference.md` §5); monitor scores over 3 / 7 / 10–14-day windows; if low, cut cold temporarily and raise volume only as scores recover.
 - **Pool + filter phrase:** the warmup pool is private/self-healing; the filter phrase is a fixed per-workspace random string (not editable), no deliverability impact.

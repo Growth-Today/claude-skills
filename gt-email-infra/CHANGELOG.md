@@ -30,10 +30,12 @@ Knowledge corrections, the first executable playbooks, and a terminology rename.
 - **setup-audit dimension 21** — Unibox settings check.
 
 ### Changed
-- **setup-audit Part B is now executable**: six columns (Check · Source ·
- Call → field · Pass if · On fail · Write?). 13 of 21 rows verified against a
- live Instantly workspace; 2 confirmed not exposed by the API (signature,
- sender name); the rest labelled honestly.
+- **setup-audit Part B is now executable**: seven columns (Check · Source ·
+ Call → field · Pass if · On fail · Write?). 14 of 21 rows run automatically
+ (13 MCP + 1 playbook), verified against a live Instantly workspace. The other
+ 7 are marked MANUAL with the reason: signature, Unibox toggles, ESP routing
+ and the per-company cap are confirmed absent from the API, and the rest need
+ a second platform or a live campaign.
 - **Renamed OpsLab → "email infra management system"** throughout. The
  Supabase + Railway + n8n stack is Growth Today's own, and the plainer name
  reads better for an agent.

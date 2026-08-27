@@ -27,6 +27,9 @@ sys.path.insert(0, __file__.rsplit("/", 1)[0])
 from execute import audit  # noqa: E402  (same directory)
 
 
+RANK = {"PASS": 0, "WARN": 1, "FAIL": 2}   # severity, for spotting a downgrade
+
+
 def load_before(path):
     before = defaultdict(dict)
     with open(path) as fh:
@@ -61,10 +64,14 @@ def main():
                     still_failing += 1
                     lines.append(f"  [STILL FAIL] {dim:12} unchanged")
                 continue
-            if was == "FAIL" and is_ in ("PASS", "WARN"):
+            # A downgrade is a regression, not a change. PASS -> WARN is how a
+            # DMARC drops from p=reject to p=none and how a DKIM key disappears;
+            # both used to print [CHANGED] and exit 0, which is the exact drift
+            # this script exists to catch.
+            if RANK.get(is_, 0) < RANK.get(was, 0):
                 fixed += 1
                 lines.append(f"  [FIXED]      {dim:12} {was} -> {is_}")
-            elif is_ == "FAIL":
+            elif RANK.get(is_, 0) > RANK.get(was, 0):
                 regressed += 1
                 lines.append(f"  [REGRESSED]  {dim:12} {was} -> {is_}")
             else:
@@ -76,7 +83,7 @@ def main():
     print("\n" + "=" * 68)
     print(f"{fixed} fixed · {still_failing} still failing · {regressed} regressed")
     if regressed:
-        print("REGRESSION: a record that was healthy is now broken. Treat as P0.")
+        print("REGRESSION: a record got worse since the baseline — including PASS -> WARN,\nwhich is how p=reject quietly becomes p=none. Treat as P0.")
     elif still_failing:
         print("Not clear to launch — FAILs remain.")
     else:

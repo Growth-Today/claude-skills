@@ -137,7 +137,10 @@ Build so the campaign is **visible to and managed by the inbox-management system
 2. **Set the routing rule:** `Google` | `Microsoft` | `Both` (based on Part 2, not on ESP-matching dogma).
 3. **Scope the inbox pool** with tag filters: *include-by-tag* to restrict to a chosen pool, *exclude-by-tag* to keep away from inboxes used elsewhere; set the **region** tag where a client sends by region.
 4. **Let the automation attach/detach.** It attaches only eligible inboxes and maintains membership:
- - **Active / New Inbox** → eligible (New Inbox only if ≥ 14 days old by creation date).
+ - **Active / New Inbox** → eligible, but read §2 before you attach. The system stops excluding an
+   inbox at `new_inbox_age_days`; **Growth Today does not attach one until `warmup_floor_days`**,
+   which is longer. "The dashboard let me" is not the standard — §2 has an explicit warning box
+   about exactly this gap.
  - **Warmup Needed** → throttled to cold 0–1 but kept attached.
  - **Burnt** → excluded.
 5. **Naming convention:** `Segment – ESP`, e.g. `Webvisits – Google`, `Webvisits – Microsoft`; low volume (< 500 leads) → `Webvisits – All` (Both); by rep → `Webvisits – Andrew`.
@@ -170,7 +173,7 @@ ROUTING
 
 BUILD
 [ ] Campaign created via the management dashboard (or drafted with NO inboxes attached)
-[ ] Only Active/eligible New Inbox attached; Burnt excluded; Warmup Needed throttled+attached
+[ ] Only Active inboxes past §2 `warmup_floor_days` attached; Burnt excluded; Warmup Needed throttled+attached
 [ ] Naming convention applied (Segment – ESP)
 
 LAUNCH GATE

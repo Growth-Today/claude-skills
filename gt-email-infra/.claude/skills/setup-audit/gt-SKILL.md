@@ -71,8 +71,8 @@ identical; substitute that platform's equivalent read and note the substitution 
 | 12 | **First email plain text** | MCP | `list_campaigns` → `sequences[0].steps[0].variants[].body` | no `<img`, no `<a href`, no tracking pixel in step 1 | FAIL → strip. Launch-blocking | never |
 | 13 | **Signature** | MANUAL | **not exposed** — absent from `list_accounts` and `get_account` | no links, images, or promotional wording | FAIL → clean it in the UI | setup-only |
 | 14 | **Unsubscribe** | MCP | `list_campaigns` → step-1 `body` · `workspace_get` → `add_unsub_to_block` | no unsubscribe *link* in cold copy — plain-text opt-out only; `add_unsub_to_block == true` so opt-outs are suppressed | FAIL → remove the link (it forces HTML) | never |
-| 15 | **ESP routing** | MCP ⚠️ | `get_campaign` → ESP-matching field *(field name unconfirmed — see the note below)* | no blind ESP matching; routing follows the dashboard matrix | WARN → review against the matrix (campaign-building) | never |
-| 16 | **Company send limit** | MCP ⚠️ | `get_campaign` → per-company cap *(field name unconfirmed — see the note below)* | a cap is set (≈ 2/company/day; lower for SEG orgs) | FAIL → report it against the email infra management system; campaign build and routing live there | never |
+| 15 | **ESP routing** | MANUAL | not exposed — a live `get_campaign` read returns no ESP-matching field. Check it in the campaign UI | no blind ESP matching; routing follows the dashboard matrix | WARN → review against the matrix (campaign-building) | never |
+| 16 | **Company send limit** | MANUAL | not exposed — a live `get_campaign` read returns no per-company cap field. Check it in the campaign UI | a cap is set (≈ 2/company/day; lower for SEG orgs) | FAIL → report it against the email infra management system; campaign build and routing live there | never |
 | 17 | **Spintax / variance** | MCP | `list_campaigns` → `variants[].subject` and `.body` | `{{RANDOM \| … }}` present on subject **and** body; more than one variant per step | WARN → add variance | never |
 | 18 | **Cross-sequencer** | MANUAL | requires reading two platforms — no single call | an inbox live in another sequencer is at cold 0 (Instantly) / 1 (EmailBison) and tagged | FAIL → **report it against the email infra management system** (throttling and tagging live there) | never |
 | 19 | **% automated replies** | MCP | `list_emails` → reply bodies, strip OOO before any rate | auto-replies stripped before bounce/reply is quoted | WARN → strip (blacklist-bounce-audit). Needs a live campaign | n/a |
@@ -133,7 +133,7 @@ Condensed from an actual MCP-driven run, as a pattern to imitate.
 
 ```
 ## Setup Audit — GT (Instantly) — 21 Aug 2026
-Source: Instantly MCP connected · 13 of 21 automatic · 3 inconclusive · 5 manual
+Source: Instantly MCP connected · 14 of 21 automatic (13 MCP + 1 playbook) · 7 manual
 Baseline: 25 inboxes / 13 domains · 25 Google / 0 Microsoft · created 2026-08-15 (6 days) · 0 active campaigns
 
 ✅ PASS (9): mailboxes-per-domain (max 2) · connection (25/25 status=1) · interval (sending_gap=10)
@@ -166,7 +166,7 @@ Overall: not ready to launch. 3 blockers, all warmup, all owned by the email inf
 
 1. **Group by root cause.** Three FAILs, one problem. Listing them as three unrelated items is
    technically accurate and practically useless.
-2. **NOT CHECKED is an outcome, not an omission.** Seven rows, each with a reason. A report that
+2. **NOT CHECKED is an outcome, not an omission.** Eight rows, each with a reason. A report that
    showed "13 of 13 passed" would read cleaner and be a lie by omission.
 3. **The system block is pre-drafted as a message.** The finding travels to its owner without
    anyone being tempted to fix a sending limit in place.

@@ -257,10 +257,26 @@ Scaling rules: increase volume **≤ 20%/week**; stagger new-domain launches (**
 |---|---|
 | 5.1.1 | Invalid recipient (does not exist) |
 | 5.2.1 | Mailbox disabled |
-| 5.4.1 | Host not responding / address rejected |
 | 5.7.1 | Blocked by policy / security rejection |
 
-Root cause by type: **hard 5XX → list/verification/data**; **soft 4XX → temporary/infra**; **5.7.1 → corporate filtering/SEG/reputation** (not the address).
+**Permanent, but NOT a bad address** — these look hard and get mis-filed as list-quality problems:
+
+| Code | What it actually means | Who fixes it |
+|---|---|---|
+| 5.4.1 | RFC 3463 says "no answer from host"; Exchange Online returns it as *Access denied* — a tenant-level rejection | Infrastructure / sender reputation, not list verification |
+| 5.4.14 | Hop count exceeded — a mail loop on the recipient's side | Nobody on our side. Don't scrub the contact on this alone |
+| 5.2.2 | Mailbox full — a mailbox-status condition, same family as soft 4.2.2 | Retry later; scrub only if it persists |
+
+Root cause by type: **hard 5XX (5.1.1 / 5.2.1) → list/verification/data**; **soft 4XX → temporary/infra**; **5.7.1, 5.4.1 → corporate filtering / SEG / reputation** (not the address).
+
+**Bounce-audit thresholds** (used by the blacklist-bounce-audit sub-skill):
+
+| Key | Value | Meaning |
+|---|---|---|
+| `bounce_block_max` | 2% | Block bounces above this = a reputation or auth problem |
+| `bounce_hard_max` | 1.5% | Hard bounces above this = a list-quality problem |
+| `bounce_total_act` | 3% | Overall bounce rate: act |
+| `bounce_total_critical` | 5% | Overall: pause and fix |
 
 > **⚠️ Strip auto-replies BEFORE reading any bounce rate.** EmailBison miscounts out-of-office and auto-replies as bounces, this inflated one real audit by **~54%** (raw 2,687 "bounces" → 1,231 real). Reclassify OOO/auto-reply out of the bounce bucket first, or every bounce number you read is wrong. See the bounce-audit sub-skill.
 

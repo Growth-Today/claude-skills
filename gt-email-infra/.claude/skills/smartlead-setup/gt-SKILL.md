@@ -38,7 +38,7 @@ Email Accounts → **Add Account(s) / + Connect Mailbox** → pick the provider.
 
 Email Accounts → select account → **Warm-up** tab → configure → **Enable Warmup**.
 
-- **Total Daily Emails:** 10–20 while campaigns run (raise after a campaign completes). Keep aligned with `{SKILL_BASE}/resources/reference.md` §1 targets.
+- **Total Daily Emails (warmup):** set to §1 `google_warmup` / `outlook_warmup` for the provider. Smartlead's setup wizard suggests a much lower starting figure — that is a ramp starting point, not the target. Read the number out of §1 rather than typing one in.
 - **Daily Ramp Up:** enable for fresh domains (must be turned on **at the same time** as warmup); disable if already warmed/migrating.
 - **Reply Rate:** **20–30%** (don't exceed 30% unless expert).
 - **Randomise Warmup Numbers:** on (human-like variation).

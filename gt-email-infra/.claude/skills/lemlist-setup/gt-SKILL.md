@@ -39,8 +39,8 @@ Settings → Sending settings → **connect email address** → pick provider.
 > **Only use lemwarm if the inboxes are NOT already warmed in another tool.** If warmed elsewhere, skip.
 
 - Lemwarm dashboard → Connect email → start.
-- **Ramp increment: +1/day**; **max ~20/day** (Growth Today setting). Lemwarm emails **don't** count toward the Lemlist daily send limit, but keep **total per mailbox ≤ 60–70/day** (Lemlist + lemwarm + manual replies).
-- **Duration:** warm **≥ 21 days / 3 weeks** (GT floor, `reference.md` §5). Lemlist's own deliverability-score gates: <65 pause & fix DNS; 65–90 warmup only; >90 ready for campaigns.
+- **Ramp:** lemwarm steps up on its own; set the **ceiling** to §1 `google_warmup` / `outlook_warmup` for the provider. Lemwarm emails **don't** count toward the Lemlist daily send limit, but keep **total per mailbox ≤ 60–70/day** (Lemlist + lemwarm + manual replies).
+- **Duration:** warm **≥ 21 days / 3 weeks** (GT floor, `reference.md` §5). Lemlist's own deliverability-score gates: <65 pause & fix DNS; 65–90 warmup only; >90 ready for campaigns. That score is Lemlist's scale, not ours — it does not replace §2 `warmup_score_active`, which is what our classifier uses. Both have to clear.
 - lemwarm is a **separate Lemlist product/plan**: confirm it's active for the account.
 
 ---
@@ -85,9 +85,9 @@ INBOXES & LINKEDIN
 [ ] Client connected LinkedIn (blocker for multichannel)
 
 WARMUP
-[ ] lemwarm ONLY if not warmed elsewhere; +1/day ramp, ~20/day cap
+[ ] lemwarm ONLY if not warmed elsewhere; ceiling set from §1 `google_warmup` / `outlook_warmup`
 [ ] Total per mailbox <= 60-70/day (Lemlist + lemwarm + manual)
-[ ] Warmed >= 21 days; deliverability score > 90 before campaigns
+[ ] Warmed >= 21 days; Lemlist deliverability score > 90 AND §2 `warmup_score_active` met
 
 DELIVERABILITY
 [ ] Open + link tracking OFF; first email plain text

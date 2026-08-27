@@ -5,7 +5,12 @@ description: "Audit a bounce or blacklist problem to root cause and produce a fu
 
 # Blacklist & Bounce Audit · [GTM Engineer]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §7 · **Tools:** EmailBison MCP (`accounts_list`, `campaigns_list`, `replies_list`), optional Notion MCP · **Related:** dashboard-reading, domain-research · gt-list-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §7 · **Tools:** the EmailBison **REST API** (`/accounts`, `/campaigns`, `/campaigns/{id}/replies`), optional Notion MCP · **Related:** dashboard-reading, domain-research · gt-list-building.
+
+> **These are REST endpoints, not MCP tools.** There is no EmailBison MCP connector today, so
+> `curl` is the primary path on this page, not the 50K+ fallback. The Instantly MCP *is* connected
+> and covers the same ground for an Instantly workspace — `list_accounts`, `list_campaigns`,
+> `list_emails` — but the field names differ, so don't paste a Bison field into an Instantly call.
 
 Find where a bounce or blacklist problem *actually* comes from, then produce a report the team can act on. The output is a clear root cause, **infrastructure, list/data, or copy**, plus a full bounce breakdown and the right owner. Runs on any EmailBison workspace (specify the MCP server / API host). Codes and thresholds in `{SKILL_BASE}/resources/reference.md` §7.
 
@@ -19,17 +24,22 @@ Find where a bounce or blacklist problem *actually* comes from, then produce a r
 
 ## Step 0, Workspace baseline
 
-- `accounts_list` (paginate all pages, 15/page): total inboxes, provider split (Google vs Microsoft/Outlook), warmup-status distribution (Active / Warmup Needed / Blacklisted).
-- `campaigns_list` (all statuses, active, paused, completed): per-campaign `id`, `name`, `status`, `total_leads_contacted`, `emails_sent`, `bounced`, `unique_replies`, `created_at`.
+- **Bison:** `GET /accounts` · **Instantly:** `list_accounts` — paginate all pages (15/page): total inboxes, provider split (Google vs Microsoft/Outlook), warmup-status distribution (Active / Warmup Needed / Blacklisted).
+- **Bison:** `GET /campaigns` · **Instantly:** `list_campaigns` — all statuses (active, paused, completed): per-campaign `id`, `name`, `status`, `total_leads_contacted`, `emails_sent`, `bounced`, `unique_replies`, `created_at`.
 - Workspace totals: leads contacted (Σ `total_leads_contacted`), emails sent (Σ `emails_sent`), dashboard bounce count (Σ `bounced`) and rate vs contacts.
 
-> **Denominator rule:** always compute bounce rate against **`total_leads_contacted`** (people), never `emails_sent` (messages). One lead can get several emails but bounces once.
+> **Denominator rule:** always compute bounce rate against **people contacted**, never messages
+> sent. One lead can get several emails and bounce once. In Bison that is `total_leads_contacted`
+> against `emails_sent`; Instantly names these differently, so read its field list rather than
+> assuming the Bison names carry over.
 
 ## Step 1, Pull all replies from campaigns with bounces
 
 > **⚠️ The `?type=bounced` filter on the replies endpoint is BROKEN**: it returns all reply types unfiltered. You must pull everything and filter client-side (Step 2).
 
-For each campaign where `bounced > 0`: `replies_list` with the `campaign_id` filter, paginate all pages (15/page). If a campaign exceeds ~15,000 replies (page-1001 returns 422), switch to **cursor pagination**. For very large volumes (50K+), pull with a shell script instead of MCP calls:
+For each campaign where `bounced > 0`, pull every reply and filter client-side. If a campaign
+exceeds ~15,000 replies (page 1001 returns 422), switch to **cursor pagination**. This is the
+normal path, not a fallback:
 
 ```bash
 # adapt the host + API key per workspace
@@ -61,15 +71,16 @@ Parse `text_body` / `html_body`, extract the SMTP status + DSN code, and bucket.
 
 | Pattern | Category |
 |---|---|
-| `550 5.1.1`, `550 5.1.10`, `550 5.4.1`, `550 5.2.1`; "does not exist", "unknown user", "invalid recipient" | **Hard**: address invalid / mailbox disabled |
-| `554 5.4.14` (hop count exceeded) | **Hard** |
+| `550 5.1.1`, `550 5.1.10`, `550 5.2.1`; "does not exist", "unknown user", "invalid recipient" | **Hard**: address invalid / mailbox disabled |
+| `550 5.4.1` | **Block**: no answer from host, or Exchange Online *Access denied* — a tenant-level rejection. **Not** a bad address, so verifying the list will not fix it |
+| `554 5.4.14` (hop count exceeded) | **Routing**: a mail loop on the recipient's side. Count it separately; don't scrub the contact on this alone |
 | `421`, `450`, `451`, `452`; "temporarily", "try again", "rate limit" | **Soft**: temporary failure |
 | `554` (no sub-code), `550 5.7.1` (policy); "blocked", "spam", "blacklist", "reputation", "policy" | **Block**: reputation/policy |
 | `550 5.7.352`, `550 5.7.193`, `550 5.7.129` (Microsoft DMARC/SPF/sender-reputation) | **Block**: Microsoft auth/reputation |
-| `554 5.2.2` (mailbox full / quota) | **Block**: often an abandoned mailbox |
+| `554 5.2.2` (mailbox full / quota) | **Soft**: a mailbox-status condition, same family as 4.2.2 (§7). Often an abandoned mailbox — scrub only if it persists |
 | no code + no keyword match | **Unknown** |
 
-**Priority if multiple signals match:** Block > Hard > Soft > Unknown. (Maps to `reference.md` §7 buckets: Hard ≈ Unverified/bad-data; Block ≈ Corporate/SEG + Microsoft-tenant; Soft ≈ Other/temporary.)
+**Priority if multiple signals match:** Block > Hard > Routing > Soft > Unknown. (Maps to `reference.md` §7 buckets: Hard ≈ Unverified/bad-data; Block ≈ Corporate/SEG + Microsoft-tenant; Soft ≈ Other/temporary.)
 
 ---
 
@@ -125,7 +136,7 @@ Also check: spintax present? complaints/unsubs overall vs on these inboxes? any 
 | Unknown | X | X% | |
 | **Overall** | **X** | **X%** | |
 
-**Audit thresholds:** Block > **2%** = problem · Hard > **1.5%** = list-quality issue · Overall > **3%** = act · Overall > **5%** = critical, pause and fix. (Overall aligns with `reference.md` §3.)
+**Audit thresholds** — all four are §7 keys, read the current values there rather than the numbers here: `bounce_block_max` · `bounce_hard_max` · `bounce_total_act` · `bounce_total_critical`.
 
 **3. Block bounces by era** (group campaigns by quarter from `[Qn]` name markers or `created_at`), shows whether block/reputation is trending up or stable.
 
@@ -147,7 +158,7 @@ Also check: spintax present? complaints/unsubs overall vs on these inboxes? any 
 ## Bounce Audit, [Workspace], [Date]
 X real bounces from X contacts (X% bounce rate)
 - Block/reputation: X (X%), [trending up/stable/down]
-- Hard: X (X%), [above/below] 1.5%
+- Hard: X (X%), [above/below] §7 `bounce_hard_max`
 - Soft: X (X%), negligible / needs attention
 Worst campaign: [Name], X bounces, X% block
 Top block code: [code], [meaning]
