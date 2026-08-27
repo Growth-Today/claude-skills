@@ -50,20 +50,37 @@ SELECTORS = [
 SPF_LOOKUP_LIMIT = 10          # RFC 7208 §4.6.4
 GT_DMARC_STANDARD = "reject"   # reference.md §6
 
+# Launch gate: these four must be PASS, not merely "not FAIL". A p=quarantine
+# DMARC and a missing DKIM are both WARN — worth shipping a report about, and
+# not worth launching on. SRV-hygiene is deliberately absent: it is tidiness.
+BLOCKING = ("MX", "SPF", "DKIM", "DMARC")
+
 ICON = {"PASS": "  [PASS]", "WARN": "  [WARN]", "FAIL": "  [FAIL]"}
 
 
 # ── Helpers ──────────────────────────────────────────────────────
 
+def q_status(name, rtype):
+    """Query DNS. Returns (records, status).
+
+    status is 'ok' (records found), 'empty' (the name answered, with nothing of
+    this type) or 'error' (timeout / SERVFAIL — we do NOT know either way).
+    Telling 'empty' apart from 'error' matters: an empty answer is a finding, a
+    timeout is just a slow resolver, and reporting the second as the first is how
+    you fail a healthy domain.
+    """
+    try:
+        return [r.to_text().strip('"').replace('" "', "")
+                for r in RESOLVER.resolve(name, rtype)], "ok"
+    except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
+        return [], "empty"
+    except Exception:
+        return [], "error"
+
+
 def q(name, rtype):
     """Query DNS, returning a list of unquoted strings. Never raises."""
-    try:
-        return [
-            r.to_text().strip('"').replace('" "', "")
-            for r in RESOLVER.resolve(name, rtype)
-        ]
-    except Exception:
-        return []
+    return q_status(name, rtype)[0]
 
 
 def spf_lookups(record, depth=0, seen=None):
@@ -116,10 +133,14 @@ def classify_mx(mx_records):
     Mirrors the Clay MX-analysis formula in campaign-building (PR #29) so the
     two never disagree. Returns (provider, is_seg).
 
-    'no-email' means the domain has no MX at all — it cannot receive mail, which
-    is different from 'other' (mail is routed somewhere we don't recognise).
+    'no-email' means the domain cannot receive mail — either no MX at all, or a
+    null MX ("0 .", RFC 7505), which is the domain explicitly saying so. Both are
+    guaranteed hard bounces. That is different from 'other', which means mail is
+    routed somewhere we don't recognise.
     """
     if not mx_records:
+        return "no-email", False
+    if all(r.split()[-1].rstrip(".") == "" for r in mx_records if r.strip()):
         return "no-email", False
     j = " ".join(mx_records).lower()
     for name, needles, seg in MX_PROVIDERS:
@@ -141,6 +162,10 @@ def audit(domain):
     provider, is_seg = classify_mx(mx)
     if not mx:
         row("MX", "FAIL", "no MX record — domain cannot receive mail")
+    elif provider == "no-email":
+        row("MX", "FAIL",
+            f"null MX ({mx[0]}) — the domain declares it accepts no mail (RFC 7505). "
+            "Anything sent here hard-bounces")
     else:
         row("MX", "PASS",
             f"{len(mx)} record(s) -> {provider}{' [SEG]' if is_seg else ''}")
@@ -157,21 +182,47 @@ def audit(domain):
         row("SPF", verdict, f"1 record, {n}/{SPF_LOOKUP_LIMIT} DNS lookups | {spf[0][:70]}")
 
     # DKIM across known selectors
-    found = []
+    found, broken, unknown = [], [], []
     for s in SELECTORS:
+        name = f"{s}._domainkey.{domain}"
         hit = False
-        for rec in q(f"{s}._domainkey.{domain}", "TXT"):
-            if "v=dkim1" in rec.lower() or "p=" in rec:
+        for rec in q(name, "TXT"):
+            low = rec.lower()
+            if "v=dkim1" not in low:
+                continue
+            # p= with nothing after it means the key was REVOKED (RFC 6376 §3.6.1).
+            key = next((x.split("=", 1)[1].strip()
+                        for x in rec.split(";") if x.strip().lower().startswith("p=")), None)
+            if key:
                 found.append(s)
-                hit = True
-                break
-        if not hit and q(f"{s}._domainkey.{domain}", "CNAME"):
-            found.append(f"{s}(CNAME)")
+            else:
+                broken.append(f"{s} (revoked, empty p=)")
+            hit = True
+            break
+        if not hit:
+            cname, _ = q_status(name, "CNAME")
+            if cname:
+                # The TXT lookup above follows the CNAME. If it came back empty,
+                # the delegation is dangling. If it errored, we simply don't know.
+                _, txt_status = q_status(name, "TXT")
+                if txt_status == "empty":
+                    broken.append(f"{s} (CNAME to {cname[0]}, target has no key)")
+                else:
+                    unknown.append(f"{s} (CNAME, lookup timed out)")
     if found:
-        row("DKIM", "PASS", f"selector(s): {', '.join(found)}")
+        detail = f"selector(s): {', '.join(found)}"
+        if broken:
+            detail += f" · also broken: {', '.join(broken)}"
+        if unknown:
+            detail += f" · not resolved: {', '.join(unknown)}"
+        row("DKIM", "PASS", detail)
+    elif broken:
+        row("DKIM", "FAIL",
+            f"DKIM present but unusable: {', '.join(broken)} — this domain cannot sign mail")
     else:
-        row("DKIM", "WARN",
-            f"no DKIM on {len(SELECTORS)} known selectors — may use a custom one, verify in the provider UI")
+        row("DKIM", "FAIL",
+            f"no DKIM on {len(SELECTORS)} known selectors. If the provider uses a custom "
+            "selector, confirm it in the provider UI and record it here — otherwise mail is unsigned")
 
     # DMARC + policy strength against the GT standard
     dm = [t for t in q("_dmarc." + domain, "TXT") if t.lower().startswith("v=dmarc1")]
@@ -192,8 +243,10 @@ def audit(domain):
 
     # Stray Lync/Skype SRV — copy-pasted from the M365 setup guide, never needed for cold email
     lync = q("_sip._tls." + domain, "SRV") + q("_sipfederationtls._tcp." + domain, "SRV")
-    row("SRV-hygiene", "FAIL" if lync else "PASS",
-        f"stray Lync/Skype SRV present: {lync}" if lync else "no stray Lync/Skype SRV")
+    row("SRV-hygiene", "WARN" if lync else "PASS",
+        (f"stray Lync/Skype SRV present: {lync} — left over from the M365 setup guide. "
+         "Tidy it up; no mail filter reads it, so it does not block launch")
+        if lync else "no stray Lync/Skype SRV")
 
     return provider, rows
 
@@ -247,12 +300,21 @@ def main():
                     help="Profile RECIPIENT domains by ESP instead of auditing our own")
     args = ap.parse_args()
 
-    domains = list(args.domains)
+    raw = list(args.domains)
     if args.file:
         with open(args.file) as fh:
-            domains += [ln.strip() for ln in fh if ln.strip() and not ln.startswith("#")]
-    if not domains:
+            raw += [ln.strip() for ln in fh if ln.strip() and not ln.startswith("#")]
+    if not raw:
         ap.error("no domains given — pass them as arguments or with --file")
+
+    # A lead list is a list of email addresses. Take the domain off each one and
+    # de-duplicate, so 400 leads at one company are a single DNS lookup.
+    domains, seen = [], set()
+    for item in raw:
+        d = item.split("@")[-1].strip().lower().rstrip(".")
+        if d and d not in seen:
+            seen.add(d)
+            domains.append(d)
 
     if args.esp_mix:
         esp_mix(domains, args.csv if args.csv != "dns_audit.csv" else "esp_mix.csv")
@@ -280,7 +342,8 @@ def main():
             out_rows.append({"domain": d, "provider": provider,
                              "dimension": dim, "verdict": v, "detail": detail})
 
-        worst = max(worst, 2 if fails else 1 if warns else 0)
+        blocked = any(dim in BLOCKING and v != "PASS" for dim, v, _ in rows)
+        worst = max(worst, 2 if (fails or blocked) else 1 if warns else 0)
 
     with open(args.csv, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["domain", "provider", "dimension", "verdict", "detail"])
@@ -290,8 +353,11 @@ def main():
     print("\n" + "=" * 68)
     print(f"SUMMARY: {totals['PASS']} pass · {totals['WARN']} warn · {totals['FAIL']} fail")
     print(f"Audit trail: {args.csv}")
-    if totals["FAIL"]:
-        print("A FAIL on MX, SPF or DMARC is launch-blocking. Fix before going live.")
+    if worst == 2:
+        print("LAUNCH BLOCKED. MX, SPF, DKIM and DMARC must all be PASS before a domain "
+              "goes live — a WARN on any of them (p=quarantine, missing DKIM) blocks too.")
+    elif worst == 1:
+        print("Clear to launch. The warnings above are hygiene, not deliverability.")
     print("=" * 68)
 
     sys.exit(2 if worst == 2 else 0)

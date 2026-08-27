@@ -150,7 +150,7 @@ DNS / AUTH
 [ ] MX set
 [ ] Exactly ONE SPF record (≤ 10 lookups)
 [ ] DKIM added, exact key, authentication started
-[ ] DMARC added manually (p=none to start)
+[ ] DMARC added manually, p=reject (p=none only as a short verification phase)
 [ ] Verified (dig / headers / sequencer domain test)
 
 ONGOING

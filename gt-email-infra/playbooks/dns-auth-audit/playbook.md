@@ -35,7 +35,7 @@ And the real risk isn't setup, it's **silent drift**: a provider quietly breaks 
 Either paste them, or point at a file with one per line. If the client is on Instantly, the inbox list is the domain list — pull it and dedupe on the part after the `@`.
 
 **Q2: Is this a pre-launch gate or a drift check?**
-- *Pre-launch* — run `execute.py`, and treat any FAIL as launch-blocking.
+- *Pre-launch* — run `execute.py` and use the exit code: 0 = clear, 2 = blocked.
 - *Drift check* — run `execute.py` against last month's CSV baseline, then `after.py` to see what moved.
 - Default: pre-launch gate.
 
@@ -49,7 +49,7 @@ If yes, pass it and skip straight to the after-state diff.
 
 1. Collect the domain list.
 2. Run `execute.py` — audits every domain, prints per-dimension verdicts, writes a CSV baseline.
-3. Triage: FAIL on MX, SPF or DMARC is launch-blocking. WARN is a judgement call.
+3. Triage: MX, SPF, DKIM and DMARC must all be PASS. A WARN on any of the four (p=quarantine, no DKIM) blocks launch too — the exit code says so. SRV hygiene is tidiness and does not block.
 4. Route the fixes (DNS host for records; the email infra management system if it's a drift on a live inbox — see the read-only boundary in `SKILL.md`).
 5. Run `after.py` to prove the fix landed and nothing else regressed.
 
@@ -88,11 +88,16 @@ Exit code is `0` when nothing failed and `2` when something did, so it drops int
 
 | Dimension | PASS | WARN | FAIL |
 |---|---|---|---|
-| **MX** | present, provider classified | — | absent — the domain cannot receive mail, so replies and bounce handling are dead |
+| **MX** | present, provider classified | — | absent, or a null MX (`0 .`) — the domain cannot receive mail, so replies and bounce handling are dead |
 | **SPF** | exactly one record, ≤ 10 lookups | — | zero records, more than one record, or over the lookup budget |
-| **DKIM** | a key found on a known selector | nothing on 14 known selectors — may be a custom one, verify in the provider UI | — |
+| **DKIM** | a usable key on a known selector | — | nothing on 14 known selectors, or a key that is revoked (empty `p=`) or a CNAME pointing at nothing |
 | **DMARC** | `p=reject` | `p=none` or `p=quarantine` — GT standard is reject | no record, or an unparseable policy |
-| **SRV-hygiene** | clean | — | stray Lync/Skype SRV present |
+| **SRV-hygiene** | clean | stray Lync/Skype SRV present — tidy it up, but no mail filter reads it | — |
+
+**The gate.** MX, SPF, DKIM and DMARC must all be **PASS** for exit 0. A WARN on any of the four
+blocks launch, because the two WARNs that exist there — a `p=quarantine` DMARC and an unresolved
+DKIM selector — are exactly the states you do not want to launch on. SRV hygiene is outside the
+gate on purpose: SIP records are read by Teams clients, not by mail filters.
 
 Provider classification comes from the MX hostnames. The table lives in `MX_PROVIDERS` in `execute.py` and covers **google · microsoft · proofpoint · mimecast · barracuda · fortinet · rackspace · trendmicro · securemx · mxthunder · mtaroutes · zoho**, plus `other` and `no-email`. Six of those are security gateways and get a `[SEG]` marker, which is what campaign routing isolates on.
 
@@ -119,7 +124,9 @@ Re-queries every domain in the baseline and reports each dimension as FIXED, STI
 
 - **Read the limits from the source, not from memory.** DMARC's GT standard is defined in `reference.md` §6 and the script checks against it. When policy changes, the reference file changes and the audit follows.
 - **"SPF found" is not "SPF works."** Count the records and walk the chain. Both failure modes present as a green tick in every UI tool.
-- **DKIM WARN is not DKIM FAIL.** Fourteen selectors covers Google, Microsoft and the common vendors, but a custom selector is legitimate. Verify in the provider UI before raising it.
+- **A missing DKIM is a FAIL, not a shrug.** Fourteen selectors covers Google, Microsoft and the common vendors. A custom selector is legitimate, but "we probably use a custom one" is not a launch condition: confirm it in the provider UI and add it to `SELECTORS`, so the next run proves it instead of assuming it.
+- **A published key can still be a dead key.** `v=DKIM1; p=` with nothing after it means the key was revoked, and a selector CNAME whose target has no TXT is a dangling delegation. Both used to report PASS. Both mean the domain cannot sign mail.
+- **A timeout is not a finding.** The script tells "the name answered with nothing" apart from "the lookup failed", and only calls the first one broken. Reporting a slow resolver as a dead key is how you fail a healthy domain.
 - **Set the baseline early.** The audit's value compounds only if you have something to diff against. Save the CSV per client, per month.
 - **Fixing a live inbox's records is a DNS-host action, not a system-side one** — but if the *drift alert* came from the email infra management system's weekly re-check, report it there too. Don't build a competing scheduler.
 

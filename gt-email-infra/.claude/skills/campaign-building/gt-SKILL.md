@@ -64,6 +64,9 @@ Step 4: Add a Formula Column (copy-paste)
 ```
   javascript
 CopyEdit
+// A null MX ("0 .") is the domain saying it accepts no mail at all (RFC 7505).
+// Same as having no MX: a guaranteed hard bounce. Check it FIRST.
+!{{get_mx}}?.Answer?.length || {{get_mx}}.Answer.every(data => /^\s*\d+\s+\.\s*$/.test(data?.data || "")) ? "no-email" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("google")) ? "google" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("outlook.com") || data?.data?.includes("office365")) ? "microsoft" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("pphosted.com") || data?.data?.includes("ppe-hosted") || data?.data?.includes("ppsmtp") || data?.data?.includes("sophos.com")) ? "proofpoint" :
@@ -75,7 +78,7 @@ CopyEdit
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("securemx")) ? "securemx" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("mxthunder.net")) ? "mxthunder" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("mtaroutes.com")) ? "mtaroutes" :
-{{get_mx}}?.Answer?.length ? "other" : "no-email"
+"other"
 ```  
 
 ## Part 1, ESP matching is dead as a rule

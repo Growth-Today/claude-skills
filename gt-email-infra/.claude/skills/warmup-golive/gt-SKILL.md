@@ -13,7 +13,8 @@ description: "Warm up mailboxes and take domains live safely. Use for warmup tim
 > cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
 > uv run execute.py --file domains.txt --csv <client>_launch.csv   # exit 0 = clear, 2 = blocked
 > ```
-> A FAIL on MX, SPF or DMARC is launch-blocking. The exit code is designed to be used as a gate,
+> All four auth records — MX, SPF, DKIM, DMARC — must be PASS. A WARN on any of them (a
+> `p=quarantine` DMARC, a missing DKIM key) blocks too. The exit code is designed as a gate,
 > so this can sit in front of go-live rather than beside it.
 
 Take provisioned domains (the provisioning sub-skill) from cold to live safely. The whole point is patience: warm long enough, age before you link, and cross a hard gate before the first send. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
