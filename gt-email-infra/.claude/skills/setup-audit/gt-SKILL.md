@@ -140,7 +140,8 @@ Baseline: 25 inboxes / 13 domains · 25 Google / 0 Microsoft · created 2026-08-
             · timezone (America/Detroit, Mon–Fri) · DNS (playbook exit 0, 13/13 clean, p=reject on all)
             · tracking off · first email plain · unsubscribe · spintax
 
-⚠️ WARN (1): provider split 100% Google vs the 60/40 standard — decide it, don't drift into it
+⚠️ WARN (1): provider split 100% Google, and no mix on file for this build — the mix is a
+            per-client decision (§4), so it should be a stated choice, not a drift
 
 ❌ FAIL (3) — one root cause:
    4  warmup_status=0 on all 25; stat_warmup_score=0; warmup analytics empty

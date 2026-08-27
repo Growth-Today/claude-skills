@@ -22,8 +22,9 @@ collapsed into a range there: **20 is Growth Today's own per-mailbox number for 
 
 But the deeper problem isn't which of the two you pick — it's that **both describe a Google
 mailbox, and a Microsoft mailbox sends 5.** Applying either to a mixed fleet assumes every
-inbox is Google-like. Our own workspace runs roughly half Microsoft, where the real blended
-figure is 12.5.
+inbox is Google-like. On a 50/50 fleet the real blended figure is 12.5 — and our own Instantly
+workspace went the other way, 25 Google / 0 Microsoft on the 21 Aug audit. Neither is a default;
+both are answers to the question you have to ask.
 
 **How much it matters:** at 15,000/month, an all-Google client needs **57** mailboxes and a
 25/75 client needs **129**. Same goal, same formula, 2.3× the inventory. Size a Microsoft-heavy
@@ -61,8 +62,8 @@ The same list run in 5 days instead of 20 needs **4× the daily capacity**. This
 **Q3: What already exists?**
 Pass `--have-google` and `--have-outlook` to get a gap read against current capacity instead of a greenfield number.
 
-**Q4: Is the 60/40 Google/Microsoft split right for this client?**
-Default is 60/40. Override with `--split-google`. Note that domain count is driven almost entirely by the Google side — Google holds 2–3 mailboxes per domain, Microsoft up to ~25 — so shifting the split moves the domain bill far more than the mailbox bill.
+**Q4: What is this client's Google / Microsoft mix?**
+`--split-google` is required — there is no default, because there is no house mix. Ask the client. Note that domain count is driven almost entirely by the Google side — Google holds 2–3 mailboxes per domain, Microsoft up to ~25 — so shifting the split moves the domain bill far more than the mailbox bill.
 
 ## Plan
 
@@ -97,28 +98,30 @@ If that line is ever wrong, every number below it is wrong. Read it.
 
 ## After State
 
-`--validate` is the regression test. It recomputes all four rows of the `reference.md` §4 table and compares them to the published values.
+`--validate` is the regression test. It reads **both** §4 tables out of `reference.md` — the provider-mix grid and the 60/40 worked example — and recomputes every row. Nothing is hardcoded in the script, so editing a number in the doc without editing the model makes this fail.
 
 ```
-   3,000 /mo  expected (150, 11, 17, 10, 7, 5)  got (150, 11, 17, 10, 7, 5)  MATCH
-   7,500 /mo  expected (375, 27, 42, 25, 17, 11)  got (375, 27, 42, 25, 17, 11)  MATCH
-  15,000 /mo  expected (750, 54, 82, 49, 33, 22)  got (750, 54, 82, 49, 33, 22)  MATCH
-  30,000 /mo  expected (1500, 108, 162, 97, 65, 42)  got (1500, 108, 162, 97, 65, 42)  MATCH
+  Provider-mix grid (5 rows, 15,000/mo):
+  Worked example at 60/40 (4 rows):
+     3,000 /mo  expected (150, 11, 17, 10, 7, 5)  got (150, 11, 17, 10, 7, 5)  MATCH
+     7,500 /mo  expected (375, 27, 41, 25, 16, 11)  got (375, 27, 41, 25, 16, 11)  MATCH
+    15,000 /mo  expected (750, 54, 81, 49, 32, 22)  got (750, 54, 81, 49, 32, 22)  MATCH
+    30,000 /mo  expected (1500, 108, 162, 97, 65, 42)  got (1500, 108, 162, 97, 65, 42)  MATCH
 ```
 
-**Run this after any edit to `reference.md` §1 or §4.** A MISMATCH means the table and the standard have diverged — fix the table, not the script.
+**Run this after any edit to `reference.md` §1 or §4.** A MISMATCH means the doc and the model disagree. Work out which one is wrong before you touch either.
 
 **Verification checklist:**
 
-1. `--validate` reports MATCH on all four rows.
+1. `--validate` reports MATCH on all nine rows (5 mix + 4 worked example).
 2. The header shows the current §1 cold limits.
-3. The blended capacity line reads 14.0/day at the default split. If it says 22, someone has put the deprecated limits back into §1.
+3. The blended capacity line reads 14.0/day at a 60/40 mix. If it says 22, someone has put the deprecated Google 30 / Microsoft 10 limits back into §1.
 
 ## Key Technical Learnings
 
 - **A number typed into a script is a number that will go stale.** This one is parsed from the source of truth, and the header makes the dependency visible on every run. Copy that pattern into the other playbooks.
-- **The buffer applies to every tier.** An earlier version of the table applied ×1.5 to the smallest row only, which made the larger tiers look cheap. Each provider split is ceiling-rounded separately, which is why the totals are 17/42/82/162 rather than a single rounded product.
-- **Days-to-clear is where sizing surprises live.** Multiplying by sequence steps and dividing by a real deadline routinely produces 5–10× the greenfield "monthly goal" answer. Ask for the deadline.
+- **The buffer applies to every tier.** An earlier version of the table applied ×1.5 to the smallest row only, which made the larger tiers look cheap. Round whole mailboxes first, then buffer, then round again — and take the Google/Microsoft split out of that total, so the two provider counts always add back up to it. Rounding each provider separately quietly inflates the buy.
+- **Days-to-clear is where sizing surprises live.** Multiplying by sequence steps and dividing by a real deadline can produce several times the greenfield "monthly goal" answer — how much depends entirely on the deadline. Ask for the deadline.
 - **This sizes the buy, it does not make it.** Purchasing, registrar spread and timing sit with ScaledMail. Hand over the counts plus the rule: multiple registrars, multiple days, max 4 per registrar per day. GT verifies on delivery.
 
 ---

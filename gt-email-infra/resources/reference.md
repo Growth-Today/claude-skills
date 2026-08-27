@@ -129,7 +129,9 @@ Work backwards: **monthly goal → daily volume → mailboxes → domains.**
 2. **Ask the client's Google / Microsoft mix**, then compute the blended cold capacity:
    `blended = google_share × 20 + microsoft_share × 5` (§1 keys `google_cold`, `outlook_cold`).
 3. Daily volume ÷ blended = mailboxes needed.
-4. Mailboxes **× 1.5** (buffer for rotation, warmup, issues) = mailboxes to buy.
+4. Round that up to a whole mailbox, then **× 1.5** (buffer for rotation, warmup, issues) and
+   round up again = mailboxes to buy. The Google/Microsoft split comes **out of** that total,
+   so the two provider counts always add back up to it.
 5. Domains: **Google mailboxes ÷ 2–3** + **Microsoft mailboxes ÷ ~25**.
 
 > ### 🔑 There is no single divisor. Step 2 is an input, not an assumption.
@@ -168,12 +170,13 @@ Substitute the client's real mix.
 | Monthly goal | Daily volume | Mailboxes needed | **Mailboxes to buy (×1.5)** | Google / Microsoft | Domains |
 |---|---|---|---|---|---|
 | 3,000 | 150 | 11 | **17** | 10 / 7 | 5 |
-| 7,500 | 375 | 27 | **42** | 25 / 17 | 11 |
-| 15,000 | 750 | 54 | **82** | 49 / 33 | 22 |
+| 7,500 | 375 | 27 | **41** | 25 / 16 | 11 |
+| 15,000 | 750 | 54 | **81** | 49 / 32 | 22 |
 | 30,000 | 1,500 | 108 | **162** | 97 / 65 | 42 |
 
 The buffer applies to **every** row. (The previous version of this table applied it to the first
-row only, which is why the larger tiers looked cheap.)
+row only, which is why the larger tiers looked cheap.) `--validate` reads both tables straight
+out of this file, so if you edit a number here and the model disagrees, the check fails.
 
 **Mailboxes per domain (average): Google 2–3, Microsoft up to ~25.** Google stays lean for
 deliverability; Microsoft can host many mailboxes per domain. Domain count is therefore driven

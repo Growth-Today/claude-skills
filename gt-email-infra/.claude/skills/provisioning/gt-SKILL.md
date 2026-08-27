@@ -17,7 +17,7 @@ Turn purchased domains (the domain-research sub-skill) into sending-ready mailbo
 - **One domain = one workspace.**
 - **Real first-name addresses:** `alex@`, `sarah@`, `james@`, keep names consistent across domains. **Never** `sales@`, `info@`, `noreply@`, `hello@`, `outreach@`.
 - **Profile picture** (professional headshot) on every mailbox, improves deliverability and reply rate; don't skip.
-- **Provider split 60% Google / 40% Microsoft** (`reference.md` §4).
+- **Provider split: ask, don't assume.** There is no house mix — it's a per-client decision, and it moves the mailbox count more than the monthly goal does (`reference.md` §4). Get it in writing before you size the build.
 
 **Google Workspace (Business Starter):** add the secondary domain → verify via TXT → create the 2 users → configure DNS (Part 3).
 
