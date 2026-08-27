@@ -2,7 +2,6 @@
 
 The tools and services Growth Today uses for cold-email infrastructure. Sub-skills say "an approved vendor" and point here rather than naming one brand, so swap in whichever approved option fits the engagement.
 
-> **The process matters more than the brand.** Spreading purchases across registrars and days, using masking instead of a redirect, and warmup discipline all matter more than which registrar's logo is on the invoice.
 
 ---
 

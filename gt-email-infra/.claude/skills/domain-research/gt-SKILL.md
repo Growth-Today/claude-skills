@@ -21,9 +21,9 @@ Domain ideation goes wrong when it starts from the brand word alone. Collect the
 
 Items 1 and 2 are the two inputs that have been supplied by hand on every build so far. Ask for them up front rather than discovering them at purchase time.
 
-How to ideate a clean list of sending domains and buy them safely, so a domain is never flagged *before it sends a single email*. This is the first step of any new infrastructure build. Numbers live in `{SKILL_BASE}/resources/reference.md` §4, §5, §9; vendors in `{SKILL_BASE}/resources/approved-vendors.md`.
+Ideate a clean list of sending domains and get them bought safely, so a domain is never flagged *before it sends a single email*. Numbers live in `{SKILL_BASE}/resources/reference.md` §4, §5, §9; vendors in `{SKILL_BASE}/resources/approved-vendors.md`.
 
-**Why this matters most.** A domain's *name* and *how it was bought* can get it blocklisted before it ever sends. A 2026 longitudinal study of ~1.52 million malicious domains (Mashood & Nabeel) found the tell-tale abuse signals are exactly the ones a careless cold-email setup produces: fresh domains (median flagged age 60 days), bulk purchases from one registrar on one day (**77.9%** of abusive domains sat in a single registrar+date batch), a handful of over-used registrars, and cheap TLDs. Domain sourcing, not delisting, is where deliverability is won or lost.
+**Why the name and the purchase pattern decide this.** A domain's *name* and *how it was bought* can get it blocklisted before it ever sends. A 2026 longitudinal study of ~1.52 million malicious domains (Mashood & Nabeel) found the tell-tale abuse signals are exactly the ones a careless cold-email setup produces: fresh domains (median flagged age 60 days), bulk purchases from one registrar on one day (**77.9%** of abusive domains sat in a single registrar+date batch), a handful of over-used registrars, and cheap TLDs. Domain sourcing, not delisting, is where deliverability is won or lost.
 
 ---
 
@@ -42,7 +42,7 @@ How to ideate a clean list of sending domains and buy them safely, so a domain i
 - ❌ Cheap TLDs `.top / .xyz / .cc` (and avoid `.io / .ai / .net` for cold).
 - ❌ Sales/pitch, money, urgency, authority, or security words: `leads, automation, scale, deals, offers, wealth, cash, earn, payout, free, promo, winner, secure, verify`.
 
-**Safe rule of thumb:** if a word promises money, creates urgency, implies authority, touches account security, or sounds like a sales pitch → it does not go in a domain.
+If a word promises money, creates urgency, implies authority, touches account security, or sounds like a pitch, it does not go in a domain.
 
 > **Naming is the default, not a hard lock.** Brand-tied naming is the standard. The GTM / account owner may deliberately choose a different route (e.g. buying aged, generic-named domains, see Part 3) as a trade-off; that's an owner decision, not a rule violation.
 

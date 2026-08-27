@@ -22,7 +22,7 @@ Three things slipped through it every time:
 - **An over-budget SPF chain.** More than 10 DNS lookups is a permerror under RFC 7208 §4.6.4. You cannot see this by reading the record — you have to walk every `include:` recursively.
 - **Stray Lync/Skype SRV records**, copy-pasted from the Microsoft 365 setup guide into domains that will never run Teams.
 
-And the real risk isn't setup, it's **silent drift**: a provider quietly breaks a record months later. That is why this playbook has an after-state that diffs against a saved baseline.
+And a provider can break a record months after setup with no warning, which is why this playbook has an after-state that diffs against a saved baseline.
 
 ## Prerequisites
 
@@ -143,11 +143,10 @@ Re-queries every domain in the baseline and reports each dimension as FIXED, STI
 ## Key Technical Learnings
 
 - **Read the limits from the source, not from memory.** DMARC's GT standard is defined in `reference.md` §6 and the script checks against it. When policy changes, the reference file changes and the audit follows.
-- **"SPF found" is not "SPF works."** Count the records and walk the chain. Both failure modes present as a green tick in every UI tool.
 - **A missing DKIM is a FAIL, not a shrug.** Fourteen selectors covers Google, Microsoft and the common vendors. A custom selector is legitimate, but "we probably use a custom one" is not a launch condition: confirm it in the provider UI and add it to `SELECTORS`, so the next run proves it instead of assuming it.
 - **A published key can still be a dead key.** `v=DKIM1; p=` with nothing after it means the key was revoked, and a selector CNAME whose target has no TXT is a dangling delegation. Both used to report PASS. Both mean the domain cannot sign mail.
 - **A timeout is not a finding.** The script tells "the name answered with nothing" apart from "the lookup failed", and only calls the first one broken. Reporting a slow resolver as a dead key is how you fail a healthy domain.
-- **Set the baseline early.** The audit's value compounds only if you have something to diff against. Save the CSV per client, per month.
+- **Save the CSV per client, per month.** No baseline, no drift check.
 - **Fixing a live inbox's records is a DNS-host action, not a system-side one** — but if the *drift alert* came from the email infra management system's weekly re-check, report it there too. Don't build a competing scheduler.
 
 ---

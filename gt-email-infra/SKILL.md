@@ -16,7 +16,7 @@ Always resolve `SKILL_BASE` dynamically, never assume a hardcoded install locati
 
 # Email Infrastructure & Deliverability, Orchestrator
 
-Expert cold-email **infrastructure and deliverability** strategist. This skill is the *plumbing that gets cold email delivered*, not the message itself. Route by **who you are** and **what you're doing** to the one sub-skill that matches. Each sub-skill is self-contained and ends in a copy-pasteable checklist.
+This skill is the *plumbing that gets cold email delivered*, not the message itself. Route by **who you are** and **what you're doing** to the one sub-skill that matches. Each sub-skill is self-contained and ends in a copy-pasteable checklist.
 
 Platform: this skill supports the sequencers Growth Today uses, **EmailBison, Instantly, Smartlead, and Lemlist**. Use the matching setup sub-skill for whichever you run. Concepts are ESP-agnostic; platform-specific steps are called out inline.
 
@@ -49,7 +49,7 @@ Platform: this skill supports the sequencers Growth Today uses, **EmailBison, In
 
 ## Cross-Cutting Resources
 
-- **All numbers, limits, timelines, thresholds, and the ESP/SEG taxonomy** (the single source of truth every sub-skill derives from) → Read `{SKILL_BASE}/resources/reference.md`.
+- **All numbers, limits, timelines, thresholds, and the ESP/SEG taxonomy** → Read `{SKILL_BASE}/resources/reference.md`. Never restate one of its numbers in a sub-skill.
 - **Approved SMTP / sequencer / masking vendors** → Read `{SKILL_BASE}/resources/approved-vendors.md`.
 - **2026 market performance benchmarks** (results-side: is a bounce/reply rate good or bad vs the market) → Read `{SKILL_BASE}/resources/benchmarks.md`.
 
@@ -82,7 +82,7 @@ It is the source of truth for the automated inbox layer. This skill holds that k
 exposes it as a **read-only checklist**. It is never a second source of truth, and the system's
 dashboard stays primary.
 
-**Read-only is not about ownership, it's about having one answer.** The system is ours, so the
+**Read-only exists so there is one answer.** The system is ours, so the
 rule is not "someone else's tool, hands off". It is that the moment a GTM engineer changes a
 sending limit in Instantly by hand, the system's number and Instantly's number disagree and
 nobody knows which is right. That is how we ended up with four inbox trackers.
@@ -136,8 +136,8 @@ Monthly goal ÷ 20 workdays = daily volume → **÷ blended cold per mailbox** =
 >
 > A Google mailbox sends 20 cold/day, a Microsoft one sends 5. The mix is a per-client call driven
 > by industry and market, so the same 15k/month goal needs anywhere from **57 mailboxes** (all
-> Google) to **129** (25/75). Quoting one number without stating the split is meaningless.
-> Full grid in `reference.md` §4.
+> Google) to **129** (25/75). Ask for the mix before you quote a number. Full grid in
+> `reference.md` §4.
 
 **Don't do this by hand — run it:**
 
@@ -180,7 +180,7 @@ Most real requests chain sub-skills. Common ones:
 
 ## How the SOP Runs (End to End)
 
-The Decision Tree below answers *"where do I go?"*. This answers *"what is the whole job, in order, and which parts run themselves?"*
+The Decision Tree below routes a single question. This is the job in order.
 
 ```
 SALES OPS — build the infrastructure

@@ -17,7 +17,7 @@ description: "Warm up mailboxes and take domains live safely. Use for warmup tim
 > `p=quarantine` DMARC, a missing DKIM key) blocks too. The exit code is designed as a gate,
 > so this can sit in front of go-live rather than beside it.
 
-Take provisioned domains (the provisioning sub-skill) from cold to live safely. The whole point is patience: warm long enough, age before you link, and cross a hard gate before the first send. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
+Take provisioned domains (the provisioning sub-skill) from cold to live. Warm long enough, age before you link, and clear the gate before the first send. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
 
 ---
 
@@ -37,7 +37,7 @@ Take provisioned domains (the provisioning sub-skill) from cold to live safely. 
 
 ## Part 2, Age-before-link gate
 
-Warmup length is not the only clock. **Link/campaign only from domains > 30 days old AND past warmup** (`reference.md` §5). A fresh domain is in the most dangerous window regardless of warmup score, a too-new domain reads as suspect on its own, and linking from it is a documented blocklist trigger.
+Warmup length is not the only clock. **Link/campaign only from domains > 30 days old AND past warmup** (`reference.md` §5). A fresh domain reads as suspect regardless of warmup score, and linking from one is a known blocklist trigger.
 
 Don't buy pre-aged domains to skip this (owner's call, the domain-research sub-skill), age our own.
 
@@ -48,7 +48,7 @@ Don't buy pre-aged domains to skip this (owner's call, the domain-research sub-s
 When a domain clears the gate, take it live conservatively.
 
 **Deliverability settings (every platform):**
-- **First email plain text**: no HTML, no images (incl. signature images), no links. This is do-or-die: until you consistently reach the inbox, email #1 stays plain.
+- **First email plain text**: no HTML, no images (incl. signature images), no links. Until you're consistently landing in the inbox, email #1 stays plain.
 - **Open tracking OFF**: tracking pixels hurt placement (and we don't use open rate as a metric anyway).
 - **No links / no tracking domain** by default (the provisioning sub-skill).
 - **ESP routing:** set the routing rule from the **dashboard matrix** (the campaign-building sub-skill), **not** from ESP-matching-as-a-rule.
@@ -68,7 +68,7 @@ When a domain clears the gate, take it live conservatively.
 
 ## Part 4, The HARD LAUNCH GATE (nothing sends until all pass)
 
-These are gates, not suggestions. If any is unchecked, do not launch.
+If any line is unchecked, do not launch.
 
 ```
 INFRA

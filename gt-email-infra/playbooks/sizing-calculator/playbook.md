@@ -119,7 +119,7 @@ If that line is ever wrong, every number below it is wrong. Read it.
 
 ## Key Technical Learnings
 
-- **A number typed into a script is a number that will go stale.** This one is parsed from the source of truth, and the header makes the dependency visible on every run. Copy that pattern into the other playbooks.
+- **Parse the limits from `reference.md`, don't hardcode them.** The run header prints what it read — check that line before you trust the output.
 - **The buffer applies to every tier.** An earlier version of the table applied ×1.5 to the smallest row only, which made the larger tiers look cheap. Round whole mailboxes first, then buffer, then round again — and take the Google/Microsoft split out of that total, so the two provider counts always add back up to it. Rounding each provider separately quietly inflates the buy.
 - **Days-to-clear is where sizing surprises live.** Multiplying by sequence steps and dividing by a real deadline can produce several times the greenfield "monthly goal" answer — how much depends entirely on the deadline. Ask for the deadline.
 - **This sizes the buy, it does not make it.** Purchasing, registrar spread and timing sit with ScaledMail. Hand over the counts plus the rule: multiple registrars, multiple days, max 4 per registrar per day. GT verifies on delivery.

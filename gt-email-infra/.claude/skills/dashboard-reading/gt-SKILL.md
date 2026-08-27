@@ -7,7 +7,7 @@ description: "Read the inbox-health dashboard from the email infra management sy
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §3, §7 · **Related:** campaign-building, bounce-audit.
 
-How to read the automated inbox-management dashboard and turn each panel into an action. Don't track health by hand, the system classifies every inbox and domain continuously; your job is to read it correctly and act. All thresholds live in `{SKILL_BASE}/resources/reference.md` §1–§3.
+Don't track health by hand, the system classifies every inbox and domain continuously; your job is to read it correctly and act. All thresholds live in `{SKILL_BASE}/resources/reference.md` §1–§3.
 
 ---
 
@@ -46,7 +46,7 @@ and it is never something GT retags. Every row here is `Write? never`.
 
 **4. Client overview.** One row per client: contacted, sends, active/warmup-needed/burnt/blacklisted, bounce, reply, human reply, unsub, placement, ESP mix. The at-a-glance triage view, drill into any row.
 
-**5. DNS / auth health.** MX / SPF / DKIM / DMARC status per domain, with counts of OK / broken / never-checked. The point is catching **silent drift**, a record a provider quietly broke, not just initial setup. A broken record should fire an alert; treat it as P0 (dead auth = mail binned).
+**5. DNS / auth health.** MX / SPF / DKIM / DMARC status per domain, with counts of OK / broken / never-checked. The point is catching a record a provider broke months after setup (§6). A broken record should fire an alert; treat it as P0 — dead auth means mail goes in the bin.
 
 **6. Blacklist by vendor.** Domains on **Spamhaus DBL and URIBL**, per client and per domain. Those two lists are the only blacklist reasons GT recognises. Any other list shown in the panel is **not a reason to tag an inbox Blacklisted, cut sending, or fire an alert** — if one still does, that's a bug to report, not a real listing (see the bounce-audit sub-skill).
 
@@ -114,9 +114,8 @@ Timing: a **rising bounce rate is a leading indicator** (acts the same day), a *
 
 ## Part 4, Send limits by state (read-only — the email infra management system sets these)
 
-**The email infra management system sets these limits. Your job is to check them, not change them.** Governed by the
-warm-to-cold **ratio**, with the cold limit driven by inbox state (`reference.md` §1). If an inbox
-is on the wrong limit, report it with the inbox list — do not fix it yourself.
+Limits follow the warm-to-cold **ratio**, with the cold limit driven by inbox state
+(`reference.md` §1). If an inbox is on the wrong limit, report it with the inbox list.
 
 **Executable as a verification.** `list_accounts → daily_limit` and `warmup.limit` give you the
 live values; compare them to the §1 keys below. **Every row is `Write? never`** — `update_account`
@@ -129,8 +128,7 @@ and `manage_account_state` are out of bounds for a GTM engineer regardless of wh
 | Warmup Needed / Burnt | §1 `cold_warming` | reduced | same + `warmup_status` |
 | New Inbox | §1 `cold_new_inbox` | — | same + lifetime sends |
 
-Numbers are deliberately not repeated here. Read the current values from the §1 key table at run
-time — that is what stops this page drifting from the standard the way the old sizing SOP did.
+Read the current values from the §1 key table at run time.
 
 > **Failover watch (EmailBison):** a throttled inbox stays attached at cold 1 and keeps sending to its in-flight leads; Bison won't reroute those leads to a healthy inbox on the campaign. Scan for leads stranded on Warmup-Needed inboxes, a real bounce driver. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't.
 

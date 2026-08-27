@@ -89,7 +89,7 @@ By hand, if you must: `dig TXT yourdomain.com` (SPF), headers show `dkim=pass`,
 
 ## Part 4, Guard against silent DNS drift
 
-Correct-at-setup is not enough, the real risk is a provider **quietly breaking a record later**, which silently kills deliverability. Treat a broken auth record as **P0**.
+Getting it right at setup isn't enough (§6). Treat a broken auth record as **P0** — dead auth means mail goes in the bin.
 
 **The email infra management system owns the scheduled weekly re-check** — read its result in the DNS/auth-health panel (the dashboard-reading sub-skill), and do not build a competing scheduler.
 

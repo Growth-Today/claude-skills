@@ -17,7 +17,7 @@ Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs
 
 ## Part 0, Who does the setup (two paths)
 
-**ScaledMail does it.** ScaledMail **buys the domains and connects the inboxes**, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today keeps **domain research and verification only** — hand off the domain-research output plus a brief, then **verify on delivery**. Buying a batch ourselves at a single registrar is what we are moving away from: it produces exactly the bulk pattern spam filters look for (`reference.md` §9). Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us, worth it.
+**ScaledMail does it.** ScaledMail **buys the domains and connects the inboxes**, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today keeps **domain research and verification only** — hand off the domain-research output plus a brief, then **verify on delivery**. Buying a batch ourselves at a single registrar is what we are moving away from: it produces exactly the bulk pattern spam filters look for (`reference.md` §9). Vendor domains carry a ≈10% markup and arrive **spread across registrars and dates**.
 
 **Fallback: in-house.** If we buy and build ourselves, Growth Today purchases the domains (the domain-research sub-skill), provisions mailboxes + DNS (the provisioning sub-skill), and connects them in Instantly manually (Parts 2–4 below). Full in-house step-by-step (Namecheap purchase → Instantly connect → warmup): **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (Growth Today internal, access-gated).
 
@@ -81,7 +81,7 @@ Enable via the **flame icon** (or bulk via the ⋯ menu); warmup starts at the n
 - **Reply rate:** ScaledMail SOP uses **75%**; **Growth Today prefers ramping to 100% after warmup** to lift reputation.
 - Keep **Read Emulation on** and the recommended Open Rate / Spam Protection / Mark Important defaults.
 - **Warmup pools:** Standard = green flame; **Premium = blue** (Google/MS only, higher quality); Basic = orange (SMTP overflow); **red = warmup disabled**. Put Google/MS native inboxes in Premium.
-- **Duration:** Instantly's own minimum is 2 weeks, but **Growth Today's floor is 21 days / 3 weeks** (`reference.md` §5), 4 weeks on a cautious build. Launch only when Instantly's **Health Score > 90%** *and* §2 `warmup_score_active` is met. Those are two different scales, not one number written two ways: Health Score is Instantly's own 0-100 read on the account, `warmup_score_active` is the threshold our classifier uses to call an inbox Active. Instantly can say 92 while the classifier still says not Active. Both have to be true.
+- **Duration:** Instantly's own minimum is 2 weeks, but **Growth Today's floor is 21 days / 3 weeks** (`reference.md` §5), 4 weeks on a cautious build. Launch only when Instantly's **Health Score > 90%** *and* §2 `warmup_score_active` is met. Two different scales: Health Score is Instantly's own 0–100 read, `warmup_score_active` is our classifier's threshold. Instantly can say 92 while the classifier says not Active. Both have to clear.
 - **Warmup filter** (keep warmup mail out of the inbox): copy the account's warmup tag → Gmail filter (tag in Subject + Has-the-words → Skip Inbox, label "Warmup") / Outlook rule (subject-or-body contains tag → mark read, move to "Instantly Warmup").
 
 Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1, this table must stay consistent with it.
@@ -110,7 +110,7 @@ actually see. Get them wrong and the dashboard reports numbers that look fine an
 
 | Toggle | GT setting | Why |
 |---|---|---|
-| **Save undelivered emails in Unibox** | ✅ **ON** | **The important one.** Off by default. If it's off, undelivered mail never lands in Unibox, so bounces can't be counted from Instantly and the bounce rate reads low |
+| **Save undelivered emails in Unibox** | ✅ **ON** | Off by default. If it's off, undelivered mail never lands in Unibox, so bounces can't be counted from Instantly and the bounce rate reads low |
 | **Show auto-replies in Unibox** | ✅ ON | You need to see them to strip them. Auto-replies inflate reply counts and, on EmailBison, more than doubled the bounce count in one audit. Visible, then excluded — not hidden |
 | **Save non-Instantly emails in Unibox** | ⬜ OFF | Pulls in unrelated mailbox traffic. Noise, and a privacy question on client mailboxes |
 | **Only show notification in CRM** | ⬜ OFF | Keep replies visible in Unibox, not only in the CRM |

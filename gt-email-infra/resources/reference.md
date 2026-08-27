@@ -24,7 +24,7 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 
 \* During warming and when throttled, cold is effectively off. Instantly/Smartlead can set **0**; **EmailBison's minimum is 1** (it cannot do 0), the failover gap below.
 
-**Warmup is governed by the warm-to-cold ratio, not a fixed constant.** The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**; Outlook 5 × 3 = **15**. Change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets warmup for you. During warming the ramp is Google **+4/day**, Outlook **+2/day** (see the instantly-setup sub-skill).
+The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**; Outlook 5 × 3 = **15**. Change the cold limit and the warmup target moves with it; on auto-warmup platforms (Instantly/Smartlead) the tool sets warmup for you. During warming the ramp is Google **+4/day**, Outlook **+2/day** (see the instantly-setup sub-skill).
 
 - **Failover gap (EmailBison):** cold can't be set to 0, so an unhealthy inbox is throttled to 1 rather than silenced, and a lead being prospected by that inbox keeps getting sent from it; Bison won't hand the lead to another healthy inbox on the campaign. Instantly and Smartlead *can* set 0 and reroute the lead to a healthy inbox on the campaign.
 - Limits auto-adjust on day 22 (after the 21-day warmup floor).
@@ -134,7 +134,7 @@ Work backwards: **monthly goal → daily volume → mailboxes → domains.**
    so the two provider counts always add back up to it.
 5. Domains: **Google mailboxes ÷ 2–3** + **Microsoft mailboxes ÷ ~25**.
 
-> ### 🔑 There is no single divisor. Step 2 is an input, not an assumption.
+> ### 🔑 Step 2 is an input. Ask for the mix.
 >
 > The provider mix is a **per-client decision** driven by the client's industry and market —
 > some need more Microsoft, some more Google. That means the emails-per-mailbox figure changes
@@ -152,8 +152,7 @@ Work backwards: **monthly goal → daily volume → mailboxes → domains.**
 | 25 / 75 | 8.75 | 129 |
 
 > **Same client, same goal, 57 to 129 mailboxes.** That spread is why you ask for the mix before
-> you size anything. If someone hands you a single number without stating the split, the number
-> is meaningless.
+> you size anything. A mailbox count quoted without a split doesn't mean anything.
 >
 > **Don't compute this by hand.** The calculator takes the split as a flag and reads the limits
 > from §1, so it can't drift from the standard:
@@ -238,7 +237,7 @@ Scaling rules: increase volume **≤ 20%/week**; stagger new-domain launches (**
 
 **Redirect vs masking:** a secondary domain must reach a real destination via **masking or a genuine landing page, never a bare 301/302 redirect** to the main site — many domains resolving to one site is the exact bulk-sender fingerprint. **Current state (Aug 2026): GT runs no client redirects**, so this is a standard to hold, not an open defect. The live question is what replaces EmailBison's masking once we are fully on Instantly — see `approved-vendors.md`. See the provisioning sub-skill.
 
-**Silent DNS drift** is the real risk, not initial setup, records can be quietly broken by a provider later. Re-check MX/SPF/DKIM/DMARC on a schedule.
+A provider can break a record months after setup, and nothing tells you. Re-check MX/SPF/DKIM/DMARC on a schedule.
 
 ---
 

@@ -11,7 +11,7 @@ description: "Build cold-email campaigns and route by ESP and SEG. Use for campa
 
 How to build a campaign that routes to the right inboxes and gets optimized from data, not from a 2024 rule of thumb. Numbers and taxonomy live in `{SKILL_BASE}/resources/reference.md` §1, §2, §8.
 
-**The one mindset shift:** you are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and you find it on the dashboard, not by guessing.
+You are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and it's on the dashboard.
 
 ---
 ### Determining the recipient ESP mix on a lead list
@@ -34,7 +34,7 @@ as a column alongside the rest of the enrichment.
 
 ### Clay version — How To Run MX Analysis in Clay to Determine ESP Mix on Lead Lists
 
-First Rule: To ensure accuracy, run this MX analysis on a target account list or existing customer list. To know exactly what type of inboxes (Google vs. Microsoft vs. others) to optimize for.
+Run this on a target account list or an existing customer list — you want the real inbox mix, not a sample.
 ### Tools Needed:
 - Clay workspace
 - Company domains normalized (e.g. `growthtoday.co`)
@@ -63,7 +63,6 @@ Step 4: Add a Formula Column (copy-paste)
 
 ```
   javascript
-CopyEdit
 // A null MX ("0 .") is the domain saying it accepts no mail at all (RFC 7505).
 // Same as having no MX: a guaranteed hard bounce. Check it FIRST.
 !{{get_mx}}?.Answer?.length || {{get_mx}}.Answer.every(data => /^\s*\d+\s+\.\s*$/.test(data?.data || "")) ? "no-email" :
@@ -83,7 +82,7 @@ CopyEdit
 "other"
 ```  
 
-## Part 1, ESP matching is dead as a rule
+## Part 1, Don't hard-code ESP matching
 
 Sending from the same provider the recipient uses (Google→Gmail, Outlook→Outlook) was a 2024 band-aid. **Do not hard-code it.** It can still *turn out* to be the right call for a given segment, but only the data decides, per segment, per week.
 
@@ -127,7 +126,7 @@ Enterprise recipients behind a **Secure Email Gateway (Mimecast, Proofpoint, Bar
 5. **Go multi-channel**: pair with LinkedIn/phone; email won't be your only path into SEG accounts.
 6. **Recycle, don't waste.** When bounce climbs on a SEG campaign, swap the domain out, then re-test it on easy **Google/Outlook** segments before retiring. A SEG-burnt domain often still performs on regular leads. Use placement + warmup score as the swap trigger (the dashboard-reading sub-skill).
 
-**Expectation-setting:** lower reply rates on SEG-heavy segments are the recipient's policy working as designed, not a broken setup. Prioritize reachable segments; shift weight off aggressively-gated ones rather than burning domains forcing them.
+Expect lower reply rates on SEG-heavy segments. That's the recipient's policy, not a broken setup. Prioritize reachable segments; shift weight off aggressively-gated ones rather than burning domains forcing them.
 
 ---
 
@@ -153,7 +152,6 @@ Build so the campaign is **visible to and managed by the inbox-management system
 
 ## Part 5, Launch gate (hard, before any send)
 
-These are non-negotiable gates, not suggestions:
 
 - [ ] **List 100% verified** (and re-verified if > 30 days old), see `gt-list-building`.
 - [ ] **First email is plain text**: no HTML, no images (incl. signature), no links.

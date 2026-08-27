@@ -4,13 +4,13 @@ External market benchmarks for cold email, the numbers that tell you **what's go
 
 > **Source:** Smartlead *State of Cold Email 2026* (850M+ cold emails analyzed, Q2 2026), with Growth Today data and commentary added. These are **market benchmarks** for evaluation.
 
-> **Results side vs. automation side, why the numbers here differ from `reference.md`.** This file is the **results / investigation** lens: universal market figures for judging outcomes and reply *levels*, independent of any tool. `reference.md` §2–§3 is the **automation / operational** lens: the exact thresholds our system uses to *tag* an inbox (Active / Warmup Needed / Burnt / New) and set its limits. They are meant to differ, one asks *"is this result good vs. the market?"*, the other asks *"should the automation act on this inbox now?"*. Use this file to evaluate performance; use `reference.md` to operate the infrastructure.
+> **Why these numbers differ from `reference.md`.** This file judges results against the market.
+> `reference.md` §2–§3 sets the thresholds our automation acts on — what tags an inbox Active or
+> Burnt. They differ on purpose.
 
-## How to read this
-
-- **"Contacts per (positive) reply", LOWER is better** (fewer people contacted to earn one reply). It is the cleanest efficiency metric because it blends list quality, targeting, and copy into one number.
-- **Percentile bands** let you place any client metric: are we top-quartile or bottom-10%?
-- Each section ends with a **strategic read** for evaluation.
+**"Contacts per (positive) reply", LOWER is better** — fewer people contacted to earn one reply.
+It's the cleanest efficiency metric: list quality, targeting and copy in one number. The
+percentile bands place any client against the market.
 
 ---
 
@@ -106,7 +106,7 @@ Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bo
 | **Outlook** | 120 | 4.34% |
 | **Custom servers** | **179** | — |
 
-**Strategic read.** **Gmail out-performs Outlook and custom SMTP** on reply efficiency, and Outlook bounces harder. Custom servers are the weakest on reply efficiency (179), use them for **scale/cost**, not as the primary sending pool. Gmail-hosted recipients reply about **1.3× more efficiently than Outlook** (90 vs 120 contacts per reply) — worth knowing, not worth reorganising a list around. For enterprise tiers, add cold calls + LinkedIn. Warm every new mailbox for at least §5 `warmup_floor_days` and send at the §1 cold limit for its provider — not the 50/day figure the market quotes.
+**Strategic read.** **Gmail out-performs Outlook and custom SMTP** on reply efficiency, and Outlook bounces harder. Custom servers are the weakest on reply efficiency (179), use them for **scale/cost**, not as the primary sending pool. For enterprise tiers, add cold calls and LinkedIn. Warm every new mailbox for at least §5 `warmup_floor_days` and send at the §1 cold limit for its provider — not the 50/day figure the market quotes.
 
 ---
 
@@ -150,9 +150,9 @@ Use this to grade any client at a glance. "Direction" shows which way is better.
 
 ## 11. Growth Today's take
 
-- **A handful of campaigns carry the pipeline.** The percentile table above is the evidence: best to worst is a 24× spread, and it is list quality and targeting, not copy. **A great audience solves your copy problems** because the message writes itself.
-- **Order of operations:** **Data foundation → Automation → GTM activation.** You can't run channels without data, it's table stakes, and doing it well still takes streamlined execution.
-- **First-party, compounding data beats third-party.** Third-party signals drive quick ROI (great for a QBR slide) but decay; first-party data compounds. Start building the first-party signal warehouse now for a durable GTM.
+- **A handful of campaigns carry the pipeline.** The percentile table above is the evidence: best to worst is a 24× spread, and it is list quality and targeting, not copy.
+- **Data before channels.** No clean list, no campaign. Fix data and verification first.
+- **Third-party signals decay, your own reply data doesn't.** Log reply and bounce per segment from day one. It's the only benchmark that stays true for this client.
 
 ---
 

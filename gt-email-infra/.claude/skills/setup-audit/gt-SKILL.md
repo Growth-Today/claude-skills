@@ -7,7 +7,7 @@ description: "Audit a live sequencer workspace to verify inboxes are set up corr
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §6 · `{SKILL_BASE}/resources/approved-vendors.md` · the platform setup sub-skills · **Runs:** `{SKILL_BASE}/playbooks/dns-auth-audit` · **Related:** emailbison-setup, instantly-setup, smartlead-setup, lemlist-setup, dashboard-reading.
 
-Connect a client's sequencer workspace, pull the **live configuration**, and check every setting against the Growth Today standard, so you (or an agent) can say, item by item, *"this is set up right"* or *"this was missed, here's the fix."* This is the setup-side counterpart to the blacklist-bounce-audit sub-skill: not a static checklist, a **live verification** you run on a real workspace.
+Connect a client's sequencer workspace, pull the **live configuration**, and check every setting against the Growth Today standard, so you (or an agent) can say, item by item, *"this is set up right"* or *"this was missed, here's the fix."* Setup-side counterpart to blacklist-bounce-audit: a live check against a real workspace, not a static list.
 
 **When to run:** before launch on a new workspace · after a vendor delivers inboxes · monthly config drift check · when results look off and you suspect a misconfiguration · onboarding audit.
 
@@ -117,7 +117,7 @@ Overall: [ready to launch / fix N blockers first]
 
 Rules: **numbers first**, name the exact inboxes/campaigns for every WARN/FAIL, and give the one-line fix (or point to the setup sub-skill). A launch-blocking FAIL (bad DNS, bare redirect, warmup off, tracking on, HTML first email) means **do not launch** until fixed.
 
-**Two reporting rules that matter more than the format:**
+**Two reporting rules:**
 
 1. **Never report a skipped row as a pass.** If the MCP wasn't connected, the field was absent, or
    there was no data, it goes under NOT CHECKED with the reason. An audit that quietly drops
