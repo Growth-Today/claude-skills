@@ -25,7 +25,7 @@ External market benchmarks for cold email, the numbers that tell you **what's go
 | Bottom 25% | 270 |
 | Bottom 10% | **625** |
 
-**Strategic read.** The typical sender needs **135 contacts per reply**; the top 10% sit near **27–33**. The spread from best to worst is ~**24×** (26 → 625), and that gap is almost entirely **list quality + targeting**, not copy. Where we stand: **< 70 = top quartile**; **> 270 = fix targeting and data before touching the message.**
+**Strategic read.** The typical sender needs **135 contacts per reply**; the top 5% need **26** and the top 10% **38**. The spread from best to worst is ~**24×** (26 → 625), and that gap is almost entirely **list quality + targeting**, not copy. Where we stand: **< 70 = top quartile**; **> 270 = fix targeting and data before touching the message.**
 
 ---
 
@@ -104,9 +104,9 @@ Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bo
 |---|---|---|
 | **Gmail** | **90** | 2.95% |
 | **Outlook** | 120 | 4.34% |
-| **Custom servers** | **179** |, |
+| **Custom servers** | **179** | — |
 
-**Strategic read.** **Gmail out-performs Outlook and custom SMTP** on reply efficiency, and Outlook bounces harder. Custom servers are the weakest on reply efficiency (179), use them for **scale/cost**, not as the primary sending pool. Cold-emailing Gmail/SMB recipients gives ~**3× the reply chance**; above that tier, add cold calls + LinkedIn. Warm every new mailbox **30 days**, keep **< 50 sends/day** after.
+**Strategic read.** **Gmail out-performs Outlook and custom SMTP** on reply efficiency, and Outlook bounces harder. Custom servers are the weakest on reply efficiency (179), use them for **scale/cost**, not as the primary sending pool. Gmail-hosted recipients reply about **1.3× more efficiently than Outlook** (90 vs 120 contacts per reply) — worth knowing, not worth reorganising a list around. For enterprise tiers, add cold calls + LinkedIn. Warm every new mailbox for at least §5 `warmup_floor_days` and send at the §1 cold limit for its provider — not the 50/day figure the market quotes.
 
 ---
 
@@ -140,9 +140,9 @@ Use this to grade any client at a glance. "Direction" shows which way is better.
 | Contacts per positive reply | lower | ≤ 26–38 (top 5–10%) | 135 | ≥ 270–625 | < 70 |
 | Bounce rate | lower | 0.28% | 1.54% | 6.71% | < 2% (act > 3%) |
 | First-email reply rate | higher | > 1.18% | ~1.18% | < 0.5% | ≥ 0.5% (see reference §2) |
-| Reply within 72h | higher |, | 94% of all replies |, | re-segment if silent past 72h |
-| Email length (first email) | shorter | < 50 words | ~135 words region | 100–149 words | < 50 words, plain text |
-| Sequence length | ~3 | 3 steps | 3 | 1 (bottom 10%) or 9 (top 5%) | ~3 steps |
+| Reply within 72h | higher | — | 94% of all replies | — | re-segment if silent past 72h |
+| Email length (first email) | shorter | < 50 words (68 contacts per reply) | 50–99 words (74) | 100–149 words (97, the worst bucket) | < 50 words, plain text |
+| Sequence length | ~3 | 3 steps | 3 | 1 step (bottom 10%) — too few to land | ~3 steps |
 | Daily volume / mailbox | lower risk | < 50 | 13.92 | 50+ | ≤ Active limits (ref §1) |
 | Personalization (first email) | higher | 100% | 75% | 14% | 100% where data allows |
 
@@ -150,7 +150,7 @@ Use this to grade any client at a glance. "Direction" shows which way is better.
 
 ## 11. Growth Today's take
 
-- **Top 20% of campaigns drive ~80% of pipeline.** Copy is overrated; **a great audience solves your copy problems** because the message writes itself.
+- **A handful of campaigns carry the pipeline.** The percentile table above is the evidence: best to worst is a 24× spread, and it is list quality and targeting, not copy. **A great audience solves your copy problems** because the message writes itself.
 - **Order of operations:** **Data foundation → Automation → GTM activation.** You can't run channels without data, it's table stakes, and doing it well still takes streamlined execution.
 - **First-party, compounding data beats third-party.** Third-party signals drive quick ROI (great for a QBR slide) but decay; first-party data compounds. Start building the first-party signal warehouse now for a durable GTM.
 

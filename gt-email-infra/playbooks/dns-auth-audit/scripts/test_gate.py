@@ -58,6 +58,31 @@ def run(case_overrides):
     return flag, (2 if (fails or blocked) else 0)
 
 
+def lockstep():
+    """The Python MX table and the Clay formula must classify the same providers.
+
+    They are maintained in two places by two different people. Diffing them here
+    is cheaper than finding out from a client's routing.
+    """
+    import re
+    from pathlib import Path
+
+    clay_file = (Path(__file__).resolve().parents[3]
+                 / ".claude" / "skills" / "campaign-building" / "gt-SKILL.md")
+    text = clay_file.read_text()
+    block = text.split("A null MX")[1].split("```")[0]
+    clay = [n for n in re.findall(r'\?\s*"([a-z-]+)"', block)
+            if n not in ("other", "no-email")]
+    py = [n for n, _, _ in execute.MX_PROVIDERS]
+
+    missing_clay = [n for n in py if n not in clay]
+    missing_py = [n for n in clay if n not in py]
+    ok = not missing_clay and not missing_py
+    print(f"\nMX provider lockstep: python {len(py)} · clay {len(clay)} · "
+          f"{'in step' if ok else f'DIVERGED (clay missing {missing_clay}, python missing {missing_py})'}")
+    return ok
+
+
 def main():
     bad = 0
     print(f"{'case':<28} {'verdict':<8} {'exit':<5} result")
@@ -70,6 +95,8 @@ def main():
               f"{'ok' if ok else f'FAILED (wanted {want_flag}/{want_exit})'}")
     print("-" * 60)
     print(f"{len(CASES) - bad}/{len(CASES)} passed")
+    if not lockstep():
+        bad += 1
     return 1 if bad else 0
 
 

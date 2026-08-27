@@ -85,8 +85,9 @@ month. An empty recent window on a workspace with no recent Instantly sending is
 
 ### A limits finding worth knowing
 
-On one client, **100 of 136 mailboxes were capped at 5/day and 32 at 20/day**, giving the whole
-workspace a ceiling of roughly **1,180 emails/day**. The system did not set those limits — the
+On one client, **100 of 136 mailboxes were capped at 5/day and 32 at 20/day** — a ceiling of
+**1,140 emails/day** across those 132. (The remaining 4 weren't recorded in the note; re-pull the
+workspace if you need the exact figure.) The system did not set those limits — the
 audit log has no record, and its limits automation has never been switched on for that
 environment. They came from the original Instantly setup.
 

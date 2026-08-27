@@ -55,7 +55,7 @@ curl -s -H "Authorization: Bearer $KEY" \
 
 Keep ONLY records where **`type == "Bounced"` AND `folder == "Bounced"`**. Discard everything else, regardless of which endpoint returned it.
 
-> **This is why bounce numbers lie.** Auto-replies/OOO come back as **`Tracked Reply`** and our own follow-ups as **`Outgoing Email`**, neither is a bounce. Counting them inflated one real audit by **~54%** (raw 2,687 → 1,231 real). Text markers that confirm an auto-reply if you filter the body: `Out of office`, `Auto-reply`, `automatic reply`, `on leave`, `currently away`, `will respond when`.
+> **This is why bounce numbers lie.** Auto-replies/OOO come back as **`Tracked Reply`** and our own follow-ups as **`Outgoing Email`**, neither is a bounce. Counting them turned **1,231 real bounces into 2,687** in one audit — more than double. Text markers that confirm an auto-reply if you filter the body: `Out of office`, `Auto-reply`, `automatic reply`, `on leave`, `currently away`, `will respond when`.
 
 Document the filter (this proves the real count):
 

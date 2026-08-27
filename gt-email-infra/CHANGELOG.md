@@ -108,6 +108,6 @@ Major restructure and 2026 deliverability rebuild.
 - **ESP matching is no longer a fixed rule**: route from the Lead-ESP ×
  sending-vendor matrix.
 - **No links / no custom tracking domain** in cold email by default.
-- **Strip OOO/auto-replies before reading any bounce rate** (~54% inflation).
+- **Strip OOO/auto-replies before reading any bounce rate** (2,687 raw vs 1,231 real in one audit).
 - **Blacklist scope cut to Spamhaus DBL + URIBL only**; no other list is a blacklist reason.
 - Multi-registrar purchasing spread; failover gap flagged.

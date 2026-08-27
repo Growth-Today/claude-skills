@@ -61,15 +61,15 @@ A playbook is an executable version of a checklist: an interview that collects t
 
 | Playbook | What it does | Needs | Status |
 |---|---|---|---|
-| **dns-auth-audit** | MX / SPF (record count + recursive lookup budget) / DKIM across 14 selectors / DMARC policy vs the GT standard / stray Lync SRV, plus MX→provider and SEG detection. `after.py` diffs against a saved baseline to catch silent drift. | nothing — public DNS only | ✅ tested on 6 live GT domains |
-| **sizing-calculator** | Monthly goal *or* contacts × steps ÷ days-to-clear → daily volume → mailboxes → mailboxes to buy → Google/Microsoft split → domains. Parses the cold limits out of `reference.md` §1 rather than hardcoding them. | nothing — stdlib only | ✅ reproduces the §4 table exactly (`--validate`) |
+| **dns-auth-audit** | MX / SPF (record count + recursive lookup budget) / DKIM across 14 selectors / DMARC policy vs the GT standard / stray Lync SRV, plus MX→provider and SEG detection. `after.py` diffs against a saved baseline to catch silent drift. | nothing — public DNS only | ✅ 10/10 gate tests pass (`scripts/test_gate.py`, stubbed DNS) plus a 13-domain live run |
+| **sizing-calculator** | Monthly goal *or* contacts × steps ÷ days-to-clear → daily volume → mailboxes → mailboxes to buy → Google/Microsoft split → domains. Parses the cold limits out of `reference.md` §1 rather than hardcoding them. | nothing — stdlib only | ✅ `--validate` reproduces all 9 rows of both §4 tables, parsed from the doc |
 
 ```bash
 cd {SKILL_BASE}/playbooks/<name>/scripts
 uv run execute.py --help          # every playbook is self-documenting
 ```
 
-`uv` reads the PEP-723 header in each script, so there is nothing to install. `pip install -r requirements.txt` is the fallback.
+`uv` reads the PEP-723 header in each script, so there is nothing to install. If you don't have `uv`, the fallback from inside a `scripts/` directory is `pip install -r ../../../requirements.txt`.
 
 > **Scope note.** Both playbooks above are **read-only and provider-independent** — they query public DNS or do arithmetic. Anything that touches a sending platform is governed by the email infra management system boundary below: reads are fine, writes to sending limits, warmup config, tagging or routing are not GT's to make.
 
@@ -159,7 +159,7 @@ The script reads the cold limits out of `reference.md` §1 at run time, so it ca
 - **Blacklists:** **only Spamhaus DBL and URIBL count.** Everything else is out of scope — Google and Microsoft barely weight the other lists and the email infra management system does not track them. The real fix is **domain sourcing**, not chasing delistings.
 - **Microsoft / Outlook:** expect weaker Outlook placement; check sudden drops against **Microsoft BCL recalibration** dates before blaming infra; conservative limits; short copy.
 - **SEG (Mimecast/Proofpoint/Barracuda):** a block is the recipient's policy working as designed. **Isolate SEG leads onto dedicated, never-reused domains**, low concurrency into one org, no links/tracking, go multi-channel, and **recycle burnt SEG domains** onto easy Google/Outlook segments before retiring.
-- **Bounces:** **strip OOO/auto-replies first**: Bison inflates bounce counts by counting them (~54% in one audit). Read the real number, then diagnose.
+- **Bounces:** **strip OOO/auto-replies first**: Bison counts them as bounces. In one real audit that turned 1,231 actual bounces into 2,687 — more than double. Read the real number, then diagnose.
 - **Failover gap:** EmailBison can't set a cold limit of 0, so it strands leads on unhealthy inboxes, a real bounce driver. Instantly and Smartlead can set 0 and reroute the lead to a healthy inbox on the campaign.
 
 ---

@@ -30,7 +30,7 @@ Email Accounts → **Add Account(s) / + Connect Mailbox** → pick the provider.
 - Connect → **Smartlead's Infrastructure** → Outlook → sign in → **Accept** permissions → green **Connected**.
 - Org-level: Smartlead also supports **Private Infrastructure OAuth** with your own Azure app (register app, redirect `https://server.intellioauth.com/api/email-account/microsoft/callback`, grant admin consent, paste Client ID + secret under Settings → OAuth Configuration).
 
-**Custom SMTP**: enter your provider's host/port (SMTP 587 STARTTLS or 465 SSL; IMAP 993 SSL); both SMTP + IMAP required (`{SKILL_BASE}/resources/reference.md` host table).
+**Custom SMTP**: enter your provider's host/port (SMTP 587 STARTTLS or 465 SSL; IMAP 993 SSL); both SMTP + IMAP required (host/port table in the instantly-setup sub-skill, Part 2).
 
 ---
 

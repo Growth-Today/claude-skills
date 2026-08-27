@@ -42,7 +42,7 @@ Email Accounts → **Connect email account** → pick the provider.
 - **90-day token expiry:** Microsoft tokens must be refreshed every 90 days, reconnect on a schedule (Bison can export accounts with expired tokens; a bulk reconnect uploader exists).
 - **Bulk Microsoft:** supported via Bison's native bulk-uploader tool (CSV `name,email,password`; for tenant consent add one account with the Cloud App Admin role and `use_as_admin=true`).
 
-**Custom SMTP**: Connect email account → **Custom Provider** → enter your provider's SMTP + IMAP host/port/credentials (host/port table in `{SKILL_BASE}/resources/reference.md`; Bison enters both together). Bulk via **Bulk Upload Custom Provider** (sample CSV). **Amazon SES is not recommended** (violates AWS ToS for cold; Bison can't use different SMTP/IMAP usernames on one inbox).
+**Custom SMTP**: Connect email account → **Custom Provider** → enter your provider's SMTP + IMAP host/port/credentials (host/port table is in the instantly-setup sub-skill, Part 2 — it's provider-level, not platform-level; Bison enters both together). Bulk via **Bulk Upload Custom Provider** (sample CSV). **Amazon SES is not recommended** (violates AWS ToS for cold; Bison can't use different SMTP/IMAP usernames on one inbox).
 
 > A sender email can exist in **one workspace at a time**. Provider tags (Google/Microsoft) are auto-applied.
 

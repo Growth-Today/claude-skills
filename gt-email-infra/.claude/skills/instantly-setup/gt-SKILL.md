@@ -111,7 +111,7 @@ actually see. Get them wrong and the dashboard reports numbers that look fine an
 | Toggle | GT setting | Why |
 |---|---|---|
 | **Save undelivered emails in Unibox** | ✅ **ON** | **The important one.** Off by default. If it's off, undelivered mail never lands in Unibox, so bounces can't be counted from Instantly and the bounce rate reads low |
-| **Show auto-replies in Unibox** | ✅ ON | You need to see them to strip them. Auto-replies inflate reply counts and, on EmailBison, inflated bounce counts by ~54% in one audit. Visible, then excluded — not hidden |
+| **Show auto-replies in Unibox** | ✅ ON | You need to see them to strip them. Auto-replies inflate reply counts and, on EmailBison, more than doubled the bounce count in one audit. Visible, then excluded — not hidden |
 | **Save non-Instantly emails in Unibox** | ⬜ OFF | Pulls in unrelated mailbox traffic. Noise, and a privacy question on client mailboxes |
 | **Only show notification in CRM** | ⬜ OFF | Keep replies visible in Unibox, not only in the CRM |
 

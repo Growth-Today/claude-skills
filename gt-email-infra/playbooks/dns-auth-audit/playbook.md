@@ -119,7 +119,7 @@ blocks launch, because the two WARNs that exist there — a `p=quarantine` DMARC
 DKIM selector — are exactly the states you do not want to launch on. SRV hygiene is outside the
 gate on purpose: SIP records are read by Teams clients, not by mail filters.
 
-Provider classification comes from the MX hostnames. The table lives in `MX_PROVIDERS` in `execute.py` and covers **google · microsoft · proofpoint · mimecast · barracuda · fortinet · rackspace · trendmicro · securemx · mxthunder · mtaroutes · zoho**, plus `other` and `no-email`. Six of those are security gateways and get a `[SEG]` marker, which is what campaign routing isolates on.
+Provider classification comes from the MX hostnames. The table lives in `MX_PROVIDERS` in `execute.py` and covers **google · microsoft · proofpoint · sophos · mimecast · barracuda · fortinet · rackspace · trendmicro · securemx · mxthunder · mtaroutes · zoho**, plus `other` and `no-email`. **Nine** of those are security gateways and get a `[SEG]` marker, which is what campaign routing isolates on. `test_gate.py` diffs this list against the Clay formula in campaign-building, so the two can't drift apart again.
 
 > **Keep it in sync.** This list mirrors the Clay MX-analysis formula in campaign-building (PR #29). They must not diverge — add a provider in both places.
 

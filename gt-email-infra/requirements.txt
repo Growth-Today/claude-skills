@@ -6,10 +6,9 @@
 # DNS/auth audit — queries MX/SPF/DKIM/DMARC/SRV directly, no third-party API
 dnspython>=2.6
 
-# Domain footprint checks (registrar + creation date via RDAP; destination check)
-requests>=2.31
-
-# Reading API keys from .env when a playbook talks to an ESP
-python-dotenv>=1.0
-
 # sizing-calculator has NO dependencies — standard library only, on purpose.
+#
+# Nothing else belongs here yet. requests and python-dotenv used to be listed
+# for playbooks that were planned and never built; a dependency no script
+# imports is a maintenance bill for nothing. Add one back when the script that
+# needs it exists.

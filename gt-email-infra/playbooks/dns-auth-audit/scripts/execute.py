@@ -114,7 +114,8 @@ def spf_lookups(record, depth=0, seen=None):
 MX_PROVIDERS = [
     ("google",     ["google"],                                              False),
     ("microsoft",  ["outlook.com", "office365", "protection.outlook"],      False),
-    ("proofpoint", ["pphosted.com", "ppe-hosted", "ppsmtp", "sophos.com"],  True),
+    ("proofpoint", ["pphosted.com", "ppe-hosted", "ppsmtp"],               True),
+    ("sophos",     ["sophos.com"],                                        True),
     ("mimecast",   ["mimecast"],                                            True),
     ("barracuda",  ["barracuda"],                                           True),
     ("fortinet",   ["fortimail", "fortimailcloud.com"],                     True),

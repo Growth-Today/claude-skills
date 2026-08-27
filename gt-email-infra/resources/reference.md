@@ -63,7 +63,7 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | State | Rule |
 |---|---|
 | **New Inbox** | Total emails ever sent **< 100**. (Campaign routing also excludes any inbox **< 14 days** old by creation date.) **Cold send limit = 1/day** for both Google and Outlook. |
-| **Active** | Placement **> 70/100** AND bounce **< 2%** AND reply **≥ 0.5%** AND warmup score **≥ 97**. |
+| **Active** | Placement **≥ 70/100** AND bounce **< 2%** AND reply **≥ 0.5%** AND warmup score **≥ 97**. |
 | **Burnt** | Bounce **> 3%** AND reply **< 0.5%** AND warmup score **< 95** (all three). |
 | **Warmup Needed** | Anything that is not New / Active / Burnt. |
 | **Blacklisted** | Domain listed on a blacklist that counts (Spamhaus DBL / URIBL). Volume auto-reduced. **See the warning below — this has not been working.** |
@@ -77,7 +77,7 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | `new_inbox_sends` | < 100 | Lifetime sends below which an inbox is New |
 | `new_inbox_age_days` | 14 | Campaign-routing exclusion age in the email infra management system. **Not** the GT warmup floor — that is `warmup_floor_days` in §5 |
 | `warmup_floor_days` | 21 | GT's hard warmup floor before any cold send (§5) |
-| `placement_active` | > 70 | Placement score required for Active |
+| `placement_active` | ≥ 70 | Placement score required for Active. 50–69 is the watch zone (§3); below `placement_forced_warmup` is forced warmup |
 | `placement_forced_warmup` | < 50 | Hard-forces Warmup Needed |
 | `bounce_active` | < 2% | Bounce ceiling for Active |
 | `bounce_burnt` | > 3% | Bounce floor for Burnt (all three Burnt conditions must hold) |
@@ -111,7 +111,7 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | Metric | Healthy | Warning | Stop / act |
 |---|---|---|---|
 | Bounce rate (after OOO stripping, see §7) | < 2% | 2–3% | > 3% (hard action at > 5%) |
-| Reply rate (human) | ≥ 0.5% classification floor |, | Below ~1% total often means **bouncing**, not low interest |
+| Reply rate (human) | ≥ 0.5% classification floor | — | Below ~1% total often means **bouncing**, not low interest |
 | Placement score | ≥ 70 | 50–70 (watch zone) | < 50 (forced warmup) |
 | Warmup score | ≥ 97 (Active) | 95–97 | < 95 |
 | Spam / unsub | ~0% | any | multiple |
@@ -278,7 +278,7 @@ Root cause by type: **hard 5XX (5.1.1 / 5.2.1) → list/verification/data**; **s
 | `bounce_total_act` | 3% | Overall bounce rate: act |
 | `bounce_total_critical` | 5% | Overall: pause and fix |
 
-> **⚠️ Strip auto-replies BEFORE reading any bounce rate.** EmailBison miscounts out-of-office and auto-replies as bounces, this inflated one real audit by **~54%** (raw 2,687 "bounces" → 1,231 real). Reclassify OOO/auto-reply out of the bounce bucket first, or every bounce number you read is wrong. See the bounce-audit sub-skill.
+> **⚠️ Strip auto-replies BEFORE reading any bounce rate.** EmailBison miscounts out-of-office and auto-replies as bounces. In one real audit that showed **2,687 "bounces" against 1,231 actual ones** — the raw figure was more than double the truth, and over half the rows were not bounces at all. Reclassify OOO/auto-reply out of the bounce bucket first, or every bounce number you read is wrong. See the bounce-audit sub-skill.
 
 ---
 

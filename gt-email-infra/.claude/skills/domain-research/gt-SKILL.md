@@ -73,9 +73,12 @@ Use in Claude when generating a candidate list:
 
 **How we buy (via an approved purchasing vendor, see `{SKILL_BASE}/resources/approved-vendors.md`):**
 - Buy across **multiple registrars**, spread across **multiple days**, staying at **max 4 domains per registrar per day**.
-  - **Batch size sets the calendar.** At 4/registrar/day, a 30–50 domain batch (GT's usual size) needs 8–13 registrar-days and a 150-domain batch needs 38. There is no way to do this inside 24 hours, so plan the days rather than compressing the buy.
+  - **Batch size sets the calendar.** The cap is 4 per registrar per day, so the real constraint is
+    how many registrars are in play at once. A 30–50 domain batch is 8–13 registrar-days: across a
+    dozen registrars that's a single day, on one registrar it's nearly two weeks. A 150-domain batch
+    is 38 registrar-days. Ask ScaledMail how wide they're spreading before you promise a date.
 - Spread DNS across **multiple Cloudflare accounts** (no single hub-and-spoke footprint).
-- Typically **~1 day to buy + ~1 day to configure**; no impact on sales delivery.
+- In practice ScaledMail turns a normal batch around in **~1 day to buy + ~1 day to configure**, because they spread it across enough registrars to stay inside the cap.
 - **Duties split: ScaledMail buys the domains and connects the inboxes. Growth Today keeps name research and verification.** We no longer place the orders ourselves.
 - **ScaledMail is already spreading purchases across registrars and dates** (confirmed Aug 2026), and also spreads DNS across multiple Cloudflare accounts. So this is a **spot-check on delivery**, not a gap to close: pull WHOIS on the delivered batch and confirm the spread landed.
 - Our visibility is public info only (WHOIS, DNS, registration dates), enough to verify the spread actually landed.

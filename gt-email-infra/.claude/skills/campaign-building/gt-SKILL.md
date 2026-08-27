@@ -69,7 +69,8 @@ CopyEdit
 !{{get_mx}}?.Answer?.length || {{get_mx}}.Answer.every(data => /^\s*\d+\s+\.\s*$/.test(data?.data || "")) ? "no-email" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("google")) ? "google" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("outlook.com") || data?.data?.includes("office365")) ? "microsoft" :
-{{get_mx}}?.Answer?.some(data => data?.data?.includes("pphosted.com") || data?.data?.includes("ppe-hosted") || data?.data?.includes("ppsmtp") || data?.data?.includes("sophos.com")) ? "proofpoint" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("pphosted.com") || data?.data?.includes("ppe-hosted") || data?.data?.includes("ppsmtp")) ? "proofpoint" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("sophos.com")) ? "sophos" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("mimecast")) ? "mimecast" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("barracuda")) ? "barracuda" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("fortimail") || data?.data?.includes("fortimailcloud.com")) ? "fortinet" :
@@ -78,6 +79,7 @@ CopyEdit
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("securemx")) ? "securemx" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("mxthunder.net")) ? "mxthunder" :
 {{get_mx}}?.Answer?.some(data => data?.data?.includes("mtaroutes.com")) ? "mtaroutes" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("zoho")) ? "zoho" :
 "other"
 ```  
 
