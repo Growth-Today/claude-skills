@@ -81,6 +81,8 @@ Email Accounts → **Connect email account** → pick the provider.
 
 ## Part 5, Placement tests
 
+> **Not for new work.** Instantly runs placement tests natively (instantly-setup Part 6), so we are not setting EmailGuard up again. What follows applies only to campaigns still finishing on Bison.
+
 Run **through the EmailGuard integration** (requires an active paid EmailGuard plan + EmailGuard connected to the Bison workspace + a launched campaign): open the campaign → **Inbox Placement Tests** → **New Inbox Placement Test** → run → View Results. Complements Growth Today's own dashboard placement tests (the dashboard-reading sub-skill).
 
 ---
@@ -108,7 +110,7 @@ DELIVERABILITY
 
 VERIFY
 [ ] MX/SPF/DKIM/DMARC verified (the provisioning sub-skill)
-[ ] EmailGuard placement tests set up
+[ ] EmailGuard placement tests (existing Bison campaigns only — not set up for new work)
 [ ] Cross-sequencer: if an inbox is also used in Lemlist, set Bison cold to 1 and tag "Lemlist"
 [ ] GTM Engineer + AM notified inboxes are ready
 ```

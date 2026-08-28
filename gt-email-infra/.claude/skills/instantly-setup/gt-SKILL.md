@@ -137,7 +137,7 @@ Set it on **every workspace**, including client sub-workspaces. It is per worksp
 
 ## Part 6, Placement tests (Instantly native)
 
-Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists, with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements Growth Today's own dashboard placement tests (the dashboard-reading sub-skill). Growth Today convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
+Placement testing is **native here — do not add EmailGuard.** Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists, with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements Growth Today's own dashboard placement tests (the dashboard-reading sub-skill). Growth Today convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
 
 ---
 

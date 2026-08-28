@@ -66,12 +66,12 @@ Only these are approved. Anything else needs sign-off from the GTM or account ow
 
 | Vendor | Role |
 |---|---|
-| **EmailGuard** | Inbox-placement testing and domain masking (used with EmailBison) |
+| **EmailGuard** | Inbox-placement testing and domain masking. **On the way out with EmailBison** — see the note below |
 | **Instantly** | Native inbox-placement testing (used when Instantly is the sequencer) |
 | **ScaledMail** | Domain masking — free, offered as an option alongside redirect when ordering domains |
 | **Cloudflare** | Possible self-hosted masking route — under review |
 
-Pick the placement-testing tool that matches the sequencer for the engagement. EmailGuard pairs with EmailBison; Instantly has built-in placement tests when it is the sending platform.
+**Placement testing: we are not setting up EmailGuard any more.** Instantly runs placement tests itself, and Instantly is the platform. EmailGuard stays only for campaigns still finishing on EmailBison, and goes when Bison does. Masking is a separate question and is still open — see below.
 
 > **⚠️ Open item — masking.** Instantly has no built-in domain masking, so moving off EmailBison
 > removes the masking we had. Four options were priced (Aug 2026 research):
