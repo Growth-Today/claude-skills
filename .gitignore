@@ -2,3 +2,16 @@
 __pycache__/
 *.pyc
 gt-email-infra/playbooks/*/scripts/*.csv
+
+# Secrets — never commit. Use .env.example for the template.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Local artefacts
+.DS_Store
+**/.DS_Store
+gt-hubspot-admin/reports/

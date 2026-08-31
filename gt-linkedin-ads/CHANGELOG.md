@@ -4,6 +4,29 @@ All notable changes to this skill. Newest first.
 
 ---
 
+## v2.3.0 — 2026-08-31
+
+**Summary:** New **reporting** sub-skill — the recurring-report layer the skill was missing. Audit answers "what is broken once"; reporting answers "what happened this period, against what was expected, and what changes next." No existing content removed.
+
+**Added:**
+- `.claude/skills/reporting/gt-SKILL.md`: weekly delivery checks, monthly performance reports, quarterly pipeline reads. Data-source order, refusal to fabricate missing numbers, 8-section output, routing boundaries against measurement / audit / optimization / bidding.
+- `resources/references/reporting-playbook.md`: reporting contract, metric definitions (incl. total clicks vs landing-page clicks), grading rules, per-cadence claim limits, report structure, reporting traps, automation notes.
+
+**New rules introduced:**
+- **Effective CPC-to-landing-page** (spend / LP clicks) is the grading metric for link-driving formats, not raw CPC. Derived from the LP-clicks-per-$1K figures already in `benchmarks.md`: TLA ~$3.06, single image ~$14.08, video ~$16.13. Raw CPC flatters formats with high social-action volume — TLAs most of all.
+- **Cadence claim limits:** weekly = delivery hygiene only; monthly = format/creative/audience/CPL; pipeline verdicts are quarterly only. A 30-day pipeline read in a 3-6 month cycle is not a finding.
+- **Minimum sample before reading a change:** ~$100/creative, ~1,000 impressions/ad set, 7 days outside learning phase.
+- **TLA follow/save data:** Ads Manager under-reports; the creator's native post analytics is the control source. Where they disagree, name both.
+
+**Changed:**
+- `SKILL.md`: version v2.2.2 → v2.3.0, reporting added to the sub-skill routing table, shared reference table, and routing rules (reporting = recurring for an audience; audit = one-off with a fix list).
+
+**Platform orientation:** ZenABM MCP (`https://app.zenabm.com/api/mcp`) is named as the preferred data source, with the Campaign Manager CSV export as the standalone fallback. Deliberate change of position — the skill is platform-oriented on the ABM data layer, not platform-locked: every section works from a plain CSV export. Benchmarks remain the ZenABM 2026 dataset, as since v1.1.
+
+**Sources:** existing `benchmarks.md` (ZenABM 2026, 161,256 ads / 211 companies) and LinkedIn Campaign Manager reporting field definitions — accessed 2026-08-31.
+
+---
+
 ## v2.2.2 — 2026-07-22
 
 **Summary:** QA sweep — removed competitor-agency references and traffic-driving blog links from the knowledge base. No strategy content changed.
