@@ -5,7 +5,7 @@ description: "Audit a bounce or blacklist problem to root cause and produce a fu
 
 # Blacklist & Bounce Audit · [GTM Engineer]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §7 · **Tools:** the EmailBison **REST API** (`/accounts`, `/campaigns`, `/campaigns/{id}/replies`), optional Notion MCP · **Related:** dashboard-reading, domain-research · gt-list-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §7 · **Tools:** the **Instantly MCP** (`list_accounts`, `analytics_campaign_overview`, `list_emails`) for the live platform, and the EmailBison **REST API** (`/accounts`, `/campaigns`, `/campaigns/{id}/replies`) for campaigns still finishing there · optional Notion MCP · **Related:** dashboard-reading, domain-research · gt-list-building.
 
 > **These are REST endpoints, not MCP tools.** There is no EmailBison MCP connector today, so
 > `curl` is the primary path on this page, not the 50K+ fallback. The Instantly MCP *is* connected
@@ -24,22 +24,66 @@ Find where a bounce or blacklist problem *actually* comes from, then produce a r
 
 ## Step 0, Workspace baseline
 
-- **Bison:** `GET /accounts` · **Instantly:** `list_accounts` — paginate all pages (15/page): total inboxes, provider split (Google vs Microsoft/Outlook), warmup-status distribution (Active / Warmup Needed / Blacklisted).
-- **Bison:** `GET /campaigns` · **Instantly:** `list_campaigns` — all statuses (active, paused, completed): per-campaign `id`, `name`, `status`, `total_leads_contacted`, `emails_sent`, `bounced`, `unique_replies`, `created_at`.
-- Workspace totals: leads contacted (Σ `total_leads_contacted`), emails sent (Σ `emails_sent`), dashboard bounce count (Σ `bounced`) and rate vs contacts.
+> **Which platform?** Instantly is the primary one and its calls are verified below. Bison is kept
+> for campaigns still finishing there and goes when Bison does. **The field names differ — don't
+> paste one platform's field into the other's call.**
 
-> **Denominator rule:** always compute bounce rate against **people contacted**, never messages
-> sent. One lead can get several emails and bounce once. In Bison that is `total_leads_contacted`
-> against `emails_sent`; Instantly names these differently, so read its field list rather than
-> assuming the Bison names carry over.
+**Inboxes** — `list_accounts` (Instantly, MCP) · `GET /accounts` (Bison, REST). Paginate all pages:
+total inboxes, provider split, warmup-status spread.
 
-## Step 1, Pull all replies from campaigns with bounces
+**Campaign totals** — this is the one that differs most:
 
-> **⚠️ The `?type=bounced` filter on the replies endpoint is BROKEN**: it returns all reply types unfiltered. You must pull everything and filter client-side (Step 2).
+| | Instantly | EmailBison |
+|---|---|---|
+| Call | `analytics_campaign_overview` — `id` for one campaign, `campaign_status` or nothing for a workspace rollup | `GET /campaigns` |
+| People contacted | `contacted_count` | `total_leads_contacted` |
+| Messages sent | `emails_sent_count` | `emails_sent` |
+| Bounces | `bounced_count` | `bounced` |
+| Replies | `reply_count_unique` | `unique_replies` |
+| Auto-replies | `reply_count_automatic` — **separated for you** | not separated, you strip them yourself |
 
-For each campaign where `bounced > 0`, pull every reply and filter client-side. If a campaign
-exceeds ~15,000 replies (page 1001 returns 422), switch to **cursor pagination**. This is the
-normal path, not a fallback:
+`list_campaigns` on Instantly returns **no counts at all** — only id, name, status, schedule and
+sequences. Going there for bounce numbers returns nothing and looks like a clean workspace.
+
+> **Denominator rule:** compute bounce rate against **people contacted**, never messages sent. One
+> lead can get several emails and bounce once. Instantly: `bounced_count ÷ contacted_count`.
+> Bison: `bounced ÷ total_leads_contacted`.
+
+> **The auto-reply problem is smaller on Instantly.** It reports `reply_count_automatic`
+> separately, so the OOO inflation that turned 1,231 real Bison bounces into 2,687 does not
+> happen the same way at the analytics layer. Still verify against the raw emails in Step 1 —
+> a separated count is not the same as a correct one, and it does not tell you *which* replies
+> were auto.
+
+## Step 1, Pull the replies from campaigns with bounces
+
+**Neither platform will hand you a clean list of bounces.** You pull everything and filter it
+yourself in Step 2. The reason differs, the work doesn't.
+
+### Instantly
+
+`list_emails` with `email_type: "received"`, filtered per campaign with `campaign_id`, paginated
+with `next_starting_after`. There is **no bounce type filter** — a bounce arrives as an ordinary
+received email from the recipient's mail server, so you identify it by sender and body:
+
+| Field | What you use it for |
+|---|---|
+| `from_address_email` | `mailer-daemon@`, `postmaster@` — the first pass |
+| `subject` | "Undeliverable", "Delivery Status Notification", "Mail delivery failed" |
+| `body.text` | the SMTP / DSN code. This is what Step 2 classifies on |
+| `eaccount` | which of our inboxes took the bounce |
+| `campaign_id` | which campaign |
+| `timestamp_email` | for the date window |
+
+> **⚠️ This only works if "Save undelivered emails in Unibox" is ON** (instantly-setup Part 4b).
+> It is OFF by default, and with it off the bounces never reach `list_emails` at all — you get a
+> short list and a bounce rate that looks great. Check the toggle before you trust a low number.
+
+### EmailBison
+
+The `?type=bounced` filter on the replies endpoint is **broken** — it returns every reply type
+unfiltered. Pull everything and filter client-side. If a campaign exceeds ~15,000 replies (page
+1001 returns 422), switch to **cursor pagination**:
 
 ```bash
 # adapt the host + API key per workspace
@@ -167,7 +211,19 @@ Action required: 1) [most urgent] 2) … 3) …
 
 ---
 
-## Known API limitations (EmailBison)
+## Known API limitations
+
+### Instantly (verified live, 28 Aug 2026)
+
+| Issue | Workaround |
+|---|---|
+| `list_campaigns` returns **no counts** — no bounces, no sends, no replies | Use `analytics_campaign_overview`. Reading counts off `list_campaigns` returns nothing and reads as a clean workspace |
+| `get_campaign_analytics` returned an empty array on every campaign tried | Use `analytics_campaign_overview` instead. Treat `get_campaign_analytics` as unproven until someone gets a non-empty result out of it |
+| `analytics_campaign_overview` takes `id`, **not** `campaign_id` | Passing `campaign_id` errors out and names the fields it will accept |
+| No bounce filter on `list_emails` | Pull `email_type: "received"` and classify on `from_address_email` + `body.text` (Step 1) |
+| Bounces are missing entirely if the Unibox toggle is off | Check **Save undelivered emails in Unibox** first (instantly-setup Part 4b, setup-audit row 21) |
+
+### EmailBison
 
 | Issue | Workaround |
 |---|---|
