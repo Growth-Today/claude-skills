@@ -1,11 +1,13 @@
 ---
 name: email-infra-instantly-setup
-description: "Set up and connect sending inboxes in Instantly (infrastructure side). Use for connecting Google, Microsoft, and custom-SMTP inboxes to Instantly, warmup configuration, advanced deliverability settings, and vendor-managed versus in-house setup. Triggers on Instantly setup, connect inboxes, Instantly warmup, advanced deliverability, ScaledMail, IMAP SMTP host, provider matching. Do NOT use for writing sequences or copy (use gt-cold-email) or buying domains (use the domain-research sub-skill)."
+description: "Set up and connect sending inboxes in Instantly (infrastructure side). Use for connecting Google, Microsoft and custom-SMTP inboxes, warmup configuration, advanced deliverability settings, the required Unibox toggles (Save undelivered emails is off by default and gates what the reporting can see), and vendor-managed versus in-house setup. Triggers on Instantly setup, connect inboxes, Instantly warmup, advanced deliverability, Unibox, Unibox settings, save undelivered emails, show auto-replies, ScaledMail, IMAP SMTP host, provider matching. Do NOT use for writing sequences or copy (use gt-cold-email) or buying domains (use the domain-research sub-skill)."
 ---
 
 # Instantly Inbox Setup · [Sales Ops]
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
+
+> 🔒 **Read-only area.** Connecting an inbox to the sequencer is done from the **email infra management system**. Follow this sub-skill for the standard each inbox must meet and to read and verify live state (setup-audit rows 1–7); do not connect, reconnect or swap inboxes by hand.
 
 Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs). This is the **infrastructure / inbox side only** (connecting mailboxes, warmup, deliverability settings). Sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
 
@@ -15,7 +17,7 @@ Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs
 
 ## Part 0, Who does the setup (two paths)
 
-**Default: a vendor does it.** An approved vendor (e.g. ScaledMail, see `{SKILL_BASE}/resources/approved-vendors.md`) buys the domains, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today only **hands off the domain-research output** (the domain-research sub-skill) plus a brief, then **verifies on delivery**. Vendor domains cost a bit more (≈10% markup) but the purchase is **spread across registrars/time** for us, worth it.
+**ScaledMail does it.** ScaledMail **buys the domains and connects the inboxes**, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today keeps **domain research and verification only** — hand off the domain-research output plus a brief, then **verify on delivery**. Buying a batch ourselves at a single registrar is what we are moving away from: it produces exactly the bulk pattern spam filters look for (`reference.md` §9). Vendor domains carry a ≈10% markup and arrive **spread across registrars and dates**.
 
 **Fallback: in-house.** If we buy and build ourselves, Growth Today purchases the domains (the domain-research sub-skill), provisions mailboxes + DNS (the provisioning sub-skill), and connects them in Instantly manually (Parts 2–4 below). Full in-house step-by-step (Namecheap purchase → Instantly connect → warmup): **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (Growth Today internal, access-gated).
 
@@ -34,7 +36,7 @@ Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs
 7. **Growth Today QA on delivery** (see checklist): counts and MS/Google totals match the brief, all inboxes tagged, connected to the correct Instantly workspace, sending limits correct, placement OK.
 8. **Add to warmup**: Google/Microsoft **native accounts only** (no SMTP) can go into Instantly's Premium pool; request via your Instantly contact.
 9. **Set warmup + cold logic** (Part 3) and **placement tests** (Part 6).
-10. **After 14 days**, ramp to fully-warmed volumes and **notify the GTM Engineer + AM** that inboxes are ready.
+10. **After 21 days**, ramp to fully-warmed volumes and **notify the GTM Engineer + AM** that inboxes are ready.
 
 ---
 
@@ -71,15 +73,15 @@ Enable via the **flame icon** (or bulk via the ⋯ menu); warmup starts at the n
 
 **Growth Today warmup values** (these override Instantly's generic defaults of 10/day, +1/day, 30% reply):
 
-| | Warming (first 14 days) | Fully warmed |
+| | Warming (first 21 days) | Fully warmed |
 |---|---|---|
 | **Google** | warmup 25/day, **+4/day** increase, cold 0 | warmup 30/day, cold 20 |
-| **Microsoft** | warmup 8/day, **+2/day** increase, cold 0 | warmup 13/day, cold 5 |
+| **Microsoft** | warmup 8/day, **+2/day** increase, cold 0 | warmup 15/day, cold 5 |
 
 - **Reply rate:** ScaledMail SOP uses **75%**; **Growth Today prefers ramping to 100% after warmup** to lift reputation.
 - Keep **Read Emulation on** and the recommended Open Rate / Spam Protection / Mark Important defaults.
 - **Warmup pools:** Standard = green flame; **Premium = blue** (Google/MS only, higher quality); Basic = orange (SMTP overflow); **red = warmup disabled**. Put Google/MS native inboxes in Premium.
-- **Duration:** Instantly minimum is 2 weeks; **Growth Today recommends 3–4 weeks** (`reference.md` §5). Launch only when **Health Score > 90%**.
+- **Duration:** Instantly's own minimum is 2 weeks, but **Growth Today's floor is 21 days / 3 weeks** (`reference.md` §5), 4 weeks on a cautious build. Launch only when Instantly's **Health Score > 90%** *and* §2 `warmup_score_active` is met. Two different scales: Health Score is Instantly's own 0–100 read, `warmup_score_active` is our classifier's threshold. Instantly can say 92 while the classifier says not Active. Both have to clear.
 - **Warmup filter** (keep warmup mail out of the inbox): copy the account's warmup tag → Gmail filter (tag in Subject + Has-the-words → Skip Inbox, label "Warmup") / Outlook rule (subject-or-body contains tag → mark read, move to "Instantly Warmup").
 
 Cross-check the cold/warmup **targets and the ratio** against `reference.md` §1, this table must stay consistent with it.
@@ -101,6 +103,30 @@ Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Ad
 
 ---
 
+## Part 4b, Unibox settings (required — the reporting depends on these)
+
+**Settings → Unibox.** These four toggles decide what the email infra management system can
+actually see. Get them wrong and the dashboard reports numbers that look fine and aren't.
+
+| Toggle | GT setting | Why |
+|---|---|---|
+| **Save undelivered emails in Unibox** | ✅ **ON** | Off by default. If it's off, undelivered mail never lands in Unibox, so bounces can't be counted from Instantly and the bounce rate reads low |
+| **Show auto-replies in Unibox** | ✅ ON | You need to see them to strip them. Auto-replies inflate reply counts and, on EmailBison, more than doubled the bounce count in one audit. Visible, then excluded — not hidden |
+| **Save non-Instantly emails in Unibox** | ⬜ OFF | Pulls in unrelated mailbox traffic. Noise, and a privacy question on client mailboxes |
+| **Only show notification in CRM** | ⬜ OFF | Keep replies visible in Unibox, not only in the CRM |
+
+> **Why this is a setup step and not a preference.** Undelivered mail that never lands in Unibox
+> can't be read out of Instantly by anything downstream. Turn it on at setup and the bounce data is
+> there when you need it; leave it off and you find out later, when a number looks too good.
+>
+> *(For the record: the 1.47%-vs-4% bounce gap we chased in August was **not** caused by this. It
+> was historical Instantly data from campaigns that ran until Dec 2025, plus an ESP filter mixing
+> Bison rows in. Both fixed 24 Aug. The toggle is still worth setting — it just wasn't that bug.)*
+
+Set it on **every workspace**, including client sub-workspaces. It is per workspace, not global.
+
+---
+
 ## Part 5, Custom tracking domain (only if a client insists)
 
 **Growth Today default = no custom tracking domain and no links in cold email** (the provisioning sub-skill). Only when a client strongly insists, set up a **dedicated, never-shared** one:
@@ -111,7 +137,7 @@ Set per campaign (**Campaign → Options**) or workspace-wide (**Settings → Ad
 
 ## Part 6, Placement tests (Instantly native)
 
-Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists, with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements Growth Today's own dashboard placement tests (the dashboard-reading sub-skill). Growth Today convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
+Placement testing is **native here — do not add EmailGuard.** Instantly's **Automated Inbox Placement** tests report inbox / promotions / spam, score deliverability, and monitor blacklists, with automations to pause mailboxes on a placement drop or blocklisting. Note **spintax/variables aren't supported** in placement tests. This complements Growth Today's own dashboard placement tests (the dashboard-reading sub-skill). Growth Today convention: placement tests on **all Google inboxes**, **2 Microsoft inboxes per domain**.
 
 ---
 
@@ -134,8 +160,15 @@ WARMUP
 [ ] Premium pool for Google/MS native inboxes; no SMTP in premium
 [ ] Read emulation on; recommended sub-settings kept
 [ ] Warmup filter set in Gmail/Outlook
-[ ] Warmed 14 days min (3–4 weeks recommended); Health Score > 90% before launch
-[ ] Fully-warmed ramp set: Google 30 warmup/20 cold, Microsoft 13 warmup/5 cold
+[ ] Warmed 21 days min (4 weeks on a cautious build); Instantly Health Score > 90% AND §2 `warmup_score_active` met
+[ ] Fully-warmed ramp set: Google 30 warmup/20 cold, Microsoft 15 warmup/5 cold
+
+UNIBOX (Settings -> Unibox) - reporting depends on these
+[ ] Save undelivered emails in Unibox = ON   <- off by default, breaks bounce reporting
+[ ] Show auto-replies in Unibox = ON         <- see them, then strip them
+[ ] Save non-Instantly emails in Unibox = OFF
+[ ] Only show notification in CRM = OFF
+[ ] Checked on EVERY workspace, including client sub-workspaces
 
 DELIVERABILITY
 [ ] First email text-only; open + link tracking OFF
@@ -154,7 +187,7 @@ VERIFY & HANDOFF
 
 ---
 
-> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this sub-skill is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page, it is referenced by this skill.** This sub-skill is the primary source going forward; the Notion page is retained for the in-house detail (Namecheap purchase screens, nameserver delegation, Row Zero) not duplicated here.
+> **Internal reference (Growth Today team).** The in-house step-by-step SOP backing this sub-skill is **[MASTER Setting Up Domains and Inboxes with ScaledMail + Instantly](https://app.notion.com/p/growth-today/MASTER-Setting-Up-Domains-and-Inboxes-with-ScaledMail-Instantly-34599b4b261980c49775fa47c5c0e2a4)** (access-gated; external readers can't open it). **Do not delete this Notion page, it is referenced by this skill.** This sub-skill is the primary source going forward; the Notion page is retained for the in-house detail (screenshots and vendor walkthroughs) not duplicated here. **Inbox documentation now lives in the email infra management system, handled automatically — Row Zero is retired and must not be used.**
 
 ---
 

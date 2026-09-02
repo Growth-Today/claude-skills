@@ -25,7 +25,7 @@ Across most campaigns, no-note connection requests achieve **equal or higher** a
 
 For everything else → just hit Connect.
 
-For full reasoning and edge cases → see `{SKILL_BASE}/copywriting/examples/connection-notes.md`
+For full reasoning and edge cases → see `{SKILL_BASE}/resources/copywriting/connection-notes.md`
 
 ## Process
 
@@ -38,10 +38,10 @@ For full reasoning and edge cases → see `{SKILL_BASE}/copywriting/examples/con
 ## Reference
 
 For full sub-skill flows:
-- Connection note copywriting & no-note decision tree → `{SKILL_BASE}/copywriting/examples/connection-notes.md`
-- Profile signal personalization (Clay, post-based hooks) → `{SKILL_BASE}/personalization/personalization.md`
-- ATL connection request tone → `{SKILL_BASE}/copywriting/atl-messaging.md`
-- BTL connection request tone → `{SKILL_BASE}/copywriting/btl-messaging.md`
+- Connection note copywriting & no-note decision tree → `{SKILL_BASE}/resources/copywriting/connection-notes.md`
+- Profile signal personalization (Clay, post-based hooks) → `{SKILL_BASE}/resources/copywriting/personalization.md`
+- ATL connection request tone → `{SKILL_BASE}/resources/personas/atl-messaging.md`
+- BTL connection request tone → `{SKILL_BASE}/resources/personas/btl-messaging.md`
 
 ## Sender Profile Checklist (Run BEFORE Sending Anything)
 
@@ -186,4 +186,4 @@ This sequence lifts acceptance by 10-15 points in most campaigns. It's the singl
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

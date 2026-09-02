@@ -1,7 +1,7 @@
 ---
 name: linkedin-metrics-benchmarks
-version: 1.0
-updated: 2026-05-01
+version: 1.1
+updated: 2026-08-05
 description: LinkedIn metrics to track, benchmarks, and diagnostics for outbound DM campaigns. Use when analyzing campaign performance, setting benchmarks, or optimizing LinkedIn outreach metrics.
 ---
 
@@ -21,11 +21,28 @@ description: LinkedIn metrics to track, benchmarks, and diagnostics for outbound
 | DM reply rate (post-acceptance) | <13% | ~22% | 25-33% | 33%+ |
 | Meeting rate (replies → booked) | <10% | 15-20% | 20-30% | 35%+ |
 
-**Source:** Numbers based on HeyReach's analysis of 96,051 LinkedIn outreach campaigns. Below 13% on either acceptance or reply rate means something structural is off (targeting, profile, or angle) - fix the foundation before tweaking copy. The full benchmark provenance is in `resources/heyreach-knowledge-base.md`.
+**Source:** Numbers based on HeyReach's analysis of 96,051 LinkedIn outreach campaigns. Below 13% on either acceptance or reply rate means something structural is off (targeting, profile, or angle) - fix the foundation before tweaking copy. The full benchmark provenance is in `resources/knowledge/heyreach-knowledge-base.md`.
 
 **Aspirational benchmarks (older, less defensible):** Some agency clients reference LeadLoft's older numbers (50%+ acceptance, 30%+ reply rate) as targets. Track the gap, but don't promise these - they predate the 2026 algorithm tightening and the rise of AI-saturated inboxes.
 
 **Acceptance rate is the gating metric.** If acceptance is <20%, nothing downstream works. Fix the connection layer first (sender profile, note vs. no-note, ICP fit) before touching DM copy.
+
+---
+
+## 2026 freshness pass (updated 2026-08-05)
+
+Checked the ranges above against current multi-source 2026 industry studies (large aggregate datasets published by outreach vendors). Everything here is industry-reported and to validate against the account's own data, not Growth Today-measured.
+
+- **The existing ranges still hold.** 2026 multi-source data continues to cluster typical connection acceptance in the low-to-mid 20s percent and typical post-acceptance reply in the high-teens to mid-20s percent, consistent with the HeyReach 96K-campaign anchor above. No change to the primary benchmarks.
+- **Relevance beats volume, harder than before.** The consistent 2026 finding is that tightly targeted, signal-led campaigns pull materially higher acceptance and reply than high-volume generic sends, and generic volume decays fastest. This reinforces the micro-segmentation and two-hooks rules already in the skill; it is not a reason to raise the benchmark targets.
+- **InMail** stays a paid channel (Premium, Sales Navigator, or Recruiter), and LinkedIn continues to position InMail response rates well above cold email. Treat the ranges in the InMail Benchmarks section as current but audience-dependent; verify the live figure on LinkedIn's official pages before quoting it.
+
+### LinkedIn platform limits (verify against official LinkedIn docs before advising a client)
+
+- LinkedIn does not publish an exact invitation cap. The widely observed ceiling remains about **100 connection requests per week**, enforced with an in-product warning as you approach it. Treat ~100/week and 15-20/day per account as the safe operating numbers regardless of account tier. Premium or Sales Navigator does not license you to exceed them safely.
+- **Pending-invite hygiene:** withdraw stale pending invitations regularly (the skill auto-withdraws at ~14 days). A large pending-invite backlog can itself depress acceptance and draw throttling.
+- The **~30,000 connection cap** per profile still applies; high-volume senders on aging accounts should plan for it.
+- These limits shift without notice. Confirm on LinkedIn's official Help pages, and never present a specific cap as guaranteed.
 
 ---
 
@@ -100,7 +117,7 @@ LinkedIn doesn't have "deliverability" the way email does - but it has account h
 
 **Hard cap:** LinkedIn enforces ~100 connection requests per week per account. Operate at 80-90 to leave headroom.
 
-For full account safety operating procedure → see `rented-engine/rented-engine.md`
+For full account safety operating procedure → see `resources/infrastructure/rented-engine.md`
 
 ---
 
@@ -205,7 +222,7 @@ For full InMail copy frameworks → see `copywriting/copywriting.md` (InMail sub
 
 ## Sequence Performance (GT Standard)
 
-For full sequence structure, timing, thread rules, and DM content → see `copywriting/examples/dm-sequence.md`
+For full sequence structure, timing, thread rules, and DM content → see `resources/sequences/dm-sequence.md`
 
 ### General Performance Logic
 
@@ -219,7 +236,7 @@ For full sequence structure, timing, thread rules, and DM content → see `copyw
 
 **Why M2 matters operationally:** HeyReach's analysis found that ~10.7% of campaigns where connections were accepted generated zero replies after M1. That's 1-in-10 campaigns where the opener landed nothing - until M2 with a new angle ran. Skipping M2 throws away ~40% of pipeline potential on average and 100% on the unlucky 10%.
 
-After M2B with no reply → stop the sequence. Do NOT add M3, M4, or "checking in" messages - these tank account safety scores and acceptance on future requests. Re-engage 60-90 days later according to `copywriting/re-engagement.md`.
+After M2B with no reply → stop the sequence. Do NOT add M3, M4, or "checking in" messages - these tank account safety scores and acceptance on future requests. Re-engage 60-90 days later according to `resources/sequences/re-engagement.md`.
 
 ---
 
@@ -248,9 +265,9 @@ The fastest way to find what's broken in a LinkedIn campaign: read two metrics t
 | **Low** | **Low** | - | **Targeting** problem | Wrong ICP, weak warming, or sender profile pushes prospects away. Fix the foundation before touching downstream copy. |
 | **High** | **Low** | - | **Messaging** problem | List is right, opener isn't landing. Test new angles, sharpen personalization, remove product/company name from M1. |
 | **High** | **High** | Few meetings | **Conversion** problem | Meeting CTA isn't direct enough, or conversations aren't being moved to email/booking link in time. Tighten the ask. |
-| Decent | Decent | Volume too low | **Infrastructure** problem | Need more accounts in rotation, or daily activity is too conservative. See `rented-engine/rented-engine.md`. |
+| Decent | Decent | Volume too low | **Infrastructure** problem | Need more accounts in rotation, or daily activity is too conservative. See `resources/infrastructure/rented-engine.md`. |
 
-Source: Adapted from HeyReach's diagnostic framework based on 96,051 campaigns. See `resources/heyreach-knowledge-base.md`.
+Source: Adapted from HeyReach's diagnostic framework based on 96,051 campaigns. See `resources/knowledge/heyreach-knowledge-base.md`.
 
 This is the **primary diagnostic tool** when a campaign is underperforming. Run it weekly, not monthly - by month-end, the decay curve has compounded.
 
@@ -271,7 +288,7 @@ Every campaign follows the same arc. Use these numbers to know which phase you'r
 - Time-to-first-reply stretching from 2-3 days to over a week → segment is exhausted
 - Positive reply ratio declining (more "not interested" replies than "tell me more") → angle is stale
 
-Source: HeyReach decay framework. See `resources/heyreach-knowledge-base.md`.
+Source: HeyReach decay framework. See `resources/knowledge/heyreach-knowledge-base.md`.
 
 ## Quick Diagnostics (Symptom-Level)
 
@@ -280,7 +297,7 @@ Source: HeyReach decay framework. See `resources/heyreach-knowledge-base.md`.
 | Low acceptance rate (<20%) | Sender profile weak OR ICP mismatch OR poor warming | Audit profile, check ICP fit, add engagement-warming flow |
 | High acceptance, low reply (<10%) | Generic M1, pitch in M1, or wrong angle | Stronger signal, remove product/company name from M1, test new angle |
 | Replies but no meetings | Weak CTA or poor qualification | Clearer ask in M2A, better ICP targeting upstream |
-| Account restricted | Volume too high OR too many withdrawals OR generic copy reported | Pause 7-14 days, review per `rented-engine/rented-engine.md` recovery flow |
+| Account restricted | Volume too high OR too many withdrawals OR generic copy reported | Pause 7-14 days, review per `resources/infrastructure/rented-engine.md` recovery flow |
 | High withdrawal rate (>50%) | Bad ICP or weak hook | Tighten list, improve sender relevance, reduce volume per account |
 | Pending queue >1000 | Volume outpacing acceptance | Withdraw invitations >14 days old, pause and rebuild |
 | Acceptance fine, M2B replies near zero | M2B references M1 or repeats angle | Rewrite M2B as fresh opener with new angle |
@@ -318,7 +335,7 @@ Source: HeyReach decay framework. See `resources/heyreach-knowledge-base.md`.
 2. Withdraw all pending requests >14 days old
 3. Pause sequencer for 48h
 4. Review recent copy - generic templated outreach gets reported
-5. See `rented-engine/rented-engine.md` restriction recovery flow
+5. See `resources/infrastructure/rented-engine.md` restriction recovery flow
 
 ---
 
@@ -347,7 +364,7 @@ When LinkedIn becomes a primary channel, the way performance is measured has to 
 
 If reps are evaluated on volume, they'll optimize for volume. If they're evaluated on conversations and meetings, they'll optimize for quality.
 
-Source: HeyReach's framework for LinkedIn-first measurement. See `resources/heyreach-knowledge-base.md`.
+Source: HeyReach's framework for LinkedIn-first measurement. See `resources/knowledge/heyreach-knowledge-base.md`.
 
 ---
 
@@ -388,4 +405,4 @@ These metrics are unreliable, exportable inconsistently, or actively misleading:
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

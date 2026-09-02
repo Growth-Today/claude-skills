@@ -1,0 +1,5 @@
+.env
+__pycache__/
+*.pyc
+*_baseline.csv
+dns_audit.csv
