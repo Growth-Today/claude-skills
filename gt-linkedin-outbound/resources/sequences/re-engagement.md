@@ -37,9 +37,9 @@ Until one of those lands, leave the thread alone. Tag and exclude from active se
 
 State 4 is where contextual judgment pays off - see Example 1 below for the right framing.
 
-For the post-acceptance branching version of this same logic (still inside an active sequence), see `copywriting/examples/dm-sequence.md`. This sub-skill picks up where that one ends - when the sequence has run its course and the prospect needs to be revived from a colder state.
+For the post-acceptance branching version of this same logic (still inside an active sequence), see `resources/sequences/dm-sequence.md`. This sub-skill picks up where that one ends - when the sequence has run its course and the prospect needs to be revived from a colder state.
 
-Source: HeyReach's 4-state framework. See `resources/heyreach-knowledge-base.md`.
+Source: HeyReach's 4-state framework. See `resources/knowledge/heyreach-knowledge-base.md`.
 
 ## Process
 
@@ -51,8 +51,8 @@ Source: HeyReach's 4-state framework. See `resources/heyreach-knowledge-base.md`
 ## Reference
 
 For full context:
-- DM tone & rules → `{SKILL_BASE}/copywriting/examples/dm-sequence.md`
-- Personalization signals → `{SKILL_BASE}/personalization/personalization.md`
+- DM tone & rules → `{SKILL_BASE}/resources/sequences/dm-sequence.md`
+- Personalization signals → `{SKILL_BASE}/resources/copywriting/personalization.md`
 
 ---
 
@@ -268,7 +268,7 @@ That's the whole loop. The point is structural restraint, not productivity.
 
 The fastest way to lift overall reply rates is removing low-value threads from the queue - not adding more touches to high-value ones.
 
-Source: HeyReach's "Follow-up Priority Rule." See `resources/heyreach-knowledge-base.md`.
+Source: HeyReach's "Follow-up Priority Rule." See `resources/knowledge/heyreach-knowledge-base.md`.
 
 ---
 
@@ -280,4 +280,4 @@ Source: HeyReach's "Follow-up Priority Rule." See `resources/heyreach-knowledge-
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

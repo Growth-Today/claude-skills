@@ -1,0 +1,14 @@
+# macOS / OS noise
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows noise
+Thumbs.db
+ehthumbs.db
+
+# Packaged skill builds (source lives here, not the zips)
+*.zip
+*.skill

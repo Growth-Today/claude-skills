@@ -1,0 +1,4 @@
+# Playbook run output — audit trails belong with the client folder, not the repo
+__pycache__/
+*.pyc
+gt-email-infra/playbooks/*/scripts/*.csv

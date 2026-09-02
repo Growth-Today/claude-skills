@@ -47,11 +47,30 @@ gt-email-infra/
 │ ├── dashboard-reading/gt-SKILL.md [GTM Engineer]
 │ ├── setup-audit/gt-SKILL.md [GTM Engineer] (live config audit)
 │ └── blacklist-bounce-audit/gt-SKILL.md [GTM Engineer]
-└── resources/
- ├── reference.md ← single source of numbers, limits, thresholds, taxonomy
- ├── approved-vendors.md ← approved SMTP / sequencer / masking vendors
- └── benchmarks.md ← 2026 market performance benchmarks
+├── resources/
+│ ├── reference.md ← single source of numbers, limits, thresholds, taxonomy
+│ ├── approved-vendors.md ← approved SMTP / sequencer / masking vendors
+│ └── benchmarks.md ← 2026 market performance benchmarks
+├── playbooks/ ← executable: interview + script + after-state
+│ ├── dns-auth-audit/ MX·SPF·DKIM·DMARC·SRV + drift diff (no credentials)
+│ └── sizing-calculator/ goal → mailboxes → domains (reads reference.md §1)
+├── requirements.txt ← pip fallback; scripts carry PEP-723 headers for `uv run`
+└── .env.example ← only for playbooks that talk to an ESP
 ```
+
+### Running a playbook
+
+```bash
+cd playbooks/dns-auth-audit/scripts
+uv run execute.py acme-outreach.com --csv acme_baseline.csv
+uv run after.py --csv acme_baseline.csv        # prove the fix landed
+
+cd ../../sizing-calculator/scripts
+uv run execute.py --monthly-goal 15000
+uv run execute.py --validate                   # regression-test against reference.md §4
+```
+
+Read the `playbook.md` in each folder first — it holds the interview questions that decide the inputs.
 
 Note: this skill supports the sequencers Growth Today runs, **EmailBison, Instantly, Smartlead, and Lemlist**, via a setup sub-skill for each. The concepts are ESP-agnostic; platform-specific steps are called out inline. Adapt them to your own stack.
 

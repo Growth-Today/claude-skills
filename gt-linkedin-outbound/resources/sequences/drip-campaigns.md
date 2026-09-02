@@ -8,10 +8,10 @@ description: LinkedIn drip campaign setup, sequence templates, and step-by-step 
 A drip campaign is a sequence of automated steps that engages a prospect over time - connection request, profile view, post engagement, M1, M2, and so on. Done well, it builds familiarity before the offer. Done badly, it's a pitch with extra steps.
 
 This sub-skill is about the structure: what steps to use, in what order, with what timing. The copy for each step lives elsewhere:
-- Connection request copy → `copywriting/examples/connection-request.md`
-- Connection note copy → `copywriting/examples/connection-notes.md`
-- Post-acceptance DM sequence → `copywriting/examples/dm-sequence.md`
-- Personalization at scale → `personalization/personalization.md`
+- Connection request copy → `resources/copywriting/connection-request.md`
+- Connection note copy → `resources/copywriting/connection-notes.md`
+- Post-acceptance DM sequence → `resources/sequences/dm-sequence.md`
+- Personalization at scale → `resources/copywriting/personalization.md`
 
 Setup walkthrough below uses HeyReach as the example tool because it's the GT default, but the same logic works in Expandi, La Growth Machine, and Lemlist with minor UI differences.
 
@@ -41,7 +41,7 @@ Examples of usable ICP:
 
 Build the prospect list in Sales Navigator with the "Posted in last 30 days" filter applied. That filter alone tends to lift acceptance rates because you're reaching people who actually use LinkedIn.
 
-For deeper list-building tactics, see the GT list-building skill. For the strategic case for micro-segmentation, see `resources/campaign-strategy.md`.
+For deeper list-building tactics, see the GT list-building skill. For the strategic case for micro-segmentation, see `resources/strategy/campaign-strategy.md`.
 
 ### 3. Profile warmup
 
@@ -54,7 +54,7 @@ Quick audit before launch:
 - Banner reinforces the same message visually
 - Recent posting activity exists (even one post a month is enough)
 
-A weak profile suppresses reply rates across every campaign that profile ever runs. For full sender-profile guidance, see `copywriting/examples/connection-request.md`.
+A weak profile suppresses reply rates across every campaign that profile ever runs. For full sender-profile guidance, see `resources/copywriting/connection-request.md`.
 
 ## Step-by-Step: Building a Drip Campaign in HeyReach
 
@@ -91,7 +91,7 @@ Skipping these exclusions is how prospects end up in two campaigns simultaneousl
 
 Pick which LinkedIn accounts run this campaign. For multi-account rotation, attach 3-10 senders. HeyReach distributes sends across them automatically and surfaces all replies in the unified inbox (Unibox).
 
-For account sourcing and infrastructure setup, see `rented-engine/rented-engine.md`.
+For account sourcing and infrastructure setup, see `resources/infrastructure/rented-engine.md`.
 
 ### Step 5: Build the sequence
 
@@ -162,7 +162,7 @@ What to monitor weekly (not daily, not monthly):
 - Reply rate trend (declining = angle going stale)
 - Accepted-but-silent ratio (above 60-70% = entering fatigue zone)
 
-For full diagnostic guidance, see `resources/linkedin-metrics-benchmarks.md`.
+For full diagnostic guidance, see `resources/knowledge/linkedin-metrics-benchmarks.md`.
 
 ## Three Drip Campaign Templates Worth Adapting
 
@@ -191,7 +191,7 @@ Day 8 - Bump if no reply
 "Just checking back on this, {{First Name}}."
 ```
 
-Caveat on Day 8: "just checking back" is one of the worst-performing phrases on LinkedIn. If you keep this step, rewrite the copy to follow the M2B pattern from `copywriting/examples/dm-sequence.md` (new angle, never reference M1).
+Caveat on Day 8: "just checking back" is one of the worst-performing phrases on LinkedIn. If you keep this step, rewrite the copy to follow the M2B pattern from `resources/sequences/dm-sequence.md` (new angle, never reference M1).
 
 ### Template 2: Engagement-First Drip (For prospects active on LinkedIn)
 
@@ -254,7 +254,7 @@ Better: "Hi Sam, I came across your post on outbound sales for SaaS teams. I rea
 
 The first centers on you. The second references something specific they wrote and asks about them.
 
-For personalization at scale (Clay prompts, profile signals, six data buckets), see `personalization/personalization.md`.
+For personalization at scale (Clay prompts, profile signals, six data buckets), see `resources/copywriting/personalization.md`.
 
 ### 2. Targeting the wrong audience
 
@@ -277,17 +277,17 @@ If the profile is poorly put together, prospects will judge based on it. They'll
 
 A good salesperson knows when to withdraw and stop messaging. After 2-3 follow-ups with no response, the right move is to tag, exclude, and revisit later (60-90 days, new angle). Continuing to push damages the sender's reputation more than it produces replies.
 
-For the discipline of when to stop, see `resources/follow-up-system.md`.
+For the discipline of when to stop, see `resources/sequences/follow-up-system.md`.
 
 ### 6. Not optimizing based on data
 
 A drip campaign isn't "set and forget." Watch the metrics weekly. Low acceptance? Test the connection note (or test no-note). Replies but no meetings? Sharpen the CTA. Identify where the issue is and fix that one thing - not everything at once.
 
-For full diagnostic patterns, see `resources/linkedin-metrics-benchmarks.md`.
+For full diagnostic patterns, see `resources/knowledge/linkedin-metrics-benchmarks.md`.
 
 ## Healthy Metric Ranges
 
-For a benchmarks deep-dive with the 96K-campaign HeyReach dataset, see `resources/linkedin-metrics-benchmarks.md`. Quick reference for drip campaigns:
+For a benchmarks deep-dive with the 96K-campaign HeyReach dataset, see `resources/knowledge/linkedin-metrics-benchmarks.md`. Quick reference for drip campaigns:
 
 | Metric | Below baseline | Typical | Strong | Elite |
 |---|---|---|---|---|
@@ -308,6 +308,6 @@ If your reply rate drops sharply after a particular message in the drip sequence
 
 ---
 
-*Source: Adapted from HeyReach's "A comprehensive guide to LinkedIn drip campaigns" - https://www.heyreach.io/blog/linkedin-drip-campaigns. See also `resources/heyreach-knowledge-base.md` for the full external reference map.*
+*Source: Adapted from HeyReach's "A comprehensive guide to LinkedIn drip campaigns". See also `resources/knowledge/heyreach-knowledge-base.md` for the full external reference map.*
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
