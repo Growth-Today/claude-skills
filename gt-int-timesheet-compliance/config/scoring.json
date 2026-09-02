@@ -1,0 +1,56 @@
+{
+  "_comment": "Weights must sum to 1.0. Hygiene and attribution carry the most because they are what makes hours usable for client billing: hygiene says the hours are remembered rather than reconstructed, attribution says we know whose budget they came out of.",
+
+  "weights": {
+    "daily_hygiene": 0.30,
+    "attribution": 0.30,
+    "hours_coverage": 0.25,
+    "on_time_submission": 0.15
+  },
+
+  "gate": {
+    "team_mean_threshold": 0.80,
+    "individual_floor": 0.60,
+    "consecutive_periods_required": 2,
+    "pay_period_weeks": 2
+  },
+
+  "hygiene": {
+    "_comment": "A workday counts only if it holds an entry that was created within grace_days of the day it covers. Set grace_days to 1 so logging yesterday this morning still counts, but reconstructing a fortnight on Friday night does not.",
+    "grace_days": 1
+  },
+
+  "coverage": {
+    "_comment": "Over-logging counts against you as much as under-logging. tolerance_ratio is the band inside which coverage scores a clean 1.0.",
+    "tolerance_ratio": 0.05
+  },
+
+  "attribution": {
+    "_comment": "Leave attributable_project_gids empty for the first baseline period. While it is empty, any entry with a non-null attributable_to counts and the score is flagged loose, because it cannot tell a client project from a catch-all task. Fill the allowlist once you know which projects are genuinely billable.",
+    "attributable_project_gids": [],
+    "excluded_project_gids": []
+  },
+
+  "nudge": {
+    "_comment": "behind_ratio is the share of expected hours a person must have logged week-to-date to be left alone. escalation_ladder maps a streak of consecutive weekdays behind to a tone; the last entry also copies the squad lead.",
+    "behind_ratio": 0.80,
+    "window_local_hour": 16,
+    "window_minutes": 30,
+    "escalation_ladder": ["light", "light", "firm", "firm", "cc_lead"]
+  },
+
+  "submission": {
+    "_comment": "Week closes Friday at cutoff_local_hour in each person's own timezone. Entries typed after that for the week just gone are late, not on time.",
+    "cutoff_local_hour": 17,
+    "cutoff_weekday": 4
+  },
+
+  "approval_endpoint": {
+    "_comment": "Asana's timesheet approval status API is recent, so verify the exact collection path against this workspace before trusting the on-time score. Leave path empty until verified. While it is empty, on_time_submission is reported as unavailable and the other three weights are renormalized, with the output flagged partial. Never guess a path here.",
+    "path": "",
+    "week_start_param": "week_start_on",
+    "user_param": "user"
+  },
+
+  "holidays": []
+}

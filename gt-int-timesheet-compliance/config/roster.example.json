@@ -1,0 +1,47 @@
+{
+  "_comment": "Copy to roster.json and fill in. roster.json is gitignored on purpose: it holds names, work emails and Slack member IDs, and this skill lives in a repo that other people can read. Keep the real file out of git and out of chat logs.",
+
+  "_fields": {
+    "asana_gid": "Asana user GID. Find it with the Asana MCP get_users tool, or in the URL of the person's Asana profile.",
+    "name": "First name is enough. Used in the DM copy.",
+    "email": "Work email for the nudge mail.",
+    "slack_member_id": "Slack profile, three-dot menu, Copy member ID. Starts with U.",
+    "timezone": "IANA name. This is what stops a Manila nudge firing at 22:30.",
+    "daily_target_hours": "Contracted hours per workday. Without this there is no coverage score.",
+    "squad_lead_slack_id": "Who gets copied at the top of the escalation ladder. Optional.",
+    "active": "Set false to keep someone in the file but out of every calculation, for parental leave or a notice period."
+  },
+
+  "submitters": [
+    {
+      "asana_gid": "0000000000000001",
+      "name": "Example One",
+      "email": "example.one@yourdomain.co",
+      "slack_member_id": "U000000AAAA",
+      "timezone": "Europe/Budapest",
+      "daily_target_hours": 8,
+      "squad_lead_slack_id": "U000000LEAD",
+      "active": true
+    },
+    {
+      "asana_gid": "0000000000000002",
+      "name": "Example Two",
+      "email": "example.two@yourdomain.co",
+      "slack_member_id": "U000000BBBB",
+      "timezone": "Asia/Manila",
+      "daily_target_hours": 8,
+      "squad_lead_slack_id": "U000000LEAD",
+      "active": true
+    },
+    {
+      "asana_gid": "0000000000000003",
+      "name": "Example Three",
+      "email": "example.three@yourdomain.co",
+      "slack_member_id": "U000000CCCC",
+      "timezone": "Africa/Johannesburg",
+      "daily_target_hours": 6,
+      "squad_lead_slack_id": "U000000LEAD",
+      "active": true
+    }
+  ]
+}
