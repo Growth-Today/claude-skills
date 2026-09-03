@@ -35,7 +35,7 @@ Turn purchased domains (the domain-research sub-skill) into sending-ready mailbo
 
 **Do instead:**
 - **Masking** through an approved service (e.g. EmailGuard), **or**
-- a **real, distinct landing page** with clean content.
+- a **real, distinct landing page** with clean content. Scaledmail currently does this for all client domains.
 
 **Vet the masking service** so it does not mark client content as duplicate to Google (an SEO hit for the client). No shared redirect IPs from the registrar/DNS provider, dedicated masking proxy or dedicated landing pages only.
 
