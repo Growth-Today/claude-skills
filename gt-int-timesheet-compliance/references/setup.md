@@ -30,14 +30,36 @@ The Timesheets and Budgets add-on has to be active on the workspace, and it is p
 
 Confirm people can actually log time against the tasks they work on. If the work has no task, the hours land on a catch-all and attribution can never score. Fixing that is task hygiene, and it comes before the automation, not after.
 
-## 2. Create the Asana token
+## 2. Create the Asana credential
 
-Go to **app.asana.com/0/my-apps**, or in Asana: your profile photo, Settings, the Apps tab, then **Manage developer apps**. Under **Personal access tokens**, create a new token, name it something like `timesheet-compliance`, and copy it. Asana shows the value once.
+### Where the developer console actually is
 
-Two things about that token that decide whether any of this works:
+**https://app.asana.com/0/developer-console**
 
-- **Use a personal access token, not an app connection.** The time tracking endpoints need `time_tracking_entries:read`. A token carries its creator's full user scope; an OAuth app connection may never have been granted it. A 403 on `/time_tracking_entries` is nearly always this.
-- **It inherits its creator's permissions.** A token made by someone who can only see their own time returns only their own entries, and every team score built on it is quietly wrong rather than obviously broken. Create it from an account that is a **time reviewer or workspace admin**. `verify_setup.py` checks this by counting how many distinct submitters appear in the data, so you will not have to guess.
+In the interface: your profile photo, top right, then **My Settings**, the **Apps** tab, then **Manage Developer Apps** at the bottom. Personal access tokens live in the developer console, not in the Apps settings list itself, which is why looking under Apps alone turns up nothing. Once there, select **Personal access tokens**, **+ Create new token**, name it, agree to the API terms, and copy the value. Asana shows it once.
+
+If that page says your organization does not allow you to create personal access tokens, that is an admin setting rather than anything you did wrong. Go to the service account option below.
+
+### Which kind of credential to use
+
+Three options, and for a scheduled payroll-adjacent job they are not equally good.
+
+**Service account, best if the plan allows it.** Enterprise and Enterprise+ only, created by a super admin in the Admin Console. It is an org-level identity with its own name, not tied to any person, and with full permissions it reads org-wide. Three reasons it beats a personal token here:
+
+- It sees everyone's time by design, so the team score cannot be quietly incomplete.
+- It does not break when a person is deactivated or changes role. A personal token dies with its owner's account, and a scheduled job that silently stopped reading half the team is the worst failure mode this system has.
+- A super admin can revoke it centrally without touching anyone's own account.
+
+The catch: a service account with full permissions can read everything in the organization, including private data. Scope it as narrowly as the plan allows, and treat the token accordingly.
+
+**Personal access token, the fallback.** Works on any plan. Two things to know:
+
+- It inherits its creator's permissions exactly. One made by someone who can only see their own time returns only their own entries, and every team score built on it is quietly wrong rather than visibly broken. Create it from an account that is a **time reviewer or admin**.
+- The time tracking endpoints need `time_tracking_entries:read`. A personal token carries its creator's full user scope, so it has this; an OAuth app connection may never have been granted it. A 403 on `/time_tracking_entries` is nearly always that.
+
+**OAuth app connection: no.** It is the wrong shape for an unattended job, and it is the most likely of the three to be missing the time tracking scope.
+
+Whichever you use, `verify_setup.py` in step 3b counts how many distinct submitters appear in the data, so you will find out whether the credential really sees the whole team instead of assuming it.
 
 ## 3. Give the token to the environment
 

@@ -102,7 +102,8 @@ def main():
         problems.append(
             "the credential may only see its own owner's time. A personal access token "
             "carries its creator's permissions, so it has to belong to a time reviewer "
-            "or an admin. Verify before trusting any team score"
+            "or an admin. A service account with org-wide access avoids this entirely. "
+            "Verify before trusting any team score"
         )
     else:
         line(

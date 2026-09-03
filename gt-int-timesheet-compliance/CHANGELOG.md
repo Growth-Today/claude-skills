@@ -2,6 +2,17 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.2.1
+
+**Fixed**
+
+- Corrected the developer console location. Personal access tokens are at `app.asana.com/0/developer-console`, reached through My Settings, Apps, Manage Developer Apps. The path previously documented here did not resolve, and looking under the Apps settings list alone turns up nothing because the tokens live in the console rather than that list.
+
+**Changed**
+
+- Setup now recommends a **service account** over a personal token where the plan allows one. It reads org-wide, so a team score cannot be quietly incomplete; it is not tied to a person, so it survives a deactivation that would otherwise stop a scheduled job reading half the team; and a super admin can revoke it centrally. The trade-off, that a full-permission service account can read everything in the organization, is stated alongside it.
+- Noted that an organization can forbid personal access tokens outright, which presents as a message on the console page rather than a missing menu item.
+
 ## 1.2.0
 
 Credential handling, and a setup check that tells you whether to trust a score.

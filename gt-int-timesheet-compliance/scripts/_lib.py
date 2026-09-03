@@ -163,10 +163,11 @@ def api_get(path, params=None, max_pages=200):
                 )
             elif response.status_code == 403:
                 hint = (
-                    "\n403 on a time tracking endpoint usually means the token lacks the "
-                    "time_tracking_entries:read scope, or its owner cannot see other "
+                    "\n403 on a time tracking endpoint usually means the credential lacks "
+                    "the time_tracking_entries:read scope, or its owner cannot see other "
                     "people's time. A personal access token carries its creator's own "
-                    "permissions, so it has to belong to a time reviewer or an admin."
+                    "permissions, so it has to belong to a time reviewer or an admin. A "
+                    "service account with org-wide access avoids the problem."
                 )
             die(
                 "Asana returned {} for {}: {}{}".format(
