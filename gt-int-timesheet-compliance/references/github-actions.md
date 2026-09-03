@@ -32,7 +32,12 @@ Two things to get right:
 
 ## 2. Create the Slack app
 
-At api.slack.com/apps, **Create New App**, then **From a manifest**, pick the Growth Today workspace, and paste `github-actions/slack-app-manifest.yml` from this skill.
+At api.slack.com/apps, **Create New App**, then **From a manifest**, pick the Growth Today workspace.
+
+The paste box opens on a **JSON** tab with a pre-filled skeleton, and it has a **YAML** tab beside it. Two things go wrong here:
+
+1. **Clear the box before pasting.** Pasting into the skeleton leaves its outer braces behind and the result parses as neither format.
+2. **Match the file to the tab.** Paste `github-actions/slack-app-manifest.json` on the JSON tab, or `slack-app-manifest.yml` on the YAML tab. Both files describe the same app, so it makes no difference which you pick as long as they agree.
 
 Use the manifest rather than **Blank app** (which is what Slack now calls the old "From scratch"). It sets the scopes for you, and a missing `im:write` is the single most common reason every DM fails at run time, hours after you thought you were finished.
 
