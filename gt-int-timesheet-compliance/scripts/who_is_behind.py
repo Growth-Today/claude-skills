@@ -91,7 +91,7 @@ def main():
         entries = by_person.get(person["asana_gid"], [])
         days = lib.workdays(lib.week_start(today), today, scoring.get("holidays"))
         expected = len(days) * float(person["daily_target_hours"]) * 60
-        logged = lib.logged_minutes(entries, days[0], today) if days else 0
+        logged = lib.logged_minutes(entries, days[0], today, as_of=today) if days else 0
         covered = lib.days_with_entries(entries, grace)
         missing = [lib.iso(d) for d in days if d not in covered]
 

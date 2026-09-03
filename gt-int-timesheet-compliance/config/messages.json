@@ -1,0 +1,17 @@
+{
+  "_comment": "Nudge copy for the unattended runner (GitHub Actions). These are templates, so they are the same sentence for everyone at a given level. When the loop runs through Claude instead, it writes each message from the same numbers and the copy is better; this file is the trade-off you accept for running without a model in the loop. Keep every template to one or two sentences.",
+
+  "_fields": "Available placeholders: {name} {logged} {expected} {deficit} {missing} {streak} {detail} {link}. Hours come pre-formatted to one decimal. {missing} is a human list of dates or the word none. {detail} is the script's own reason list, which is accurate whether the problem is missing hours, late-logged days, or both, so prefer it over hand-writing a clause that can contradict the numbers.",
+
+  "light": "Hey {name}, your timesheet is at {logged}h of {expected}h for this week. Two minutes now and it's done: {link}",
+
+  "firm": "{name}, day {streak} behind: {detail}. This needs sorting before Friday cutoff or the client hours can't be billed. {link}",
+
+  "weekly_digest_header": "*Timesheet week of {week_of}*  ({scored} of {total} scored, team mean {mean})",
+
+  "weekly_digest_row": "• {name}  {logged}h/{expected}h  ·  {days_on_time}/{workdays} days on time  ·  score {score}",
+
+  "weekly_digest_footer": "Full JSON is attached to the workflow run. Paste it into a session for the read on patterns and the coaching notes.",
+
+  "failure_alert": ":warning: Timesheet automation failed on {workflow}. Nobody was nudged on this run. Logs: {run_url}"
+}

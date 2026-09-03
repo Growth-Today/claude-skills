@@ -11,6 +11,9 @@ Two modes:
   # the weekly persistence check that feeds the draft to the leads
   python scripts/score.py --weeks 3
 
+  # Monday to Friday of the current week, for an unattended Friday run
+  python scripts/score.py --this-week
+
 Prints JSON on stdout. Read stderr too: a warning there changes what the numbers
 mean. Weights and thresholds come from config/scoring.json, never from here.
 """
@@ -70,7 +73,9 @@ def score_hygiene(entries, days, grace_days):
 
     qualifying = len([d for d in days if d in on_day])
     backfill_share = (backfilled_minutes / total_minutes) if total_minutes else 0.0
-    degraded = not any_created_at
+    # Only a real degradation when entries exist but none carry created_at.
+    # Someone with no entries at all says nothing about the workspace's fields.
+    degraded = bool(entries) and not any_created_at
     return qualifying / len(days), degraded, backfill_share
 
 
@@ -317,6 +322,12 @@ def main():
     parser.add_argument("--periods", type=int, default=1, help="how many pay periods back")
     parser.add_argument("--weeks", type=int, help="score this many trailing weeks and run the persistence check")
     parser.add_argument("--end-week", help="Monday of the last week to include, defaults to this week")
+    parser.add_argument(
+        "--this-week",
+        action="store_true",
+        help="score Monday to Friday of the current week. Avoids shell date arithmetic "
+        "in a scheduler, which is a classic source of off-by-a-week bugs.",
+    )
     parser.add_argument("--entries", help="reuse a fetch_entries.py dump instead of calling the API")
     args = parser.parse_args()
 
@@ -324,7 +335,10 @@ def main():
     people = lib.load_roster()
     weeks_per_period = scoring["gate"]["pay_period_weeks"]
 
-    if args.weeks:
+    if args.this_week:
+        monday = lib.week_start(datetime.now(timezone.utc).date())
+        windows = [(monday, monday + timedelta(days=4))]
+    elif args.weeks:
         if args.end_week:
             last_monday = lib.parse_date(args.end_week)
             if last_monday.weekday() != 0:
@@ -346,7 +360,7 @@ def main():
     elif args.start and args.end:
         windows = [(lib.parse_date(args.start), lib.parse_date(args.end))]
     else:
-        lib.die("give one of: --start with --end, --gate-anchor, or --weeks")
+        lib.die("give one of: --this-week, --start with --end, --gate-anchor, or --weeks")
 
     overall_start = min(w[0] for w in windows)
     overall_end = max(w[1] for w in windows)
@@ -383,7 +397,10 @@ def main():
     output = {"weights": scoring["weights"], "periods": results}
     if args.gate_anchor:
         output["gate"] = evaluate_gate(results, scoring)
-    if args.weeks:
+    if args.this_week:
+        monday = lib.week_start(datetime.now(timezone.utc).date())
+        windows = [(monday, monday + timedelta(days=4))]
+    elif args.weeks:
         output["persistence"] = evaluate_persistence(
             results, lib.index_entries(raw, people), people, scoring
         )

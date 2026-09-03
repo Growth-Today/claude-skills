@@ -1,0 +1,82 @@
+# Daily timesheet nudge.
+#
+# Copy this to .github/workflows/timesheet-nudge.yml in the PRIVATE repo that
+# holds this skill. Do not add it to a public repo: the run logs print who is
+# behind and by how much.
+#
+# It stays in dry run until the repository variable NUDGE_SEND is set to the
+# string "true". Watch a week of dry runs first, then flip it.
+
+name: Timesheet nudge
+
+on:
+  schedule:
+    # 16:05 local for Manila (UTC+8), Johannesburg and Budapest summer (UTC+2),
+    # and Budapest winter (UTC+1). The 15:05 fire is a harmless no-op in summer,
+    # because the script only acts inside each person's own 16:00 to 17:00 window.
+    - cron: "5 8,14,15 * * 1-5"
+    # India is UTC+5:30, so a half-hour offset needs its own minute.
+    - cron: "35 10 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Ignore the local-time window and show everyone who is behind"
+        type: boolean
+        default: false
+
+# Never let two runs overlap. Without this a slow run plus the next fire could
+# double-send to the same person.
+concurrency:
+  group: timesheet-nudge
+  cancel-in-progress: false
+
+jobs:
+  nudge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Work out who is behind
+        env:
+          ASANA_ACCESS_TOKEN: ${{ secrets.ASANA_ACCESS_TOKEN }}
+          ASANA_WORKSPACE_GID: ${{ secrets.ASANA_WORKSPACE_GID }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          FORCE=""
+          if [ "${{ inputs.force }}" = "true" ]; then FORCE="--force"; fi
+          python who_is_behind.py $FORCE > "$RUNNER_TEMP/targets.json"
+
+      - name: Send the DMs
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          # Dry run unless the repository variable NUDGE_SEND is exactly "true".
+          SEND=""
+          if [ "${{ vars.NUDGE_SEND }}" = "true" ]; then SEND="--send"; fi
+          python send_nudges.py --targets "$RUNNER_TEMP/targets.json" $SEND
+
+      - name: Say so in Slack if this run broke
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          CHANNEL: ${{ secrets.SLACK_ALERT_CHANNEL }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          TEXT=":warning: Timesheet nudge failed. Nobody was nudged on this run. $RUN_URL"
+          curl -sS -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-type: application/json; charset=utf-8" \
+            --data "$(python -c 'import json,os;print(json.dumps({"channel":os.environ["CHANNEL"],"text":os.environ["TEXT"]}))')" \
+            > /dev/null
+        continue-on-error: true

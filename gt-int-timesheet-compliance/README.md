@@ -25,14 +25,19 @@ config/roster.example.json      copy to roster.json (gitignored) and fill in
 scripts/verify_setup.py         run this first: is the setup trustworthy
 scripts/fetch_entries.py        dump time entries for a date range
 scripts/who_is_behind.py        who to nudge now, timezone aware, with escalation
-scripts/score.py                score a window, or evaluate the gate
+scripts/score.py                score a window, the gate, or the persistence check
+scripts/send_nudges.py          send the DMs unattended, dry run by default
+scripts/weekly_report.py        post the weekly digest unattended, dry run by default
 playbooks/daily-nudge.md        the weekday nudge
 playbooks/friday-review.md      the Friday review and approval handoff
 playbooks/biweekly-gate.md      the pay period gate
 references/setup.md             one-time setup: token, env vars, roster, Routines
 references/run-locally.md       run it on your own machine, no Owner role needed
 references/scoring-model.md     the four sub-metrics, weights, worked examples
+references/github-actions.md    run it unattended on GitHub Actions, no Owner role needed
 references/make-scenarios.md    build spec if you move the heartbeat to Make
+config/messages.json            nudge copy for the unattended runner
+github-actions/                 workflow files to copy into a private repo
 ```
 
 ## Quick start
@@ -48,19 +53,26 @@ cd scripts && python verify_setup.py               # does any of this actually w
 
 Three things people get wrong on the first try. A scheduled Routine starts a fresh container that never sees your local `.env`, so scheduled runs need an API credential on the cloud environment instead, which also opens egress to `app.asana.com`. A token created by someone who can only see their own time returns only their own entries, so every team score built on it is quietly wrong; `verify_setup.py` catches that. And the daily nudge should fire on the few UTC times that are late afternoon for your roster's timezones, not hourly, which is a sixfold difference in cost for identical coverage.
 
-## Scheduled Routines or Make?
+## Three ways to run it
 
-Both work. The default is Routines plus the bundled scripts, and the reason is not the one people expect.
+All three read the same Asana data through the same scripts, so the numbers are identical. What differs is who writes the messages and what permission you need.
 
-| | Make | Scheduled Routines |
-|---|---|---|
-| Marginal cost | **Wins.** Around ten dollars a month | Tokens per fire |
-| Build time | Half a day. Aggregating a timezone-aware roster is the fiddly part | **Wins.** The scripts are already written |
-| Arithmetic accuracy | Deterministic | **Tie.** The math is in Python, not the model |
-| Judgement | Cannot form one | **Wins.** Backfill patterns, coaching copy |
-| Fails loudly | **Wins.** Run history, error handlers | A Routine that stops firing is quieter |
+| | Scheduled Routines | GitHub Actions | Make |
+|---|---|---|---|
+| Needs | organization Owner to store the credential | repo admin on a private repo | a Make seat |
+| Cost | tokens per fire | free, about 88 minutes a month | around ten dollars a month |
+| Build time | already done | already done, plus the setup steps | half a day of clicking |
+| Nudge copy | written per person | templated | templated |
+| Weekly review | the real read on patterns | a table | a table |
+| Logic | one implementation | the same one | a second one that will drift |
 
-Determinism is the usual argument for a workflow platform, and it does not apply here because the calculations already live in Python. What Make genuinely wins is marginal cost and telling you when it breaks. If you want both, put the daily nudge in Make where there is no judgement to make, and keep the Friday review and the gate as Routines where the judgement is the entire point. Spec for that is in `references/make-scenarios.md`.
+Determinism is the usual argument for a workflow platform and it does not apply here, because the arithmetic already lives in Python. So the choice is really about permissions and about who writes the copy.
+
+**Routines if you can get the Owner click.** It is the only path that produces the actual review rather than a table.
+
+**GitHub Actions if you cannot.** It reuses every tested script, needs nobody's permission beyond a private repo, and pairs well with a weekly paste into a session for the review. See `references/github-actions.md`.
+
+**Make only if you would rather maintain this in a visual builder.** It means rebuilding the timezone handling, the backfill reconstruction and the weekly cap a second time, and two definitions of "behind" will not stay in step. Spec is in `references/make-scenarios.md`.
 
 ## What it will not do
 

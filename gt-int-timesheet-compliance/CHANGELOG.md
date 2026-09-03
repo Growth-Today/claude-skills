@@ -2,6 +2,31 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.5.0
+
+An unattended path that needs no organization Owner: GitHub Actions running the same scripts.
+
+**Added**
+
+- `scripts/send_nudges.py`. Reads `who_is_behind.py` output and sends the Slack DMs, using templates from the new `config/messages.json`. **Dry run is the default**, because these messages go to real colleagues and sending should be opt-in. Slack errors get specific hints rather than a raw API response.
+- `scripts/weekly_report.py`. Posts the weekly digest to a channel, also dry run by default, and surfaces the partial, loose-attribution and degraded-hygiene caveats in the message rather than burying them in a log.
+- `config/messages.json`. Nudge and digest copy, editable without touching code. The firm template renders the script's own reason list, so it stays accurate whether the problem is missing hours, late-logged days or both.
+- `github-actions/timesheet-nudge.yml` and `github-actions/timesheet-weekly.yml`. Ship as templates inside the skill rather than in `.github/workflows/`, so nothing starts firing from the public monorepo by accident. Both gate real sending behind a repository variable, so a scheduled dry-run week costs nothing to arrange.
+- `references/github-actions.md`. The full setup, including the Slack scopes, the secrets, the dry-run week, and the failure modes worth knowing before they happen.
+- `score.py --this-week` and `ROSTER_JSON` support in `_lib.py`, so a runner can score the current week without shell date arithmetic and can read the roster from a secret when it cannot be committed.
+
+**Fixed**
+
+- **Nudge copy could contradict itself.** For someone who logged hours late, the firm template rendered "24.0h of 24.0h logged, nothing for [dates]", which is nonsense to receive. The template now renders the script's reason list, and `logged` is computed as-of today so the total can no longer disagree with the missing-days list.
+- **A person with no entries falsely reported that backfill detection was off.** `hygiene_degraded_no_created_at` fired whenever no entry carried `created_at`, which is trivially true when there are no entries at all, so a single non-logger made the whole digest claim the workspace was missing the field. It now requires entries to exist before claiming the field is absent.
+- **Off-by-a-week in the weekly workflow.** `date -d "last monday"` resolved to the run date itself when the runner was already on a Friday, so the digest would have scored the wrong window. Replaced with the tested `--this-week` flag.
+
+**Verified**
+
+- Both senders dry-run end to end against synthetic entries, printing per-person level, weekly nudge count, channel list and exact message text, with on-track people counted and capped people named.
+- `--this-week` resolves to Monday through Friday of the current week regardless of which weekday it runs on.
+- Both workflow files parse as valid YAML with the expected triggers and steps.
+
 ## 1.4.0
 
 Nudge volume capped, and Slack made the only default channel.

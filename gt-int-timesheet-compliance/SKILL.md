@@ -4,7 +4,7 @@ description: "Internal Growth Today workflow for running the Asana timesheet com
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.4.0"
+  version: "1.5.0"
   category: internal-ops
 ---
 
@@ -28,6 +28,7 @@ Second rule: **only contact people who are actually behind.** Nudging someone wh
 | "Who keeps missing this", draft for the leads | `playbooks/friday-review.md`, the persistence section |
 | First-time setup, token, Routines, roster | `references/setup.md` |
 | "how do I run this on my laptop", no Owner role | `references/run-locally.md` |
+| Run it unattended without an Owner role, GitHub Actions | `references/github-actions.md` |
 | How a score is built, weights, worked examples | `references/scoring-model.md` |
 | Move the heartbeat to Make instead | `references/make-scenarios.md` |
 
@@ -54,6 +55,13 @@ python scripts/score.py --entries /tmp/entries.json --start 2026-08-24 --end 202
 
 # trailing weeks plus the persistence check that feeds the weekly draft
 python scripts/score.py --weeks 3
+
+# Monday to Friday of the current week, no shell date arithmetic
+python scripts/score.py --this-week
+
+# unattended senders, both dry run unless you pass --send
+python scripts/send_nudges.py --targets targets.json
+python scripts/weekly_report.py --scores week.json
 ```
 
 Every script prints JSON to stdout and human-readable warnings to stderr. Read both. A warning that the approval endpoint returned nothing changes how you report the on-time score, so never drop stderr.

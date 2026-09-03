@@ -87,14 +87,49 @@ def load_scoring():
     return config
 
 
-def load_roster():
+def _roster_doc():
+    """The whole roster document, from the file or from the ROSTER_JSON env var.
+
+    The env var exists for the unattended runner: in a public repo the roster
+    cannot be committed, so it travels as a repository secret instead. A file
+    always wins over the env var, so a private repo can just commit it.
+    """
     path = os.path.join(CONFIG_DIR, "roster.json")
-    if not os.path.exists(path):
-        die(
-            "config/roster.json not found. Copy config/roster.example.json to "
-            "config/roster.json and fill it in. The real roster is gitignored on purpose."
-        )
-    roster = load_json(path, "roster.json")
+    if os.path.exists(path):
+        return load_json(path, "roster.json")
+
+    raw = os.environ.get("ROSTER_JSON")
+    if raw:
+        try:
+            return _strip_comments(json.loads(raw))
+        except ValueError as error:
+            die("ROSTER_JSON is set but is not valid JSON: {}".format(error))
+
+    die(
+        "No roster found. Either copy config/roster.example.json to "
+        "config/roster.json (gitignored), or set ROSTER_JSON to the same content "
+        "as a secret. See references/github-actions.md."
+    )
+
+
+def load_messages():
+    return load_json(os.path.join(CONFIG_DIR, "messages.json"), "messages.json")
+
+
+def timesheet_url():
+    """Deep link to the Timesheets page, from the roster or the environment.
+
+    Kept out of the committed config because it is an internal view URL.
+    """
+    return (
+        _roster_doc().get("timesheet_url")
+        or os.environ.get("TIMESHEET_URL")
+        or "your Asana Timesheets page"
+    )
+
+
+def load_roster():
+    roster = _roster_doc()
     people = [p for p in roster.get("submitters", []) if p.get("active", True)]
     if not people:
         die("roster.json has no active submitters.")

@@ -1,0 +1,105 @@
+# Weekly timesheet digest, plus the persistence check.
+#
+# Copy this to .github/workflows/timesheet-weekly.yml in the PRIVATE repo that
+# holds this skill.
+#
+# It posts the table to a channel and attaches the full JSON to the run. The
+# table is not the review: paste the JSON into a session for the read on
+# patterns, the coaching notes, and the draft to the leads when someone is
+# persistently off process.
+
+name: Timesheet weekly
+
+on:
+  schedule:
+    # The week closes Friday 17:00 in each person's own timezone, so this has to
+    # run after the LAST cutoff, not the first. Budapest 17:00 is 15:00 UTC in
+    # summer and 16:00 UTC in winter, so 16:15 UTC clears everyone year-round.
+    - cron: "15 16 * * 5"
+  workflow_dispatch:
+    inputs:
+      weeks:
+        description: "How many trailing weeks to score for the persistence check"
+        type: string
+        default: "3"
+
+concurrency:
+  group: timesheet-weekly
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Score this week
+        env:
+          ASANA_ACCESS_TOKEN: ${{ secrets.ASANA_ACCESS_TOKEN }}
+          ASANA_WORKSPACE_GID: ${{ secrets.ASANA_WORKSPACE_GID }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          # --this-week resolves Monday to Friday in Python. Doing this with
+          # shell date arithmetic is how you get an off-by-a-week bug that
+          # nobody notices for a month.
+          python score.py --this-week \
+            > "$RUNNER_TEMP/week.json" 2> "$RUNNER_TEMP/week-warnings.txt"
+          cat "$RUNNER_TEMP/week-warnings.txt"
+
+      - name: Trailing weeks and the persistence check
+        env:
+          ASANA_ACCESS_TOKEN: ${{ secrets.ASANA_ACCESS_TOKEN }}
+          ASANA_WORKSPACE_GID: ${{ secrets.ASANA_WORKSPACE_GID }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          WEEKS="${{ inputs.weeks || '3' }}"
+          python score.py --weeks "$WEEKS" \
+            > "$RUNNER_TEMP/persistence.json" 2>> "$RUNNER_TEMP/week-warnings.txt" || true
+
+      - name: Post the digest
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_REPORT_CHANNEL: ${{ secrets.SLACK_REPORT_CHANNEL }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          SEND=""
+          if [ "${{ vars.REPORT_SEND }}" = "true" ]; then SEND="--send"; fi
+          python weekly_report.py --scores "$RUNNER_TEMP/week.json" $SEND
+
+      - name: Attach the JSON to this run
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: timesheet-scores
+          path: |
+            ${{ runner.temp }}/week.json
+            ${{ runner.temp }}/persistence.json
+            ${{ runner.temp }}/week-warnings.txt
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Say so in Slack if this run broke
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          CHANNEL: ${{ secrets.SLACK_ALERT_CHANNEL }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          TEXT=":warning: Timesheet weekly report failed. No digest was posted. $RUN_URL"
+          curl -sS -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-type: application/json; charset=utf-8" \
+            --data "$(python -c 'import json,os;print(json.dumps({"channel":os.environ["CHANNEL"],"text":os.environ["TEXT"]}))')" \
+            > /dev/null
+        continue-on-error: true
