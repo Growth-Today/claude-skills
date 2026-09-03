@@ -1,0 +1,39 @@
+# Slack app manifest for the timesheet nudge bot.
+#
+# At api.slack.com/apps choose Create New App, then "From a manifest", pick the
+# workspace, and paste this. The manifest route is better than "Blank app"
+# because it sets the scopes for you, and a missing im:write is the single most
+# common reason every DM fails at run time.
+#
+# After creating: OAuth & Permissions, Install to Workspace, then copy the Bot
+# User OAuth Token (xoxb-...) into the SLACK_BOT_TOKEN repository secret.
+#
+# A restricted workspace stops you at Install to Workspace, not at creation, so
+# do not assume it worked until you are holding the token.
+
+display_information:
+  name: Timesheet Nudge
+  description: Reminds people to log their hours, and posts the weekly timesheet digest.
+  background_color: "#22406e"
+
+features:
+  bot_user:
+    display_name: Timesheet Nudge
+    always_online: false
+
+oauth_config:
+  scopes:
+    bot:
+      # send messages at all
+      - chat:write
+      # post to a public channel without being invited to it first. Private
+      # channels always need an invite regardless, so this only helps if the
+      # digest goes to a public channel.
+      - chat:write.public
+      # open a DM with a person. Without this every nudge fails.
+      - im:write
+
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

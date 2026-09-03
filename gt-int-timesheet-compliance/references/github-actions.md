@@ -32,18 +32,23 @@ Two things to get right:
 
 ## 2. Create the Slack app
 
-At api.slack.com/apps, **Create New App**, From scratch, pick the Growth Today workspace.
+At api.slack.com/apps, **Create New App**, then **From a manifest**, pick the Growth Today workspace, and paste `github-actions/slack-app-manifest.yml` from this skill.
 
-Under **OAuth & Permissions**, add these **Bot Token Scopes**:
+Use the manifest rather than **Blank app** (which is what Slack now calls the old "From scratch"). It sets the scopes for you, and a missing `im:write` is the single most common reason every DM fails at run time, hours after you thought you were finished.
 
-| Scope | Why |
+The three scopes and what each one buys:
+
+| Scope | Without it |
 |---|---|
-| `chat:write` | send the messages |
-| `im:write` | open a DM with a person |
+| `chat:write` | cannot send anything |
+| `im:write` | cannot open a DM, so every nudge fails |
+| `chat:write.public` | must invite the bot to a public channel before it can post there |
 
-Then **Install to Workspace** and copy the **Bot User OAuth Token** (starts with `xoxb-`).
+Then **OAuth & Permissions → Install to Workspace**, and copy the **Bot User OAuth Token** (starts with `xoxb-`).
 
-For the weekly digest, invite the bot to the channel you want it posted in: `/invite @YourAppName` in that channel. A bot cannot post to a channel it is not in.
+**The approval gate is at Install, not at create.** A workspace that restricts app installation lets you build the app and then stops you here, so do not assume it worked until you are holding the token.
+
+If the digest goes to a **private** channel, invite the bot to it: `/invite @Timesheet Nudge`. Private channels always require membership, whatever the scopes say.
 
 ## 3. Add the secrets
 
