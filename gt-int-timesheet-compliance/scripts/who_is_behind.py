@@ -93,7 +93,9 @@ def main():
         expected = len(days) * float(person["daily_target_hours"]) * 60
         logged = lib.logged_minutes(entries, days[0], today, as_of=today) if days else 0
         covered = lib.days_with_entries(entries, grace)
-        missing = [lib.iso(d) for d in days if d not in covered]
+        missing_dates = [d for d in days if d not in covered]
+        missing = [lib.iso(d) for d in missing_dates]
+        missing_human = [d.strftime("%a") for d in missing_dates]
 
         if expected > 0 and logged >= nudge["behind_ratio"] * expected and not missing:
             on_track.append(
@@ -150,6 +152,7 @@ def main():
                 "expected_hours": round(expected / 60, 2),
                 "deficit_hours": round(max(0.0, expected - logged) / 60, 2),
                 "missing_days": missing,
+                "missing_days_human": missing_human,
                 "weekdays_behind_in_a_row": streak,
                 "nudges_this_week_including_this_one": sent_this_week,
                 "escalation": level,

@@ -1,17 +1,29 @@
 {
-  "_comment": "Nudge copy for the unattended runner (GitHub Actions). These are templates, so they are the same sentence for everyone at a given level. When the loop runs through Claude instead, it writes each message from the same numbers and the copy is better; this file is the trade-off you accept for running without a model in the loop. Keep every template to one or two sentences.",
+  "_comment": "Nudge copy for the unattended runner. Plain English, short, contractions, no jargon. The problem sentence and the closing ask are both chosen from what is actually wrong: someone short on hours needs two minutes, someone whose hours are complete but logged late needs a different habit, and telling the second person to spend two minutes is nonsense they will notice.",
 
-  "_fields": "Available placeholders: {name} {logged} {expected} {deficit} {missing} {streak} {detail} {link}. Hours come pre-formatted to one decimal. {missing} is a human list of dates or the word none. {detail} is the script's own reason list, which is accurate whether the problem is missing hours, late-logged days, or both, so prefer it over hand-writing a clause that can contradict the numbers.",
+  "_fields": "Templates take {name} {problem} {cta} {streak_phrase} {link}. Everything else is assembled in send_nudges.py so the grammar agrees with the data: hours drop trailing zeros, days appear as weekday names, and singular or plural is chosen per person.",
 
-  "light": "Hey {name}, your timesheet is at {logged}h of {expected}h for this week. Two minutes now and it's done: {link}",
+  "light": "Hi {name}, {problem}. {cta} {link}",
+  "firm": "{name}, {streak_phrase}. {problem}. {cta} {link}",
 
-  "firm": "{name}, day {streak} behind: {detail}. This needs sorting before Friday cutoff or the client hours can't be billed. {link}",
+  "_clauses": "Sentence fragments, no trailing full stop. Write the first word in whatever case reads naturally: send_nudges.py capitalises the clause when the template starts a sentence with it, and lowercases it when it follows a comma, so the same clause works in both templates. Do not start a clause with a name or anything else that must stay capitalised.",
+  "clause_hours_only": "you're at {logged} of {expected} hours for this week",
+  "clause_days_only": "your hours add up, but {missing} {was_were} logged late rather than on the day",
+  "clause_both": "you're at {logged} of {expected} hours, with nothing logged for {missing}",
+  "clause_fallback": "your hours are behind for this week",
+
+  "_ctas": "The closing ask, matched to the problem. A backfiller has nothing to catch up on, so asking them to spend two minutes reads as a message nobody bothered to check.",
+  "cta_hours_light": "Two minutes and you're done:",
+  "cta_hours_firm": "Please get these in before Friday cutoff, or we can't bill the client for them:",
+  "cta_days_light": "Worth logging at the end of each day, that is the only way it stays accurate:",
+  "cta_days_firm": "Please log on the day from now on, hours pieced together later aren't something we can put in front of a client:",
+
+  "_streaks": "Firm template only. A streak crosses weeks, so a raw day number reads like nonsense in a weekly nudge.",
+  "streak_short": "this is day {streak}",
+  "streak_long": "you've been behind every day for over a week now",
 
   "weekly_digest_header": "*Timesheet week of {week_of}*  ({scored} of {total} scored, team mean {mean})",
-
   "weekly_digest_row": "• {name}  {logged}h/{expected}h  ·  {days_on_time}/{workdays} days on time  ·  score {score}",
-
   "weekly_digest_footer": "Full JSON is attached to the workflow run. Paste it into a session for the read on patterns and the coaching notes.",
-
   "failure_alert": ":warning: Timesheet automation failed on {workflow}. Nobody was nudged on this run. Logs: {run_url}"
 }

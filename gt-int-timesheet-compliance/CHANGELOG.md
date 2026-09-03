@@ -2,6 +2,23 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.5.1
+
+Nudge copy rewritten in plain English after reading the first real dry run.
+
+**Changed**
+
+- **The copy no longer sounds written by a machine.** The problem sentence and the closing ask are now chosen together from what is actually wrong, so someone whose hours are complete but logged two days late is asked to change a habit rather than told to "spend two minutes catching up". Hours print as `17.5` and `13` rather than `17.50` and `13.0`, missing days print as `Mon, Tue and Thu` rather than a list of ISO dates, and singular and plural agree per person.
+- Streaks read as language rather than a counter. Past five weekdays the firm template says "you've been behind every day for over a week now" instead of "this is day 11", which is meaningless to someone who only sees this week.
+
+**Fixed**
+
+- **Capitalisation disagreed between the two templates.** The same clause opens a sentence in the firm template and follows a comma in the light one, which produced "Hi Gaze, Your hours add up". Clauses are now stored as fragments and `fit_case()` matches the first letter to its position, so both templates read correctly from one string.
+
+**Verified**
+
+- All six copy paths rendered against the four people flagged in the live dry run plus a part-time and a mixed case: firm with missing days, firm short on hours only, light backfill-only, light short on hours only, and a short streak under the five-day threshold. Every message reads as a sentence and every ask matches its problem.
+
 ## 1.5.0
 
 An unattended path that needs no organization Owner: GitHub Actions running the same scripts.

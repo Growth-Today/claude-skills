@@ -63,12 +63,83 @@ def open_dm(token, user_id):
     return slack_post("conversations.open", token, {"users": user_id})["channel"]["id"]
 
 
-def human_dates(dates):
-    if not dates:
-        return "none"
-    if len(dates) == 1:
-        return dates[0]
-    return "{} and {}".format(", ".join(dates[:-1]), dates[-1])
+def human_list(items):
+    """Mon / Mon and Tue / Mon, Tue and Wed."""
+    if not items:
+        return ""
+    if len(items) == 1:
+        return items[0]
+    return "{} and {}".format(", ".join(items[:-1]), items[-1])
+
+
+def hours(value):
+    """23 rather than 23.0, 17.5 rather than 17.50."""
+    return "{:g}".format(round(float(value), 1))
+
+
+def describe(target, messages):
+    """Return (problem sentence, closing ask) matched to what is actually wrong.
+
+    Three situations and they need different asks. Someone short on hours has
+    catching up to do. Someone whose total is right but logged days late has
+    nothing to catch up on, and telling them to spend two minutes reads as a
+    message nobody checked before sending.
+    """
+    short_on_hours = target["logged_hours"] < target["expected_hours"]
+    missing = target.get("missing_days_human") or []
+    firm = target.get("escalation") == "firm"
+
+    fields = {
+        "logged": hours(target["logged_hours"]),
+        "expected": hours(target["expected_hours"]),
+        "missing": human_list(missing),
+        "was_were": "was" if len(missing) == 1 else "were",
+    }
+
+    if short_on_hours and missing:
+        return (
+            messages["clause_both"].format(**fields),
+            messages["cta_hours_firm" if firm else "cta_hours_light"],
+        )
+    if missing:
+        return (
+            messages["clause_days_only"].format(**fields),
+            messages["cta_days_firm" if firm else "cta_days_light"],
+        )
+    if short_on_hours:
+        return (
+            messages["clause_hours_only"].format(**fields),
+            messages["cta_hours_firm" if firm else "cta_hours_light"],
+        )
+    return (
+        messages["clause_fallback"],
+        messages["cta_hours_firm" if firm else "cta_hours_light"],
+    )
+
+
+def fit_case(template, placeholder, text):
+    """Match the clause's first letter to where the template puts it.
+
+    The same clause has to work in both templates: it opens a sentence in the
+    firm one ("Prosper, this is day 3. You're at 0 of 32 hours") and follows a
+    comma in the light one ("Hi Gaze, your hours add up"). Without this you get
+    "Hi Gaze, Your hours add up", which is exactly the kind of detail that makes
+    a message read as machine-written.
+    """
+    marker = "{" + placeholder + "}"
+    before = template.split(marker, 1)[0].rstrip()
+    opens_sentence = not before or before.endswith((".", "!", "?", ":"))
+    if opens_sentence:
+        return text[:1].upper() + text[1:]
+    return text[:1].lower() + text[1:]
+
+
+def build_streak_phrase(target, messages):
+    """A streak crosses weeks, so "day 10" reads like nonsense in a weekly nudge."""
+    streak = target.get("weekdays_behind_in_a_row") or 1
+    if streak > 5:
+        return messages["streak_long"]
+    return messages["streak_short"].format(streak=streak)
 
 
 def compose(target, messages, link):
@@ -79,15 +150,12 @@ def compose(target, messages, link):
                 target["escalation"]
             )
         )
-    reasons = target.get("reasons") or []
+    problem, cta = describe(target, messages)
     return template.format(
-        detail="; ".join(reasons) if reasons else "hours are behind for this week",
         name=target["name"],
-        logged="{:.1f}".format(target["logged_hours"]),
-        expected="{:.1f}".format(target["expected_hours"]),
-        deficit="{:.1f}".format(target["deficit_hours"]),
-        missing=human_dates(target.get("missing_days") or []),
-        streak=target["weekdays_behind_in_a_row"],
+        problem=fit_case(template, "problem", problem),
+        cta=cta,
+        streak_phrase=build_streak_phrase(target, messages),
         link=link,
     )
 
