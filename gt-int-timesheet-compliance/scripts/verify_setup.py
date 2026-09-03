@@ -7,7 +7,17 @@ token's owner see everybody's time or only their own, and are the fields the
 scoring depends on actually populated. Run this once after the token is in
 place, and again any time a score looks wrong.
 
-Exits non-zero if something is broken enough that a score would be misleading.
+Exit code separates two very different things:
+
+  1  the setup cannot produce numbers at all (no credential, no workspace, no
+     entries, or a credential that only sees its own owner's time)
+  0  numbers can be produced, possibly with caveats that limit what they mean
+
+Deferred configuration is a caveat, not a failure. The approval endpoint is
+deliberately unset until someone verifies it against the workspace, and the
+attribution allowlist is deliberately empty until a baseline period has run.
+Failing the run for those would make this check red on a perfectly good setup,
+and a check that is always red is one nobody reads.
 """
 
 import json
@@ -24,9 +34,19 @@ def line(ok, label, detail=""):
     return ok
 
 
+def note_line(label, detail=""):
+    """For a deferred setting. Not a pass, and not a failure either.
+
+    Printing FAIL next to something we deliberately left unset makes the whole
+    report read as broken when it is working as intended.
+    """
+    print("{:4}  {:34} {}".format("....", label, detail))
+
+
 def main():
     print("Timesheet compliance setup check\n")
-    problems = []
+    blockers = []   # cannot produce numbers at all
+    notes = []      # numbers are possible, but limited in what they mean
 
     # 1. Credential
     if os.environ.get("ASANA_ACCESS_TOKEN"):
@@ -41,7 +61,7 @@ def main():
     # 2. Workspace
     workspace = os.environ.get("ASANA_WORKSPACE_GID")
     if not line(bool(workspace), "ASANA_WORKSPACE_GID", workspace or "not set"):
-        problems.append("set ASANA_WORKSPACE_GID")
+        blockers.append("set ASANA_WORKSPACE_GID")
         print("\nCannot continue without a workspace.")
         sys.exit(1)
 
@@ -71,13 +91,13 @@ def main():
         "{} entries between {} and {}".format(len(entries), start, end),
     )
     if not got:
-        problems.append(
+        blockers.append(
             "no entries came back. Either nobody logged time in this range, or the "
             "credential cannot see time entries at all"
         )
         print()
-        for p in problems:
-            print("  next: {}".format(p))
+        for item in blockers:
+            print("  next: {}".format(item))
         sys.exit(1)
 
     # 6. Visibility: does this credential see the whole team or just its owner?
@@ -99,7 +119,7 @@ def main():
                 len(seen_from_roster), len(people)
             ),
         )
-        problems.append(
+        blockers.append(
             "the credential may only see its own owner's time. A personal access token "
             "carries its creator's permissions, so it has to belong to a time reviewer "
             "or an admin. A service account with org-wide access avoids this entirely. "
@@ -125,18 +145,20 @@ def main():
         "created_at populated",
         "{} of {} entries".format(with_created, total),
     ):
-        problems.append(
-            "no created_at means backfill detection is off and daily hygiene (30% of "
-            "the score) degrades to 'any entry counts'"
+        notes.append(
+            "no created_at on any entry, so backfill detection is off and daily "
+            "hygiene (30% of the score) degrades to 'any entry counts'. The nudge "
+            "still works; the hygiene number just means less than it looks"
         )
     if not line(
         with_attr > 0,
         "attributable_to populated",
         "{} of {} entries".format(with_attr, total),
     ):
-        problems.append(
-            "no attributable_to means attribution (30% of the score) cannot be scored "
-            "at all. This is a task structure problem, not a scoring one"
+        notes.append(
+            "no attributable_to on any entry, so attribution (30% of the score) cannot "
+            "be scored at all. That is a task structure problem, not a scoring one, and "
+            "no config change fixes it"
         )
 
     # 8. What people actually attribute to, which is what the allowlist needs
@@ -156,24 +178,45 @@ def main():
     # 9. Approval endpoint
     scoring = lib.load_scoring()
     configured = bool((scoring.get("approval_endpoint", {}).get("path") or "").strip())
-    line(
-        configured,
-        "approval endpoint configured",
-        "on-time submission will be scored" if configured else "on-time reports as unavailable",
-    )
+    if configured:
+        line(True, "approval endpoint configured", "on-time submission will be scored")
+    else:
+        note_line("approval endpoint", "not set yet, on-time reports as unavailable")
     if not configured:
-        problems.append(
-            "verify the timesheet approval endpoint against this workspace and fill "
-            "approval_endpoint.path, or every score stays flagged partial"
+        notes.append(
+            "the timesheet approval endpoint is not configured, so on-time submission "
+            "reports as unavailable and every score is flagged partial. Expected until "
+            "someone verifies the endpoint against this workspace"
+        )
+
+    scoring_attr = scoring.get("attribution", {})
+    if not (scoring_attr.get("attributable_project_gids") or []):
+        notes.append(
+            "the attribution allowlist is empty, so any attributed time counts and the "
+            "metric cannot tell client work from a catch-all task. Expected until a "
+            "baseline period has run. The list above is what fills it"
         )
 
     print()
-    if problems:
-        print("Not ready to trust a score yet:")
-        for p in problems:
-            print("  - {}".format(p))
+    if blockers:
+        print("BLOCKED. This setup cannot produce usable numbers:")
+        for item in blockers:
+            print("  - {}".format(item))
+        if notes:
+            print("\nAlso worth knowing once the above is fixed:")
+            for item in notes:
+                print("  - {}".format(item))
         sys.exit(1)
-    print("Setup looks good. Scores from this data can be trusted.")
+
+    print("Setup works. Numbers can be produced from this data.")
+    if notes:
+        print("\nCaveats on what those numbers mean:")
+        for item in notes:
+            print("  - {}".format(item))
+        print(
+            "\nNone of these block the nudge. They limit the score, and each one is "
+            "expected at this stage rather than broken."
+        )
 
 
 if __name__ == "__main__":
