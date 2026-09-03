@@ -175,8 +175,24 @@ def main():
         for (gid, name), minutes in sorted(projects.items(), key=lambda kv: -kv[1]):
             print("  {:>8.1f}h  {}  ({})".format(minutes / 60, name, gid))
 
-    # 9. Approval endpoint
+    # 9. When the process actually starts counting
     scoring = lib.load_scoring()
+    started = lib.program_start(scoring)
+    if started:
+        today = datetime.now(timezone.utc).date()
+        if started > today:
+            note_line(
+                "program start",
+                "{}, {} days away. Nothing is scored or nudged before it".format(
+                    started, (started - today).days
+                ),
+            )
+        else:
+            line(True, "program start", "{}, counting since then".format(started))
+    else:
+        note_line("program start", "not set, every day in range is scored")
+
+    # 10. Approval endpoint
     configured = bool((scoring.get("approval_endpoint", {}).get("path") or "").strip())
     if configured:
         line(True, "approval endpoint configured", "on-time submission will be scored")

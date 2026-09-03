@@ -319,9 +319,31 @@ def parse_created_at(value):
         return None
 
 
-def workdays(start, end, holidays=None):
-    """Monday to Friday between start and end inclusive, minus holidays."""
-    skip = {parse_date(h) for h in (holidays or [])}
+def program_start(scoring):
+    """The first day that counts, or None if everything counts.
+
+    Set once the process actually goes live. Time logged before it is real work
+    and stays in Asana, but scoring it would judge people against a rule nobody
+    had been told about yet, and one bad pre-launch week would sit in the
+    two-period gate for a month.
+    """
+    value = ((scoring or {}).get("program_start_date") or "").strip()
+    return parse_date(value) if value else None
+
+
+def workdays(start, end, scoring=None):
+    """Monday to Friday between start and end inclusive, minus holidays.
+
+    Takes the whole scoring config rather than just the holiday list, so the
+    program start date is applied in one place. Every window, streak and nudge
+    is built from this function, so flooring here is what makes "nothing before
+    go-live counts" true everywhere instead of in whichever caller remembered.
+    """
+    scoring = scoring or {}
+    skip = {parse_date(h) for h in (scoring.get("holidays") or [])}
+    floor = program_start(scoring)
+    if floor and start < floor:
+        start = floor
     days = []
     cursor = start
     while cursor <= end:
@@ -440,7 +462,7 @@ def days_with_entries(entries, grace_days):
 
 def behind_as_of(entries, person, day, scoring):
     """Was this person behind on hours at the end of the given day?"""
-    days = workdays(week_start(day), day, scoring.get("holidays"))
+    days = workdays(week_start(day), day, scoring)
     if not days:
         return False
     expected = len(days) * float(person["daily_target_hours"]) * 60
@@ -470,7 +492,7 @@ def longest_streak_in_week(entries, person, monday, scoring):
     """Longest run of consecutive weekdays behind within a single week."""
     best = 0
     run = 0
-    for day in workdays(monday, monday + timedelta(days=4), scoring.get("holidays")):
+    for day in workdays(monday, monday + timedelta(days=4), scoring):
         if behind_as_of(entries, person, day, scoring):
             run += 1
             best = max(best, run)
@@ -498,7 +520,7 @@ def was_nudge_target_on(entries, person, day, scoring):
     only what had actually been entered by that day. That makes the count
     reproducible from the entries alone, so a weekly cap needs no stored counter.
     """
-    days = workdays(week_start(day), day, scoring.get("holidays"))
+    days = workdays(week_start(day), day, scoring)
     if not days:
         return False
 
@@ -522,7 +544,7 @@ def nudges_this_week(entries, person, today, scoring):
     return len(
         [
             d
-            for d in workdays(week_start(today), today, scoring.get("holidays"))
+            for d in workdays(week_start(today), today, scoring)
             if was_nudge_target_on(entries, person, d, scoring)
         ]
     )

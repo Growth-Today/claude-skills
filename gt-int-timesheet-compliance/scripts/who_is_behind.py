@@ -64,6 +64,7 @@ def main():
     on_track = []
     asleep = []
     capped = []
+    not_started = []
 
     for person in people:
         if args.now:
@@ -89,7 +90,19 @@ def main():
             continue
 
         entries = by_person.get(person["asana_gid"], [])
-        days = lib.workdays(lib.week_start(today), today, scoring.get("holidays"))
+        days = lib.workdays(lib.week_start(today), today, scoring)
+        if not days:
+            # Every weekday so far this week sits before the program start date,
+            # or is a holiday. Nobody owes anything yet, and without this guard
+            # expected hours are zero, which reads as "behind" and nudges the
+            # whole team on day one.
+            not_started.append(
+                {
+                    "name": person["name"],
+                    "why": "no countable workdays yet this week",
+                }
+            )
+            continue
         expected = len(days) * float(person["daily_target_hours"]) * 60
         logged = lib.logged_minutes(entries, days[0], today, as_of=today) if days else 0
         covered = lib.days_with_entries(entries, grace)
@@ -169,6 +182,7 @@ def main():
                 "on_track_do_not_contact": on_track,
                 "suppressed_by_weekly_cap": capped,
                 "outside_window": asleep,
+                "not_counted_yet": not_started,
                 "email_enabled": bool(nudge.get("email_enabled")),
             },
             indent=2,

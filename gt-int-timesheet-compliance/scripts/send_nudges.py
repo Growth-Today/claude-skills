@@ -177,7 +177,15 @@ def main():
     targets = payload.get("nudge_now") or []
     capped = payload.get("suppressed_by_weekly_cap") or []
     on_track = payload.get("on_track_do_not_contact") or []
+    not_counted = payload.get("not_counted_yet") or []
 
+    if not_counted:
+        # Says out loud why a run went quiet, so an empty list before go-live
+        # reads as working rather than broken.
+        print(
+            "Not counted yet, no weekday this week is on or after the program "
+            "start date: {}".format(len(not_counted))
+        )
     print("On track, not contacted: {}".format(len(on_track)))
     if capped:
         print(

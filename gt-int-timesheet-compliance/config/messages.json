@@ -12,11 +12,11 @@
   "clause_both": "you're at {logged} of {expected} hours, with nothing logged for {missing}",
   "clause_fallback": "your hours are behind for this week",
 
-  "_ctas": "The closing ask, matched to the problem. A backfiller has nothing to catch up on, so asking them to spend two minutes reads as a message nobody bothered to check.",
+  "_ctas": "The closing ask, matched to the problem. A backfiller has nothing to catch up on, so asking them to spend two minutes reads as a message nobody bothered to check. Keep the reason to something the person can act on: the week closes on Friday, and hours filled in days later are guesswork. Reasons they cannot verify, such as what we can or cannot invoice, invite an argument about the reason instead of getting the hours logged.",
   "cta_hours_light": "Two minutes and you're done:",
-  "cta_hours_firm": "Please get these in before Friday cutoff, or we can't bill the client for them:",
+  "cta_hours_firm": "Please get them in before the week closes on Friday:",
   "cta_days_light": "Worth logging at the end of each day, that is the only way it stays accurate:",
-  "cta_days_firm": "Please log on the day from now on, hours pieced together later aren't something we can put in front of a client:",
+  "cta_days_firm": "Please log at the end of each day from now on, filling a week in later is guesswork:",
 
   "_streaks": "Firm template only. A streak crosses weeks, so a raw day number reads like nonsense in a weekly nudge.",
   "streak_short": "this is day {streak}",

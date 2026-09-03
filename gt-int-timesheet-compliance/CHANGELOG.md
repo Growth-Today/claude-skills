@@ -2,6 +2,31 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.6.0
+
+A start date, so the process is measured from the day it is announced rather than from whatever is already in Asana.
+
+**Added**
+
+- `program_start_date` in `config/scoring.json`. Nothing before it is scored or nudged. Applied inside `workdays()`, which every window, streak and nudge is built from, so one setting covers the whole system rather than whichever caller remembered it. Set to the first live day.
+- `holidays` is now used for the launch week's non-working days, so a team that is out on the Monday is scored out of four days rather than marked twenty percent behind.
+- `not_counted_yet` in the nudge output, and a line in the dry run naming how many people are in it, so a quiet run before go-live reads as working rather than broken.
+- `verify_setup.py` prints the start date and how many days remain until it.
+
+**Changed**
+
+- `workdays()` takes the scoring config rather than a bare holiday list. One argument, both rules, no call site that can silently skip one.
+- The firm closing lines dropped the billing framing. "We can't bill the client for them" asks the reader to accept a claim they cannot check, which invites an argument about the claim instead of getting the hours logged. They now give a reason the person can act on: the week closes on Friday, and filling a week in later is guesswork.
+
+**Fixed**
+
+- **A window with no countable days nudged everyone.** Expected hours came to zero, zero is not above the behind threshold, so every person fell through to being nudged. Guarded explicitly, and entries from outside the countable days are dropped before scoring so attribution cannot score work from before the process existed.
+
+**Verified**
+
+- The launch week resolves to Tuesday through Friday with the Monday held out, a week entirely before the start date resolves to no days at all and scores `None` rather than zero, and later weeks are unaffected at five days.
+- Dry runs on the pre-launch Friday and the OOO Monday nudge nobody and report all six people as not counted yet. The first live Tuesday nudges against one day of expected hours, at the lightest escalation level.
+
 ## 1.5.1
 
 Nudge copy rewritten in plain English after reading the first real dry run.

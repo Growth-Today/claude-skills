@@ -117,6 +117,16 @@ Read the messages as if you had received one. This is the moment to fix the copy
 
 Then do the same for **Timesheet weekly**. Its run also attaches `timesheet-scores` as an artifact: download it, that JSON is what you paste into a session for the real review.
 
+## 7b. Set the date the process starts counting
+
+`program_start_date` in `config/scoring.json` is the first day that is scored or nudged. Set it to the day you actually announce the process, not to today.
+
+Everything before it is invisible to the scoring: no nudge, no missing day, no score. That matters more than it sounds. Without it the first run judges people on a fortnight they were never told about, the first digest opens with everyone below the floor, and the argument that follows is about the rule rather than about logging hours.
+
+Put the launch week's non-working days in `holidays` at the same time. A team that is out on the Monday should be scored out of four days that week, not marked twenty percent behind for all of it.
+
+Both settings are checked by `verify_setup.py`, which prints how many days remain until the start date, so a quiet nudge run has a visible reason.
+
 ## 8. Watch one week, then go live
 
 Let both run on schedule for a week with the switches off. Check on Friday that the daily runs fired when expected and the message list looked sane each day.

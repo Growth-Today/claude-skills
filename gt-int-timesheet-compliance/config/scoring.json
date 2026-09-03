@@ -61,5 +61,9 @@
     "user_param": "user"
   },
 
-  "holidays": []
+  "_program_start": "The first day that counts. Time logged before it stays in Asana and is real work, it is simply not scored and never triggers a nudge, because judging people against a rule before they were told about it produces an argument rather than a habit. It also keeps one bad pre-launch week out of the two-period gate. Set it once, then leave it alone.",
+  "program_start_date": "2026-09-08",
+
+  "_holidays": "Days nobody is expected to log. They drop out of expected hours, so a four-day week is scored as a four-day week rather than as everyone being twenty percent behind.",
+  "holidays": ["2026-09-07"]
 }

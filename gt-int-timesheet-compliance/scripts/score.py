@@ -132,7 +132,7 @@ def composite(parts, weights):
 
 
 def score_window(entries_by_person, people, start, end, scoring, approvals):
-    days = lib.workdays(start, end, scoring.get("holidays"))
+    days = lib.workdays(start, end, scoring)
     weeks = sorted({lib.week_start(d) for d in days})
     weights = scoring["weights"]
     allowlist = set(scoring["attribution"].get("attributable_project_gids") or [])
@@ -140,9 +140,21 @@ def score_window(entries_by_person, people, start, end, scoring, approvals):
     grace = scoring["hygiene"]["grace_days"]
     tolerance = scoring["coverage"]["tolerance_ratio"]
 
+    # Days before the program start date are not in `days`, so entries logged on
+    # them must not be in `entries` either. Otherwise attribution and coverage
+    # would quietly score work from before the process existed.
+    first = days[0] if days else None
+    last = days[-1] if days else None
+
     rows = []
     for person in people:
         entries = entries_by_person.get(person["asana_gid"], [])
+        if first is None:
+            entries = []
+        else:
+            entries = [
+                e for e in entries if first <= lib.parse_date(e["entered_on"]) <= last
+            ]
         logged = sum(e.get("duration_minutes") or 0 for e in entries)
         expected = len(days) * float(person["daily_target_hours"]) * 60
 
@@ -376,7 +388,7 @@ def main():
         {
             lib.week_start(d)
             for start, end in windows
-            for d in lib.workdays(start, end, scoring.get("holidays"))
+            for d in lib.workdays(start, end, scoring)
         }
     )
     fetched, available = lib.fetch_approvals(scoring, people, all_weeks)

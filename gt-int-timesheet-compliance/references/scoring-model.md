@@ -25,6 +25,21 @@ Hygiene and attribution carry the most because they are what make hours *usable*
 
 Submission sits lowest on purpose. It is the easiest thing to comply with and the easiest to game: someone can submit a blank timesheet on time. Weighting it heavily would reward the exact behaviour we are trying to catch.
 
+## Which days count at all
+
+Before any metric runs, the window is trimmed to the days the process actually covers. Two settings in `config/scoring.json` do it:
+
+| Setting | Effect |
+|---|---|
+| `program_start_date` | nothing on or before the day before it is scored, and nobody is nudged for it |
+| `holidays` | listed days drop out of expected hours entirely |
+
+`program_start_date` exists because scoring a period nobody had been told about produces an argument about the rule rather than a habit of logging, and because one bad pre-launch week would otherwise sit inside the two-period gate for a month. Time logged before that date stays in Asana and is still real work. It is simply not measured.
+
+Both are applied inside a single function, `workdays()` in `_lib.py`, which every window, streak and nudge is built from. A day the process does not cover cannot appear as a missing day anywhere, because it never enters the list in the first place. Before the start date the nudge run reports everyone under `not_counted_yet` and sends nothing, which is a working run rather than a broken one.
+
+The first week is usually short. If the start date is a Tuesday, that week is scored out of four days, and someone who logs four full days scores exactly the same as someone who logs five in a normal week.
+
 ## Hours coverage, 25%
 
 ```
