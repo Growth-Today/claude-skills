@@ -10,7 +10,7 @@ metadata:
 
 # Setup
 
-Work through this in order. Steps 1 to 4 are required before any script runs. Steps 5 to 8 turn it into an automation.
+Work through this in order. Steps 1 to 4 are required before any script runs, and step 3b tells you whether they worked. Steps 5 to 8 turn it into an automation.
 
 ## What does not need connecting
 
@@ -30,24 +30,59 @@ The Timesheets and Budgets add-on has to be active on the workspace, and it is p
 
 Confirm people can actually log time against the tasks they work on. If the work has no task, the hours land on a catch-all and attribution can never score. Fixing that is task hygiene, and it comes before the automation, not after.
 
-## 2. Personal access token
+## 2. Create the Asana token
 
-Asana, Settings, Apps, Manage developer apps, Personal access tokens. Create one and copy it once, it is not shown again.
+Go to **app.asana.com/0/my-apps**, or in Asana: your profile photo, Settings, the Apps tab, then **Manage developer apps**. Under **Personal access tokens**, create a new token, name it something like `timesheet-compliance`, and copy it. Asana shows the value once.
 
-Use a personal access token rather than an OAuth app connection. The time tracking endpoints need the `time_tracking_entries:read` scope, and a token carries your full user scope while an app connection may not have been granted it. A 403 on `/time_tracking_entries` is almost always this.
+Two things about that token that decide whether any of this works:
 
-The token is a credential. It goes in `.env` locally and in the remote environment's variables for scheduled runs. It never goes in a repo, a commit, a chat message, or a task description.
+- **Use a personal access token, not an app connection.** The time tracking endpoints need `time_tracking_entries:read`. A token carries its creator's full user scope; an OAuth app connection may never have been granted it. A 403 on `/time_tracking_entries` is nearly always this.
+- **It inherits its creator's permissions.** A token made by someone who can only see their own time returns only their own entries, and every team score built on it is quietly wrong rather than obviously broken. Create it from an account that is a **time reviewer or workspace admin**. `verify_setup.py` checks this by counting how many distinct submitters appear in the data, so you will not have to guess.
 
-## 3. Environment variables
+## 3. Give the token to the environment
 
-Locally, copy `.env.example` to `.env` and fill in:
+Two ways, and they are not equivalent. Pick the second for anything scheduled.
+
+### Option A, local only: a `.env` file
+
+For running the scripts by hand on your own machine. Copy `.env.example` to `.env` and fill in:
 
 ```
-ASANA_ACCESS_TOKEN=<your token>
+ASANA_ACCESS_TOKEN=<the token>
 ASANA_WORKSPACE_GID=<the workspace whose entries you are scoring>
 ```
 
-**For scheduled runs this is not enough.** Every Routine starts a fresh remote container that never sees your local `.env`. The same two variables have to be set as environment variables on the remote environment itself. This is the single most common reason a Routine that worked by hand fails on its first scheduled fire.
+`.env` is gitignored. The token goes in that file and nowhere else: not a commit, not a chat message, not a task description.
+
+### Option B, for scheduled runs: an API credential on the cloud environment
+
+This is the better option and it is not just a security preference. Anthropic's agent proxy attaches the key to requests for the hosts you name **after they leave the sandbox**, so the token never enters the container, never appears in an environment variable, and never lands in a file. Nothing running in the session can print it, log it, or commit it. It also opens network egress to that host, so it solves reachability at the same time: without it, a session whose network policy does not allow `app.asana.com` fails with a proxy 403 before it ever talks to Asana.
+
+At [claude.ai/code](https://claude.ai/code), open the environment for editing. In **Update cloud environment**, find **API credentials** below **Environment variables**, then **Add credential**:
+
+- **Credential type**: Bearer (the default)
+- **Name**: `Asana timesheets`
+- **Allowed websites**: `app.asana.com`
+- **Custom headers**: one row, header name `Authorization`, prefix `Bearer`, value = the token
+
+Select **Connect**. It saves immediately, separately from the dialog's Save changes button, and the value cannot be viewed again. There is no edit: to change it, delete and re-add.
+
+Two catches worth knowing before you start:
+
+- **It needs an organization admin role.** On Team and Enterprise that means an Owner, not an Admin. If you do not have it you will see a note instead of the credential list, even on your own environments. Ask an Owner to add it, which for us means Brigi in #help-me.
+- **`ASANA_WORKSPACE_GID` still goes in Environment variables**, in the same dialog, `.env` format one pair per line. It is an identifier, not a secret, so it does not need the credential mechanism. Note that variables are copied into a session once at startup, so a running session keeps the values it began with and only later sessions pick up a change.
+
+The scripts support both paths with no configuration. If `ASANA_ACCESS_TOKEN` is set they send the header themselves; if it is not, they send no Authorization header and let the proxy attach it. A 401 means neither happened, and the error says so.
+
+## 3b. Verify before trusting anything
+
+```bash
+cd scripts && python verify_setup.py
+```
+
+It checks, in order: is there a usable credential, is `app.asana.com` reachable, who the credential authenticates as, whether time entries come back, **whether it sees all submitters or only its owner**, and whether `created_at` and `attributable_to` are actually populated. It exits non-zero when something would make a score misleading, and it prints where the logged time is currently attributed, most hours first, which is exactly the list you need for the attribution allowlist in step 6.
+
+Run it once now, and again any time a score looks wrong.
 
 ## 4. Build the roster
 
@@ -58,6 +93,7 @@ Copy `config/roster.example.json` to `config/roster.json` and fill in one entry 
 - **escalation_contacts**: the people the weekly persistent-pattern draft is addressed to. They live in `roster.json` rather than `scoring.json` so no real person's details sit in a committed config file. Nothing in this skill ever messages them automatically.
 - **Timezone**: an IANA name like `Europe/Budapest`, `Asia/Manila`, `Africa/Johannesburg`. This is what stops a Manila nudge firing at 22:30, so get it right.
 - **daily_target_hours**: contracted hours per workday. Without it there is no coverage score at all.
+- **target_confirmed**: set it to `false` for anyone whose contracted hours you have not confirmed, typically a part-time person. The scripts then warn on every run that that person's coverage sub-metric is provisional, instead of presenting a guess as a number.
 
 Sanity check it before going further:
 

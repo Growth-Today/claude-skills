@@ -4,7 +4,7 @@ description: "Internal Growth Today workflow for running the Asana timesheet com
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.1.0"
+  version: "1.2.0"
   category: internal-ops
 ---
 
@@ -32,13 +32,16 @@ Second rule: **only contact people who are actually behind.** Nudging someone wh
 
 ## Before any run
 
-1. Confirm `ASANA_ACCESS_TOKEN` and `ASANA_WORKSPACE_GID` are set. If either is missing, stop and send the user to `references/setup.md`. Do not guess a workspace.
+1. Confirm `ASANA_WORKSPACE_GID` is set. Authentication works two ways: `ASANA_ACCESS_TOKEN` in the environment, or an API credential on the cloud environment that the agent proxy attaches outside the sandbox. Either is fine and the scripts detect which. If a run returns 401 or a proxy 403, stop and send the user to `references/setup.md`. Never guess a workspace.
 2. Confirm `config/roster.json` exists. The repo ships `config/roster.example.json` only, because a real roster holds names, emails and Slack IDs.
 3. Install once: `pip install -r requirements.txt`.
 
 ## The scripts
 
 ```bash
+# always first on a new environment: is the setup trustworthy
+python scripts/verify_setup.py
+
 # raw entries for a date range, paginated
 python scripts/fetch_entries.py --start 2026-08-24 --end 2026-09-04 --out /tmp/entries.json
 

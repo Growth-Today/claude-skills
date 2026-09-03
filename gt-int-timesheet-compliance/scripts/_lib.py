@@ -37,14 +37,23 @@ def die(message):
 
 
 def token():
-    value = os.environ.get("ASANA_ACCESS_TOKEN")
-    if not value:
-        die(
-            "ASANA_ACCESS_TOKEN is not set. In a scheduled Routine it has to be an "
-            "environment variable on the remote environment, not a local .env file. "
-            "See references/setup.md."
-        )
-    return value
+    """The Asana token, or None when the agent proxy is holding it for us.
+
+    Two supported ways to authenticate, and the difference matters:
+
+    1. ASANA_ACCESS_TOKEN in the environment. The script sends the Authorization
+       header itself. This is the local development path.
+    2. An API credential stored on the cloud environment. Anthropic's agent
+       proxy attaches the Authorization header to requests for app.asana.com
+       after they leave the sandbox, so the key never enters the container, the
+       environment variables, or any file. Nothing here can print, log or commit
+       it. This is the right path for scheduled runs.
+
+    Returning None means we send no Authorization header and let the proxy do
+    it. A 401 in that case means the credential is missing or not attached, and
+    api_get says so.
+    """
+    return os.environ.get("ASANA_ACCESS_TOKEN") or None
 
 
 def workspace_gid():
@@ -93,6 +102,14 @@ def load_roster():
         for field in ("asana_gid", "name", "timezone", "daily_target_hours"):
             if not person.get(field):
                 die("roster entry {} is missing {}".format(person.get("name", "?"), field))
+        if person.get("target_confirmed") is False:
+            warn(
+                "{}'s daily_target_hours is {} and marked unconfirmed, so their hours "
+                "coverage sub-metric is provisional. Confirm the contracted hours before "
+                "using their score for anything.".format(
+                    person["name"], person["daily_target_hours"]
+                )
+            )
     return people
 
 
@@ -101,7 +118,8 @@ def load_roster():
 
 def api_get(path, params=None, max_pages=200):
     """GET an Asana collection, following offset pagination. Returns a list."""
-    headers = {"Authorization": "Bearer {}".format(token())}
+    value = token()
+    headers = {"Authorization": "Bearer {}".format(value)} if value else {}
     params = dict(params or {})
     params.setdefault("limit", 100)
     results = []
@@ -109,9 +127,22 @@ def api_get(path, params=None, max_pages=200):
 
     while True:
         for attempt in range(4):
-            response = requests.get(
-                "{}{}".format(API_BASE, path), headers=headers, params=params, timeout=60
-            )
+            try:
+                response = requests.get(
+                    "{}{}".format(API_BASE, path), headers=headers, params=params, timeout=60
+                )
+            except requests.exceptions.RequestException as error:
+                if attempt < 3:
+                    time.sleep(2 ** attempt)
+                    continue
+                die(
+                    "Could not reach app.asana.com: {}\n"
+                    "A proxy 403 here means the environment is not allowed to reach "
+                    "app.asana.com. Storing an API credential for that host on the cloud "
+                    "environment opens egress to it as well as supplying the key, so it "
+                    "fixes both at once. Otherwise the environment's network access level "
+                    "has to permit app.asana.com.".format(error)
+                )
             if response.status_code == 429:
                 wait = int(response.headers.get("Retry-After", 5))
                 warn("rate limited, waiting {}s".format(wait))
@@ -123,11 +154,24 @@ def api_get(path, params=None, max_pages=200):
             break
 
         if response.status_code != 200:
+            hint = ""
+            if response.status_code == 401:
+                hint = (
+                    "\n401 means no usable credential reached Asana. Either set "
+                    "ASANA_ACCESS_TOKEN locally, or check that the cloud environment's "
+                    "API credential for app.asana.com exists and is not marked Not sent."
+                )
+            elif response.status_code == 403:
+                hint = (
+                    "\n403 on a time tracking endpoint usually means the token lacks the "
+                    "time_tracking_entries:read scope, or its owner cannot see other "
+                    "people's time. A personal access token carries its creator's own "
+                    "permissions, so it has to belong to a time reviewer or an admin."
+                )
             die(
-                "Asana returned {} for {}: {}\nIf this is a 403 on a time tracking "
-                "endpoint, the token is missing the time_tracking_entries:read scope. "
-                "A personal access token carries your full user scope; an OAuth app "
-                "connection may not.".format(response.status_code, path, response.text[:400])
+                "Asana returned {} for {}: {}{}".format(
+                    response.status_code, path, response.text[:400], hint
+                )
             )
 
         payload = response.json()

@@ -22,6 +22,7 @@ The second consequence of that split: there is nothing to keep in sync. Escalati
 SKILL.md                        router, read first
 config/scoring.json             weights, thresholds, windows. Edit this, not the code
 config/roster.example.json      copy to roster.json (gitignored) and fill in
+scripts/verify_setup.py         run this first: is the setup trustworthy
 scripts/fetch_entries.py        dump time entries for a date range
 scripts/who_is_behind.py        who to nudge now, timezone aware, with escalation
 scripts/score.py                score a window, or evaluate the gate
@@ -41,10 +42,10 @@ Full version in `references/setup.md`. The short one:
 pip install -r requirements.txt
 cp .env.example .env                       # add the Asana token and workspace GID
 cp config/roster.example.json config/roster.json   # fill in your submitters
-cd scripts && python who_is_behind.py --force      # sanity check the roster
+cd scripts && python verify_setup.py               # does any of this actually work
 ```
 
-Two things people get wrong on the first try. A scheduled Routine starts a fresh container that never sees your local `.env`, so the token has to be an environment variable on the remote environment too. And the daily nudge should fire on the two or three UTC hours that are late afternoon for your roster's timezones, not hourly, which is a twelvefold difference in cost for identical coverage.
+Three things people get wrong on the first try. A scheduled Routine starts a fresh container that never sees your local `.env`, so scheduled runs need an API credential on the cloud environment instead, which also opens egress to `app.asana.com`. A token created by someone who can only see their own time returns only their own entries, so every team score built on it is quietly wrong; `verify_setup.py` catches that. And the daily nudge should fire on the few UTC times that are late afternoon for your roster's timezones, not hourly, which is a sixfold difference in cost for identical coverage.
 
 ## Scheduled Routines or Make?
 

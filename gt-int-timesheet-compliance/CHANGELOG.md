@@ -2,6 +2,25 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.2.0
+
+Credential handling, and a setup check that tells you whether to trust a score.
+
+**Added**
+
+- `scripts/verify_setup.py`. Checks the credential, reachability, who it authenticates as, whether entries come back, **whether it sees every submitter or only its owner**, and whether `created_at` and `attributable_to` are populated. Exits non-zero when something would make a score misleading, and prints where time is currently attributed so the attribution allowlist can be filled from real data.
+- `target_confirmed` on a roster entry. Set it false for anyone whose contracted hours are not confirmed, typically part time, and every run warns that their coverage sub-metric is provisional rather than presenting a guess as a number.
+
+**Changed**
+
+- Authentication now works two ways with no configuration. `ASANA_ACCESS_TOKEN` in the environment means the script sends the header; without it the script sends no Authorization header and lets Anthropic's agent proxy attach an API credential stored on the cloud environment. The second path keeps the token outside the sandbox entirely, where nothing in a session can print, log or commit it, and it opens network egress to `app.asana.com` at the same time.
+- Setup reference rewritten around those two paths, with the exact UI steps for each and the note that adding an API credential needs an organization Owner role.
+
+**Fixed**
+
+- A network or proxy failure used to surface as a raw `requests` traceback. It now retries, then explains the likely cause: a proxy 403 means the environment is not permitted to reach `app.asana.com`, and an API credential for that host fixes both the key and the egress.
+- 401 and 403 now get separate hints. 403 points at the missing `time_tracking_entries:read` scope or a token whose owner cannot see other people's time, which is the failure that produces plausible but wrong team scores.
+
 ## 1.1.0
 
 Escalation reworked after review, plus the weekly pattern check.
