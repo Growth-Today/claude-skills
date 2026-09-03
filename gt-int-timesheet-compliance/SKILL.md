@@ -4,7 +4,7 @@ description: "Internal Growth Today workflow for running the Asana timesheet com
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.0.0"
+  version: "1.1.0"
   category: internal-ops
 ---
 
@@ -25,6 +25,7 @@ Second rule: **only contact people who are actually behind.** Nudging someone wh
 | Weekday nudge, "who has not logged", chase people | `playbooks/daily-nudge.md` |
 | Friday review, score the week, approval handoff | `playbooks/friday-review.md` |
 | Pay period report, "is the gate passing", biweekly read | `playbooks/biweekly-gate.md` |
+| "Who keeps missing this", draft for the leads | `playbooks/friday-review.md`, the persistence section |
 | First-time setup, token, Routines, roster | `references/setup.md` |
 | How a score is built, weights, worked examples | `references/scoring-model.md` |
 | Move the heartbeat to Make instead | `references/make-scenarios.md` |
@@ -46,6 +47,9 @@ python scripts/who_is_behind.py --entries /tmp/entries.json
 
 # full scorecard for a period
 python scripts/score.py --entries /tmp/entries.json --start 2026-08-24 --end 2026-09-04
+
+# trailing weeks plus the persistence check that feeds the weekly draft
+python scripts/score.py --weeks 3
 ```
 
 Every script prints JSON to stdout and human-readable warnings to stderr. Read both. A warning that the approval endpoint returned nothing changes how you report the on-time score, so never drop stderr.
@@ -58,6 +62,7 @@ Nothing persists between runs and nothing needs to. Escalation level is derived 
 
 - It will not mark a timesheet submitted or approved on someone's behalf. Approval is a human decision that carries payroll weight.
 - It will not write per-person hours or scores into this repo. Reporting goes to Slack, Notion, or the terminal.
+- It will not copy a manager on a daily nudge. Every level of the ladder reaches the person alone. Repeated patterns become a weekly draft that a human sends.
 - It will not nudge outside the window in `config/roster.json`. Someone in Manila does not get a Slack DM at 22:30 because the scheduler runs on Central European Time.
 
 ---

@@ -55,6 +55,7 @@ Copy `config/roster.example.json` to `config/roster.json` and fill in one entry 
 
 - **Asana user GID**: ask Claude to list workspace users through the Asana MCP, or read it out of the person's Asana profile URL.
 - **Slack member ID**: their Slack profile, three-dot menu, Copy member ID. Starts with `U`.
+- **escalation_contacts**: the people the weekly persistent-pattern draft is addressed to. They live in `roster.json` rather than `scoring.json` so no real person's details sit in a committed config file. Nothing in this skill ever messages them automatically.
 - **Timezone**: an IANA name like `Europe/Budapest`, `Asia/Manila`, `Africa/Johannesburg`. This is what stops a Manila nudge firing at 22:30, so get it right.
 - **daily_target_hours**: contracted hours per workday. Without it there is no coverage score at all.
 
@@ -87,14 +88,33 @@ While the allowlist is empty every score carries `attribution_loose_no_allowlist
 
 Create these as scheduled Routines. Cron is evaluated in UTC, so convert from local time and remember it shifts with daylight saving.
 
-**Nudge.** Do not run this hourly. Work out which UTC hours correspond to late afternoon for the timezones actually in your roster, and fire only on those. For a roster spanning Manila and Central European Time that is two fires a weekday, roughly `28 8,14 * * 1-5`, rather than twenty-four. Same coverage, a twelfth of the cost. Recheck the hours when daylight saving shifts.
+**Nudge.** Do not run this hourly. The script only acts on people for whom local time is inside the nudge window (16:00 to 17:00 by default), so fire only on the UTC times that land inside that window for a timezone you actually have. Work it out from the roster:
+
+| Timezone | Offset | 16:05 local is |
+|---|---|---|
+| Asia/Manila | UTC+8 | 08:05 UTC |
+| Asia/Kolkata | UTC+5:30 | 10:35 UTC |
+| Africa/Johannesburg | UTC+2 | 14:05 UTC |
+| Europe/Budapest, summer | UTC+2 | 14:05 UTC |
+| Europe/Budapest, winter | UTC+1 | 15:05 UTC |
+
+Work the table from whatever timezones your own `roster.json` actually contains. For the four above, two Routines cover everything, because a half-hour offset needs a different cron minute:
+
+```
+5  8,14,15 * * 1-5     Manila, Johannesburg, and Budapest in both seasons
+35 10      * * 1-5     India
+```
+
+That is four fires a weekday, and it is safe year-round: the 15:05 UTC fire is 17:05 in Budapest during summer, which falls outside the window and does nothing. Twenty runs a week instead of a hundred and twenty, for identical coverage.
+
+Fire at five past the hour, not on the hour. The window opens at 16:00 local and a fire timed a minute early does nothing at all.
 
 ```
 Prompt: Run the timesheet daily nudge. Follow playbooks/daily-nudge.md.
 Send nothing if nobody is behind.
 ```
 
-**Friday review.** After cutoff on Friday, late enough that the last entries are in.
+**Friday review.** The week closes Friday at 17:00 in each person's own timezone, so Manila closes nine hours before Budapest. The review has to run after the **last** cutoff, not the first: Budapest 17:00 is 15:00 UTC in summer and 16:00 UTC in winter, so `15 16 * * 5` clears everyone year-round.
 
 ```
 Prompt: Run the Friday timesheet review for the week just finished.

@@ -57,7 +57,7 @@ Tone by `escalation` value:
 
 > Ana, this is day 3 behind: 12 of 32 hours logged, and nothing at all for Mon, Tue or Wed. I need these before Friday cutoff or your client hours cannot be billed for the period. <timesheet link>
 
-**`cc_lead`** (fifth day or more). Same as firm, plus copy `cc_slack_id` on a separate message. Do not add the lead to the person's DM. Telling someone off in front of their manager is a different act from asking their manager for help.
+Beyond the fourth day the tone stays firm. **The daily nudge never copies a manager, at any level.** A pattern that keeps going is handled once a week, by the draft in `friday-review.md` that a human reads and sends. Escalating inside a daily automated DM takes a decision that belongs to a person.
 
 Rules for the copy:
 
@@ -66,6 +66,7 @@ Rules for the copy:
 - Deep-link to the timesheet, not to the Asana home page.
 - Never write the score, the ranking, or how anyone else is doing. This is a nudge, not a review.
 - Never say a hard consequence you have not been told to say. "Your hours cannot be billed" is true. "This affects your pay" is not yours to claim.
+- Never mention that a manager will be told, or that a pattern is being tracked. If it comes to that, a person says it, not a scheduled script.
 
 ## After state
 
@@ -80,7 +81,8 @@ Report in one short block:
 
 - Escalation is derived, not stored. `weekdays_behind_in_a_row` is recomputed from the entries on every run, so a missed run or a fresh container never resets someone's ladder or double-counts it.
 - `deficit_hours` can read 0.0 while the person is still a target. That means the hours exist but were typed in days late, so they failed the same-day check. Nudge on the missing dates, not on a deficit that isn't there.
-- The window check is what keeps this humane. Run the script hourly and each person is caught once, in their own afternoon. Never bypass it with `--force` on a real run.
+- The window check is what keeps this humane. The Routine fires on the handful of UTC times that fall inside 16:00 to 17:00 for a timezone on the roster, and each person is handled once, in their own afternoon. Never bypass it with `--force` on a real run.
+- A fire that produces an empty `nudge_now` is not a wasted run. Most of them will be, once the habit sticks.
 
 ---
 

@@ -8,6 +8,9 @@ Two modes:
   # the gate: N consecutive pay periods, most recent first
   python scripts/score.py --gate-anchor 2026-08-24 --periods 2
 
+  # the weekly persistence check that feeds the draft to the leads
+  python scripts/score.py --weeks 3
+
 Prints JSON on stdout. Read stderr too: a warning there changes what the numbers
 mean. Weights and thresholds come from config/scoring.json, never from here.
 """
@@ -15,7 +18,7 @@ mean. Weights and thresholds come from config/scoring.json, never from here.
 import argparse
 import json
 import sys
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 
 import _lib as lib
 
@@ -233,12 +236,87 @@ def evaluate_gate(periods, scoring):
     }
 
 
+def evaluate_persistence(weekly, entries_by_person, people, scoring):
+    """Who is not following the process as a pattern rather than a bad week.
+
+    Feeds the weekly draft in playbooks/friday-review.md. It never sends
+    anything: it names who meets the rule and why, and a person decides.
+    """
+    rule = scoring["persistence"]
+    floor = scoring["gate"]["individual_floor"]
+    flagged = []
+    clear = []
+
+    for person in people:
+        gid = person["asana_gid"]
+        entries = entries_by_person.get(gid, [])
+        below = []
+        streaks = []
+
+        for week in weekly:
+            monday = lib.parse_date(week["window"]["start"])
+            row = next((r for r in week["people"] if r["asana_gid"] == gid), None)
+            if row and row["score"] is not None and row["score"] < floor:
+                below.append({"week_of": week["window"]["start"], "score": row["score"]})
+            streaks.append(
+                {
+                    "week_of": week["window"]["start"],
+                    "longest_streak": lib.longest_streak_in_week(
+                        entries, person, monday, scoring
+                    ),
+                }
+            )
+
+        worst_streak = max((s["longest_streak"] for s in streaks), default=0)
+        reasons = []
+        if len(below) >= rule["weeks_below_floor_to_flag"]:
+            reasons.append(
+                "scored below {} in {} of the last {} weeks ({})".format(
+                    floor,
+                    len(below),
+                    len(weekly),
+                    ", ".join("{} at {}".format(b["week_of"], b["score"]) for b in below),
+                )
+            )
+        if worst_streak >= rule["nudge_streak_to_flag"]:
+            worst = max(streaks, key=lambda s: s["longest_streak"])
+            reasons.append(
+                "ran {} straight weekdays behind in the week of {}".format(
+                    worst_streak, worst["week_of"]
+                )
+            )
+
+        record = {
+            "name": person["name"],
+            "asana_gid": gid,
+            "weeks_below_floor": below,
+            "streaks_by_week": streaks,
+            "worst_streak": worst_streak,
+        }
+        if reasons:
+            record["reasons"] = reasons
+            flagged.append(record)
+        else:
+            clear.append({"name": person["name"], "worst_streak": worst_streak})
+
+    return {
+        "rule": rule,
+        "individual_floor": floor,
+        "weeks_examined": [w["window"]["start"] for w in weekly],
+        "flagged": flagged,
+        "clear": clear,
+        "draft_required": bool(flagged),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--start", help="window start, YYYY-MM-DD")
     parser.add_argument("--end", help="window end, YYYY-MM-DD")
     parser.add_argument("--gate-anchor", help="Monday starting the most recent pay period")
     parser.add_argument("--periods", type=int, default=1, help="how many pay periods back")
+    parser.add_argument("--weeks", type=int, help="score this many trailing weeks and run the persistence check")
+    parser.add_argument("--end-week", help="Monday of the last week to include, defaults to this week")
     parser.add_argument("--entries", help="reuse a fetch_entries.py dump instead of calling the API")
     args = parser.parse_args()
 
@@ -246,7 +324,18 @@ def main():
     people = lib.load_roster()
     weeks_per_period = scoring["gate"]["pay_period_weeks"]
 
-    if args.gate_anchor:
+    if args.weeks:
+        if args.end_week:
+            last_monday = lib.parse_date(args.end_week)
+            if last_monday.weekday() != 0:
+                lib.die("--end-week must be a Monday, got a {}".format(last_monday.strftime("%A")))
+        else:
+            last_monday = lib.week_start(datetime.now(timezone.utc).date())
+        windows = [
+            (last_monday - timedelta(weeks=i), last_monday - timedelta(weeks=i) + timedelta(days=4))
+            for i in range(max(1, args.weeks))
+        ]
+    elif args.gate_anchor:
         anchor = lib.parse_date(args.gate_anchor)
         if anchor.weekday() != 0:
             lib.die("--gate-anchor must be a Monday, got a {}".format(anchor.strftime("%A")))
@@ -257,7 +346,7 @@ def main():
     elif args.start and args.end:
         windows = [(lib.parse_date(args.start), lib.parse_date(args.end))]
     else:
-        lib.die("give either --start and --end, or --gate-anchor")
+        lib.die("give one of: --start with --end, --gate-anchor, or --weeks")
 
     overall_start = min(w[0] for w in windows)
     overall_end = max(w[1] for w in windows)
@@ -294,6 +383,11 @@ def main():
     output = {"weights": scoring["weights"], "periods": results}
     if args.gate_anchor:
         output["gate"] = evaluate_gate(results, scoring)
+    if args.weeks:
+        output["persistence"] = evaluate_persistence(
+            results, lib.index_entries(raw, people), people, scoring
+        )
+        output["escalation_contacts"] = lib.load_escalation_contacts()
 
     print(json.dumps(output, indent=2))
 

@@ -1,5 +1,5 @@
 {
-  "_comment": "Weights must sum to 1.0. Hygiene and attribution carry the most because they are what makes hours usable for client billing: hygiene says the hours are remembered rather than reconstructed, attribution says we know whose budget they came out of.",
+  "_comment": "Weights must sum to 1.0. Hygiene and attribution carry the most because they are what makes hours usable for client billing: hygiene says the hours are remembered rather than reconstructed, attribution says we know whose budget they came out of. This file holds rules and thresholds only. Real people live in roster.json, which is gitignored.",
 
   "weights": {
     "daily_hygiene": 0.30,
@@ -32,15 +32,22 @@
   },
 
   "nudge": {
-    "_comment": "behind_ratio is the share of expected hours a person must have logged week-to-date to be left alone. escalation_ladder maps a streak of consecutive weekdays behind to a tone; the last entry also copies the squad lead.",
+    "_comment": "The daily nudge goes to the person and nobody else, at every level. Nothing here copies a manager. Persistent cases are handled once a week by the draft in playbooks/friday-review.md, which a human sends. behind_ratio is the share of expected hours a person must have logged week-to-date to be left alone.",
     "behind_ratio": 0.80,
     "window_local_hour": 16,
-    "window_minutes": 30,
-    "escalation_ladder": ["light", "light", "firm", "firm", "cc_lead"]
+    "window_minutes": 0,
+    "escalation_ladder": ["light", "light", "firm", "firm", "firm"]
+  },
+
+  "persistence": {
+    "_comment": "Defines 'constantly not following the process' for the weekly draft. Someone is flagged when either condition holds across the lookback: their weekly score fell below the gate's individual_floor in at least weeks_below_floor_to_flag of those weeks, or they ran a nudge streak of nudge_streak_to_flag or more weekdays in any single week. One bad week is a bad week; two out of three is a pattern.",
+    "lookback_weeks": 3,
+    "weeks_below_floor_to_flag": 2,
+    "nudge_streak_to_flag": 4
   },
 
   "submission": {
-    "_comment": "Week closes Friday at cutoff_local_hour in each person's own timezone. Entries typed after that for the week just gone are late, not on time.",
+    "_comment": "The week closes Friday at cutoff_local_hour in each person's own timezone, so Manila closes before Johannesburg, which closes before Central European Time. cutoff_weekday is 0 for Monday, so 4 is Friday.",
     "cutoff_local_hour": 17,
     "cutoff_weekday": 4
   },

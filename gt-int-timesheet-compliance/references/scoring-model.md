@@ -70,6 +70,8 @@ on_time = weeks submitted or approved before cutoff / weeks in the window
 
 Read from Asana's approval state, not from anyone saying they submitted. A Slack confirmation is a useful signal for the nudge loop and is not evidence here. Where the two disagree, that gap is itself worth a conversation.
 
+Cutoff is Friday at 17:00 **in each person's own timezone**, from their roster entry. So the week closes in Manila nine hours before it closes in Budapest, and nobody is marked late because a scheduler ran on someone else's clock. The consequence for scheduling: the Friday review has to run after the latest local cutoff, not the earliest.
+
 Until `approval_endpoint.path` is verified and configured, this metric is `null`, the other three weights are renormalized over what is available, and every affected score carries `weights_renormalized: true`.
 
 ## Combining them
@@ -92,6 +94,26 @@ trustworthy  = passing AND no metric was missing in either period
 `trustworthy` is the field that licenses a payroll decision. `passing` on its own can be true while a metric was unavailable, and the script reports that combination as not passed.
 
 The individual floor is what stops a good average from hiding someone. A team mean of 0.82 carrying one person at 0.31 is not a passing team.
+
+## The persistence rule
+
+Separate from the score, and separate from the gate. This is what "constantly not following the process" means, and it is the only thing in the skill that goes beyond the person, once a week, as a draft a human sends.
+
+Someone is flagged when **either** condition holds over the trailing 3 weeks:
+
+```
+weekly score < individual_floor (0.60)  in >= 2 of the last 3 weeks
+OR
+>= 4 consecutive weekdays behind        within any one of those weeks
+```
+
+Two conditions because they catch two different people, and either one alone would miss half the problem.
+
+The first catches quiet under-logging: someone whose weekly score keeps landing under the floor.
+
+The second catches the person whose finished timesheet looks perfect. The streak is computed from **what had actually been entered as of each day**, not from the dates the finished entries carry. Someone who reconstructs a whole week on Friday shows up as behind on Monday, Tuesday, Wednesday and Thursday, because on those days nothing had been typed yet, even though the completed timesheet now shows five full days. Without that as-of reconstruction a backfiller is invisible to the rule, since in hindsight their hours all appear on the right dates.
+
+One bad week is a bad week. Two out of three is a pattern, and a four-day streak inside a single week is a habit rather than an accident. All three numbers live in `config/scoring.json` under `persistence`.
 
 ## Worked examples
 

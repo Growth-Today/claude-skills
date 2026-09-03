@@ -1,16 +1,22 @@
 {
-  "_comment": "Copy to roster.json and fill in. roster.json is gitignored on purpose: it holds names, work emails and Slack member IDs, and this skill lives in a repo that other people can read. Keep the real file out of git and out of chat logs.",
+  "_comment": "Copy to roster.json and fill in. roster.json is gitignored in the public repo because it holds names, work emails and Slack member IDs. In the private internal repo it should be committed instead, otherwise a scheduled run in a fresh container has no roster to read.",
 
   "_fields": {
-    "asana_gid": "Asana user GID. Find it with the Asana MCP get_users tool, or in the URL of the person's Asana profile.",
-    "name": "First name is enough. Used in the DM copy.",
-    "email": "Work email for the nudge mail.",
+    "asana_gid": "Asana user GID. Ask Claude to list workspace users through the Asana MCP, or read it from the person's Asana profile URL.",
+    "name": "First name is enough. Used in the message copy.",
+    "email": "Work email for the nudge mail. Check this is the inbox they actually read, which is not always the address their Slack account was created with.",
     "slack_member_id": "Slack profile, three-dot menu, Copy member ID. Starts with U.",
-    "timezone": "IANA name. This is what stops a Manila nudge firing at 22:30.",
+    "timezone": "IANA name. This sets both the nudge window and the Friday cutoff, so a person's week closes in their own time.",
     "daily_target_hours": "Contracted hours per workday. Without this there is no coverage score.",
-    "squad_lead_slack_id": "Who gets copied at the top of the escalation ladder. Optional.",
     "active": "Set false to keep someone in the file but out of every calculation, for parental leave or a notice period."
   },
+
+  "_escalation_note": "The daily nudge only ever contacts the person. escalation_contacts are used once a week, and only by the persistent-pattern draft in playbooks/friday-review.md, which a human reviews and sends. Nothing in this skill messages them automatically.",
+
+  "escalation_contacts": [
+    { "name": "Example Lead", "slack_member_id": "U000000LEAD" },
+    { "name": "Example Ops", "slack_member_id": "U000000OPS" }
+  ],
 
   "submitters": [
     {
@@ -20,7 +26,6 @@
       "slack_member_id": "U000000AAAA",
       "timezone": "Europe/Budapest",
       "daily_target_hours": 8,
-      "squad_lead_slack_id": "U000000LEAD",
       "active": true
     },
     {
@@ -30,17 +35,6 @@
       "slack_member_id": "U000000BBBB",
       "timezone": "Asia/Manila",
       "daily_target_hours": 8,
-      "squad_lead_slack_id": "U000000LEAD",
-      "active": true
-    },
-    {
-      "asana_gid": "0000000000000003",
-      "name": "Example Three",
-      "email": "example.three@yourdomain.co",
-      "slack_member_id": "U000000CCCC",
-      "timezone": "Africa/Johannesburg",
-      "daily_target_hours": 6,
-      "squad_lead_slack_id": "U000000LEAD",
       "active": true
     }
   ]

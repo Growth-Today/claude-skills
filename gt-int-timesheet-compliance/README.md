@@ -65,6 +65,7 @@ Determinism is the usual argument for a workflow platform, and it does not apply
 - Mark a timesheet submitted or approved for someone. That decision carries payroll weight and stays with a person.
 - Write per-person hours or scores into this repo. Reporting goes to Slack, Notion, or the terminal.
 - Message someone who logged their hours. The script's on-track list exists so the skip is deliberate and visible.
+- Copy a manager on a daily nudge. Every level of the daily ladder goes to the person alone. A repeated pattern produces a weekly draft for a human to review and send, and nothing more.
 - Nudge outside a person's local afternoon. Nobody in Manila gets a DM at 22:30 because the scheduler runs on European time.
 
 ## Known gaps

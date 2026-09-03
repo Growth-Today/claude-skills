@@ -4,13 +4,18 @@
   python scripts/who_is_behind.py --entries /tmp/entries.json
   python scripts/who_is_behind.py --force --now 2026-09-03T16:45   # testing
 
-Run this hourly on weekdays. Each pass only handles people for whom it is now
-late afternoon locally, so one scheduler covers Budapest, Manila and
-Johannesburg without waking anyone at 22:30.
+Run it on the few UTC times that are late afternoon somewhere in the roster,
+not hourly. Each pass only handles people for whom it is now late afternoon locally,
+so one scheduler covers Central European Time, India, Manila and Johannesburg
+without waking anyone at 22:30.
 
 Escalation level is derived from the data, not from a stored counter: it is the
 number of consecutive weekdays this person has ended behind. Nothing to persist,
 nothing to lose when a container is recycled.
+
+Every level of the ladder contacts the person and nobody else. Persistent
+patterns are handled once a week by the draft in playbooks/friday-review.md,
+which a human reads and sends.
 """
 
 import argparse
@@ -24,54 +29,6 @@ def in_nudge_window(now_local, hour, minute):
     """True when local time sits in the one-hour slot opening at hour:minute."""
     opens = now_local.replace(hour=hour, minute=minute, second=0, microsecond=0)
     return opens <= now_local < opens + timedelta(hours=1)
-
-
-def logged_minutes(entries, start, end):
-    total = 0
-    for entry in entries:
-        if not entry.get("entered_on"):
-            continue
-        day = lib.parse_date(entry["entered_on"])
-        if start <= day <= end:
-            total += entry.get("duration_minutes") or 0
-    return total
-
-
-def days_with_entries(entries, grace_days):
-    """Days that hold an entry logged at or near the time."""
-    covered = set()
-    for entry in entries:
-        entered = lib.parse_date(entry["entered_on"])
-        created = lib.parse_created_at(entry.get("created_at"))
-        if created is None or (created - entered).days <= grace_days:
-            covered.add(entered)
-    return covered
-
-
-def behind_as_of(entries, person, day, scoring):
-    """Was this person behind at the end of the given day?"""
-    days = lib.workdays(lib.week_start(day), day, scoring.get("holidays"))
-    if not days:
-        return False
-    expected = len(days) * float(person["daily_target_hours"]) * 60
-    logged = logged_minutes(entries, days[0], day)
-    return logged < scoring["nudge"]["behind_ratio"] * expected
-
-
-def streak_behind(entries, person, today, scoring, lookback=10):
-    """Consecutive weekdays ending behind, counting back from today."""
-    streak = 0
-    cursor = today
-    checked = 0
-    while checked < lookback:
-        if cursor.weekday() < 5:
-            if behind_as_of(entries, person, cursor, scoring):
-                streak += 1
-            else:
-                break
-            checked += 1
-        cursor -= timedelta(days=1)
-    return streak
 
 
 def main():
@@ -129,8 +86,8 @@ def main():
         entries = by_person.get(person["asana_gid"], [])
         days = lib.workdays(lib.week_start(today), today, scoring.get("holidays"))
         expected = len(days) * float(person["daily_target_hours"]) * 60
-        logged = logged_minutes(entries, days[0], today) if days else 0
-        covered = days_with_entries(entries, grace)
+        logged = lib.logged_minutes(entries, days[0], today) if days else 0
+        covered = lib.days_with_entries(entries, grace)
         missing = [lib.iso(d) for d in days if d not in covered]
 
         if expected > 0 and logged >= nudge["behind_ratio"] * expected and not missing:
@@ -143,7 +100,7 @@ def main():
             )
             continue
 
-        streak = max(1, streak_behind(entries, person, today, scoring))
+        streak = max(1, lib.streak_behind(entries, person, today, scoring))
         level = ladder[min(streak, len(ladder)) - 1]
 
         reasons = []
@@ -171,7 +128,6 @@ def main():
                 "missing_days": missing,
                 "weekdays_behind_in_a_row": streak,
                 "escalation": level,
-                "cc_slack_id": person.get("squad_lead_slack_id") if level == "cc_lead" else None,
                 "reasons": reasons,
             }
         )

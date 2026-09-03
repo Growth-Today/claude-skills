@@ -2,6 +2,26 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.1.0
+
+Escalation reworked after review, plus the weekly pattern check.
+
+**Changed**
+
+- The daily nudge now contacts the person and nobody else, at every level of the ladder. The old top rung that copied a squad lead is gone, and the copy rules forbid mentioning that a manager will be told.
+- The nudge window opens on the hour and runs for an hour, so a single cron minute can land inside it for a timezone with a half-hour offset.
+- `escalation_contacts` moved to `roster.json`, so no real person's name or Slack ID sits in a committed config file.
+
+**Added**
+
+- `score.py --weeks N` scores trailing weeks individually and runs a persistence check. Someone is flagged when their weekly score fell below the individual floor in at least 2 of the last 3 weeks, or when they ran 4 or more consecutive weekdays behind inside any one week.
+- A weekly persistent-pattern step in the Friday review that writes one draft addressed to the escalation contacts. It is a draft only. Nothing is sent, and it never goes to the flagged person.
+- Shared behind and streak helpers in `_lib.py`, so the daily nudge and the weekly rule use one definition of "behind" rather than two copies.
+
+**Fixed**
+
+- The retrospective streak now reconstructs what had actually been entered as of each day, via a new `as_of` filter on `logged_minutes`. Before this, someone who reconstructed a whole week on Friday looked like they were never behind, because in hindsight their entries carry the correct earlier dates. Verified: a person with the right weekly total, all of it backfilled, now trips the streak condition at 4 days while their score stays above the floor.
+
 ## 1.0.0
 
 First working version. Covers the three jobs end to end: weekday nudge, Friday review, biweekly gate.

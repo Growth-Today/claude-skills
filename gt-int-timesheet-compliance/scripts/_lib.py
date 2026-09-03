@@ -304,3 +304,99 @@ def index_entries(entries, people):
             "Fix how time is logged before trusting a composite score."
         )
     return by_person
+
+
+# ------------------------------------------------ behind / streak helpers
+# Shared by who_is_behind.py (today's nudge) and score.py (the weekly
+# persistence rule) so the definition of "behind" exists in exactly one place.
+
+
+def logged_minutes(entries, start, end, as_of=None):
+    """Minutes logged for days inside the range, inclusive.
+
+    Pass as_of to count only what had actually been entered by that date. That
+    is what makes a retrospective "were they behind on Tuesday" answer match
+    what the nudge saw on Tuesday: without it, someone who reconstructs a whole
+    week on Friday looks like they were never behind, because their entries now
+    carry the earlier dates. Entries with no created_at are always counted,
+    since we cannot tell when they were typed.
+    """
+    total = 0
+    for entry in entries:
+        if not entry.get("entered_on"):
+            continue
+        day = parse_date(entry["entered_on"])
+        if not (start <= day <= end):
+            continue
+        if as_of is not None:
+            created = parse_created_at(entry.get("created_at"))
+            if created is not None and created > as_of:
+                continue
+        total += entry.get("duration_minutes") or 0
+    return total
+
+
+def days_with_entries(entries, grace_days):
+    """Days holding an entry that was created at or near the time it covers."""
+    covered = set()
+    for entry in entries:
+        if not entry.get("entered_on"):
+            continue
+        entered = parse_date(entry["entered_on"])
+        created = parse_created_at(entry.get("created_at"))
+        if created is None or (created - entered).days <= grace_days:
+            covered.add(entered)
+    return covered
+
+
+def behind_as_of(entries, person, day, scoring):
+    """Was this person behind on hours at the end of the given day?"""
+    days = workdays(week_start(day), day, scoring.get("holidays"))
+    if not days:
+        return False
+    expected = len(days) * float(person["daily_target_hours"]) * 60
+    if expected <= 0:
+        return False
+    logged = logged_minutes(entries, days[0], day, as_of=day)
+    return logged < scoring["nudge"]["behind_ratio"] * expected
+
+
+def streak_behind(entries, person, today, scoring, lookback=10):
+    """Consecutive weekdays ending behind, counting back from today."""
+    streak = 0
+    cursor = today
+    checked = 0
+    while checked < lookback:
+        if cursor.weekday() < 5:
+            if behind_as_of(entries, person, cursor, scoring):
+                streak += 1
+            else:
+                break
+            checked += 1
+        cursor -= timedelta(days=1)
+    return streak
+
+
+def longest_streak_in_week(entries, person, monday, scoring):
+    """Longest run of consecutive weekdays behind within a single week."""
+    best = 0
+    run = 0
+    for day in workdays(monday, monday + timedelta(days=4), scoring.get("holidays")):
+        if behind_as_of(entries, person, day, scoring):
+            run += 1
+            best = max(best, run)
+        else:
+            run = 0
+    return best
+
+
+def load_escalation_contacts():
+    """People the weekly persistent-pattern draft is addressed to.
+
+    Read from roster.json, never from scoring.json, so no real person's details
+    sit in a committed config file.
+    """
+    path = os.path.join(CONFIG_DIR, "roster.json")
+    if not os.path.exists(path):
+        return []
+    return load_json(path, "roster.json").get("escalation_contacts", [])

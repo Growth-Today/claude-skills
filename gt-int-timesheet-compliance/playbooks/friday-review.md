@@ -61,6 +61,35 @@ Then deliver three things:
 
 Do not set anyone's timesheet to submitted or approved. That decision carries payroll weight and stays with a person.
 
+### Then check for a pattern, once a week
+
+The daily nudge only ever talks to the person. This is the one place a repeated problem goes further, and it goes as a draft, never as a sent message.
+
+```bash
+python score.py --weeks 3
+```
+
+Read the `persistence` block. Someone is flagged when either condition holds:
+
+- their weekly score fell below the individual floor in at least 2 of the last 3 weeks, or
+- they ran 4 or more straight weekdays behind inside any one of those weeks.
+
+Both matter because they catch different people. The first catches someone quietly under-logging. The second catches someone whose totals look fine because they reconstruct the whole week on Friday: the streak is computed from what had actually been entered on each day, so a backfiller shows up as behind all week even though the finished timesheet looks complete.
+
+If `flagged` is empty, say so and stop. Do not write a draft nobody needs.
+
+If it is not empty, write **one draft message addressed to the people in `escalation_contacts`** and hand it over for a human to send. Not one draft per person, one draft covering the week.
+
+The draft should:
+
+- Name each flagged person, the specific condition they met, and the numbers behind it.
+- Say what the nudges have already done: how many they got, at what level, over how many weeks. That is the difference between "they are ignoring the process" and "nobody has actually asked them yet".
+- Separate the two failure shapes explicitly. Under-logging and backfilling need different conversations, and lumping them together produces a useless one.
+- Propose one action per person, and keep it proportionate. The first time someone appears, the action is usually a conversation, not a consequence.
+- Stay short. This is a prompt for a manager to act, not a case file.
+
+Deliver it as a draft in the chat or terminal. Do not Slack it to anyone, and do not send it to the flagged person. The whole point of the weekly cadence is that a human reads it first.
+
 ## After state
 
 - Digest posted, reviewer DMed, approval task created, all three confirmed.
