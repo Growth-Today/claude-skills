@@ -32,11 +32,13 @@
   },
 
   "nudge": {
-    "_comment": "The daily nudge goes to the person and nobody else, at every level. Nothing here copies a manager. Persistent cases are handled once a week by the draft in playbooks/friday-review.md, which a human sends. behind_ratio is the share of expected hours a person must have logged week-to-date to be left alone.",
+    "_comment": "Slack DM only, daily, to the person and nobody else at every level. Nothing here copies a manager. email_enabled is off because the team lives in Slack; turn it on only for someone who genuinely does not read Slack. max_per_week is a hard stop: by the fifth day in one week the daily nudge has demonstrably not worked on that person, and a fifth identical message only teaches them to filter it. That case belongs to the weekly draft in playbooks/friday-review.md, which a human sends. behind_ratio is the share of expected hours a person must have logged week-to-date to be left alone.",
     "behind_ratio": 0.80,
     "window_local_hour": 16,
     "window_minutes": 0,
-    "escalation_ladder": ["light", "light", "firm", "firm", "firm"]
+    "escalation_ladder": ["light", "light", "firm", "firm", "firm"],
+    "max_per_week": 4,
+    "email_enabled": false
   },
 
   "persistence": {

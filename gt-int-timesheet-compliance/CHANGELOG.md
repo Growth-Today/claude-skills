@@ -2,6 +2,26 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.4.0
+
+Nudge volume capped, and Slack made the only default channel.
+
+**Changed**
+
+- **Slack only by default.** `nudge.email_enabled` is off, because the team lives in Slack and a second channel for the same message is noise. Each target carries a `channels` list, so turning email back on for one person who genuinely does not read Slack is a config change rather than a code change.
+- **Nudge copy is now explicitly one or two sentences.** A nudge is not a briefing, and a skimmed nudge is a wasted one.
+
+**Added**
+
+- **A hard cap of four nudges per person per calendar week** (`nudge.max_per_week`). Tone already stopped escalating after day three; nothing stopped the volume, so someone behind all week was in line for five DMs and five emails. By the fifth day the daily nudge has demonstrably failed on that person that week, and a fifth identical message only trains them to filter it, which then costs you the weeks it would have worked. That case belongs to the weekly persistence draft instead, so the cap and the escalation to a human are complements rather than a softening.
+- `suppressed_by_weekly_cap` in the nudge output, so a deliberate silence is visible in the run rather than looking like a missed person.
+- `was_nudge_target_on` and `nudges_this_week` in `_lib.py`. The weekly count is recomputed from the entries, using the same as-of reconstruction as the persistence rule, so the cap needs no stored counter and survives a missed run or a recycled container.
+
+**Verified**
+
+- A person logging nothing all week is nudged Monday through Thursday and suppressed on Friday at count 5, with everyone on track left uncontacted throughout.
+- The ladder still opens at `light` for a fresh case: light, light, firm across days one to three for someone clean the previous week.
+
 ## 1.3.0
 
 **Added**

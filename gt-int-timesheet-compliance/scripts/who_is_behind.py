@@ -16,6 +16,10 @@ nothing to lose when a container is recycled.
 Every level of the ladder contacts the person and nobody else. Persistent
 patterns are handled once a week by the draft in playbooks/friday-review.md,
 which a human reads and sends.
+
+Two limits keep the volume honest. Slack only unless email_enabled is turned on,
+and a hard cap of max_per_week nudges per person per calendar week. The count is
+recomputed from the entries rather than stored, so it survives a missed run.
 """
 
 import argparse
@@ -59,6 +63,7 @@ def main():
     targets = []
     on_track = []
     asleep = []
+    capped = []
 
     for person in people:
         if args.now:
@@ -100,6 +105,25 @@ def main():
             )
             continue
 
+        sent_this_week = lib.nudges_this_week(entries, person, today, scoring)
+        limit = nudge.get("max_per_week")
+        if limit and sent_this_week > limit:
+            capped.append(
+                {
+                    "name": person["name"],
+                    "nudges_this_week": sent_this_week,
+                    "limit": limit,
+                    "why": (
+                        "already nudged {} times this week, the cap is {}. Daily nudging "
+                        "has not worked on this person this week, so it stops here and "
+                        "the weekly persistence draft picks it up instead.".format(
+                            sent_this_week - 1, limit
+                        )
+                    ),
+                }
+            )
+            continue
+
         streak = max(1, lib.streak_behind(entries, person, today, scoring))
         level = ladder[min(streak, len(ladder)) - 1]
 
@@ -127,7 +151,9 @@ def main():
                 "deficit_hours": round(max(0.0, expected - logged) / 60, 2),
                 "missing_days": missing,
                 "weekdays_behind_in_a_row": streak,
+                "nudges_this_week_including_this_one": sent_this_week,
                 "escalation": level,
+                "channels": ["slack"] + (["email"] if nudge.get("email_enabled") else []),
                 "reasons": reasons,
             }
         )
@@ -138,7 +164,9 @@ def main():
                 "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                 "nudge_now": targets,
                 "on_track_do_not_contact": on_track,
+                "suppressed_by_weekly_cap": capped,
                 "outside_window": asleep,
+                "email_enabled": bool(nudge.get("email_enabled")),
             },
             indent=2,
         )

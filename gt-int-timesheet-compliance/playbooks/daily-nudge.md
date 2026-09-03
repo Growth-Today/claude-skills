@@ -1,6 +1,6 @@
 ---
 name: daily-nudge
-description: "Weekday nudge to the people whose hours are actually missing, sized to how long they have been behind. Slack DM plus email, in their own timezone."
+description: "Weekday Slack DM to the people whose hours are actually missing, short, sized to how long they have been behind, in their own timezone, capped per week."
 license: MIT
 metadata:
   author: growthtoday
@@ -19,12 +19,13 @@ A nudge that reaches everyone is a nudge nobody reads. The single fastest way to
 - `ASANA_ACCESS_TOKEN` and `ASANA_WORKSPACE_GID` are set. In a Routine these are environment variables on the remote environment, not a local `.env`.
 - `config/roster.json` exists with a timezone and a daily target for every active person.
 - Slack is connected. DMs go out with the person's `slack_member_id` as the channel.
+- Email is off by default (`nudge.email_enabled` in `config/scoring.json`). The team lives in Slack, so a second channel is noise. Each target's `channels` field tells you what to use.
 
 ## Plan
 
 1. Ask the script who is behind.
-2. Send one Slack DM and one email per target, tone set by the escalation level.
-3. Report what you sent, and who you deliberately left alone.
+2. Send one short Slack DM per target, tone set by the escalation level.
+3. Report what you sent, who you left alone, and who hit the weekly cap.
 
 ## Before state
 
@@ -37,6 +38,7 @@ Read the output before writing anything:
 
 - `nudge_now` is your entire contact list. Nobody else gets a message.
 - `on_track_do_not_contact` is the group you must not touch. It exists in the output so you can confirm the skip was deliberate.
+- `suppressed_by_weekly_cap` is people who are behind but have already had their four nudges this week. Do not message them. Say their name in the report so the silence is visible, and expect them in Friday's persistence draft.
 - `outside_window` is people for whom it is not late afternoon locally yet. They get their nudge on a later run, not this one.
 
 If `nudge_now` is empty, stop here. Say "nobody is behind, no messages sent" and finish. That is a successful run.
@@ -45,27 +47,29 @@ Check stderr too. If it warns that no entry carried `attributable_to` or `create
 
 ## Execute
 
-For each person in `nudge_now`, send a Slack DM to their `slack_member_id`, then the same substance by email. Use their real numbers from the JSON, never a rounded guess.
+For each person in `nudge_now`, send one Slack DM to their `slack_member_id`. Send email only if their `channels` list includes it. Use the real numbers from the JSON, never a rounded guess.
+
+**Keep it to one or two sentences.** This is a nudge, not a briefing. Anything longer gets skimmed, and a skimmed nudge is a wasted one.
 
 Tone by `escalation` value:
 
-**`light`** (first or second day behind). One or two sentences, no guilt, easy to act on.
+**`light`** (first or second day behind):
 
-> Hey Ana, your timesheet is at 12 of 24 hours for this week so far. Two minutes now and it is done: <timesheet link>
+> Hey Ana, timesheet is at 12 of 24 hours this week. Two minutes and it is done: <timesheet link>
 
-**`firm`** (third or fourth day). Name the gap and the days, and say what it blocks.
+**`firm`** (third day onward):
 
-> Ana, this is day 3 behind: 12 of 32 hours logged, and nothing at all for Mon, Tue or Wed. I need these before Friday cutoff or your client hours cannot be billed for the period. <timesheet link>
+> Ana, day 3 behind: 12 of 32 hours, nothing logged Mon to Wed. These need to be in before Friday cutoff or the client hours cannot be billed. <timesheet link>
 
-Beyond the fourth day the tone stays firm. **The daily nudge never copies a manager, at any level.** A pattern that keeps going is handled once a week, by the draft in `friday-review.md` that a human reads and sends. Escalating inside a daily automated DM takes a decision that belongs to a person.
+The tone stops escalating there. **The daily nudge never copies a manager, at any level**, and it stops entirely after four in one week. A pattern that survives that is handled once a week by the draft in `friday-review.md`, which a human reads and sends.
 
 Rules for the copy:
 
-- One ask per message. The ask is always "log your hours", never a list of process improvements.
-- Include the deficit in hours and the missing dates. Specifics get action; "please update your timesheet" does not.
-- Deep-link to the timesheet, not to the Asana home page.
-- Never write the score, the ranking, or how anyone else is doing. This is a nudge, not a review.
-- Never say a hard consequence you have not been told to say. "Your hours cannot be billed" is true. "This affects your pay" is not yours to claim.
+- One ask. Always "log your hours", never a list of process improvements.
+- Include the deficit and the missing dates. Specifics get action; "please update your timesheet" does not.
+- Deep-link to the timesheet, not the Asana home page.
+- Never write the score, a ranking, or how anyone else is doing.
+- Never claim a consequence you were not told to claim. "Client hours cannot be billed" is true. "This affects your pay" is not yours to say.
 - Never mention that a manager will be told, or that a pattern is being tracked. If it comes to that, a person says it, not a scheduled script.
 
 ## After state
@@ -74,6 +78,7 @@ Report in one short block:
 
 - Who you messaged, at what escalation level, and the deficit for each.
 - Who you skipped because they were on track, by name.
+- Who hit the weekly cap, by name, with the count.
 - Who fell outside the local time window and will be picked up on a later run.
 - Any stderr warning, repeated in plain words.
 
@@ -83,6 +88,7 @@ Report in one short block:
 - `deficit_hours` can read 0.0 while the person is still a target. That means the hours exist but were typed in days late, so they failed the same-day check. Nudge on the missing dates, not on a deficit that isn't there.
 - The window check is what keeps this humane. The Routine fires on the handful of UTC times that fall inside 16:00 to 17:00 for a timezone on the roster, and each person is handled once, in their own afternoon. Never bypass it with `--force` on a real run.
 - A fire that produces an empty `nudge_now` is not a wasted run. Most of them will be, once the habit sticks.
+- The weekly count is recomputed from the entries, not stored, so it survives a missed run and a recycled container. It counts the weekdays this week on which the person would have been a target, reconstructed from what had actually been entered by each of those days.
 
 ---
 

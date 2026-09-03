@@ -445,3 +445,40 @@ def load_escalation_contacts():
     if not os.path.exists(path):
         return []
     return load_json(path, "roster.json").get("escalation_contacts", [])
+
+
+def was_nudge_target_on(entries, person, day, scoring):
+    """Would this person have been a nudge target at the end of the given day?
+
+    Mirrors the live trigger (behind on hours, or missing a same-day entry) using
+    only what had actually been entered by that day. That makes the count
+    reproducible from the entries alone, so a weekly cap needs no stored counter.
+    """
+    days = workdays(week_start(day), day, scoring.get("holidays"))
+    if not days:
+        return False
+
+    expected = len(days) * float(person["daily_target_hours"]) * 60
+    logged = logged_minutes(entries, days[0], day, as_of=day)
+    behind = expected > 0 and logged < scoring["nudge"]["behind_ratio"] * expected
+
+    known = [
+        e
+        for e in entries
+        if (parse_created_at(e.get("created_at")) or day) <= day
+    ]
+    covered = days_with_entries(known, scoring["hygiene"]["grace_days"])
+    missing = [d for d in days if d not in covered]
+
+    return behind or bool(missing)
+
+
+def nudges_this_week(entries, person, today, scoring):
+    """Nudges this person has earned so far this week, today included."""
+    return len(
+        [
+            d
+            for d in workdays(week_start(today), today, scoring.get("holidays"))
+            if was_nudge_target_on(entries, person, d, scoring)
+        ]
+    )

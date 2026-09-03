@@ -68,6 +68,7 @@ Determinism is the usual argument for a workflow platform, and it does not apply
 - Write per-person hours or scores into this repo. Reporting goes to Slack, Notion, or the terminal.
 - Message someone who logged their hours. The script's on-track list exists so the skip is deliberate and visible.
 - Copy a manager on a daily nudge. Every level of the daily ladder goes to the person alone. A repeated pattern produces a weekly draft for a human to review and send, and nothing more.
+- Send more than four nudges to one person in a week. Slack only, one or two sentences, and a hard stop at four. By the fifth day the nudge has demonstrably not worked, and a fifth identical message only teaches them to filter it.
 - Nudge outside a person's local afternoon. Nobody in Manila gets a DM at 22:30 because the scheduler runs on European time.
 
 ## Known gaps

@@ -4,7 +4,7 @@ description: "Internal Growth Today workflow for running the Asana timesheet com
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.3.0"
+  version: "1.4.0"
   category: internal-ops
 ---
 
@@ -67,6 +67,7 @@ Nothing persists between runs and nothing needs to. Escalation level is derived 
 - It will not mark a timesheet submitted or approved on someone's behalf. Approval is a human decision that carries payroll weight.
 - It will not write per-person hours or scores into this repo. Reporting goes to Slack, Notion, or the terminal.
 - It will not copy a manager on a daily nudge. Every level of the ladder reaches the person alone. Repeated patterns become a weekly draft that a human sends.
+- It will not send a fifth nudge to the same person in one week, or email anyone unless `nudge.email_enabled` is on. Slack, short, four a week maximum.
 - It will not nudge outside the window in `config/roster.json`. Someone in Manila does not get a Slack DM at 22:30 because the scheduler runs on Central European Time.
 
 ---
