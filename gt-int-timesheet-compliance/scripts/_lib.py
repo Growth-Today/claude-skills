@@ -211,7 +211,16 @@ def api_get(path, params=None, max_pages=200):
             )
 
         payload = response.json()
-        results.extend(payload.get("data", []))
+        data = payload.get("data")
+        if isinstance(data, dict):
+            # A single-object endpoint such as /users/me. Extending a list with a
+            # dict yields its keys, which turns the caller's first result into the
+            # string "gid" and fails somewhere unrelated. Single objects are never
+            # paginated, so wrap and stop.
+            results.append(data)
+            return results
+        if isinstance(data, list):
+            results.extend(data)
         pages += 1
 
         offset = (payload.get("next_page") or {}).get("offset")
