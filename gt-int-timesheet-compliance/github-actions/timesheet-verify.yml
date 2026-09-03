@@ -1,0 +1,61 @@
+# Verify the setup. Run this FIRST, before trusting either of the other two.
+#
+# Copy to .github/workflows/timesheet-verify.yml in the private repo.
+#
+# Manual only, never scheduled. It sends nothing and changes nothing. It answers
+# the one question everything else rests on: does this credential actually see
+# every submitter's time, or only its own owner's? A token that sees one person
+# produces a team score that is quietly wrong rather than obviously broken, so
+# this runs before anyone reads a number.
+
+name: Timesheet verify
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check the credential, the data and the fields
+        env:
+          ASANA_ACCESS_TOKEN: ${{ secrets.ASANA_ACCESS_TOKEN }}
+          ASANA_WORKSPACE_GID: ${{ secrets.ASANA_WORKSPACE_GID }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          set -o pipefail
+          python verify_setup.py 2>&1 | tee "$RUNNER_TEMP/verify.txt"
+
+      - name: Attach the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: timesheet-verify
+          path: ${{ runner.temp }}/verify.txt
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Show a dry-run nudge list without sending anything
+        if: success()
+        env:
+          ASANA_ACCESS_TOKEN: ${{ secrets.ASANA_ACCESS_TOKEN }}
+          ASANA_WORKSPACE_GID: ${{ secrets.ASANA_WORKSPACE_GID }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          # --force ignores the local-time window so you see everyone who is
+          # behind, not just whoever happens to be in their afternoon right now.
+          # No --send, so nothing leaves this runner.
+          python who_is_behind.py --force > "$RUNNER_TEMP/targets.json"
+          python send_nudges.py --targets "$RUNNER_TEMP/targets.json"

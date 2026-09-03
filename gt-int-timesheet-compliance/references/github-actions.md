@@ -75,16 +75,31 @@ Same page, the **Variables** tab. These are not secrets, they are the send switc
 
 ## 5. Add the workflows
 
-Copy both files from `github-actions/` in this skill to `.github/workflows/` in the private repo:
+Copy all three files from `github-actions/` in this skill to `.github/workflows/` in the private repo:
 
+- `timesheet-verify.yml` (manual only, sends nothing, run this first)
 - `timesheet-nudge.yml`
 - `timesheet-weekly.yml`
 
 They assume the skill sits at the repo root. If you nest it in a subfolder, change `working-directory` in each step.
 
-## 6. Test by hand before trusting the schedule
+## 6. Verify first, before anything else
 
-Repo **Actions** tab → **Timesheet nudge** → **Run workflow**. Tick **force** so it ignores the local-time window and shows you everyone who is behind, not just whoever is in their afternoon right now.
+Repo **Actions** tab → **Timesheet verify** → **Run workflow**. It is manual only, it sends nothing, and it is the cheapest way to prove the whole chain works. No local Python needed.
+
+Read every line of the output, but especially this one:
+
+```
+PASS  team-wide visibility    entries from 6 of 6 submitters
+```
+
+If that says 1 of 6, the token only sees its own owner's time. Every team score built on it would be quietly wrong rather than visibly broken, so stop and fix the credential before going further. The same run also prints where time is currently attributed, which is the list that fills the attribution allowlist.
+
+The second step of that workflow prints a dry-run nudge list, so you also get to read the actual message copy before a single DM exists.
+
+## 7. Test the nudge by hand
+
+**Actions** → **Timesheet nudge** → **Run workflow**. Tick **force** so it ignores the local-time window and shows you everyone who is behind, not just whoever is in their afternoon right now.
 
 Open the run log and read the send step. You should see, per person: the escalation level, which nudge of the week it is, and the exact message text. Also check the two lines at the top: how many people were on track and left alone, and anyone silenced by the weekly cap.
 
@@ -92,7 +107,7 @@ Read the messages as if you had received one. This is the moment to fix the copy
 
 Then do the same for **Timesheet weekly**. Its run also attaches `timesheet-scores` as an artifact: download it, that JSON is what you paste into a session for the real review.
 
-## 7. Watch one week, then go live
+## 8. Watch one week, then go live
 
 Let both run on schedule for a week with the switches off. Check on Friday that the daily runs fired when expected and the message list looked sane each day.
 
