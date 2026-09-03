@@ -33,9 +33,9 @@ Managers and ICs check LinkedIn during work breaks, commutes, downtime. The soci
 
 ## Reference
 
-- DM sequence structure → `{SKILL_BASE}/copywriting/examples/dm-sequence.md`
-- Connection note copy → `{SKILL_BASE}/copywriting/examples/connection-notes.md`
-- Personalization signals → `{SKILL_BASE}/personalization/personalization.md`
+- DM sequence structure → `{SKILL_BASE}/resources/sequences/dm-sequence.md`
+- Connection note copy → `{SKILL_BASE}/resources/copywriting/connection-notes.md`
+- Personalization signals → `{SKILL_BASE}/resources/copywriting/personalization.md`
 
 ## BTL Rules on LinkedIn
 
@@ -253,4 +253,4 @@ For most BTL outreach, text wins.
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

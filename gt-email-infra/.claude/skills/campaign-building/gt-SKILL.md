@@ -1,19 +1,88 @@
 ---
 name: email-infra-campaign-building
-description: "Build cold-email campaigns and route by ESP and SEG. Use for campaign setup, the Lead-ESP by sending-vendor decision matrix (ESP matching is dead as a fixed rule), isolating SEG leads onto dedicated domains, and the launch gate. Triggers on build campaign, ESP matching, provider matching, SEG, Mimecast, Proofpoint, Barracuda, campaign routing, sending-vendor matrix. Do NOT use for writing copy or sequences (use gt-cold-email) or reading the dashboard (use the dashboard-reading sub-skill)."
+description: "Build cold-email campaigns and route by ESP and SEG. Use for campaign setup, the Lead-ESP by sending-vendor decision matrix (ESP matching is dead as a fixed rule), profiling a lead list by recipient ESP with the dns-auth-audit playbook in --esp-mix mode, isolating SEG leads onto dedicated domains, and the launch gate. Triggers on build campaign, ESP matching, provider matching, ESP mix, profile the lead list, what ESP are these leads on, SEG, Mimecast, Proofpoint, Barracuda, campaign routing, sending-vendor matrix. Do NOT use for writing copy or sequences (use gt-cold-email) or reading the dashboard (use the dashboard-reading sub-skill)."
 ---
 
 # Campaign Building & ESP/SEG Routing · [GTM Engineer]
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §7, §8 · **Related:** dashboard-reading, bounce-audit · gt-list-building.
 
+> 🔒 **Read-only area.** The campaign build and the routing are done from the **email infra management system**, not by hand in the sequencer. Use this sub-skill to decide *what* the campaign and routing should be, read the live config to check it, and report the gap. Do not edit a campaign or a routing rule in Instantly / EmailBison / Smartlead / Lemlist directly — that creates a second source of truth. The `--esp-mix` profiling below is read-only and safe to run.
+
 How to build a campaign that routes to the right inboxes and gets optimized from data, not from a 2024 rule of thumb. Numbers and taxonomy live in `{SKILL_BASE}/resources/reference.md` §1, §2, §8.
 
-**The one mindset shift:** you are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and you find it on the dashboard, not by guessing.
+You are not A/B-testing copy. You are reading a **matrix of already-segmented sends** and pushing volume toward what works. The winning combination is `lead list × sending vendor/ESP × recipient ESP × SEG`, and it's on the dashboard.
 
 ---
+### Determining the recipient ESP mix on a lead list
 
-## Part 1, ESP matching is dead as a rule
+**Fastest path — run the playbook, no Clay credits:**
+
+```bash
+cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
+uv run execute.py --esp-mix --file lead_domains.txt --csv acme_esp_mix.csv
+```
+
+Queries MX directly and prints the distribution, the SEG share, and a `no-email`
+count (domains with no MX at all — guaranteed hard bounces, strip them before sending).
+It uses the **same provider list** as the Clay formula below; the two are kept in
+lockstep in `MX_PROVIDERS` inside `execute.py`. Add a provider in one place, add it
+in the other.
+
+Use Clay instead when the domains already live in a Clay table and you want the ESP
+as a column alongside the rest of the enrichment.
+
+### Clay version — How To Run MX Analysis in Clay to Determine ESP Mix on Lead Lists
+
+Run this on a target account list or an existing customer list — you want the real inbox mix, not a sample.
+### Tools Needed:
+- Clay workspace
+- Company domains normalized (e.g. `growthtoday.co`)
+- Target account list or existing customer list
+
+Step 1: Add Enrichment Column in Clay
+- Column name: **`HTTP API`**
+
+Step 2: Set Up the HTTP API**
+
+- Paste this endpoint:
+    
+    ```
+    https://dns.google/resolve?name=domain&type=mx
+    ```
+    
+- Replace `domain` with the normalized company domain field in Clay.
+    - Example: https://dns.google/resolve?name=`{{company_domain}}`&type=mx
+
+Step 3: Rename This Column
+
+- Rename the `HTTP API` column to: **`get_mx`**
+
+Step 4: Add a Formula Column (copy-paste)
+- Column name: MX Provider
+
+```
+  javascript
+// A null MX ("0 .") is the domain saying it accepts no mail at all (RFC 7505).
+// Same as having no MX: a guaranteed hard bounce. Check it FIRST.
+!{{get_mx}}?.Answer?.length || {{get_mx}}.Answer.every(data => /^\s*\d+\s+\.\s*$/.test(data?.data || "")) ? "no-email" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("google")) ? "google" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("outlook.com") || data?.data?.includes("office365")) ? "microsoft" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("pphosted.com") || data?.data?.includes("ppe-hosted") || data?.data?.includes("ppsmtp")) ? "proofpoint" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("sophos.com")) ? "sophos" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("mimecast")) ? "mimecast" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("barracuda")) ? "barracuda" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("fortimail") || data?.data?.includes("fortimailcloud.com")) ? "fortinet" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("emailsrvr.com")) ? "rackspace" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("trendmicro.com")) ? "trendmicro" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("securemx")) ? "securemx" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("mxthunder.net")) ? "mxthunder" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("mtaroutes.com")) ? "mtaroutes" :
+{{get_mx}}?.Answer?.some(data => data?.data?.includes("zoho")) ? "zoho" :
+"other"
+```  
+
+## Part 1, Don't hard-code ESP matching
 
 Sending from the same provider the recipient uses (Google→Gmail, Outlook→Outlook) was a 2024 band-aid. **Do not hard-code it.** It can still *turn out* to be the right call for a given segment, but only the data decides, per segment, per week.
 
@@ -57,7 +126,7 @@ Enterprise recipients behind a **Secure Email Gateway (Mimecast, Proofpoint, Bar
 5. **Go multi-channel**: pair with LinkedIn/phone; email won't be your only path into SEG accounts.
 6. **Recycle, don't waste.** When bounce climbs on a SEG campaign, swap the domain out, then re-test it on easy **Google/Outlook** segments before retiring. A SEG-burnt domain often still performs on regular leads. Use placement + warmup score as the swap trigger (the dashboard-reading sub-skill).
 
-**Expectation-setting:** lower reply rates on SEG-heavy segments are the recipient's policy working as designed, not a broken setup. Prioritize reachable segments; shift weight off aggressively-gated ones rather than burning domains forcing them.
+Expect lower reply rates on SEG-heavy segments. That's the recipient's policy, not a broken setup. Prioritize reachable segments; shift weight off aggressively-gated ones rather than burning domains forcing them.
 
 ---
 
@@ -69,18 +138,20 @@ Build so the campaign is **visible to and managed by the inbox-management system
 2. **Set the routing rule:** `Google` | `Microsoft` | `Both` (based on Part 2, not on ESP-matching dogma).
 3. **Scope the inbox pool** with tag filters: *include-by-tag* to restrict to a chosen pool, *exclude-by-tag* to keep away from inboxes used elsewhere; set the **region** tag where a client sends by region.
 4. **Let the automation attach/detach.** It attaches only eligible inboxes and maintains membership:
- - **Active / New Inbox** → eligible (New Inbox only if ≥ 14 days old by creation date).
+ - **Active / New Inbox** → eligible, but read §2 before you attach. The system stops excluding an
+   inbox at `new_inbox_age_days`; **Growth Today does not attach one until `warmup_floor_days`**,
+   which is longer. "The dashboard let me" is not the standard — §2 has an explicit warning box
+   about exactly this gap.
  - **Warmup Needed** → throttled to cold 0–1 but kept attached.
  - **Burnt** → excluded.
 5. **Naming convention:** `Segment – ESP`, e.g. `Webvisits – Google`, `Webvisits – Microsoft`; low volume (< 500 leads) → `Webvisits – All` (Both); by rep → `Webvisits – Andrew`.
 
-> **Failover caveat (EmailBison):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox, Bison won't move the lead to a healthy inbox on the campaign. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't. Watch for leads stranded on throttled inboxes (the dashboard-reading sub-skill).
+> **Failover caveat (EmailBison only):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox, Bison won't move the lead to a healthy inbox on the campaign. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't. Watch for leads stranded on throttled inboxes (the dashboard-reading sub-skill).
 
 ---
 
 ## Part 5, Launch gate (hard, before any send)
 
-These are non-negotiable gates, not suggestions:
 
 - [ ] **List 100% verified** (and re-verified if > 30 days old), see `gt-list-building`.
 - [ ] **First email is plain text**: no HTML, no images (incl. signature), no links.
@@ -102,7 +173,7 @@ ROUTING
 
 BUILD
 [ ] Campaign created via the management dashboard (or drafted with NO inboxes attached)
-[ ] Only Active/eligible New Inbox attached; Burnt excluded; Warmup Needed throttled+attached
+[ ] Only Active inboxes past §2 `warmup_floor_days` attached; Burnt excluded; Warmup Needed throttled+attached
 [ ] Naming convention applied (Segment – ESP)
 
 LAUNCH GATE

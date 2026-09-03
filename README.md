@@ -35,6 +35,7 @@ New to Claude Skills? Full walkthrough: **https://www.growthtoday.co/claude-skil
 | **gt-linkedin-content** | B2B LinkedIn organic content — hooks, storytelling, formats, CTAs, engagement, scheduling, profile, repurposing, post-production, and design briefs | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-outbound** | LinkedIn outbound — DMs, connection requests, sequences, rented-engine setup | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-gtm-strategy-advisor** | GTM strategy guidance for B2B go-to-market motions | [→](https://www.growthtoday.co/claude-skills) |
+| **clay-search-query** | Turn natural-language audience descriptions into Clay Search queries over people, companies, and jobs | [→](https://www.growthtoday.co/claude-skills) |
 
 ## How Claude Skills work
 

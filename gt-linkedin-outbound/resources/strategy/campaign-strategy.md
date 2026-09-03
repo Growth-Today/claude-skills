@@ -7,7 +7,7 @@ description: LinkedIn campaign-level strategy and lifecycle. Use when planning a
 
 You design and diagnose LinkedIn outbound campaigns at the lifecycle level. Most campaigns that fail don't fail because of bad copy. They fail because they were structured for a good Day 1 and nothing more - one big list, one angle, one sender, no plan for what happens when the easy replies dry up.
 
-This sub-skill is the campaign-level view. The copy that goes inside the steps lives in `copywriting/examples/connection-request.md`, `copywriting/examples/connection-notes.md`, `copywriting/examples/dm-sequence.md`, `copywriting/atl-messaging.md`, and `copywriting/btl-messaging.md`. Account safety and infrastructure live in `rented-engine/rented-engine.md`. This file is about how to *put a campaign together* so it produces pipeline for 60-90 days, not 14.
+This sub-skill is the campaign-level view. The copy that goes inside the steps lives in `resources/copywriting/connection-request.md`, `resources/copywriting/connection-notes.md`, `resources/sequences/dm-sequence.md`, `resources/personas/atl-messaging.md`, and `resources/personas/btl-messaging.md`. Account safety and infrastructure live in `resources/infrastructure/rented-engine.md`. This file is about how to *put a campaign together* so it produces pipeline for 60-90 days, not 14.
 
 ## The Campaign Decay Curve
 
@@ -82,7 +82,7 @@ Fix:
 
 LinkedIn's January 2026 "Entity Alignment" update means the platform now checks whether the profile's expertise area matches who you're reaching out to. Misalignment quietly drops visibility. Profile-level optimization is now an algorithmic concern, not just a first-impression one.
 
-For deeper sender-profile guidance specific to outbound, see `copywriting/examples/connection-request.md`.
+For deeper sender-profile guidance specific to outbound, see `resources/copywriting/connection-request.md`.
 
 ### 2. ICP precision (the micro-segmentation move)
 
@@ -104,7 +104,7 @@ Launch with the highest-intent first (job change, content signal). Rotate into t
 
 This decision - made before any copy is written - separates campaigns that produce pipeline for 90 days from campaigns that have a good two weeks and run out.
 
-For tactical signal-sourcing, see `personalization/personalization.md` and the GT signal-sourcing skill.
+For tactical signal-sourcing, see `resources/copywriting/personalization.md` and the GT signal-sourcing skill.
 
 ### 3. List building in Sales Navigator
 
@@ -139,7 +139,7 @@ HeyReach (and Expandi, La Growth Machine) auto-rotate sends across all senders a
 
 One account hammering a list is the slow path to restriction. Five accounts rotated within one campaign distribute load and let conversations land at safer per-account volumes.
 
-For account sourcing, anti-detect browsers, proxies, and warmup, see `rented-engine/rented-engine.md`.
+For account sourcing, anti-detect browsers, proxies, and warmup, see `resources/infrastructure/rented-engine.md`.
 
 ## Multi-Channel Coordination
 
@@ -152,7 +152,7 @@ Combining LinkedIn and email in a coordinated sequence lifts results 45-60% over
 
 One nuance from the 2026 algorithm tightening: external links in LinkedIn DMs are increasingly flagged. Keep early-stage messages link-free. Describe the resource and offer to send it on reply. Drop the actual link only after they ask.
 
-For the LinkedIn copy side of multi-channel sequencing, see `copywriting/examples/dm-sequence.md` (Multi-Channel Coordination section). For the email side, see the GT cold-email skill.
+For the LinkedIn copy side of multi-channel sequencing, see `resources/sequences/dm-sequence.md` (Multi-Channel Coordination section). For the email side, see the GT cold-email skill.
 
 ## Common Campaign-Level Mistakes
 
@@ -210,7 +210,7 @@ Snapshot metrics mislead. Trend metrics tell the truth.
 
 A campaign at 22% reply rate but declining week-over-week is in worse shape than one at 18% holding steady for three weeks. Track weekly trends. Chasing a "good" aggregate number while your best segments are already exhausted is how pipelines quietly die.
 
-For the full benchmark and diagnostic tables, see `resources/linkedin-metrics-benchmarks.md`.
+For the full benchmark and diagnostic tables, see `resources/knowledge/linkedin-metrics-benchmarks.md`.
 
 ## Combines With
 
@@ -223,6 +223,6 @@ For the full benchmark and diagnostic tables, see `resources/linkedin-metrics-be
 
 ---
 
-*Source: Adapted from HeyReach's "LinkedIn outreach strategy for 2026" - https://www.heyreach.io/blog/linkedin-outreach-strategy. See also `resources/heyreach-knowledge-base.md` for the full external reference map.*
+*Source: Adapted from HeyReach's "LinkedIn outreach strategy for 2026". See also `resources/knowledge/heyreach-knowledge-base.md` for the full external reference map.*
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

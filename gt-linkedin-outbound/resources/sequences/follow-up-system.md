@@ -11,7 +11,7 @@ The pattern most teams hit: silence happens → assume it's a timing issue → a
 
 LinkedIn isn't email. It's personal. Your face, name, and profile show up in their notifications next to colleagues and friends. Over-following feels like pressure on a social channel and damages how the prospect (and their network) perceive you.
 
-This sub-skill is about the discipline of *when* to follow up, not the copy of the follow-up itself. For the copy of M2 within an active sequence, see `copywriting/examples/dm-sequence.md`. For re-engaging connections that have been dormant for months or years, see `copywriting/re-engagement.md`. This file is about everything in between - and the operational workflow that keeps your team from over-messaging by default.
+This sub-skill is about the discipline of *when* to follow up, not the copy of the follow-up itself. For the copy of M2 within an active sequence, see `resources/sequences/dm-sequence.md`. For re-engaging connections that have been dormant for months or years, see `resources/sequences/re-engagement.md`. This file is about everything in between - and the operational workflow that keeps your team from over-messaging by default.
 
 ## Why More Follow-ups Often Mean Fewer Replies
 
@@ -94,7 +94,7 @@ If you push more than one follow-up here, you signal "I'll chase anyone" and rep
 - After M2 with no reply: tag the conversation as "Accepted - No Reply" and exit the active campaign
 - Build the tag into a list. Use that list as an exclusion for future campaigns from the same sender. Optionally use it as a target list 60-90 days later with a fresh angle.
 
-For the M2 copy itself, see `copywriting/examples/dm-sequence.md` (M2B section). The rule there: don't reference M1, open with a new angle as if it's a fresh first message.
+For the M2 copy itself, see `resources/sequences/dm-sequence.md` (M2B section). The rule there: don't reference M1, open with a new angle as if it's a fresh first message.
 
 ---
 
@@ -157,7 +157,7 @@ Example: "Hey [Name], last time you mentioned you'd check internally about X - d
 
 Low pressure, clear, easy to answer.
 
-Anything beyond one follow-up here turns goodwill into pressure and you're not just losing a reply - you're damaging relationship quality. If there's still no reply after that, tag the conversation, stop active follow-up, and treat it as a re-engagement candidate (60-90 days later, new angle - see `copywriting/re-engagement.md`).
+Anything beyond one follow-up here turns goodwill into pressure and you're not just losing a reply - you're damaging relationship quality. If there's still no reply after that, tag the conversation, stop active follow-up, and treat it as a re-engagement candidate (60-90 days later, new angle - see `resources/sequences/re-engagement.md`).
 
 ---
 
@@ -307,6 +307,6 @@ Don't track total replies or total follow-ups sent. Those metrics reward activit
 
 ---
 
-*Source: Adapted from HeyReach's "How to follow up on LinkedIn without killing your reply rates" - https://www.heyreach.io/blog/how-to-follow-up-on-linkedin. See also `resources/heyreach-knowledge-base.md` for the full external reference map.*
+*Source: Adapted from HeyReach's "How to follow up on LinkedIn without killing your reply rates". See also `resources/knowledge/heyreach-knowledge-base.md` for the full external reference map.*
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Built and maintained by [Nikola Siljanoski](https://www.linkedin.com/in/nikola-siljanoski/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co), the AI-native GTM engineering firm. Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
