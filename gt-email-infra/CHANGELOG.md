@@ -5,6 +5,22 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); versions use
 [SemVer](https://semver.org/) (patch = fix, minor = additive, major = breaking
 layout/restructure).
 
+## [v5.1.0] - 2026-08-11
+
+Lemlist sub-skill additions from the internal Notion SOP.
+
+### Added
+- **reference.md:** new §10, CRM preference defaults (default opportunity
+ value $4,500, single source for all sub-skills to link rather than
+ hardcode).
+- **lemlist-setup:** default opportunity value (reference.md §10, unless the
+ AM confirms a different ACV) and lead preferences OFF.
+- **lemlist-setup:** account-signature and sender-name checks (no images,
+ logos, or links in the account signature, signatures live in sequence steps
+ only, sender names checked across all connected inboxes).
+- **lemlist-setup:** bi-directional cross-sequencer rule, written out
+ platform-neutral, whichever sequencer's lead gets a positive or neutral
+ reply first stops that lead in the other sequencer(s).
 ## [v5.1.0] - 2026-08-26
 
 Knowledge corrections, the first executable playbooks, a terminology rename,

@@ -5,7 +5,7 @@ description: "Set up and connect sending inboxes in Lemlist (infrastructure side
 
 # Lemlist Inbox Setup · [Sales Ops]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5, §10 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
 
 > 🔒 **Read-only area.** Connecting an inbox to the sequencer is done from the **email infra management system**. Follow this sub-skill for the standard each inbox must meet and to read and verify live state (setup-audit rows 1–7); do not connect, reconnect or swap inboxes by hand.
 
@@ -53,6 +53,7 @@ Set on **each inbox and each user**:
 - **ESP matching (Email Provider Matchmaker):** enable at team level if the account has **both** a Google and a Microsoft mailbox (Settings → Sending settings → Deliverability boost). Use as a lever the dashboard matrix supports (the campaign-building sub-skill), not a blind rule.
 - **Inbox rotation:** for multi-sender / higher volume, select multiple senders on the email step (round-robin); force a specific sender only where a named person must send a step.
 - **First email plain text**, no links (the warmup-golive sub-skill launch gate).
+- **Account signature clean:** no images, logos, or links in the account signature, signatures are handled in sequence steps only, sender names checked across all connected inboxes.
 - **Warning notifications ON:** high bounce rate + LinkedIn disconnection.
 
 ---
@@ -61,7 +62,7 @@ Set on **each inbox and each user**:
 
 - **Blocklist/unsubscribe:** turn ON "add unsubscribes to blocklist automatically"; add opt-out keywords (unsubscribe; stop; remove; not interested; …). Upload the client's existing blocklist (customers, active deals) and exclude those domains from Clay tables to save credits. Ask the client to unsubscribe leads as replies come in.
 - **CRM (HubSpot):** connect at **team level**; create contacts/companies on reply; map fields, users, activities; check Logs for sync errors.
-- **Preferences:** set opportunity value (confirm ACV with the AM), correct timezone (EU vs US), AI auto-tag replies ON, AI Inbox Manager OFF, OOO auto-tag ON.
+- **Preferences:** default opportunity value (`{SKILL_BASE}/resources/reference.md` §10) unless the AM confirms a different ACV, correct timezone (EU vs US), AI auto-tag replies ON, AI Inbox Manager OFF, OOO auto-tag ON, lead preferences OFF.
 - **Custom tracking domain (only if a client insists):** CNAME **Host = a subdomain you choose** → **Target `custom.lemlist.com`** + a TXT verification record; Cloudflare set to DNS-only. GT default = none.
 
 ---
@@ -69,6 +70,8 @@ Set on **each inbox and each user**:
 ## Part 5, Cross-sequencer rule
 
 If an inbox is used in Lemlist, prevent double-sending from another sequencer: set its cold send to **0 in Instantly / 1 in EmailBison** and **tag it "Lemlist."**
+
+**Bi-directional:** the rule runs both ways, regardless of which two sequencers are in play. Whichever sequencer's lead gets a positive or neutral reply first, stop that same lead in the other sequencer(s) so it doesn't keep getting sequenced elsewhere. Check reply status before each send cycle (via the platform's own reply/webhook data where available) and pause or remove the lead in the other tool the same day the reply lands.
 
 Placement/health: check the **Deliverability Hub** (delivery + bounce rate by provider/mailbox/domain, warmup score, manual inbox-placement tests, threshold alerts).
 
@@ -96,11 +99,13 @@ DELIVERABILITY
 [ ] Warning notifications ON (bounce, LinkedIn disconnect)
 [ ] No custom tracking domain (unless client insists -> dedicated)
 [ ] Cross-sequencer: cold 0 in Instantly / 1 in Bison, tag "Lemlist"
+[ ] Signature clean (no images/logos/links), sender names correct
 
 CRM & BLOCKLIST
 [ ] HubSpot connected at team level; field/user/activity mapping; logs clean
 [ ] Blocklist auto-add ON + opt-out keywords; client blocklist uploaded
-[ ] Preferences: opportunity value, timezone, AI auto-tag on / Inbox Manager off
+[ ] Preferences: opportunity value (reference.md §10) unless AM confirms, timezone, AI auto-tag on / Inbox Manager off, lead preferences OFF
+[ ] Positive/neutral reply in one sequencer stops the lead in the other(s)
 [ ] DNS verified (SPF/DKIM/DMARC) per inbox (the provisioning sub-skill)
 [ ] GTM Engineer + AM notified inboxes are ready
 ```
