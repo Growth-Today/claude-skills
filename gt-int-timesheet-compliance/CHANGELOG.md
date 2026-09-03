@@ -2,6 +2,12 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.3.0
+
+**Added**
+
+- `references/run-locally.md`. A step by step for running the scripts on your own machine with a personal access token in `.env`, for anyone without the organization Owner role that storing a cloud credential requires. Covers the Python 3.9 floor that the timezone handling needs, getting the token into `.env` without it landing in shell history, what each `verify_setup.py` failure actually means, and the honest split: local runs give you every number, and the Slack and email half still needs either the cloud credential or a person pasting output into a session.
+
 ## 1.2.1
 
 **Fixed**

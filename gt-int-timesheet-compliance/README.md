@@ -30,6 +30,7 @@ playbooks/daily-nudge.md        the weekday nudge
 playbooks/friday-review.md      the Friday review and approval handoff
 playbooks/biweekly-gate.md      the pay period gate
 references/setup.md             one-time setup: token, env vars, roster, Routines
+references/run-locally.md       run it on your own machine, no Owner role needed
 references/scoring-model.md     the four sub-metrics, weights, worked examples
 references/make-scenarios.md    build spec if you move the heartbeat to Make
 ```

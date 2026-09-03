@@ -4,7 +4,7 @@ description: "Internal Growth Today workflow for running the Asana timesheet com
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.2.1"
+  version: "1.3.0"
   category: internal-ops
 ---
 
@@ -27,6 +27,7 @@ Second rule: **only contact people who are actually behind.** Nudging someone wh
 | Pay period report, "is the gate passing", biweekly read | `playbooks/biweekly-gate.md` |
 | "Who keeps missing this", draft for the leads | `playbooks/friday-review.md`, the persistence section |
 | First-time setup, token, Routines, roster | `references/setup.md` |
+| "how do I run this on my laptop", no Owner role | `references/run-locally.md` |
 | How a score is built, weights, worked examples | `references/scoring-model.md` |
 | Move the heartbeat to Make instead | `references/make-scenarios.md` |
 
