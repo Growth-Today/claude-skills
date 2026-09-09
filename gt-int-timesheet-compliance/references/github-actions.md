@@ -147,7 +147,19 @@ Then set `NUDGE_SEND` and `REPORT_SEND` to `true`. Nothing else changes.
 - **`missing_scope` from Slack.** The bot has `chat:write` but not `im:write`. Add it and reinstall the app; scope changes need a reinstall.
 - **`channel_not_found` on the weekly digest.** The bot is not in that channel. Invite it.
 - **A 403 from Asana on the time endpoints.** The token's owner cannot see other people's time. `verify_setup.py` counts distinct submitters and will tell you.
-- **Cron runs late.** GitHub delays scheduled jobs under load. Your nudge window is a full hour, so a 15-minute delay is harmless, but do not expect minute precision.
+- **Cron runs late, and sometimes not at all.** This is the failure that costs you people rather than minutes. Measured on this repo across three days, scheduled fires landed between 35 minutes and 2 hours 45 late, and one of four fires never arrived. A one-hour nudge window turns each delay into a timezone that was never looked at, and the run still reports success, because "nobody was in their window" and "nobody is behind" print the same way.
+
+  The shape that survives it: one fire per timezone group, each fire looking only at its own group (`--timezones`), and a window hours wide (`nudge.window_hours`). Wide window plus one group per fire cannot double-send. Wide window plus a fire that looks at everybody will DM the same person twice in an afternoon.
+
+  Set each cron so that even the earliest possible fire is at or after 16:00 local for its group, in winter as well as summer. A fire before the window opens is skipped in silence.
+
+  | Cron (UTC) | Group | Earliest local |
+  |---|---|---|
+  | `0 8 * * 1-5` | Asia/Manila | 16:00 |
+  | `30 10 * * 1-5` | Asia/Kolkata | 16:00 |
+  | `0 15 * * 1-5` | Europe/Budapest, Africa/Johannesburg | 16:00 in winter, 17:00 in summer |
+
+  The `case` block in the workflow matches `github.event.schedule` verbatim against those cron strings. Change a cron and you must change the case, or that group goes quiet with a green tick.
 - **A schedule on a repo with no recent commits.** GitHub can disable scheduled workflows in repositories that have been inactive for 60 days, and it emails the repo admins first. If nudges go quiet, check the Actions tab before assuming the code broke.
 - **Two rosters.** If you commit `config/roster.json` and also set `ROSTER_JSON`, the file wins. Pick one and delete the other, or you will edit the wrong one in three months.
 

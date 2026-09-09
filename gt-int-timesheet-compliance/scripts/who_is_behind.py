@@ -3,11 +3,16 @@
   python scripts/who_is_behind.py
   python scripts/who_is_behind.py --entries /tmp/entries.json
   python scripts/who_is_behind.py --force --now 2026-09-03T16:45   # testing
+  python scripts/who_is_behind.py --timezones Asia/Manila           # one group
 
 Run it on the few UTC times that are late afternoon somewhere in the roster,
 not hourly. Each pass only handles people for whom it is now late afternoon locally,
 so one scheduler covers Central European Time, India, Manila and Johannesburg
 without waking anyone at 22:30.
+
+Pass --timezones so each scheduled fire owns one timezone group. That is what
+makes the window safe to widen: a person is evaluated by exactly one fire per
+day, so a wide window absorbs a late scheduler instead of sending twice.
 
 Escalation level is derived from the data, not from a stored counter: it is the
 number of consecutive weekdays this person has ended behind. Nothing to persist,
@@ -29,10 +34,18 @@ from datetime import datetime, timedelta, timezone
 import _lib as lib
 
 
-def in_nudge_window(now_local, hour, minute):
-    """True when local time sits in the one-hour slot opening at hour:minute."""
+def in_nudge_window(now_local, hour, minute, hours=1):
+    """True when local time sits in the slot opening at hour:minute.
+
+    The slot is hours long, and it needs to be several hours rather than one.
+    GitHub delays scheduled runs under load, by half an hour on a good day and
+    by nearly three on a bad one, and a one-hour window turns every delay into a
+    day when that timezone was never looked at. Widening is only safe because
+    --timezones gives each fire its own group, so one person cannot be caught by
+    two fires in the same afternoon.
+    """
     opens = now_local.replace(hour=hour, minute=minute, second=0, microsecond=0)
-    return opens <= now_local < opens + timedelta(hours=1)
+    return opens <= now_local < opens + timedelta(hours=hours)
 
 
 def main():
@@ -40,6 +53,11 @@ def main():
     parser.add_argument("--entries", help="reuse a fetch_entries.py dump")
     parser.add_argument("--force", action="store_true", help="ignore the local time window")
     parser.add_argument("--now", help="override current time, ISO local, for testing")
+    parser.add_argument(
+        "--timezones",
+        help="only consider people in these IANA timezones, comma separated. "
+        "One scheduled fire per group, so a wide window cannot double-send",
+    )
     args = parser.parse_args()
 
     scoring = lib.load_scoring()
@@ -65,8 +83,26 @@ def main():
     asleep = []
     capped = []
     not_started = []
+    skipped_zone = []
+
+    zones = {z.strip() for z in (args.timezones or "").split(",") if z.strip()}
+    if zones:
+        unknown = zones - {p["timezone"] for p in people}
+        if unknown:
+            # Almost always a typo in the workflow, and it silently nudges
+            # nobody, so say it out loud rather than reporting an empty run.
+            lib.warn(
+                "--timezones names {} which nobody in the roster is in".format(
+                    ", ".join(sorted(unknown))
+                )
+            )
 
     for person in people:
+        if zones and person["timezone"] not in zones:
+            skipped_zone.append(
+                {"name": person["name"], "why": "another fire owns {}".format(person["timezone"])}
+            )
+            continue
         if args.now:
             now_local = datetime.fromisoformat(args.now)
         else:
@@ -77,7 +113,10 @@ def main():
             asleep.append({"name": person["name"], "why": "weekend locally"})
             continue
         if not args.force and not in_nudge_window(
-            now_local, nudge["window_local_hour"], nudge["window_minutes"]
+            now_local,
+            nudge["window_local_hour"],
+            nudge["window_minutes"],
+            nudge.get("window_hours", 1),
         ):
             asleep.append(
                 {
@@ -183,6 +222,7 @@ def main():
                 "suppressed_by_weekly_cap": capped,
                 "outside_window": asleep,
                 "not_counted_yet": not_started,
+                "another_fire_owns_this_timezone": skipped_zone,
                 "email_enabled": bool(nudge.get("email_enabled")),
             },
             indent=2,

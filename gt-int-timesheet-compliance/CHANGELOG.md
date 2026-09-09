@@ -2,6 +2,25 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.7.0
+
+The first live day exposed a scheduling failure that looked like success.
+
+**Fixed**
+
+- **Half the roster was never checked.** GitHub fired the scheduled runs between 35 minutes and 2 hours 45 late, and dropped one fire of four. With a one-hour nudge window that meant Manila and India were outside their window on every run that arrived, so three of six people were never evaluated on the first counting day. Nothing failed: "nobody was in their window" and "nobody is behind" print identically, and every run was green.
+
+**Changed**
+
+- Each scheduled fire now owns one timezone group, via `--timezones` on `who_is_behind.py` and a `case` on `github.event.schedule` in the workflow. People outside the group are reported under `another_fire_owns_this_timezone` rather than silently dropped, and a timezone nobody is in warns instead of nudging nobody quietly.
+- The nudge window is `nudge.window_hours` long, set to 6, rather than a fixed hour. This is only safe because of the change above: a wide window plus a fire that looks at everybody would DM the same person twice in one afternoon.
+- Three crons instead of two lines covering four fires, each placed so the earliest possible fire is at or after 16:00 local for its group in both summer and winter.
+
+**Verified**
+
+- Every timezone group lands inside its window on time, 45 minutes late and 2 hours 45 late, in September and in December. The three groups are disjoint and between them cover all six people, so nobody can be caught twice or missed.
+- A typo in a timezone name warns on stderr rather than producing an empty run.
+
 ## 1.6.0
 
 A start date, so the process is measured from the day it is announced rather than from whatever is already in Asana.

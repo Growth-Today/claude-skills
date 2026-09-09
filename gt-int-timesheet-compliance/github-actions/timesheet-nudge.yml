@@ -9,14 +9,28 @@
 
 name: Timesheet nudge
 
+# One fire per timezone group, and each fire only looks at its own group. That
+# pairing is the point: GitHub runs scheduled jobs late, by half an hour on a
+# good day and by nearly three hours on a bad one, so the window each fire lands
+# in has to be hours wide. A wide window plus a fire that looks at everybody
+# would DM the same person twice in an afternoon. Wide window plus one group per
+# fire cannot.
+#
+# Each cron is set so that even the earliest possible fire is at or after 16:00
+# local for its group, all year:
+#
+#   08:00 UTC  Manila, UTC+8, no daylight saving        16:00 local
+#   10:30 UTC  Kolkata, UTC+5:30, no daylight saving    16:00 local
+#   15:00 UTC  Budapest, UTC+2 summer and UTC+1 winter  17:00 or 16:00 local
+#              Johannesburg, UTC+2, no daylight saving  17:00 local
+#
+# Never move a cron earlier without checking the winter case. A fire before
+# 16:00 local falls outside the window and that group is silently skipped.
 on:
   schedule:
-    # 16:05 local for Manila (UTC+8), Johannesburg and Budapest summer (UTC+2),
-    # and Budapest winter (UTC+1). The 15:05 fire is a harmless no-op in summer,
-    # because the script only acts inside each person's own 16:00 to 17:00 window.
-    - cron: "5 8,14,15 * * 1-5"
-    # India is UTC+5:30, so a half-hour offset needs its own minute.
-    - cron: "35 10 * * 1-5"
+    - cron: "0 8 * * 1-5"
+    - cron: "30 10 * * 1-5"
+    - cron: "0 15 * * 1-5"
   workflow_dispatch:
     inputs:
       force:
@@ -53,7 +67,21 @@ jobs:
         run: |
           FORCE=""
           if [ "${{ inputs.force }}" = "true" ]; then FORCE="--force"; fi
-          python who_is_behind.py $FORCE > "$RUNNER_TEMP/targets.json"
+
+          # Which group this fire owns. A manual run leaves it empty and looks at
+          # everybody, which is what you want when testing. Keep these strings
+          # identical to the cron lines above: they are matched verbatim, and a
+          # rewritten cron with a stale case here skips that group in silence.
+          case "${{ github.event.schedule }}" in
+            "0 8 * * 1-5")   ZONES="Asia/Manila" ;;
+            "30 10 * * 1-5") ZONES="Asia/Kolkata" ;;
+            "0 15 * * 1-5")  ZONES="Europe/Budapest,Africa/Johannesburg" ;;
+            *)               ZONES="" ;;
+          esac
+          if [ -n "$ZONES" ]; then echo "This fire owns: $ZONES"; fi
+
+          python who_is_behind.py $FORCE ${ZONES:+--timezones "$ZONES"} \
+            > "$RUNNER_TEMP/targets.json"
 
       - name: Send the DMs
         env:
