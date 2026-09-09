@@ -44,7 +44,7 @@ When the underlying article updates, this file is the place to revisit before pu
 | `resources/sequences/re-engagement.md` | Decay signal thresholds for triggering re-engagement |
 | `resources/copywriting/connection-notes.md` | "Active in last 30 days" Sales Nav filter as a pre-send hygiene step |
 | `resources/knowledge/linkedin-metrics-benchmarks.md` | Decay signal thresholds in diagnostics; phase performance logic |
-| `resources/infrastructure/rented-engine.md` | LinkedIn's 20-40/day per-account cap referenced against GT's 15-18 operating range |
+| `resources/infrastructure/rented-engine.md` | LinkedIn's 20-40/day per-account cap referenced against GT's 24-30 operating range |
 | `copywriting/copywriting.md` | "No external links in M1/M2" rule added to universal copy rules |
 
 ### Full sub-skill version

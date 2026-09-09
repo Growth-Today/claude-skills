@@ -5,6 +5,24 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); versions use
 [SemVer](https://semver.org/) (patch = fix, minor = additive, major = breaking
 layout/restructure).
 
+## [2.0.1] - 2026-09-09
+
+### Changed
+- **Weekly connection-request ceiling corrected from ~100 to 150-180.** The old
+  figure came from published vendor articles; 150-180 is what Growth Today
+  observes on its own live accounts as of Sep 2026. GT operating range moves
+  from 80-90/week to 120-150/week.
+- **Daily operating range moves from 15-18 to 24-30** per account, derived from
+  the new weekly band across 5 sending days. LinkedIn's own enforced daily range
+  (20-40) is unchanged. A note was added for campaigns that send 7 days a week
+  (use 18-21/day to land in the same weekly band).
+- Files touched: `SKILL.md`, `resources/knowledge/linkedin-metrics-benchmarks.md`
+  (account safety thresholds, platform limits, version 1.1 to 1.2),
+  `resources/infrastructure/rented-engine.md` (per-account caps, GT operating
+  table, warmup ramp, sender rotation math, restriction prevention, HeyReach
+  config, launch checklist, rented vs personal comparison),
+  `resources/knowledge/heyreach-knowledge-base.md` (cross-reference row).
+
 ## [2.0.0] - 2026-08-07
 
 Major restructure into a router plus six sub-skills. Restructured by Nikola Siljanoski.

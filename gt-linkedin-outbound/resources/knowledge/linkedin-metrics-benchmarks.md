@@ -1,7 +1,7 @@
 ---
 name: linkedin-metrics-benchmarks
-version: 1.1
-updated: 2026-08-05
+version: 1.2
+updated: 2026-09-09
 description: LinkedIn metrics to track, benchmarks, and diagnostics for outbound DM campaigns. Use when analyzing campaign performance, setting benchmarks, or optimizing LinkedIn outreach metrics.
 ---
 
@@ -39,7 +39,7 @@ Checked the ranges above against current multi-source 2026 industry studies (lar
 
 ### LinkedIn platform limits (verify against official LinkedIn docs before advising a client)
 
-- LinkedIn does not publish an exact invitation cap. The widely observed ceiling remains about **100 connection requests per week**, enforced with an in-product warning as you approach it. Treat ~100/week and 15-20/day per account as the safe operating numbers regardless of account tier. Premium or Sales Navigator does not license you to exceed them safely.
+- LinkedIn does not publish an exact invitation cap. Observed on Growth Today's own live accounts (Sep 2026), the ceiling sits at roughly **150-180 connection requests per week**, enforced with an in-product warning as you approach it. Treat 120-150/week and 24-30/day per account as the safe operating numbers regardless of account tier. Premium or Sales Navigator does not license you to exceed them safely. Note that many published vendor articles still quote ~100/week; that figure is out of date against what we see in production.
 - **Pending-invite hygiene:** withdraw stale pending invitations regularly (the skill auto-withdraws at ~14 days). A large pending-invite backlog can itself depress acceptance and draw throttling.
 - The **~30,000 connection cap** per profile still applies; high-volume senders on aging accounts should plan for it.
 - These limits shift without notice. Confirm on LinkedIn's official Help pages, and never present a specific cap as guaranteed.
@@ -109,13 +109,13 @@ LinkedIn doesn't have "deliverability" the way email does - but it has account h
 | Account restriction rate (per month) | <2% | 2-5% | >5% |
 | Connection invitation withdrawal rate | <30% | 30-50% | >50% |
 | Pending connection requests (queue depth) | <500 | 500-1000 | >1000 |
-| Daily connection requests sent | 15-18 | 19-22 | >22 |
-| Weekly connection requests sent | 80-90 | 91-99 | >100 (hard cap) |
+| Daily connection requests sent | 24-30 | 31-38 | >40 |
+| Weekly connection requests sent | 120-150 | 151-179 | >180 (hard cap) |
 | Daily DMs sent | <50 | 50-80 | >80 |
 
 **Withdrawal rule:** Withdraw pending invitations after 14 days. A queue >1000 pending invitations triggers LinkedIn's anti-spam systems.
 
-**Hard cap:** LinkedIn enforces ~100 connection requests per week per account. Operate at 80-90 to leave headroom.
+**Hard cap:** LinkedIn enforces roughly 150-180 connection requests per week per account. Operate at 120-150 so a heavy day never tips an account over.
 
 For full account safety operating procedure → see `resources/infrastructure/rented-engine.md`
 
