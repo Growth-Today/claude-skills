@@ -182,7 +182,7 @@ Goal: everything is in place before a single message goes out.
 
 ### Day 2: Campaign setup (1-2 hours)
 - Create the campaign in HeyReach (or chosen tool)
-- Assign 2-3 sender accounts; configure daily limits per sender (15-18 connection requests/day)
+- Assign 2-3 sender accounts; configure daily limits per sender (24-30 connection requests/day)
 - Build the sequence: connection request → 2-3 follow-ups with conditional logic for connected vs. non-connected
 - Set auto-withdrawal for unanswered connection requests at 14 days
 - Connect inbox sync so replies pause the sequence automatically

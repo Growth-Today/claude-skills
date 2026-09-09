@@ -13,8 +13,8 @@ You run the accounts. On a rented engine, infrastructure is as critical as copy:
 
 ## Account rules (full detail in rented-engine.md)
 
-- 15-20 connection requests per day per account. Hard cap; going above invites restrictions.
-- ~100 connection requests per week, LinkedIn's enforced ceiling for most accounts. (Verify against official LinkedIn documentation before advising a client, limits shift.)
+- 24-30 connection requests per day per account, our operating range. LinkedIn's own enforced daily range is 20-40 depending on account age and standing.
+- 150-180 connection requests per week is LinkedIn's enforced ceiling; operate at 120-150. (Measured on GT's live accounts Sep 2026. Verify against official LinkedIn documentation before advising a client, limits shift, and most published articles still quote a stale ~100/week.)
 - One profile change per day (headline, company, photo). Never bulk-edit.
 - Anti-detect browser required: every rented account runs in its own isolated browser profile.
 - One mobile proxy per account (sticky residential or 4G/5G, geo-matched). Never share an IP across accounts.

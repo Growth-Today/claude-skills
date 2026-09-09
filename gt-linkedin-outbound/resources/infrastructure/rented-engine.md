@@ -176,7 +176,7 @@ Once accounts are customized, they cannot start outbound immediately. New or fre
 |---|---|
 | **Week 1 (Days 7-14)** | Accept 5-10 incoming connections (vendor seeds these). Like 3-5 posts. Comment on 1-2. Browse profiles 10-15. No outbound connection requests yet. |
 | **Week 2 (Days 14-21)** | Send 5-10 connection requests/day to warm contacts (vendor's network or known peers). Like 5-7 posts. Comment on 2-3. Post 1 short piece of content. |
-| **Week 3+** | Begin cold outbound at 10-12 connection requests/day. Scale to 15-18/day over 2 weeks. |
+| **Week 3+** | Begin cold outbound at 10-12 connection requests/day. Scale to 24-30/day over 2-3 weeks. |
 
 ### Why warmup matters
 
@@ -203,7 +203,7 @@ LinkedIn enforces hard ceilings. Going above them = restrictions.
 | Metric | Limit | Notes |
 |---|---|---|
 | **Daily connection requests (LinkedIn-enforced ceiling)** | 20-40 per day | LinkedIn's hard-enforced range (varies by account age and standing). Above this risks the 1-week pause. |
-| **Weekly connection requests** | ~100 (sometimes 80-120, varies by account quality) | Hard cap. Going above triggers a 1-week pause warning, then a 30-90 day restriction. |
+| **Weekly connection requests** | 150-180 (varies by account quality and standing) | Hard cap. Going above triggers a 1-week pause warning, then a 30-90 day restriction. Measured on GT's own live accounts, Sep 2026 - older vendor articles quoting ~100/week are stale. |
 | **Daily search results viewable** | ~1000 (Sales Nav) | Higher with Sales Nav, lower without |
 | **Daily message sends** | 100-150 | DMs to existing connections - soft limit |
 | **InMail per month** | 50-150 | Depends on Sales Nav tier |
@@ -212,24 +212,24 @@ LinkedIn enforces hard ceilings. Going above them = restrictions.
 
 | Activity | Per Day | Per Week |
 |---|---|---|
-| Connection requests (cold) | 15-18 | 80-90 |
+| Connection requests (cold) | 24-30 | 120-150 |
 | DMs to existing connections | 30-50 | 150-250 |
 | Profile views | 80-100 | 500-700 |
 | Likes on posts | 20-30 | 100-150 |
 | Comments on posts | 3-5 | 15-25 |
 
-LinkedIn allows 20-40/day per account; we operate at 15-18 because that leaves margin for verification challenges, accidental over-sends, and short-term ceiling reductions when LinkedIn tightens enforcement. Volume scales horizontally through more accounts, not vertically through more requests per account.
+LinkedIn allows 20-40/day and 150-180/week per account; we operate at 24-30/day and 120-150/week because that leaves margin for verification challenges, accidental over-sends, and short-term ceiling reductions when LinkedIn tightens enforcement. The daily range assumes 5 sending days per week - if a campaign sends 7 days, drop to 18-21/day to land in the same weekly band. Volume scales horizontally through more accounts, not vertically through more requests per account.
 
 ### Sender rotation math (the structural lever)
 
 The fastest way to scale connection volume safely is **across accounts, not within them.** Add senders to a campaign and let the sequencer distribute the load.
 
-| Account count | Daily connections (at 18/day) | Weekly connections | Notes |
+| Account count | Daily connections (at 30/day) | Weekly connections | Notes |
 |---|---|---|---|
-| 1 account | 18 | 90 | Single point of failure. One restriction = pipeline stops. |
-| 3 accounts | 54 | 270 | Reasonable for an SDR + 2 support profiles |
-| 5 accounts | 90 | 450 | Standard agency rented engine for one client |
-| 10 accounts | 180 | 900 | Full ABM blast across a 5-10K account list |
+| 1 account | 30 | 150 | Single point of failure. One restriction = pipeline stops. |
+| 3 accounts | 90 | 450 | Reasonable for an SDR + 2 support profiles |
+| 5 accounts | 150 | 750 | Standard agency rented engine for one client |
+| 10 accounts | 300 | 1500 | Full ABM blast across a 5-10K account list |
 
 HeyReach (and similar platforms) auto-rotate sends across all senders attached to a campaign - no rep needs to track who sent what. All replies surface in a unified inbox.
 
@@ -268,7 +268,7 @@ Restrictions are a fact of operating LinkedIn outbound. The goal isn't zero rest
 
 ### Prevention
 
-- **Stay at 80-85% of ceilings** (15-18 daily / 80-90 weekly)
+- **Stay at 80-85% of ceilings** (24-30 daily / 120-150 weekly)
 - **Maintain >25% acceptance rate** - low acceptance is itself a restriction trigger
 - **One profile change per day**
 - **Never log in from your home device** - only the anti-detect browser
@@ -295,7 +295,7 @@ The tool layer that automates connection requests and DMs.
 
 1. **Account login** - provide LinkedIn credentials AND the anti-detect browser config OR login via cookies exported from the anti-detect browser
 2. **Proxy** - HeyReach must connect through the same proxy as the anti-detect browser. Note: HeyReach is cloud-based with geo-matched proxy servers built in, so the platform itself doesn't need a manual proxy setup - but the LinkedIn account session must come from a proxy that matches the profile's stated location.
-3. **Daily limits** - configure hard caps in HeyReach matching your operational limits (15-18 connection requests/day). HeyReach enforces these limits automatically and stops activity before a breach. Limits are distributed proportionally across all campaigns the sender is enrolled in, so multiple campaigns can't accidentally compound and breach the daily ceiling.
+3. **Daily limits** - configure hard caps in HeyReach matching your operational limits (24-30 connection requests/day). HeyReach enforces these limits automatically and stops activity before a breach. Limits are distributed proportionally across all campaigns the sender is enrolled in, so multiple campaigns can't accidentally compound and breach the daily ceiling.
 4. **Sender rotation** - attach 3-10 senders to the same campaign. HeyReach auto-rotates which account sends each request, distributing load and surfacing all replies in a unified inbox (Unibox).
 5. **Sequence template** - connection request (with or without note) → 30-60s wait → M1 (after acceptance) → 3-5 day wait → M2B (if no reply). Use **conditional branches** for connected-no-reply vs. profile-viewed vs. replied paths - see `resources/sequences/dm-sequence.md` state-aware branching section.
 6. **Auto-withdrawal of pending invitations** - set HeyReach to auto-withdraw pending connection requests after 14 days. Pending invitations sitting in LinkedIn's queue past 14 days hurt account health; a queue >1000 pending triggers anti-spam systems.
@@ -334,7 +334,7 @@ Before sending the first cold connection request from a rented account:
 - [ ] Anti-detect browser profile saved and tested
 - [ ] Mobile/residential proxy assigned and matches location
 - [ ] Sales Navigator subscription active (for advanced search)
-- [ ] HeyReach/Expandi configured with daily limits at 15-18/day
+- [ ] HeyReach/Expandi configured with daily limits at 24-30/day
 - [ ] Working hours set to 9am-5pm in account's time zone
 - [ ] Reply detection / inbox sync working
 - [ ] M1 + M2B copy ready (different angles, no repeated phrasing across accounts)
@@ -376,7 +376,7 @@ If the user is running their own founder/personal profile (not rented), most rul
 | Anti-detect browser | Required | Not needed (use normal browser) |
 | Mobile proxy | Required | Not needed (home/office IP fine) |
 | 1 change per day | Strict | Light - natural changes are normal |
-| 15-18 connections/day | Strict ceiling | Can flex up to 20-25, but stay under weekly 100 |
+| 24-30 connections/day | Strict ceiling | Can flex higher on a real profile, but stay under weekly 150 |
 | Warmup | 14-21 days mandatory | Already warmed if it's your real profile |
 | Profile customization | Vendor-coordinated | Just edit it normally |
 | Restriction risk | Moderate | Low (real established profile) |
