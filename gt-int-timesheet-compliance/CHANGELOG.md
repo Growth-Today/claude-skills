@@ -2,6 +2,26 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.8.0
+
+Nudge copy rewritten again, this time against the only test that matters: would you say the sentence out loud to the person.
+
+**Changed**
+
+- Hours are spoken amounts rather than totals. "an hour and a half out of 16" instead of "1.3 of 16 hours", rounded to the nearest half hour, because the point is that someone is well short rather than accountancy to the minute.
+- The ask is a question. "Can you add them today?" rather than an instruction ending in a colon and a URL.
+- Three asks instead of two, because there are three problems: days never filled in, a total that is short, and hours that all arrived days late. The third group has nothing to catch up on, so being told to top it up reads as a message nobody checked.
+- Someone with nothing logged at all is told the days are empty and nothing else. Adding "showing nothing out of 16 hours" on top is what a report writes, not a person.
+
+**Fixed**
+
+- **"tue and Wed are still empty."** Case fitting lowercased the clause when the light template put it after a comma, which mangled a clause opening with a substituted weekday name. A word the data supplied is now left alone.
+- The empty-day clause was paired with the top-it-up ask, so someone with an untouched Tuesday was asked to top up a total rather than fill in the day.
+
+**Verified**
+
+- All eight copy paths rendered: nothing logged, one empty day, several empty days, short on hours with nothing empty, part time, firm with empty days, firm on a streak past a week, and both tones of the backfill case. Every one reads as a spoken sentence and every ask matches its problem.
+
 ## 1.7.0
 
 The first live day exposed a scheduling failure that looked like success.

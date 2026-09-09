@@ -77,44 +77,69 @@ def hours(value):
     return "{:g}".format(round(float(value), 1))
 
 
-def describe(target, messages):
-    """Return (problem sentence, closing ask) matched to what is actually wrong.
+def spoken_hours(value):
+    """The amount as a person would say it out loud.
 
-    Three situations and they need different asks. Someone short on hours has
-    catching up to do. Someone whose total is right but logged days late has
-    nothing to catch up on, and telling them to spend two minutes reads as a
-    message nobody checked before sending.
+    "1.3 of 8 hours" is how a database reports a total. Nobody says it, and a
+    message built out of it reads as machine-written however friendly the rest
+    of the sentence is. Rounded to the nearest half hour, because the point is
+    "you are well short", not accountancy to the minute.
+    """
+    half = round(float(value) * 2) / 2
+    if half <= 0:
+        return "nothing"
+    if half < 1:
+        return "under an hour"
+    if half == 1:
+        return "an hour"
+    if half == 1.5:
+        return "an hour and a half"
+    whole = int(half)
+    if half == whole:
+        return "{} hours".format(whole)
+    return "{} and a half hours".format(whole)
+
+
+def describe(target, messages):
+    """Return (problem sentence, the ask) matched to what is actually wrong.
+
+    Four situations, three different asks. Days that were never filled in need
+    filling in. A total that is short needs topping up. Hours that are all
+    present but arrived days late need a different habit, and telling that
+    person to catch up reads as a message nobody checked, because they have
+    nothing to catch up on.
     """
     short_on_hours = target["logged_hours"] < target["expected_hours"]
     missing = target.get("missing_days_human") or []
     firm = target.get("escalation") == "firm"
 
     fields = {
-        "logged": hours(target["logged_hours"]),
+        "logged": spoken_hours(target["logged_hours"]),
         "expected": hours(target["expected_hours"]),
         "missing": human_list(missing),
         "was_were": "was" if len(missing) == 1 else "were",
+        "is_are": "is" if len(missing) == 1 else "are",
+        "it_them": "it" if len(missing) == 1 else "them",
     }
 
-    if short_on_hours and missing:
+    def pick(clause, ask):
         return (
-            messages["clause_both"].format(**fields),
-            messages["cta_hours_firm" if firm else "cta_hours_light"],
+            messages[clause].format(**fields),
+            messages["cta_{}_{}".format(ask, "firm" if firm else "light")].format(**fields),
         )
+
+    if missing and short_on_hours:
+        # Nothing at all logged: the empty days say it, and adding "showing
+        # nothing against 16 hours" on top is the sentence a report writes.
+        if target["logged_hours"] <= 0:
+            return pick("clause_nothing", "missing")
+        return pick("clause_both", "missing")
     if missing:
-        return (
-            messages["clause_days_only"].format(**fields),
-            messages["cta_days_firm" if firm else "cta_days_light"],
-        )
+        # Hours add up but the days are not covered, so they went in late.
+        return pick("clause_days_only", "backfill")
     if short_on_hours:
-        return (
-            messages["clause_hours_only"].format(**fields),
-            messages["cta_hours_firm" if firm else "cta_hours_light"],
-        )
-    return (
-        messages["clause_fallback"],
-        messages["cta_hours_firm" if firm else "cta_hours_light"],
-    )
+        return pick("clause_hours_only", "hours")
+    return pick("clause_fallback", "hours")
 
 
 def fit_case(template, placeholder, text):
@@ -151,9 +176,14 @@ def compose(target, messages, link):
             )
         )
     problem, cta = describe(target, messages)
+    # A clause can open with a substituted weekday name. Recasing that gives
+    # "tue and Wed are still empty", so leave a word the data supplied alone.
+    supplied = set((target.get("missing_days_human") or []) + [target["name"]])
+    if problem.split(" ", 1)[0].strip(",.") not in supplied:
+        problem = fit_case(template, "problem", problem)
     return template.format(
         name=target["name"],
-        problem=fit_case(template, "problem", problem),
+        problem=problem,
         cta=cta,
         streak_phrase=build_streak_phrase(target, messages),
         link=link,
