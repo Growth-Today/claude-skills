@@ -77,6 +77,21 @@ jobs:
           if [ "${{ vars.REPORT_SEND }}" = "true" ]; then SEND="--send"; fi
           python weekly_report.py --scores "$RUNNER_TEMP/week.json" $SEND
 
+      - name: Print the JSON into the log
+        if: always()
+        run: |
+          # Also in the log, not only in the artifact. Artifact bytes are served
+          # from blob storage that an agent session usually cannot reach, so a
+          # score that exists only inside a zip is a score nobody reviews. The
+          # log is readable through the GitHub API.
+          for f in week.json persistence.json week-warnings.txt; do
+            if [ -s "$RUNNER_TEMP/$f" ]; then
+              echo "::group::$f"
+              cat "$RUNNER_TEMP/$f"
+              echo "::endgroup::"
+            fi
+          done
+
       - name: Attach the JSON to this run
         if: always()
         uses: actions/upload-artifact@v4

@@ -88,6 +88,7 @@ Same page, the **Variables** tab. These are not secrets, they are the send switc
 Copy all three files from `github-actions/` in this skill to `.github/workflows/` in the private repo:
 
 - `timesheet-verify.yml` (manual only, sends nothing, run this first)
+- `timesheet-status.yml` (manual only, no Slack token at all, safe for a daily Routine to call)
 - `timesheet-nudge.yml`
 - `timesheet-weekly.yml`
 
@@ -126,6 +127,14 @@ Everything before it is invisible to the scoring: no nudge, no missing day, no s
 Put the launch week's non-working days in `holidays` at the same time. A team that is out on the Monday should be scored out of four days that week, not marked twenty percent behind for all of it.
 
 Both settings are checked by `verify_setup.py`, which prints how many days remain until the start date, so a quiet nudge run has a visible reason.
+
+## 7c. The read-only status workflow, and why it is separate
+
+`timesheet-status.yml` scores the week so far, prints the digest table and lists everyone who would be nudged. It is manual-dispatch only, and **it contains no Slack token at all**, so it cannot send a message even by accident.
+
+That separation is the point. The obvious way to get a daily status is to force the nudge workflow, and it works right up until the morning someone flips `NUDGE_SEND` to `true`, at which point the status check DMs the whole team at 9am with numbers from a day that has barely started. A workflow with no credential to send with cannot do that.
+
+It also prints everything into the run log rather than only attaching an artifact. Artifact bytes are served from blob storage that an agent session usually cannot reach, so a score that exists only inside a zip is a score nobody reviews. The Friday digest now prints its JSON into the log for the same reason, and still attaches the artifact for a human.
 
 ## 8. Watch one week, then go live
 

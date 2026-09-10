@@ -1,0 +1,68 @@
+# Read-only status, for a daily Claude Routine to call.
+#
+# Copy this to .github/workflows/timesheet-status.yml in the PRIVATE repo.
+#
+# Why this exists as its own workflow rather than reusing the nudge with
+# --force: this file has no SLACK_BOT_TOKEN in it anywhere, so it cannot send a
+# message even by accident. A Routine that fires every morning and forces the
+# nudge workflow would DM the whole team at 9am the day someone flips
+# NUDGE_SEND to true. Separating them makes that impossible rather than
+# unlikely.
+#
+# It prints everything into the run log on purpose. Artifacts are stored on
+# blob storage that an agent session usually cannot reach, so a number that
+# only exists inside a zip is a number nobody can review. The log is readable
+# through the GitHub API, so that is where the data goes.
+
+name: Timesheet status
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: timesheet-status
+  cancel-in-progress: true
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Score the week so far
+        env:
+          ASANA_ACCESS_TOKEN: ${{ secrets.ASANA_ACCESS_TOKEN }}
+          ASANA_WORKSPACE_GID: ${{ secrets.ASANA_WORKSPACE_GID }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          python score.py --this-week > "$RUNNER_TEMP/week.json"
+          # Dry run needs no Slack credentials, and prints the same table the
+          # Friday digest would post.
+          python weekly_report.py --scores "$RUNNER_TEMP/week.json"
+
+      - name: Who would be nudged right now
+        env:
+          ASANA_ACCESS_TOKEN: ${{ secrets.ASANA_ACCESS_TOKEN }}
+          ASANA_WORKSPACE_GID: ${{ secrets.ASANA_WORKSPACE_GID }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        working-directory: scripts
+        run: |
+          # --force ignores the local-time window, so this covers everybody
+          # rather than whoever is in their afternoon. Nothing is sent: there is
+          # no Slack token in this workflow and send_nudges is never called.
+          python who_is_behind.py --force
+
+      - name: The full scores JSON
+        run: |
+          echo "::group::week.json"
+          cat "$RUNNER_TEMP/week.json"
+          echo "::endgroup::"

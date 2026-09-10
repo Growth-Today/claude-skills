@@ -2,6 +2,22 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.9.0
+
+A status workflow a daily Routine can call, and scores that are actually readable.
+
+**Added**
+
+- `github-actions/timesheet-status.yml`. Manual dispatch only, scores the week so far, prints the digest table and lists everyone who would be nudged. **It carries no Slack token**, so it cannot send anything even by accident. That matters because the obvious way to get a daily status is to force the nudge workflow, which works until the morning someone sets `NUDGE_SEND` to true and the status check DMs the whole team at 9am about a day that has barely started.
+
+**Changed**
+
+- The weekly digest prints `week.json`, `persistence.json` and the warnings into the run log, inside collapsible groups, as well as attaching them. Artifact bytes are served from blob storage that an agent session usually cannot reach, so a score that exists only inside a zip is a score nobody reviews.
+
+**Verified**
+
+- Both workflow files parse as valid YAML with the expected steps, and `timesheet-status.yml` mentions Slack only in a comment explaining why it has no token.
+
 ## 1.8.0
 
 Nudge copy rewritten again, this time against the only test that matters: would you say the sentence out loud to the person.
