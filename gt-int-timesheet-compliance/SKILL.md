@@ -4,7 +4,7 @@ description: "Internal Growth Today workflow for running the Asana timesheet com
 license: MIT
 metadata:
   author: growthtoday
-  version: "1.9.0"
+  version: "1.10.0"
   category: internal-ops
 ---
 

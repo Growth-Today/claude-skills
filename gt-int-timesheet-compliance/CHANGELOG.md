@@ -2,6 +2,22 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.10.0
+
+**Added**
+
+- `scripts/summarise.py`. Flattens the scoring and nudge JSON into pipe-delimited lines with no braces in them, and both the status and weekly workflows now print that block.
+
+**Fixed**
+
+- **JSON printed into a run log was not JSON.** GitHub masks secret values line by line. The roster travels as a pretty-printed `ROSTER_JSON` secret, so lines consisting of a single brace are themselves secret values, and every brace elsewhere in the log came out as three asterisks. Since artifact bytes are served from storage a session usually cannot reach, the log is the only place a session can read these numbers from, which made the whole log-printing change useless. The summary lines cannot be mangled whatever the roster looks like.
+
+  Worth knowing separately: minifying the `ROSTER_JSON` secret to a single line removes the masking at source, and is a one-minute change to the secret rather than a code change.
+
+**Verified**
+
+- Summariser tested against a synthetic scores and targets pair, output confirmed to contain zero brace characters, and run end to end on the private repo's real data.
+
 ## 1.9.0
 
 A status workflow a daily Routine can call, and scores that are actually readable.

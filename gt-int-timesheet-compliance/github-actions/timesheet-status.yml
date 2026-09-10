@@ -13,6 +13,13 @@
 # blob storage that an agent session usually cannot reach, so a number that
 # only exists inside a zip is a number nobody can review. The log is readable
 # through the GitHub API, so that is where the data goes.
+#
+# The summary lines are the ones to read, not the raw JSON. GitHub masks secret
+# values line by line, the roster travels as a pretty-printed ROSTER_JSON
+# secret, and its lone-brace lines make every brace in the log turn into three
+# asterisks, so printed JSON arrives as something that is no longer JSON.
+# summarise.py emits pipe-delimited lines with no braces at all, which nothing
+# can mangle.
 
 name: Timesheet status
 
@@ -59,10 +66,24 @@ jobs:
           # --force ignores the local-time window, so this covers everybody
           # rather than whoever is in their afternoon. Nothing is sent: there is
           # no Slack token in this workflow and send_nudges is never called.
-          python who_is_behind.py --force
+          python who_is_behind.py --force > "$RUNNER_TEMP/targets.json"
 
-      - name: The full scores JSON
+      - name: Summary lines, safe from secret masking
+        working-directory: scripts
         run: |
+          echo "::group::summary"
+          python summarise.py \
+            --scores "$RUNNER_TEMP/week.json" \
+            --targets "$RUNNER_TEMP/targets.json"
+          echo "::endgroup::"
+
+      - name: The raw JSON, for a human reading the run
+        run: |
+          # Braces here may show as asterisks, see the note at the top. The
+          # summary step above is the machine-readable one.
           echo "::group::week.json"
           cat "$RUNNER_TEMP/week.json"
+          echo "::endgroup::"
+          echo "::group::targets.json"
+          cat "$RUNNER_TEMP/targets.json"
           echo "::endgroup::"

@@ -77,6 +77,17 @@ jobs:
           if [ "${{ vars.REPORT_SEND }}" = "true" ]; then SEND="--send"; fi
           python weekly_report.py --scores "$RUNNER_TEMP/week.json" $SEND
 
+      - name: Summary lines, safe from secret masking
+        if: always()
+        working-directory: scripts
+        run: |
+          # Braces in the raw JSON below can arrive as asterisks, because the
+          # roster travels as a pretty-printed secret and GitHub masks secret
+          # values line by line. These lines have no braces in them.
+          echo "::group::summary"
+          python summarise.py --scores "$RUNNER_TEMP/week.json"
+          echo "::endgroup::"
+
       - name: Print the JSON into the log
         if: always()
         run: |
