@@ -3,6 +3,10 @@
 # Copy this to .github/workflows/timesheet-weekly.yml in the PRIVATE repo that
 # holds this skill.
 #
+# The summary lines print last, because the API serves a log from the end
+# backwards and reaching a summary buried above the JSON means reading all of
+# it.
+#
 # It posts the table to a channel and attaches the full JSON to the run. The
 # table is not the review: paste the JSON into a session for the read on
 # patterns, the coaching notes, and the draft to the leads when someone is
@@ -77,17 +81,6 @@ jobs:
           if [ "${{ vars.REPORT_SEND }}" = "true" ]; then SEND="--send"; fi
           python weekly_report.py --scores "$RUNNER_TEMP/week.json" $SEND
 
-      - name: Summary lines, safe from secret masking
-        if: always()
-        working-directory: scripts
-        run: |
-          # Braces in the raw JSON below can arrive as asterisks, because the
-          # roster travels as a pretty-printed secret and GitHub masks secret
-          # values line by line. These lines have no braces in them.
-          echo "::group::summary"
-          python summarise.py --scores "$RUNNER_TEMP/week.json"
-          echo "::endgroup::"
-
       - name: Print the JSON into the log
         if: always()
         run: |
@@ -102,6 +95,22 @@ jobs:
               echo "::endgroup::"
             fi
           done
+
+      - name: Summary lines, safe from secret masking
+        if: always()
+        working-directory: scripts
+        run: |
+          # Braces in the raw JSON below can arrive as asterisks, because the
+          # roster travels as a pretty-printed secret and GitHub masks secret
+          # values line by line. These lines have no braces in them.
+          echo "::group::summary"
+          echo "THIS WEEK"
+          python summarise.py --scores "$RUNNER_TEMP/week.json"
+          if [ -s "$RUNNER_TEMP/persistence.json" ]; then
+            echo "TRAILING WEEKS"
+            python summarise.py --scores "$RUNNER_TEMP/persistence.json"
+          fi
+          echo "::endgroup::"
 
       - name: Attach the JSON to this run
         if: always()

@@ -19,7 +19,9 @@
 # secret, and its lone-brace lines make every brace in the log turn into three
 # asterisks, so printed JSON arrives as something that is no longer JSON.
 # summarise.py emits pipe-delimited lines with no braces at all, which nothing
-# can mangle.
+# can mangle. It runs last on purpose: the API only serves a log from the end
+# backwards, so a summary printed before several hundred lines of JSON costs a
+# reader the whole file to reach it.
 
 name: Timesheet status
 
@@ -68,15 +70,6 @@ jobs:
           # no Slack token in this workflow and send_nudges is never called.
           python who_is_behind.py --force > "$RUNNER_TEMP/targets.json"
 
-      - name: Summary lines, safe from secret masking
-        working-directory: scripts
-        run: |
-          echo "::group::summary"
-          python summarise.py \
-            --scores "$RUNNER_TEMP/week.json" \
-            --targets "$RUNNER_TEMP/targets.json"
-          echo "::endgroup::"
-
       - name: The raw JSON, for a human reading the run
         run: |
           # Braces here may show as asterisks, see the note at the top. The
@@ -86,4 +79,13 @@ jobs:
           echo "::endgroup::"
           echo "::group::targets.json"
           cat "$RUNNER_TEMP/targets.json"
+          echo "::endgroup::"
+
+      - name: Summary lines, safe from secret masking
+        working-directory: scripts
+        run: |
+          echo "::group::summary"
+          python summarise.py \
+            --scores "$RUNNER_TEMP/week.json" \
+            --targets "$RUNNER_TEMP/targets.json"
           echo "::endgroup::"
