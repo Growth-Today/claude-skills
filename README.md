@@ -34,6 +34,10 @@ New to Claude Skills? Full walkthrough: **https://www.growthtoday.co/claude-skil
 | **gt-linkedin-ads** | B2B LinkedIn Ads — targeting, bidding, Thought Leader Ads, funnel architecture | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-content** | B2B LinkedIn organic content — hooks, storytelling, formats, CTAs, engagement, scheduling, profile, repurposing, post-production, and design briefs | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-outbound** | LinkedIn outbound — DMs, connection requests, sequences, rented-engine setup | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-cold-email** | B2B cold email — copywriting frameworks, sequences, deliverability, domain warmup, SPF/DKIM/DMARC, inbox placement | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-list-building** | B2B list building — Sales Navigator boolean search, ICP definition & scoring, data validation, list hygiene | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-signal-sourcer** | Signal-based selling — buying signals, intent data, signal scoring, signal-to-action playbooks | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-clay** | Clay platform — waterfall enrichment, Claygent, Clayscript, CRM sync, credit-efficient data pipelines | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-gtm-strategy-advisor** | GTM strategy guidance for B2B go-to-market motions | [→](https://www.growthtoday.co/claude-skills) |
 | **clay-search-query** | Turn natural-language audience descriptions into Clay Search queries over people, companies, and jobs | [→](https://www.growthtoday.co/claude-skills) |
 
