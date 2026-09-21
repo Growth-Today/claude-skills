@@ -130,7 +130,7 @@ Wait times between steps matter:
 - Profile view → connection request: 24-48 hours (looks human)
 - Like post → connection request: 24-48 hours
 
-Configure daily limits per sender at this step (15-18 connection requests/day is the GT default). HeyReach enforces these as hard caps and distributes them proportionally across all active campaigns the sender runs.
+Configure daily limits per sender at this step (24-30 connection requests/day is the GT default). HeyReach enforces these as hard caps and distributes them proportionally across all active campaigns the sender runs.
 
 ### Step 7: Auto-withdrawal and reply detection
 

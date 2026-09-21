@@ -4,7 +4,7 @@ description: Expert LinkedIn outbound strategist for B2B campaigns by Growth Tod
 license: MIT
 metadata:
   author: growthtoday
-  version: "2.0.0"
+  version: "2.0.1"
 ---
 
 ## Setup (Run Once Per Session)
@@ -116,8 +116,8 @@ User Request
 - **Multi-channel coordination** - If the same prospect is also being emailed: LinkedIn DM and Email 1 must use DIFFERENT angles. If they reply on LinkedIn, pause email immediately.
 
 ### How to run the accounts (rented engine specifics)
-- **15-20 connection requests per day per account** - hard cap. Going above invites restrictions.
-- **100 connection requests per week** - LinkedIn's enforced ceiling for most accounts.
+- **24-30 connection requests per day per account** - our operating range. LinkedIn's own enforced daily range is 20-40 depending on account age and standing; we sit inside it rather than at the top of it.
+- **150-180 connection requests per week** - LinkedIn's enforced weekly ceiling. Operate at 120-150 so a heavy day never pushes an account over.
 - **One profile change per day** - headline, company, photo: spread changes across days, never bulk-edit.
 - **Anti-detect browser required** - every rented account must run in its own isolated browser profile (Undetectable, Multilogin, Dolphin{anty}, Linken Sphere).
 - **Mobile proxy per account** - sticky residential or 4G/5G mobile, US-based for US accounts. Never share an IP across accounts.
@@ -130,7 +130,7 @@ User Request
 | Connection acceptance rate | 15-20% | 25-35% | 40%+ |
 | DM reply rate (post-accept) | 8-12% | 15-25% | 30%+ |
 | Meeting rate (replies → meetings) | 10-15% | 20-30% | 35%+ |
-| Daily connection requests/account | - | 15-18 | 20 (ceiling) |
+| Daily connection requests/account | - | 24-30 | 40 (ceiling) |
 | Account restriction rate | - | <5%/month | 0% |
 
 For full benchmarks, performance by signal type, and diagnostics → Read `{SKILL_BASE}/resources/knowledge/linkedin-metrics-benchmarks.md`
