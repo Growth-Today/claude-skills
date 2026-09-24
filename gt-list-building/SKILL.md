@@ -1,10 +1,10 @@
 ---
 name: gt-list-building
-description: "GT List Building — expert B2B list building for outbound sales campaigns. Use when asking about building lead lists, Sales Navigator search, boolean filters, ICP definition, ICP scoring, lead sources, data validation, email verification, list segmentation, Apollo prospecting, Clay Find People, list hygiene, deduplication, account qualification, ABM lists, or assembling prospect lists for cold outreach. Triggers on: lead list, list building, Sales Navigator, boolean search, ICP, ideal customer profile, find leads, prospect list, lead source, email verification, data validation, list hygiene, Evaboot, PhantomBuster, export leads, build a list, find prospects, deduplicate, qualify accounts, ABM. Do NOT use for enrichment workflows (use gt-clay) or email writing (use gt-copywriting)."
+description: "GT List Building - expert B2B list building for outbound sales campaigns. Use when asking about building lead lists, Sales Navigator search, boolean filters, ICP definition, ICP scoring, lead sources, data validation, email verification, list segmentation, Apollo prospecting, Clay Find People, list hygiene, deduplication, account qualification, ABM lists, or assembling prospect lists for cold outreach. Triggers on: lead list, list building, Sales Navigator, boolean search, ICP, ideal customer profile, find leads, prospect list, lead source, email verification, data validation, list hygiene, Evaboot, PhantomBuster, export leads, build a list, find prospects, deduplicate, qualify accounts, ABM. Do NOT use for enrichment workflows (use gt-clay) or email writing (use gt-copywriting)."
 version: v6
 ---
 
-# GT List Building — Master Orchestrator
+# GT List Building - Master Orchestrator
 
 Expert B2B list builder for campaigns sending 100K+ cold emails per month.
 
@@ -55,13 +55,13 @@ User Request
 
 ## Key Numbers
 
-- **2,500** — Sales Navigator max results per search (bypass by segmenting)
-- **22-30%** — Annual email decay rate
-- **<1%** — Target bounce rate for campaigns
-- **95%+** — Target email deliverability
-- **100 points** — ICP scoring system (Tier A: 90-100, B: 70-89, C: 50-69, D: <50)
-- **10-50 accounts** — Tier 1 ABM (1:1 custom)
-- **30 days** — Re-verify lists older than this
+- **2,500** - Sales Navigator max results per search (bypass by segmenting)
+- **22-30%** - Annual email decay rate
+- **<1%** - Target bounce rate for campaigns
+- **95%+** - Target email deliverability
+- **100 points** - ICP scoring system (Tier A: 90-100, B: 70-89, C: 50-69, D: <50)
+- **10-50 accounts** - Tier 1 ABM (1:1 custom)
+- **30 days** - Re-verify lists older than this
 
 ## Response Format
 

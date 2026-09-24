@@ -10,7 +10,7 @@ metadata:
 
 # Lead Routing & Assignment
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
 
 Get every qualified lead to the right rep instantly. Salesforce routes via **Lead Assignment Rules** (+ queues) and/or **Flow** for round-robin/territory logic. Unassigned leads (or leads stuck in a queue) get no follow-up and no SLA.
 
@@ -20,13 +20,13 @@ Get every qualified lead to the right rep instantly. Salesforce routes via **Lea
 - `fix-lead-status-and-stages` (route on qualification, not raw creation)
 
 ## Critical concept
-- **Assignment rules** — criteria-based owner/queue assignment on create/edit (one active rule with ordered entries). Good for territory/segment routing.
-- **Queues** — hold unassigned leads for a team to pull from.
-- **Round-robin / complex logic** — needs a Flow (or apex/package): pick the next rep from a rotation. Always define a **fallback owner** for records matching no rule.
+- **Assignment rules** - criteria-based owner/queue assignment on create/edit (one active rule with ordered entries). Good for territory/segment routing.
+- **Queues** - hold unassigned leads for a team to pull from.
+- **Round-robin / complex logic** - needs a Flow (or apex/package): pick the next rep from a rotation. Always define a **fallback owner** for records matching no rule.
 - Route on **qualification** (lead status/score), not the instant any lead is created (else you distribute junk).
 
 ## Automation level
-Hybrid — assignment rules + Flow config; API to audit unassigned/uneven ownership.
+Hybrid - assignment rules + Flow config; API to audit unassigned/uneven ownership.
 
 ## Steps
 1. **Audit** unassigned/queued leads and owner distribution (overloaded reps?).
@@ -37,9 +37,9 @@ Hybrid — assignment rules + Flow config; API to audit unassigned/uneven owners
 6. **Verify:** a qualified test lead assigns correctly + fires the task; even distribution; nothing left unassigned.
 
 ## Notes
-- Route on qualification, always with a fallback owner — the top routing gap is leads matching no rule.
+- Route on qualification, always with a fallback owner - the top routing gap is leads matching no rule.
 - Round-robin needs Flow (assignment rules alone can't rotate). Build on `flow-builder-patterns`.
 - Pairs with `setup-roles-and-record-access`, `build-lead-scoring`, `fix-lead-status-and-stages`.
 
 ---
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills

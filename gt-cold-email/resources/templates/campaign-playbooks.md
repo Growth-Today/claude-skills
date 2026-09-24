@@ -1,6 +1,6 @@
 # Campaign Playbooks
 
-*Source: The Kiln Gitbook — Clay Agency*
+*Source: The Kiln Gitbook - Clay Agency*
 
 ## 1. AI Personalized Video Campaign (Sendspark)
 
@@ -15,7 +15,7 @@
 3. HTTP API connects the two
 4. Push to sequencer
 
-## 2. DynaPictures — Custom Images
+## 2. DynaPictures - Custom Images
 
 **Example CVS Campaign:**
 - Client sells ads in CVS stores
@@ -86,7 +86,7 @@ Would you be open to a quick comparison call?
 - Use their ad creative in custom images
 - Analyze their messaging for personalization
 
-## Full Outbound Example — ClickUp Brain Campaign
+## Full Outbound Example - ClickUp Brain Campaign
 
 *Case study of a real campaign*
 
@@ -145,7 +145,7 @@ SOCIAL PROOF + CTA
 3. **AI-generated use cases:** Based on company description + ClickUp features
 4. **Formula-based email assembly:** Merge all pieces cleanly
 
-## Inbound Example — Triggery + Google Reviews
+## Inbound Example - Triggery + Google Reviews
 
 ### Workflow
 ```

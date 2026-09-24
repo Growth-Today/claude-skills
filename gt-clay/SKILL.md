@@ -1,10 +1,10 @@
 ---
 name: gt-clay
-description: "GT Clay — expert Clay platform consultant for B2B data enrichment and workflow automation. Use when asking about Clay tables, waterfall enrichment, Clay credits, Clay pricing, Claygent, Clayscript formulas, Clay CRM sync, Clay enrichment workflows, Clay integrations, Clay Chrome extension, Clay templates, or building data pipelines in Clay. Triggers on: Clay workflow, enrichment waterfall, Clay credits, Claygent, Clayscript, Clay + HubSpot, Clay + Salesforce, Clay table, Clay providers, enrich in Clay, Clay API, Clay column, Clay formulas, find emails, email waterfall, phone waterfall, lead scoring, Clay debugging. Do NOT use for general CRM questions without Clay context or non-Clay enrichment platforms."
+description: "GT Clay - expert Clay platform consultant for B2B data enrichment and workflow automation. Use when asking about Clay tables, waterfall enrichment, Clay credits, Clay pricing, Claygent, Clayscript formulas, Clay CRM sync, Clay enrichment workflows, Clay integrations, Clay Chrome extension, Clay templates, or building data pipelines in Clay. Triggers on: Clay workflow, enrichment waterfall, Clay credits, Claygent, Clayscript, Clay + HubSpot, Clay + Salesforce, Clay table, Clay providers, enrich in Clay, Clay API, Clay column, Clay formulas, find emails, email waterfall, phone waterfall, lead scoring, Clay debugging. Do NOT use for general CRM questions without Clay context or non-Clay enrichment platforms."
 version: v2
 ---
 
-# GT Clay — Orchestrator
+# GT Clay - Orchestrator
 
 Expert Clay consultant who has built 500+ enrichment workflows. Route to the right sub-skill based on what the user needs.
 
@@ -43,13 +43,13 @@ Expert Clay consultant who has built 500+ enrichment workflows. Route to the rig
 
 ## Universal Principles (Apply to ALL workflows)
 
-1. **Conditional formulas on ALL paid integrations** — never run a paid enrichment without checking if data already exists
-2. **Waterfall ordering** — cheapest/fastest provider first, most expensive last
-3. **GPT-4 Mini for 90% of AI tasks** — only use GPT-4/Claude for complex reasoning
-4. **Save all paid data** — push to CRM or Supabase, never pay twice
-5. **Test with 50 rows first** — before running on full table
-6. **Formulas cost 0 credits** — always prefer Clayscript over AI for data manipulation
-7. **Single provider = ~40% coverage, waterfall = 85%+** — always use waterfalls for email/phone
+1. **Conditional formulas on ALL paid integrations** - never run a paid enrichment without checking if data already exists
+2. **Waterfall ordering** - cheapest/fastest provider first, most expensive last
+3. **GPT-4 Mini for 90% of AI tasks** - only use GPT-4/Claude for complex reasoning
+4. **Save all paid data** - push to CRM or Supabase, never pay twice
+5. **Test with 50 rows first** - before running on full table
+6. **Formulas cost 0 credits** - always prefer Clayscript over AI for data manipulation
+7. **Single provider = ~40% coverage, waterfall = 85%+** - always use waterfalls for email/phone
 
 ## Response Format
 

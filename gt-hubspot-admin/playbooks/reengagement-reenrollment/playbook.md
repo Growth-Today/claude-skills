@@ -1,6 +1,6 @@
 ---
 name: reengagement-reenrollment
-description: "Design re-engagement and workflow re-enrollment correctly. Builds a dormant-contact re-engagement track and sets re-enrollment rules so workflows re-fire when they should — without infinite loops or spam."
+description: "Design re-engagement and workflow re-enrollment correctly. Builds a dormant-contact re-engagement track and sets re-enrollment rules so workflows re-fire when they should - without infinite loops or spam."
 license: MIT
 metadata:
   author: growthtoday
@@ -10,11 +10,11 @@ metadata:
 
 # Re-engagement & Re-enrollment
 
-Two related things: a **re-engagement** track that tries to wake dormant contacts before you suppress them, and correct **re-enrollment** settings so workflows re-fire for contacts who re-qualify — without creating loops or over-sending.
+Two related things: a **re-engagement** track that tries to wake dormant contacts before you suppress them, and correct **re-enrollment** settings so workflows re-fire for contacts who re-qualify - without creating loops or over-sending.
 
 ## Why This Matters
 
-Contacts go quiet; some are recoverable, some are dead weight. A re-engagement track gives dormant contacts a last, well-timed nudge before suppression (protecting deliverability and the marketable-contact bill). Separately, re-enrollment is one of the most misunderstood workflow settings — off when it should be on (contacts who re-qualify never get re-processed) or on when it shouldn't be (contacts loop and get spammed).
+Contacts go quiet; some are recoverable, some are dead weight. A re-engagement track gives dormant contacts a last, well-timed nudge before suppression (protecting deliverability and the marketable-contact bill). Separately, re-enrollment is one of the most misunderstood workflow settings - off when it should be on (contacts who re-qualify never get re-processed) or on when it shouldn't be (contacts loop and get spammed).
 
 ## Prerequisites
 
@@ -56,9 +56,9 @@ Review key workflows:
 
 ## Key Technical Learnings
 
-- **Re-enrollment = re-fire on re-qualifying** — off by default; enable deliberately for state-based repeats.
-- **Loops come from self-triggering actions** — never let a workflow's write re-satisfy its own enrollment.
-- **Re-engage before you suppress** — a last nudge recovers some contacts and cleans the rest.
+- **Re-enrollment = re-fire on re-qualifying** - off by default; enable deliberately for state-based repeats.
+- **Loops come from self-triggering actions** - never let a workflow's write re-satisfy its own enrollment.
+- **Re-engage before you suppress** - a last nudge recovers some contacts and cleans the rest.
 - **One-time vs repeatable** is the core distinction for the re-enrollment toggle.
 - **Feeds `engagement-suppression-workflow` and `contact-data-decay-review`.**
 

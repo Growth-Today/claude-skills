@@ -3,7 +3,7 @@ name: email-spam-checker
 version: 1.0
 updated: 2026-04-07
 source: mailmeteor.com/blog/spam-words (January 2026), activecampaign.com/blog/spam-words
-review: Quarterly — spam filter rules evolve. Update at least every 3 months.
+review: Quarterly - spam filter rules evolve. Update at least every 3 months.
 description: Cold email spam word checker. Scans subject line and body for words that trigger spam filters and hurt deliverability. Run automatically after every cold email is drafted.
 ---
 
@@ -16,9 +16,9 @@ At the end of your response, add one line:
 
 ---
 
-## Spam Trigger Words — B2B Cold Email
+## Spam Trigger Words - B2B Cold Email
 
-These words are flagged by Gmail, Outlook, and other providers as suspicious. A single word rarely kills deliverability on its own — combinations and context matter. When in doubt, rewrite.
+These words are flagged by Gmail, Outlook, and other providers as suspicious. A single word rarely kills deliverability on its own - combinations and context matter. When in doubt, rewrite.
 
 ### Financial / Offer
 free, free trial, free access, free gift, free quote, for free, no cost, no credit check, no obligation, risk-free, money-back guarantee, discount, save $, save big, earn, earn $, make money, increase revenue, increase sales, profit, double your, giveaway, bonus, deal, offer, bargain, affordable, cheap, quote, ROI, investment, credit card, billing
@@ -32,10 +32,10 @@ guaranteed, 100% guaranteed, guaranteed results, satisfaction guaranteed, no str
 ### Clickbait / Action (especially in subject lines)
 click here, click now, click below, apply now, buy now, order now, get it now, sign up free, download now, call now, access now, get started now
 
-### Formatting flags (not words — check for these)
+### Formatting flags (not words - check for these)
 - ALL CAPS anywhere in subject line or body
 - Multiple exclamation marks (!!)
 - Multiple question marks (??)
 - Dollar signs used decoratively ($$$)
 - More than 2 links in a single email
-- Link shorteners (bit.ly, tinyurl) — use full URLs only
+- Link shorteners (bit.ly, tinyurl) - use full URLs only

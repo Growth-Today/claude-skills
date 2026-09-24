@@ -15,7 +15,7 @@ description: Email metrics to track, benchmarks, and diagnostics for cold outrea
 
 | Metric | Current Baseline | Good | Great |
 |--------|------------------|------|-------|
-| Cold email reply rate | 0.5–1.0% | 2–3% | 5%+ |
+| Cold email reply rate | 0.5-1.0% | 2-3% | 5%+ |
 
 ---
 
@@ -23,11 +23,11 @@ description: Email metrics to track, benchmarks, and diagnostics for cold outrea
 
 | Outreach Type | Reply Rate |
 |---------------|------------|
-| Cold outreach (no signal) | 3–5% |
-| Signal-based outreach | 18–22% |
-| Multi-signal stacked | 35–40% |
-| Website visitor follow-up | 25–30% |
-| Champion job change | 20–25% |
+| Cold outreach (no signal) | 3-5% |
+| Signal-based outreach | 18-22% |
+| Multi-signal stacked | 35-40% |
+| Website visitor follow-up | 25-30% |
+| Champion job change | 20-25% |
 
 ---
 
@@ -39,8 +39,8 @@ Opening (trigger) + Assumption + Social proof + Open-ended question
 
 | Target | Max Sentences | Max Words |
 |--------|---------------|-----------|
-| BTL (Managers, ICs) | 3–4 sentences | 90 words |
-| ATL (VPs, C-Level) | 2–3 sentences | 60 words |
+| BTL (Managers, ICs) | 3-4 sentences | 90 words |
+| ATL (VPs, C-Level) | 2-3 sentences | 60 words |
 
 ---
 
@@ -48,25 +48,25 @@ Opening (trigger) + Assumption + Social proof + Open-ended question
 
 | Metric | Target | Warning | Critical |
 |--------|--------|---------|----------|
-| Bounce rate | <2% | 2–5% | >5% |
-| Spam rate | <0.1% | 0.1–0.3% | >0.3% |
-| Unsubscribe rate | <0.5% | 0.5–1% | >1% |
+| Bounce rate | <2% | 2-5% | >5% |
+| Spam rate | <0.1% | 0.1-0.3% | >0.3% |
+| Unsubscribe rate | <0.5% | 0.5-1% | >1% |
 
 ---
 
-## Sequence Performance (GT Standard — SMB)
+## Sequence Performance (GT Standard - SMB)
 
 For full sequence structure, timing, thread rules, and email content → see `resources/frameworks/copywriting/copywriting-sequences.md`
 
 ### General Performance Logic
 
-**Email 1** — Most important to optimize. The majority of replies come from here. Test multiple variations simultaneously.
+**Email 1** - Most important to optimize. The majority of replies come from here. Test multiple variations simultaneously.
 
-**Email 2** — Performance depends on whether a lead magnet or genuinely useful content is available. SMB vs. mid-market will perform differently — test separately.
+**Email 2** - Performance depends on whether a lead magnet or genuinely useful content is available. SMB vs. mid-market will perform differently - test separately.
 
-**Email 3** — Net new angle. Different value prop and framing from the previous emails.
+**Email 3** - Net new angle. Different value prop and framing from the previous emails.
 
-**Email 4** — Goal is any answer, not just urgency. Multiple variants available — test them against each other.
+**Email 4** - Goal is any answer, not just urgency. Multiple variants available - test them against each other.
 
 If no reply after the sequence → re-engage according to `resources/sub-skills/re-engagement.md` and `resources/frameworks/cold-email-mastery.md`
 
@@ -104,7 +104,7 @@ If no reply after the sequence → re-engage according to `resources/sub-skills/
 
 | Skill | Why |
 |-------|-----|
-| `gt-cold-email` | Main orchestrator — routing and sequence structure |
+| `gt-cold-email` | Main orchestrator - routing and sequence structure |
 | `gt-signal-sourcer` | Improve reply rates with better signals |
 | `gt-list-building` | Fix bounce rate issues with better list quality |
 | `gt-email-infra` | Fix deliverability issues |

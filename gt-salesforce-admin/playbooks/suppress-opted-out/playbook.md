@@ -10,7 +10,7 @@ metadata:
 
 # Suppress Opted-Out and Do-Not-Call Records
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
 
 Handle `HasOptedOutOfEmail = true` and `DoNotCall = true` for compliance. These are legal signals, not optional.
 
@@ -32,4 +32,4 @@ Hybrid. API discovery confirms the flags are respected everywhere; the opt-out i
 - Respect regional law (GDPR, CAN-SPAM, CASL). Opt-out is permanent unless the contact re-subscribes.
 
 ---
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills

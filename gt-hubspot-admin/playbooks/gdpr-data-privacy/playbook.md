@@ -14,7 +14,7 @@ Set up the privacy controls a compliant portal needs: GDPR functionality enabled
 
 ## Why This Matters
 
-If you market to or store data on EU/UK (and increasingly other) residents, privacy compliance isn't optional — mishandling consent or a deletion request carries legal and financial risk. HubSpot has built-in GDPR features, but they must be turned on and operationalized. This playbook covers the setup and the recurring process. (This is operational configuration, not legal advice — confirm requirements with counsel.)
+If you market to or store data on EU/UK (and increasingly other) residents, privacy compliance isn't optional - mishandling consent or a deletion request carries legal and financial risk. HubSpot has built-in GDPR features, but they must be turned on and operationalized. This playbook covers the setup and the recurring process. (This is operational configuration, not legal advice - confirm requirements with counsel.)
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ If you market to or store data on EU/UK (and increasingly other) residents, priv
 
 ## Critical Concept: Consent Must Be Captured, Tracked, and Honorable
 
-Compliance is a loop: **capture** consent + lawful basis at collection (forms), **track** it (subscription types + lawful-basis properties — see `subscription-types-consent`), and **honor** requests (access + erasure) and suppressions. HubSpot's GDPR features enable the consent checkboxes and the permanent-delete/anonymize actions; the process around them is what makes it real.
+Compliance is a loop: **capture** consent + lawful basis at collection (forms), **track** it (subscription types + lawful-basis properties - see `subscription-types-consent`), and **honor** requests (access + erasure) and suppressions. HubSpot's GDPR features enable the consent checkboxes and the permanent-delete/anonymize actions; the process around them is what makes it real.
 
 ## Plan
 
@@ -45,7 +45,7 @@ Add consent checkboxes and lawful-basis capture to forms (explicit opt-in where 
 Define the process for **access** (export a contact's data) and **erasure** (HubSpot's permanently-delete / GDPR-delete, which is irreversible and also prevents re-import of that email). Document who handles requests and the SLA.
 
 ### Step 4: Sensitive data + retention
-Use sensitive-data controls / field-level permissions for regulated fields (`permission-sets-roles`). Apply a retention policy — suppress/delete per policy (ties to the suppression playbooks).
+Use sensitive-data controls / field-level permissions for regulated fields (`permission-sets-roles`). Apply a retention policy - suppress/delete per policy (ties to the suppression playbooks).
 
 ## After State
 
@@ -59,10 +59,10 @@ Use sensitive-data controls / field-level permissions for regulated fields (`per
 
 ## Key Technical Learnings
 
-- **Compliance is capture → track → honor** — all three, not just an unsubscribe link.
-- **GDPR-delete is permanent and blocks re-import** — use it deliberately; it's not a normal delete.
-- **Consent maps to subscription types** — the two systems work together.
-- **This is configuration, not legal advice** — confirm lawful bases + retention with counsel.
+- **Compliance is capture → track → honor** - all three, not just an unsubscribe link.
+- **GDPR-delete is permanent and blocks re-import** - use it deliberately; it's not a normal delete.
+- **Consent maps to subscription types** - the two systems work together.
+- **This is configuration, not legal advice** - confirm lawful bases + retention with counsel.
 - **Pairs with `subscription-types-consent`, `permission-sets-roles`, suppression playbooks.**
 
 ---

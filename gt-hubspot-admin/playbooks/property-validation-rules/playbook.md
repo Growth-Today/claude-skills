@@ -14,7 +14,7 @@ Stop bad data before it enters, instead of cleaning it up forever. This playbook
 
 ## Why This Matters
 
-The cheapest bad record is the one that never gets created. Most hygiene work (dedup, standardization, geo cleanup) exists because there was no gate at the entry point. Validation rules — required formats, number ranges, dropdowns instead of free-text — turn "we'll clean it later" into "it can't come in wrong." This is the prevention layer that makes the hygiene playbooks a one-time fix rather than an endless chore.
+The cheapest bad record is the one that never gets created. Most hygiene work (dedup, standardization, geo cleanup) exists because there was no gate at the entry point. Validation rules - required formats, number ranges, dropdowns instead of free-text - turn "we'll clean it later" into "it can't come in wrong." This is the prevention layer that makes the hygiene playbooks a one-time fix rather than an endless chore.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ HubSpot validation rules (min/max length, numeric range, disallow special charac
 
 ## Plan
 
-1. Audit current format anomalies per key property (before state — `scripts/before.py`)
+1. Audit current format anomalies per key property (before state - `scripts/before.py`)
 2. Convert high-variance free-text fields to dropdowns (with value mapping)
 3. Configure validation rules on the properties that matter
 4. Add required-field rules where appropriate
@@ -63,7 +63,7 @@ Settings > Properties > select property > **Rules / validation**:
 
 ### Step 3: Required fields
 
-Make properties required on the surfaces where they're captured — on **forms** (required form fields) and on **record creation** (required properties for creating a record) for the fields your process depends on. Don't over-require; require only what's truly needed at capture.
+Make properties required on the surfaces where they're captured - on **forms** (required form fields) and on **record creation** (required properties for creating a record) for the fields your process depends on. Don't over-require; require only what's truly needed at capture.
 
 ### Step 4: Close the import/API back door
 
@@ -83,7 +83,7 @@ Because imports and API writes bypass validation, add a scheduled re-run of `bef
 
 - **Prevention beats cleanup.** Every validation rule is hygiene work you never have to do again.
 - **Dropdowns are the highest-leverage change.** Free-text is where variants (and dedup pain) are born.
-- **Front door + back door.** Rules stop manual/form entry; only monitoring catches import/API/workflow writes — do both.
+- **Front door + back door.** Rules stop manual/form entry; only monitoring catches import/API/workflow writes - do both.
 - **Require sparingly.** Over-requiring at capture pushes users to enter junk to get past the gate.
 - **Pairs with `property-architecture-governance`** (right types) and `import-data-onboarding` (the biggest bypass source).
 

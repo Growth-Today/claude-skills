@@ -10,11 +10,11 @@ metadata:
 
 # Attribution Reporting Setup
 
-Show marketing's impact on pipeline and revenue with attribution reports — which sources, campaigns, and interactions influenced deals. Extends the reporting group beyond activity metrics to "what actually drove revenue."
+Show marketing's impact on pipeline and revenue with attribution reports - which sources, campaigns, and interactions influenced deals. Extends the reporting group beyond activity metrics to "what actually drove revenue."
 
 ## Why This Matters
 
-Without attribution, marketing reports on activity (clicks, MQLs) and sales reports on outcomes (deals) — and nobody connects them. Attribution reporting links touches to deals/revenue so you can defend and optimize spend. It's also easy to get wrong: the model you pick (first-touch, last-touch, multi-touch) tells very different stories, so the setup must be deliberate.
+Without attribution, marketing reports on activity (clicks, MQLs) and sales reports on outcomes (deals) - and nobody connects them. Attribution reporting links touches to deals/revenue so you can defend and optimize spend. It's also easy to get wrong: the model you pick (first-touch, last-touch, multi-touch) tells very different stories, so the setup must be deliberate.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ Pick the model(s) that match the question. Reporting first-touch as if it were r
 Confirm the tracking code is live, campaigns/UTMs are tagged consistently, and original/latest source data is populated. Attribution is only as good as this tracking.
 
 ### Step 2: Build the reports
-Reports > Create custom report > **Attribution**. Choose the subject (deal-create or revenue), the attribution model, and the breakdown (by source, campaign, channel, content). Build a first-touch AND a multi-touch view where the tier allows — they answer different questions.
+Reports > Create custom report > **Attribution**. Choose the subject (deal-create or revenue), the attribution model, and the breakdown (by source, campaign, channel, content). Build a first-touch AND a multi-touch view where the tier allows - they answer different questions.
 
 ### Step 3: Validate + socialize
 Sanity-check that credited sources match reality (spot-check a known deal's journey). Add the attribution report to the leadership/marketing dashboard (`revops-core-dashboards`) with the model clearly labeled.
@@ -60,9 +60,9 @@ Sanity-check that credited sources match reality (spot-check a known deal's jour
 
 ## Key Technical Learnings
 
-- **The model is the message** — first vs last vs multi-touch tell different stories; choose per question.
-- **Attribution needs tracking** — no tracking code / untagged campaigns = meaningless credit.
-- **Tier-gated** — revenue attribution is Marketing Hub Enterprise; plan around it.
+- **The model is the message** - first vs last vs multi-touch tell different stories; choose per question.
+- **Attribution needs tracking** - no tracking code / untagged campaigns = meaningless credit.
+- **Tier-gated** - revenue attribution is Marketing Hub Enterprise; plan around it.
 - **Always label the model** on the report so stakeholders don't misinterpret.
 - **Feeds `revops-core-dashboards`** and pairs with `custom-report-builder-guide`.
 

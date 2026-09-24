@@ -99,4 +99,4 @@ If no case studies found, output "purple".
 - Column names must match exactly
 - Add `|| ""` to avoid errors on null values
 - No custom function or variable definitions supported
-- Formulas cost 0 credits — always prefer them over AI when possible
+- Formulas cost 0 credits - always prefer them over AI when possible

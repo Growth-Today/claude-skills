@@ -1,6 +1,6 @@
 ---
 name: meta-ads-audiences
-description: Meta Ads audiences for B2B — custom audiences, lookalikes, Advantage+ audience, broad targeting, exclusions, and overlap. Use for custom audiences, lookalike audiences, Advantage+ audience, broad targeting, detailed targeting, audience overlap, CRM list audiences, retargeting audiences. Triggers on "custom audience", "lookalike", "Advantage+ audience", "broad targeting", "detailed targeting", "audience overlap", "CRM list", "1% lookalike", "minimum audience size". Do NOT use for campaign budget structure (use campaign-setup).
+description: Meta Ads audiences for B2B - custom audiences, lookalikes, Advantage+ audience, broad targeting, exclusions, and overlap. Use for custom audiences, lookalike audiences, Advantage+ audience, broad targeting, detailed targeting, audience overlap, CRM list audiences, retargeting audiences. Triggers on "custom audience", "lookalike", "Advantage+ audience", "broad targeting", "detailed targeting", "audience overlap", "CRM list", "1% lookalike", "minimum audience size". Do NOT use for campaign budget structure (use campaign-setup).
 ---
 
 # Meta Ads Audiences (B2B)
@@ -27,12 +27,12 @@ In 2026 targeting is less about finding one perfect audience and more about givi
 - Seed from **high-value actions** (closed-won, SQL, demo-booked), not "all leads". A lookalike of junk leads finds more junk.
 - Start **1%** for conversions (closest match, best CPA), test 3% and 5% for awareness/scale.
 - Lookalike source minimum is 100, but 1,000+ seeds perform better.
-- In 2026, Meta expands first-party audiences implicitly once you feed it good signal, so lookalikes help less than they used to — but a 1-3% lookalike + broad creative testing is still a reliable combination.
+- In 2026, Meta expands first-party audiences implicitly once you feed it good signal, so lookalikes help less than they used to - but a 1-3% lookalike + broad creative testing is still a reliable combination.
 
 ## Broad + Advantage+ Audience
 
 - Meta's Andromeda update means **broad targeting with strong creative often beats narrow interest stacking.** Give Advantage+ Audience a few relevant interests/behaviours as *suggestions*, not hard filters, and let it learn.
-- Avoid the ten-ad-sets-one-interest-each pattern — overlap kills validity and spreads learning thin.
+- Avoid the ten-ad-sets-one-interest-each pattern - overlap kills validity and spreads learning thin.
 
 ## Exclusions & Overlap
 
@@ -42,7 +42,7 @@ In 2026 targeting is less about finding one perfect audience and more about givi
 
 ## 2026 Restrictions
 
-- Meta blocks custom audiences that imply sensitive attributes (health, financial status). Do not build segments like "high income" or condition-based audiences — they are auto-rejected.
+- Meta blocks custom audiences that imply sensitive attributes (health, financial status). Do not build segments like "high income" or condition-based audiences - they are auto-rejected.
 
 ## Examples
 
@@ -55,7 +55,7 @@ Example 2: "Should I build lots of tightly targeted interest ad sets?"
 
 ## B2B guardrail
 
-Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
+Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` - most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

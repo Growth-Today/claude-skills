@@ -34,16 +34,16 @@ To move a record from a later stage (e.g., "Other", "Evangelist") to an earlier 
 1. **FIRST** clear the lifecycle stage (set to blank/empty)
 2. **THEN** set the new value
 
-A direct set to an earlier stage will be **silently rejected** — no error, no warning, the value simply does not change. This is the single most common gotcha when fixing lifecycle stages.
+A direct set to an earlier stage will be **silently rejected** - no error, no warning, the value simply does not change. This is the single most common gotcha when fixing lifecycle stages.
 
 ```python
-# WRONG — silently fails if current stage is "later" than target
+# WRONG - silently fails if current stage is "later" than target
 api_client.crm.contacts.basic_api.update(
     contact_id=contact_id,
     simple_public_object_input={"properties": {"lifecyclestage": "lead"}}
 )
 
-# CORRECT — clear first, then set
+# CORRECT - clear first, then set
 api_client.crm.contacts.basic_api.update(
     contact_id=contact_id,
     simple_public_object_input={"properties": {"lifecyclestage": ""}}

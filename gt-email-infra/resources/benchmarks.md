@@ -5,10 +5,10 @@ External market benchmarks for cold email, the numbers that tell you **what's go
 > **Source:** Smartlead *State of Cold Email 2026* (850M+ cold emails analyzed, Q2 2026), with Growth Today data and commentary added. These are **market benchmarks** for evaluation.
 
 > **Why these numbers differ from `reference.md`.** This file judges results against the market.
-> `reference.md` §2–§3 sets the thresholds our automation acts on — what tags an inbox Active or
+> `reference.md` §2-§3 sets the thresholds our automation acts on - what tags an inbox Active or
 > Burnt. They differ on purpose.
 
-**"Contacts per (positive) reply", LOWER is better** — fewer people contacted to earn one reply.
+**"Contacts per (positive) reply", LOWER is better** - fewer people contacted to earn one reply.
 It's the cleanest efficiency metric: list quality, targeting and copy in one number. The
 percentile bands place any client against the market.
 
@@ -59,7 +59,7 @@ By provider: **Gmail ~2.95%**, **Outlook ~4.34%** (Outlook lists punish bad data
 
 Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bottom 10% send **1**; the longest 10% run 5-9.
 
-**Strategic read.** The first email does the heavy lifting; returns fall off a cliff after 3–4 steps. Run **~3 steps**, follow up **1–2 days** after email 1 (the interested need the nudge fast; the rest won't convert). Don't over-invest in long sequences.
+**Strategic read.** The first email does the heavy lifting; returns fall off a cliff after 3-4 steps. Run **~3 steps**, follow up **1-2 days** after email 1 (the interested need the nudge fast; the rest won't convert). Don't over-invest in long sequences.
 
 ---
 
@@ -68,12 +68,12 @@ Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bo
 | Length | Contacts per reply |
 |---|---|
 | **Under 50 words** | **68 ← WINNER** |
-| 50–99 words | 74 |
-| 100–149 words | 97 |
-| 150–199 words | 76 |
+| 50-99 words | 74 |
+| 100-149 words | 97 |
+| 150-199 words | 76 |
 | 200+ words | 85 |
 
-**Strategic read.** Shortest wins. Cutting from ~98 words to **under 50** can move you **6 contacts per reply** better. Matters most for Outlook audiences (keep the first email short and reply-seeking). Note the non-monotonic dip at 150–199, but under-50 is still the clear winner.
+**Strategic read.** Shortest wins. Cutting from ~98 words to **under 50** can move you **6 contacts per reply** better. Matters most for Outlook audiences (keep the first email short and reply-seeking). Note the non-monotonic dip at 150-199, but under-50 is still the clear winner.
 
 ---
 
@@ -91,10 +91,10 @@ Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bo
 
 ## 6. Send timing, contacts per reply
 
-**By hour:** 7am UTC (peak) = **75** · best window 6–10am UTC = **75–90** · busy 1–5pm UTC = **120**.
+**By hour:** 7am UTC (peak) = **75** · best window 6-10am UTC = **75-90** · busy 1-5pm UTC = **120**.
 **By day:** Wednesday (best) = **110** · Sunday = **111** · Saturday (worst) = **122**. → **"No magic day."**
 
-**Strategic read.** **Time-of-day beats day-of-week.** Send **6–10am UTC**; the peak (7am) is ~40% more efficient than the 1–5pm crowd (75 vs 120). Day choice is marginal (110 vs 122), don't over-optimize the day.
+**Strategic read.** **Time-of-day beats day-of-week.** Send **6-10am UTC**; the peak (7am) is ~40% more efficient than the 1-5pm crowd (75 vs 120). Day choice is marginal (110 vs 122), don't over-optimize the day.
 
 ---
 
@@ -104,9 +104,9 @@ Email 1 is **~3× as efficient as email 7.** Typical campaign = **3 emails**; bo
 |---|---|---|
 | **Gmail** | **90** | 2.95% |
 | **Outlook** | 120 | 4.34% |
-| **Custom servers** | **179** | — |
+| **Custom servers** | **179** | - |
 
-**Strategic read.** **Gmail out-performs Outlook and custom SMTP** on reply efficiency, and Outlook bounces harder. Custom servers are the weakest on reply efficiency (179), use them for **scale/cost**, not as the primary sending pool. For enterprise tiers, add cold calls and LinkedIn. Warm every new mailbox for at least §5 `warmup_floor_days` and send at the §1 cold limit for its provider — not the 50/day figure the market quotes.
+**Strategic read.** **Gmail out-performs Outlook and custom SMTP** on reply efficiency, and Outlook bounces harder. Custom servers are the weakest on reply efficiency (179), use them for **scale/cost**, not as the primary sending pool. For enterprise tiers, add cold calls and LinkedIn. Warm every new mailbox for at least §5 `warmup_floor_days` and send at the §1 cold limit for its provider - not the 50/day figure the market quotes.
 
 ---
 
@@ -137,12 +137,12 @@ Use this to grade any client at a glance. "Direction" shows which way is better.
 
 | Metric | Direction | Best-in-class | Typical / median | Poor | Growth Today target |
 |---|---|---|---|---|---|
-| Contacts per positive reply | lower | ≤ 26–38 (top 5–10%) | 135 | ≥ 270–625 | < 70 |
+| Contacts per positive reply | lower | ≤ 26-38 (top 5-10%) | 135 | ≥ 270-625 | < 70 |
 | Bounce rate | lower | 0.28% | 1.54% | 6.71% | < 2% (act > 3%) |
 | First-email reply rate | higher | > 1.18% | ~1.18% | < 0.5% | ≥ 0.5% (see reference §2) |
-| Reply within 72h | higher | — | 94% of all replies | — | re-segment if silent past 72h |
-| Email length (first email) | shorter | < 50 words (68 contacts per reply) | 50–99 words (74) | 100–149 words (97, the worst bucket) | < 50 words, plain text |
-| Sequence length | ~3 | 3 steps | 3 | 1 step (bottom 10%) — too few to land | ~3 steps |
+| Reply within 72h | higher | - | 94% of all replies | - | re-segment if silent past 72h |
+| Email length (first email) | shorter | < 50 words (68 contacts per reply) | 50-99 words (74) | 100-149 words (97, the worst bucket) | < 50 words, plain text |
+| Sequence length | ~3 | 3 steps | 3 | 1 step (bottom 10%) - too few to land | ~3 steps |
 | Daily volume / mailbox | lower risk | < 50 | 13.92 | 50+ | ≤ Active limits (ref §1) |
 | Personalization (first email) | higher | 100% | 75% | 14% | 100% where data allows |
 

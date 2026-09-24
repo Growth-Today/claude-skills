@@ -1,11 +1,11 @@
 ---
 name: meta-ads-measurement
-description: Meta Ads measurement for B2B — CAPI-backed reporting, pipeline attribution, KPIs by funnel stage, and optimising to pipeline not CPL. Use for Meta measurement, reporting, KPIs, pipeline attribution, cost per result, what metrics to track, measuring B2B Meta, optimise to pipeline. Triggers on "measurement", "reporting", "KPIs", "pipeline attribution", "cost per result", "what metrics", "measuring Meta", "CPL vs pipeline", "ROAS Meta". Do NOT use for Pixel/CAPI setup (use tracking) or fatigue metrics (use creative-fatigue).
+description: Meta Ads measurement for B2B - CAPI-backed reporting, pipeline attribution, KPIs by funnel stage, and optimising to pipeline not CPL. Use for Meta measurement, reporting, KPIs, pipeline attribution, cost per result, what metrics to track, measuring B2B Meta, optimise to pipeline. Triggers on "measurement", "reporting", "KPIs", "pipeline attribution", "cost per result", "what metrics", "measuring Meta", "CPL vs pipeline", "ROAS Meta". Do NOT use for Pixel/CAPI setup (use tracking) or fatigue metrics (use creative-fatigue).
 ---
 
 # Meta Ads Measurement (B2B)
 
-The most common B2B Meta mistake is judging the channel on raw CPL, seeing a high number, and declaring "Meta doesn't work". Proper measurement tracks at multiple funnel levels and attributes the final business outcome — pipeline, deals, revenue — back to Meta's contribution.
+The most common B2B Meta mistake is judging the channel on raw CPL, seeing a high number, and declaring "Meta doesn't work". Proper measurement tracks at multiple funnel levels and attributes the final business outcome - pipeline, deals, revenue - back to Meta's contribution.
 
 ## Instructions
 
@@ -26,7 +26,7 @@ The most common B2B Meta mistake is judging the channel on raw CPL, seeing a hig
 
 ## Trend Over Absolute
 
-There is no universal benchmark — cost per result depends on vertical, offer, creative, and temperature. If cost-per-result is improving week over week, the funnel is healthy regardless of how it compares to someone else's average. Track your own trend line.
+There is no universal benchmark - cost per result depends on vertical, offer, creative, and temperature. If cost-per-result is improving week over week, the funnel is healthy regardless of how it compares to someone else's average. Track your own trend line.
 
 ## Attribute to Pipeline (the B2B unlock)
 
@@ -37,12 +37,12 @@ There is no universal benchmark — cost per result depends on vertical, offer, 
 
 ## Reading Creative (2026 delivery caveat)
 
-- Under sequenced GEM delivery, **ad-level CPA is not a reliable read of creative quality** — a high-CPA ad may be assisting conversions elsewhere.
+- Under sequenced GEM delivery, **ad-level CPA is not a reliable read of creative quality** - a high-CPA ad may be assisting conversions elsewhere.
 - Use the metric stack: thumbstop (hook), CTR (message), spend allocation (algorithm trust), CPA (profitability). **Spend allocation is now the strongest single signal** of which creative the algorithm trusts.
 
 ## Optimise to Pipeline, Not CPL
 
-The whole point: configure tracking, events, and bidding so Meta chases qualified pipeline. Cheap leads the algorithm can always find; pipeline is the goal. If sales says the leads are junk while CPL looks great, the measurement loop is open — close it with offline conversions and quality feedback.
+The whole point: configure tracking, events, and bidding so Meta chases qualified pipeline. Cheap leads the algorithm can always find; pipeline is the goal. If sales says the leads are junk while CPL looks great, the measurement loop is open - close it with offline conversions and quality feedback.
 
 ## Examples
 
@@ -53,11 +53,11 @@ Example 2: "My boss says Meta doesn't work because CPL is high."
 → Raw CPL is the wrong verdict. Measure to pipeline: sync CRM outcomes back, compare cost per SQL and pipeline created, and read the trend over a full B2B cycle before judging.
 
 
-## Incrementality — Meta Conversion Lift
+## Incrementality - Meta Conversion Lift
 
 The causal answer to "is Meta actually working?" Meta's **Conversion Lift** splits the audience into treatment (sees ads) and control (doesn't) at the account level and measures the difference via Pixel/CAPI/offline uploads.
 
-- **Requirements:** min ~7-day test, ≥10% of audience per cell, ~5,000+ users in the target group, 300+ conversions for significance; most tests run 3–4 weeks. Some Conversion Lift access needs a Meta Business Partner / rep.
+- **Requirements:** min ~7-day test, ≥10% of audience per cell, ~5,000+ users in the target group, 300+ conversions for significance; most tests run 3-4 weeks. Some Conversion Lift access needs a Meta Business Partner / rep.
 - **Use when** spend is meaningful and the exec question is incrementality; below that, lean on CRM-based attribution.
 - **For the CRM attribution loop** (offline conversions from HubSpot/Salesforce, fbclid matching, models) → Read `{SKILL_BASE}/resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
 ## Tracking hygiene & reporting
@@ -65,7 +65,7 @@ The causal answer to "is Meta actually working?" Meta's **Conversion Lift** spli
 For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `{SKILL_BASE}/resources/references/tracking-hygiene.md`.
 ## B2B guardrail
 
-Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
+Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` - most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

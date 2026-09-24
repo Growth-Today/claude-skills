@@ -30,7 +30,7 @@ If multiple reports exist, use the most recent by date in the filename.
 
 ### 2. Generate the Phased Plan
 
-Analyze the audit findings and organize cleanup tasks into five phases. Each phase builds on the previous one. **Only include tasks that are relevant based on the audit findings** — if a dimension scored A, skip or deprioritize its tasks.
+Analyze the audit findings and organize cleanup tasks into five phases. Each phase builds on the previous one. **Only include tasks that are relevant based on the audit findings** - if a dimension scored A, skip or deprioritize its tasks.
 
 #### Phase 1: Immediate Hygiene (Week 1-2)
 
@@ -163,15 +163,15 @@ Sum up estimated hours and present:
 
 Include this section in every plan:
 
-1. **`hs_marketable_status` is read-only via API** — This is the single biggest blocker. Any task that needs to suppress or unsuppress a contact as a marketing contact cannot do so directly via API. Workaround: set a custom flag property via API, then trigger a HubSpot workflow on that flag to change marketing status.
+1. **`hs_marketable_status` is read-only via API** - This is the single biggest blocker. Any task that needs to suppress or unsuppress a contact as a marketing contact cannot do so directly via API. Workaround: set a custom flag property via API, then trigger a HubSpot workflow on that flag to change marketing status.
 
-2. **HubSpot Workflows API v4 is beta/unstable** — Do not attempt to create workflows via API. Build all workflows manually in the HubSpot UI using the specifications from each skill.
+2. **HubSpot Workflows API v4 is beta/unstable** - Do not attempt to create workflows via API. Build all workflows manually in the HubSpot UI using the specifications from each skill.
 
-3. **Lifecycle stage is forward-only** — HubSpot prevents setting a contact to an earlier lifecycle stage. To fix this, clear the property first (set to empty string via API), then set the desired stage in a second API call.
+3. **Lifecycle stage is forward-only** - HubSpot prevents setting a contact to an earlier lifecycle stage. To fix this, clear the property first (set to empty string via API), then set the desired stage in a second API call.
 
-4. **Search API caps at 10,000 results** — Any query that might return more than 10K results must be segmented (e.g., by date range or property value) and summed. This affects most counting queries on large portals.
+4. **Search API caps at 10,000 results** - Any query that might return more than 10K results must be segmented (e.g., by date range or property value) and summed. This affects most counting queries on large portals.
 
-5. **Rate limit: 100 requests per 10 seconds** — All scripts must implement rate limiting. Use exponential backoff on HTTP 429 responses.
+5. **Rate limit: 100 requests per 10 seconds** - All scripts must implement rate limiting. Use exponential backoff on HTTP 429 responses.
 
 ## Output Format
 
@@ -198,7 +198,7 @@ The most critical issues are:
 **Goal:** Reduce billing costs and protect sender reputation.
 
 ### 1.1 Delete Contacts With No Email Address
-- **Why:** Contacts without email cannot receive marketing — they are dead weight
+- **Why:** Contacts without email cannot receive marketing - they are dead weight
   that inflates your contact tier billing.
 - **Count from audit:** X,XXX contacts
 - **Automation:** Fully scriptable
@@ -211,7 +211,7 @@ The most critical issues are:
 - **Why:** Hard bounces damage sender reputation and deliverability scores.
   These contacts will never receive email again.
 - **Count from audit:** X,XXX contacts
-- **Automation:** Hybrid — API sets flag, workflow changes marketing status
+- **Automation:** Hybrid - API sets flag, workflow changes marketing status
 - **Skill:** `/suppress-hard-bounced`
 - **Dependencies:** Suppression workflow must be built in UI first
 - **Estimated time:** 1-2 hours
@@ -221,7 +221,7 @@ The most critical issues are:
 - **Why:** Globally unsubscribed contacts count toward billing but cannot
   be emailed. Set as non-marketing to reduce costs.
 - **Count from audit:** X,XXX contacts
-- **Automation:** Hybrid — API sets flag, workflow changes marketing status
+- **Automation:** Hybrid - API sets flag, workflow changes marketing status
 - **Skill:** `/suppress-global-unsubscribes`
 - **Dependencies:** Suppression workflow must be built in UI first
 - **Estimated time:** 1-2 hours

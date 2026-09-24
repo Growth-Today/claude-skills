@@ -1,6 +1,6 @@
 ---
 name: multiple-pipelines-setup
-description: "Decide whether you actually need more than one deal pipeline and set additional pipelines up correctly — distinct stages, permissions, and reporting — without fragmenting the forecast."
+description: "Decide whether you actually need more than one deal pipeline and set additional pipelines up correctly - distinct stages, permissions, and reporting - without fragmenting the forecast."
 license: MIT
 metadata:
   author: growthtoday
@@ -10,7 +10,7 @@ metadata:
 
 # Multiple Pipelines Setup
 
-Add a second (or third) deal pipeline only when the sales *process* genuinely differs — e.g. New Business vs Renewals vs Partnerships — and set it up so reporting and permissions stay clean. Builds on `deal-pipeline-architecture`.
+Add a second (or third) deal pipeline only when the sales *process* genuinely differs - e.g. New Business vs Renewals vs Partnerships - and set it up so reporting and permissions stay clean. Builds on `deal-pipeline-architecture`.
 
 ## Why This Matters
 
@@ -24,7 +24,7 @@ Teams over-create pipelines (one per team, region, or rep), which fragments repo
 
 ## Critical Concept: Different Process, Not Different Team
 
-Justify a pipeline by asking: *do the stages differ?* Renewals ("Upcoming → Negotiating → Renewed / Churned") genuinely differ from New Business — that warrants a pipeline. "AE team vs SDR team" does not — that's teams + views. Each pipeline also has its own stages, automation, and (Enterprise) access permissions.
+Justify a pipeline by asking: *do the stages differ?* Renewals ("Upcoming → Negotiating → Renewed / Churned") genuinely differ from New Business - that warrants a pipeline. "AE team vs SDR team" does not - that's teams + views. Each pipeline also has its own stages, automation, and (Enterprise) access permissions.
 
 ## Plan
 
@@ -60,9 +60,9 @@ Ensure new deals land in the correct pipeline (creation defaults / workflow). Fo
 ## Key Technical Learnings
 
 - **Different process = new pipeline; different team = teams + views.** This one rule prevents most pipeline sprawl.
-- **Every pipeline needs its own discipline** — required fields, automation, rotting — or the new one rots.
-- **Consolidated reporting matters** — don't let multiple pipelines hide the total forecast.
-- **Permissions are Enterprise** — don't design pipeline-level access you can't enforce.
+- **Every pipeline needs its own discipline** - required fields, automation, rotting - or the new one rots.
+- **Consolidated reporting matters** - don't let multiple pipelines hide the total forecast.
+- **Permissions are Enterprise** - don't design pipeline-level access you can't enforce.
 - **Extends `deal-pipeline-architecture`** to multi-motion orgs.
 
 ---

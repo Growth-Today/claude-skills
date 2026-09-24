@@ -10,11 +10,11 @@ metadata:
 
 # Data Quality Command Center
 
-Use HubSpot's built-in Data Quality Command Center as the ongoing monitor for the whole hygiene layer — duplicates, format issues, property anomalies, and sync errors — instead of hunting problems manually.
+Use HubSpot's built-in Data Quality Command Center as the ongoing monitor for the whole hygiene layer - duplicates, format issues, property anomalies, and sync errors - instead of hunting problems manually.
 
 ## Why This Matters
 
-The hygiene playbooks fix specific problems; the Command Center is the dashboard that surfaces them continuously in one place. It flags formatting issues (spacing, casing), property insights (unused, all-blank), duplicate volume, and record anomalies — so admins catch drift early rather than during a quarterly fire drill.
+The hygiene playbooks fix specific problems; the Command Center is the dashboard that surfaces them continuously in one place. It flags formatting issues (spacing, casing), property insights (unused, all-blank), duplicate volume, and record anomalies - so admins catch drift early rather than during a quarterly fire drill.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ The hygiene playbooks fix specific problems; the Command Center is the dashboard
 
 ## Critical Concept: Monitor, Then Automate
 
-The Command Center is diagnostic — it shows what's wrong. The value comes from routing recurring issues to fixes: formatting issues → a format-automation workflow (`data-formatting-automation`), duplicates → `dedupe-contacts` / `merge-duplicate-companies`, unused properties → `cleanup-properties`. Monitor centrally, fix with the specific playbook, automate what recurs.
+The Command Center is diagnostic - it shows what's wrong. The value comes from routing recurring issues to fixes: formatting issues → a format-automation workflow (`data-formatting-automation`), duplicates → `dedupe-contacts` / `merge-duplicate-companies`, unused properties → `cleanup-properties`. Monitor centrally, fix with the specific playbook, automate what recurs.
 
 ## Plan
 
@@ -61,10 +61,10 @@ Add a Command Center review to `weekly-cleanup-routine` (quick scan) and `quarte
 
 ## Key Technical Learnings
 
-- **It's the hygiene dashboard** — one place to see drift instead of manual hunting.
-- **Diagnostic, not a fixer** — pair every category with a specific fix playbook.
-- **Automate the recurring** — formatting issues that keep returning belong in a workflow.
-- **Permissions-gated** — needs Super Admin or data quality tools access.
+- **It's the hygiene dashboard** - one place to see drift instead of manual hunting.
+- **Diagnostic, not a fixer** - pair every category with a specific fix playbook.
+- **Automate the recurring** - formatting issues that keep returning belong in a workflow.
+- **Permissions-gated** - needs Super Admin or data quality tools access.
 - **Ties the whole data-hygiene group together** and feeds the Data Quality tile in `revops-core-dashboards`.
 
 ---

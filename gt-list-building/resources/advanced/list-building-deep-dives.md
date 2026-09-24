@@ -2,7 +2,7 @@
 name: list-building-deep-dives
 ---
 
-# List Building — Detailed Reference
+# List Building - Detailed Reference
 
 Deep dives into each phase, ICP construction, multi-source workflows, and the Apollo + Clay template.
 
@@ -12,7 +12,7 @@ Deep dives into each phase, ICP construction, multi-source workflows, and the Ap
 
 ### Step 1: Analyze Your Best Customers
 
-Pull top 20–30 customers by: highest LTV, fastest close, lowest churn, highest NPS, easiest to work with.
+Pull top 20-30 customers by: highest LTV, fastest close, lowest churn, highest NPS, easiest to work with.
 
 **Answer:**
 - What industries are they in?
@@ -45,7 +45,7 @@ One-page document with must-haves, nice-to-haves, and disqualifiers (see templat
 
 ### Step 5: Score Your ICP
 
-Build a 0–100 scoring system in Clay as a formula column that auto-scores every company.
+Build a 0-100 scoring system in Clay as a formula column that auto-scores every company.
 
 **30-Minute Exercise:**
 1. List top 10 best customers
@@ -64,10 +64,10 @@ Build a 0–100 scoring system in Clay as a formula column that auto-scores ever
 | Criteria | Questions | Example |
 |---|---|---|
 | Industry | What industries do best customers operate in? | SaaS, E-commerce, Manufacturing |
-| Company Size | How many employees? | 50–500 (mid-market) |
-| Revenue | Annual revenue range? | $10M–$100M ARR |
+| Company Size | How many employees? | 50-500 (mid-market) |
+| Revenue | Annual revenue range? | $10M-$100M ARR |
 | Location | HQ? Where do they operate? | US-based, expanding to EU |
-| Company Age | Startup vs established? | 3–10 years old |
+| Company Age | Startup vs established? | 3-10 years old |
 | Business Model | B2B, B2C, B2B2C? | B2B SaaS companies |
 | Funding Stage | Bootstrapped to PE-backed? | Series A-B |
 
@@ -121,21 +121,21 @@ Build a 0–100 scoring system in Clay as a formula column that auto-scores ever
 
 ### Sales Engagement Platform
 - Industry: B2B SaaS, Professional Services, Agencies
-- Size: 50–500 employees, $5M–$50M revenue
+- Size: 50-500 employees, $5M-$50M revenue
 - Tech: Salesforce or HubSpot CRM
 - Signals: Hiring SDRs/AEs, raised Series A/B
 - Psychographics: Growth-focused, outbound sales motion
 
 ### HR Tech Platform
 - Industry: Technology, Financial Services, Healthcare
-- Size: 200–2,000 employees, $20M–$200M revenue
+- Size: 200-2,000 employees, $20M-$200M revenue
 - Tech: Workday, BambooHR, or Greenhouse
 - Signals: Hiring HR Ops, headcount expanding >15% YoY
 - Psychographics: Employee experience-focused, remote-first
 
 ### Marketing Automation Tool
 - Industry: E-commerce, DTC Brands, B2C SaaS
-- Size: 20–200 employees, $2M–$20M revenue
+- Size: 20-200 employees, $2M-$20M revenue
 - Tech: Shopify, Klaviyo, or Attentive
 - Signals: Launching new products, expanding to new channels
 - Psychographics: Data-driven, customer acquisition-focused
@@ -170,7 +170,7 @@ Build a 0–100 scoring system in Clay as a formula column that auto-scores ever
 1. Sales Navigator → Company Search
 2. Advanced filters: headcount, growth %, hiring, posted recently, technologies
 3. Save as Lead List (max 2,500)
-4. Export via Phantombuster ($50–100/mo) or Evaboot
+4. Export via Phantombuster ($50-100/mo) or Evaboot
 5. Import to Clay
 
 **Unique filters:** Headcount Growth, Posted on LinkedIn, Hiring on LinkedIn.
@@ -180,11 +180,11 @@ Build a 0–100 scoring system in Clay as a formula column that auto-scores ever
 
 1. Table 1: Clay Companies (from Clay Find Companies)
 2. Table 2: Apollo Companies (from CSV import)
-3. Table 3: Merged — use "Write to Other Table" from both Table 1 and Table 2
+3. Table 3: Merged - use "Write to Other Table" from both Table 1 and Table 2
 4. In Table 3: dedupe by Domain
 5. (Optional) Table 4: LinkedIn Sales Nav companies → write to Table 3 → dedupe again
 
-**Typical result:** 40–70% more companies than single source.
+**Typical result:** 40-70% more companies than single source.
 
 ### Advanced Strategies
 
@@ -267,7 +267,7 @@ See [list-building-directories.md](list-building-directories.md) for curated ind
 
 **When to use:** When Apollo, Clay, and LinkedIn aren't finding your targets.
 
-**What it does:** Discovers lookalike websites based on keywords and tech tags — not limited to LinkedIn data.
+**What it does:** Discovers lookalike websites based on keywords and tech tags - not limited to LinkedIn data.
 
 **Pros:**
 - Finds net-new companies outside typical B2B databases
@@ -287,13 +287,13 @@ See [list-building-directories.md](list-building-directories.md) for curated ind
 ## Contact Enrichment Best Practices
 
 ### Email Waterfalls
-Use 3–5 providers sequentially — if provider 1 misses, try provider 2, etc.
+Use 3-5 providers sequentially - if provider 1 misses, try provider 2, etc.
 - LeadMagic, Prospeo, Findymail for personal emails
 - Catch-all/generic as fallback
 - Always validate to remove bounces
 
 ### Phone Waterfalls
-Same principle for direct dials and mobile numbers — multiple providers for coverage.
+Same principle for direct dials and mobile numbers - multiple providers for coverage.
 
 ### Data Provider Performance
 Review [Clay's data provider tests](https://www.clay.com/data-tests) for provider performance by specific regions and use cases.
@@ -308,8 +308,8 @@ Review [Clay's data provider tests](https://www.clay.com/data-tests) for provide
 
 ## Common ICP Mistakes
 
-- **Too broad:** "Any company with 10+ employees" — can't afford to target everyone
-- **Too narrow:** "Only fintech in SF with exactly 150 employees" — TAM too small
+- **Too broad:** "Any company with 10+ employees" - can't afford to target everyone
+- **Too narrow:** "Only fintech in SF with exactly 150 employees" - TAM too small
 - **Based on assumptions, not data:** Talk to customers, analyze CRM
 - **Static ICP:** Markets change, revisit quarterly
 - **Ignoring anti-ICP:** Knowing who NOT to target is equally important
@@ -323,8 +323,8 @@ Review [Clay's data provider tests](https://www.clay.com/data-tests) for provide
 - Clay Find Companies (built-in)
 - Apollo (apollo.io, free tier available)
 - LinkedIn Sales Navigator ($99/mo, 30-day trial)
-- ZoomInfo (enterprise, $15K–$30K/year)
-- Crunchbase ($29–$99/mo)
+- ZoomInfo (enterprise, $15K-$30K/year)
+- Crunchbase ($29-$99/mo)
 
 ### Export/Scraping
 - Phantombuster (LinkedIn scraping)
@@ -334,17 +334,17 @@ Review [Clay's data provider tests](https://www.clay.com/data-tests) for provide
 - Claygent (built-in AI web research)
 
 ### Enrichment in Clay
-- Clearbit — firmographics, technographics
-- BuiltWith — tech stack data
-- People Data Labs — company data
-- Crunchbase — funding data
-- Claygent — custom research (values, news)
+- Clearbit - firmographics, technographics
+- BuiltWith - tech stack data
+- People Data Labs - company data
+- Crunchbase - funding data
+- Claygent - custom research (values, news)
 
 ### Data Quality
 - Clay deduplication (built-in)
 - Email validation providers (LeadMagic, Prospeo, Findymail)
-- Clay formulas — custom scoring logic
-- AI columns — evaluate fit based on criteria
+- Clay formulas - custom scoring logic
+- AI columns - evaluate fit based on criteria
 
 ---
 

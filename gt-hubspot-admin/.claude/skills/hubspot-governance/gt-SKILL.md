@@ -22,4 +22,4 @@ Secure and govern the portal: users, access, privacy, integrations. Read the rel
 
 ---
 
-Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills
+Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills

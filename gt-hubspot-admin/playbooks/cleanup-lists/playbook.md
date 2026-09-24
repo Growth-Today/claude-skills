@@ -20,7 +20,7 @@ Audit HubSpot lists to remove clutter. Unused lists slow down the UI, confuse te
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Inventory All Lists
+### Stage 1: Before - Inventory All Lists
 
 Pull all lists via the API:
 
@@ -43,7 +43,7 @@ For each list, record: list ID, name, type (active/static), member count, create
 
 Export to CSV for review.
 
-### Stage 2: Execute — Identify Candidates for Deletion
+### Stage 2: Execute - Identify Candidates for Deletion
 
 Flag lists matching any of these criteria:
 
@@ -53,9 +53,9 @@ Flag lists matching any of these criteria:
 4. **Test/temp lists** (names containing "test", "temp", "copy of", "old")
 5. **Static lists** that have not been updated in 6+ months
 
-Cross-reference with workflows and email campaigns before deleting — a list with zero members might still be used as an enrollment trigger.
+Cross-reference with workflows and email campaigns before deleting - a list with zero members might still be used as an enrollment trigger.
 
-### Stage 3: After — Delete and Document
+### Stage 3: After - Delete and Document
 
 1. Delete confirmed unused lists via the API or UI.
 2. Document what was deleted (list name, ID, reason) in a cleanup log.

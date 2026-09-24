@@ -1,11 +1,11 @@
 ---
 name: meta-ads-creative-fatigue
-description: Meta Ads creative fatigue — detecting decline, frequency thresholds, refresh cadence, and creative volume to outrun fatigue. Use for creative fatigue, ad fatigue, declining CTR, rising frequency, creative refresh cadence, how often to refresh creative, ad saturation, audience oversaturation. Triggers on "creative fatigue", "ad fatigue", "declining CTR", "rising frequency", "refresh creative", "how often refresh", "ads stopped working", "oversaturation". Do NOT use for building new creative concepts (use creative).
+description: Meta Ads creative fatigue - detecting decline, frequency thresholds, refresh cadence, and creative volume to outrun fatigue. Use for creative fatigue, ad fatigue, declining CTR, rising frequency, creative refresh cadence, how often to refresh creative, ad saturation, audience oversaturation. Triggers on "creative fatigue", "ad fatigue", "declining CTR", "rising frequency", "refresh creative", "how often refresh", "ads stopped working", "oversaturation". Do NOT use for building new creative concepts (use creative).
 ---
 
 # Meta Ads Creative Fatigue
 
-Creative fatigue is the most common reason a working Meta account suddenly drops off. Audiences burn out fast — even on winning creative. Catching it early (and outrunning it with volume) is a core B2B Meta discipline, and it is exactly the kind of thing the competitor's "fatigue monitor" flags. This skill is the strategy behind that signal.
+Creative fatigue is the most common reason a working Meta account suddenly drops off. Audiences burn out fast - even on winning creative. Catching it early (and outrunning it with volume) is a core B2B Meta discipline, and it is exactly the kind of thing the competitor's "fatigue monitor" flags. This skill is the strategy behind that signal.
 
 ## Instructions
 
@@ -36,7 +36,7 @@ The clear tell is **rising frequency paired with declining CTR**. Neither alone 
 ## Fatigue vs Audience Saturation
 
 - **Creative fatigue:** same people, same ad, too many times → refresh creative.
-- **Audience saturation / oversaturation:** the audience itself is too small or fully exhausted → expand the audience (broader, new lookalike, new layer) or exclude past engagers and bring fresh prospects in. The competitor's "fatigue monitor" is really watching for this — frequency climbing because the pool is too small.
+- **Audience saturation / oversaturation:** the audience itself is too small or fully exhausted → expand the audience (broader, new lookalike, new layer) or exclude past engagers and bring fresh prospects in. The competitor's "fatigue monitor" is really watching for this - frequency climbing because the pool is too small.
 - Diagnose which before acting: small audience + high frequency = saturation; large audience + high frequency on one ad = creative fatigue.
 
 ## Proactive Discipline
@@ -54,4 +54,4 @@ Example 2: "My frequency is climbing fast on a small audience."
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

@@ -2,10 +2,10 @@
 name: linguistic-dna
 version: 1.0
 updated: 2026-04-07
-description: GT tone of voice and language rules for cold email. Defines how we write — conversational, specific, human. Apply alongside email-spam-checker.md on every email draft.
+description: GT tone of voice and language rules for cold email. Defines how we write - conversational, specific, human. Apply alongside email-spam-checker.md on every email draft.
 ---
 
-# GT Linguistic DNA — Cold Email
+# GT Linguistic DNA - Cold Email
 
 ## The Core Rule
 
@@ -22,13 +22,13 @@ Cold email is a 1:1 conversation, not a broadcast. Every word should feel like i
 **What this means in practice:**
 
 - Use "you" and "your" more than "we" and "our"
-- Reference something specific about them or their situation — not a category they belong to
+- Reference something specific about them or their situation - not a category they belong to
 - Avoid newsletter voice: no "B2B marketing leaders typically...", no "teams at your stage often..."
 - Avoid press release voice: no "we are excited to announce", no "our platform helps teams achieve..."
 
 ---
 
-## Jargon and Corporate Language — Do Not Use
+## Jargon and Corporate Language - Do Not Use
 
 These words and phrases sound unnatural in spoken conversation. If you find them in a draft, rewrite the sentence in plain language.
 
@@ -45,10 +45,10 @@ I hope this finds you well, I wanted to reach out, just following up, as per my 
 
 ## Formatting Rules for Conversational Tone
 
-- **No em dashes (—)** — replace with a comma, period, or rewrite the sentence. Em dashes read as marketing copy, not conversation.
-- **No semicolons** — too formal for 1:1 email.
-- **No bullet points in email body** — cold emails are plain text conversations, not listicles.
-- **Sentences short** — if a sentence needs a semicolon or em dash to hold together, split it into two.
+- **No em dashes (-)** - replace with a comma, period, or rewrite the sentence. Em dashes read as marketing copy, not conversation.
+- **No semicolons** - too formal for 1:1 email.
+- **No bullet points in email body** - cold emails are plain text conversations, not listicles.
+- **Sentences short** - if a sentence needs a semicolon or em dash to hold together, split it into two.
 
 ---
 
@@ -64,7 +64,7 @@ Vague claims are ignored. Specific claims are read.
 | "drive pipeline from events" | "turn webinar attendee data into sales conversations" |
 | "improve your content output" | "turn one webinar into clips, posts, and emails in minutes" |
 
-If you do not have a specific number or name, use a placeholder — do not invent specifics.
+If you do not have a specific number or name, use a placeholder - do not invent specifics.
 
 ---
 

@@ -27,7 +27,7 @@ If deals are synced from Salesforce:
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Audit Deal Data
+### Stage 1: Before - Audit Deal Data
 
 Pull deal metrics via the API:
 
@@ -60,15 +60,15 @@ no_close = PublicObjectSearchRequest(
 
 Record: total deals, deals per pipeline stage, deals missing amount, deals missing close date, stale deals (open with no activity in 60+ days).
 
-### Stage 2: Execute — Clean Up
+### Stage 2: Execute - Clean Up
 
-1. **Delete test deals** — search for deals with names containing "test", "demo", "sample", or with amount = $0 and no associated contacts.
-2. **Address missing amounts** — export deals without `amount` and work with sales to fill in values or mark as lost.
-3. **Close stale deals** — deals open with no activity in 90+ days should be reviewed with the deal owner. Set to "Closed Lost" if abandoned.
-4. **Standardize pipeline stages** — ensure all pipelines have consistent stage names and probability percentages.
-5. **Remove unused pipelines** — if a pipeline has zero active deals and is not in use, archive or delete it.
+1. **Delete test deals** - search for deals with names containing "test", "demo", "sample", or with amount = $0 and no associated contacts.
+2. **Address missing amounts** - export deals without `amount` and work with sales to fill in values or mark as lost.
+3. **Close stale deals** - deals open with no activity in 90+ days should be reviewed with the deal owner. Set to "Closed Lost" if abandoned.
+4. **Standardize pipeline stages** - ensure all pipelines have consistent stage names and probability percentages.
+5. **Remove unused pipelines** - if a pipeline has zero active deals and is not in use, archive or delete it.
 
-### Stage 3: After — Verify
+### Stage 3: After - Verify
 
 1. Re-run the deal audit queries. Confirm:
    - Test deals removed

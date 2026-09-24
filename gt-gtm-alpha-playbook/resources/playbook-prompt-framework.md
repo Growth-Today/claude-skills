@@ -1,4 +1,4 @@
-# GTM Alpha Playbook Generator — Full Prompt Framework v5.0
+# GTM Alpha Playbook Generator - Full Prompt Framework v5.0
 
 This is the complete prompt framework that powers playbook generation. Follow it exactly.
 
@@ -96,7 +96,7 @@ For {TARGET_DOMAIN}'s specific industry, develop a custom signal framework that 
 For each Play's email template, use this strategic structure:
 
 ```
-{first_name} – {Opening with SPECIFIC signal discovered about their company}
+{first_name} - {Opening with SPECIFIC signal discovered about their company}
 
 Based on {specifics of what we found}, you're likely facing {precise pain point} which typically costs companies like yours {quantified cost/impact}.
 
@@ -110,7 +110,7 @@ We've helped {competitor or similar company} achieve {specific, impressive metri
 **"Poke the Bear" Guidelines:**
 - Target a high-stakes nuance, not a generic pain
 - Phrase as "How are you handling…?", "What's your plan when…?", or "Curious how you avoid…?"
-- Make it impossible to dismiss — trigger genuine self-reflection
+- Make it impossible to dismiss - trigger genuine self-reflection
 
 ---
 
@@ -136,15 +136,15 @@ Focus on combining multiple signals that together indicate true buying readiness
 
 ### Creative Signal Types
 
-1. **Shadow GTM Shifts** — Look for sudden changes in language on partner or reseller sites (new SKUs, altered descriptions) that hint at GTM realignment. Examples: an implementation partner removing "certified [Competitor] integrator," or a new reseller launching a productized onboarding for your category.
+1. **Shadow GTM Shifts** - Look for sudden changes in language on partner or reseller sites (new SKUs, altered descriptions) that hint at GTM realignment. Examples: an implementation partner removing "certified [Competitor] integrator," or a new reseller launching a productized onboarding for your category.
 
-2. **Internal Chaos Markers** — Detect early signs of operational distress: support forums flooded with complaints about tool limitations, Glassdoor reviews from engineers citing legacy infra pain, or execs stepping down from data/compliance roles. Pain often leaks before the press release.
+2. **Internal Chaos Markers** - Detect early signs of operational distress: support forums flooded with complaints about tool limitations, Glassdoor reviews from engineers citing legacy infra pain, or execs stepping down from data/compliance roles. Pain often leaks before the press release.
 
-3. **Stakeholder Power Consolidation** — Identify new hires or promotions that consolidate budget authority across previously siloed functions (e.g. VP of "Revenue Systems" owning both GTM tooling + Finance). These org shifts signal an upcoming buying window for platforms that unify workflows.
+3. **Stakeholder Power Consolidation** - Identify new hires or promotions that consolidate budget authority across previously siloed functions (e.g. VP of "Revenue Systems" owning both GTM tooling + Finance). These org shifts signal an upcoming buying window for platforms that unify workflows.
 
-4. **Externalized Friction Workarounds** — Watch for publicly visible hacks or kludges: Notion pages with manual processes, Zapier-heavy workflows in community showcases, or Airtable templates solving problems your product automates. This signals high motivation to replace janky ops with real infra.
+4. **Externalized Friction Workarounds** - Watch for publicly visible hacks or kludges: Notion pages with manual processes, Zapier-heavy workflows in community showcases, or Airtable templates solving problems your product automates. This signals high motivation to replace janky ops with real infra.
 
-5. **Competitive Framing in Public Messaging** — Track when prospects begin to echo your messaging — even if they don't use your product. If a company starts referencing your category language in job posts or blogs, they're likely influenced by your category narrative and warming up.
+5. **Competitive Framing in Public Messaging** - Track when prospects begin to echo your messaging - even if they don't use your product. If a company starts referencing your category language in job posts or blogs, they're likely influenced by your category narrative and warming up.
 
 ### Standard Signal Types
 
@@ -251,4 +251,4 @@ Each play must include:
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

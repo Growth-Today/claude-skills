@@ -15,8 +15,8 @@ Domain ideation goes wrong when it starts from the brand word alone. Collect the
 |---|---|---|
 | 1 | **Client's primary website / brand domain** | Every secondary has to be a recognisable variant of it, and you need it to check you aren't duplicating something they already own |
 | 2 | **Domains they already own** (including parked and previously-used ones) | Near-duplicates of an owned domain are the most common wasted purchase. Also: a previously-burnt domain must not be recycled quietly |
-| 3 | **How many domains** | Don't guess. Run `playbooks/sizing-calculator` from the monthly goal or the contacts × steps ÷ deadline — the answer is usually larger than people expect |
-| 4 | **Vertical / motion** — cold outbound, newsletter, events, or enterprise/ABM | Changes the naming register. Enterprise buyers read `-hq` and `-team` variants as fine; a newsletter list does not want an outreach-shaped domain |
+| 3 | **How many domains** | Don't guess. Run `playbooks/sizing-calculator` from the monthly goal or the contacts × steps ÷ deadline - the answer is usually larger than people expect |
+| 4 | **Vertical / motion** - cold outbound, newsletter, events, or enterprise/ABM | Changes the naming register. Enterprise buyers read `-hq` and `-team` variants as fine; a newsletter list does not want an outreach-shaped domain |
 | 5 | **Anything the client will refuse** | Legal, trademark, or a competitor's near-name. Cheaper to ask than to un-buy |
 
 Items 1 and 2 are the two inputs that have been supplied by hand on every build so far. Ask for them up front rather than discovering them at purchase time.
@@ -74,7 +74,7 @@ Use in Claude when generating a candidate list:
 **How we buy (via an approved purchasing vendor, see `{SKILL_BASE}/resources/approved-vendors.md`):**
 - Buy across **multiple registrars**, spread across **multiple days**, staying at **max 4 domains per registrar per day**.
   - **Batch size sets the calendar.** The cap is 4 per registrar per day, so the real constraint is
-    how many registrars are in play at once. A 30–50 domain batch is 8–13 registrar-days: across a
+    how many registrars are in play at once. A 30-50 domain batch is 8-13 registrar-days: across a
     dozen registrars that's a single day, on one registrar it's nearly two weeks. A 150-domain batch
     is 38 registrar-days. Ask ScaledMail how wide they're spreading before you promise a date.
 - Spread DNS across **multiple Cloudflare accounts** (no single hub-and-spoke footprint).

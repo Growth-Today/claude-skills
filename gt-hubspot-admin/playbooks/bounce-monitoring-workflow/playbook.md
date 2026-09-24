@@ -23,7 +23,7 @@ Protect your email sender reputation with automated bounce detection and suppres
 ## Prerequisites
 
 - HubSpot Marketing Professional or Enterprise plan
-- A custom contact property (e.g., `email_health_flag` or `delivery_status`) — checkbox or dropdown with value: "flagged for review"
+- A custom contact property (e.g., `email_health_flag` or `delivery_status`) - checkbox or dropdown with value: "flagged for review"
 - Admin email or Slack channel for hard bounce alerts
 
 ## Building the Workflow: Three Options
@@ -78,16 +78,16 @@ To use this approach:
 
 ## Step-by-Step Build Instructions
 
-### Stage 1: Before — Create Properties
+### Stage 1: Before - Create Properties
 
 1. Create your bounce review property (e.g., `email_health_flag` or `delivery_status`):
    - Object: Contact
    - Type: Single checkbox or dropdown
    - Group: Contact information
 
-2. Identify your current bounce baseline — run a quick search for contacts where `hs_email_bounce` > 0 to understand the starting volume.
+2. Identify your current bounce baseline - run a quick search for contacts where `hs_email_bounce` > 0 to understand the starting volume.
 
-### Stage 2: Execute — Build the Workflow
+### Stage 2: Execute - Build the Workflow
 
 Build a single contact-based workflow with branching logic.
 
@@ -96,7 +96,7 @@ Build a single contact-based workflow with branching logic.
 2. **Branch 1: Hard bounce check**
    - Condition: `hs_email_hard_bounce_reason_enum` is known
    - **YES:**
-     - Send internal notification: "Hard bounce: {email} — {hs_email_hard_bounce_reason_enum}"
+     - Send internal notification: "Hard bounce: {email} - {hs_email_hard_bounce_reason_enum}"
      - Set `hs_marketable_status` to non-marketing (workflow action)
    - **NO:** Continue to Branch 2
 
@@ -105,13 +105,13 @@ Build a single contact-based workflow with branching logic.
    - **YES:**
      - Set `hs_marketable_status` to non-marketing (workflow action)
      - Continue to Branch 3
-   - **NO:** No action (below threshold — monitor only)
+   - **NO:** No action (below threshold - monitor only)
 
 4. **Branch 3: Bounce count >= your review threshold (commonly 3-5)**
    - Condition: `hs_email_bounce` is greater than or equal to your review threshold
    - **YES:**
      - Set your bounce review property = flagged
-     - Send internal notification: "Contact {email} has [review threshold]+ bounces — review for deletion"
+     - Send internal notification: "Contact {email} has [review threshold]+ bounces - review for deletion"
    - **NO:** No further action
 
 5. **Settings:**
@@ -120,10 +120,10 @@ Build a single contact-based workflow with branching logic.
 
 6. **Turn on the workflow.**
 
-### Stage 3: After — Verify
+### Stage 3: After - Verify
 
 1. Check workflow history after the first week of email sends.
-2. Review the flagged contacts list weekly — decide for each contact:
+2. Review the flagged contacts list weekly - decide for each contact:
    - **Delete** if the email is clearly invalid (typo domain, defunct company)
    - **Attempt recovery** if the domain is valid (could be a temporary mailbox issue)
 3. Monitor overall bounce rate in HubSpot email health dashboard.

@@ -49,11 +49,11 @@ For competitive research via Ads Library → Read `{SKILL_BASE}/resources/refere
 
 ## Key Principles
 
-- **Work top-to-bottom systematically** — don't jump to conclusions
+- **Work top-to-bottom systematically** - don't jump to conclusions
 - **Allow 2 weeks minimum** before major changes (unless CTR < 0.1%)
-- **Test messaging angles, not surface variations** — "If we do X, I believe Y, measured by Z"
-- **Quarterly optimization cycle** — continue, pause, test new
-- **Monthly competitive monitoring** — track strategy shifts
+- **Test messaging angles, not surface variations** - "If we do X, I believe Y, measured by Z"
+- **Quarterly optimization cycle** - continue, pause, test new
+- **Monthly competitive monitoring** - track strategy shifts
 
 ## Examples
 
@@ -66,4 +66,4 @@ Example 2: "I want to see what competitors are doing on LinkedIn"
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

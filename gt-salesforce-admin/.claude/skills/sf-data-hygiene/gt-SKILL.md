@@ -24,4 +24,4 @@ Keep Leads, Contacts, and Accounts clean, deliverable, and complete. Read the pl
 | Clean web-to-lead forms | `{SKILL_BASE}/playbooks/cleanup-web-to-lead-forms/playbook.md` |
 
 ---
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills

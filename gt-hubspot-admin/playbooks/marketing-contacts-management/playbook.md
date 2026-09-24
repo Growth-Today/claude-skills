@@ -10,11 +10,11 @@ metadata:
 
 # Marketing Contacts Management
 
-HubSpot bills on **marketing contacts**. This playbook makes sure you're only paying for contacts you actually market to — auditing marketable status, setting unengaged/non-sendable contacts to non-marketing, and automating it so the bill stays lean.
+HubSpot bills on **marketing contacts**. This playbook makes sure you're only paying for contacts you actually market to - auditing marketable status, setting unengaged/non-sendable contacts to non-marketing, and automating it so the bill stays lean.
 
 ## Why This Matters
 
-Every marketing contact counts toward your tier limit and cost. Databases fill with contacts nobody emails — unengaged, bounced, unsubscribed, internal, or test records — all silently marked marketable. Managing marketing-contact status is one of the highest-ROI admin tasks: it directly lowers cost and improves list quality without losing any data (non-marketing contacts still exist in the CRM).
+Every marketing contact counts toward your tier limit and cost. Databases fill with contacts nobody emails - unengaged, bounced, unsubscribed, internal, or test records - all silently marked marketable. Managing marketing-contact status is one of the highest-ROI admin tasks: it directly lowers cost and improves list quality without losing any data (non-marketing contacts still exist in the CRM).
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Every marketing contact counts toward your tier limit and cost. Databases fill w
 
 ## Critical Concept: Non-Marketing ≠ Deleted
 
-Setting a contact to **non-marketing** keeps the record (and all its data/history) but excludes it from marketing emails/ads and from the marketing-contact count/bill. It's reversible. The `hs_marketable_status` behavior and the timing of when set-as-non-marketing takes effect (typically the next billing update) are HubSpot-controlled — plan around the renewal date.
+Setting a contact to **non-marketing** keeps the record (and all its data/history) but excludes it from marketing emails/ads and from the marketing-contact count/bill. It's reversible. The `hs_marketable_status` behavior and the timing of when set-as-non-marketing takes effect (typically the next billing update) are HubSpot-controlled - plan around the renewal date.
 
 ## Plan
 
@@ -50,7 +50,7 @@ r = requests.post("https://api.hubapi.com/crm/v3/objects/contacts/search", heade
 print(f"Marketable contacts: {r.json().get('total')}")
 ```
 
-Record: total marketable contacts, and how many are unengaged (no open/click 6-12m), bounced, unsubscribed, or internal/test — the reclaimable count.
+Record: total marketable contacts, and how many are unengaged (no open/click 6-12m), bounced, unsubscribed, or internal/test - the reclaimable count.
 
 ## Execute
 
@@ -58,7 +58,7 @@ Record: total marketable contacts, and how many are unengaged (no open/click 6-1
 Typical set: hard-bounced, globally unsubscribed, unengaged 12m+, internal/employee, and test/junk contacts. Coordinate with the suppression playbooks (much of this overlaps).
 
 ### Step 2: Bulk set non-marketing
-Build lists for each criterion and set the contacts to **non-marketing** (via the list bulk action). Note: changes take effect at the next billing update — do this ahead of renewal.
+Build lists for each criterion and set the contacts to **non-marketing** (via the list bulk action). Note: changes take effect at the next billing update - do this ahead of renewal.
 
 ### Step 3: Automate going forward
 Build a workflow to set non-marketing automatically on the triggers you trust (e.g. hard bounce, global unsubscribe, long-term unengaged). This keeps the marketable count from creeping back up.
@@ -78,11 +78,11 @@ Exclude contacts in active sequences/nurtures from the non-marketing rules so yo
 
 ## Key Technical Learnings
 
-- **Non-marketing is reversible and lossless** — the record stays; it just leaves the bill and marketing sends.
-- **Highest-ROI hygiene task** — directly lowers cost.
-- **Timing matters** — changes hit at the next billing update; act before renewal.
-- **Heavy overlap with suppression** — coordinate with `suppress-*` playbooks and `contact-data-decay-review`.
-- **Protect active campaigns** — exclude in-sequence contacts from the rules.
+- **Non-marketing is reversible and lossless** - the record stays; it just leaves the bill and marketing sends.
+- **Highest-ROI hygiene task** - directly lowers cost.
+- **Timing matters** - changes hit at the next billing update; act before renewal.
+- **Heavy overlap with suppression** - coordinate with `suppress-*` playbooks and `contact-data-decay-review`.
+- **Protect active campaigns** - exclude in-sequence contacts from the rules.
 
 ---
 

@@ -10,11 +10,11 @@ metadata:
 
 # Permission Sets & Roles
 
-Give every user exactly the access their job needs — no more — using reusable permission sets instead of hand-tuning each person. This reduces security risk, prevents accidental data changes, and makes onboarding one click instead of a checklist.
+Give every user exactly the access their job needs - no more - using reusable permission sets instead of hand-tuning each person. This reduces security risk, prevents accidental data changes, and makes onboarding one click instead of a checklist.
 
 ## Why This Matters
 
-Two failure modes are everywhere: too many Super Admins (any of whom can delete data, change billing, or export everything), and per-user permissions tuned by hand (so no two reps have the same access and onboarding is guesswork). Permission sets fix both — define access once per role, assign consistently, and keep Super Admin to the few who truly need it.
+Two failure modes are everywhere: too many Super Admins (any of whom can delete data, change billing, or export everything), and per-user permissions tuned by hand (so no two reps have the same access and onboarding is guesswork). Permission sets fix both - define access once per role, assign consistently, and keep Super Admin to the few who truly need it.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Two failure modes are everywhere: too many Super Admins (any of whom can delete 
 
 ## Critical Concept: Permission Sets Are Reusable Templates
 
-A **permission set** bundles per-tool access (CRM object edit/view, workflows, properties, data quality tools, reporting, publishing, account settings) into a named template you assign to users. Change the set, and every assigned user updates. **Super Admin** overrides everything — treat it as break-glass, not a default.
+A **permission set** bundles per-tool access (CRM object edit/view, workflows, properties, data quality tools, reporting, publishing, account settings) into a named template you assign to users. Change the set, and every assigned user updates. **Super Admin** overrides everything - treat it as break-glass, not a default.
 
 ## Plan
 
@@ -73,15 +73,15 @@ Map job functions to access. Example:
 
 ### Step 2: Create permission sets
 
-Settings > Users & Teams > **Permission Sets** > create one per role from the matrix. Be explicit about the settings-level permissions (edit property settings, data quality tools access, workflow edit) — those are the ones that cause damage when over-granted.
+Settings > Users & Teams > **Permission Sets** > create one per role from the matrix. Be explicit about the settings-level permissions (edit property settings, data quality tools access, workflow edit) - those are the ones that cause damage when over-granted.
 
 ### Step 3: Reassign users + strip excess Super Admin
 
-Assign each user the permission set for their role. Remove Super Admin from anyone who doesn't strictly need it (downgrade to the RevOps/Admin set). Coordinate before removing — confirm no one relies on a Super-Admin-only action.
+Assign each user the permission set for their role. Remove Super Admin from anyone who doesn't strictly need it (downgrade to the RevOps/Admin set). Coordinate before removing - confirm no one relies on a Super-Admin-only action.
 
 ### Step 4: Standardize onboarding
 
-Rule: new users get a **permission set by role + a primary team** (with `users-teams-setup`) — never hand-tuned. This keeps access consistent and auditable.
+Rule: new users get a **permission set by role + a primary team** (with `users-teams-setup`) - never hand-tuned. This keeps access consistent and auditable.
 
 ## After State
 
@@ -97,8 +97,8 @@ Rule: new users get a **permission set by role + a primary team** (with `users-t
 
 - **Fewest Super Admins possible.** Every Super Admin is a full-access, full-blast-radius account.
 - **Sets over per-user tuning.** Reusable sets make access consistent, auditable, and one-click to onboard.
-- **Guard the settings-level permissions.** Property edit, workflow edit, and data quality tools cause the most accidental damage — restrict to admins.
-- **Least privilege is a process, not a one-time pass** — re-review during `quarterly-database-cleanup`.
+- **Guard the settings-level permissions.** Property edit, workflow edit, and data quality tools cause the most accidental damage - restrict to admins.
+- **Least privilege is a process, not a one-time pass** - re-review during `quarterly-database-cleanup`.
 - **Depends on `users-teams-setup`** and pairs with `security-health-audit` for the full governance picture.
 
 ---

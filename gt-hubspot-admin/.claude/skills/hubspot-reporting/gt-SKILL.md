@@ -18,4 +18,4 @@ Turn clean CRM data into decision-ready views. Read the relevant playbook in ful
 
 ---
 
-Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills
+Part of **gt-hubspot-admin** · Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm · Maintained by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/) · More skills: https://www.growthtoday.co/claude-skills

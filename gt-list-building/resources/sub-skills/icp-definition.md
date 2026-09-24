@@ -3,30 +3,30 @@ name: icp-definition
 description: Define Ideal Customer Profile with firmographic, technographic, and behavioral criteria plus scoring tiers. Use when user asks about "ICP", "ideal customer profile", "who to target", "scoring criteria", "tier system", "firmographic", "technographic", "buyer persona". Do NOT use for finding specific companies (use company-sourcing) or contact search (use contact-discovery).
 ---
 
-# Define ICP — Sub-Skill
+# Define ICP - Sub-Skill
 
 You help users build a precise Ideal Customer Profile with a structured scoring system. Always read the reference file before responding.
 
 ## Reference
 
-Read `{SKILL_BASE}/resources/reference/sales-navigator-guide.md` — sections: ICP Framework, ICP Scoring, Scoring Matrix.
+Read `{SKILL_BASE}/resources/reference/sales-navigator-guide.md` - sections: ICP Framework, ICP Scoring, Scoring Matrix.
 
-## ICP Framework — 3 Layers
+## ICP Framework - 3 Layers
 
 ### 1. Firmographic Criteria (Company-Level)
 Define these for every ICP:
-- **Industry** — Primary vertical(s) and adjacent industries
-- **Company size** — Employee headcount sweet spot (e.g., 51-500)
-- **Revenue** — Annual revenue range (requires Sales Nav Advanced+)
-- **Geography** — HQ location, target markets
-- **Growth rate** — Headcount growth signals
-- **Funding stage** — Seed, Series A-C, PE-backed, Public
+- **Industry** - Primary vertical(s) and adjacent industries
+- **Company size** - Employee headcount sweet spot (e.g., 51-500)
+- **Revenue** - Annual revenue range (requires Sales Nav Advanced+)
+- **Geography** - HQ location, target markets
+- **Growth rate** - Headcount growth signals
+- **Funding stage** - Seed, Series A-C, PE-backed, Public
 
 ### 2. Technographic Criteria
-- **Tech stack** — Sales Nav has 35,000+ technology filters
-- **CRM used** — Salesforce, HubSpot, Pipedrive, etc.
-- **Marketing automation** — Marketo, Pardot, Mailchimp, etc.
-- **Competitive tools** — Currently using a competitor's product
+- **Tech stack** - Sales Nav has 35,000+ technology filters
+- **CRM used** - Salesforce, HubSpot, Pipedrive, etc.
+- **Marketing automation** - Marketo, Pardot, Mailchimp, etc.
+- **Competitive tools** - Currently using a competitor's product
 
 ### 3. Behavioral/Intent Signals
 - Job postings (hiring for roles your product supports)
@@ -35,7 +35,7 @@ Define these for every ICP:
 - Content engagement (LinkedIn Buyer Intent, Bombora, 6sense)
 - Website visits (Clearbit Reveal, Leadfeeder, RB2B)
 
-## Scoring System — 100 Points
+## Scoring System - 100 Points
 
 | Criterion | Weight | Scoring |
 |-----------|--------|---------|
@@ -49,10 +49,10 @@ Define these for every ICP:
 
 ## Tier Assignment
 
-- **Tier A (90-100 pts)** — Perfect fit. Maximum resources, multi-threaded ABM, custom outreach.
-- **Tier B (70-89 pts)** — Strong fit. Targeted sequences, personalized messaging.
-- **Tier C (50-69 pts)** — Moderate fit. Automated nurture, content marketing.
-- **Tier D (<50 pts)** — Poor fit. Exclude from outreach, inbound-only.
+- **Tier A (90-100 pts)** - Perfect fit. Maximum resources, multi-threaded ABM, custom outreach.
+- **Tier B (70-89 pts)** - Strong fit. Targeted sequences, personalized messaging.
+- **Tier C (50-69 pts)** - Moderate fit. Automated nurture, content marketing.
+- **Tier D (<50 pts)** - Poor fit. Exclude from outreach, inbound-only.
 
 ## Examples
 

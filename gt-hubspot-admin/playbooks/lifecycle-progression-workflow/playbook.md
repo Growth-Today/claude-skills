@@ -92,13 +92,13 @@ To use this approach:
 
 ## Step-by-Step Build Instructions
 
-### Stage 1: Before — Plan Thresholds
+### Stage 1: Before - Plan Thresholds
 
 1. Define your MQL score threshold (typically 40-60 on a 0-100 scale). Adjust after 30-60 days of observation.
 2. Confirm your deal pipeline stages include a clear "Closed Won" equivalent.
 3. Document current lifecycle stage distribution (run the audit or check the property breakdown) so you can measure the impact.
 
-### Stage 2: Execute — Build Four Workflows
+### Stage 2: Execute - Build Four Workflows
 
 Build each as a separate contact-based workflow.
 
@@ -132,14 +132,14 @@ Build each as a separate contact-based workflow.
 #### Workflow Settings (all four)
 
 - Re-enrollment: OFF (lifecycle should only progress forward)
-- Suppression list: None needed — the lifecycle stage condition prevents backwards movement
+- Suppression list: None needed - the lifecycle stage condition prevents backwards movement
 - Time zone: Not applicable
 
-### Stage 3: After — Verify
+### Stage 3: After - Verify
 
 1. Test each workflow with a test contact:
    - Manually adjust score/create meeting/create deal/close deal and confirm progression.
-2. Verify that workflows do not conflict — a contact should not be enrolled in two progression workflows simultaneously.
+2. Verify that workflows do not conflict - a contact should not be enrolled in two progression workflows simultaneously.
 3. Check that lifecycle stages only move forward (HubSpot enforces this by default, but verify).
 4. After one week, review the workflow history for each. Check for:
    - Contacts stuck at a stage despite meeting criteria
@@ -148,14 +148,14 @@ Build each as a separate contact-based workflow.
 ### Stage 4: Rollback
 
 1. Turn off any or all four workflows.
-2. Lifecycle stages already set remain — HubSpot does not allow backward movement without manual override or a dedicated reset workflow.
+2. Lifecycle stages already set remain - HubSpot does not allow backward movement without manual override or a dedicated reset workflow.
 3. If stages were set incorrectly, create a temporary workflow or use the API to reset affected contacts.
 
 ## Notes
 
 - **Backward movement:** HubSpot prevents lifecycle stage from going backward by default. If a deal is lost and the contact should return to MQL, you need a separate "regression" workflow that explicitly sets the stage.
 - **Multiple deals:** If a contact has multiple deals, the Opportunity-to-Customer workflow fires when any associated deal is closed-won. This is usually the desired behavior.
-- **Score decay:** If your lead scoring model includes decay, a contact's score may drop below the MQL threshold after promotion. This is fine — the lifecycle stage is already set and will not regress.
+- **Score decay:** If your lead scoring model includes decay, a contact's score may drop below the MQL threshold after promotion. This is fine - the lifecycle stage is already set and will not regress.
 
 ---
 

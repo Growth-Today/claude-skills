@@ -70,7 +70,7 @@ uv run execute.py --monthly-goal 15000
 uv run execute.py --validate                   # regression-test against reference.md §4
 ```
 
-Read the `playbook.md` in each folder first — it holds the interview questions that decide the inputs.
+Read the `playbook.md` in each folder first - it holds the interview questions that decide the inputs.
 
 Note: this skill supports the sequencers Growth Today runs, **EmailBison, Instantly, Smartlead, and Lemlist**, via a setup sub-skill for each. The concepts are ESP-agnostic; platform-specific steps are called out inline. Adapt them to your own stack.
 

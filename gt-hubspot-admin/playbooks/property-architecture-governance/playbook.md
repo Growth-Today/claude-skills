@@ -10,11 +10,11 @@ metadata:
 
 # Property Architecture & Governance
 
-Design and govern the property layer of the CRM: consistent naming, sensible property groups, the right field types, clear ownership, and a process that stops property sprawl before it starts. This is the "build" counterpart to `cleanup-properties` (which removes the mess) — here you prevent the mess.
+Design and govern the property layer of the CRM: consistent naming, sensible property groups, the right field types, clear ownership, and a process that stops property sprawl before it starts. This is the "build" counterpart to `cleanup-properties` (which removes the mess) - here you prevent the mess.
 
 ## Why This Matters
 
-Properties are where every dependency in HubSpot lives — reports, workflows, lists, integrations, and views all reference them. Left ungoverned, teams create near-duplicate fields ("Industry", "industry_2", "Vertical"), pick the wrong field type (free-text where a dropdown belongs), and nobody knows which property is the source of truth. The result is unreliable segmentation and reporting. A governed property layer is the foundation the reporting, scoring, and automation playbooks depend on.
+Properties are where every dependency in HubSpot lives - reports, workflows, lists, integrations, and views all reference them. Left ungoverned, teams create near-duplicate fields ("Industry", "industry_2", "Vertical"), pick the wrong field type (free-text where a dropdown belongs), and nobody knows which property is the source of truth. The result is unreliable segmentation and reporting. A governed property layer is the foundation the reporting, scoring, and automation playbooks depend on.
 
 ## Prerequisites
 
@@ -85,7 +85,7 @@ Group properties by function under Settings > Properties (e.g. "Firmographics", 
 
 ### Step 3: Consolidate duplicates + fix field types
 
-For each duplicate concept, pick the source-of-truth property, migrate values from the duplicates into it (workflow or API), then archive the duplicates (`cleanup-properties`). For wrong field types, create the correctly-typed property, map + migrate values, then retire the old one. Never delete a property still referenced by a workflow/report — check dependencies first.
+For each duplicate concept, pick the source-of-truth property, migrate values from the duplicates into it (workflow or API), then archive the duplicates (`cleanup-properties`). For wrong field types, create the correctly-typed property, map + migrate values, then retire the old one. Never delete a property still referenced by a workflow/report - check dependencies first.
 
 ### Step 4: Ownership + source of truth
 
@@ -108,10 +108,10 @@ Adopt a simple rule: new custom properties require a named owner and a reason, a
 ## Key Technical Learnings
 
 - **Field type is (mostly) a one-way door.** Decide dropdown-vs-text deliberately; fixing it later means value mapping and migration.
-- **Dependencies first.** A property may power a workflow, report, or integration — always check before archiving/retyping.
+- **Dependencies first.** A property may power a workflow, report, or integration - always check before archiving/retyping.
 - **Naming consistency > naming perfection.** Any documented convention beats an undocumented "best" one.
 - **Governance is the point.** Cleanup is one-time; the owner+reason+review rule is what keeps the model clean.
-- **This underpins everything downstream** — scoring, segmentation, reporting, and validation all assume trustworthy properties.
+- **This underpins everything downstream** - scoring, segmentation, reporting, and validation all assume trustworthy properties.
 
 ---
 

@@ -20,7 +20,7 @@ Audit HubSpot forms to remove unused and test forms. Stale forms clutter the for
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Inventory All Forms
+### Stage 1: Before - Inventory All Forms
 
 Pull all forms via the API:
 
@@ -33,7 +33,7 @@ forms = api_client.marketing.forms.forms_api.get_page(limit=100)
 
 For each form, record: form ID, name, type, submission count, created date, last submission date.
 
-### Stage 2: Execute — Identify Candidates for Deletion
+### Stage 2: Execute - Identify Candidates for Deletion
 
 Flag forms matching any of these criteria:
 
@@ -47,11 +47,11 @@ Before deleting, check:
 - Is the form embedded on any live landing page or website page?
 - Is the form used in any pop-up or slide-in CTA?
 
-### Stage 3: After — Delete and Document
+### Stage 3: After - Delete and Document
 
 1. Delete confirmed unused forms via the API or UI.
 2. Document what was deleted in a cleanup log.
-3. If a form with submissions is deleted, the submission data is retained on the contact records — but the form definition is gone.
+3. If a form with submissions is deleted, the submission data is retained on the contact records - but the form definition is gone.
 
 ### Stage 4: Rollback
 
@@ -62,7 +62,7 @@ Before deleting, check:
 ## Tips
 
 - Establish a naming convention: `[TEAM] - Purpose - Version` (e.g., `[Marketing] - Webinar Registration - v2`).
-- Prefix deprecated forms with "[DEPRECATED]" instead of deleting immediately — delete after one quarter of no usage.
+- Prefix deprecated forms with "[DEPRECATED]" instead of deleting immediately - delete after one quarter of no usage.
 
 ---
 

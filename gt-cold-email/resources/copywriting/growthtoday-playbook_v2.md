@@ -1,6 +1,6 @@
 # Growth Today Cold Email Playbook
 **Version:** 2.0
-**Maintained by:** Jani (primary) — connected to Aria and REX agents. Updates by Jani and Bri only.
+**Maintained by:** Jani (primary) - connected to Aria and REX agents. Updates by Jani and Bri only.
 
 Operational insights from 250K+ emails sent and 73 prospect calls.
 
@@ -74,7 +74,7 @@ Would it make sense to see what {{company}} qualifies for?
 
 ### Value-First / Resource
 - "Want me to send over a quick breakdown?"
-- "I put together a comparison for businesses your size — want me to share it?"
+- "I put together a comparison for businesses your size - want me to share it?"
 
 ### Routing / Right Person
 - "Are you the right person that handles {{responsibility}} at {{company}}?"
@@ -101,21 +101,21 @@ Would it make sense to see what {{company}} qualifies for?
 | Email | Strategy |
 |-------|----------|
 | Email 1 | Position the system behind the lead magnet |
-| Email 2 | Newsletter subscription as secondary CTA — if the prospect is not ready to book, invite them to subscribe to the Growth Today newsletter |
+| Email 2 | Newsletter subscription as secondary CTA - if the prospect is not ready to book, invite them to subscribe to the Growth Today newsletter |
 
 ---
 
 ## Growth Today Principles (from 250K+ Emails)
 
-1. **Write for the 97%** — Optimize for the majority who won't reply, not the 3% who will
-2. **70-90 words optimal** — Keep it tight
-3. **2-step sequences work best** — Don't over-sequence
-4. **13X gap** between worst and best email variants — testing matters enormously
-5. **Subject + Preview = Complete thought** — They work together
+1. **Write for the 97%** - Optimize for the majority who won't reply, not the 3% who will
+2. **70-90 words optimal** - Keep it tight
+3. **2-step sequences work best** - Don't over-sequence
+4. **13X gap** between worst and best email variants - testing matters enormously
+5. **Subject + Preview = Complete thought** - They work together
 6. **Position yourself as a potential customer** in the subject line
-7. **Soft CTAs > time asks** — "Think this could help?" beats "Got 15 min?"
-8. **Segment > Individual personalization** at scale — effort-to-output ratio is better
-9. **Preview line IS the first line** — First 50 characters appear in inbox
+7. **Soft CTAs > time asks** - "Think this could help?" beats "Got 15 min?"
+8. **Segment > Individual personalization** at scale - effort-to-output ratio is better
+9. **Preview line IS the first line** - First 50 characters appear in inbox
 
 ### Benchmarks
 
@@ -132,10 +132,10 @@ Would it make sense to see what {{company}} qualifies for?
 
 Use these proven angles when selling outbound/GTM services:
 
-1. **Referral Ceiling** — "How do you generate pipeline beyond referrals?"
-2. **Failed DIY Outbound** — "You tried outbound, it didn't work"
-3. **System vs. Leads** — "You need a system, not just more leads"
-4. **Scale Without Headcount** — "Grow pipeline without hiring more reps"
+1. **Referral Ceiling** - "How do you generate pipeline beyond referrals?"
+2. **Failed DIY Outbound** - "You tried outbound, it didn't work"
+3. **System vs. Leads** - "You need a system, not just more leads"
+4. **Scale Without Headcount** - "Grow pipeline without hiring more reps"
 
 ---
 
@@ -146,8 +146,8 @@ Use these proven angles when selling outbound/GTM services:
 - Same copy for every persona
 - All caps or spammy words ("FREE", "OFFER")
 - Making it about YOU not them
-- "Helping {{company}} with growth" — too obviously a pitch
-- "Quick call?" — overused, screams cold email
+- "Helping {{company}} with growth" - too obviously a pitch
+- "Quick call?" - overused, screams cold email
 
 ## A/B Testing Rules
 

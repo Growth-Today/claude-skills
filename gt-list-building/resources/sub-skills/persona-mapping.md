@@ -5,7 +5,7 @@ description: Map buying committee personas within target accounts for ABM and ou
 
 # Persona Mapping
 
-You help users identify, segment, and target personas within accounts — mapping who to reach, what they care about, and how messaging differs.
+You help users identify, segment, and target personas within accounts - mapping who to reach, what they care about, and how messaging differs.
 
 ## Reference
 
@@ -34,8 +34,8 @@ For each persona, define:
 
 ## LinkedIn Targeting Approaches
 
-- **Approach 1:** Contact list upload — precise but expensive, 30-70% match rate
-- **Approach 2 (recommended):** Company list + native LinkedIn filters — cheaper, 95-100% match rate
+- **Approach 1:** Contact list upload - precise but expensive, 30-70% match rate
+- **Approach 2 (recommended):** Company list + native LinkedIn filters - cheaper, 95-100% match rate
 
 ## Campaign Naming Convention
 
@@ -64,7 +64,7 @@ Each persona needs:
 
 ---
 
-# Persona Mapping — Framework
+# Persona Mapping - Framework
 
 How to identify, segment, and target personas within ABM accounts. Mapping personas to their jobs-to-be-done (JTBDs), pain points, and messaging.
 
@@ -72,7 +72,7 @@ How to identify, segment, and target personas within ABM accounts. Mapping perso
 
 ## The Persona Mapping Principle
 
-ABM targets *accounts*, but people buy — not companies. Persona mapping answers:
+ABM targets *accounts*, but people buy - not companies. Persona mapping answers:
 1. **Who** at the target account should see your ads?
 2. **What** do they care about? (JTBDs, pain points)
 3. **How** should messaging differ by persona?
@@ -100,7 +100,7 @@ Most B2B deals involve 6-10 stakeholders. Map the roles:
 
 | Role | Definition | Example Titles | Engagement Priority |
 |---|---|---|---|
-| **Champion** | Internal advocate who drives the deal | Product Manager, Head of Ops, Director of Growth | Primary — warm them first |
+| **Champion** | Internal advocate who drives the deal | Product Manager, Head of Ops, Director of Growth | Primary - warm them first |
 | **Economic Buyer** | Controls budget, signs the contract | VP/C-suite, Finance | Engage after champion is warm |
 | **Technical Evaluator** | Assesses product capabilities | Engineering Lead, Solutions Architect, IT | Engage during demo/trial stage |
 | **End User** | Will use the product daily | Analyst, Designer, Specialist, IC | Engage with product-focused content |
@@ -115,7 +115,7 @@ For each persona, document:
 | **Title patterns** | Common job titles | "Product Manager", "Head of Product", "VP Product" |
 | **Seniority** | IC / Manager / Director / VP / C-suite | Manager - Director |
 | **Function** | Department/team | Product, Engineering, Marketing |
-| **JTBD** | Job to be done — what they're trying to accomplish | "Improve user onboarding to reduce churn" |
+| **JTBD** | Job to be done - what they're trying to accomplish | "Improve user onboarding to reduce churn" |
 | **Pain points** | What's frustrating them today | "Can't see where users drop off", "Manual onboarding flows" |
 | **Success metrics** | How their performance is measured | Activation rate, time-to-value, NPS |
 | **Content preferences** | What content resonates | Case studies, data/benchmarks, peer recommendations |

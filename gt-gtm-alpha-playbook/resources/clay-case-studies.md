@@ -1,10 +1,10 @@
-# Clay Case Studies — Signal-Based GTM Reference
+# Clay Case Studies - Signal-Based GTM Reference
 
-These case studies demonstrate how real companies use Clay to execute signal-based GTM. When building playbooks, reference these as proof of Clay's capabilities — but NEVER attribute their results to the target vendor.
+These case studies demonstrate how real companies use Clay to execute signal-based GTM. When building playbooks, reference these as proof of Clay's capabilities - but NEVER attribute their results to the target vendor.
 
 ---
 
-## Vanta — Signal-Based Prospecting at Scale
+## Vanta - Signal-Based Prospecting at Scale
 
 **Company:** Vanta (trust management / compliance automation platform)
 **Source:** https://www.clay.com/customers/vanta
@@ -34,7 +34,7 @@ Vanta layers MULTIPLE signals simultaneously (4+ signals at once) rather than re
 
 ---
 
-## OpenAI — Enterprise GTM at Scale
+## OpenAI - Enterprise GTM at Scale
 
 **Company:** OpenAI
 **Source:** https://www.clay.com/customers/openai (redirects to case studies page)
@@ -48,11 +48,11 @@ Vanta layers MULTIPLE signals simultaneously (4+ signals at once) rather than re
 2. **Market research automation:** AI-powered analysis of on-premises deployment trends by region
 
 ### Key Insight for Playbooks
-Clay enables market research at a speed and scale that creates genuine competitive advantage — what takes competitors months, you can do in days.
+Clay enables market research at a speed and scale that creates genuine competitive advantage - what takes competitors months, you can do in days.
 
 ---
 
-## Regency Supply / Coverflex — Automated Signal-Based Outreach for 3M+ Companies
+## Regency Supply / Coverflex - Automated Signal-Based Outreach for 3M+ Companies
 
 **Company:** Coverflex (flexible benefits platform, operating in Portugal, Spain, Italy)
 **Source:** https://www.clay.com/customers/coverflex
@@ -80,7 +80,7 @@ The Clay + N8N + database pattern (or Clay + CRM) enables always-on prospecting 
 
 ---
 
-## Rippling — Growth Experimentation Engine
+## Rippling - Growth Experimentation Engine
 
 **Company:** Rippling
 **Source:** https://www.clay.com/blog/rippling-case-study
@@ -95,11 +95,11 @@ The Clay + N8N + database pattern (or Clay + CRM) enables always-on prospecting 
 3. **Skills-based ad campaigns:** Used enriched LinkedIn profiles to identify patterns in ICP's listed skills for precision targeting
 
 ### Key Insight for Playbooks
-Clay as an experimentation platform — the ability to test 10x more plays per quarter than competitors is itself a form of GTM Alpha. Recommend this "experimentation velocity" angle in every playbook.
+Clay as an experimentation platform - the ability to test 10x more plays per quarter than competitors is itself a form of GTM Alpha. Recommend this "experimentation velocity" angle in every playbook.
 
 ---
 
-## Sendoso — $1M Pipeline from Creative Outbound
+## Sendoso - $1M Pipeline from Creative Outbound
 
 **Company:** Sendoso (direct mail + gifting platform)
 **Source:** https://www.clay.com/blog/clay-sendoso-case-study
@@ -119,14 +119,14 @@ The combination of signals + creative channels (not just email) is a powerful di
 
 ## Cross-Cutting Patterns to Reference in Playbooks
 
-1. **Waterfall enrichment** — Always recommend combining multiple data providers (Clay's core strength). Single-provider enrichment leaves 20-40% of data gaps.
-2. **Signal stacking** — Layer 2-4 signals before triggering outreach. Single signals produce noise; stacked signals produce intent.
-3. **Experimentation velocity** — The winning GTM teams test more plays, faster. Clay enables 10x more experiments per quarter.
-4. **Always-on monitoring** — Move from batch prospecting to continuous signal monitoring with Clay Signals + Custom Signals.
-5. **Research automation** — Automate the manual research reps do before calls. This alone saves hours per rep per day.
-6. **Multi-channel orchestration** — Don't just email. Use Clay data to power LinkedIn, direct mail, gifting, and ad targeting simultaneously.
+1. **Waterfall enrichment** - Always recommend combining multiple data providers (Clay's core strength). Single-provider enrichment leaves 20-40% of data gaps.
+2. **Signal stacking** - Layer 2-4 signals before triggering outreach. Single signals produce noise; stacked signals produce intent.
+3. **Experimentation velocity** - The winning GTM teams test more plays, faster. Clay enables 10x more experiments per quarter.
+4. **Always-on monitoring** - Move from batch prospecting to continuous signal monitoring with Clay Signals + Custom Signals.
+5. **Research automation** - Automate the manual research reps do before calls. This alone saves hours per rep per day.
+6. **Multi-channel orchestration** - Don't just email. Use Clay data to power LinkedIn, direct mail, gifting, and ad targeting simultaneously.
 
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

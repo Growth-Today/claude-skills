@@ -14,7 +14,7 @@ Two high-value report types most portals underuse: **funnel** (conversion and dr
 
 ## Why This Matters
 
-Funnel reports answer "where do we lose people?" — the single most actionable conversion question. Cohort reports answer "does behavior improve over time / do customers stick?" — critical for retention and lifecycle analysis. Both are built into HubSpot's report builder but require the right stage/step and time setup to be meaningful.
+Funnel reports answer "where do we lose people?" - the single most actionable conversion question. Cohort reports answer "does behavior improve over time / do customers stick?" - critical for retention and lifecycle analysis. Both are built into HubSpot's report builder but require the right stage/step and time setup to be meaningful.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ Getting the ordered steps (funnel) or the cohort date + measured behavior (cohor
 ## Execute
 
 ### Step 1: Funnel report
-Reports > Create > **Funnel**. Choose the ordered steps (e.g. Lead → MQL → SQL → Opportunity → Customer, or deal stages). Set the date range and any segment filter (team, source). Read the biggest drop-off — that's where to focus.
+Reports > Create > **Funnel**. Choose the ordered steps (e.g. Lead → MQL → SQL → Opportunity → Customer, or deal stages). Set the date range and any segment filter (team, source). Read the biggest drop-off - that's where to focus.
 
 ### Step 2: Cohort report
 Reports > Create > **Cohort**. Set the cohort property (grouping period, e.g. first-conversion month) and the behavior tracked over time (e.g. still-customer, repeat purchase). Read down a cohort row for retention decay; compare rows for improvement across cohorts.
@@ -59,10 +59,10 @@ For funnels: pair the worst drop-off with a fix (routing, nurture, stage-gating)
 
 ## Key Technical Learnings
 
-- **Funnel finds the leak; cohort measures stickiness** — pick by question.
-- **Ordered steps must be genuinely ordered** — a funnel on unordered stages is nonsense.
-- **Cohort needs a clean start date** — the grouping property is the whole basis.
-- **A report without an action is decoration** — tie each to a fix.
+- **Funnel finds the leak; cohort measures stickiness** - pick by question.
+- **Ordered steps must be genuinely ordered** - a funnel on unordered stages is nonsense.
+- **Cohort needs a clean start date** - the grouping property is the whole basis.
+- **A report without an action is decoration** - tie each to a fix.
 - **Extends `custom-report-builder-guide`; feeds `revops-core-dashboards`.**
 
 ---

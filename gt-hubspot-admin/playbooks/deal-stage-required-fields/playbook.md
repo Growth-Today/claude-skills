@@ -14,7 +14,7 @@ Make the pipeline's exit criteria enforceable: require specific deal properties 
 
 ## Why This Matters
 
-A forecast is only as good as the data behind each deal. If a rep can drag a deal to "Proposal Sent" without an amount, a close date, or a named decision maker, the forecast is built on blanks. HubSpot lets you gate each stage with required properties — if the rep can't name the economic buyer by the Proposal stage, the deal shouldn't be allowed there. Stage-gating turns "please fill in the fields" into "you can't move forward until you do."
+A forecast is only as good as the data behind each deal. If a rep can drag a deal to "Proposal Sent" without an amount, a close date, or a named decision maker, the forecast is built on blanks. HubSpot lets you gate each stage with required properties - if the rep can't name the economic buyer by the Proposal stage, the deal shouldn't be allowed there. Stage-gating turns "please fill in the fields" into "you can't move forward until you do."
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ A forecast is only as good as the data behind each deal. If a rep can drag a dea
 
 ## Critical Concept: Required Properties Are Set Per Stage
 
-In HubSpot, required-to-advance properties are configured **per stage** under the pipeline's stage settings ("Set required properties" / "Conditional stage properties"). They fire when a user moves a deal *into* that stage in the UI. Note: stage-gating is a UI guardrail — records moved by **imports, workflows, or the API can bypass it**, so pair it with validation and monitoring.
+In HubSpot, required-to-advance properties are configured **per stage** under the pipeline's stage settings ("Set required properties" / "Conditional stage properties"). They fire when a user moves a deal *into* that stage in the UI. Note: stage-gating is a UI guardrail - records moved by **imports, workflows, or the API can bypass it**, so pair it with validation and monitoring.
 
 ## Plan
 
@@ -88,7 +88,7 @@ In the same pipeline settings: **restrict backward stage moves** (allow only wit
 
 ### Step 4: Backfill / flag existing non-compliant deals
 
-Stage-gating only applies going forward. For the existing gaps found in the audit: build a list/view of open deals missing required properties and route to owners to complete, or use a workflow to notify the deal owner. (An internal-notification workflow for this pairs well — see the `automation` group.)
+Stage-gating only applies going forward. For the existing gaps found in the audit: build a list/view of open deals missing required properties and route to owners to complete, or use a workflow to notify the deal owner. (An internal-notification workflow for this pairs well - see the `automation` group.)
 
 ### Step 5: Close the API/import bypass
 
@@ -107,7 +107,7 @@ Because API/import/workflow writes bypass stage-gating, add a validation rule on
 ## Key Technical Learnings
 
 - **Progressive requirements beat all-at-once.** Requiring everything at stage 1 pushes reps to create junk deals late; require more as the buyer commits more.
-- **UI-only enforcement has a hole.** Imports, workflows, and API writes skip stage-gating — layer validation rules + monitoring on top for the fields that matter most.
+- **UI-only enforcement has a hole.** Imports, workflows, and API writes skip stage-gating - layer validation rules + monitoring on top for the fields that matter most.
 - **Required + reason-gated backward moves** stop reps from sandbagging by yo-yoing stages.
 - **Lock closed deals** so historical win/loss reporting doesn't shift under you.
 - **This enforces `deal-pipeline-architecture`'s exit criteria** and feeds clean data to `deal-rotting-alerts` and the reporting playbooks.

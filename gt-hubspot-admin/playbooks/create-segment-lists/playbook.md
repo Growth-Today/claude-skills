@@ -69,13 +69,13 @@ Before executing, collect the following information from the user:
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Plan Your Segments
+### Stage 1: Before - Plan Your Segments
 
 1. Review the segments above and decide which are relevant to your business.
 2. Confirm the properties these lists depend on are populated (ICP tier, lifecycle stage, industry).
-3. Check for existing lists that overlap — merge or rename rather than creating duplicates.
+3. Check for existing lists that overlap - merge or rename rather than creating duplicates.
 
-### Stage 2: Execute — Create Lists
+### Stage 2: Execute - Create Lists
 
 Use the Lists API to create active (smart) lists:
 
@@ -110,22 +110,22 @@ Create each list, verify member count, and document the list ID.
 
 For static lists (Competitors), create the list and manually add contacts or import from a CSV.
 
-### Stage 3: After — Verify
+### Stage 3: After - Verify
 
-1. Check member counts for each list — do they match expectations?
+1. Check member counts for each list - do they match expectations?
 2. Verify no contacts appear in mutually exclusive lists (e.g., both Customer and Competitor).
 3. Confirm lists are visible to the appropriate teams.
 
 ### Stage 4: Rollback
 
 - Lists can be deleted via the API or UI.
-- Deleting a list does not affect the contacts in it — only the list definition is removed.
+- Deleting a list does not affect the contacts in it - only the list definition is removed.
 - Check if any workflows or emails reference the list before deleting.
 
 ## Tips
 
 - Use a consistent naming convention: `[Category] - Segment Name` (e.g., `[ICP] - Tier 1`, `[Industry] - Manufacturing`).
-- Review segment membership quarterly — segments should grow or shrink in expected ways.
+- Review segment membership quarterly - segments should grow or shrink in expected ways.
 - Use these lists as building blocks for email sends, ad audiences, and workflow enrollment triggers.
 
 ---

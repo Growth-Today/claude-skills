@@ -2,7 +2,7 @@
 name: gt-data-audit
 description: "Expert B2B contact data audit framework for RevOps, GTM Engineering, and Sales Operations. Use when running a data quality audit on a CRM (HubSpot, Salesforce, Pipedrive, Close, Attio), scoring a contact data layer across 10 dimensions (coverage, accuracy, freshness, cost, governance, and more), answering benchmark questions on email accuracy, bounce rates, mobile connect rates, or data decay, or validating provider claims (Apollo, ZoomInfo, Cognism, Clay, BetterContact). Triggers on: audit our data, data quality check, is our data the bottleneck, email accuracy benchmark, verified email rate, cost per usable contact, mobile connect rate, data decay, CRM hygiene, ZoomInfo vs Cognism, waterfall vs single source, RevOps audit, data layer for AI agents. Run before a GTM Alpha Playbook or Clay build. Do NOT use for list building (use gt-list-building), Clay workflow setup (use gt-clay), HubSpot admin without data quality scope (use gt-hubspot-admin), or cold email copywriting (use gt-cold-email)."
 version: v1.1
-changelog: 'v1.1 (July 7, 2026, by Brigitta Ruha) — Moved the six supporting files under resources/ to match the GT folder convention. Updated all in-skill path references. Content of the files is unchanged.'
+changelog: 'v1.1 (July 7, 2026, by Brigitta Ruha) - Moved the six supporting files under resources/ to match the GT folder convention. Updated all in-skill path references. Content of the files is unchanged.'
 ---
 
 # GT Data Audit
@@ -389,4 +389,4 @@ Benchmarks degrade as the industry shifts. Refresh every 6 months:
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

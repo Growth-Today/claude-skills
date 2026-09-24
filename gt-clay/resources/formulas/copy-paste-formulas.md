@@ -69,7 +69,7 @@ Returns `true` for senior/executive titles.
 (r => r <= 1000000 ? '<$1M' : r <= 5000000 ? '$1-5M' : r <= 10000000 ? '$5-10M' : r <= 50000000 ? '$10-50M' : r <= 100000000 ? '$50-100M' : '$100M+')({{Revenue}} || 0)
 ```
 
-## Table Architecture — Standard Column Layout
+## Table Architecture - Standard Column Layout
 
 When building a new Clay table, follow this column ordering:
 

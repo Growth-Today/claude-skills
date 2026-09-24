@@ -10,11 +10,11 @@ metadata:
 
 # Association Labels Setup
 
-Go beyond "this contact is linked to this company" — label *how* records relate (decision maker, billing contact, influencer, parent/child company) so the relationships become usable in lists, workflows, and reports.
+Go beyond "this contact is linked to this company" - label *how* records relate (decision maker, billing contact, influencer, parent/child company) so the relationships become usable in lists, workflows, and reports.
 
 ## Why This Matters
 
-Plain associations lose the meaning of a relationship. In any real buying committee, one contact is the economic buyer, another is a blocker, a third is a champion — and treating them identically wrecks ABM targeting and deal strategy. Association labels capture that meaning, turning "10 contacts on this account" into "here's the decision maker and the billing contact," which segmentation, routing, and reporting can then act on.
+Plain associations lose the meaning of a relationship. In any real buying committee, one contact is the economic buyer, another is a blocker, a third is a champion - and treating them identically wrecks ABM targeting and deal strategy. Association labels capture that meaning, turning "10 contacts on this account" into "here's the decision maker and the billing contact," which segmentation, routing, and reporting can then act on.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Plain associations lose the meaning of a relationship. In any real buying commit
 
 ## Critical Concept: Association Types vs Labels
 
-An **association type** is the pairing of two object kinds (Contact↔Company). A **label** describes the role within that pairing (e.g. Contact → Company: "Decision maker"). Labels can be one-directional ("reports to") or paired. There are limits on how many labels an association type can have, so define a deliberate, small set — not one per whim.
+An **association type** is the pairing of two object kinds (Contact↔Company). A **label** describes the role within that pairing (e.g. Contact → Company: "Decision maker"). Labels can be one-directional ("reports to") or paired. There are limits on how many labels an association type can have, so define a deliberate, small set - not one per whim.
 
 ## Plan
 
@@ -54,7 +54,7 @@ for lbl in r.json().get("results", []):
     print(f"  - {lbl.get('label')} (category={lbl.get('category')}, typeId={lbl.get('typeId')})")
 ```
 
-Record: which association types already have labels, and whether they're used consistently. Often you'll find zero labels (everything unlabeled) — that's the gap.
+Record: which association types already have labels, and whether they're used consistently. Often you'll find zero labels (everything unlabeled) - that's the gap.
 
 ## Execute
 
@@ -65,7 +65,7 @@ Keep it small and meaningful. Common B2B set for Contact↔Company: **Decision m
 Settings > Data Management > Objects > select object > **Associations** > add labels to the relevant association type. (API: the `/crm/v4/associations/{from}/{to}/labels` endpoints.)
 
 ### Step 3: Apply + operationalize
-Apply labels on key accounts (manually for top accounts, or via workflow/import for scale). Then use them: lists ("companies with a labeled Decision maker"), routing (notify the decision maker's owner), and reporting (deals with vs without an identified economic buyer — ties to `deal-stage-required-fields`).
+Apply labels on key accounts (manually for top accounts, or via workflow/import for scale). Then use them: lists ("companies with a labeled Decision maker"), routing (notify the decision maker's owner), and reporting (deals with vs without an identified economic buyer - ties to `deal-stage-required-fields`).
 
 ## After State
 
@@ -79,10 +79,10 @@ Apply labels on key accounts (manually for top accounts, or via workflow/import 
 
 ## Key Technical Learnings
 
-- **Unlabeled associations lose the relationship's meaning** — labels are what make buying-committee data usable.
+- **Unlabeled associations lose the relationship's meaning** - labels are what make buying-committee data usable.
 - **Small, defined label set.** There are per-type limits, and sprawl defeats the purpose.
-- **Create ≠ use.** A label that no list/workflow/report references is dead weight — operationalize it.
-- **Powers ABM + deal strategy** — pairs with `custom-objects-setup` (buying committee) and `deal-stage-required-fields` (require an identified decision maker).
+- **Create ≠ use.** A label that no list/workflow/report references is dead weight - operationalize it.
+- **Powers ABM + deal strategy** - pairs with `custom-objects-setup` (buying committee) and `deal-stage-required-fields` (require an identified decision maker).
 
 ---
 

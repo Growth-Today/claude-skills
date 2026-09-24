@@ -14,7 +14,7 @@ Define what each lead status means, who owns it, and exactly when a lead is "rea
 
 ## Why This Matters
 
-"Lead status" and "lifecycle stage" are the two most-misused fields in HubSpot. When statuses are ad hoc ("Interested", "Warm", "Follow up") with no definitions, marketing and sales argue about what an MQL is, routing fires on the wrong trigger, and funnel reports are meaningless. A defined taxonomy — each status with an entry and exit definition — is the prerequisite for reliable routing (`lead-routing-round-robin`) and lifecycle dashboards.
+"Lead status" and "lifecycle stage" are the two most-misused fields in HubSpot. When statuses are ad hoc ("Interested", "Warm", "Follow up") with no definitions, marketing and sales argue about what an MQL is, routing fires on the wrong trigger, and funnel reports are meaningless. A defined taxonomy - each status with an entry and exit definition - is the prerequisite for reliable routing (`lead-routing-round-robin`) and lifecycle dashboards.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ Define what each lead status means, who owns it, and exactly when a lead is "rea
 
 ## Plan
 
-1. Audit current lead status values and distribution (before state — `scripts/before.py`)
+1. Audit current lead status values and distribution (before state - `scripts/before.py`)
 2. Define the target status set with entry/exit definitions
 3. Map old values → new; update the property options
 4. Backfill existing records; align the MQL→SQL handoff trigger
@@ -72,7 +72,7 @@ Set a sensible default (e.g. "New") for records with no lead status, and re-map 
 
 **Verification checklist:**
 
-1. Lead status has a small, defined value set — no ad hoc/duplicate options remain (re-run `before.py`).
+1. Lead status has a small, defined value set - no ad hoc/duplicate options remain (re-run `before.py`).
 2. Every status has a written entry/exit definition and an owner.
 3. Lifecycle stage and lead status are used distinctly (not duplicating each other).
 4. The "ready for sales" trigger is defined and drives routing.
@@ -82,7 +82,7 @@ Set a sensible default (e.g. "New") for records with no lead status, and re-map 
 
 - **Lead status ≠ lifecycle stage.** Conflating them is the root of most funnel-reporting confusion.
 - **Definitions beat labels.** A status without an entry definition will be applied inconsistently.
-- **One agreed handoff trigger** is what ends the marketing-vs-sales MQL argument — and what routing depends on.
+- **One agreed handoff trigger** is what ends the marketing-vs-sales MQL argument - and what routing depends on.
 - **Keep the set small.** Every extra status is another thing to define, train, and report on.
 - **Feeds `lead-routing-round-robin` and the lifecycle dashboards** in `revops-core-dashboards`.
 

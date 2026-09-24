@@ -10,7 +10,7 @@ metadata:
 
 # Custom Objects Setup
 
-Model data that doesn't fit Contacts, Companies, Deals, or Tickets — subscriptions, licenses, properties, shipments, buying committees — as a custom object, but only when it's genuinely warranted. This playbook covers the decision, the schema design, and the setup.
+Model data that doesn't fit Contacts, Companies, Deals, or Tickets - subscriptions, licenses, properties, shipments, buying committees - as a custom object, but only when it's genuinely warranted. This playbook covers the decision, the schema design, and the setup.
 
 ## Why This Matters
 
@@ -39,8 +39,8 @@ Decide the primary **association** immediately: does this object belong to a Con
 
 ## Plan
 
-1. Audit existing objects/schemas so you don't duplicate (before state — `scripts/before.py`)
-2. Run the decision test — confirm a custom object is actually warranted
+1. Audit existing objects/schemas so you don't duplicate (before state - `scripts/before.py`)
+2. Run the decision test - confirm a custom object is actually warranted
 3. Design the schema: name, primary display property, properties, associations
 4. Create the object (data model builder or Schemas API) + its properties + associations
 5. Add a pipeline if the object has stages; verify (after state)
@@ -62,7 +62,7 @@ python before.py
 Run the decision test above. If a property or existing object fits, stop and do that instead (cheaper and simpler).
 
 ### Step 2: Design the schema
-Define: object name (singular/plural), the **primary display property** (what labels each record), the core properties (with correct field types — see `property-architecture-governance`), and the associations to Contacts/Companies/Deals.
+Define: object name (singular/plural), the **primary display property** (what labels each record), the core properties (with correct field types - see `property-architecture-governance`), and the associations to Contacts/Companies/Deals.
 
 ### Step 3: Create the object
 **UI:** Settings > Data Management > Objects > Create custom object (data model builder). **API:** the Schemas API, e.g.:
@@ -92,7 +92,7 @@ Define association labels where needed (`association-labels-setup`). If the obje
 
 **Verification checklist:**
 
-1. The decision test was applied — a property/existing object genuinely wouldn't have worked.
+1. The decision test was applied - a property/existing object genuinely wouldn't have worked.
 2. The object exists with the right primary display property and correctly-typed properties.
 3. Associations to Contacts/Companies/Deals are correct (the hardest thing to change later).
 4. If stage-based, a pipeline exists with meaningful stages.
@@ -101,7 +101,7 @@ Define association labels where needed (`association-labels-setup`). If the obje
 ## Key Technical Learnings
 
 - **Most "custom object" needs are actually a property or a Deal/Ticket.** Run the decision test first.
-- **Associations are the load-bearing decision** — pick the primary relationship deliberately; it's the hardest to change.
+- **Associations are the load-bearing decision** - pick the primary relationship deliberately; it's the hardest to change.
 - **Enterprise-only.** Don't design around custom objects on a non-Enterprise tier.
 - **Reuse before create.** Audit existing schemas so you don't build a second object for the same concept.
 - **Pairs with `association-labels-setup`, `calculated-rollup-properties`, and `property-architecture-governance`.**

@@ -1,18 +1,18 @@
 ---
 name: gtm-skill-4-battlecard
-description: "GTM Onboarding Skill 4 — Sales Battlecard. Generates Tab 9 (competitor displacement table + objection handling). Run after Skill 3 is confirmed. Always searches G2 and Reddit for each competitor before writing any cell. Every cell must be speakable in 10 seconds."
+description: "GTM Onboarding Skill 4 - Sales Battlecard. Generates Tab 9 (competitor displacement table + objection handling). Run after Skill 3 is confirmed. Always searches G2 and Reddit for each competitor before writing any cell. Every cell must be speakable in 10 seconds."
 ---
 
-# Skill 4 — Sales Battlecard
+# Skill 4 - Sales Battlecard
 
 **Generates:** Tab 9 (Competitor Displacement + Objection Handling)  
 **Input:** Skill 1 (full competitor list + confirmed customers) + Skill 2 (pain language per persona) + Skill 3 (G2 research summary + competitive signals)  
-**Requires:** web_search per competitor (mandatory — never write from training knowledge)  
-**Next step:** Skill 5 (Messaging Matrix) — only after you confirm Tab 9
+**Requires:** web_search per competitor (mandatory - never write from training knowledge)  
+**Next step:** Skill 5 (Messaging Matrix) - only after you confirm Tab 9
 
 ---
 
-## CORE RULE — The AE Test
+## CORE RULE - The AE Test
 
 Every cell in Tab 9 must pass this test: **can an AE say it out loud in 10 seconds on a live call?**
 
@@ -25,16 +25,16 @@ This is the most important rule in Skill 4. A battlecard that reads like a produ
 ## INPUT REQUIRED
 
 ```
-SKILL 1 OUTPUT: [full competitor list from research — all found, not just your materials]
+SKILL 1 OUTPUT: [full competitor list from research - all found, not just your materials]
 SKILL 2 OUTPUT: [pain language per persona from Tab 4]
-SKILL 3 OUTPUT: [G2 research summary per competitor — paste full]
-TAB 5:          [Lost Deals + Objections — if you filled it, paste here]
-                [If blank: "not provided" — objection rows get [PRELIMINARY] tag]
+SKILL 3 OUTPUT: [G2 research summary per competitor - paste full]
+TAB 5:          [Lost Deals + Objections - if you filled it, paste here]
+                [If blank: "not provided" - objection rows get [PRELIMINARY] tag]
 ```
 
 ---
 
-## STEP 1 — Build the Complete Competitor List
+## STEP 1 - Build the Complete Competitor List
 
 **Do not write any battlecard cells yet.** Confirm the list first.
 
@@ -53,19 +53,19 @@ Categorize every competitor:
 
 | Type | Definition | Why it matters for the battlecard |
 |---|---|---|
-| **Direct** | Same category, same buyer, same job to be done | Head-to-head displacement — AE needs a clear "why us" |
-| **Indirect** | Different approach, same buyer, overlapping use case | Education play — prospect may not see it as a choice |
-| **Status quo** | What prospect does INSTEAD of buying (agencies, manual work, spreadsheets, doing nothing) | Most common real competitor — always include 2+ entries |
+| **Direct** | Same category, same buyer, same job to be done | Head-to-head displacement - AE needs a clear "why us" |
+| **Indirect** | Different approach, same buyer, overlapping use case | Education play - prospect may not see it as a choice |
+| **Status quo** | What prospect does INSTEAD of buying (agencies, manual work, spreadsheets, doing nothing) | Most common real competitor - always include 2+ entries |
 
 **Always include at least 2 status quo entries.** These are often what the prospect is actually comparing against, not a named tool.
 
-Flag any competitors NOT previously in the list: `[NEW — found in Step 1 research]`
+Flag any competitors NOT previously in the list: `[NEW - found in Step 1 research]`
 
 ---
 
-## STEP 2 — Research Each Competitor (mandatory before writing any cell)
+## STEP 2 - Research Each Competitor (mandatory before writing any cell)
 
-For each competitor, run both searches. Use Skill 3's G2 summary if available — if not, run fresh.
+For each competitor, run both searches. Use Skill 3's G2 summary if available - if not, run fresh.
 
 ```
 Search A: "[competitor name] site:g2.com reviews"
@@ -73,7 +73,7 @@ Search A: "[competitor name] site:g2.com reviews"
   Extract: top 3 complaints in exact user language → "Where We Win" column
 
 Search B: "[competitor name] cons problems" site:reddit.com OR site:g2.com
-  Extract: real frustrations verbatim — what users say when not performing for the company
+  Extract: real frustrations verbatim - what users say when not performing for the company
 ```
 
 **After all competitor research, write this summary before generating any cells:**
@@ -82,9 +82,9 @@ Search B: "[competitor name] cons problems" site:reddit.com OR site:g2.com
 COMPETITOR RESEARCH SUMMARY:
 
 [Competitor A]:
-  Strength (positive G2): [1 line — be honest]
+  Strength (positive G2): [1 line - be honest]
   Top complaint (negative G2/Reddit): [exact user language]
-  Displacement angle: [1 sentence — what to lead with]
+  Displacement angle: [1 sentence - what to lead with]
   Renewal timing: [annual contract? when do they typically renew?]
   Category: [Direct / Indirect / Status quo]
 
@@ -100,15 +100,15 @@ For each competitor in the tech stack, note if they are an adjacent vendor whose
 
 ---
 
-## STEP 3 — Populate the 4 Battlecard Columns
+## STEP 3 - Populate the 4 Battlecard Columns
 
-### Column structure for the competitor displacement table (mandatory — all 6 columns)
+### Column structure for the competitor displacement table (mandatory - all 6 columns)
 
 ```
 Competitor | What They Do Well (be honest) | Where We Win | What to Say on a Call (10 sec max) | What NOT to Say | Your Notes
 ```
 
-**Column 6 — "Your Notes" is mandatory.** Leave it blank with yellow fill. This is where your company:
+**Column 6 - "Your Notes" is mandatory.** Leave it blank with yellow fill. This is where your company:
 - Confirms the displacement angle is accurate from their real sales experience
 - Adds a specific customer story or proof point to the "What to Say" column
 - Names any competitor they regularly see in deals that isn't already in the table
@@ -142,10 +142,10 @@ Must be verifiable. Never a generic claim.
 
 ```
 BAD:  "We are faster and have better insights."
-GOOD: "Live AI conversation vs async video — depth of insight is completely different, no manual analysis needed."
+GOOD: "Live AI conversation vs async video - depth of insight is completely different, no manual analysis needed."
 
 BAD:  "We're more affordable."
-GOOD: "Replaces $40K agency research studies at a fraction of the cost — results in hours, not 8 weeks."
+GOOD: "Replaces $40K agency research studies at a fraction of the cost - results in hours, not 8 weeks."
 ```
 
 **Symptom-based displacement**:  
@@ -182,31 +182,31 @@ The depth is completely different."
 ```
 BAD format example: "We're better than them in every way."
 BAD format example: "They're outdated and nobody uses them anymore."
-BAD format example: "That tool is actually really bad." [trash-talk — kills credibility]
+BAD format example: "That tool is actually really bad." [trash-talk - kills credibility]
 ```
 
 ---
 
-## STEP 4 — Objection Handling Section
+## STEP 4 - Objection Handling Section
 
 **Source priority:**
-1. Tab 5 (Lost Deals) — if you filled it, use real objections from real prospects
-2. your intake notes / positioning materials — any objection signals your company flagged
-3. Skill 2 pain language — reverse-engineer what objections each persona type raises
-4. G2 research — what prospects say they almost didn't buy
+1. Tab 5 (Lost Deals) - if you filled it, use real objections from real prospects
+2. your intake notes / positioning materials - any objection signals your company flagged
+3. Skill 2 pain language - reverse-engineer what objections each persona type raises
+4. G2 research - what prospects say they almost didn't buy
 
-**If Tab 5 is blank:** tag every objection row `[PRELIMINARY — based on AI analysis and your materials signals. Update after Tab 5 is filled in before team review.]`
+**If Tab 5 is blank:** tag every objection row `[PRELIMINARY - based on AI analysis and your materials signals. Update after Tab 5 is filled in before team review.]`
 
 **Per objection, output 6 fields:**
 
 ```
-When they say:   [EXACT words the prospect uses — not paraphrased, not cleaned up]
+When they say:   [EXACT words the prospect uses - not paraphrased, not cleaned up]
                  BAD: "They express cost concerns"
                  GOOD: "It's too expensive" / "We don't have budget for this right now"
 
-What they mean:  [the real underlying concern behind the words — 1 sentence]
+What they mean:  [the real underlying concern behind the words - 1 sentence]
 
-Say this:        [max 2 sentences — addresses the underlying concern, not the surface words]
+Say this:        [max 2 sentences - addresses the underlying concern, not the surface words]
                  Never pivots to a product pitch. Makes prospect feel understood first.
 
 Do NOT say:      [the defensive, vague, or arrogant version]
@@ -246,7 +246,7 @@ If you're deciding without the why, you're guessing."
 
 ---
 
-## STEP 5b — TRANSCRIPT UPDATES TO BATTLECARD (v3+ only)
+## STEP 5b - TRANSCRIPT UPDATES TO BATTLECARD (v3+ only)
 
 After generating the standard battlecard content, check the transcript for any corrections or additions to competitors, objections, or displacement angles. Add a clearly labelled section at the bottom of Tab 9.
 
@@ -257,8 +257,8 @@ TRANSCRIPT UPDATES TO BATTLECARD | [Your company] team review
 
 **For each update, output:**
 ```
-[MISMATCH #N] [Topic — 3–5 words]
-Transcript: "[exact or paraphrased quote — include timestamp if available]"
+[MISMATCH #N] [Topic - 3-5 words]
+Transcript: "[exact or paraphrased quote - include timestamp if available]"
 Change applied: [what was added, corrected, or removed in the battlecard above]
 AE note: [one sentence on how to use this in a live call]
 ```
@@ -279,7 +279,7 @@ AE note: Lead with action-taking vs CRM-bundled deflection. Do not trash Zendesk
 
 [MISMATCH #6] Sierra de-prioritised
 Transcript: "Sierra not mentioned once on the call. Not a real competitor day-to-day."
-Change applied: Sierra kept in battlecard but marked [LOWER PRIORITY — rarely encountered].
+Change applied: Sierra kept in battlecard but marked [LOWER PRIORITY - rarely encountered].
 AE note: Do not lead with Sierra displacement in outbound. Focus on Gorgias AI / Intercom Fin.
 ```
 
@@ -287,7 +287,7 @@ AE note: Do not lead with Sierra displacement in outbound. Focus on Gorgias AI /
 
 ---
 
-## STEP 5 — Consistency Check
+## STEP 5 - Consistency Check
 
 Before outputting Tab 9, check these 4 things. Report any issues found before you sees the output.
 
@@ -314,15 +314,15 @@ Report format:
 ```
 [CONSISTENCY ISSUE]: [Tab X] vs [Tab 9]
 Description: [what contradicts what]
-Fix applied: [what was changed — or "you to decide"]
+Fix applied: [what was changed - or "you to decide"]
 ```
 
 ---
 
-## STEP 6 — Pause and Present to you
+## STEP 6 - Pause and Present to you
 
 ```
-✅ Skill 4 complete — [YourCompany]
+✅ Skill 4 complete - [YourCompany]
 
 COMPETITOR LIST: [N] total entries
 - From your materials:        [N] 
@@ -344,10 +344,10 @@ Source: [Tab 5 filled in by you / your materials signals only / AI analysis]
 [If PRELIMINARY]: "You must review and add real examples from their sales conversations before the team review session."
 
 CONSISTENCY CHECKS:
-- Logo verification: [all OK / N issues — list]
-- Differentiator conflicts: [none / N — list]
+- Logo verification: [all OK / N issues - list]
+- Differentiator conflicts: [none / N - list]
 - Signal-battlecard alignment: [all OK / N gaps]
-- Status quo coverage: [N entries — OK]
+- Status quo coverage: [N entries - OK]
 
 Please review:
 1. Is the competitor list complete? This is the most common gap.
@@ -367,14 +367,14 @@ Or give corrections first.
 
 ```
 SKILL 4 OUTPUT:
-Full confirmed competitor list: [list — all types]
+Full confirmed competitor list: [list - all types]
 Consistency issues resolved: [yes/no + what was fixed]
 Objection handling status: [PRELIMINARY / confirmed from Tab 5]
-Key displacement angles: [1 line per competitor — feeds S1 hooks in messaging matrix]
-Status quo alternatives: [list — feeds "What it replaces" framing in messaging]
+Key displacement angles: [1 line per competitor - feeds S1 hooks in messaging matrix]
+Status quo alternatives: [list - feeds "What it replaces" framing in messaging]
 ```
 
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

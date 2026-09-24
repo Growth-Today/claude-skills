@@ -1,4 +1,4 @@
-# Signal Taxonomy — Complete Encyclopedia of Sales Triggers
+# Signal Taxonomy - Complete Encyclopedia of Sales Triggers
 
 ## The 4 Categories of Outreach
 

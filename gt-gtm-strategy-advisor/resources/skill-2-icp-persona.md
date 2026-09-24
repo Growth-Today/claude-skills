@@ -1,22 +1,22 @@
 ---
 name: gtm-skill-2-icp-persona
-description: "GTM Onboarding Skill 2 — ICP Hypothesis and Pain per Persona. Generates Tab 2 (ICP Hypothesis) and Tab 4 (Pain per Persona). Run after Skill 1 is confirmed. Requires your CRM customer data from Preparation P1-P2. Core goal: validate or challenge your hypothesis against actual customer data — not confirm it."
+description: "GTM Onboarding Skill 2 - ICP Hypothesis and Pain per Persona. Generates Tab 2 (ICP Hypothesis) and Tab 4 (Pain per Persona). Run after Skill 1 is confirmed. Requires your CRM customer data from Preparation P1-P2. Core goal: validate or challenge your hypothesis against actual customer data - not confirm it."
 ---
 
-# Skill 2 — ICP Hypothesis + Pain per Persona
+# Skill 2 - ICP Hypothesis + Pain per Persona
 
 **Generates:** Tab 2 (ICP Hypothesis) + Tab 4 (Pain per Persona)  
 **Input:** Skill 1 output + your CRM customer data (P1-P2) + optional cluster analysis  
 **Requires:** Skill 1 confirmed by you  
-**Next step:** Skill 3 (Signal Library) — only after you confirm Tab 2 + Tab 4
+**Next step:** Skill 3 (Signal Library) - only after you confirm Tab 2 + Tab 4
 
 ---
 
-## CORE PRINCIPLE — Diagnose, Don't Confirm
+## CORE PRINCIPLE - Diagnose, Don't Confirm
 
 You filled your intake notes / positioning materials with their best hypothesis. That hypothesis is often wrong.
 
-Most teams describe their dream customer — the large enterprise they want.  
+Most teams describe their dream customer - the large enterprise they want.  
 80% of their actual paying customers are often much smaller, or a different vertical entirely.
 
 Our job is to find where your materials hypothesis **diverges from actual customer data** and surface that divergence before the team review session. This is the primary value of Skill 2.
@@ -41,19 +41,19 @@ CLUSTER ANALYSIS:   [paste any clustering output, or "not provided"]
 
 ## WHAT EACH CSV TELLS US
 
-**Current paying customers** — who actually pays vs who your company thinks pays. Mandatory minimum: Company Name + Domain. The patterns in this list are the real ICP.
+**Current paying customers** - who actually pays vs who your company thinks pays. Mandatory minimum: Company Name + Domain. The patterns in this list are the real ICP.
 
-**Contacts at customers** — job title of the person who actually bought. If your company says "VP Product is the champion" but every signed contract came from a UX Researcher, that changes everything about outbound persona targeting. Feeds Tab 3 (Buyer Journey) with real data.
+**Contacts at customers** - job title of the person who actually bought. If your company says "VP Product is the champion" but every signed contract came from a UX Researcher, that changes everything about outbound persona targeting. Feeds Tab 3 (Buyer Journey) with real data.
 
-**Open deals** — emerging segments your company hasn't noticed yet. A new vertical in open deals may signal an opportunity they're not pursuing.
+**Open deals** - emerging segments your company hasn't noticed yet. A new vertical in open deals may signal an opportunity they're not pursuing.
 
-**Closed lost / churned** — what distinguishes a won deal from a lost one tells us more than won deals alone. Consistent churn in a segment = do not target that segment in outbound.
+**Closed lost / churned** - what distinguishes a won deal from a lost one tells us more than won deals alone. Consistent churn in a segment = do not target that segment in outbound.
 
-**Cluster analysis** — if you have a clustering output (e.g. from Clay), use it as the primary cluster input. Reduces manual analysis time significantly.
+**Cluster analysis** - if you have a clustering output (e.g. from Clay), use it as the primary cluster input. Reduces manual analysis time significantly.
 
 ---
 
-## STEP 1 — Scale Check and Data Summary
+## STEP 1 - Scale Check and Data Summary
 
 Before any analysis, assess what was provided and state:
 
@@ -68,7 +68,7 @@ Cluster analysis: [provided yes/no] | [N records]
 
 SCALE DECISION:
 - Up to 200 companies     → analyze all records directly
-- 200–500 companies       → stratified sample of 200
+- 200-500 companies       → stratified sample of 200
                             Method: 67 newest + 67 oldest + 66 random
                             Tell you: "Sampling 200 from [N]. Full list preserved for Clay."
 - 500+ companies          → Claude cannot analyze raw CSV at this scale
@@ -82,14 +82,14 @@ CONFIDENCE: [GOLD / SILVER / BRONZE]
 - BRONZE = customers only (not enriched) OR your intake notes / positioning materials only
 
 DATA QUALITY NOTES:
-[flag messy formatting, missing domains, encoding issues — proceed if Company Domain is present]
+[flag messy formatting, missing domains, encoding issues - proceed if Company Domain is present]
 ```
 
 ---
 
-## STEP 2 — Identify the Messaging Dimensions
+## STEP 2 - Identify the Messaging Dimensions
 
-Every company is different. The number and type of dimensions that drive messaging structure must be derived from your intake notes / positioning materials, web research, and customer data — never assumed in advance.
+Every company is different. The number and type of dimensions that drive messaging structure must be derived from your intake notes / positioning materials, web research, and customer data - never assumed in advance.
 
 ### The core test for any dimension
 
@@ -97,14 +97,14 @@ Ask: if prospect A and B are identical except variable X, does the message need 
 - YES → X is a messaging dimension. It gets its own column in Tab 4 and Tab 8.
 - NO → X is a personalization variable. It changes the opening line or proof logo, but not the message structure.
 
-### Segmentation vs personalization — the most important distinction
+### Segmentation vs personalization - the most important distinction
 
 | Layer | What changes | How it works | Managed where |
 |---|---|---|---|
-| Segmentation dimension | S1 and S2 (core pain hook and consequence) | Different message structure — the prospect's situation is fundamentally different | Tab 4 rows + Tab 8 columns |
+| Segmentation dimension | S1 and S2 (core pain hook and consequence) | Different message structure - the prospect's situation is fundamentally different | Tab 4 rows + Tab 8 columns |
 | Personalization variable | Opening line and proof logo only | Same message structure, customized at send time | Clay opening line + logo swap |
 
-**The most common mistake:** treating industry as a segmentation dimension when it is actually a personalization variable. Industry usually changes the opening line and proof logo — not the core pain structure. But for some products, industry genuinely drives a different use case and different pain — in that case it belongs as a dimension.
+**The most common mistake:** treating industry as a segmentation dimension when it is actually a personalization variable. Industry usually changes the opening line and proof logo - not the core pain structure. But for some products, industry genuinely drives a different use case and different pain - in that case it belongs as a dimension.
 
 ### How to evaluate each candidate dimension
 
@@ -118,7 +118,7 @@ If only #3 is YES: it is a personalization variable. Handle it in the Clay openi
 
 ### Common dimensions by product type
 
-These are starting hypotheses — always validate against data:
+These are starting hypotheses - always validate against data:
 
 | Product type | Common dimensions | Usually personalization only |
 |---|---|---|
@@ -134,28 +134,28 @@ The number of dimensions varies by company. Some companies need 2 (persona x com
 
 ```
 MESSAGING DIMENSIONS FOR [YOUR COMPANY]:
-  Dimension 1: [name] — States: [list]
-  Dimension 2: [name] — States: [list]
-  Dimension 3: [name, if applicable] — States: [list]
-  Dimension 4: [name, if applicable] — States: [list]
+  Dimension 1: [name] - States: [list]
+  Dimension 2: [name] - States: [list]
+  Dimension 3: [name, if applicable] - States: [list]
+  Dimension 4: [name, if applicable] - States: [list]
 
 Evidence from data: [what CSV/your materials/web shows for each]
 Your hypothesis (your materials): [what you assumed]
 Match: [CONFIRMED / MISMATCH per dimension]
 
 Tab 4 structure: [D1 states] x [D2 states] x [D3 if applicable] = [N rows]
-Tab 8 structure: [same — N variants]
+Tab 8 structure: [same - N variants]
 
 PERSONALIZATION VARIABLES (not dimensions):
-  [variable]: changes [opening line / proof logo / CTA phrasing] — handled by Clay
+  [variable]: changes [opening line / proof logo / CTA phrasing] - handled by Clay
 ```
 
-**ICP Scoring framework** (from list-building define-icp — use to validate dimension priority):
+**ICP Scoring framework** (from list-building define-icp - use to validate dimension priority):
 
 | Criterion | Weight | What to look for in CSV |
 |---|---|---|
 | Industry match | 20 pts | Which verticals dominate paying customers? |
-| Company size | 15 pts | Headcount sweet spot — floor AND ceiling |
+| Company size | 15 pts | Headcount sweet spot - floor AND ceiling |
 | Revenue range | 15 pts | Revenue range in your CRM-enriched data |
 | Geography | 10 pts | HQ location patterns |
 | Technology fit | 15 pts | Tech stack from your CRM/BuiltWith |
@@ -164,7 +164,7 @@ PERSONALIZATION VARIABLES (not dimensions):
 
 ---
 
-## STEP 3 — Mismatch Analysis
+## STEP 3 - Mismatch Analysis
 
 For every case where customer data contradicts your materials hypothesis, flag it explicitly.  
 This is the core value Skill 2 provides that your company cannot get themselves.
@@ -183,21 +183,21 @@ DIMENSION MISMATCH: You assume vertical is the dimension, data shows researcher 
 [MISMATCH]: [field name]
 You assumed (your materials):  [X]
 Data shows (CSV):     [Y]
-Delta:                [quantify — "70% of customers are SMB vs your enterprise hypothesis"]
+Delta:                [quantify - "70% of customers are SMB vs your enterprise hypothesis"]
 Implication:          [what this means for the GTM strategy]
-Option A:             [pursue data reality — what this requires]
-Option B:             [pursue stated hypothesis — what data is missing to validate it]
+Option A:             [pursue data reality - what this requires]
+Option B:             [pursue stated hypothesis - what data is missing to validate it]
 Raise on team review session: YES
 ```
 
 ---
 
-## STEP 4 — Generate Tab 2: ICP Hypothesis
+## STEP 4 - Generate Tab 2: ICP Hypothesis
 
 **Tab 2 = PRIMARY DIMENSION callout + firmographic + verticals + technographic + disqualifiers.**  
-No signal detection logic here — that goes to Tab 6.
+No signal detection logic here - that goes to Tab 6.
 
-### PRIMARY DIMENSION section (MANDATORY — goes at the very top of Tab 2, before everything else)
+### PRIMARY DIMENSION section (MANDATORY - goes at the very top of Tab 2, before everything else)
 
 This section makes the messaging architecture visible to your company. Without it, the rest of the playbook is hard to navigate.
 
@@ -205,8 +205,8 @@ Format:
 ```
 PRIMARY DIMENSION  |  The ONE variable that changes the core message completely
 
-[Dimension name] — [N] states: [list all states]
-Why: [1–2 sentences explaining what is FUNDAMENTALLY DIFFERENT about each state.
+[Dimension name] - [N] states: [list all states]
+Why: [1-2 sentences explaining what is FUNDAMENTALLY DIFFERENT about each state.
      Why can't the same message work across all states?]
 ```
 
@@ -214,10 +214,10 @@ Example (Dialogue AI):
 ```
 PRIMARY DIMENSION  |  The ONE variable that changes the core message completely
 
-RESEARCHER PRESENCE — 3 states: No researcher / 1 researcher / 2+ researchers
+RESEARCHER PRESENCE - 3 states: No researcher / 1 researcher / 2+ researchers
 Why: A PM with no researcher and a solo UXR at a 100-person company 
      have completely different daily pain, different buying triggers, and different 
-     objections — even though they'd buy the same product.
+     objections - even though they'd buy the same product.
 ```
 
 **Always state the primary dimension BEFORE generating any other section of Tab 2.**
@@ -240,12 +240,12 @@ Per segment, output:
 ```
 Segment:         [Revenue / Headcount / Stage / Geography]
 Our Hypothesis:  [specific range with floor AND ceiling]
-Why:             [boundary logic — 1 sentence, no adjectives]
+Why:             [boundary logic - 1 sentence, no adjectives]
 Fit Signal:      [observable, Clay-detectable characteristic]
-Data says:       [what CSV shows — count + %]
+Data says:       [what CSV shows - count + %]
 You assume:     [what your materials say]
-Flag:            [CONFIRMED / MISMATCH / AI EST — no data]
-Your Rank:      [blank — fill 1-3 during team review]
+Flag:            [CONFIRMED / MISMATCH / AI EST - no data]
+Your Rank:      [blank - fill 1-3 during team review]
 Your Notes:     [blank]
 ```
 
@@ -254,9 +254,9 @@ Your Notes:     [blank]
 Per vertical, output:
 ```
 Vertical:        [name]
-Priority:        [High — ICP score /100 / Medium / Lower]
-Why:             [strategic fit — 1 sentence]
-Confirmed:       [N customers from CSV — or "0 [AI EST]" if no data]
+Priority:        [High - ICP score /100 / Medium / Lower]
+Why:             [strategic fit - 1 sentence]
+Confirmed:       [N customers from CSV - or "0 [AI EST]" if no data]
 Examples:        [confirmed names first, aspirational second]
 Flag:            [CONFIRMED / AI EST / MISMATCH]
 Your Rank:      [blank]
@@ -271,32 +271,32 @@ Your Notes:     [blank]
 
 ### Technographic section
 
-Good-fit signals in their tech stack — things Clay/BuiltWith can detect:
+Good-fit signals in their tech stack - things Clay/BuiltWith can detect:
 ```
 Signal:          [tool name or stack pattern]
 What It Tells Us: [what this reveals about the prospect's situation]
 How to Find It:  [BuiltWith / Clay / your CRM technographics]
 Priority:        [Very High / High / Medium]
-Your Confirm?:  [blank — yellow fill]
+Your Confirm?:  [blank - yellow fill]
 ```
 
 ### Disqualifiers section
 
-Explicit "do not target" criteria — companies that look like ICP but aren't:
+Explicit "do not target" criteria - companies that look like ICP but aren't:
 ```
 Disqualifier:    [specific criterion]
-Why Exclude:     [concrete reason — wasted budget, wrong use case, consistent churn]
+Why Exclude:     [concrete reason - wasted budget, wrong use case, consistent churn]
 ```
 
 Always include at least:
 - Direct competitors (exclude from all campaigns)
 - Any segment that consistently churns (from closed lost CSV)
 - Any segment your company explicitly flagged as wrong fit
-- `[TO ADD — from Tab 5 Lost Deals]` placeholder row for churn patterns
+- `[TO ADD - from Tab 5 Lost Deals]` placeholder row for churn patterns
 
 ---
 
-## STEP 5 — Generate Tab 4: Pain per Persona
+## STEP 5 - Generate Tab 4: Pain per Persona
 
 Structure: **[PRIMARY DIMENSION STATES] × [PERSONA TYPES]**
 
@@ -313,39 +313,39 @@ Do not assume the dimension. Use what Step 2 identified.
 
 ### Per pain row, output all 7 fields:
 
-**Core Pain** — first person, specific scenario, emotional state. Max 2 sentences.  
+**Core Pain** - first person, specific scenario, emotional state. Max 2 sentences.  
 Source priority: G2 reviews from Skill 1 research → customer quotes → your materials → AI estimate.  
 Use exact language from reviews where available. This is what goes into S1 of the messaging matrix.
 
-**What They Have Tried** — specific tools + specific failure reason. Not vague.
+**What They Have Tried** - specific tools + specific failure reason. Not vague.
 
-**How [Product] Fixes This** — plain and specific. No marketing language.
+**How [Product] Fixes This** - plain and specific. No marketing language.
 
-**Proof** — "Company X. Specific outcome with numbers." If not confirmed: `[TO ADD]`
+**Proof** - "Company X. Specific outcome with numbers." If not confirmed: `[TO ADD]`
 
-**Best Signal to Find This Person** — specific Clay-detectable condition. Feeds Tab 6.
+**Best Signal to Find This Person** - specific Clay-detectable condition. Feeds Tab 6.
 
-**Personalization angle** — which of the 6 personalization buckets applies most to this persona:
-- Self-authored content (highest value — LinkedIn posts, talks, articles)
+**Personalization angle** - which of the 6 personalization buckets applies most to this persona:
+- Self-authored content (highest value - LinkedIn posts, talks, articles)
 - Self-identified traits (their LinkedIn headline, bio)
 - Company level (funding, job posts, news)
 - Background centric (tenure, career trajectory)
 
-**Source tag** — [G2], [CSV-quote], [INPUT], [AI EST]
+**Source tag** - [G2], [CSV-quote], [INPUT], [AI EST]
 
 ### Writing rules:
 
 ```
-Core Pain — GOOD: "I send a survey and get 200 responses but still don't know 
+Core Pain - GOOD: "I send a survey and get 200 responses but still don't know 
                    why users are dropping off. I'm guessing."
-Core Pain — BAD:  "Product teams struggle with getting user insights efficiently."
+Core Pain - BAD:  "Product teams struggle with getting user insights efficiently."
 
-What Tried — GOOD: "Typeform surveys. Fast to send but no follow-up questions. 
+What Tried - GOOD: "Typeform surveys. Fast to send but no follow-up questions. 
                     Can't surface the why."
-What Tried — BAD:  "Traditional research methods that don't scale."
+What Tried - BAD:  "Traditional research methods that don't scale."
 
-Proof — GOOD: "Wayfair. Research team scaled output without adding headcount."
-Proof — BAD:  "Enterprise customers have seen significant improvements."
+Proof - GOOD: "Wayfair. Research team scaled output without adding headcount."
+Proof - BAD:  "Enterprise customers have seen significant improvements."
 ```
 
 Add at bottom of tab:
@@ -353,10 +353,10 @@ Add at bottom of tab:
 
 ---
 
-## STEP 6 — Pause and Present to you
+## STEP 6 - Pause and Present to you
 
 ```
-✅ Skill 2 complete — [YourCompany]
+✅ Skill 2 complete - [YourCompany]
 
 CONFIDENCE: [GOLD / SILVER / BRONZE]
 Records analyzed: [N customers / N contacts / N open / N lost]
@@ -414,4 +414,4 @@ Best personalization buckets per persona: [list]
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

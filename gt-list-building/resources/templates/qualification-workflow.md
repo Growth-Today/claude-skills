@@ -2,7 +2,7 @@
 name: qualification-workflow
 ---
 
-# Qualification Workflow — From Raw List to Campaign-Ready Accounts
+# Qualification Workflow - From Raw List to Campaign-Ready Accounts
 
 ## Growth Today Tier System
 
@@ -115,7 +115,7 @@ For Tier 1 accounts, find 2-4 contacts per company:
 
 ---
 
-## Real Example — DevOps ICP Scoring
+## Real Example - DevOps ICP Scoring
 
 | Company | Score | Tier | Rationale | Timing |
 |---------|-------|------|-----------|--------|

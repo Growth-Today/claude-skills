@@ -220,7 +220,7 @@ if resp.status_code in (200, 201):
 elif resp.status_code == 409:
     print("List already exists (409 conflict). Use the existing list.")
 else:
-    print(f"Failed to create list: {resp.status_code} — {resp.text[:300]}")
+    print(f"Failed to create list: {resp.status_code} - {resp.text[:300]}")
 ```
 
 **Step 3b: Suppress contacts in HubSpot UI**

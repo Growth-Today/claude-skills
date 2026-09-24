@@ -137,7 +137,7 @@ print(f"Contacts still missing industry: {result.total}")
    - Verify the Industry field shows a value
    - Click the associated company and confirm the industry matches
 4. Check that the industry distribution on contacts roughly mirrors the company industry distribution
-5. Check workflow history for failures — most common is property value mismatch (company has a value that does not match a dropdown option on the contact)
+5. Check workflow history for failures - most common is property value mismatch (company has a value that does not match a dropdown option on the contact)
 
 ## Key Technical Learnings
 

@@ -20,7 +20,7 @@ Audit HubSpot workflows to remove dead weight. Unused workflows clutter the auto
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Inventory All Workflows
+### Stage 1: Before - Inventory All Workflows
 
 Pull all workflows. The Automation API endpoint for workflows:
 
@@ -38,7 +38,7 @@ workflows = response.json()
 
 For each workflow, record: ID, name, enabled status, type, enrollment count, created date, last updated date.
 
-### Stage 2: Execute — Identify Candidates for Deletion
+### Stage 2: Execute - Identify Candidates for Deletion
 
 Flag workflows matching any of these criteria:
 
@@ -53,7 +53,7 @@ Before deleting, check:
 - Does the workflow set properties that other workflows depend on?
 - Is there any documentation referencing this workflow?
 
-### Stage 3: After — Delete and Document
+### Stage 3: After - Delete and Document
 
 1. Turn off workflows first, wait one week, then delete if no issues arise.
 2. Document deleted workflows in a cleanup log (name, purpose, reason for deletion).

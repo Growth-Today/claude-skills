@@ -10,7 +10,7 @@ You pick keywords by intent and control match types so Smart Bidding learns from
 ## Instructions
 
 1. Map keywords to funnel tier by intent, not by search volume
-2. Choose match types deliberately — broad only with strong tracking and negatives
+2. Choose match types deliberately - broad only with strong tracking and negatives
 3. Use the qualifier mechanic to filter for commercial intent
 4. Run competitor conquest in its own campaign
 5. Promote winning search terms to exact-match keywords (see search-terms)
@@ -63,4 +63,4 @@ Example 2: "Should I bid on competitor names?"
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

@@ -1,6 +1,6 @@
 ---
 name: subscription-types-consent
-description: "Design communication subscription types and manage consent properly. Sets up granular subscription types, a preference center, and consent tracking so contacts control what they get — improving deliverability and compliance."
+description: "Design communication subscription types and manage consent properly. Sets up granular subscription types, a preference center, and consent tracking so contacts control what they get - improving deliverability and compliance."
 license: MIT
 metadata:
   author: growthtoday
@@ -10,11 +10,11 @@ metadata:
 
 # Subscription Types & Consent
 
-Set up communication subscription types (newsletter, product updates, events, etc.) and a preference center so contacts opt into specific communications — instead of a single all-or-nothing unsubscribe. Improves deliverability, engagement, and compliance.
+Set up communication subscription types (newsletter, product updates, events, etc.) and a preference center so contacts opt into specific communications - instead of a single all-or-nothing unsubscribe. Improves deliverability, engagement, and compliance.
 
 ## Why This Matters
 
-With one blunt "unsubscribe from everything," a contact who's tired of the newsletter also loses product and billing emails — and you lose the contact entirely. Granular subscription types let people tune what they receive, which reduces full unsubscribes, improves engagement (people get what they want), and is the backbone of consent compliance (GDPR/CAN-SPAM).
+With one blunt "unsubscribe from everything," a contact who's tired of the newsletter also loses product and billing emails - and you lose the contact entirely. Granular subscription types let people tune what they receive, which reduces full unsubscribes, improves engagement (people get what they want), and is the backbone of consent compliance (GDPR/CAN-SPAM).
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ With one blunt "unsubscribe from everything," a contact who's tired of the newsl
 
 ## Critical Concept: Subscription Types Are the Unit of Consent
 
-Each **subscription type** is a communication category a contact can opt in/out of independently, and each marketing email is sent under one. The **preference center** is where contacts manage these. HubSpot logs subscription/consent changes (visible in the custom report builder) so you can prove and analyze consent over time. Design the types deliberately — too few = blunt unsubscribes; too many = confusing.
+Each **subscription type** is a communication category a contact can opt in/out of independently, and each marketing email is sent under one. The **preference center** is where contacts manage these. HubSpot logs subscription/consent changes (visible in the custom report builder) so you can prove and analyze consent over time. Design the types deliberately - too few = blunt unsubscribes; too many = confusing.
 
 ## Plan
 
@@ -56,10 +56,10 @@ Assign each marketing email to the correct subscription type. Ensure existing co
 
 ## Key Technical Learnings
 
-- **Granular types reduce full unsubscribes** — people leave one list, not your whole database.
-- **The preference center is the retention tool** — offer "get less," not just "leave."
-- **Subscription type = the consent unit** — every email maps to one; consent changes are logged.
-- **Small, real categories** — sprawl confuses contacts and dilutes the point.
+- **Granular types reduce full unsubscribes** - people leave one list, not your whole database.
+- **The preference center is the retention tool** - offer "get less," not just "leave."
+- **Subscription type = the consent unit** - every email maps to one; consent changes are logged.
+- **Small, real categories** - sprawl confuses contacts and dilutes the point.
 - **Pairs with `gdpr-data-privacy` and `suppress-global-unsubscribes`.**
 
 ---

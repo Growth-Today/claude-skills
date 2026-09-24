@@ -2,7 +2,7 @@
 
 Score each finding by impact x effort and ship the top items first. The two anchors: is tracking sound, and is creative treated as the strategy. Fix in the priority order at the bottom.
 
-**Evidence discipline:** don't apply a benchmark without checking objective, geography, methodology, sample size, and account maturity; mark **n/a**/**unknown** where you can't see it; treat betas/new features and vendor performance claims as **discovery, not a failure**. All benchmarks here are B2B — never import DTC/e-commerce figures.
+**Evidence discipline:** don't apply a benchmark without checking objective, geography, methodology, sample size, and account maturity; mark **n/a**/**unknown** where you can't see it; treat betas/new features and vendor performance claims as **discovery, not a failure**. All benchmarks here are B2B - never import DTC/e-commerce figures.
 
 ## 1. Tracking (highest priority)
 - [ ] Pixel installed and firing on the right events
@@ -98,4 +98,4 @@ Score each finding by impact x effort and ship the top items first. The two anch
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

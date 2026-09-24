@@ -1,6 +1,6 @@
 ---
 name: calculated-rollup-properties
-description: "Build calculation and rollup properties that derive values automatically (sums, counts, min/max, formulas) across a record and its associated records — so key metrics stay live without manual updates or workflows."
+description: "Build calculation and rollup properties that derive values automatically (sums, counts, min/max, formulas) across a record and its associated records - so key metrics stay live without manual updates or workflows."
 license: MIT
 metadata:
   author: growthtoday
@@ -10,7 +10,7 @@ metadata:
 
 # Calculated & Rollup Properties
 
-Create properties whose values are computed automatically — a formula on the record (e.g. days since last contact), or a rollup across associated records (e.g. total open deal amount on a company). These keep derived metrics accurate without workflows or manual edits.
+Create properties whose values are computed automatically - a formula on the record (e.g. days since last contact), or a rollup across associated records (e.g. total open deal amount on a company). These keep derived metrics accurate without workflows or manual edits.
 
 ## Why This Matters
 
@@ -19,7 +19,7 @@ Teams constantly rebuild the same derived numbers with brittle workflows or by h
 ## Prerequisites
 
 - Super Admin / "Edit property settings" access to Settings > Properties
-- Governed properties with correct types (`property-architecture-governance`) — calculations depend on numeric/date source fields being the right type
+- Governed properties with correct types (`property-architecture-governance`) - calculations depend on numeric/date source fields being the right type
 - Rollups across associated records require the objects to be associated (`association-labels-setup` / standard associations); some calculation features are tier-gated (Pro/Enterprise)
 
 ## Critical Concept: Calculation vs Rollup
@@ -69,9 +69,9 @@ Feed these into lead/account scoring, segmentation (e.g. "companies with >$50k o
 ## Key Technical Learnings
 
 - **Calculation = same record; rollup = across associations.** Pick by where the inputs live.
-- **They beat workflow-maintained fields** — auto-recalculating means no drift and fewer moving parts.
-- **Source field types must be correct** — a "number" stored as text won't calculate. Fix types first (`property-architecture-governance`).
-- **Tier + association dependencies apply** — rollups need associations; some features need Pro/Enterprise.
+- **They beat workflow-maintained fields** - auto-recalculating means no drift and fewer moving parts.
+- **Source field types must be correct** - a "number" stored as text won't calculate. Fix types first (`property-architecture-governance`).
+- **Tier + association dependencies apply** - rollups need associations; some features need Pro/Enterprise.
 - **Feeds scoring, segmentation, and dashboards** with live, trustworthy derived metrics.
 
 ---

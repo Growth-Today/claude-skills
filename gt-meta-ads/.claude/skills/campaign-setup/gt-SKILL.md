@@ -1,6 +1,6 @@
 ---
 name: meta-ads-campaign-setup
-description: Meta Ads campaign structure for B2B — full-funnel architecture, CBO vs ABO, budget split across prospecting/consideration/retargeting, and exclusions. Use for Meta campaign structure, funnel, CBO, ABO, budget allocation, prospecting vs retargeting, campaign objectives, Advantage+ Sales. Triggers on "campaign structure", "Meta funnel", "CBO", "ABO", "budget split", "prospecting campaign", "retargeting campaign", "Advantage+ campaign". Do NOT use for audience targeting details (use audiences) or creative (use creative).
+description: Meta Ads campaign structure for B2B - full-funnel architecture, CBO vs ABO, budget split across prospecting/consideration/retargeting, and exclusions. Use for Meta campaign structure, funnel, CBO, ABO, budget allocation, prospecting vs retargeting, campaign objectives, Advantage+ Sales. Triggers on "campaign structure", "Meta funnel", "CBO", "ABO", "budget split", "prospecting campaign", "retargeting campaign", "Advantage+ campaign". Do NOT use for audience targeting details (use audiences) or creative (use creative).
 ---
 
 # Meta Ads Campaign Setup (B2B)
@@ -36,20 +36,20 @@ You build a clean full-funnel structure, give the algorithm enough budget per ad
 
 ## Ad Set Discipline (learning phase math)
 
-- Keep **4-5 ads per ad set** — enough for the algorithm to optimise, not so many that budget spreads too thin for any one ad to gather data.
-- Do **not** spin up ten ad sets with one audience each — overlap kills validity and spreads learning thin. Consolidate. In 2026 fewer, broader, better-funded ad sets beat heavy micro-segmentation (see audiences).
+- Keep **4-5 ads per ad set** - enough for the algorithm to optimise, not so many that budget spreads too thin for any one ad to gather data.
+- Do **not** spin up ten ad sets with one audience each - overlap kills validity and spreads learning thin. Consolidate. In 2026 fewer, broader, better-funded ad sets beat heavy micro-segmentation (see audiences).
 - Each ad set needs enough budget to clear **50 events/week** to exit the learning phase (see learning-phase).
 
 ## Exclusions (keep the funnel honest)
 
-- Exclude **current customers** from prospecting — do not pay to acquire the already-acquired.
+- Exclude **current customers** from prospecting - do not pay to acquire the already-acquired.
 - Exclude **active CRM leads** from prospecting once they enter the pipeline.
 - Exclude **recent converters** (30-60 days) from conversion retargeting.
-- One caution: do not blanket-exclude all past purchasers everywhere — you lose repeat/expansion and the positive engagement signal. Exclude deliberately, per campaign goal.
+- One caution: do not blanket-exclude all past purchasers everywhere - you lose repeat/expansion and the positive engagement signal. Exclude deliberately, per campaign goal.
 
 ## Advantage+ note
 
-**Advantage+ Sales** automates audience, placement, and budget. **Advantage+ Shopping is an e-commerce/DTC product — out of scope for B2B; do not use it.** For B2B lead gen, a structured full-funnel with Instant Forms + CAPI + offline conversions controls lead quality far better than hands-off automation. You may test Advantage+ Sales as a prospecting engine, but judge it on SQL/pipeline and watch lead quality closely.
+**Advantage+ Sales** automates audience, placement, and budget. **Advantage+ Shopping is an e-commerce/DTC product - out of scope for B2B; do not use it.** For B2B lead gen, a structured full-funnel with Instant Forms + CAPI + offline conversions controls lead quality far better than hands-off automation. You may test Advantage+ Sales as a prospecting engine, but judge it on SQL/pipeline and watch lead quality closely.
 
 ## Examples
 
@@ -65,7 +65,7 @@ Example 2: "Should I use CBO or ABO?"
 For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `{SKILL_BASE}/resources/references/2026-ai-updates.md`.
 ## B2B guardrail
 
-Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` — most public Meta advice is DTC/e-commerce and does not transfer to B2B.
+Before applying any generic Meta tactic or benchmark here, check `{SKILL_BASE}/resources/references/b2b-vs-b2c-guardrail.md` - most public Meta advice is DTC/e-commerce and does not transfer to B2B.
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

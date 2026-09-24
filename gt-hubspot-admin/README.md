@@ -16,7 +16,7 @@ Not sure how to install or use Claude Skills? Full walkthrough here: **https://w
 
 ## What it does
 
-Trigger it with any HubSpot portal administration request — cleanup, audit, enrichment, suppression, deduplication, data modelling, pipeline design, workflow and routing automation, reporting, lead scoring, owner and permission management, or routine maintenance. The master router matches the request to one or more sub-skills, each of which routes to the right playbook.
+Trigger it with any HubSpot portal administration request - cleanup, audit, enrichment, suppression, deduplication, data modelling, pipeline design, workflow and routing automation, reporting, lead scoring, owner and permission management, or routine maintenance. The master router matches the request to one or more sub-skills, each of which routes to the right playbook.
 
 ## Structure
 
@@ -41,7 +41,7 @@ gt-hubspot-admin/
 └── LICENSE                  ← MIT
 ```
 
-## Coverage — 68 playbooks across 7 sub-skills
+## Coverage - 68 playbooks across 7 sub-skills
 
 | Sub-skill | Playbooks |
 |---|---|
@@ -56,12 +56,12 @@ gt-hubspot-admin/
 
 ## Safety
 
-The scripts read your HubSpot access token from the `HUBSPOT_ACCESS_TOKEN` environment variable (via a `.env` in each playbook folder) — no credentials are stored in the skill. Playbooks that modify or delete data follow a `before → execute → after` pattern with pre-flight counts and post-run validation. Review each playbook's stated automation level before running it against a live portal.
+The scripts read your HubSpot access token from the `HUBSPOT_ACCESS_TOKEN` environment variable (via a `.env` in each playbook folder) - no credentials are stored in the skill. Playbooks that modify or delete data follow a `before → execute → after` pattern with pre-flight counts and post-run validation. Review each playbook's stated automation level before running it against a live portal.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Free to use, copy, and adapt.
+MIT - see [LICENSE](LICENSE). Free to use, copy, and adapt.
 
 ---
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills

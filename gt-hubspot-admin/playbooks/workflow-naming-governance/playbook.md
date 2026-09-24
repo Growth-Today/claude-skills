@@ -14,7 +14,7 @@ Bring order to automation: a naming convention, folder structure, owner per work
 
 ## Why This Matters
 
-Workflows are among the most powerful — and most easily abused — parts of HubSpot. As teams scale, they get duplicated, half-edited, and left active with no owner or documentation, producing conflicting automation and surprises ("why did this contact get three emails?"). A naming + governance standard makes the automation layer legible and safe to change.
+Workflows are among the most powerful - and most easily abused - parts of HubSpot. As teams scale, they get duplicated, half-edited, and left active with no owner or documentation, producing conflicting automation and surprises ("why did this contact get three emails?"). A naming + governance standard makes the automation layer legible and safe to change.
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ Adopt a rule: new workflows follow the naming convention, go in a folder, and ha
 **Verification checklist:**
 
 1. Every active workflow follows the naming convention.
-2. No workflow sits in the root — all are foldered by team/function.
+2. No workflow sits in the root - all are foldered by team/function.
 3. Every active workflow has a named owner + a one-line purpose.
 4. A change rule (name + folder + owner + description before activation) is documented.
 5. Workflow review is folded into the quarterly routine.
@@ -64,8 +64,8 @@ Adopt a rule: new workflows follow the naming convention, go in a folder, and ha
 - **Self-describing names prevent conflicts.** If you can't tell what a workflow does from its name, that's the bug.
 - **Ownership is accountability.** An unowned workflow is one nobody monitors and everyone's afraid to touch.
 - **Govern at activation.** The cheapest time to enforce the standard is before the workflow goes live.
-- **Pairs with `cleanup-workflows`** — clean up once, then this keeps it clean.
-- **Legible automation is safe automation** — you can only change what you can understand.
+- **Pairs with `cleanup-workflows`** - clean up once, then this keeps it clean.
+- **Legible automation is safe automation** - you can only change what you can understand.
 
 ---
 

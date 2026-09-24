@@ -13,7 +13,7 @@ description: "Warm up mailboxes and take domains live safely. Use for warmup tim
 > cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
 > uv run execute.py --file domains.txt --csv <client>_launch.csv   # exit 0 = clear, 2 = blocked
 > ```
-> All four auth records — MX, SPF, DKIM, DMARC — must be PASS. A WARN on any of them (a
+> All four auth records - MX, SPF, DKIM, DMARC - must be PASS. A WARN on any of them (a
 > `p=quarantine` DMARC, a missing DKIM key) blocks too. The exit code is designed as a gate,
 > so this can sit in front of go-live rather than beside it.
 
@@ -27,7 +27,7 @@ Take provisioned domains (the provisioning sub-skill) from cold to live. Warm lo
 - **Never disable warmup** once campaigns are running.
 - Warmup runs on every mailbox from day one of provisioning.
 
-**Warmup volume = cold limit × the warm-to-cold ratio** (`reference.md` §1): Google **1.5:1**, Outlook **3:1**. During the first 21 days cold is effectively 0–1, so warmup carries the load.
+**Warmup volume = cold limit × the warm-to-cold ratio** (`reference.md` §1): Google **1.5:1**, Outlook **3:1**. During the first 21 days cold is effectively 0-1, so warmup carries the load.
 
 > **Auto-warmup platforms.** Instantly and Smartlead manage warmup volume automatically, you set the behavior, not an absolute daily number. On EmailBison you set the warmup number explicitly (derive it from the ratio). Either way, keep warmup copy **neutral** so the warmup score reflects reputation, not campaign content.
 
@@ -52,17 +52,17 @@ When a domain clears the gate, take it live conservatively.
 - **Open tracking OFF**: tracking pixels hurt placement (and we don't use open rate as a metric anyway).
 - **No links / no tracking domain** by default (the provisioning sub-skill).
 - **ESP routing:** set the routing rule from the **dashboard matrix** (the campaign-building sub-skill), **not** from ESP-matching-as-a-rule.
-- **Limit emails per company:** 2–3/day workspace-wide; extra-low concurrency into SEG orgs (the campaign-building sub-skill, Part 3).
+- **Limit emails per company:** 2-3/day workspace-wide; extra-low concurrency into SEG orgs (the campaign-building sub-skill, Part 3).
 
 **Ramp (per mailbox/day, `reference.md` §5):**
 
 | Week | Google | Microsoft |
 |---|---|---|
-| 1 | 10–15 | 5 |
-| 2–3 | 15–20 | 5 |
+| 1 | 10-15 | 5 |
+| 2-3 | 15-20 | 5 |
 | 4+ | 20 | 5 |
 
-**First campaign:** start with **50–100 leads**, random delays between sends, monitor **2–3 days**, then scale. **Scale by adding mailboxes, not by pushing limits higher.** Increase volume ≤ 20%/week; never add volume *and* change copy at once.
+**First campaign:** start with **50-100 leads**, random delays between sends, monitor **2-3 days**, then scale. **Scale by adding mailboxes, not by pushing limits higher.** Increase volume ≤ 20%/week; never add volume *and* change copy at once.
 
 ---
 
@@ -92,8 +92,8 @@ ROUTING
 [ ] Open tracking OFF; limit-per-company set; low concurrency into SEG orgs
 
 FIRST SEND
-[ ] 50–100 leads only; correct timezone for the segment; send interval verified (🔒 the system sets it)
-[ ] Monitored 2–3 days before scaling
+[ ] 50-100 leads only; correct timezone for the segment; send interval verified (🔒 the system sets it)
+[ ] Monitored 2-3 days before scaling
 [ ] Scale plan = add mailboxes, not raise limits; ≤ 20%/week
 ```
 

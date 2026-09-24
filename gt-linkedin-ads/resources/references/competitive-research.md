@@ -3,7 +3,7 @@
 ## Accessing
 Open [linkedin.com/ad-library/home](https://www.linkedin.com/ad-library/home) and search competitors. Filter by country, date range, and keywords.
 
-**Limitation**: No performance metrics (CTR, conversions) available — creative and messaging research only.
+**Limitation**: No performance metrics (CTR, conversions) available - creative and messaging research only.
 
 ## Five Research Methods
 
@@ -46,4 +46,4 @@ Set a monthly cadence to track competitor strategy shifts. Look for:
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

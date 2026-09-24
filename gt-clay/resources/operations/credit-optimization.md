@@ -1,4 +1,4 @@
-# Clay Operations — Credit Optimization
+# Clay Operations - Credit Optimization
 
 How to save up to $1,000/month on Clay credits through smart provider selection, conditional logic, and workflow automation.
 
@@ -12,7 +12,7 @@ Clay's dashboard shows credit consumption per integration. Monitor high-usage to
 
 ### Pause Auto-Update
 
-- **Why:** Auto-update enriches ALL new entries — wastes credits on duplicates or irrelevant data
+- **Why:** Auto-update enriches ALL new entries - wastes credits on duplicates or irrelevant data
 - **How:** Run Settings → toggle off Auto-Update for specific columns until workflows are finalized
 
 ### Credit Rollovers
@@ -119,11 +119,11 @@ Automate data personalization and trend detection:
 
 Chain multiple enrichments in one streamlined workflow:
 
-1. **Find emails** — Trykitt.ai or Prospeo
-2. **Verify emails** — Reoon Email Verifier
-3. **Fetch LinkedIn data** — Clay LinkedIn integration
-4. **Enrich tech stacks** — BuiltWith
-5. **Append headcount** — LinkedIn + PredictLeads
+1. **Find emails** - Trykitt.ai or Prospeo
+2. **Verify emails** - Reoon Email Verifier
+3. **Fetch LinkedIn data** - Clay LinkedIn integration
+4. **Enrich tech stacks** - BuiltWith
+5. **Append headcount** - LinkedIn + PredictLeads
 
 ---
 
@@ -147,7 +147,7 @@ Pull headcounts for just 1 credit using Clay's built-in LinkedIn integration ins
 ### Ethical Scraping
 
 - **Residential proxies:** Use tools like Bright Data's Scraping Browser to rotate IPs
-- **Random delays:** Introduce 2–5 second delays between scrapes to avoid detection
+- **Random delays:** Introduce 2-5 second delays between scrapes to avoid detection
 - **CAPTCHA avoidance:** Mimic human behavior patterns
 
 ---
@@ -159,28 +159,28 @@ Pull headcounts for just 1 credit using Clay's built-in LinkedIn integration ins
 - [ ] Check for redundant enrichments across tables
 - [ ] Verify auto-update is off on non-finalized tables
 - [ ] Set alerts for high-consumption tools (Semrush: 2 credits, Zenrows: 3 credits)
-- [ ] Review conditional logic — are free tools being tried first?
-- [ ] Check Lookup Columns — is CRM data being reused?
+- [ ] Review conditional logic - are free tools being tried first?
+- [ ] Check Lookup Columns - is CRM data being reused?
 
 ---
 
 ## Key Takeaways
 
-1. **Prioritize free tools** — Serper, Clearbit, BuiltWith, Reoon, Clay AI Formulas
-2. **Optimize with conditional logic** — tiered enrichments, AI rules, modular templates
-3. **Automate with purpose** — Trigify.io webhooks, evergreen campaigns
-4. **Monitor and audit weekly** — credit dashboard, failed calls, inefficiencies
-5. **Invest in lifetime solutions** — Reoon (one-time buy), Bright Data proxies
-6. **Use API keys** — Replace Clay-native tools with cheaper API alternatives when possible
+1. **Prioritize free tools** - Serper, Clearbit, BuiltWith, Reoon, Clay AI Formulas
+2. **Optimize with conditional logic** - tiered enrichments, AI rules, modular templates
+3. **Automate with purpose** - Trigify.io webhooks, evergreen campaigns
+4. **Monitor and audit weekly** - credit dashboard, failed calls, inefficiencies
+5. **Invest in lifetime solutions** - Reoon (one-time buy), Bright Data proxies
+6. **Use API keys** - Replace Clay-native tools with cheaper API alternatives when possible
 
 ---
 
 ## Learning Resources
 
-- **Clay University** — CRM enrichment, automated outbound, intent data modules
-- **Clay Help Center** — [docs.clay.com](https://docs.clay.com/en/)
-- **Clay Templates** — [clay.com/templates](https://www.clay.com/templates)
-- **Bright Data** — [brightdata.com](https://brightdata.com/) (scraping browser, proxies)
+- **Clay University** - CRM enrichment, automated outbound, intent data modules
+- **Clay Help Center** - [docs.clay.com](https://docs.clay.com/en/)
+- **Clay Templates** - [clay.com/templates](https://www.clay.com/templates)
+- **Bright Data** - [brightdata.com](https://brightdata.com/) (scraping browser, proxies)
 
 ---
 

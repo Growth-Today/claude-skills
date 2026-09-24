@@ -10,7 +10,7 @@ metadata:
 
 # Import & Data Onboarding
 
-Bring external data (a purchased list, a legacy CRM export, an event list) into HubSpot cleanly — mapped correctly, deduplicated, properly associated, and validated — so an import improves the database instead of polluting it.
+Bring external data (a purchased list, a legacy CRM export, an event list) into HubSpot cleanly - mapped correctly, deduplicated, properly associated, and validated - so an import improves the database instead of polluting it.
 
 ## Why This Matters
 
@@ -25,7 +25,7 @@ A careless import is the fastest way to undo months of hygiene work: duplicate c
 
 ## Critical Concept: HubSpot Dedupes on Unique IDs
 
-On import, HubSpot matches existing records primarily by **unique identifiers** — Email (contacts), Record ID, and custom unique-value properties; Company name/domain matching is weaker. To update (not duplicate) existing records, your file must include the matching identifier column. No identifier = new records created = duplicates.
+On import, HubSpot matches existing records primarily by **unique identifiers** - Email (contacts), Record ID, and custom unique-value properties; Company name/domain matching is weaker. To update (not duplicate) existing records, your file must include the matching identifier column. No identifier = new records created = duplicates.
 
 ## Plan
 
@@ -41,7 +41,7 @@ Profile the source file before touching HubSpot:
 
 - Row count, duplicate rows within the file (by email/domain)
 - Blank required fields (email for contacts, name/domain for companies)
-- Format issues (emails, phones, dates, numbers) — clean these in the file first
+- Format issues (emails, phones, dates, numbers) - clean these in the file first
 - Does the file contain the **matching identifier** (email / record ID) for updates?
 
 ```python
@@ -65,7 +65,7 @@ Decide: create new only, update existing only, or both. Ensure the file includes
 
 ### Step 2: Map columns to governed properties
 
-In CRM > Import, map each column to the correct property (created in `property-architecture-governance`). Watch for: lifecycle stage columns (avoid clobbering — see forward-only rule in `fix-lifecycle-stages`), owner columns, and date/number formats matching the property type.
+In CRM > Import, map each column to the correct property (created in `property-architecture-governance`). Watch for: lifecycle stage columns (avoid clobbering - see forward-only rule in `fix-lifecycle-stages`), owner columns, and date/number formats matching the property type.
 
 ### Step 3: Import objects and associations in order
 
@@ -73,14 +73,14 @@ For multi-object imports use HubSpot's **"import multiple objects with associati
 
 ### Step 4: Small test batch first
 
-Import a 10–20 row sample first. Verify mapping, dedup behavior, and associations on those before running the full file. This catches mapping mistakes cheaply.
+Import a 10-20 row sample first. Verify mapping, dedup behavior, and associations on those before running the full file. This catches mapping mistakes cheaply.
 
 ## After State
 
 **Verification checklist:**
 
 1. Imported record count matches expected (new vs updated split as intended).
-2. No new duplicates created — spot-check via `merge-duplicate-companies` / contact dedup.
+2. No new duplicates created - spot-check via `merge-duplicate-companies` / contact dedup.
 3. Associations are correct (contacts linked to companies, deals to both).
 4. Mapped fields landed in the right properties with correct formats; lifecycle stages not clobbered.
 5. Rollback path is known: HubSpot import history lets you **delete records from a specific import**; use it if the import went wrong (within the retention window).
@@ -90,7 +90,7 @@ Import a 10–20 row sample first. Verify mapping, dedup behavior, and associati
 - **No identifier column = guaranteed duplicates.** Email (contacts) or Record ID is the anti-duplicate key on update.
 - **Clean the file first.** It's far cheaper to fix formats/dupes in the CSV than in HubSpot after import.
 - **Test batch always.** A 20-row dry run surfaces mapping errors before they hit 50,000 rows.
-- **Imports bypass validation & stage-gating.** The import process must carry the discipline — plus post-import checks.
+- **Imports bypass validation & stage-gating.** The import process must carry the discipline - plus post-import checks.
 - **Import history is your undo.** You can delete records from a specific import; know this before you run the big one.
 
 ---

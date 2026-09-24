@@ -10,11 +10,11 @@ metadata:
 
 # Data Formatting Automation
 
-Turn recurring formatting fixes into automation. Instead of repeatedly cleaning casing, whitespace, phone formats, and geo values by hand, build workflows that normalize data on create/update — so the database stays clean without manual passes.
+Turn recurring formatting fixes into automation. Instead of repeatedly cleaning casing, whitespace, phone formats, and geo values by hand, build workflows that normalize data on create/update - so the database stays clean without manual passes.
 
 ## Why This Matters
 
-Formatting issues (name in ALL CAPS, " john@x.com " with spaces, phone without country code, "usa" vs "United States") recur endlessly from forms, imports, and integrations. Fixing them once via a hygiene pass doesn't hold — new records reintroduce them. Format-fix workflows make hygiene self-healing and keep the Data Quality Command Center quiet.
+Formatting issues (name in ALL CAPS, " john@x.com " with spaces, phone without country code, "usa" vs "United States") recur endlessly from forms, imports, and integrations. Fixing them once via a hygiene pass doesn't hold - new records reintroduce them. Format-fix workflows make hygiene self-healing and keep the Data Quality Command Center quiet.
 
 ## Prerequisites
 
@@ -62,9 +62,9 @@ For normalizations beyond the built-in action (e.g. parsing/reformatting), use a
 ## Key Technical Learnings
 
 - **Validate at entry + format at write** = self-healing hygiene; you need both layers.
-- **Built-in "Format data" action covers most cases** — reserve custom code for the hard ones.
-- **Watch re-enrollment loops** — normalization writes can re-trigger; guard against it.
-- **Command Center is the feedback loop** — declining flags prove the automation works.
+- **Built-in "Format data" action covers most cases** - reserve custom code for the hard ones.
+- **Watch re-enrollment loops** - normalization writes can re-trigger; guard against it.
+- **Command Center is the feedback loop** - declining flags prove the automation works.
 - **Pairs with `property-validation-rules`, `standardize-geo-values`, `data-quality-command-center`.**
 
 ---

@@ -37,7 +37,7 @@ Worth a quick look?
 ```
 Subject: march madness
 
-{{firstName}}, quick question—
+{{firstName}}, quick question-
 
 Do you have your bracket filled out yet?
 
@@ -165,7 +165,7 @@ This is an automated follow-up because you didn't respond to my last email.
 
 Just kidding. I'm a real person.
 
-But seriously—did {{topic}} resonate at all?
+But seriously-did {{topic}} resonate at all?
 
 [Name]
 ```
@@ -308,7 +308,7 @@ Subject: RE: (same thread)
 [CTA]
 ```
 
-### Email 3 Template (Send 14 Days Later — New Subject)
+### Email 3 Template (Send 14 Days Later - New Subject)
 ```
 Subject: [New subject line]
 

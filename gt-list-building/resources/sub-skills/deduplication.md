@@ -3,14 +3,14 @@ name: deduplication
 description: Deduplicate prospect lists, merge data from multiple sources, and ensure data quality across columns. Use when user asks about "deduplicate", "duplicates", "remove duplicates", "merge sources", "merge columns", "multiple data sources", "data quality", "clean up list", "duplicate contacts", "Clay auto-dedupe". Do NOT use for email verification (use email-validation) or ICP scoring (use icp-definition).
 ---
 
-# Deduplicate — Sub-Skill
+# Deduplicate - Sub-Skill
 
 You help users remove duplicates, merge multi-source data cleanly, and maintain data quality across their lists. Always read the reference files before responding.
 
 ## References
 
-- Read `{SKILL_BASE}/resources/reference/data-quality-reference.md` — for verification context and data quality metrics.
-- Read `{SKILL_BASE}/resources/templates/beginner-workflow.md` — section: Step 3 (Merge Columns).
+- Read `{SKILL_BASE}/resources/reference/data-quality-reference.md` - for verification context and data quality metrics.
+- Read `{SKILL_BASE}/resources/templates/beginner-workflow.md` - section: Step 3 (Merge Columns).
 
 ## Why Deduplication Matters
 
@@ -61,15 +61,15 @@ Merge into: final_email, final_phone, final_title
 | Check | Action |
 |-------|--------|
 | Empty email rows | Remove or re-enrich |
-| Free email providers (gmail, yahoo) | Flag for B2B — usually personal |
+| Free email providers (gmail, yahoo) | Flag for B2B - usually personal |
 | Role-based emails (info@, sales@) | Remove for cold outreach |
 | Missing company domain | Enrich from LinkedIn URL |
 | Title mismatches across sources | Keep most recent, flag for review |
-| Same person, different companies | Check if job change — keep current |
+| Same person, different companies | Check if job change - keep current |
 
 ## Conditional Formulas (Credit-Saving)
 
-From the beginner workflow — always apply:
+From the beginner workflow - always apply:
 - **Only enrich if email is empty** (don't re-enrich what you have)
 - **Only verify if email exists** (don't waste credits on blank rows)
 - **Only run AI if verification = valid** (don't summarize companies for bad leads)
@@ -77,10 +77,10 @@ From the beginner workflow — always apply:
 ## Examples
 
 **Example 1:** "I imported leads from Apollo and Sales Nav, there are tons of duplicates"
--> In Clay: use email as primary match key to auto-dedup. For records without email, match on LinkedIn URL. Create merge columns: take Apollo email if verified, otherwise Sales Nav. For remaining duplicates, match on First + Last + Company Domain. Expected overlap: 30-60% between Apollo and Sales Nav — dedup should significantly reduce list size.
+-> In Clay: use email as primary match key to auto-dedup. For records without email, match on LinkedIn URL. Create merge columns: take Apollo email if verified, otherwise Sales Nav. For remaining duplicates, match on First + Last + Company Domain. Expected overlap: 30-60% between Apollo and Sales Nav - dedup should significantly reduce list size.
 
 **Example 2:** "How do I merge email columns from 3 different enrichment providers?"
--> Create a "Final Email" merge column in Clay. Priority order: (1) Findymail (find + verify combined), (2) Prospeo, (3) LeadMagic. Use Clay's merge function to cascade — take first non-empty value in priority order. Then run verification on the Final Email column. Conditional formula: only verify if Final Email is not empty.
+-> Create a "Final Email" merge column in Clay. Priority order: (1) Findymail (find + verify combined), (2) Prospeo, (3) LeadMagic. Use Clay's merge function to cascade - take first non-empty value in priority order. Then run verification on the Final Email column. Conditional formula: only verify if Final Email is not empty.
 
 **Example 3:** "I'm running multiple campaigns, how do I avoid contacting the same person twice?"
--> Build a master suppression list table in Clay or your CRM. After every campaign, export: all contacted emails, hard bounces, unsubscribes, and "not interested" replies. Before each new campaign, cross-reference your new list against the suppression list. Remove matches. Also dedup within the new campaign itself — match on email, then LinkedIn URL.
+-> Build a master suppression list table in Clay or your CRM. After every campaign, export: all contacted emails, hard bounces, unsubscribes, and "not interested" replies. Before each new campaign, cross-reference your new list against the suppression list. Remove matches. Also dedup within the new campaign itself - match on email, then LinkedIn URL.

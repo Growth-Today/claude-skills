@@ -53,11 +53,11 @@ Positive → bid too high (decrease)
 
 ## Key Principles
 
-- **Manual bidding by default** — provides cost control
-- **Start above minimum threshold** — gather data quickly
-- **Never use Reach/Brand Awareness objective** — CPM charges per display, inefficient for B2B
+- **Manual bidding by default** - provides cost control
+- **Start above minimum threshold** - gather data quickly
+- **Never use Reach/Brand Awareness objective** - CPM charges per display, inefficient for B2B
 - **Allow $100 spend per creative** before making shutdown decisions
-- **Measure quarterly, not weekly** — B2B cycles require 3-6 month windows
+- **Measure quarterly, not weekly** - B2B cycles require 3-6 month windows
 
 ## Examples
 
@@ -70,4 +70,4 @@ Example 2: "How should I allocate my $5K/month LinkedIn budget?"
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

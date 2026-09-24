@@ -16,9 +16,9 @@ Build a workflow that automatically enriches every new contact at creation time.
 
 Three HubSpot API limitations prevent full automation:
 
-1. **"Is unknown" branch conditions** are not supported programmatically — the Workflows API cannot create branches that check whether a property has never been set.
+1. **"Is unknown" branch conditions** are not supported programmatically - the Workflows API cannot create branches that check whether a property has never been set.
 2. **Copy from associated object** actions (e.g., copy company name from the associated company) are not available via API.
-3. **Workflows API v4 is beta** and unstable — production workflows should not depend on it.
+3. **Workflows API v4 is beta** and unstable - production workflows should not depend on it.
 
 You have three options for building this workflow, described below.
 
@@ -38,7 +38,7 @@ Create a contact-based workflow that triggers when a contact is created. It shou
 2. Copy the company name from the associated company to the contact's Company property
 3. Copy the industry from the associated company to the contact's Industry property
 4. Wait a short delay (3-10 minutes, recommended: 5)
-5. Check if the contact's Company property is still empty — if yes, send an internal notification to the admin saying the contact has no company association
+5. Check if the contact's Company property is still empty - if yes, send an internal notification to the admin saying the contact has no company association
 ```
 
 **CRITICAL WARNING: Breeze trigger limitations.** Breeze creates **event-based triggers (OR logic)** instead of **filter-based triggers (AND logic)**. After Breeze creates the workflow, you MUST manually verify and fix the trigger/enrollment conditions in the UI. Breeze is best used for creating the workflow skeleton (actions, branches, delays) -- the trigger conditions almost always need manual correction.
@@ -116,13 +116,13 @@ TRIGGER: Contact create date is known
 
 ## Step-by-Step Build Instructions
 
-### Stage 1: Before — Verify Prerequisites
+### Stage 1: Before - Verify Prerequisites
 
 1. Confirm company enrichment processes have run for existing data.
 2. Open HubSpot > Automation > Workflows > Create workflow.
 3. Select "Contact-based" workflow, start from scratch.
 
-### Stage 2: Execute — Build the Workflow
+### Stage 2: Execute - Build the Workflow
 
 1. **Set enrollment trigger:**
    - Property: "Create date" > "is known"
@@ -146,7 +146,7 @@ TRIGGER: Contact create date is known
 
 6. **Add if/then branch:**
    - Condition: Contact "Company" property is unknown
-   - YES branch: Add internal notification to CRM admin — "New contact {firstname} {lastname} ({email}) has no company association after enrichment attempt."
+   - YES branch: Add internal notification to CRM admin - "New contact {firstname} {lastname} ({email}) has no company association after enrichment attempt."
    - NO branch: No further action needed (contact is enriched).
 
 7. **Review settings:**
@@ -156,7 +156,7 @@ TRIGGER: Contact create date is known
 
 8. **Turn on the workflow.**
 
-### Stage 3: After — Verify
+### Stage 3: After - Verify
 
 1. Create a test contact manually. Confirm:
    - Lifecycle stage is set to "Lead"
@@ -169,7 +169,7 @@ TRIGGER: Contact create date is known
 ### Stage 4: Rollback
 
 1. Turn off the workflow in HubSpot > Automation > Workflows.
-2. Contacts already enriched retain their values — no destructive changes to undo.
+2. Contacts already enriched retain their values - no destructive changes to undo.
 3. If lifecycle stages were set incorrectly, use the Search API to find contacts created after the workflow activation date and reset as needed.
 
 ## Edge Cases

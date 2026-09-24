@@ -21,7 +21,7 @@ Remove departed employees from HubSpot and reassign their CRM records. Orphaned 
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Identify Non-Employee Owners
+### Stage 1: Before - Identify Non-Employee Owners
 
 ```python
 from hubspot import HubSpot
@@ -42,7 +42,7 @@ Cross-reference with your current employee list. Flag:
 
 For each flagged owner, count how many contacts, companies, and deals they own.
 
-### Stage 2: Execute — Reassign and Deactivate
+### Stage 2: Execute - Reassign and Deactivate
 
 1. **Reassign records** owned by non-employees:
    - Use the batch update API to reassign contacts to the appropriate active owner
@@ -53,9 +53,9 @@ For each flagged owner, count how many contacts, companies, and deals they own.
 
 3. **Run `/assign-unowned-contacts`** after reassignment to catch any records that ended up without an owner.
 
-### Stage 3: After — Verify
+### Stage 3: After - Verify
 
-1. Search for contacts where `hubspot_owner_id` matches any deactivated owner ID — count should be zero.
+1. Search for contacts where `hubspot_owner_id` matches any deactivated owner ID - count should be zero.
 2. Confirm all reassigned contacts have an active owner.
 3. Check that no workflows broke due to owner changes (some workflows may filter by specific owners).
 
@@ -67,7 +67,7 @@ For each flagged owner, count how many contacts, companies, and deals they own.
 
 ## Tips
 
-- Run this whenever an employee leaves the company — do not wait for quarterly cleanup.
+- Run this whenever an employee leaves the company - do not wait for quarterly cleanup.
 - Set up an offboarding checklist that includes HubSpot record reassignment.
 - Pairs with `/assign-unowned-contacts` for comprehensive ownership hygiene.
 

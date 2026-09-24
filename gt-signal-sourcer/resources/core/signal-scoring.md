@@ -27,7 +27,7 @@
 
 ### Step 2: Assign Weights
 
-#### Tier 1 — Hot Signals (50-100 points)
+#### Tier 1 - Hot Signals (50-100 points)
 
 | Signal | Points | Rationale |
 |--------|--------|-----------|
@@ -39,7 +39,7 @@
 | G2 comparison with competitors | 60 | Active vendor comparison |
 | 5+ website visits in 2 weeks | 50 | Sustained interest |
 
-#### Tier 2 — Warm Signals (20-49 points)
+#### Tier 2 - Warm Signals (20-49 points)
 
 | Signal | Points | Rationale |
 |--------|--------|-----------|
@@ -51,7 +51,7 @@
 | Webinar attendance | 25 | Category interest |
 | 3+ blog post visits | 20 | Early research |
 
-#### Tier 3 — Cool Signals (5-19 points)
+#### Tier 3 - Cool Signals (5-19 points)
 
 | Signal | Points | Rationale |
 |--------|--------|-----------|

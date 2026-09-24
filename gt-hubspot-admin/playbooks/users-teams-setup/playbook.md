@@ -25,7 +25,7 @@ Teams are the backbone of routing ("assign to the AE team"), reporting ("pipelin
 
 ## Critical Concept: Primary vs Additional Teams
 
-A user has **one primary team** (drives default ownership, routing, and reporting rollup) and can belong to **additional teams** (extra visibility). Hierarchical teams (Enterprise) let a manager's team roll up child teams' records. Assign the primary team deliberately — it's what routing and reporting use.
+A user has **one primary team** (drives default ownership, routing, and reporting rollup) and can belong to **additional teams** (extra visibility). Hierarchical teams (Enterprise) let a manager's team roll up child teams' records. Assign the primary team deliberately - it's what routing and reporting use.
 
 ## Plan
 
@@ -33,7 +33,7 @@ A user has **one primary team** (drives default ownership, routing, and reportin
 2. Design the team structure (mirror the real org: by function/region/segment)
 3. Create teams (parent/child if Enterprise)
 4. Assign users to primary + additional teams
-5. Verify coverage — no user without a team (after state)
+5. Verify coverage - no user without a team (after state)
 
 ## Before State
 
@@ -61,7 +61,7 @@ Record: total users, users with no primary team, and the current team list (Sett
 
 ### Step 1: Design the team structure
 
-Mirror how the business runs — common shapes: by function (Marketing, SDR, AE, CS), by region (EMEA, AMER), or by segment (SMB, Mid-Market, Enterprise). Keep it as flat as the reporting needs allow; every extra layer is maintenance.
+Mirror how the business runs - common shapes: by function (Marketing, SDR, AE, CS), by region (EMEA, AMER), or by segment (SMB, Mid-Market, Enterprise). Keep it as flat as the reporting needs allow; every extra layer is maintenance.
 
 ### Step 2: Create teams
 
@@ -87,11 +87,11 @@ Adopt a rule: no user is added without a primary team and a permission set (see 
 
 ## Key Technical Learnings
 
-- **Primary team is the load-bearing field** — it drives routing, default ownership, and reporting rollup. Additional teams are visibility only.
+- **Primary team is the load-bearing field** - it drives routing, default ownership, and reporting rollup. Additional teams are visibility only.
 - **Set up teams before adding users** so assignment happens at onboarding, not as a cleanup later.
-- **Hierarchy is Enterprise-only** — don't design rollups you can't enforce on your tier.
+- **Hierarchy is Enterprise-only** - don't design rollups you can't enforce on your tier.
 - **No user without a team.** A teamless user is invisible to team routing and misattributed in reports.
-- **Feeds routing + permissions + partitioning** — this playbook is the prerequisite for `lead-routing-round-robin`, `permission-sets-roles`, and `asset-partitioning`.
+- **Feeds routing + permissions + partitioning** - this playbook is the prerequisite for `lead-routing-round-robin`, `permission-sets-roles`, and `asset-partitioning`.
 
 ---
 

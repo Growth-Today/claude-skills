@@ -15,8 +15,8 @@ Build a two-tier sunset system that protects email deliverability while giving d
 ## Why Two Tiers Matter
 
 Suppressing contacts immediately after inactivity is aggressive and loses potential re-activations. A two-tier approach:
-- **Tier 1** (inactive for your sunset window — typically 120-270 days): Triggers a re-engagement campaign — a last chance to interact.
-- **Tier 2** (your re-engagement window after Tier 1 — typically 21-45 days — with still no engagement): Suppresses the contact from marketing emails.
+- **Tier 1** (inactive for your sunset window - typically 120-270 days): Triggers a re-engagement campaign - a last chance to interact.
+- **Tier 2** (your re-engagement window after Tier 1 - typically 21-45 days - with still no engagement): Suppresses the contact from marketing emails.
 
 This preserves deliverability scores while maximizing the recoverable audience.
 
@@ -24,7 +24,7 @@ This preserves deliverability scores while maximizing the recoverable audience.
 
 - HubSpot Marketing Professional or Enterprise plan
 - A re-engagement email campaign or sequence ready to send
-- A custom dropdown property to track suppression status (e.g., `engagement_flag` or `reengagement_status` — dropdown with values: "re-engagement sent", "suppressed")
+- A custom dropdown property to track suppression status (e.g., `engagement_flag` or `reengagement_status` - dropdown with values: "re-engagement sent", "suppressed")
 
 ## Workflow Design
 
@@ -117,7 +117,7 @@ To use this approach:
 
 ## Step-by-Step Build Instructions
 
-### Stage 1: Before — Prepare
+### Stage 1: Before - Prepare
 
 1. **Create your suppression status property** (e.g., `engagement_flag` or `reengagement_status`) if it does not exist:
    - Object: Contact
@@ -129,7 +129,7 @@ To use this approach:
 
 3. **Define "engagement"** for your branch condition. Recommended: email open OR email click OR form submission OR page view within your re-engagement window (typically 21-45 days).
 
-### Stage 2: Execute — Build the Workflow
+### Stage 2: Execute - Build the Workflow
 
 1. **Set enrollment trigger:**
    - `hs_email_last_open_date` is more than your sunset window (typically 120-270 days) ago OR is unknown
@@ -147,22 +147,22 @@ To use this approach:
 5. **If/then branch:**
    - Condition: `hs_email_last_open_date` is less than [re-engagement window] days ago OR `hs_email_last_click_date` is less than [re-engagement window] days ago
    - **YES (re-engaged):** Set your suppression status property to blank/unknown (clears flag, contact returns to normal)
-   - **NO (still disengaged):** Set your suppression status property = "suppressed" and set `hs_marketable_status` to non-marketing contact (via workflow action — this is the only way to set it, as the API is read-only)
+   - **NO (still disengaged):** Set your suppression status property = "suppressed" and set `hs_marketable_status` to non-marketing contact (via workflow action - this is the only way to set it, as the API is read-only)
 
 6. **Settings:**
    - Re-enrollment: OFF
-   - Goal: Contact opens or clicks any email (optional — exits workflow early)
+   - Goal: Contact opens or clicks any email (optional - exits workflow early)
 
 7. **Turn on the workflow.**
 
-### Stage 3: After — Verify
+### Stage 3: After - Verify
 
 1. Spot-check 10-20 contacts that entered the workflow. Confirm:
    - Re-engagement email was sent
    - After 30 days, disengaged contacts were suppressed
    - Re-engaged contacts had their suppression status property cleared
 2. Monitor deliverability metrics weekly for the first month.
-3. Track how many contacts re-engage vs. get suppressed — adjust the sunset window if needed.
+3. Track how many contacts re-engage vs. get suppressed - adjust the sunset window if needed.
 
 ### Stage 4: Rollback
 
@@ -174,7 +174,7 @@ To use this approach:
 
 - **Shorten the sunset window** (e.g., 90-120 days) for aggressive deliverability improvement.
 - **Lengthen the re-engagement window** (e.g., 45-60 days) if your email cadence is low.
-- **Exclude recent customers** — add a filter to skip contacts with lifecycle stage = Customer or with a closed-won deal in the last 12 months.
+- **Exclude recent customers** - add a filter to skip contacts with lifecycle stage = Customer or with a closed-won deal in the last 12 months.
 
 ---
 

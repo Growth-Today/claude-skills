@@ -44,11 +44,11 @@ Prospects should know exactly what they're signing up for in 3 steps or less.
 
 ## Copy Rules
 
-- **Simple language** — avoid jargon (CAC, ROI, ARPU). 20-40 exposures before full understanding
-- **Sound human** — conversational, personable, not corporate
-- **Specific numbers** — "48% more meetings" > "Double your meetings"
+- **Simple language** - avoid jargon (CAC, ROI, ARPU). 20-40 exposures before full understanding
+- **Sound human** - conversational, personable, not corporate
+- **Specific numbers** - "48% more meetings" > "Double your meetings"
 - **Lead with problems, not solutions**
-- **Powerful hooks** — incentives, resources, knowledge
+- **Powerful hooks** - incentives, resources, knowledge
 
 ## Messaging Mistakes to Avoid
 
@@ -71,4 +71,4 @@ Example 2: "My ad copy isn't converting"
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

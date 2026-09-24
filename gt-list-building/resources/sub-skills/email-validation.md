@@ -3,13 +3,13 @@ name: email-validation
 description: Verify and validate emails and phone numbers, manage bounce rates, and maintain list hygiene schedules. Use when user asks about "email verification", "validate emails", "bounce rate", "ZeroBounce", "NeverBounce", "list hygiene", "data decay", "deliverability", "catch-all emails", "spam traps", "re-verify", "phone validation". Do NOT use for deduplication (use deduplication) or finding new contacts (use contact-discovery).
 ---
 
-# Clean & Validate — Sub-Skill
+# Clean & Validate - Sub-Skill
 
 You help users verify email and phone data, manage bounce rates below 1%, and establish list hygiene schedules. Always read the reference file before responding.
 
 ## Reference
 
-Read `{SKILL_BASE}/resources/reference/data-quality-reference.md` — all sections.
+Read `{SKILL_BASE}/resources/reference/data-quality-reference.md` - all sections.
 
 ## Email Verification Tools
 
@@ -30,7 +30,7 @@ Read `{SKILL_BASE}/resources/reference/data-quality-reference.md` — all sectio
 | **Risky/Accept-All (Catch-all)** | Send cautiously or find alternative. Use ListKit/Listman.io for catch-all sub-verification |
 | **Unknown** | Treat as risky, do not send |
 | **Disposable** | Remove (temporary email) |
-| **Role-based** (info@, sales@) | Remove — higher spam complaint risk |
+| **Role-based** (info@, sales@) | Remove - higher spam complaint risk |
 | **Toxic/Spam Trap** | Remove immediately |
 
 ## Critical Metrics
@@ -43,10 +43,10 @@ Read `{SKILL_BASE}/resources/reference/data-quality-reference.md` — all sectio
 
 ## Data Decay Rates
 
-- **Email addresses** — 22-30% annual decay (~2.1%/month)
-- **Phone numbers** — 15-20% annual decay
-- **Job titles** — 30-35% annual decay
-- **Company employment** — 20-25% annual decay
+- **Email addresses** - 22-30% annual decay (~2.1%/month)
+- **Phone numbers** - 15-20% annual decay
+- **Job titles** - 30-35% annual decay
+- **Company employment** - 20-25% annual decay
 
 ## List Hygiene Schedule
 
@@ -74,7 +74,7 @@ Email Sent -> Delivered -> Track engagement
 ## Examples
 
 **Example 1:** "My bounce rate is 4%, what do I do?"
--> Pause all campaigns immediately (>3% = danger zone). Run full re-verification on entire list with ZeroBounce or NeverBounce. Remove all Invalid, Unknown, Disposable, Toxic. Sub-verify catch-all emails with ListKit. Check data sources — flag and potentially stop using the source with highest bounce rate. Target: get back below 1% before resuming.
+-> Pause all campaigns immediately (>3% = danger zone). Run full re-verification on entire list with ZeroBounce or NeverBounce. Remove all Invalid, Unknown, Disposable, Toxic. Sub-verify catch-all emails with ListKit. Check data sources - flag and potentially stop using the source with highest bounce rate. Target: get back below 1% before resuming.
 
 **Example 2:** "Which email verification tool should I use?"
 -> Volume-based: <1K/month = Findymail ($49, finds + verifies). 1K-10K/month = NeverBounce ($0.008/email, 99.9% guarantee). 10K+/month = MillionVerifier ($37/10K, best cost). EU-focused = Bouncer or Dropcontact (GDPR-compliant). Catch-all heavy = add ListKit/Listman.io as secondary verification.

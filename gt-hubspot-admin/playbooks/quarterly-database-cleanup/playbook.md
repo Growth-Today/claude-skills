@@ -16,7 +16,7 @@ A structured quarterly audit that catches data drift before it becomes a crisis.
 
 - HubSpot API token in `.env`
 - Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
-- Previous quarter's report (for trend comparison) — optional on first run
+- Previous quarter's report (for trend comparison) - optional on first run
 
 ## Audit Checklist
 
@@ -37,7 +37,7 @@ A structured quarterly audit that catches data drift before it becomes a crisis.
 
 ### 4. Scoring Calibration
 - Review lead score distribution (histogram)
-- Check MQL conversion rate — are high-scoring leads actually converting?
+- Check MQL conversion rate - are high-scoring leads actually converting?
 - Adjust scoring model if conversion rate is below 10% or above 50%
 
 ### 5. Engagement Metrics
@@ -52,12 +52,12 @@ A structured quarterly audit that catches data drift before it becomes a crisis.
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Gather Baselines
+### Stage 1: Before - Gather Baselines
 
 1. Locate the previous quarter's report (if it exists) in `reports/`.
 2. Run `/hubspot-audit` to get fresh numbers across all dimensions.
 
-### Stage 2: Execute — Deep Review
+### Stage 2: Execute - Deep Review
 
 For each checklist item above:
 
@@ -66,12 +66,12 @@ For each checklist item above:
 3. Flag any metric that worsened by more than 5 percentage points.
 4. Document specific contacts, lists, or properties that need action.
 
-### Stage 3: After — Generate Report
+### Stage 3: After - Generate Report
 
 Save a report to `reports/quarterly-cleanup-{YYYY-Q#}.md` with this structure:
 
 ```markdown
-# Quarterly Database Health Report — YYYY Q#
+# Quarterly Database Health Report - YYYY Q#
 
 ## Summary
 
@@ -95,7 +95,7 @@ Save a report to `reports/quarterly-cleanup-{YYYY-Q#}.md` with this structure:
 
 ### Stage 4: Rollback
 
-This is a read-only audit — no rollback needed. Action items from the report are executed separately through their respective skills.
+This is a read-only audit - no rollback needed. Action items from the report are executed separately through their respective skills.
 
 ## Scheduling
 

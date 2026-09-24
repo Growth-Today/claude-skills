@@ -12,7 +12,7 @@ Always benchmark against the specific ad format. The blended 0.44-0.65% sponsore
 | Document Ads | 0.43% median (6-7%+ achievable when strong) |
 | Thought Leader Ads organic predictor | 2-3% organic → top ad performer |
 
-### Per-format CTR / CPC (ZenABM 2026 — median across 161,256 ads / 211 companies)
+### Per-format CTR / CPC (ZenABM 2026 - median across 161,256 ads / 211 companies)
 
 | Format | Median CTR | Median CPC | LP clicks per $1K |
 |--------|-----------|-----------|-------------------|
@@ -66,7 +66,7 @@ Always benchmark against the specific ad format. The blended 0.44-0.65% sponsore
 
 ### Cost proof points (third-party, for client decks)
 
-- **Metadata experiment:** TLA CPC $4.14 vs $22.54 for brand-awareness image/video campaigns. Different dataset from ZenABM, same conclusion — TLAs are dramatically cheaper per click.
+- **Metadata experiment:** TLA CPC $4.14 vs $22.54 for brand-awareness image/video campaigns. Different dataset from ZenABM, same conclusion - TLAs are dramatically cheaper per click.
 - **Channel weight:** LinkedIn carries ~41% of total B2B ad budgets and drives ~80% of B2B social leads. CPCs run high ($6-10) and CPMs are higher than other paid social, but the targeting precision is why the economics still clear.
 - **Spend floor to learn:** most B2B teams need ~$3,000-5,000/month in spend to test multiple audiences and offers per funnel stage; expect a 2-3 month learning phase and 3-6 months to read true pipeline impact.
 
@@ -124,12 +124,12 @@ Always benchmark against the specific ad format. The blended 0.44-0.65% sponsore
 
 - **CAPI adoption:** ~75% of LinkedIn advertisers now run the Conversions API.
 - **CAPI lift:** ~20% lower CPA and ~31% more attributed conversions vs non-integrated accounts (some report ~39% lower cost per qualified lead).
-- **Engagement = revenue:** including paid *engagement* data (not just clicks) attributes ~7.7x more revenue — the data behind "CTR does not predict pipeline."
+- **Engagement = revenue:** including paid *engagement* data (not just clicks) attributes ~7.7x more revenue - the data behind "CTR does not predict pipeline."
 - **Accelerate (LinkedIn claim):** ~42% better cost-per-action than classic campaigns.
-- Judge upper/mid-funnel on company-level pipeline over a 90–365 day window (Revenue Attribution Report), not on CTR.
+- Judge upper/mid-funnel on company-level pipeline over a 90-365 day window (Revenue Attribution Report), not on CTR.
 
 *Source: Dreamdata 2026 LinkedIn Ads B2B Benchmarks; LinkedIn Marketing Solutions.*
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

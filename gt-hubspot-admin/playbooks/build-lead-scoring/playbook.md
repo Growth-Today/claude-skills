@@ -65,7 +65,7 @@ Before executing, collect the following information from the user:
 
 1. Navigate to **Marketing > Lead Scoring**
 2. Note any existing scores (you have a limit of 5 total)
-3. Review existing score criteria — decide whether to update or replace
+3. Review existing score criteria - decide whether to update or replace
 4. Check that ICP Tier property is fully populated on companies (run create-icp-tiers after state check)
 
 ## Execute

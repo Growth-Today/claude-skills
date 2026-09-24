@@ -176,8 +176,8 @@ print(f"Unowned marketing contacts: {result.total} (should be 0)")
 **Verification checklist:**
 
 1. The unowned marketing contacts list shows 0 contacts
-2. Re-run the before-state script — count should be 0
-3. Spot-check 5-10 contacts that were previously unowned — confirm they show the assigned owner
+2. Re-run the before-state script - count should be 0
+3. Spot-check 5-10 contacts that were previously unowned - confirm they show the assigned owner
 4. Check owner-based dashboards/reports to confirm the previously invisible contacts now appear
 
 ## Key Technical Learnings

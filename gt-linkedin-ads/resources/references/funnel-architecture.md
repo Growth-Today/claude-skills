@@ -8,7 +8,7 @@
 - **Ad formats**: Video, Single Image, Thought Leader Ads, Document Ads
 - **KPIs**: Impressions, engagement rate, cost per engagement, video views
 - **Budget**: ~50% of total
-- **Key**: "You're showing up unannounced in someone's feed—simply pique curiosity"
+- **Key**: "You're showing up unannounced in someone's feed-simply pique curiosity"
 
 ### Middle of Funnel (Warm)
 - **Objective**: Trust-building, consideration
@@ -74,4 +74,4 @@ Meaningful tests:
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

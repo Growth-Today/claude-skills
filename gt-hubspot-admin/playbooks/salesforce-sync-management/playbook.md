@@ -1,6 +1,6 @@
 ---
 name: salesforce-sync-management
-description: "Manage the HubSpot–Salesforce integration safely: audit synced objects and errors, configure sync rules and field mappings, avoid the duplicate trap, and coordinate changes so the two systems don't corrupt each other."
+description: "Manage the HubSpot-Salesforce integration safely: audit synced objects and errors, configure sync rules and field mappings, avoid the duplicate trap, and coordinate changes so the two systems don't corrupt each other."
 license: MIT
 metadata:
   author: growthtoday
@@ -10,11 +10,11 @@ metadata:
 
 # Salesforce Sync Management
 
-Keep the HubSpot–Salesforce integration healthy: understand what syncs which direction, audit sync errors, configure field mappings and sync rules, and — above all — coordinate changes so a well-meaning edit in one system doesn't corrupt the other.
+Keep the HubSpot-Salesforce integration healthy: understand what syncs which direction, audit sync errors, configure field mappings and sync rules, and - above all - coordinate changes so a well-meaning edit in one system doesn't corrupt the other.
 
 ## Why This Matters
 
-A HubSpot–Salesforce sync is powerful and fragile. Bad field mappings, uncoordinated stage/property changes, and weak dedup rules produce duplicate records, overwritten data, and endless sync errors. Several other playbooks (cleanup-deals, fix-lifecycle-stages, property changes) explicitly warn "coordinate with the Salesforce admin" — this playbook is that coordination discipline.
+A HubSpot-Salesforce sync is powerful and fragile. Bad field mappings, uncoordinated stage/property changes, and weak dedup rules produce duplicate records, overwritten data, and endless sync errors. Several other playbooks (cleanup-deals, fix-lifecycle-stages, property changes) explicitly warn "coordinate with the Salesforce admin" - this playbook is that coordination discipline.
 
 ## Prerequisites
 
@@ -24,11 +24,11 @@ A HubSpot–Salesforce sync is powerful and fragile. Bad field mappings, uncoord
 
 ## Critical Concept: Direction + Ownership per Field
 
-For every synced object and field, know the **sync direction** (HS→SF, SF→HS, or bidirectional) and which system is the **source of truth**. Bidirectional sync on a field with two sources of truth causes overwrite wars. Also: HubSpot matches to Salesforce records to avoid duplicates — weak matching creates the classic duplicate trap. Never restructure synced pipelines/properties unilaterally.
+For every synced object and field, know the **sync direction** (HS→SF, SF→HS, or bidirectional) and which system is the **source of truth**. Bidirectional sync on a field with two sources of truth causes overwrite wars. Also: HubSpot matches to Salesforce records to avoid duplicates - weak matching creates the classic duplicate trap. Never restructure synced pipelines/properties unilaterally.
 
 ## Plan
 
-1. Audit synced objects, field mappings, and current sync errors (before state — `scripts/before.py`)
+1. Audit synced objects, field mappings, and current sync errors (before state - `scripts/before.py`)
 2. Confirm direction + source-of-truth per synced field
 3. Fix mappings, tighten dedup/matching, resolve errors
 4. Establish a change-coordination rule with the SF admin (after state)
@@ -51,7 +51,7 @@ Document each synced object + field: direction and source of truth. Flag any bid
 Correct wrong field mappings and mismatched types. Tighten record matching (email/domain) to avoid the duplicate trap. Set inclusion lists so only intended records sync.
 
 ### Step 3: Resolve sync errors
-Work the sync error queue (validation failures, required-field mismatches, picklist mismatches). Many trace back to a HubSpot value that doesn't fit a Salesforce validation rule — fix at the source.
+Work the sync error queue (validation failures, required-field mismatches, picklist mismatches). Many trace back to a HubSpot value that doesn't fit a Salesforce validation rule - fix at the source.
 
 ### Step 4: Coordination rule
 Adopt: no changes to synced pipelines, properties, or picklists without notifying the SF admin. This is the discipline that protects both systems (referenced by `cleanup-deals`, `fix-lifecycle-stages`, `deal-pipeline-architecture`).
@@ -68,10 +68,10 @@ Adopt: no changes to synced pipelines, properties, or picklists without notifyin
 
 ## Key Technical Learnings
 
-- **Direction + source of truth per field** is the whole game — bidirectional with two owners = overwrite wars.
-- **Weak matching = the duplicate trap** — tighten email/domain matching.
-- **Sync errors usually start with a value that fails a Salesforce rule** — fix at the source.
-- **Never restructure synced objects unilaterally** — coordinate; other playbooks depend on this rule.
+- **Direction + source of truth per field** is the whole game - bidirectional with two owners = overwrite wars.
+- **Weak matching = the duplicate trap** - tighten email/domain matching.
+- **Sync errors usually start with a value that fails a Salesforce rule** - fix at the source.
+- **Never restructure synced objects unilaterally** - coordinate; other playbooks depend on this rule.
 - **This is the coordination backbone** referenced across the deal/lifecycle playbooks.
 
 ---

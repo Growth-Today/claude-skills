@@ -1,6 +1,6 @@
 # PPC Math & Forecasting (B2B)
 
-Pure-math helpers — no API needed, works with numbers the user provides. Frame everything to **B2B economics** (close rate, ACV, pipeline), not e-commerce ROAS.
+Pure-math helpers - no API needed, works with numbers the user provides. Frame everything to **B2B economics** (close rate, ACV, pipeline), not e-commerce ROAS.
 
 ---
 
@@ -8,7 +8,7 @@ Pure-math helpers — no API needed, works with numbers the user provides. Frame
 - **CPL** = Cost ÷ Leads
 - **Cost per SQL** = Cost ÷ SQLs  (the real efficiency metric)
 - **Cost per Opp / per Closed-Won** = Cost ÷ (Opps | Won)
-- **Lead→SQL rate**, **SQL→Won rate** — pull from the CRM; these drive everything below.
+- **Lead→SQL rate**, **SQL→Won rate** - pull from the CRM; these drive everything below.
 
 ## Break-even math (what you can afford to pay)
 ```
@@ -24,10 +24,10 @@ Assign each CRM stage a value = **expected pipeline value** (deal value × stage
 ## Forecasting & opportunity
 - **Budget → conversions:** Budget ÷ CPA = expected conversions (hold CVR/CPC constant; state assumptions).
 - **Impression-share opportunity:** extra clicks ≈ (impressions ÷ current IS) × (target IS − current IS) × CTR. Split lost-IS into budget vs rank before promising lift.
-- **Smart Bidding data-floor:** ~30+ conversions / 30 days per campaign (or portfolio) for stable learning — below that, consolidate or use a higher-volume signal (micro-conversion / Journey-Aware Bidding).
+- **Smart Bidding data-floor:** ~30+ conversions / 30 days per campaign (or portfolio) for stable learning - below that, consolidate or use a higher-volume signal (micro-conversion / Journey-Aware Bidding).
 
 **Discipline:** every projection states its assumptions and flags they're estimates, not guarantees. Never present a forecast as a promise.
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

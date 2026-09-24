@@ -1,6 +1,6 @@
-# Expert Tips — Eric Noski
+# Expert Tips - Eric Noski
 
-*Source: Eric Noski — Clay's earliest employee, runs the largest Clay usage (37M rows/week, 6M+ emails/month)*
+*Source: Eric Noski - Clay's earliest employee, runs the largest Clay usage (37M rows/week, 6M+ emails/month)*
 
 ## The 6 Rules for Clay Tables
 
@@ -18,7 +18,7 @@
 - To your CRM or a platform like Supabase
 - Supabase: $30/month for 11.4M+ records
 - Clay doesn't save your data like Apollo/ZoomInfo
-- You will reuse this data — save it
+- You will reuse this data - save it
 
 ### Rule 4: Use Scheduled Sources for Evergreen Campaigns
 - Put your entire TAM in HubSpot ($15/month)
@@ -56,7 +56,7 @@
 - Use AI #3: What products do they sell?
 - Use AI #4: What industry?
 
-AI "farts" if you give it too many tasks. GPT-4 mini costs almost nothing — separate the tasks.
+AI "farts" if you give it too many tasks. GPT-4 mini costs almost nothing - separate the tasks.
 
 ### Rule 3: Safeguards When Not Enough Context
 - Use a keyword like **"purple"** when nothing is found
@@ -87,7 +87,7 @@ AI "farts" if you give it too many tasks. GPT-4 mini costs almost nothing — se
 - 20% = putting integrations together
 - **80% = adjusting the AI**
 - Most fail because they think the opposite
-- Review constantly — as soon as an output doesn't please → adjust the prompt
+- Review constantly - as soon as an output doesn't please → adjust the prompt
 
 ### Rule 8: Use GPT-4 Mini for EVERYTHING
 - Advanced models are benchmarked for solving calculus

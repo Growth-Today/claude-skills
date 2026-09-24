@@ -1,19 +1,19 @@
-# Changelog — gt-linkedin-ads
+# Changelog - gt-linkedin-ads
 
 All notable changes to this skill. Newest first.
 
 ---
 
-## v2.3.0 — 2026-08-31
+## v2.3.0 - 2026-08-31
 
-**Summary:** New **reporting** sub-skill — the recurring-report layer the skill was missing. Audit answers "what is broken once"; reporting answers "what happened this period, against what was expected, and what changes next." No existing content removed.
+**Summary:** New **reporting** sub-skill - the recurring-report layer the skill was missing. Audit answers "what is broken once"; reporting answers "what happened this period, against what was expected, and what changes next." No existing content removed.
 
 **Added:**
 - `.claude/skills/reporting/gt-SKILL.md`: weekly delivery checks, monthly performance reports, quarterly pipeline reads. Data-source order, refusal to fabricate missing numbers, 8-section output, routing boundaries against measurement / audit / optimization / bidding.
 - `resources/references/reporting-playbook.md`: reporting contract, metric definitions (incl. total clicks vs landing-page clicks), grading rules, per-cadence claim limits, report structure, reporting traps, automation notes.
 
 **New rules introduced:**
-- **Effective CPC-to-landing-page** (spend / LP clicks) is the grading metric for link-driving formats, not raw CPC. Derived from the LP-clicks-per-$1K figures already in `benchmarks.md`: TLA ~$3.06, single image ~$14.08, video ~$16.13. Raw CPC flatters formats with high social-action volume — TLAs most of all.
+- **Effective CPC-to-landing-page** (spend / LP clicks) is the grading metric for link-driving formats, not raw CPC. Derived from the LP-clicks-per-$1K figures already in `benchmarks.md`: TLA ~$3.06, single image ~$14.08, video ~$16.13. Raw CPC flatters formats with high social-action volume - TLAs most of all.
 - **Cadence claim limits:** weekly = delivery hygiene only; monthly = format/creative/audience/CPL; pipeline verdicts are quarterly only. A 30-day pipeline read in a 3-6 month cycle is not a finding.
 - **Minimum sample before reading a change:** ~$100/creative, ~1,000 impressions/ad set, 7 days outside learning phase.
 - **TLA follow/save data:** Ads Manager under-reports; the creator's native post analytics is the control source. Where they disagree, name both.
@@ -21,62 +21,62 @@ All notable changes to this skill. Newest first.
 **Changed:**
 - `SKILL.md`: version v2.2.2 → v2.3.0, reporting added to the sub-skill routing table, shared reference table, and routing rules (reporting = recurring for an audience; audit = one-off with a fix list).
 
-**Platform orientation:** ZenABM MCP (`https://app.zenabm.com/api/mcp`) is named as the preferred data source, with the Campaign Manager CSV export as the standalone fallback. Deliberate change of position — the skill is platform-oriented on the ABM data layer, not platform-locked: every section works from a plain CSV export. Benchmarks remain the ZenABM 2026 dataset, as since v1.1.
+**Platform orientation:** ZenABM MCP (`https://app.zenabm.com/api/mcp`) is named as the preferred data source, with the Campaign Manager CSV export as the standalone fallback. Deliberate change of position - the skill is platform-oriented on the ABM data layer, not platform-locked: every section works from a plain CSV export. Benchmarks remain the ZenABM 2026 dataset, as since v1.1.
 
-**Sources:** existing `benchmarks.md` (ZenABM 2026, 161,256 ads / 211 companies) and LinkedIn Campaign Manager reporting field definitions — accessed 2026-08-31.
+**Sources:** existing `benchmarks.md` (ZenABM 2026, 161,256 ads / 211 companies) and LinkedIn Campaign Manager reporting field definitions - accessed 2026-08-31.
 
 ---
 
-## v2.2.2 — 2026-07-22
+## v2.2.2 - 2026-07-22
 
-**Summary:** QA sweep — removed competitor-agency references and traffic-driving blog links from the knowledge base. No strategy content changed.
+**Summary:** QA sweep - removed competitor-agency references and traffic-driving blog links from the knowledge base. No strategy content changed.
 
 **Changed:**
-- `resources/linkedin-ads-knowledge-base.md`: removed a header that credited competitor agencies + their blog URLs, and deleted the "Section 10 — Sources & References" list of competitor-agency blog articles and courses. Replaced the header with a neutral GT + official-LinkedIn-docs provenance line.
+- `resources/linkedin-ads-knowledge-base.md`: removed a header that credited competitor agencies + their blog URLs, and deleted the "Section 10 - Sources & References" list of competitor-agency blog articles and courses. Replaced the header with a neutral GT + official-LinkedIn-docs provenance line.
 - `CHANGELOG.md`: trimmed a bare vendor blog URL to the report name (ZenABM kept as a named SaaS source, no link).
 
 **Policy:** name only SaaS products / official docs, never competitor agencies; never link out to competitor sites. Now 0 agency references and 0 external non-GT/official links.
 
 ---
 
-## v2.2.1 — 2026-07-22
+## v2.2.1 - 2026-07-22
 
-**Summary:** Housekeeping — removed named third-party agencies from two reference "Sources" lines (`predictive-audiences.md`, `accelerate-ai-campaigns.md`), leaving official docs + neutral "public best-practice guidance." Consistent with the competitor policy (name only SaaS products, never outside agencies). No strategy content changed.
+**Summary:** Housekeeping - removed named third-party agencies from two reference "Sources" lines (`predictive-audiences.md`, `accelerate-ai-campaigns.md`), leaving official docs + neutral "public best-practice guidance." Consistent with the competitor policy (name only SaaS products, never outside agencies). No strategy content changed.
 
 ---
 
-## v2.2.0 — 2026-07-21
+## v2.2.0 - 2026-07-21
 
-**Summary:** P2 coverage additions from the review — rigorous measurement, EU messaging compliance, and sharper ABM routing. No restructure.
+**Summary:** P2 coverage additions from the review - rigorous measurement, EU messaging compliance, and sharper ABM routing. No restructure.
 
 **Added / expanded:**
-- `measurement-attribution.md`: **Incrementality & Lift Testing** (native Brand Lift with its budget minimums + settle window; DIY conversion incrementality via holdout / geo-lift — LinkedIn has no robust self-serve conversion-lift) and **View-Through Conversions** (window guidance, report VTC separately from CTC, weight below clicks, sanity-check with incrementality). This is the causal answer to "CTR ≠ pipeline."
-- `ad-formats.md`: **EU Sponsored-Messaging compliance** on Conversation Ads and Message Ads — blocked for EU members from Dec 2021 (ECJ/ePrivacy), consent-gated for opted-in EU members since ~Oct 2024; don't build an EU motion on these formats.
+- `measurement-attribution.md`: **Incrementality & Lift Testing** (native Brand Lift with its budget minimums + settle window; DIY conversion incrementality via holdout / geo-lift - LinkedIn has no robust self-serve conversion-lift) and **View-Through Conversions** (window guidance, report VTC separately from CTC, weight below clicks, sanity-check with incrementality). This is the causal answer to "CTR ≠ pipeline."
+- `ad-formats.md`: **EU Sponsored-Messaging compliance** on Conversation Ads and Message Ads - blocked for EU members from Dec 2021 (ECJ/ePrivacy), consent-gated for opted-in EU members since ~Oct 2024; don't build an EU motion on these formats.
 
 **Changed:**
 - Tightened `abm-strategy` vs `ads-outbound-sync` descriptions + master routing to remove overlap: **abm-strategy = ABM planning** (structure, budget, formats, benchmarks); **ads-outbound-sync = ad-engagement → sales signals** (intent, BDR alerts, ZenABM/Fibbler sync). Clear "Do NOT use … (use the other)" boundaries.
 
-**Note:** Conversation/Message Ads were already documented in `ad-formats.md` — v2.2.0 only adds the EU-compliance nuance (no duplicate format section).
+**Note:** Conversation/Message Ads were already documented in `ad-formats.md` - v2.2.0 only adds the EU-compliance nuance (no duplicate format section).
 
-**Sources:** LinkedIn Marketing Solutions Help (Brand Lift, Sponsored Messaging EU targeting), plus public incrementality-testing best-practice guidance — accessed 2026-07-21.
+**Sources:** LinkedIn Marketing Solutions Help (Brand Lift, Sponsored Messaging EU targeting), plus public incrementality-testing best-practice guidance - accessed 2026-07-21.
 
 ---
 
-## v2.1.0 — 2026-07-21
+## v2.1.0 - 2026-07-21
 
-**Summary:** P1 coverage additions from the critical review — the CRM-attribution loop and a structured account audit. Sub-skills now number 10.
+**Summary:** P1 coverage additions from the critical review - the CRM-attribution loop and a structured account audit. Sub-skills now number 10.
 
 **Added:**
-- `resources/references/crm-attribution.md` — HubSpot 3-layer connection (native + CAPI + Insight Tag) with the offline-conversion loop on lifecycle-stage changes (~+30–50% SQL at same spend), Salesforce offline conversions + Campaign Influence for account-level attribution, the B2B U-shaped model default, and a 7–14d setup / 4–8wk learning timeline. Cross-linked to **gt-hubspot-admin** and **gt-salesforce-admin** for the CRM-side build. Wired into the `measurement` sub-skill.
-- `.claude/skills/audit/gt-SKILL.md` + `resources/references/audit-checklist.md` — a GT-native LinkedIn Ads **audit** sub-skill with a 28-control catalog across tracking, targeting, creative, bidding/budget/structure, and outcomes/governance, built on evidence discipline (mark n/a/unknown; benchmarks are conditional; betas aren't failures). Brings triad parity with `gt-meta-ads` (which already had an audit). Audit-catalog pattern is common in paid-media audits (incl. MIT-licensed AgriciDaniel/claude-ads); implemented GT-native.
+- `resources/references/crm-attribution.md` - HubSpot 3-layer connection (native + CAPI + Insight Tag) with the offline-conversion loop on lifecycle-stage changes (~+30-50% SQL at same spend), Salesforce offline conversions + Campaign Influence for account-level attribution, the B2B U-shaped model default, and a 7-14d setup / 4-8wk learning timeline. Cross-linked to **gt-hubspot-admin** and **gt-salesforce-admin** for the CRM-side build. Wired into the `measurement` sub-skill.
+- `.claude/skills/audit/gt-SKILL.md` + `resources/references/audit-checklist.md` - a GT-native LinkedIn Ads **audit** sub-skill with a 28-control catalog across tracking, targeting, creative, bidding/budget/structure, and outcomes/governance, built on evidence discipline (mark n/a/unknown; benchmarks are conditional; betas aren't failures). Brings triad parity with `gt-meta-ads` (which already had an audit). Audit-catalog pattern is common in paid-media audits (incl. MIT-licensed AgriciDaniel/claude-ads); implemented GT-native.
 
-**Sources:** LinkedIn Marketing Solutions Help and HubSpot Knowledge Base (official docs), plus public B2B attribution best-practice guidance — accessed 2026-07-21.
+**Sources:** LinkedIn Marketing Solutions Help and HubSpot Knowledge Base (official docs), plus public B2B attribution best-practice guidance - accessed 2026-07-21.
 
 ---
 
-## v2.0.1 — 2026-07-21
+## v2.0.1 - 2026-07-21
 
-**Summary:** Removed all references to competitor services and re-anchored ABM benchmarks to the authoritative source. No GT strategy lost — the ABM guides were rewritten GT-native.
+**Summary:** Removed all references to competitor services and re-anchored ABM benchmarks to the authoritative source. No GT strategy lost - the ABM guides were rewritten GT-native.
 
 **Changed:**
 - Rewrote `resources/references/abm/linkedin-ads-abm-guide.md` GT-native: dropped every reference to a competitor agency, its credit block, and its operational tables (team-requirements/FTE plan, tool-stack cost table). Benchmarks now point to `benchmarks.md` (ZenABM 2026) with an evidence-discipline caveat (check objective/geo/methodology/sample/maturity before applying any figure).
@@ -87,9 +87,9 @@ All notable changes to this skill. Newest first.
 
 ---
 
-## v2.0.0 — 2026-07-21
+## v2.0.0 - 2026-07-21
 
-**Summary:** MAJOR restructure into a master router + 9 sub-skills (multi-sub-skill layout), matching the pattern used by gt-linkedin-content and the CRM admin skills. Progressive disclosure — Claude loads only the relevant domain. No strategy content removed.
+**Summary:** MAJOR restructure into a master router + 9 sub-skills (multi-sub-skill layout), matching the pattern used by gt-linkedin-content and the CRM admin skills. Progressive disclosure - Claude loads only the relevant domain. No strategy content removed.
 
 **Changed:**
 - `SKILL.md` is now a **master router**: dynamic `SKILL_BASE` Setup block (Glob for `**/gt-linkedin-ads/SKILL.md`), an intent → sub-skill routing table, a shared-reference table, and the cross-cutting Key Benchmarks block.
@@ -98,30 +98,30 @@ All notable changes to this skill. Newest first.
 - Enriched routing descriptions with the v1.3.0 topics (Predictive Audiences / career signals → audiences; Accelerate → campaign-setup; CAPI + Revenue Attribution Report → measurement).
 - Corrected the master "Do NOT use" cross-links to `gt-linkedin-content` and `gt-linkedin-outbound`.
 
-**Shared resources** (`resources/references/`, `resources/references/abm/`, knowledge base) stay at the top level — script/relative paths and requirements unaffected.
+**Shared resources** (`resources/references/`, `resources/references/abm/`, knowledge base) stay at the top level - script/relative paths and requirements unaffected.
 
 **Validation:** all 9 sub-skills referenced exactly once; every `{SKILL_BASE}` reference resolves; all descriptions ≤1024; footers on every file; `.claude/` present in git; no stray files.
 
 ---
 
-## v1.3.0 — 2026-07-21
+## v1.3.0 - 2026-07-21
 
-**Summary:** P1 expansion from a July 2026 platform-research pass. Added the AI-era LinkedIn Ads capabilities the skill was missing (audiences, campaign automation, and attribution), grounded in current LinkedIn Marketing Solutions changes and 2026 benchmark data. Additive only — no existing strategy removed.
+**Summary:** P1 expansion from a July 2026 platform-research pass. Added the AI-era LinkedIn Ads capabilities the skill was missing (audiences, campaign automation, and attribution), grounded in current LinkedIn Marketing Solutions changes and 2026 benchmark data. Additive only - no existing strategy removed.
 
 **Added:**
-- `resources/references/predictive-audiences.md` — the Feb-2024 lookalike sunset, Predictive Audiences (30/account cap, 4-day processing, seed-quality rules), Audience Expansion vs predictive, and Career Journey / career-signal targeting.
-- `resources/references/accelerate-ai-campaigns.md` — Accelerate AI campaign mode (GA for lead gen + website visits; video/document support; +42% CPA vendor claim), when to keep manual control (ABM, tight ICP), AI Ad Variants / Shutterstock creative with human-review guardrails, and real-time CRM data in Campaign Manager (June 2025).
+- `resources/references/predictive-audiences.md` - the Feb-2024 lookalike sunset, Predictive Audiences (30/account cap, 4-day processing, seed-quality rules), Audience Expansion vs predictive, and Career Journey / career-signal targeting.
+- `resources/references/accelerate-ai-campaigns.md` - Accelerate AI campaign mode (GA for lead gen + website visits; video/document support; +42% CPA vendor claim), when to keep manual control (ABM, tight ICP), AI Ad Variants / Shutterstock creative with human-review guardrails, and real-time CRM data in Campaign Manager (June 2025).
 
 **Expanded:**
-- `resources/references/measurement-attribution.md` — new "2026 Deep Dive" section on the Conversions API (server-side, offline conversions, Salesforce/GTM/Tealium/Adobe; ~20% lower CPA / ~31% more attributed conversions; ~75% adoption) and the Revenue Attribution Report (CRM-connected, company-level, up to 365-day windows; engagement attributes ~7.7x more revenue).
-- `resources/references/benchmarks.md` — 2026 Dreamdata attribution benchmark block.
+- `resources/references/measurement-attribution.md` - new "2026 Deep Dive" section on the Conversions API (server-side, offline conversions, Salesforce/GTM/Tealium/Adobe; ~20% lower CPA / ~31% more attributed conversions; ~75% adoption) and the Revenue Attribution Report (CRM-connected, company-level, up to 365-day windows; engagement attributes ~7.7x more revenue).
+- `resources/references/benchmarks.md` - 2026 Dreamdata attribution benchmark block.
 - Sub-skills `audiences`, `campaign-setup`, `creative` now route to the new references.
 
-**Sources:** LinkedIn Marketing Solutions Help (official docs), Dreamdata 2026 LinkedIn Ads B2B Benchmarks, and B2B marketing press (AdExchanger, Search Engine Land, Social Media Today) — accessed 2026-07-21.
+**Sources:** LinkedIn Marketing Solutions Help (official docs), Dreamdata 2026 LinkedIn Ads B2B Benchmarks, and B2B marketing press (AdExchanger, Search Engine Land, Social Media Today) - accessed 2026-07-21.
 
 ---
 
-## v1.2.1 — 2026-07-21
+## v1.2.1 - 2026-07-21
 
 **Summary:** Repo reconciliation + attribution normalization. Brought the public repo copy in line with the org-deployed v1.2 and standardized every footer to the canonical Growth Today format. No strategy content changed.
 
@@ -133,9 +133,9 @@ All notable changes to this skill. Newest first.
 
 ---
 
-## v1.2 — 2026-06-25
+## v1.2 - 2026-06-25
 
-**Summary:** Added new tactical content from a 2026 research pass (thought leadership ad guides, Metadata, and leading LinkedIn-ads agencies) and added a Growth Today attribution footer to every file. No content removed — only additions, plus the description and footer changes.
+**Summary:** Added new tactical content from a 2026 research pass (thought leadership ad guides, Metadata, and leading LinkedIn-ads agencies) and added a Growth Today attribution footer to every file. No content removed - only additions, plus the description and footer changes.
 
 **Why:** The v1.1 refresh fixed the TLA *benchmarks* but the skill still treated TLAs as single-post tests, had no consolidated "default settings waste money" checklist, and gave no economic-fit rule for when TLAs are worth running. The research surfaced three repeatable, non-obvious tactics worth encoding, plus a stronger third-party cost proof point (Metadata) and updated 2026 cost figures.
 
@@ -175,9 +175,9 @@ All notable changes to this skill. Newest first.
 
 ---
 
-## v1.1 — 2026-06-11
+## v1.1 - 2026-06-11
 
-**Summary:** Benchmark refresh to the ZenABM 2026 dataset (161,256 ads across 211 companies) and expanded Thought Leader Ads creative guidance. No content was removed — only outdated benchmark figures were updated and new data was added alongside the existing structure.
+**Summary:** Benchmark refresh to the ZenABM 2026 dataset (161,256 ads across 211 companies) and expanded Thought Leader Ads creative guidance. No content was removed - only outdated benchmark figures were updated and new data was added alongside the existing structure.
 
 **Why:** The skill carried the old LinkedIn-reported "63% higher CTR" figure for Thought Leader Ads. The ZenABM 2026 report gives far more specific, format-level data and surfaces an important counter-insight (CTR does not predict pipeline). Keeping the skill on the old number risked steering ad strategy by click volume instead of pipeline.
 
@@ -201,7 +201,7 @@ All notable changes to this skill. Newest first.
    - Added a CPL-by-ICP-tier table (SMB $80-200 / mid $150-450 / enterprise $400-800).
 
 4. **resources/references/ad-formats.md**
-   - Thought Leader Ads "Stats" line updated from "63% higher CTR on mid-funnel content" to the ZenABM 2026 figures + CTR-vs-pipeline caveat. (Caught in QA — kept consistent with the rest of the skill.)
+   - Thought Leader Ads "Stats" line updated from "63% higher CTR on mid-funnel content" to the ZenABM 2026 figures + CTR-vs-pipeline caveat. (Caught in QA - kept consistent with the rest of the skill.)
 
 5. **resources/linkedin-ads-knowledge-base.md**
    - Same TLA "Stats" update as above, so the knowledge base doesn't contradict the sub-skills. (Caught in QA.)
@@ -212,10 +212,10 @@ All notable changes to this skill. Newest first.
 
 ---
 
-## v1 — baseline
+## v1 - baseline
 
 Initial GT LinkedIn Ads skill: orchestrator + 9 sub-skills (audiences, ads-outbound-sync, bidding, campaign-setup, copy, creative, measurement, optimization, abm-strategy), reference files, ABM guides, and full knowledge base. Built on $25M+ in managed B2B ad spend.
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

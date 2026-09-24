@@ -1,4 +1,4 @@
-# 11 GTM Plays — Detailed Execution
+# 11 GTM Plays - Detailed Execution
 
 ## Play 1: New Team Members
 
@@ -59,7 +59,7 @@ Worth a quick chat?
 
 **Template:**
 ```
-Hey {{first_name}} — we're surveying {{role}} experts on {{topic}}.
+Hey {{first_name}} - we're surveying {{role}} experts on {{topic}}.
 
 We have a page listing {{insight_type}} used at {{company_types}}.
 
@@ -205,12 +205,12 @@ Is that on your radar?
 
 ## Core GTM Philosophy
 
-- **Scale what top performers do** — Study best reps, systematize their approach
-- **Diagnose before prescribing** — BIPSY framework: Behaviors, Individual, Process, Skill, You
+- **Scale what top performers do** - Study best reps, systematize their approach
+- **Diagnose before prescribing** - BIPSY framework: Behaviors, Individual, Process, Skill, You
 - **Signal-based outreach = 3-4x higher contract values**
-- **You can't burn your TAM** — Re-engage with new angles
+- **You can't burn your TAM** - Re-engage with new angles
 - **Lead with pain, not features**
-- **Segment and convert, don't over-personalize** — Gorgias went from 200 sequences to 10 modular ones
+- **Segment and convert, don't over-personalize** - Gorgias went from 200 sequences to 10 modular ones
 
 ## Multi-Channel Coordination
 

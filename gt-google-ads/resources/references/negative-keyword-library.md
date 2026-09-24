@@ -4,20 +4,20 @@ A starting library of common B2B negatives by category. Apply universal buckets 
 
 A pre-launch list covering the obvious buckets is essential before a new campaign enters the learning phase, so early spend does not anchor Smart Bidding to junk.
 
-## Bucket 1 — Employment (apply as phrase negatives, account level)
+## Bucket 1 - Employment (apply as phrase negatives, account level)
 job, jobs, career, careers, hiring, hire, salary, salaries, recruit, recruiter, recruitment, internship, intern, vacancy, vacancies, employment, "work from home", resume, cv, "job description", apprenticeship, "entry level"
 
 Job-seeker queries are the single largest source of wasted B2B spend. Negate account-wide unless you are actively recruiting.
 
-## Bucket 2 — Price / low-intent (review per vertical; premium brands)
+## Bucket 2 - Price / low-intent (review per vertical; premium brands)
 free, freeware, cheap, cheapest, low cost, "low cost", discount, coupon, promo, "promo code", deal, bargain, budget, inexpensive, affordable, "for free"
 
 Caution: do NOT add "free" as a broad negative if you offer "free trial", "free demo", or "free consultation". Use exact/phrase on the specific junk variations.
 
-## Bucket 3 — DIY / education / research
+## Bucket 3 - DIY / education / research
 "how to", tutorial, tutorials, "what is", "what are", definition, meaning, examples, example, template, templates, pdf, ppt, "open source", diy, "do it yourself", course, courses, certification, class, classes, training, guide, "for dummies", wiki, wikipedia, learn, study
 
-## Bucket 4 — Competitor / comparison (campaign-dependent)
+## Bucket 4 - Competitor / comparison (campaign-dependent)
 Add competitor brand names as phrase negatives to NON-brand campaigns (and to brand campaigns) unless running a deliberate conquest campaign. Phrase-match brand exclusions catch variations better than exact.
 review, reviews, "vs", versus, comparison, alternative, alternatives, "best", "top 10" (until brand/comparison campaigns warrant them)
 
@@ -43,4 +43,4 @@ Break search-term queries into single words and word pairs, sum spend and conver
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

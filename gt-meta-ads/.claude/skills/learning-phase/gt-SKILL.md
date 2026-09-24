@@ -1,11 +1,11 @@
 ---
 name: meta-ads-learning-phase
-description: Meta Ads learning phase — the 50-events rule, budget floors to exit learning, what resets it, and learning-limited diagnosis. Use for learning phase, 50 events, exiting learning, learning limited, budget to exit learning, what resets learning, edits resetting learning. Triggers on "learning phase", "50 events", "exit learning", "learning limited", "budget floor", "resets learning", "learning limited status". Do NOT use for bid strategy detail (covered in campaign-setup) or measurement (use measurement).
+description: Meta Ads learning phase - the 50-events rule, budget floors to exit learning, what resets it, and learning-limited diagnosis. Use for learning phase, 50 events, exiting learning, learning limited, budget to exit learning, what resets learning, edits resetting learning. Triggers on "learning phase", "50 events", "exit learning", "learning limited", "budget floor", "resets learning", "learning limited status". Do NOT use for bid strategy detail (covered in campaign-setup) or measurement (use measurement).
 ---
 
 # Meta Ads Learning Phase
 
-Every ad set goes through a learning phase while Meta figures out who to show the ad to. Until it exits, performance is unstable and CPA is unreliable. Underfunded or constantly-edited ad sets get stuck "Learning Limited" and never stabilise — a quiet, common cause of weak B2B accounts.
+Every ad set goes through a learning phase while Meta figures out who to show the ad to. Until it exits, performance is unstable and CPA is unreliable. Underfunded or constantly-edited ad sets get stuck "Learning Limited" and never stabilise - a quiet, common cause of weak B2B accounts.
 
 ## Instructions
 
@@ -38,7 +38,7 @@ Every ad set goes through a learning phase while Meta figures out who to show th
 
 ## Examples
 
-Example 1: "My ad sets say 'Learning Limited' — what do I do?"
+Example 1: "My ad sets say 'Learning Limited' - what do I do?"
 → They are not getting 50 events/week. Consolidate ad sets, raise budget toward the floor (CPA x 50 / 7 per day), or optimise to a more frequent event. Stop mid-test edits that reset learning.
 
 Example 2: "How much budget do I need on Meta?"
@@ -50,4 +50,4 @@ Example 2: "How much budget do I need on Meta?"
 For Opportunity Score, Advantage+ 2026 changes (25/wk threshold, Predictive Budget Allocation), gen-AI Creative Enhancements, Advantage+ Leads, and Threads placements → Read `{SKILL_BASE}/resources/references/2026-ai-updates.md`.
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

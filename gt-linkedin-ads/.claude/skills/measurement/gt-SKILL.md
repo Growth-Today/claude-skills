@@ -37,11 +37,11 @@ For campaign health indicators and benchmarks → Read `{SKILL_BASE}/resources/r
 
 ## Attribution Stack
 
-1. **LinkedIn Insight Tag** — demographics, retargeting, conversion tracking
-2. **LinkedIn Conversion API** — server-side, bypasses ad blockers
+1. **LinkedIn Insight Tag** - demographics, retargeting, conversion tracking
+2. **LinkedIn Conversion API** - server-side, bypasses ad blockers
 3. **CRM integration** (HubSpot, Salesforce) for revenue attribution
 4. **UTM parameters** with LinkedIn dynamic UTM feature
-5. **Self-reported attribution** — "How did you hear about us?" on high-intent forms
+5. **Self-reported attribution** - "How did you hear about us?" on high-intent forms
 
 ## Attribution Reality
 
@@ -52,11 +52,11 @@ For campaign health indicators and benchmarks → Read `{SKILL_BASE}/resources/r
 
 ## Key Principles
 
-- **Measure quarterly, not weekly** — B2B cycles require 3-6 month windows
-- **Self-reported attribution is essential** — captures what platform data misses
+- **Measure quarterly, not weekly** - B2B cycles require 3-6 month windows
+- **Self-reported attribution is essential** - captures what platform data misses
 - **Set up 90-day click/view windows** for duplicate conversion events
 - **Brand search uplift** is a strong indicator of LinkedIn Ads impact
-- **Compare multiple data sources** — no single source tells the full story
+- **Compare multiple data sources** - no single source tells the full story
 
 ## Examples
 
@@ -69,4 +69,4 @@ Example 2: "My LinkedIn Ads show no conversions"
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

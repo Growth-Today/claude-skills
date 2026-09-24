@@ -1,6 +1,6 @@
 ---
 name: google-ads-conversion-tracking
-description: B2B Google Ads conversion tracking — the highest priority audit, offline conversion import, Enhanced Conversions for Leads, and tracking the right action. Use for conversion tracking, offline conversion import, Enhanced Conversions, tracking setup, tracking the wrong action, page-load vs form-submit, attribution. Triggers on "conversion tracking", "offline conversion import", "Enhanced Conversions", "tracking setup", "tracking broken", "attribution model", "data-driven attribution", "track revenue not leads". Do NOT use for bid strategy mechanics (use bidding).
+description: B2B Google Ads conversion tracking - the highest priority audit, offline conversion import, Enhanced Conversions for Leads, and tracking the right action. Use for conversion tracking, offline conversion import, Enhanced Conversions, tracking setup, tracking the wrong action, page-load vs form-submit, attribution. Triggers on "conversion tracking", "offline conversion import", "Enhanced Conversions", "tracking setup", "tracking broken", "attribution model", "data-driven attribution", "track revenue not leads". Do NOT use for bid strategy mechanics (use bidding).
 ---
 
 # Google Ads Conversion Tracking
@@ -23,7 +23,7 @@ This is the first thing to check in any account and the highest-priority fix. If
 
 ## The Fix (in order)
 
-1. **Audit the conversion action.** Confirm it fires on the real action (form submit / demo booked), not page load. If tracking is broken, fix this before touching anything else — it is the highest-priority item in any audit.
+1. **Audit the conversion action.** Confirm it fires on the real action (form submit / demo booked), not page load. If tracking is broken, fix this before touching anything else - it is the highest-priority item in any audit.
 2. **Enhanced Conversions for Leads.** Pass hashed first-party data (email) so Google matches ad clicks to lead records even after cookie loss. Essential for broad match and AI Max.
 3. **Offline Conversion Import.** Push CRM stage changes back to Google: lead → MQL → SQL → opportunity → closed-won, ideally with value. Now the algorithm sees which clicks became revenue, not just which became form-fills. This is the single biggest lever for B2B lead-gen accounts.
 4. **Value-based bidding** on top, so different conversions carry different value (see bidding).
@@ -44,10 +44,10 @@ Example 2: "Google says my CPL is great but sales says the leads are junk."
 
 ## CRM attribution
 
-For the full HubSpot + Salesforce loop — Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `{SKILL_BASE}/resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
+For the full HubSpot + Salesforce loop - Enhanced Conversions for Leads, GCLID capture, the June-2026 Data Manager API migration, Dreamdata, and value-based bidding on offline pipeline value → Read `{SKILL_BASE}/resources/references/crm-attribution.md` (CRM build itself: gt-hubspot-admin / gt-salesforce-admin).
 ## Consent Mode v2 (EU)
 
 If the account serves the EU/EEA → Read `{SKILL_BASE}/resources/references/consent-mode-v2.md` (required since Mar 2024; run Advanced).
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

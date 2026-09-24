@@ -10,7 +10,7 @@ metadata:
 
 # Formula & Roll-Up Summary Fields
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
 
 Compute derived values natively so they're always accurate. **Formula fields** calculate on the record from its own fields; **roll-up summary fields** aggregate child records up to a master (SUM/COUNT/MIN/MAX). These beat workflow-maintained fields (which drift) and unlock scoring, segmentation, and reporting.
 
@@ -20,12 +20,12 @@ Compute derived values natively so they're always accurate. **Formula fields** c
 - Roll-up summaries require a **master-detail** relationship (or use a Flow/DLRS for lookup relationships)
 
 ## Critical concept
-- **Formula field** — same-record calculation (e.g. `Amount * Probability`, `TODAY() - LastActivityDate`). Recalculates on view/save.
-- **Roll-up summary** — aggregates **child → parent** across a master-detail link (e.g. COUNT of open Opportunities on an Account, SUM of Amount). Native only on master-detail; for lookup relationships use a record-triggered Flow or the DLRS package.
-- Both auto-update — no drift, no maintenance, unlike Flow-maintained number fields.
+- **Formula field** - same-record calculation (e.g. `Amount * Probability`, `TODAY() - LastActivityDate`). Recalculates on view/save.
+- **Roll-up summary** - aggregates **child → parent** across a master-detail link (e.g. COUNT of open Opportunities on an Account, SUM of Amount). Native only on master-detail; for lookup relationships use a record-triggered Flow or the DLRS package.
+- Both auto-update - no drift, no maintenance, unlike Flow-maintained number fields.
 
 ## Automation level
-Guided — Setup config (declarative). No script needed.
+Guided - Setup config (declarative). No script needed.
 
 ## Steps
 1. **Inventory derived metrics** teams maintain by hand or Flow: account open-pipeline amount, count of open opps, days since last activity, deal margin, weighted amount.
@@ -35,9 +35,9 @@ Guided — Setup config (declarative). No script needed.
 5. **Feed downstream:** use in lead/account scoring, ICP tiering, list views, and dashboards.
 
 ## Notes
-- Roll-up summary is master-detail only — for lookup relationships use a record-triggered Flow or Declarative Lookup Rollup Summaries (DLRS).
+- Roll-up summary is master-detail only - for lookup relationships use a record-triggered Flow or Declarative Lookup Rollup Summaries (DLRS).
 - Fix source field types first (a number stored as text won't calculate).
 - Feeds `create-icp-tiers`, `build-lead-scoring`, reporting.
 
 ---
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills

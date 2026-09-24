@@ -22,7 +22,7 @@
 
 ## Thought Leader Ads
 - **When**: Credibility, authority, expertise
-- **Stats**: 2.68% median CTR at $2.29 CPC (ZenABM 2026) — 6.4x single image, ~4.6x more LP clicks/$. "Good" is 2.0%+. Avg dwell 6.63s. Note: CTR does not predict pipeline (rho = -0.170) — measure on dwell + pipeline, not clicks.
+- **Stats**: 2.68% median CTR at $2.29 CPC (ZenABM 2026) - 6.4x single image, ~4.6x more LP clicks/$. "Good" is 2.0%+. Avg dwell 6.63s. Note: CTR does not predict pipeline (rho = -0.170) - measure on dwell + pipeline, not clicks.
 - **Key insight**: Non-employee influencers often outperform employee content
 - **Selection**: Posts with 2-3% organic CTR become top-performing ads
 - **Bidding**: CPC or CPM for engagement/reach
@@ -58,13 +58,13 @@
 - **Cost**: Billed per send (~$1 starting bid)
 - **Tip**: Optimize subject lines, test incentivized offers
 - **Search "%FIRSTNAME%" in Ads Library to find competitor examples
-- **EU compliance (important)**: Sponsored Messaging (Conversation + Message Ads) was blocked for EU-based members from Dec 2021 (ECJ / ePrivacy consent ruling). Since ~Oct 2024 EU targeting is allowed **only for EU members who opted in** to receive Sponsored Messaging — so EU reach is a small consented subset. Mixed EU/non-EU campaigns still deliver to non-EU. Plan EU campaigns around other formats.
+- **EU compliance (important)**: Sponsored Messaging (Conversation + Message Ads) was blocked for EU-based members from Dec 2021 (ECJ / ePrivacy consent ruling). Since ~Oct 2024 EU targeting is allowed **only for EU members who opted in** to receive Sponsored Messaging - so EU reach is a small consented subset. Mixed EU/non-EU campaigns still deliver to non-EU. Plan EU campaigns around other formats.
 
 ## Message Ads
 - **When**: Direct outreach, personalized communication
 - **Cost**: $1-2 starting bids per send
 - **Tip**: Address pain points, use audience-appropriate tone, sender should resonate with audience
-- **EU compliance**: same Sponsored Messaging restriction as Conversation Ads — consent-gated for EU members since Oct 2024, blocked before that. Don't build an EU motion on Message Ads.
+- **EU compliance**: same Sponsored Messaging restriction as Conversation Ads - consent-gated for EU members since Oct 2024, blocked before that. Don't build an EU motion on Message Ads.
 
 ## Spotlight Ads
 - **When**: Remarketing, top-of-mind awareness
@@ -102,4 +102,4 @@
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

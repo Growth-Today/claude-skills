@@ -17,7 +17,7 @@ These cost figures are industry-reported ranges, not GT-measured numbers. Treat 
 
 ## Quality Score
 
-- Focus only on **high-spend keywords scoring below 5** — those inflate CPC where it matters.
+- Focus only on **high-spend keywords scoring below 5** - those inflate CPC where it matters.
 - Ignore QS on low-volume long-tail; it barely moves total spend.
 - QS is downstream of relevance: tight ad groups + message-matched ads + dedicated landing pages.
 
@@ -43,7 +43,7 @@ These cost figures are industry-reported ranges, not GT-measured numbers. Treat 
 ## Attribution reality
 
 - Google defaults to data-driven attribution in 2026. Be careful comparing to last-click history.
-- A meaningful share of search terms is hidden under "other" — you never see 100%.
+- A meaningful share of search terms is hidden under "other" - you never see 100%.
 - The B2B buying committee is large and the cycle is long; an "assisting" campaign with few last-click conversions may still be driving pipeline. Review assisted conversions before cutting it.
 - Platform-reported ROAS drifts above real P&L ROAS when PMax/broad eat brand and low-intent junk. Judge on pipeline.
 
@@ -63,4 +63,4 @@ Most B2B teams need enough budget to clear ~30 conversions/month per bid strateg
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

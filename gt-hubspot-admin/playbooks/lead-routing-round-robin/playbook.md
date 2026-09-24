@@ -10,23 +10,23 @@ metadata:
 
 # Lead Routing (Round-Robin)
 
-Assign incoming leads to reps automatically and fairly — round-robin within a team, with rules for territory/segment and a fallback so nothing falls through. Unassigned leads are lost leads; routing closes that gap.
+Assign incoming leads to reps automatically and fairly - round-robin within a team, with rules for territory/segment and a fallback so nothing falls through. Unassigned leads are lost leads; routing closes that gap.
 
 ## Why This Matters
 
-A lead with no owner gets no follow-up, no SLA, and no accountability — it just decays. Manual assignment doesn't scale and isn't fair. Round-robin (and criteria-based) routing via workflows ensures every qualifying lead lands with a rep instantly, distributes load evenly, and creates a task/notification so the rep acts fast.
+A lead with no owner gets no follow-up, no SLA, and no accountability - it just decays. Manual assignment doesn't scale and isn't fair. Round-robin (and criteria-based) routing via workflows ensures every qualifying lead lands with a rep instantly, distributes load evenly, and creates a task/notification so the rep acts fast.
 
 ## Prerequisites
 
 - HubSpot API token as `HUBSPOT_ACCESS_TOKEN` in a `.env` file (see `requirements.txt` at the skill root)
 - Python 3.10+ with `requests`, `python-dotenv`, and `hubspot-api-client` (`uv add requests python-dotenv hubspot-api-client`, or `pip install -r ../../requirements.txt`)
 - Access to Automation > Workflows
-- Teams set up (`users-teams-setup`) — routing targets teams/queues
+- Teams set up (`users-teams-setup`) - routing targets teams/queues
 - Round-robin rotation of owners in workflows requires a Sales/Service Hub Pro+ context
 
 ## Critical Concept: Route on Qualification, Not Creation
 
-Route leads when they *qualify* (e.g. become an MQL/SQL — see `lead-status-taxonomy`), not the instant any contact is created — otherwise you assign junk. Combine an enrollment trigger (qualified) with a rotation action (round-robin) and always define a **fallback owner** for records that don't match any rule.
+Route leads when they *qualify* (e.g. become an MQL/SQL - see `lead-status-taxonomy`), not the instant any contact is created - otherwise you assign junk. Combine an enrollment trigger (qualified) with a rotation action (round-robin) and always define a **fallback owner** for records that don't match any rule.
 
 ## Plan
 
@@ -73,7 +73,7 @@ Automation > Workflows > Contact-based:
 4. Fallback branch: if no criteria match, assign the fallback owner.
 
 ### Step 3: Add SLA task + notification
-After assignment: create a task for the new owner ("New lead — follow up within X hours") and send an internal notification. This turns assignment into action.
+After assignment: create a task for the new owner ("New lead - follow up within X hours") and send an internal notification. This turns assignment into action.
 
 ### Step 4: Handle edge cases
 Exclude existing-customer contacts and already-owned records from enrollment so you don't reassign live relationships.
@@ -82,7 +82,7 @@ Exclude existing-customer contacts and already-owned records from enrollment so 
 
 **Verification checklist:**
 
-1. Re-run the audit — qualified-but-unassigned leads trend to ~0.
+1. Re-run the audit - qualified-but-unassigned leads trend to ~0.
 2. Owner distribution is even across the target team (round-robin working).
 3. A test lead that qualifies gets assigned + a task/notification fires. (Create, confirm, clean up.)
 4. Unmatched leads land with the fallback owner, not nowhere.
@@ -90,11 +90,11 @@ Exclude existing-customer contacts and already-owned records from enrollment so 
 
 ## Key Technical Learnings
 
-- **Route on qualification, not creation** — otherwise you distribute junk and annoy reps.
-- **Always define a fallback owner** — the #1 routing gap is records that match no rule.
-- **Assignment without an SLA task is half a solution** — pair rotation with a task/notification.
+- **Route on qualification, not creation** - otherwise you distribute junk and annoy reps.
+- **Always define a fallback owner** - the #1 routing gap is records that match no rule.
+- **Assignment without an SLA task is half a solution** - pair rotation with a task/notification.
 - **Exclude owned + customer records** from enrollment to avoid hijacking live relationships.
-- **Depends on `users-teams-setup` and `lead-status-taxonomy`** — teams are the routing target, lead status is the trigger.
+- **Depends on `users-teams-setup` and `lead-status-taxonomy`** - teams are the routing target, lead status is the trigger.
 
 ---
 

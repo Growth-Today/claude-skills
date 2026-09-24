@@ -10,7 +10,7 @@ metadata:
 
 # Salesforce CRM Org Audit
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
 
 Run a full diagnostic audit of a Salesforce org. This skill collects metrics across eight dimensions, grades each one, and produces a prioritized report with actionable recommendations.
 
@@ -79,7 +79,7 @@ Run queries for each of the following eight dimensions. Collect exact counts for
 ### 5. Duplicate Analysis
 - Duplicate email addresses across Leads
 - Duplicate email addresses across Contacts
-- Lead/Contact email overlap (same person as both a Lead and a Contact — common and usually wrong)
+- Lead/Contact email overlap (same person as both a Lead and a Contact - common and usually wrong)
 - Accounts sharing the same `Website` domain
 - Accounts with identical `Name` (exact; flag near-matches for Matching Rule review)
 
@@ -192,11 +192,11 @@ Save to `reports/salesforce-audit-{YYYY-MM-DD}.md`:
 
 ## Priority Recommendations
 
-1. **[CRITICAL] Reassign inactive-owner records** — XX,XXX records owned by X
+1. **[CRITICAL] Reassign inactive-owner records** - XX,XXX records owned by X
    deactivated users. Run `/reassign-inactive-owners`.
    *Effort: 2 hours | Fully scriptable*
 
-2. **[CRITICAL] Suppress hard bounced** — XX,XXX hard bounces across leads and
+2. **[CRITICAL] Suppress hard bounced** - XX,XXX hard bounces across leads and
    contacts. Run `/suppress-hard-bounced`.
    *Effort: 1 hour | Hybrid (API + suppression field)*
 
@@ -230,7 +230,7 @@ After generating the audit, **prescribe a specific ordered list of skills the us
 
 ### Step 1: Map Findings to Skills
 
-**Database Hygiene** (run first — deliverability and reporting impact):
+**Database Hygiene** (run first - deliverability and reporting impact):
 | Finding | Skill | Priority |
 |---------|-------|----------|
 | Leads/Contacts missing email | `/delete-no-email-leads-contacts` | P0 |
@@ -257,7 +257,7 @@ After generating the audit, **prescribe a specific ordered list of skills the us
 | Blank Rating / no scoring | `/build-lead-scoring` | P2 |
 | No segment list views | `/build-list-views-and-reports` | P2 |
 
-**Automation (Flow)** (run fourth — prevention):
+**Automation (Flow)** (run fourth - prevention):
 | Finding | Skill | Priority |
 |---------|-------|----------|
 | No new-record hygiene | `/new-record-hygiene-flow` | P2 |
@@ -297,4 +297,4 @@ or jump straight to the top finding's skill.
 - Suggest `/salesforce-implementation-plan`
 
 ---
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills

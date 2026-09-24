@@ -16,19 +16,19 @@ Work backwards from what the client wants to send to what we have to buy. Replac
 
 This is not here to save arithmetic. It is here because **the arithmetic was wrong for a long time and nobody noticed.**
 
-The Notion SOP told you to divide daily volume by "20–25 emails per mailbox." Two figures got
+The Notion SOP told you to divide daily volume by "20-25 emails per mailbox." Two figures got
 collapsed into a range there: **20 is Growth Today's own per-mailbox number for a Google inbox,
 25 is ScaledMail's.** We run the lower one.
 
-But the deeper problem isn't which of the two you pick — it's that **both describe a Google
+But the deeper problem isn't which of the two you pick - it's that **both describe a Google
 mailbox, and a Microsoft mailbox sends 5.** Applying either to a mixed fleet assumes every
-inbox is Google-like. On a 50/50 fleet the real blended figure is 12.5 — and our own Instantly
+inbox is Google-like. On a 50/50 fleet the real blended figure is 12.5 - and our own Instantly
 workspace went the other way, 25 Google / 0 Microsoft on the 21 Aug audit. Neither is a default;
 both are answers to the question you have to ask.
 
 **How much it matters:** at 15,000/month, an all-Google client needs **57** mailboxes and a
 25/75 client needs **129**. Same goal, same formula, 2.3× the inventory. Size a Microsoft-heavy
-client on the Google number and you plan infrastructure that cannot carry the campaign — which
+client on the Google number and you plan infrastructure that cannot carry the campaign - which
 shows up later as inboxes pushed past their limits, the exact thing that burns them.
 
 So the script does not contain the limits or a fixed split. It **parses the limits out of
@@ -44,8 +44,8 @@ split you have to state is a split you have to think about.
 ## Interview: Gather Requirements
 
 **Q1: Do you have a monthly email goal, or a list and a deadline?**
-- *Monthly goal* — use `--monthly-goal`. Divides by 20 working days.
-- *List and deadline* — use `--contacts`, `--steps` and `--days-to-clear`. This is the honest one for a real campaign, because sequence steps multiply the send volume and most people forget that.
+- *Monthly goal* - use `--monthly-goal`. Divides by 20 working days.
+- *List and deadline* - use `--contacts`, `--steps` and `--days-to-clear`. This is the honest one for a real campaign, because sequence steps multiply the send volume and most people forget that.
 
 **Q2: How fast must the campaign clear?**
 Named presets are built in, from `reference.md` §4:
@@ -63,13 +63,13 @@ The same list run in 5 days instead of 20 needs **4× the daily capacity**. This
 Pass `--have-google` and `--have-outlook` to get a gap read against current capacity instead of a greenfield number.
 
 **Q4: What is this client's Google / Microsoft mix?**
-`--split-google` is required — there is no default, because there is no house mix. Ask the client. Note that domain count is driven almost entirely by the Google side — Google holds 2–3 mailboxes per domain, Microsoft up to ~25 — so shifting the split moves the domain bill far more than the mailbox bill.
+`--split-google` is required - there is no default, because there is no house mix. Ask the client. Note that domain count is driven almost entirely by the Google side - Google holds 2-3 mailboxes per domain, Microsoft up to ~25 - so shifting the split moves the domain bill far more than the mailbox bill.
 
 ## Plan
 
 1. Establish the goal (monthly target, or contacts × steps ÷ days to clear).
 2. Run `execute.py`.
-3. Sanity-check the run header — it prints which limits it read from §1. If those aren't the current standard, stop and fix `reference.md`, not the output.
+3. Sanity-check the run header - it prints which limits it read from §1. If those aren't the current standard, stop and fix `reference.md`, not the output.
 4. Hand the mailbox and domain counts to ScaledMail, together with the spread rule.
 
 ## Execute
@@ -98,7 +98,7 @@ If that line is ever wrong, every number below it is wrong. Read it.
 
 ## After State
 
-`--validate` is the regression test. It reads **both** §4 tables out of `reference.md` — the provider-mix grid and the 60/40 worked example — and recomputes every row. Nothing is hardcoded in the script, so editing a number in the doc without editing the model makes this fail.
+`--validate` is the regression test. It reads **both** §4 tables out of `reference.md` - the provider-mix grid and the 60/40 worked example - and recomputes every row. Nothing is hardcoded in the script, so editing a number in the doc without editing the model makes this fail.
 
 ```
   Provider-mix grid (5 rows, 15,000/mo):
@@ -119,9 +119,9 @@ If that line is ever wrong, every number below it is wrong. Read it.
 
 ## Key Technical Learnings
 
-- **Parse the limits from `reference.md`, don't hardcode them.** The run header prints what it read — check that line before you trust the output.
-- **The buffer applies to every tier.** An earlier version of the table applied ×1.5 to the smallest row only, which made the larger tiers look cheap. Round whole mailboxes first, then buffer, then round again — and take the Google/Microsoft split out of that total, so the two provider counts always add back up to it. Rounding each provider separately quietly inflates the buy.
-- **Days-to-clear is where sizing surprises live.** Multiplying by sequence steps and dividing by a real deadline can produce several times the greenfield "monthly goal" answer — how much depends entirely on the deadline. Ask for the deadline.
+- **Parse the limits from `reference.md`, don't hardcode them.** The run header prints what it read - check that line before you trust the output.
+- **The buffer applies to every tier.** An earlier version of the table applied ×1.5 to the smallest row only, which made the larger tiers look cheap. Round whole mailboxes first, then buffer, then round again - and take the Google/Microsoft split out of that total, so the two provider counts always add back up to it. Rounding each provider separately quietly inflates the buy.
+- **Days-to-clear is where sizing surprises live.** Multiplying by sequence steps and dividing by a real deadline can produce several times the greenfield "monthly goal" answer - how much depends entirely on the deadline. Ask for the deadline.
 - **This sizes the buy, it does not make it.** Purchasing, registrar spread and timing sit with ScaledMail. Hand over the counts plus the rule: multiple registrars, multiple days, max 4 per registrar per day. GT verifies on delivery.
 
 ---

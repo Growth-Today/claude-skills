@@ -12,7 +12,7 @@
 **Primary**: Job Titles + Company Sizes + Industries
 **Alternative** (when audience too small): Job Function + Seniority + Skills
 
-- Audience sizes: 10K-100K can both work. No ideal size — start targeting ideal customers, expand over time.
+- Audience sizes: 10K-100K can both work. No ideal size - start targeting ideal customers, expand over time.
 - Separate multiple personas into different campaigns for tailored messaging
 - Check LinkedIn Campaign Manager's audience insights for potential exclusions
 
@@ -51,7 +51,7 @@ Review demographics report weekly: "Are the people you're reaching aligned with 
 
 ### Company Lists vs Contact Lists
 - **Company lists**: 95-100% match rate, auto-updates when decision-makers change roles
-- **Contact lists**: 30-70% match rate — avoid when possible
+- **Contact lists**: 30-70% match rate - avoid when possible
 
 ### Employee Size Splitting
 - **500+ employees**: Exclude managers (too many layers)
@@ -80,4 +80,4 @@ Use LinkedIn's Company Engagement feature to exclude companies receiving 500+ im
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

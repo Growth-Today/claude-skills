@@ -11,29 +11,29 @@ Three distinct scoring layers. Each answers a different question. Never conflate
 
 ## The Three Layers
 
-### Layer 1 — ICP Fit Score (static)
+### Layer 1 - ICP Fit Score (static)
 
 **Question it answers:** Does this company fit our ideal customer profile?
 
 **Inputs:** Firmographics, technographics, geography, industry, revenue, company size.
 
-**Output:** 0–100 score → A/B/C/D tier.
+**Output:** 0-100 score → A/B/C/D tier.
 
 **Key characteristic:** Static. Does not change based on whether the prospect is actively buying or has engaged with us. Every company is treated as cold.
 
 **Tiers:**
 | Tier | Score | Action |
 |------|-------|--------|
-| A | 90–100 | Perfect fit — prioritize for all motions |
-| B | 70–89 | Strong fit — pursue |
-| C | 50–69 | Moderate fit — nurture only |
-| D | <50 | Poor fit — exclude |
+| A | 90-100 | Perfect fit - prioritize for all motions |
+| B | 70-89 | Strong fit - pursue |
+| C | 50-69 | Moderate fit - nurture only |
+| D | <50 | Poor fit - exclude |
 
 For the full scoring matrix (7 criteria, weights), see `resources/sub-skills/icp-definition.md`.
 
 ---
 
-### Layer 2 — ABM Account Prioritization (dynamic)
+### Layer 2 - ABM Account Prioritization (dynamic)
 
 **Question it answers:** Among our ICP-fit accounts, which ones deserve attention RIGHT NOW based on where they are in the buying journey?
 
@@ -58,7 +58,7 @@ Identified → Aware → Interested → Considering → Selecting
 
 ---
 
-### Layer 3 — Outreach Prioritization Matrix (operational)
+### Layer 3 - Outreach Prioritization Matrix (operational)
 
 **Question it answers:** Given this company's tier and this contact's tier, what is the exact outreach motion?
 
@@ -76,7 +76,7 @@ Identified → Aware → Interested → Considering → Selecting
 | T2 | T2 | Email + LinkedIn · segmented (segment-level personalization) |
 | T3 | Any | Programmatic · templated (automated sequences, minimal manual effort) |
 
-**⚠️ Omni-channel requires LinkedIn ads budget.** Without it, T1+T1 defaults to multi-channel manual — still strong, but a different motion.
+**⚠️ Omni-channel requires LinkedIn ads budget.** Without it, T1+T1 defaults to multi-channel manual - still strong, but a different motion.
 
 ---
 
@@ -125,7 +125,7 @@ Do we have ABM motion?
 
 ## Key Caveat for GTM Engineers
 
-The most common mistake: applying ABM Account Prioritization logic when there is no ABM motion. If there are no LinkedIn ads running, no intent data feed, and no stage tracking in the CRM — Layer 2 is empty. Trying to score accounts by "engagement" without a structured signal source produces noise, not signal.
+The most common mistake: applying ABM Account Prioritization logic when there is no ABM motion. If there are no LinkedIn ads running, no intent data feed, and no stage tracking in the CRM - Layer 2 is empty. Trying to score accounts by "engagement" without a structured signal source produces noise, not signal.
 
 Build Layer 2 only after:
 1. LinkedIn Campaign Manager is live with company list targeting

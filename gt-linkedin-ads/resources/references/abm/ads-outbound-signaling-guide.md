@@ -1,4 +1,4 @@
-# Ads + Outbound Signaling — Guide
+# Ads + Outbound Signaling - Guide
 
 How ABM ads generate intent signals that trigger and personalize BDR outbound. The bridge between paid campaigns and sales outreach.
 
@@ -6,7 +6,7 @@ How ABM ads generate intent signals that trigger and personalize BDR outbound. T
 
 ## The Core Idea
 
-ABM ads aren't just demand generation — they're a **signal detection layer.** By running targeted ads to known accounts and tracking which ones engage, you identify intent *before* anyone fills out a form.
+ABM ads aren't just demand generation - they're a **signal detection layer.** By running targeted ads to known accounts and tracking which ones engage, you identify intent *before* anyone fills out a form.
 
 ```
 Ads create awareness → Engagement reveals intent → Intent triggers outbound → Outbound is personalized by what they engaged with
@@ -146,7 +146,7 @@ comparison + case study from similar company.
 |---|---|---|
 | **Intent tags** | Contact/Company in HubSpot | Tells BDR what the account cares about |
 | **Campaign group engagement** | ZenABM dashboard / HubSpot | Shows depth of interest |
-| **Engagement recency** | HubSpot (7d/30d/90d properties) | Timing — reach out when engagement is fresh |
+| **Engagement recency** | HubSpot (7d/30d/90d properties) | Timing - reach out when engagement is fresh |
 | **Ad content they clicked** | ZenABM qualitative data | Know exactly which messaging resonated |
 | **Persona** | Contact properties | Match messaging to their role |
 
@@ -158,26 +158,26 @@ comparison + case study from similar company.
 | Engaged with feature-specific ads (e.g., analytics) | "Given your team's focus on [feature area], thought you'd find this relevant..." | Feature deep-dive, product demo |
 | Engaged with event/webinar TLAs | "Your colleagues seemed interested in [topic] from our recent event..." | Event recording, related content |
 | Engaged with case study ads | "Companies similar to yours in [industry] are seeing [result]..." | Full case study, ROI data |
-| Engaged with multiple intents | "Your team has been exploring several areas — [intent 1] and [intent 2]. Quick question..." | Tailored multi-solution pitch |
+| Engaged with multiple intents | "Your team has been exploring several areas - [intent 1] and [intent 2]. Quick question..." | Tailored multi-solution pitch |
 
 ### Outreach Channels (Multi-Touch)
 
 | Channel | Timing | Message Type |
 |---|---|---|
 | **Email** (personalized) | Day 1 of Interested stage | Intent-based, reference what they engaged with |
-| **LinkedIn connection request** | Day 1-2 | Short, warm — "Noticed your team's interest in [topic]" |
-| **LinkedIn message** | Day 3-5 (after connection accepted) | Deeper value — share relevant content |
+| **LinkedIn connection request** | Day 1-2 | Short, warm - "Noticed your team's interest in [topic]" |
+| **LinkedIn message** | Day 3-5 (after connection accepted) | Deeper value - share relevant content |
 | **Follow-up email** | Day 5-7 | Different angle or social proof |
 | **Phone (if available)** | Day 7-10 (if no response) | Warm call referencing ad engagement |
 
 ### Email Template (Intent-Based)
 
 ```
-Subject: [Company Name] + [Your Product] — quick thought on [Intent Area]
+Subject: [Company Name] + [Your Product] - quick thought on [Intent Area]
 
 Hi [First Name],
 
-I noticed your team at [Company] has been exploring [intent area] — 
+I noticed your team at [Company] has been exploring [intent area] - 
 [brief, specific reference to the ad topic they engaged with].
 
 [1-2 sentences on how you solve that specific problem]
@@ -194,7 +194,7 @@ Happy to do a quick 15-min walkthrough.
 - Never say "I saw you clicked our ad." That's creepy.
 - Reference the *topic* they showed interest in, not the *channel*.
 - Lead with their pain point, not your product.
-- Keep it short — the ad warmed them up, don't over-explain.
+- Keep it short - the ad warmed them up, don't over-explain.
 
 ---
 
@@ -252,10 +252,10 @@ What BDRs learn from conversations should flow BACK to ad strategy:
 
 | Scenario | Signal Quality |
 |---|---|
-| BDR reaches out with intent angle, prospect says "Yes, that's exactly what we need" | Excellent — intent detection working |
-| BDR reaches out, prospect says "Never heard of you" | Poor — may be clicking ads accidentally, or wrong persona |
-| High engagement from an account but no reply to outreach | Medium — try different persona/contact at the account |
-| Multiple people at account engaging | Excellent — buying committee forming |
+| BDR reaches out with intent angle, prospect says "Yes, that's exactly what we need" | Excellent - intent detection working |
+| BDR reaches out, prospect says "Never heard of you" | Poor - may be clicking ads accidentally, or wrong persona |
+| High engagement from an account but no reply to outreach | Medium - try different persona/contact at the account |
+| Multiple people at account engaging | Excellent - buying committee forming |
 
 ---
 
@@ -276,11 +276,11 @@ What BDRs learn from conversations should flow BACK to ad strategy:
 |---|---|---|
 | **LinkedIn Campaign Manager** | Ad delivery + raw engagement data | Campaign-level engagement tracking |
 | **ZenABM** | LinkedIn → CRM connector | Pushes both quantitative AND qualitative engagement (which campaigns), auto-updates ABM stages, intent detection |
-| **Fibbler** | LinkedIn → CRM connector | Pushes quantitative engagement (impressions, clicks, engagements) per account — simpler/cheaper alternative |
+| **Fibbler** | LinkedIn → CRM connector | Pushes quantitative engagement (impressions, clicks, engagements) per account - simpler/cheaper alternative |
 | **HubSpot** | CRM + workflow automation | Stores intent, manages lists, triggers BDR alerts, syncs audiences |
 | **Slack** | Real-time BDR alerts | Hot lead notifications with full context |
 | **SalesLoft / HubSpot Sales** | Outbound sequencing | Personalized multi-touch sequences based on intent |
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

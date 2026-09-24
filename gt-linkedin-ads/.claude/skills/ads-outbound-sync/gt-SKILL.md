@@ -41,11 +41,11 @@ Week 7-8: Direct CTA ads + sales offers demo/meeting
 
 ## Key Principles
 
-- **Start with 50-100 high-priority accounts** — track progression before scaling
+- **Start with 50-100 high-priority accounts** - track progression before scaling
 - **Reps contacting engaged accounts have significantly higher success rates**
 - **Personalized ABM ads (company name/logo) achieve 5-10% CTR** vs standard 0.5-1%
 - **Build separate remarketing lists** for image clicks, video views, and website visits from target accounts
-- **Share engagement data with sales weekly** — which accounts are showing signals
+- **Share engagement data with sales weekly** - which accounts are showing signals
 
 ## Examples
 
@@ -58,4 +58,4 @@ Example 2: "We're running ABM ads but sales isn't following up"
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

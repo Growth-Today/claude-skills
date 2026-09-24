@@ -18,9 +18,9 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 
 | Inbox state | Google cold | Google warmup | Outlook cold | Outlook warmup |
 |---|---|---|---|---|
-| First 21 days (warming) | 0–1 * | 25 | 0–1 * | 8 |
+| First 21 days (warming) | 0-1 * | 25 | 0-1 * | 8 |
 | After warmup (sending) | 20 | 30 | 5 | 15 |
-| Warmup Needed / Burnt (throttled) | 0–1 * | 25 | 0–1 * | 8 |
+| Warmup Needed / Burnt (throttled) | 0-1 * | 25 | 0-1 * | 8 |
 
 \* During warming and when throttled, cold is effectively off. Instantly/Smartlead can set **0**; **EmailBison's minimum is 1** (it cannot do 0), the failover gap below.
 
@@ -32,7 +32,7 @@ The sending-row numbers above are the worked example: Google 20 × 1.5 = **30**;
 > **Do not** copy the old "Google 30/day, Microsoft 10/day safe limit" figure, it conflated cold+warmup and the Microsoft cold number was wrong. Govern by the ratio above.
 >
 > **Where the Google number comes from.** **20/day is Growth Today's own figure.** ScaledMail
-> quotes **25/day** for a Google mailbox. We deliberately run the lower one — it's the more
+> quotes **25/day** for a Google mailbox. We deliberately run the lower one - it's the more
 > conservative of the two and it's what every Google inbox in our workspace is actually set to.
 > If someone cites 25, that's the vendor's number, not ours.
 
@@ -46,13 +46,13 @@ Executable check rows cite these keys instead of repeating the number. **If a va
 | `google_warmup` | 30 | Google warmup/day at the same state |
 | `outlook_cold` | 5 | Outlook cold sends/day, fully warmed and Active |
 | `outlook_warmup` | 15 | Outlook warmup/day at the same state |
-| `cold_warming` | 0–1 | Cold limit during the first 21 days, and when throttled (Instantly/Smartlead 0; EmailBison floor 1) |
+| `cold_warming` | 0-1 | Cold limit during the first 21 days, and when throttled (Instantly/Smartlead 0; EmailBison floor 1) |
 | `cold_new_inbox` | 1 | Cold limit for a New Inbox, both providers |
 | `ratio_google` | 1.5 | Warm-to-cold ratio, Google |
 | `ratio_outlook` | 3 | Warm-to-cold ratio, Microsoft/Outlook |
 | `ramp_google` | +4/day | Warmup increment during warming |
 | `ramp_outlook` | +2/day | Warmup increment during warming |
-| `blended_per_mailbox` | *computed* | `google_share × google_cold + microsoft_share × outlook_cold`. **Not a constant** — the provider mix is a per-client decision, so this is calculated per client. See §4 |
+| `blended_per_mailbox` | *computed* | `google_share × google_cold + microsoft_share × outlook_cold`. **Not a constant** - the provider mix is a per-client decision, so this is calculated per client. See §4 |
 
 ---
 
@@ -66,7 +66,7 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | **Active** | Placement **≥ 70/100** AND bounce **< 2%** AND reply **≥ 0.5%** AND warmup score **≥ 97**. |
 | **Burnt** | Bounce **> 3%** AND reply **< 0.5%** AND warmup score **< 95** (all three). |
 | **Warmup Needed** | Anything that is not New / Active / Burnt. |
-| **Blacklisted** | Domain listed on a blacklist that counts (Spamhaus DBL / URIBL). Volume auto-reduced. **See the warning below — this has not been working.** |
+| **Blacklisted** | Domain listed on a blacklist that counts (Spamhaus DBL / URIBL). Volume auto-reduced. **See the warning below - this has not been working.** |
 
 **Placement overrides:** placement **< 70** forces Warmup Needed even if everything else is strong; placement **< 50** hard-forces Warmup Needed. When placement recovers, the inbox returns to Active automatically.
 
@@ -75,9 +75,9 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | Key | Value | Meaning |
 |---|---|---|
 | `new_inbox_sends` | < 100 | Lifetime sends below which an inbox is New |
-| `new_inbox_age_days` | 14 | Campaign-routing exclusion age in the email infra management system. **Not** the GT warmup floor — that is `warmup_floor_days` in §5 |
+| `new_inbox_age_days` | 14 | Campaign-routing exclusion age in the email infra management system. **Not** the GT warmup floor - that is `warmup_floor_days` in §5 |
 | `warmup_floor_days` | 21 | GT's hard warmup floor before any cold send (§5) |
-| `placement_active` | ≥ 70 | Placement score required for Active. 50–69 is the watch zone (§3); below `placement_forced_warmup` is forced warmup |
+| `placement_active` | ≥ 70 | Placement score required for Active. 50-69 is the watch zone (§3); below `placement_forced_warmup` is forced warmup |
 | `placement_forced_warmup` | < 50 | Hard-forces Warmup Needed |
 | `bounce_active` | < 2% | Bounce ceiling for Active |
 | `bounce_burnt` | > 3% | Bounce floor for Burnt (all three Burnt conditions must hold) |
@@ -91,17 +91,17 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 > **⚠️ The 14-day exclusion and the 21-day warmup floor are two different things.**
 > The email infra management system's campaign routing releases a New Inbox at **14 days** old. Growth Today's warmup floor
 > is **21 days** (§5). So an inbox can become *eligible* in the system a week before GT policy
-> says it should send. **Do not attach an inbox to a campaign just because the system allows it** —
+> says it should send. **Do not attach an inbox to a campaign just because the system allows it** -
 > check warmup age against §5 first. The 14-day rule lives in the email infra management system; raise it with the team that maintains it if we
 > want the two aligned.
 
 > **⚠️ Blacklisted has never actually worked as written.** The email infra management system review confirmed that Spamhaus and
-> URIBL were both silently failing in the app — URIBL was blocking them, and Spamhaus returned
+> URIBL were both silently failing in the app - URIBL was blocking them, and Spamhaus returned
 > "clean" for every domain, so every Blacklisted tag GT has ever seen came from a list we no
 > longer track. **Only Spamhaus DBL and URIBL count as a blacklist reason.** The agreed fix turns
-> both on (they are free — GT supplies a free Spamhaus DQS key, registered as *Individual*, not
+> both on (they are free - GT supplies a free Spamhaus DQS key, registered as *Individual*, not
 > *Organisation*) and adds a self-test so a list going quiet is caught automatically.
-> Until that ships, a Blacklisted tag is **not evidence of a real listing** — verify at source
+> Until that ships, a Blacklisted tag is **not evidence of a real listing** - verify at source
 > (Spamhaus DBL / URIBL) before acting on it.
 
 ---
@@ -110,10 +110,10 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 
 | Metric | Healthy | Warning | Stop / act |
 |---|---|---|---|
-| Bounce rate (after OOO stripping, see §7) | < 2% | 2–3% | > 3% (hard action at > 5%) |
-| Reply rate (human) | ≥ 0.5% classification floor | — | Below ~1% total often means **bouncing**, not low interest |
-| Placement score | ≥ 70 | 50–70 (watch zone) | < 50 (forced warmup) |
-| Warmup score | ≥ 97 (Active) | 95–97 | < 95 |
+| Bounce rate (after OOO stripping, see §7) | < 2% | 2-3% | > 3% (hard action at > 5%) |
+| Reply rate (human) | ≥ 0.5% classification floor | - | Below ~1% total often means **bouncing**, not low interest |
+| Placement score | ≥ 70 | 50-70 (watch zone) | < 50 (forced warmup) |
+| Warmup score | ≥ 97 (Active) | 95-97 | < 95 |
 | Spam / unsub | ~0% | any | multiple |
 
 - **Open rate is not tracked.** Open tracking is turned OFF by policy (tracking pixels hurt placement and trip SEGs), so do not use open rate as a health metric.
@@ -132,15 +132,15 @@ Work backwards: **monthly goal → daily volume → mailboxes → domains.**
 4. Round that up to a whole mailbox, then **× 1.5** (buffer for rotation, warmup, issues) and
    round up again = mailboxes to buy. The Google/Microsoft split comes **out of** that total,
    so the two provider counts always add back up to it.
-5. Domains: **Google mailboxes ÷ 2–3** + **Microsoft mailboxes ÷ ~25**.
+5. Domains: **Google mailboxes ÷ 2-3** + **Microsoft mailboxes ÷ ~25**.
 
 > ### 🔑 Step 2 is an input. Ask for the mix.
 >
-> The provider mix is a **per-client decision** driven by the client's industry and market —
+> The provider mix is a **per-client decision** driven by the client's industry and market -
 > some need more Microsoft, some more Google. That means the emails-per-mailbox figure changes
 > per client and **any fixed number in this file would be wrong for most of them.**
 >
-> A Google mailbox sends **20** cold/day. A Microsoft mailbox sends **5** — a quarter as much.
+> A Google mailbox sends **20** cold/day. A Microsoft mailbox sends **5** - a quarter as much.
 > So the mix drives the answer more than the goal does:
 
 | Google share | Blended cold / mailbox / day | 15,000/mo → mailboxes to buy |
@@ -177,14 +177,14 @@ The buffer applies to **every** row. (The previous version of this table applied
 row only, which is why the larger tiers looked cheap.) `--validate` reads both tables straight
 out of this file, so if you edit a number here and the model disagrees, the check fails.
 
-**Mailboxes per domain (average): Google 2–3, Microsoft up to ~25.** Google stays lean for
+**Mailboxes per domain (average): Google 2-3, Microsoft up to ~25.** Google stays lean for
 deliverability; Microsoft can host many mailboxes per domain. Domain count is therefore driven
 almost entirely by the Google side. Verify the per-provider density on scale-ups.
 
 ### Days to Clear (how fast the campaign must finish)
 
 The table above assumes a 20-working-day month. Campaigns that must clear faster need
-proportionally more daily capacity — a list run in 5 days needs **4× the daily volume** of the
+proportionally more daily capacity - a list run in 5 days needs **4× the daily volume** of the
 same list run over 20.
 
 | Days to clear | Campaign type | Why |
@@ -198,8 +198,8 @@ same list run over 20.
 then continue from step 2 above.
 
 **Campaign types:**
-- **Evergreen** — auto-populates a set number of accounts/contacts to prospect daily or weekly, runs on autopilot. *Example: contacts at companies that installed HubSpot last week.*
-- **One-off** — built once for a specific list. *Example: members of the Pavilion Slack community.*
+- **Evergreen** - auto-populates a set number of accounts/contacts to prospect daily or weekly, runs on autopilot. *Example: contacts at companies that installed HubSpot last week.*
+- **One-off** - built once for a specific list. *Example: members of the Pavilion Slack community.*
 
 ---
 
@@ -208,7 +208,7 @@ then continue from step 2 above.
 | Item | Value |
 |---|---|
 | Minimum warmup before sending | **21 days / 3 weeks** (hard floor) |
-| Recommended warmup | **3–4 weeks** (21 days is the floor; go to 4 weeks on a cautious build) |
+| Recommended warmup | **3-4 weeks** (21 days is the floor; go to 4 weeks on a cautious build) |
 | Age-before-link gate | Link/campaign only from domains **> 30 days old AND past warmup** |
 | Never | Disable warmup once campaigns are running |
 
@@ -218,8 +218,8 @@ Going-live ramp (per mailbox/day, first weeks of live sending):
 
 | Week | Google | Microsoft |
 |---|---|---|
-| 1 | 10–15 | 5 |
-| 2–3 | 15–20 | 5 |
+| 1 | 10-15 | 5 |
+| 2-3 | 15-20 | 5 |
 | 4+ | 20 | 5 |
 
 Scaling rules: increase volume **≤ 20%/week**; stagger new-domain launches (**1 batch/week** cadence); never add volume *and* change copy at once.
@@ -235,7 +235,7 @@ Scaling rules: increase volume **≤ 20%/week**; stagger new-domain launches (**
 | DKIM | Signature proving authenticity | Copy the exact key, no stray spaces |
 | DMARC | Policy for SPF/DKIM failures | **`p=reject` is the GT standard.** `p=none` only as a short verification phase at first setup |
 
-**Redirect vs masking:** a secondary domain must reach a real destination via **masking or a genuine landing page, never a bare 301/302 redirect** to the main site — many domains resolving to one site is the exact bulk-sender fingerprint. **Current state (Aug 2026): GT runs no client redirects**, so this is a standard to hold, not an open defect. The live question is what replaces EmailBison's masking once we are fully on Instantly — see `approved-vendors.md`. See the provisioning sub-skill.
+**Redirect vs masking:** a secondary domain must reach a real destination via **masking or a genuine landing page, never a bare 301/302 redirect** to the main site - many domains resolving to one site is the exact bulk-sender fingerprint. **Current state (Aug 2026): GT runs no client redirects**, so this is a standard to hold, not an open defect. The live question is what replaces EmailBison's masking once we are fully on Instantly - see `approved-vendors.md`. See the provisioning sub-skill.
 
 A provider can break a record months after setup, and nothing tells you. Re-check MX/SPF/DKIM/DMARC on a schedule.
 
@@ -258,13 +258,13 @@ A provider can break a record months after setup, and nothing tells you. Re-chec
 | 5.2.1 | Mailbox disabled |
 | 5.7.1 | Blocked by policy / security rejection |
 
-**Permanent, but NOT a bad address** — these look hard and get mis-filed as list-quality problems:
+**Permanent, but NOT a bad address** - these look hard and get mis-filed as list-quality problems:
 
 | Code | What it actually means | Who fixes it |
 |---|---|---|
-| 5.4.1 | RFC 3463 says "no answer from host"; Exchange Online returns it as *Access denied* — a tenant-level rejection | Infrastructure / sender reputation, not list verification |
-| 5.4.14 | Hop count exceeded — a mail loop on the recipient's side | Nobody on our side. Don't scrub the contact on this alone |
-| 5.2.2 | Mailbox full — a mailbox-status condition, same family as soft 4.2.2 | Retry later; scrub only if it persists |
+| 5.4.1 | RFC 3463 says "no answer from host"; Exchange Online returns it as *Access denied* - a tenant-level rejection | Infrastructure / sender reputation, not list verification |
+| 5.4.14 | Hop count exceeded - a mail loop on the recipient's side | Nobody on our side. Don't scrub the contact on this alone |
+| 5.2.2 | Mailbox full - a mailbox-status condition, same family as soft 4.2.2 | Retry later; scrub only if it persists |
 
 Root cause by type: **hard 5XX (5.1.1 / 5.2.1) → list/verification/data**; **soft 4XX → temporary/infra**; **5.7.1, 5.4.1 → corporate filtering / SEG / reputation** (not the address).
 
@@ -277,7 +277,7 @@ Root cause by type: **hard 5XX (5.1.1 / 5.2.1) → list/verification/data**; **s
 | `bounce_total_act` | 3% | Overall bounce rate: act |
 | `bounce_total_critical` | 5% | Overall: pause and fix |
 
-> **⚠️ Strip auto-replies BEFORE reading any bounce rate.** EmailBison miscounts out-of-office and auto-replies as bounces. In one real audit that showed **2,687 "bounces" against 1,231 actual ones** — the raw figure was more than double the truth, and over half the rows were not bounces at all. Reclassify OOO/auto-reply out of the bounce bucket first, or every bounce number you read is wrong. See the bounce-audit sub-skill.
+> **⚠️ Strip auto-replies BEFORE reading any bounce rate.** EmailBison miscounts out-of-office and auto-replies as bounces. In one real audit that showed **2,687 "bounces" against 1,231 actual ones** - the raw figure was more than double the truth, and over half the rows were not bounces at all. Reclassify OOO/auto-reply out of the bounce bucket first, or every bounce number you read is wrong. See the bounce-audit sub-skill.
 
 ---
 
@@ -295,7 +295,7 @@ Root cause by type: **hard 5XX (5.1.1 / 5.2.1) → list/verification/data**; **s
 
 - **Naming:** keep the brand word; **drop prefixes** (`go/get/try/meet`); no hyphens, no numbers; `.com` first.
 - **Avoid** cheap TLDs `.top / .xyz / .cc` and the most-abused registrar/date bulk-buy pattern.
-- **Buy** across multiple registrars, spread across **multiple days**, **max 4 domains per registrar per day**; spread DNS across multiple Cloudflare accounts. **ScaledMail owns purchasing, spread and timing, and is already spreading across registrars and dates** — GT's job is spot-check verification on delivery, not chasing a gap.
+- **Buy** across multiple registrars, spread across **multiple days**, **max 4 domains per registrar per day**; spread DNS across multiple Cloudflare accounts. **ScaledMail owns purchasing, spread and timing, and is already spreading across registrars and dates** - GT's job is spot-check verification on delivery, not chasing a gap.
   - Batch size sets the calendar, not the other way round. At 4/registrar/day a 50-domain batch cannot be finished in one day, and a 150-domain batch certainly cannot.
 - **Most-abused registrars** (use, but never bulk on one): GNAME, Dynadot, NameSilo, Namecheap. Abuse concentrates there because they are popular and cheap, not because they are defective.
 - **Links:** no custom tracking domain and no links in cold email by default; share via LinkedIn or an unlinked URL.

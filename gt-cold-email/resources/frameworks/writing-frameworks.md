@@ -52,11 +52,11 @@ Set stage with life situation → Obvious choice → Compare to prospect's curre
 
 ## Josh Braun Writing Principles
 
-1. **Write with an eraser** — Remove every unnecessary word
-2. **Be cheeky** — Personality matters, make them smile
-3. **Be specific** — Credibility comes through precision
-4. **Don't say "we reduce costs"** — Say "e-commerce companies doing $5k/month overpaying 10-15%"
-5. **Use loss aversion** — Frame around what they're losing, not gaining
+1. **Write with an eraser** - Remove every unnecessary word
+2. **Be cheeky** - Personality matters, make them smile
+3. **Be specific** - Credibility comes through precision
+4. **Don't say "we reduce costs"** - Say "e-commerce companies doing $5k/month overpaying 10-15%"
+5. **Use loss aversion** - Frame around what they're losing, not gaining
 
 ## 8 Allowed Messaging Frameworks
 

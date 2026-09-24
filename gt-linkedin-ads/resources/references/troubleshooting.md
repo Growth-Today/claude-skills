@@ -2,15 +2,15 @@
 
 Work through systematically from top to bottom. Allow at least 2 weeks before major modifications, unless CTR < 0.1%.
 
-## 0. Default Settings Audit (check this first — it is where most budget leaks)
+## 0. Default Settings Audit (check this first - it is where most budget leaks)
 
 LinkedIn's default Campaign Manager settings quietly waste spend in ways most internal teams never catch. Before optimising anything else, strip these out:
 
-- **Audience Expansion** — ON by default. **Turn OFF.** It broadens delivery beyond your defined targeting to "similar" people you did not pick.
-- **LinkedIn Audience Network (LAN)** — ON by default. **Turn OFF** for most B2B. It serves impressions on third-party apps and sites, usually low-quality placements that drain budget without intent.
-- **ABM budget concentration** — on a named-account campaign, check the Demographics tab for spend distribution. The classic failure is 90% of budget hitting 3-4 accounts out of 400 because a few large companies win every auction. Fix with tighter campaign segmentation and bid controls so spend spreads across the list.
-- **Frequency capping** — left uncapped, the same person gets hit far more than ~3x/week, burning budget and causing fatigue. Set a cap.
-- **Bid strategy** — "Maximum delivery" (automated) often overspends on cheap, low-value impressions. Switch to manual or target-cost bidding to control what you actually pay per result.
+- **Audience Expansion** - ON by default. **Turn OFF.** It broadens delivery beyond your defined targeting to "similar" people you did not pick.
+- **LinkedIn Audience Network (LAN)** - ON by default. **Turn OFF** for most B2B. It serves impressions on third-party apps and sites, usually low-quality placements that drain budget without intent.
+- **ABM budget concentration** - on a named-account campaign, check the Demographics tab for spend distribution. The classic failure is 90% of budget hitting 3-4 accounts out of 400 because a few large companies win every auction. Fix with tighter campaign segmentation and bid controls so spend spreads across the list.
+- **Frequency capping** - left uncapped, the same person gets hit far more than ~3x/week, burning budget and causing fatigue. Set a cap.
+- **Bid strategy** - "Maximum delivery" (automated) often overspends on cheap, low-value impressions. Switch to manual or target-cost bidding to control what you actually pay per result.
 
 Rebuild bidding, frequency capping, and account-level distribution from scratch rather than trusting the defaults. This single audit recovers more wasted spend than any creative change.
 
@@ -54,14 +54,14 @@ Rebuild bidding, frequency capping, and account-level distribution from scratch 
 - Lead with problems rather than solutions
 - Use customer's own language (from sales calls, reviews)
 - Test video formats for complex topics
-- Simplify messaging — if prospects can't articulate the problem + solution after reading, it's too complex
+- Simplify messaging - if prospects can't articulate the problem + solution after reading, it's too complex
 
 ## 4. Creative Fatigue
 **Symptoms**: Declining CTR over time, increasing CPM
 
 **Diagnosis**:
 - CTR below **0.45%** for Sponsored Content = problem
-- Check frequency — over 3 impressions/week/person = fatigue
+- Check frequency - over 3 impressions/week/person = fatigue
 - Same creative running for 6+ weeks?
 
 **Fixes**:
@@ -115,4 +115,4 @@ Rebuild bidding, frequency capping, and account-level distribution from scratch 
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

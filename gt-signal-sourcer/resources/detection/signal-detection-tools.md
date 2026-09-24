@@ -1,6 +1,6 @@
 # Signal Detection Tools & Freshness Rules
 
-## 30 Sales Triggers — Quick Reference with Detection Tools
+## 30 Sales Triggers - Quick Reference with Detection Tools
 
 ### 1. Funding & Financial Signals
 
@@ -68,7 +68,7 @@
 
 | Signal Type | Fresh Until | Optimal Outreach Window | Decay Rate |
 |-------------|-------------|------------------------|------------|
-| Champion job change | 30 days | 0-14 days | Fastest — act immediately |
+| Champion job change | 30 days | 0-14 days | Fastest - act immediately |
 | LinkedIn post engagement | 30 days | 0-7 days | Fast |
 | Pricing page visits | 7 days | 0-3 days | Very fast |
 | Conference/event | 21 days | -7 to +7 days around event | Fast |
@@ -91,25 +91,25 @@
 
 ## Signal Reliability Tiers
 
-### Tier 1 — Highest Intent (Same-day outreach)
+### Tier 1 - Highest Intent (Same-day outreach)
 - Funding announcement (Series A+)
 - Expansion into new market/geography
 - Leadership change in buyer's department
 - **= Budget is approved or about to be. Act fast.**
 
-### Tier 2 — Strong Intent (30-90 day window)
+### Tier 2 - Strong Intent (30-90 day window)
 - Competitor tech adoption/removal
 - Partnership or acquisition announcement
 - Hiring surge in relevant department (5+ roles)
 - **= Investment is happening. Timing window is 30-90 days.**
 
-### Tier 3 — Moderate Intent (Nurture sequence)
+### Tier 3 - Moderate Intent (Nurture sequence)
 - Job postings (1-3 roles)
 - Industry award or recognition
 - Product launch or feature release
 - **= Activity is there, but intent is less urgent.**
 
-### Tier 4 — Weak Intent (Context only)
+### Tier 4 - Weak Intent (Context only)
 - Social media activity
 - Website traffic spikes
 - General news mentions
@@ -119,7 +119,7 @@
 
 ## Signal Sources by Data Party
 
-### 1st-Party (Your Own Data) — Strongest
+### 1st-Party (Your Own Data) - Strongest
 | Source Type | Tools |
 |-----------|-------|
 | CRM | HubSpot, Salesforce, Attio |
@@ -129,7 +129,7 @@
 | Marketing sequences | beehiiv, customer.io, Kit |
 | Website visitors | Common Room, RB2B, Vector |
 
-### 2nd-Party (Partner Data) — Strong
+### 2nd-Party (Partner Data) - Strong
 | Source Type | Tools |
 |-----------|-------|
 | Partner signals | Crossbeam, PartnerStack |
@@ -139,7 +139,7 @@
 | Ad insights | ZenABM, Fibbler, Vector |
 | LinkedIn engagement | Clay, Teamfluence, Trigify |
 
-### 3rd-Party (Public Data) — Moderate to Strong
+### 3rd-Party (Public Data) - Moderate to Strong
 | Source Type | Tools |
 |-----------|-------|
 | Technographic | BuiltWith, HG Insights, TheirStack |

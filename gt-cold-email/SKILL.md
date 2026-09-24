@@ -22,8 +22,8 @@ When a request comes in, identify the type and delegate to the appropriate sub-s
 | Emailing Managers/ICs | **btl-messaging** | "email a manager", "IC outreach", "end user email", "BTL" | Read `resources/sub-skills/btl-messaging.md` |
 | Copywriting frameworks & principles | **copywriting** | "copywriting framework", "Do the Math", "Short Trigger", "Pattern Interrupt", "email framework", "copy principles", "email variations", "e-com cold email" | Read `resources/sub-skills/copywriting.md` |
 | Email infrastructure setup | **email-infra** | "email infra", "setup domains", "DNS setup", "SPF/DKIM/DMARC setup", "warmup", "mailbox setup", "Instantly setup", "how many domains", "email blacklist", "scaling email" | Read `resources/sub-skills/email-infra.md` |
-| Deliverability/infrastructure | — | See below | Read resources directly |
-| Sequencing tools | — | See below | Read resources directly |
+| Deliverability/infrastructure | - | See below | Read resources directly |
+| Sequencing tools | - | See below | Read resources directly |
 
 ## Routing Logic
 

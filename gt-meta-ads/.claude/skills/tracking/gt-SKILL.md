@@ -1,11 +1,11 @@
 ---
 name: meta-ads-tracking
-description: Meta Ads tracking — Pixel, Conversions API (CAPI), conversion events, attribution windows, and iOS privacy impact. Use for Pixel setup, CAPI, Conversions API, conversion events, attribution windows, iOS 14 tracking, event match quality, deduplication. Triggers on "Pixel", "CAPI", "Conversions API", "conversion event", "attribution window", "iOS tracking", "event match quality", "server-side tracking". Do NOT use for lead form setup (use lead-forms) or measurement reporting (use measurement).
+description: Meta Ads tracking - Pixel, Conversions API (CAPI), conversion events, attribution windows, and iOS privacy impact. Use for Pixel setup, CAPI, Conversions API, conversion events, attribution windows, iOS 14 tracking, event match quality, deduplication. Triggers on "Pixel", "CAPI", "Conversions API", "conversion event", "attribution window", "iOS tracking", "event match quality", "server-side tracking". Do NOT use for lead form setup (use lead-forms) or measurement reporting (use measurement).
 ---
 
 # Meta Ads Tracking (Pixel + CAPI)
 
-This is the foundation. Browser-only Pixel tracking under-reports badly after iOS privacy changes, and the algorithm optimises on whatever signal it receives — feed it partial data and it optimises toward the wrong people. Fix tracking before touching creative, audiences, or bidding.
+This is the foundation. Browser-only Pixel tracking under-reports badly after iOS privacy changes, and the algorithm optimises on whatever signal it receives - feed it partial data and it optimises toward the wrong people. Fix tracking before touching creative, audiences, or bidding.
 
 ## Instructions
 
@@ -18,7 +18,7 @@ This is the foundation. Browser-only Pixel tracking under-reports badly after iO
 ## Pixel + CAPI (both, not either)
 
 - **Pixel** = browser-side events. Necessary but increasingly lossy (iOS, ad blockers, cookie restrictions).
-- **CAPI (Conversions API)** = server-side events sent directly from your server to Meta, bypassing browser limitations. In 2026 this is not optional — it is how Meta recovers the events the browser loses.
+- **CAPI (Conversions API)** = server-side events sent directly from your server to Meta, bypassing browser limitations. In 2026 this is not optional - it is how Meta recovers the events the browser loses.
 - **Deduplication:** send the same event from both with a shared event ID so Meta does not double-count. Misconfigured dedup is a common, silent error.
 - **Event match quality:** Meta scores how well your events match to users (email, phone, name passed as hashed parameters). Higher match quality = better optimisation and attribution. Pass as much hashed first-party data as you cleanly can.
 
@@ -30,7 +30,7 @@ This is the foundation. Browser-only Pixel tracking under-reports badly after iO
 ## Attribution Windows
 
 - Default is **7-day click / 1-day view.** Fine for fast cycles.
-- For longer B2B consideration, test the **28-day click** window to capture delayed conversions — but keep the window consistent across campaigns so comparisons are valid.
+- For longer B2B consideration, test the **28-day click** window to capture delayed conversions - but keep the window consistent across campaigns so comparisons are valid.
 - iOS limits view-through data for off-platform conversions; lean on click attribution and CAPI-backed signal.
 
 ## Examples
@@ -50,4 +50,4 @@ For sending CRM outcomes back to Meta as offline conversions (HubSpot/Salesforce
 For domain verification, Aggregated Event Measurement, CAPI Gateway, standard-vs-custom events, Event Match Quality, UTM standardization, and breakdown reporting (all B2B) → Read `{SKILL_BASE}/resources/references/tracking-hygiene.md`.
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

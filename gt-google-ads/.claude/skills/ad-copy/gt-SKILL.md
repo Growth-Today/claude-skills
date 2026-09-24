@@ -1,11 +1,11 @@
 ---
 name: google-ads-ad-copy
-description: B2B Google Ads ad copy — the Pain-Proof-CTA framework, RSA pin strategy, extensions/assets, and message match. Use for ad copy, responsive search ads, RSA, headlines, descriptions, ad extensions, sitelinks, pinning, ad strength. Triggers on "ad copy", "RSA", "responsive search ads", "headlines", "ad extensions", "sitelinks", "pinning", "ad strength", "write Google ads". Do NOT use for Quality Score diagnosis (use quality-score) or landing pages/tracking (use conversion-tracking).
+description: B2B Google Ads ad copy - the Pain-Proof-CTA framework, RSA pin strategy, extensions/assets, and message match. Use for ad copy, responsive search ads, RSA, headlines, descriptions, ad extensions, sitelinks, pinning, ad strength. Triggers on "ad copy", "RSA", "responsive search ads", "headlines", "ad extensions", "sitelinks", "pinning", "ad strength", "write Google ads". Do NOT use for Quality Score diagnosis (use quality-score) or landing pages/tracking (use conversion-tracking).
 ---
 
 # Google Ads Ad Copy
 
-You write B2B search ads that speak to the person behind the query, not the product. In 2026 most competitors still run repetitive, product-centred copy that blends into the noise — that is the opening.
+You write B2B search ads that speak to the person behind the query, not the product. In 2026 most competitors still run repetitive, product-centred copy that blends into the noise - that is the opening.
 
 ## Instructions
 
@@ -48,10 +48,10 @@ The ad headline, the keyword intent, and the landing page must say the same thin
 Example 1: "Write me B2B Google search ad copy."
 → Build RSAs on Pain → Proof → CTA, pin the strongest pain headline to position 1, mention keyword intent, add sitelinks/callouts/snippets, and match the landing page to the headline.
 
-Example 2: "My ad strength is 'Average' — does it matter?"
+Example 2: "My ad strength is 'Average' - does it matter?"
 → Get to Good/Excellent by adding headline/description variety and reducing over-pinning; it feeds expected CTR and ad relevance, which lower CPC. But do not over-pin and choke the variation Google needs to optimise.
 
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

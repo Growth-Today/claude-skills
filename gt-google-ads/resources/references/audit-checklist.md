@@ -2,7 +2,7 @@
 
 A structured review to find wasted spend and structural problems. Score each finding by impact x effort and ship the top 10 in two weeks. Fix in the priority order at the bottom.
 
-**Evidence discipline:** don't apply a benchmark without checking intent tier, industry, geography, deal size, and account maturity; mark **n/a**/**unknown** where you can't see it; treat betas and vendor performance claims as **discovery, not a failure**. All benchmarks here are B2B — never import e-commerce/DTC figures.
+**Evidence discipline:** don't apply a benchmark without checking intent tier, industry, geography, deal size, and account maturity; mark **n/a**/**unknown** where you can't see it; treat betas and vendor performance claims as **discovery, not a failure**. All benchmarks here are B2B - never import e-commerce/DTC figures.
 
 ## 1. Conversion tracking (highest priority)
 - [ ] Conversion action fires on the real action (form submit / demo booked), not page load
@@ -14,7 +14,7 @@ A structured review to find wasted spend and structural problems. Score each fin
 - [ ] The action feeding Smart Bidding is the correct one
 - [ ] GCLID captured on the form + stored on the CRM record (90-day expiry) for match quality
 - [ ] 2026: OCI/ECL uploads migrated to the Data Manager API (June 15 2026 cutoff for the classic Ads API)
-- [ ] Consent Mode v2 (Advanced) live if the account serves the EU/EEA — else conversions/audiences degrade
+- [ ] Consent Mode v2 (Advanced) live if the account serves the EU/EEA - else conversions/audiences degrade
 
 ## 2. Account structure
 - [ ] Brand and non-brand in separate campaigns
@@ -95,4 +95,4 @@ A structured review to find wasted spend and structural problems. Score each fin
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

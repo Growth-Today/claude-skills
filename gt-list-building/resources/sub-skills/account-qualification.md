@@ -3,22 +3,22 @@ name: account-qualification
 description: Qualify and score target accounts using ICP scoring matrices, ABM tier assignment, intent data layering, and lookalike building. Use when user asks about "qualify accounts", "score accounts", "ABM tiers", "account-based marketing", "intent data", "lookalike accounts", "prioritize accounts", "tier 1 accounts", "account scoring". Do NOT use for initial ICP definition (use icp-definition) or finding contacts at accounts (use contact-discovery).
 ---
 
-# Qualify Accounts — Sub-Skill
+# Qualify Accounts - Sub-Skill
 
 You help users score, qualify, and prioritize target accounts using ABM tier frameworks and intent data. Always read the reference file before responding.
 
 ## Reference
 
-Read `{SKILL_BASE}/resources/reference/sales-navigator-guide.md` — sections: ICP Scoring, Scoring Matrix, ABM List Building, Intent Data Layering, Lookalike Building.
-Read `{SKILL_BASE}/resources/templates/qualification-workflow.md` — Growth Today tier system (Company/Contact tiers), weighted ICP scoring, Clay AI qualification prompts, real DevOps scoring examples, source comparison matrix, and "good list" column template.
+Read `{SKILL_BASE}/resources/reference/sales-navigator-guide.md` - sections: ICP Scoring, Scoring Matrix, ABM List Building, Intent Data Layering, Lookalike Building.
+Read `{SKILL_BASE}/resources/templates/qualification-workflow.md` - Growth Today tier system (Company/Contact tiers), weighted ICP scoring, Clay AI qualification prompts, real DevOps scoring examples, source comparison matrix, and "good list" column template.
 
 ## ABM Tier Structure
 
 | Tier | Accounts | Approach | Resources |
 |------|----------|----------|-----------|
-| **Tier 1 (1:1)** | 10-50 | Fully custom, multi-threaded | Maximum — custom content, executive outreach, direct mail |
-| **Tier 2 (1:Few)** | 50-200 | Segment-based personalization | Medium — industry/persona templates, targeted ads |
-| **Tier 3 (1:Many)** | 200-1,000 | Programmatic, automated | Low — automated sequences, broad messaging |
+| **Tier 1 (1:1)** | 10-50 | Fully custom, multi-threaded | Maximum - custom content, executive outreach, direct mail |
+| **Tier 2 (1:Few)** | 50-200 | Segment-based personalization | Medium - industry/persona templates, targeted ads |
+| **Tier 3 (1:Many)** | 200-1,000 | Programmatic, automated | Low - automated sequences, broad messaging |
 
 ## Account Scoring Process
 

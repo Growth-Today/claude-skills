@@ -68,10 +68,10 @@ name: data-quality-reference
 
 | Metric | Target | Danger Zone |
 |--------|--------|-------------|
-| Bounce rate | <1% | >3% — pause campaigns |
-| Spam complaint rate | <0.1% | >0.3% — investigate |
-| Unsubscribe rate | 0.3-0.5% | >1% — targeting issue |
-| Email deliverability | 95%+ | <90% — infrastructure issue |
+| Bounce rate | <1% | >3% - pause campaigns |
+| Spam complaint rate | <0.1% | >0.3% - investigate |
+| Unsubscribe rate | 0.3-0.5% | >1% - targeting issue |
+| Email deliverability | 95%+ | <90% - infrastructure issue |
 | List growth rate | Outpace decay | Shrinking = problem |
 
 ## Verification Best Practices
@@ -79,7 +79,7 @@ name: data-quality-reference
 1. **Verify 100% of emails before any campaign.** No exceptions.
 2. **Re-verify lists older than 30 days.**
 3. **Remove all "unknown" and "catch-all"** or batch-test cautiously.
-4. **Remove role-based emails** (info@, admin@, sales@) — higher spam complaints.
+4. **Remove role-based emails** (info@, admin@, sales@) - higher spam complaints.
 5. **Remove free email providers** for B2B outreach (gmail, yahoo personal).
 6. **Use real-time verification** at point of collection if possible (API).
 7. **Cost perspective:** $0.005-0.01/email is trivial vs damaged domain reputation.

@@ -7,7 +7,7 @@ description: "Build cold-email campaigns and route by ESP and SEG. Use for campa
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §7, §8 · **Related:** dashboard-reading, bounce-audit · gt-list-building.
 
-> 🔒 **Read-only area.** The campaign build and the routing are done from the **email infra management system**, not by hand in the sequencer. Use this sub-skill to decide *what* the campaign and routing should be, read the live config to check it, and report the gap. Do not edit a campaign or a routing rule in Instantly / EmailBison / Smartlead / Lemlist directly — that creates a second source of truth. The `--esp-mix` profiling below is read-only and safe to run.
+> 🔒 **Read-only area.** The campaign build and the routing are done from the **email infra management system**, not by hand in the sequencer. Use this sub-skill to decide *what* the campaign and routing should be, read the live config to check it, and report the gap. Do not edit a campaign or a routing rule in Instantly / EmailBison / Smartlead / Lemlist directly - that creates a second source of truth. The `--esp-mix` profiling below is read-only and safe to run.
 
 How to build a campaign that routes to the right inboxes and gets optimized from data, not from a 2024 rule of thumb. Numbers and taxonomy live in `{SKILL_BASE}/resources/reference.md` §1, §2, §8.
 
@@ -16,7 +16,7 @@ You are not A/B-testing copy. You are reading a **matrix of already-segmented se
 ---
 ### Determining the recipient ESP mix on a lead list
 
-**Fastest path — run the playbook, no Clay credits:**
+**Fastest path - run the playbook, no Clay credits:**
 
 ```bash
 cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
@@ -24,7 +24,7 @@ uv run execute.py --esp-mix --file lead_domains.txt --csv acme_esp_mix.csv
 ```
 
 Queries MX directly and prints the distribution, the SEG share, and a `no-email`
-count (domains with no MX at all — guaranteed hard bounces, strip them before sending).
+count (domains with no MX at all - guaranteed hard bounces, strip them before sending).
 It uses the **same provider list** as the Clay formula below; the two are kept in
 lockstep in `MX_PROVIDERS` inside `execute.py`. Add a provider in one place, add it
 in the other.
@@ -32,9 +32,9 @@ in the other.
 Use Clay instead when the domains already live in a Clay table and you want the ESP
 as a column alongside the rest of the enrichment.
 
-### Clay version — How To Run MX Analysis in Clay to Determine ESP Mix on Lead Lists
+### Clay version - How To Run MX Analysis in Clay to Determine ESP Mix on Lead Lists
 
-Run this on a target account list or an existing customer list — you want the real inbox mix, not a sample.
+Run this on a target account list or an existing customer list - you want the real inbox mix, not a sample.
 ### Tools Needed:
 - Clay workspace
 - Company domains normalized (e.g. `growthtoday.co`)
@@ -140,11 +140,11 @@ Build so the campaign is **visible to and managed by the inbox-management system
 4. **Let the automation attach/detach.** It attaches only eligible inboxes and maintains membership:
  - **Active / New Inbox** → eligible, but read §2 before you attach. The system stops excluding an
    inbox at `new_inbox_age_days`; **Growth Today does not attach one until `warmup_floor_days`**,
-   which is longer. "The dashboard let me" is not the standard — §2 has an explicit warning box
+   which is longer. "The dashboard let me" is not the standard - §2 has an explicit warning box
    about exactly this gap.
- - **Warmup Needed** → throttled to cold 0–1 but kept attached.
+ - **Warmup Needed** → throttled to cold 0-1 but kept attached.
  - **Burnt** → excluded.
-5. **Naming convention:** `Segment – ESP`, e.g. `Webvisits – Google`, `Webvisits – Microsoft`; low volume (< 500 leads) → `Webvisits – All` (Both); by rep → `Webvisits – Andrew`.
+5. **Naming convention:** `Segment - ESP`, e.g. `Webvisits - Google`, `Webvisits - Microsoft`; low volume (< 500 leads) → `Webvisits - All` (Both); by rep → `Webvisits - Andrew`.
 
 > **Failover caveat (EmailBison only):** a lead being prospected by an inbox that turns Warmup Needed keeps getting sent from that throttled inbox, Bison won't move the lead to a healthy inbox on the campaign. Instantly and Smartlead can reroute the lead to a healthy inbox; EmailBison can't. Watch for leads stranded on throttled inboxes (the dashboard-reading sub-skill).
 
@@ -174,7 +174,7 @@ ROUTING
 BUILD
 [ ] Campaign created via the management dashboard (or drafted with NO inboxes attached)
 [ ] Only Active inboxes past §2 `warmup_floor_days` attached; Burnt excluded; Warmup Needed throttled+attached
-[ ] Naming convention applied (Segment – ESP)
+[ ] Naming convention applied (Segment - ESP)
 
 LAUNCH GATE
 [ ] List 100% verified (re-verified if >30 days)

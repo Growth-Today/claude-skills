@@ -65,7 +65,7 @@ Save the count. This is your baseline for measuring success.
 
 ## Execute
 
-### Method 1: HubSpot Workflow (Recommended — Handles Backlog + Future)
+### Method 1: HubSpot Workflow (Recommended - Handles Backlog + Future)
 
 1. Go to **Automation > Workflows > Create workflow**
 2. Select **Contact-based > Blank workflow**
@@ -91,7 +91,7 @@ Save the count. This is your baseline for measuring success.
 - Click Review > Turn on
 - When prompted, select **Yes, enroll existing contacts**. This enrolls the entire backlog.
 
-### Method 2: API Backfill Script (Optional — Immediate Results)
+### Method 2: API Backfill Script (Optional - Immediate Results)
 
 Use this if you need the data populated immediately rather than waiting for workflow processing.
 
@@ -162,7 +162,7 @@ print(f"Contacts still missing company name: {result.total}")
 - **Property type matters.** Contact "Company name" is a single-line text field by default. If someone changed it to a dropdown, the copy action may fail. Check in Settings > Properties before running.
 - **Personal email domains exit on the NO branch.** Contacts with gmail.com, yahoo.com, hotmail.com, outlook.com, etc. will not get enriched. This is expected. They need manual enrichment or a third-party tool (ZoomInfo, Clearbit, Apollo) to determine their company.
 - **Company name is a prerequisite for ICP Tier classification.** Run this enrichment before creating ICP Tier workflows.
-- **Schedule the "after" verification script.** Workflow processing for large databases takes time. Do not check results immediately — schedule the verification for 2-4 hours after activation.
+- **Schedule the "after" verification script.** Workflow processing for large databases takes time. Do not check results immediately - schedule the verification for 2-4 hours after activation.
 
 ---
 

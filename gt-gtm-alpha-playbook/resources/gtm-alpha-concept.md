@@ -1,17 +1,17 @@
-# GTM Alpha — Concept & Philosophy Reference
+# GTM Alpha - Concept & Philosophy Reference
 
 **Source:** https://www.clay.com/blog/gtm-alpha
 
 ## What is GTM Alpha?
 
-In finance, "alpha" is an investment's outperformance over a market benchmark — what separates market-beating investors from the pack. GTM Alpha applies the same concept to go-to-market: it's the performance advantage a GTM team achieves by using data and plays that competitors don't have access to.
+In finance, "alpha" is an investment's outperformance over a market benchmark - what separates market-beating investors from the pack. GTM Alpha applies the same concept to go-to-market: it's the performance advantage a GTM team achieves by using data and plays that competitors don't have access to.
 
-Every GTM team is constantly seeking alpha — even if they don't call it that yet. Each time you refine targeting or messaging to beat competitors, you're chasing alpha.
+Every GTM team is constantly seeking alpha - even if they don't call it that yet. Each time you refine targeting or messaging to beat competitors, you're chasing alpha.
 
 ## The Three Layers of GTM Alpha
 
 ### Layer 1: Better Data (Table Stakes)
-Accurate, comprehensive, and timely data is the foundation. Most companies don't even get this far — if you can't trust email addresses or firmographics in your CRM, fix that first.
+Accurate, comprehensive, and timely data is the foundation. Most companies don't even get this far - if you can't trust email addresses or firmographics in your CRM, fix that first.
 
 ### Layer 2: Unique Data (Competitive Edge)
 Data that competitors don't have. Examples:
@@ -61,4 +61,4 @@ Example: "SEC filing mentions 'data security' 3+ times AND CIO changed in last 9
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

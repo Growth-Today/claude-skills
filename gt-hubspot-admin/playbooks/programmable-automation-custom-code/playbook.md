@@ -1,6 +1,6 @@
 ---
 name: programmable-automation-custom-code
-description: "Use custom-code and webhook actions in workflows (Operations/Data Hub) for logic beyond the standard actions: complex calculations, data transformations, external API calls, and advanced routing — safely."
+description: "Use custom-code and webhook actions in workflows (Operations/Data Hub) for logic beyond the standard actions: complex calculations, data transformations, external API calls, and advanced routing - safely."
 license: MIT
 metadata:
   author: growthtoday
@@ -14,7 +14,7 @@ When standard workflow actions can't do it, custom-code actions can: run JavaScr
 
 ## Why This Matters
 
-Most automation should use standard actions (they're reliable and need no maintenance). But some logic genuinely requires code — randomized/weighted lead distribution, multi-field calculations, calling an external system mid-workflow, or transformations HubSpot can't express. Custom-code actions (Operations/Data Hub) unlock these, at the cost of added complexity and maintenance — so use them deliberately.
+Most automation should use standard actions (they're reliable and need no maintenance). But some logic genuinely requires code - randomized/weighted lead distribution, multi-field calculations, calling an external system mid-workflow, or transformations HubSpot can't express. Custom-code actions (Operations/Data Hub) unlock these, at the cost of added complexity and maintenance - so use them deliberately.
 
 ## Prerequisites
 
@@ -64,11 +64,11 @@ Wrap external calls in try/catch, handle timeouts, and log meaningfully. Documen
 
 ## Key Technical Learnings
 
-- **Code is a last resort** — every custom action is maintenance debt; exhaust standard actions first.
-- **Secrets in Secrets** — never hard-code API keys in a workflow action.
-- **Test before activating** — the test panel prevents shipping broken logic to live records.
-- **Webhook for send-only** — don't write code when a webhook action suffices.
-- **Operations/Data Hub gated** — confirm the tier before designing around it.
+- **Code is a last resort** - every custom action is maintenance debt; exhaust standard actions first.
+- **Secrets in Secrets** - never hard-code API keys in a workflow action.
+- **Test before activating** - the test panel prevents shipping broken logic to live records.
+- **Webhook for send-only** - don't write code when a webhook action suffices.
+- **Operations/Data Hub gated** - confirm the tier before designing around it.
 
 ---
 

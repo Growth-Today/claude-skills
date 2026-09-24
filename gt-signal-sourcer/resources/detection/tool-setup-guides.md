@@ -37,7 +37,7 @@ Tracks LinkedIn engagement to identify high-intent B2B prospects. Monitors speci
 ## 2. RB2B
 
 ### What It Does
-Person-level website visitor identification. Places a tracking pixel on your site and identifies individual visitors (name, email, LinkedIn, company) — not just companies.
+Person-level website visitor identification. Places a tracking pixel on your site and identifies individual visitors (name, email, LinkedIn, company) - not just companies.
 
 ### How It Works
 
@@ -131,7 +131,7 @@ Salesforce integration extra on Starter/Team; included in Enterprise.
 ## 4. Bombora
 
 ### What It Does
-B2B intent data — measures when companies are actively researching topics related to your products. Core product: **Company Surge** scores.
+B2B intent data - measures when companies are actively researching topics related to your products. Core product: **Company Surge** scores.
 
 ### How Company Surge Works
 
@@ -168,7 +168,7 @@ B2B intent data — measures when companies are actively researching topics rela
 | Enhanced Intent Data | ~$50,000-$100,000/yr |
 | Full Audience Solutions | $100,000+/yr |
 
-All contracts custom — no self-service or public pricing.
+All contracts custom - no self-service or public pricing.
 
 ---
 

@@ -20,12 +20,12 @@ Connect a client's sequencer workspace, pull the **live configuration**, and che
 Platform-aware, use the connected sequencer's MCP/API. Pull:
 1. **Inboxes:** every sending account, its provider (Google/Microsoft/SMTP), connection status, tags, warmup on/off + score, cold + warmup daily limits, lifetime sent, creation date.
 2. **Domains:** distinct sending domains and how many mailboxes each has.
-3. **DNS/auth:** MX/SPF/DKIM/DMARC status per domain. Most sequencers don't expose this, so **don't check it by hand** — run the playbook:
+3. **DNS/auth:** MX/SPF/DKIM/DMARC status per domain. Most sequencers don't expose this, so **don't check it by hand** - run the playbook:
    ```bash
    cd {SKILL_BASE}/playbooks/dns-auth-audit/scripts
    uv run execute.py --file domains.txt --csv <client>_baseline.csv
    ```
-   It needs no credentials, grades every domain PASS/WARN/FAIL, classifies the provider from MX (which is also how you spot a recipient-side SEG), and writes a CSV you can diff next month with `after.py`. Save the CSV per client — drift is the real risk, and you can only see drift against a baseline.
+   It needs no credentials, grades every domain PASS/WARN/FAIL, classifies the provider from MX (which is also how you spot a recipient-side SEG), and writes a CSV you can diff next month with `after.py`. Save the CSV per client - drift is the real risk, and you can only see drift against a baseline.
 4. **Campaigns:** per campaign, tracking on/off, first-email content type (plain/HTML), sending interval + schedule/timezone, company send limit, unsubscribe/stop-on-reply settings, ESP routing.
 5. **Account settings:** custom tracking domain present? warning notifications on? (Lemlist: LinkedIn limits, blocklist, HubSpot sync.)
 
@@ -37,7 +37,7 @@ Report the baseline first (inbox count vs brief, provider split, domains), then 
 
 **This table is executable.** If the sequencer's MCP is connected, walk it row by row and run
 the call in the `Call → field` column instead of asking a human to look. If the MCP is not
-connected, fall back to the UI check and **say in the report which rows were done by hand** —
+connected, fall back to the UI check and **say in the report which rows were done by hand** -
 a skipped row is not a passed row.
 
 ### How to read a row
@@ -46,9 +46,9 @@ a skipped row is not a passed row.
 |---|---|
 | **Source** | `MCP` = run the call · `PLAYBOOK` = run the script · `MANUAL` = a person must look |
 | **Call → field** | The exact tool and field path. Do not infer a different one |
-| **Pass if** | The comparison. Thresholds are **keys into `reference.md`**, not numbers written here — read the current value from §1/§2 keys at run time |
+| **Pass if** | The comparison. Thresholds are **keys into `reference.md`**, not numbers written here - read the current value from §1/§2 keys at run time |
 | **On fail** | The verdict and who acts |
-| **Write?** | `never` = read the value, report the gap, escalate — the email infra management system owns the write. `setup-only` = writable at first provisioning, never after go-live. `n/a` = nothing to write; the check reads a count, an age or a DNS record. **No row in this table is a licence to change a live inbox** |
+| **Write?** | `never` = read the value, report the gap, escalate - the email infra management system owns the write. `setup-only` = writable at first provisioning, never after go-live. `n/a` = nothing to write; the check reads a count, an age or a DNS record. **No row in this table is a licence to change a live inbox** |
 
 Calls below are Instantly V2 tool names. For EmailBison / Smartlead / Lemlist the *check* is
 identical; substitute that platform's equivalent read and note the substitution in the report.
@@ -57,7 +57,7 @@ identical; substitute that platform's equivalent read and note the substitution 
 
 | # | Check | Source | Call → field | Pass if | On fail | Write? |
 |---|---|---|---|---|---|---|
-| 1 | **Inbox count** | MCP | `list_accounts` → count, group by `provider_code` | matches the brief, count and Google/Microsoft split | WARN → reconcile with ScaledMail. If the brief itself is doubtful, re-derive with `playbooks/sizing-calculator` first, using **this client's actual Google/Microsoft split** — older briefs assumed an all-Google fleet, which under-buys badly on a Microsoft-heavy client | n/a |
+| 1 | **Inbox count** | MCP | `list_accounts` → count, group by `provider_code` | matches the brief, count and Google/Microsoft split | WARN → reconcile with ScaledMail. If the brief itself is doubtful, re-derive with `playbooks/sizing-calculator` first, using **this client's actual Google/Microsoft split** - older briefs assumed an all-Google fleet, which under-buys badly on a Microsoft-heavy client | n/a |
 | 2 | **Mailboxes per domain** | MCP | `list_accounts` → `email`, split on `@`, count per domain | Google ≤ ~3 · Microsoft ≤ ~25 | WARN → redistribute on the next build | n/a |
 | 3 | **Connection** | MCP | `list_accounts` → `status`, `setup_pending`, `email` | `status == 1` and `setup_pending == false` on every inbox; no role addresses (`sales@`, `info@`, `hello@`) | FAIL → report it. Connecting inboxes to the sequencer is done from the email infra management system | never |
 | 4 | **Warmup on** | MCP | `list_accounts` → `warmup_status` | `warmup_status == 1` on every live inbox | FAIL → **report it against the email infra management system with the inbox list. Do not enable it yourself on a live inbox** | never |
@@ -65,28 +65,28 @@ identical; substitute that platform's equivalent read and note the substitution 
 | 6 | **Cold limits by state** | MCP | `list_accounts` → `daily_limit`, `warmup.limit`, `warmup.increment` | matches §1 `google_cold` / `outlook_cold` for the inbox's state; warming and throttled at §1 `cold_warming`; New Inbox at §1 `cold_new_inbox`; warmup ≈ cold × §1 `ratio_google` / `ratio_outlook` | FAIL → **list the inboxes and report to the email infra management system. GT does not set limits** | never |
 | 7 | **Randomized interval** | MCP | `list_accounts` → `sending_gap` | a gap is set and is not near-zero; jitter enabled per platform | WARN → **report it against the email infra management system with the inbox list.** Pacing belongs with the limits, and the system will overwrite a hand-set gap anyway | never |
 | 8 | **Timezone** | MCP | `list_campaigns` → `campaign_schedule.schedules[].timezone`, `.timing`, `.days` | window matches the client's segment (US vs EU); weekdays only | FAIL → fix the schedule | never |
-| 9 | **DNS / auth** | PLAYBOOK | `playbooks/dns-auth-audit` → `uv run execute.py --file domains.txt` | exit code 0 — the script blocks unless MX, SPF, DKIM and DMARC are all PASS, so exit 0 already means one SPF inside the 10-lookup budget and DMARC `p=reject` (§6) | FAIL → fix at the DNS host (provisioning). **A record that was healthy and is now broken is P0** | n/a |
+| 9 | **DNS / auth** | PLAYBOOK | `playbooks/dns-auth-audit` → `uv run execute.py --file domains.txt` | exit code 0 - the script blocks unless MX, SPF, DKIM and DMARC are all PASS, so exit 0 already means one SPF inside the 10-lookup budget and DMARC `p=reject` (§6) | FAIL → fix at the DNS host (provisioning). **A record that was healthy and is now broken is P0** | n/a |
 | 10 | **Destination** | MANUAL | not exposed by any sequencer API | masking or a real landing page, never a bare 301/302 | FAIL → switch to masking. GT runs no client redirects today, so a FAIL means an inherited or client-held domain | n/a |
 | 11 | **Tracking** | MCP | `list_campaigns` → `open_tracking` | `open_tracking == false` on every campaign; no shared custom tracking domain | FAIL → turn off | never |
 | 12 | **First email plain text** | MCP | `list_campaigns` → `sequences[0].steps[0].variants[].body` | no `<img`, no `<a href`, no tracking pixel in step 1 | FAIL → strip. Launch-blocking | never |
-| 13 | **Signature** | MANUAL | **not exposed** — absent from `list_accounts` and `get_account` | no links, images, or promotional wording | FAIL → clean it in the UI | setup-only |
-| 14 | **Unsubscribe** | MCP | `list_campaigns` → step-1 `body` · `workspace_get` → `add_unsub_to_block` | no unsubscribe *link* in cold copy — plain-text opt-out only; `add_unsub_to_block == true` so opt-outs are suppressed | FAIL → remove the link (it forces HTML) | never |
-| 15 | **ESP routing** | MANUAL | not exposed — a live `get_campaign` read returns no ESP-matching field. Check it in the campaign UI | no blind ESP matching; routing follows the dashboard matrix | WARN → review against the matrix (campaign-building) | never |
-| 16 | **Company send limit** | MANUAL | not exposed — a live `get_campaign` read returns no per-company cap field. Check it in the campaign UI | a cap is set (≈ 2/company/day; lower for SEG orgs) | FAIL → report it against the email infra management system; campaign build and routing live there | never |
+| 13 | **Signature** | MANUAL | **not exposed** - absent from `list_accounts` and `get_account` | no links, images, or promotional wording | FAIL → clean it in the UI | setup-only |
+| 14 | **Unsubscribe** | MCP | `list_campaigns` → step-1 `body` · `workspace_get` → `add_unsub_to_block` | no unsubscribe *link* in cold copy - plain-text opt-out only; `add_unsub_to_block == true` so opt-outs are suppressed | FAIL → remove the link (it forces HTML) | never |
+| 15 | **ESP routing** | MANUAL | not exposed - a live `get_campaign` read returns no ESP-matching field. Check it in the campaign UI | no blind ESP matching; routing follows the dashboard matrix | WARN → review against the matrix (campaign-building) | never |
+| 16 | **Company send limit** | MANUAL | not exposed - a live `get_campaign` read returns no per-company cap field. Check it in the campaign UI | a cap is set (≈ 2/company/day; lower for SEG orgs) | FAIL → report it against the email infra management system; campaign build and routing live there | never |
 | 17 | **Spintax / variance** | MCP | `list_campaigns` → `variants[].subject` and `.body` | `{{RANDOM \| … }}` present on subject **and** body; more than one variant per step | WARN → add variance | never |
-| 18 | **Cross-sequencer** | MANUAL | requires reading two platforms — no single call | an inbox live in another sequencer is at cold 0 (Instantly) / 1 (EmailBison) and tagged | FAIL → **report it against the email infra management system** (throttling and tagging live there) | never |
+| 18 | **Cross-sequencer** | MANUAL | requires reading two platforms - no single call | an inbox live in another sequencer is at cold 0 (Instantly) / 1 (EmailBison) and tagged | FAIL → **report it against the email infra management system** (throttling and tagging live there) | never |
 | 19 | **% automated replies** | MCP | `list_emails` → reply bodies, strip OOO before any rate | auto-replies stripped before bounce/reply is quoted | WARN → strip (blacklist-bounce-audit). Needs a live campaign | n/a |
 | 20 | **Warning alerts** | MANUAL | not exposed by the account or workspace read | high-bounce alerts ON (plus LinkedIn-disconnect on Lemlist) | WARN → enable in the UI | setup-only |
-| 21 | **Unibox settings** | MANUAL | not in `workspace_get` — checked in Settings → Unibox | **Save undelivered emails = ON** · Show auto-replies = ON · Save non-Instantly = OFF · Only notify in CRM = OFF | FAIL → switch on. With undelivered off, the bounce number the system reports is wrong, not just incomplete | setup-only |
+| 21 | **Unibox settings** | MANUAL | not in `workspace_get` - checked in Settings → Unibox | **Save undelivered emails = ON** · Show auto-replies = ON · Save non-Instantly = OFF · Only notify in CRM = OFF | FAIL → switch on. With undelivered off, the bounce number the system reports is wrong, not just incomplete | setup-only |
 
-> **⚠️ Rows 15 and 16.** Instantly returns campaign fields **only once they have been configured** —
+> **⚠️ Rows 15 and 16.** Instantly returns campaign fields **only once they have been configured** -
 > an unset field is simply absent from the response, not present-and-empty. On every GT campaign
 > checked so far these two were absent. Treat absent as **not configured**, which is the audit
 > answer anyway, and confirm the exact field name against a campaign where the setting *is* on
 > before hardening the row.
 
 > **🔒 Read-only reminder.** Rows 4, 6, 15 and 18 sit inside the email infra management system's territory. The audit
-> reads them and reports the gap. It never fixes them — see the read-only boundary in `SKILL.md`.
+> reads them and reports the gap. It never fixes them - see the read-only boundary in `SKILL.md`.
 > `setup-only` means writable at first provisioning; once an inbox is live and the email infra management system is
 > classifying it, that window is closed.
 
@@ -104,9 +104,9 @@ Baseline: X inboxes across Y domains (Google Z / Microsoft W) vs brief [match/mi
 ✅ PASS (n): [dimensions that are correct]
 ⚠️ WARN (n): [borderline, dimension + which inboxes + why]
 ❌ FAIL (n): [dimension + exact inboxes/campaigns + the fix]
-⬜ NOT CHECKED (n): [dimension + why — no MCP, no data, field unconfirmed]
+⬜ NOT CHECKED (n): [dimension + why - no MCP, no data, field unconfirmed]
 
-🔒 Email infra management system items found (read-only — reported, not fixed):
+🔒 Email infra management system items found (read-only - reported, not fixed):
 - [dimension + inbox list]
 
 Top fixes (priority order):
@@ -132,26 +132,26 @@ Rules: **numbers first**, name the exact inboxes/campaigns for every WARN/FAIL, 
 Condensed from an actual MCP-driven run, as a pattern to imitate.
 
 ```
-## Setup Audit — GT (Instantly) — 21 Aug 2026
+## Setup Audit - GT (Instantly) - 21 Aug 2026
 Source: Instantly MCP connected · 14 of 21 automatic (13 MCP + 1 playbook) · 7 manual
 Baseline: 25 inboxes / 13 domains · 25 Google / 0 Microsoft · created 2026-08-15 (6 days) · 0 active campaigns
 
 ✅ PASS (9): mailboxes-per-domain (max 2) · connection (25/25 status=1) · interval (sending_gap=10)
-            · timezone (America/Detroit, Mon–Fri) · DNS (playbook exit 0, 13/13 clean, p=reject on all)
+            · timezone (America/Detroit, Mon-Fri) · DNS (playbook exit 0, 13/13 clean, p=reject on all)
             · tracking off · first email plain · unsubscribe · spintax
 
-⚠️ WARN (1): provider split 100% Google, and no mix on file for this build — the mix is a
+⚠️ WARN (1): provider split 100% Google, and no mix on file for this build - the mix is a
             per-client decision (§4), so it should be a stated choice, not a drift
 
-❌ FAIL (3) — one root cause:
+❌ FAIL (3) - one root cause:
    4  warmup_status=0 on all 25; stat_warmup_score=0; warmup analytics empty
    5  6 days old vs §2 warmup_floor_days = 21 (also under the system's 14-day exclusion)
    6  daily_limit=20 = §1 google_cold (the ACTIVE value) on inboxes still in the warming window
    → 25 inboxes set to send 20 cold/day each with warmup off, 6 days after creation.
-     Nothing has sent yet — caught pre-launch, which is the point.
+     Nothing has sent yet - caught pre-launch, which is the point.
      Warmup config itself is correct: warmup.limit=30 = §1 google_warmup, increment=4 = §1 ramp_google.
 
-🔒 Email infra management system (reported, not fixed — rows 4 and 6 are Write? never):
+🔒 Email infra management system (reported, not fixed - rows 4 and 6 are Write? never):
    "All 25 inboxes have warmup disabled and daily_limit=20 inside the warming window.
     Requesting warmup enabled and cold set to the warming value until 2026-09-05. List attached."
 

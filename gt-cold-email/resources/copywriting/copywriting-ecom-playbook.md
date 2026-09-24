@@ -1,4 +1,4 @@
-# GT Cold Email Frameworks — E-Commerce Playbook
+# GT Cold Email Frameworks - E-Commerce Playbook
 **Version:** 1.0
 **Last updated:** 2026-04-07
 
@@ -78,19 +78,19 @@ Offers that convert because they do the work upfront:
 Use the Store Leads account to build your list.
 
 - Filter by platform: Shopify, Magento, or other relevant platforms
-- Always filter by **Platform Rank** — this is the brand's rank on that specific platform (e.g. rank on Shopify, not across all platforms combined)
+- Always filter by **Platform Rank** - this is the brand's rank on that specific platform (e.g. rank on Shopify, not across all platforms combined)
   - Lower number = larger brand
-  - Best practice: rank 1–50,000 on Shopify covers the strongest brands
-  - Revenue numbers in e-commerce are often unreliable or inaccessible — Platform Rank is the more dependable signal
-- 10K–50K rows at a time is normal
+  - Best practice: rank 1-50,000 on Shopify covers the strongest brands
+  - Revenue numbers in e-commerce are often unreliable or inaccessible - Platform Rank is the more dependable signal
+- 10K-50K rows at a time is normal
 
-⚠️ **Important:** Before building a list, check which platforms are monitored under your account. The current subscription allows access to two platforms — confirm which ones are active before filtering. When in doubt, Shopify is the primary platform.
+⚠️ **Important:** Before building a list, check which platforms are monitored under your account. The current subscription allows access to two platforms - confirm which ones are active before filtering. When in doubt, Shopify is the primary platform.
 
-For automated campaign sourcing, see the **[Store Leads Signal Sourcing Playbook]** — to be built separately.
+For automated campaign sourcing, see the **[Store Leads Signal Sourcing Playbook]** - to be built separately.
 
 ### Step 2: Qualification in Clay
 
-Connect Store Leads to Clay — both the client's Clay account and our GT Clay account (all API calls run through our account, so it's free for the client).
+Connect Store Leads to Clay - both the client's Clay account and our GT Clay account (all API calls run through our account, so it's free for the client).
 
 In Clay, confirm and enrich each brand:
 - Confirm it is actually an e-commerce brand
@@ -110,25 +110,25 @@ Clay Find Contacts → Apollo → LeadMagic → Prospeo → Findymail
 
 ## How to Automate E-Com Campaigns (Evergreen Sequences)
 
-Store Leads supports custom lists with webhook endpoints — use this to build automated, 24/7 evergreen sequences.
+Store Leads supports custom lists with webhook endpoints - use this to build automated, 24/7 evergreen sequences.
 
 **How it works:**
 
 1. Go to Store Leads → Domains section
 2. Create a custom list with your relevant filters (platform, platform rank, competitor installed/not installed, app installs, etc.)
-3. Save the list — Store Leads will generate a webhook endpoint for it
+3. Save the list - Store Leads will generate a webhook endpoint for it
 4. Connect that endpoint to Clay
-5. Store Leads updates the list continuously and sends new data weekly (every Sunday) — any brand that matches the filter (e.g. just installed or removed a competitor tool) will automatically flow into Clay and into your sequence
+5. Store Leads updates the list continuously and sends new data weekly (every Sunday) - any brand that matches the filter (e.g. just installed or removed a competitor tool) will automatically flow into Clay and into your sequence
 
-This creates automated, always-on outbound triggered by real-time signals — no manual list pulls needed.
+This creates automated, always-on outbound triggered by real-time signals - no manual list pulls needed.
 
 **Example filter setup:**
 - Platform: Shopify
-- Platform Rank: 1–50,000
+- Platform Rank: 1-50,000
 - Competitor installed: [tool name]
 - Or: Competitor recently removed: [tool name]
 
-For full setup instructions, see the **[Store Leads Signal Sourcing Playbook]** — to be built separately.
+For full setup instructions, see the **[Store Leads Signal Sourcing Playbook]** - to be built separately.
 
 ---
 
@@ -136,7 +136,7 @@ For full setup instructions, see the **[Store Leads Signal Sourcing Playbook]** 
 
 E-com founders don't want to read essays.
 
-1. **15–30 words max**
+1. **15-30 words max**
 2. Emphasize the offer, not the agency
 3. Only include case studies if the brand is well-known
 4. Always offer a lead magnet

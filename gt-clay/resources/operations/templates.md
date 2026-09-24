@@ -1,4 +1,4 @@
-# Clay Operations — Templates Library
+# Clay Operations - Templates Library
 
 58 battle-tested Clay templates organized by skill level and category.
 
@@ -6,9 +6,9 @@
 
 ## Skill Levels
 
-- ⭐ **Beginner** — Core workflows everyone needs
-- ⭐⭐ **Intermediate** — Signal-based and intent workflows
-- ⭐⭐⭐ **Advanced** — AI research, account intelligence, RevOps
+- ⭐ **Beginner** - Core workflows everyone needs
+- ⭐⭐ **Intermediate** - Signal-based and intent workflows
+- ⭐⭐⭐ **Advanced** - AI research, account intelligence, RevOps
 
 ---
 
@@ -35,7 +35,7 @@ Job Change Tracker + Website Visitors + LinkedIn Engagers
 | Contact Discovery & Enrichment | 7 | ⭐ |
 | Signal-Based Campaigns | 9 | ⭐⭐ |
 | Inbound & Intent Workflows | 7 | ⭐⭐ |
-| AI Research & Personalization | 8 | ⭐⭐–⭐⭐⭐ |
+| AI Research & Personalization | 8 | ⭐⭐-⭐⭐⭐ |
 | Account Intelligence | 6 | ⭐⭐⭐ |
 | RevOps & Integrations | 7 | ⭐⭐⭐ |
 | Industry-Specific Plays | 6 | All |
@@ -70,10 +70,10 @@ Finding and building lists of target accounts and contacts.
 **Data sources:** Apollo.io, LinkedIn Sales Nav, LeadMagic, Prospeo, Vayne, Ocean.io, Clay Native, Store Leads, Openmart, Google Maps
 
 **Pro tips:**
-- Always duplicate templates before using — never edit the original
-- Start broad, filter down — pull larger lists then qualify in Clay
-- Use multiple sources — Apollo + Sales Nav often give different results
-- Check volume first — ensure at least 500–1,000 accounts before building
+- Always duplicate templates before using - never edit the original
+- Start broad, filter down - pull larger lists then qualify in Clay
+- Use multiple sources - Apollo + Sales Nav often give different results
+- Check volume first - ensure at least 500-1,000 accounts before building
 
 ---
 
@@ -86,7 +86,7 @@ Finding emails, phones, and enriching contact data.
 | LinkedIn Profile Enricher | ⭐ | Enrich with LinkedIn data (premium status, posts) |
 | Champion Identifier | ⭐⭐⭐ | Find previous customers at new companies |
 
-**Key insight:** The waterfall approach gets 85–90% email coverage vs 40% from a single source.
+**Key insight:** The waterfall approach gets 85-90% email coverage vs 40% from a single source.
 
 ---
 
@@ -96,7 +96,7 @@ Trigger outreach when buying signals appear.
 
 | Template | Difficulty | Signal Type |
 |---|---|---|
-| Job Change Tracker | ⭐⭐ | People who changed jobs (0–90 days) |
+| Job Change Tracker | ⭐⭐ | People who changed jobs (0-90 days) |
 | Champion Reactivation | ⭐⭐ | Past customers at new companies |
 | Hiring Signal Detector | ⭐⭐ | Companies posting relevant jobs |
 | Funding Announcement Tracker | ⭐⭐ | Series A-C funding rounds |
@@ -107,15 +107,15 @@ Trigger outreach when buying signals appear.
 | Multi-Signal Stacker | ⭐⭐⭐ | Combine 3+ signals for hot prospects |
 
 **Performance comparison:**
-- Cold prospects: 6–8% reply rate
-- Signal-based: 18–22% reply rate
-- Multi-signal stacked: 35–40% reply rate
+- Cold prospects: 6-8% reply rate
+- Signal-based: 18-22% reply rate
+- Multi-signal stacked: 35-40% reply rate
 
 **Pro tips:**
-- Don't mention the signal in the email — prospects get these constantly
-- Act fast — hot signals expire in 3–7 days
-- Stack signals for heat scoring — 3+ signals = reach out same day
-- Job changes peak at days 14–45 — new hires are building their stack
+- Don't mention the signal in the email - prospects get these constantly
+- Act fast - hot signals expire in 3-7 days
+- Stack signals for heat scoring - 3+ signals = reach out same day
+- Job changes peak at days 14-45 - new hires are building their stack
 
 ---
 
@@ -129,7 +129,7 @@ Capture and convert people showing interest.
 
 ---
 
-## ⭐⭐–⭐⭐⭐ AI Research & Personalization
+## ⭐⭐-⭐⭐⭐ AI Research & Personalization
 
 Deep research and personalized messaging at scale.
 
@@ -145,16 +145,16 @@ Deep research and personalized messaging at scale.
 | Twain Integration Table | ⭐⭐⭐ | Full AI copywriting for email + LinkedIn |
 
 **The "Golden Prompt" Framework for campaign idea generation:**
-1. **USPs** — What makes them unique?
-2. **Goals** — What are they trying to achieve?
-3. **Metrics** — What KPIs do they track?
-4. **ICP** — Who do they sell to?
-5. **Current challenges** — What are their pain points?
+1. **USPs** - What makes them unique?
+2. **Goals** - What are they trying to achieve?
+3. **Metrics** - What KPIs do they track?
+4. **ICP** - Who do they sell to?
+5. **Current challenges** - What are their pain points?
 
 **Pro tips:**
 - LinkedIn URLs required for best results (95% success rate)
-- Quality prompting is essential — the campaign idea drives all research
-- Use majority rules for accuracy — run Perplexity, Claude, AND GPT
+- Quality prompting is essential - the campaign idea drives all research
+- Use majority rules for accuracy - run Perplexity, Claude, AND GPT
 - Twain outperforms raw Claude at scale (Claude struggles after 500+ contacts)
 
 ---
@@ -189,10 +189,10 @@ Keep data clean and systems connected.
 | Slack Notification Workflow | ⭐⭐ | Alert team on hot prospects |
 
 **Pro tips:**
-- Blocklist is non-negotiable — build it before your first campaign
-- Dedupe on full name + email — catches most duplicates
-- CRM sync should enrich, not overwrite — protect manual data entry
-- Slack alerts for hot prospects — speed to lead matters
+- Blocklist is non-negotiable - build it before your first campaign
+- Dedupe on full name + email - catches most duplicates
+- CRM sync should enrich, not overwrite - protect manual data entry
+- Slack alerts for hot prospects - speed to lead matters
 
 ---
 

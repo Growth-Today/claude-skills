@@ -14,12 +14,12 @@ AI research agent that combines Google Search, ChatGPT, and web scraping into a 
 
 | Model | When to Use | Cost |
 |---|---|---|
-| **Claygent Neon** | 90% of tasks — extraction, formatting, simple lookups | Lowest |
+| **Claygent Neon** | 90% of tasks - extraction, formatting, simple lookups | Lowest |
 | **GPT-4 Mini** | Slightly more complex reasoning, still cheap | Low |
 | **GPT-4** | Deep reasoning, multi-step analysis | Higher |
 | **Claude Opus** | Deep reasoning, nuanced interpretation | Higher |
 
-**Rule: Use Neon or GPT-4 Mini for everything.** Advanced models are benchmarked for solving calculus — you just want to say "I saw on your website you help fitness enthusiasts breathe better." Fix problems with better prompts, not more expensive models.
+**Rule: Use Neon or GPT-4 Mini for everything.** Advanced models are benchmarked for solving calculus - you just want to say "I saw on your website you help fitness enthusiasts breathe better." Fix problems with better prompts, not more expensive models.
 
 ## Credit Cost
 
@@ -41,13 +41,13 @@ AI research agent that combines Google Search, ChatGPT, and web scraping into a 
 ## 8 Prompting Rules (Eric Noski)
 
 ### Rule 1: The 10-Minute Manual Research Rule
-Ask yourself: "What would I do if I researched this person for 10 minutes?" What information would I look for? THEN automate that with Claygent. Never guess what you could do — start from manual research.
+Ask yourself: "What would I do if I researched this person for 10 minutes?" What information would I look for? THEN automate that with Claygent. Never guess what you could do - start from manual research.
 
 ### Rule 2: One Task Per Claygent
 **Bad:** Claygent that checks site content + decides if e-commerce + classifies industry
 **Good:** Claygent #1: Retrieve site content → Use AI #2: Is it a CPG? → Use AI #3: What products? → Use AI #4: What industry?
 
-AI fails when given too many tasks. GPT-4 Mini costs almost nothing — separate the tasks.
+AI fails when given too many tasks. GPT-4 Mini costs almost nothing - separate the tasks.
 
 ### Rule 3: Use "purple" as Null Keyword
 When nothing is found, output a specific keyword like **"purple"** instead of letting AI say "No information found" in 100 different ways. Makes downstream filtering easy.
@@ -67,10 +67,10 @@ Even a mediocre prompt becomes excellent with 3-4 examples. Manually research a 
 5. Answer the questions → improved prompt
 
 ### Rule 6: Ask for Reasoning Before the Answer
-"Tell me the reasoning why you think it's this kind of company before you give me the final answer." AI predicts the next word — by explaining first, it has more context to answer better.
+"Tell me the reasoning why you think it's this kind of company before you give me the final answer." AI predicts the next word - by explaining first, it has more context to answer better.
 
 ### Rule 7: Prepare for Edge Cases
-20% of the work = putting integrations together. **80% = adjusting the AI.** Review outputs constantly — as soon as an output doesn't look right, adjust the prompt.
+20% of the work = putting integrations together. **80% = adjusting the AI.** Review outputs constantly - as soon as an output doesn't look right, adjust the prompt.
 
 ### Rule 8: Iterate Without Spending Credits
 Use the builder to test and iterate on prompts before running on the full table. Test on 1-3 rows in the builder until the output is exactly what you want.
@@ -80,7 +80,7 @@ Use the builder to test and iterate on prompts before running on the full table.
 ```
 Visit {{company_url}}.
 
-[Specific instruction — one task only]
+[Specific instruction - one task only]
 
 Return format: [text/number/URL/true-false]
 
@@ -182,6 +182,6 @@ Return 'Yes' if found with the specific page URL, 'No' if not found.
 ```
 Visit {{company_url}}/careers or {{company_url}}/jobs.
 Count the number of open roles. List the departments hiring.
-Format: "X open roles — Engineering, Sales, Marketing"
+Format: "X open roles - Engineering, Sales, Marketing"
 If no careers page exists, output 'purple'.
 ```

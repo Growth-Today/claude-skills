@@ -33,16 +33,16 @@ Thirteen findings held up; all are fixed here.
 - **The launch gate did not gate.** `dns-auth-audit` exited 2 only on FAIL, so
  a `p=quarantine` DMARC and a missing DKIM key both cleared go-live. MX, SPF,
  DKIM and DMARC must now all be PASS. SRV hygiene moved FAIL → WARN and out of
- the gate — no mail filter reads a SIP record. `test_gate.py` proves all ten
+ the gate - no mail filter reads a SIP record. `test_gate.py` proves all ten
  states, including the two that must still exit 0.
 - **A revoked DKIM key reported PASS.** `"p=" in rec` matched any TXT record
  containing those two characters. Now requires `v=DKIM1` with a real key.
-- **A DNS timeout was reported as a missing record** on MX, SPF and DMARC —
+- **A DNS timeout was reported as a missing record** on MX, SPF and DMARC -
  a hard FAIL on a healthy domain. The lookup now says which one happened.
 - **Null MX (RFC 7505) classified as `other`,** so domains that publish "we
  accept no mail" survived the `--esp-mix` strip and hard-bounced. Fixed in the
  script and in the Clay formula. `--esp-mix` also takes the domain off each
- email address now — a lead list is addresses, not domains.
+ email address now - a lead list is addresses, not domains.
 - **`after.py` missed the drift it exists to catch.** PASS → WARN (p=reject
  dropping to p=none, a DKIM key vanishing) printed `[CHANGED]` and exited 0.
  Any downgrade is now a REGRESSION.
@@ -61,12 +61,12 @@ Thirteen findings held up; all are fixed here.
 - **Three vendor scores treated as one gate.** Instantly's Health Score and
  Lemlist's deliverability score are vendor scales, not `warmup_score_active`.
 - **Rows 15 and 16** moved MCP → MANUAL; a live read returns neither field.
-- **Unsourced numbers removed** — "~43% under-bought", "inflated by ~54%" (it
+- **Unsourced numbers removed** - "~43% under-bought", "inflated by ~54%" (it
  was more than double), "~3× the reply chance" (the table says 1.3×), "top 10%
- sit near 27–33" (the table says 38), and a bare 80/20.
+ sit near 27-33" (the table says 38), and a bare 80/20.
 
 ### Changed after Nikola's review
-- **Connecting inboxes and campaign build/routing are read-only** — both are
+- **Connecting inboxes and campaign build/routing are read-only** - both are
  done from the email infra management system. Seven setup-audit rows moved
  `setup-only` → `never`.
 - **ScaledMail buys the domains.** Step 2 of the flow is "ideate and brief
@@ -75,24 +75,24 @@ Thirteen findings held up; all are fixed here.
  themselves, and the same aphorism restated across four files.
 
 ### Added
-- **`playbooks/`** — the skill's first runnable steps, following the
+- **`playbooks/`** - the skill's first runnable steps, following the
  `gt-hubspot-admin` convention (`playbook.md` with an interview section +
  `scripts/` carrying PEP-723 headers, so `uv run` needs no install).
- - **dns-auth-audit** — MX / SPF (record count + recursive RFC 7208 lookup
+ - **dns-auth-audit** - MX / SPF (record count + recursive RFC 7208 lookup
  budget) / DKIM across 14 selectors / DMARC against the GT standard / stray
  Lync SRV. `--esp-mix` profiles a recipient list by ESP, replacing the manual
  Clay MX column. `after.py` diffs a re-run against a saved baseline to catch
  silent drift. Exit 2 on FAIL, so it works as a launch gate.
- - **sizing-calculator** — goal (or contacts × steps ÷ days-to-clear) →
+ - **sizing-calculator** - goal (or contacts × steps ÷ days-to-clear) →
  mailboxes → domains. Parses the cold limits out of §1 at run time instead of
  hardcoding them. `--validate` reproduces the §4 table.
 - **`requirements.txt`**, **`.env.example`**, **`.gitignore`**.
-- **reference.md §1 and §2 key tables** — addressable keys (`google_cold`,
+- **reference.md §1 and §2 key tables** - addressable keys (`google_cold`,
  `cold_warming`, `warmup_floor_days`, `placement_active`, …) so executable
  checks cite a key instead of copying a number.
-- **instantly-setup Part 4b** — required Unibox settings. *Save undelivered
+- **instantly-setup Part 4b** - required Unibox settings. *Save undelivered
  emails in Unibox* is OFF by default and gates what the reporting can see.
-- **setup-audit dimension 21** — Unibox settings check.
+- **setup-audit dimension 21** - Unibox settings check.
 
 ### Changed
 - **setup-audit Part B is now executable**: seven columns (Check · Source ·
@@ -106,19 +106,19 @@ Thirteen findings held up; all are fixed here.
  reads better for an agent.
 - **dashboard-reading Parts 1 and 4** reframed as verify-only tables.
 - **dashboard-reading Part 2b** rewritten from a defect list to fixed vs still
- open, reflecting the 20–25 Aug QA.
+ open, reflecting the 20-25 Aug QA.
 - **Warmup floor 14 → 21 days**; Outlook fully-warmed warmup 13 → 15; Outlook
  warm-to-cold ratio 2.5:1 → 3:1.
 - **Sizing no longer publishes a fixed divisor.** The provider mix is a
  per-client decision, so §4 now gives the formula
  (`google_share × 20 + microsoft_share × 5`) plus a scenario grid, and the
- mix is a required input rather than an assumption. The old "20–25" was two
- different figures collapsed into a range — 20 is Growth Today's per-mailbox
- number for a Google inbox, 25 is ScaledMail's — and both describe a Google
+ mix is a required input rather than an assumption. The old "20-25" was two
+ different figures collapsed into a range - 20 is Growth Today's per-mailbox
+ number for a Google inbox, 25 is ScaledMail's - and both describe a Google
  mailbox, while a Microsoft one sends 5. At 15k/month the answer ranges from
  57 mailboxes (all Google) to 129 (25/75).
 - **DMARC standard is `p=reject`.**
-- **Purchasing** — multi-day spread, max 4 per registrar per day, owned by
+- **Purchasing** - multi-day spread, max 4 per registrar per day, owned by
  ScaledMail; GT verifies on delivery.
 - **MX→ESP classification** now mirrors the 12-provider Clay formula from
  PR #29, with a SEG flag and a `no-email` case.

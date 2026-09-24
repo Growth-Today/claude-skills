@@ -1,6 +1,6 @@
 ---
 name: renewal-automation
-description: "Automate the renewal motion: auto-create renewal deals ahead of contract end, assign owners, and trigger renewal tasks/sequences — so recurring revenue never slips through the cracks."
+description: "Automate the renewal motion: auto-create renewal deals ahead of contract end, assign owners, and trigger renewal tasks/sequences - so recurring revenue never slips through the cracks."
 license: MIT
 metadata:
   author: growthtoday
@@ -14,7 +14,7 @@ Make renewals systematic instead of manual: automatically spin up a renewal deal
 
 ## Why This Matters
 
-Renewals are the cheapest revenue you have — and the easiest to lose by forgetting. Relying on reps to remember renewal dates guarantees leakage. Automating renewal-deal creation and the follow-up motion ensures every contract gets worked ahead of expiry, with clear ownership and a forecastable renewals pipeline.
+Renewals are the cheapest revenue you have - and the easiest to lose by forgetting. Relying on reps to remember renewal dates guarantees leakage. Automating renewal-deal creation and the follow-up motion ensures every contract gets worked ahead of expiry, with clear ownership and a forecastable renewals pipeline.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Renewals are the cheapest revenue you have — and the easiest to lose by forget
 
 ## Critical Concept: Trigger From a Reliable Date
 
-Renewal automation is only as good as the **renewal date** it fires from. That date must live on a reliable field — a subscription custom object (`custom-objects-setup`), a company/deal property, or a synced source. If the date is missing or stale, the automation won't fire when it should. Fix the date source first.
+Renewal automation is only as good as the **renewal date** it fires from. That date must live on a reliable field - a subscription custom object (`custom-objects-setup`), a company/deal property, or a synced source. If the date is missing or stale, the automation won't fire when it should. Fix the date source first.
 
 ## Plan
 
@@ -46,7 +46,7 @@ Decide how far ahead to open the renewal (commonly 90/120 days) and the motion (
 Automation > Workflows (date-based, off the renewal date):
 1. Trigger: renewal date is in N days.
 2. Action: **create a deal** in the renewals pipeline, associated to the company/contact, with amount = current contract value.
-3. Assign the owner (round-robin or account owner — see `lead-routing-round-robin`).
+3. Assign the owner (round-robin or account owner - see `lead-routing-round-robin`).
 4. Create the first renewal task + notify the owner; optionally enroll a renewal sequence.
 
 ### Step 4: Forecast renewals
@@ -64,8 +64,8 @@ Include the renewals pipeline in forecasting (`forecasting-goals-setup`) so recu
 
 ## Key Technical Learnings
 
-- **The renewal date is the whole ballgame** — automate off a reliable field or it silently fails.
-- **Create ahead, with lead time** — a renewal opened the week it expires is already late.
+- **The renewal date is the whole ballgame** - automate off a reliable field or it silently fails.
+- **Create ahead, with lead time** - a renewal opened the week it expires is already late.
 - **Ownership + first task** turn an auto-created deal into actual follow-up.
 - **Forecast renewals separately** so recurring revenue is planned.
 - **Depends on `multiple-pipelines-setup`, `custom-objects-setup`, and `lead-routing-round-robin`.**

@@ -2,9 +2,9 @@
 name: beginner-workflow
 ---
 
-# Beginner Workflow — Step by Step
+# Beginner Workflow - Step by Step
 
-*Source: Matt — Agency owner, 100K+ cold emails/month*
+*Source: Matt - Agency owner, 100K+ cold emails/month*
 
 ## The Complete Workflow
 
@@ -60,7 +60,7 @@ name: beginner-workflow
 - ListKit/Listman.io = validates catchalls with precision
 - Configure an HTTP API call
 
-**CRITICAL — Conditional Formula:**
+**CRITICAL - Conditional Formula:**
 ```
 Only run if /work_email is not empty
 ```

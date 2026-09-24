@@ -58,12 +58,12 @@ Platform: this skill supports the sequencers Growth Today uses, **EmailBison, In
 
 ## ▶️ Playbooks (run these, don't do them by hand)
 
-A playbook is an executable version of a checklist: an interview that collects the inputs, a script that does the work, and an after-state that proves it landed. Read `playbook.md` first — it contains the interview questions — then run the script.
+A playbook is an executable version of a checklist: an interview that collects the inputs, a script that does the work, and an after-state that proves it landed. Read `playbook.md` first - it contains the interview questions - then run the script.
 
 | Playbook | What it does | Needs | Status |
 |---|---|---|---|
-| **dns-auth-audit** | MX / SPF (record count + recursive lookup budget) / DKIM across 14 selectors / DMARC policy vs the GT standard / stray Lync SRV, plus MX→provider and SEG detection. `after.py` diffs against a saved baseline to catch silent drift. | nothing — public DNS only | ✅ 10/10 gate tests pass (`scripts/test_gate.py`, stubbed DNS) plus a 13-domain live run |
-| **sizing-calculator** | Monthly goal *or* contacts × steps ÷ days-to-clear → daily volume → mailboxes → mailboxes to buy → Google/Microsoft split → domains. Parses the cold limits out of `reference.md` §1 rather than hardcoding them. | nothing — stdlib only | ✅ `--validate` reproduces all 9 rows of both §4 tables, parsed from the doc |
+| **dns-auth-audit** | MX / SPF (record count + recursive lookup budget) / DKIM across 14 selectors / DMARC policy vs the GT standard / stray Lync SRV, plus MX→provider and SEG detection. `after.py` diffs against a saved baseline to catch silent drift. | nothing - public DNS only | ✅ 10/10 gate tests pass (`scripts/test_gate.py`, stubbed DNS) plus a 13-domain live run |
+| **sizing-calculator** | Monthly goal *or* contacts × steps ÷ days-to-clear → daily volume → mailboxes → mailboxes to buy → Google/Microsoft split → domains. Parses the cold limits out of `reference.md` §1 rather than hardcoding them. | nothing - stdlib only | ✅ `--validate` reproduces all 9 rows of both §4 tables, parsed from the doc |
 
 ```bash
 cd {SKILL_BASE}/playbooks/<name>/scripts
@@ -72,13 +72,13 @@ uv run execute.py --help          # every playbook is self-documenting
 
 `uv` reads the PEP-723 header in each script, so there is nothing to install. If you don't have `uv`, the fallback from inside a `scripts/` directory is `pip install -r ../../../requirements.txt`.
 
-> **Scope note.** Both playbooks above are **read-only and provider-independent** — they query public DNS or do arithmetic. Anything that touches a sending platform is governed by the email infra management system boundary below: reads are fine, writes to sending limits, warmup config, tagging or routing are not GT's to make.
+> **Scope note.** Both playbooks above are **read-only and provider-independent** - they query public DNS or do arithmetic. Anything that touches a sending platform is governed by the email infra management system boundary below: reads are fine, writes to sending limits, warmup config, tagging or routing are not GT's to make.
 
 ---
 
 ## 🔒 Email infra management system: read-only
 
-The **email infra management system** is Growth Today's own stack — Supabase, Railway and n8n crons.
+The **email infra management system** is Growth Today's own stack - Supabase, Railway and n8n crons.
 It is the source of truth for the automated inbox layer. This skill holds that knowledge and
 exposes it as a **read-only checklist**. It is never a second source of truth, and the system's
 dashboard stays primary.
@@ -111,26 +111,26 @@ sub-skill). **That window closes at go-live.** After that, limits, warmup and ta
 
 **Access:** no token given to a GTM engineer may change sending limits, warmup config, tagging or
 routing. Instantly's account-update endpoint can change daily limits and is deliberately out of
-scope — a permission test must confirm it is refused before any settings check ships.
+scope - a permission test must confirm it is refused before any settings check ships.
 
 ---
 
 ## Critical Rules (Never Break)
 
 1. **Never** cold-send from the primary/brand domain, only dedicated secondary domains.
-2. **Mailboxes per domain is provider-specific: Google 2–3, Microsoft up to ~25 (average).** Google stays lean for deliverability; Microsoft can host many per domain.
+2. **Mailboxes per domain is provider-specific: Google 2-3, Microsoft up to ~25 (average).** Google stays lean for deliverability; Microsoft can host many per domain.
 3. **One domain = one workspace.**
 4. **Buy across multiple registrars, spread across multiple days, max 4 per registrar per day.** ScaledMail owns the buying; GT verifies it happened.
 5. **Warm up ≥ 21 days / 3 weeks** (hard floor; 4 weeks on a cautious build) before sending; **link only from domains > 30 days old**.
 6. **Never disable warmup** once campaigns are running.
-7. **Masking or a real landing page, never a bare 301/302 redirect** to the main site. *(Currently held: GT runs no client redirects. The open item is replacing EmailBison's masking — see `approved-vendors.md`.)*
+7. **Masking or a real landing page, never a bare 301/302 redirect** to the main site. *(Currently held: GT runs no client redirects. The open item is replacing EmailBison's masking - see `approved-vendors.md`.)*
 8. **No links and no custom tracking domain** in cold email by default (share via LinkedIn or an unlinked URL).
 9. **ESP matching is not a rule**: decide keep/drop from our own dashboard data.
 10. Start conservative, scale gradually (**≤ 20%/week**).
 
 ## Sizing formula (detail in `{SKILL_BASE}/resources/reference.md` §4)
 
-Monthly goal ÷ 20 workdays = daily volume → **÷ blended cold per mailbox** = mailboxes → × 1.5 buffer. Domains: **Google mailboxes ÷ 2–3 + Microsoft mailboxes ÷ ~25** (Microsoft packs far more per domain).
+Monthly goal ÷ 20 workdays = daily volume → **÷ blended cold per mailbox** = mailboxes → × 1.5 buffer. Domains: **Google mailboxes ÷ 2-3 + Microsoft mailboxes ÷ ~25** (Microsoft packs far more per domain).
 
 > **There is no fixed divisor. Ask the client's provider mix first.**
 > `blended = google_share × 20 + microsoft_share × 5`
@@ -140,7 +140,7 @@ Monthly goal ÷ 20 workdays = daily volume → **÷ blended cold per mailbox** =
 > Google) to **129** (25/75). Ask for the mix before you quote a number. Full grid in
 > `reference.md` §4.
 
-**Don't do this by hand — run it:**
+**Don't do this by hand - run it:**
 
 ```bash
 cd {SKILL_BASE}/playbooks/sizing-calculator/scripts
@@ -153,14 +153,14 @@ The script reads the cold limits out of `reference.md` §1 at run time, so it ca
 ## What we can and cannot see
 
 - **We can see and control:** each domain's public footprint (WHOIS, registrar, creation date, DNS, nameservers, masking host) and our own per-inbox/per-domain sending metrics (bounce, reply, placement, warmup).
-- **We cannot inspect or split:** the vendor's shared warmup/seed pool (EmailBison + EmailGuard under one shared Growth Today account). **This risk materialised in June–July 2026: 13 of 17 audited clients were flagged at once on a shared-pool blocklist, and the shared warmup/seed pool is the suspected cause.** The escalation path is no longer hypothetical: DNS-footprint check across clients → written per-tenant isolation from the vendor → separate workspace + placement-test account per client.
+- **We cannot inspect or split:** the vendor's shared warmup/seed pool (EmailBison + EmailGuard under one shared Growth Today account). **This risk materialised in June-July 2026: 13 of 17 audited clients were flagged at once on a shared-pool blocklist, and the shared warmup/seed pool is the suspected cause.** The escalation path is no longer hypothetical: DNS-footprint check across clients → written per-tenant isolation from the vendor → separate workspace + placement-test account per client.
 
 ## Growth Today's point of view (our answers)
 
-- **Blacklists:** **only Spamhaus DBL and URIBL count.** Everything else is out of scope — Google and Microsoft barely weight the other lists and the email infra management system does not track them. The real fix is **domain sourcing**, not chasing delistings.
+- **Blacklists:** **only Spamhaus DBL and URIBL count.** Everything else is out of scope - Google and Microsoft barely weight the other lists and the email infra management system does not track them. The real fix is **domain sourcing**, not chasing delistings.
 - **Microsoft / Outlook:** expect weaker Outlook placement; check sudden drops against **Microsoft BCL recalibration** dates before blaming infra; conservative limits; short copy.
 - **SEG (Mimecast/Proofpoint/Barracuda):** a block is the recipient's policy working as designed. **Isolate SEG leads onto dedicated, never-reused domains**, low concurrency into one org, no links/tracking, go multi-channel, and **recycle burnt SEG domains** onto easy Google/Outlook segments before retiring.
-- **Bounces:** **strip OOO/auto-replies first**: Bison counts them as bounces. In one real audit that turned 1,231 actual bounces into 2,687 — more than double. Read the real number, then diagnose.
+- **Bounces:** **strip OOO/auto-replies first**: Bison counts them as bounces. In one real audit that turned 1,231 actual bounces into 2,687 - more than double. Read the real number, then diagnose.
 - **Failover gap:** EmailBison can't set a cold limit of 0, so it strands leads on unhealthy inboxes, a real bounce driver. Instantly and Smartlead can set 0 and reroute the lead to a healthy inbox on the campaign.
 
 ---
@@ -184,7 +184,7 @@ Most real requests chain sub-skills. Common ones:
 The Decision Tree below routes a single question. This is the job in order.
 
 ```
-SALES OPS — build the infrastructure
+SALES OPS - build the infrastructure
 ─────────────────────────────────────────────────────────────────────────────────────────
 1  Size the build              domain-research         ▶ playbooks/sizing-calculator
 2  Ideate + brief ScaledMail   domain-research         ·  ScaledMail buys them, not us
@@ -193,8 +193,8 @@ SALES OPS — build the infrastructure
 5  Warm up, then go live       warmup-golive           ▶ dns-auth-audit as the launch gate
                                                        ·  warmup score read in the dashboard  🔒
         │
-        ▼   handover — infrastructure is live
-GTM ENGINEER — run campaigns on it
+        ▼   handover - infrastructure is live
+GTM ENGINEER - run campaigns on it
 ─────────────────────────────────────────────────────────────────────────────────────────
 6  Verify before launch        setup-audit             ▶ 21-row table: MCP + DNS playbook
 7  Build + route the campaign  campaign-building       ▶ dns-auth-audit --esp-mix (profile the list)
@@ -206,9 +206,9 @@ GTM ENGINEER — run campaigns on it
         │
         └──▶ fix at 3 (repair / replace domains)  or  re-verify at 6
 
-▶ you can actually run this — a playbook or a named call, not a description of one
-·  nothing to run — no API for this, so the skill holds the rules
-🔒 read it, don't change it — the email infra management system owns this setting
+▶ you can actually run this - a playbook or a named call, not a description of one
+·  nothing to run - no API for this, so the skill holds the rules
+🔒 read it, don't change it - the email infra management system owns this setting
 ```
 
 Numbers and thresholds for every step live in one place: `{SKILL_BASE}/resources/reference.md`. Steps quote the key (`google_cold`, `warmup_floor_days`), never a copied number.

@@ -1,6 +1,6 @@
 ---
 name: internal-notification-workflows
-description: "Build internal-notification workflows that alert the right person at the right moment — new assignment, high-value deal, stuck record, SLA breach — without creating notification fatigue."
+description: "Build internal-notification workflows that alert the right person at the right moment - new assignment, high-value deal, stuck record, SLA breach - without creating notification fatigue."
 license: MIT
 metadata:
   author: growthtoday
@@ -10,11 +10,11 @@ metadata:
 
 # Internal Notification Workflows
 
-Set up the internal alerts that make automation actionable: notify an owner when they're assigned a lead, flag leadership on a high-value deal, warn when a record is stuck or an SLA is about to breach — while keeping alerts few enough that people still read them.
+Set up the internal alerts that make automation actionable: notify an owner when they're assigned a lead, flag leadership on a high-value deal, warn when a record is stuck or an SLA is about to breach - while keeping alerts few enough that people still read them.
 
 ## Why This Matters
 
-Automation that changes data silently is only half useful — someone has to *act*. Well-placed notifications turn "the system did something" into "the rep followed up in 5 minutes." But too many alerts train people to ignore all of them. The skill is notifying on the few moments that truly need a human, through the right channel.
+Automation that changes data silently is only half useful - someone has to *act*. Well-placed notifications turn "the system did something" into "the rep followed up in 5 minutes." But too many alerts train people to ignore all of them. The skill is notifying on the few moments that truly need a human, through the right channel.
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ Every notification should map to a decision or action. "A contact was created" i
 
 ### Step 1: Pick the moments
 High-value, action-required examples:
-- New lead assigned → notify owner (task + email) — pairs with routing.
+- New lead assigned → notify owner (task + email) - pairs with routing.
 - High-value deal created/won → notify manager/leadership.
 - Deal stuck past threshold → notify owner (ties to `deal-rotting-alerts`).
 - SLA about to breach (no first response in X hrs) → notify owner + manager.
@@ -56,15 +56,15 @@ Immediate revenue moments → Slack/real-time; follow-ups → task; FYIs → ema
 1. Each notification maps to a clear action, not just an event.
 2. Channels match urgency (task vs email vs Slack).
 3. Owners actually receive alerts for their records (test one).
-4. Alert volume is sane — spot-check that a rep isn't getting dozens/day.
+4. Alert volume is sane - spot-check that a rep isn't getting dozens/day.
 5. Notifications include the record link + reason.
 
 ## Key Technical Learnings
 
-- **Notify on action-required moments only** — event-spam kills all alerts' credibility.
-- **Channel = urgency** — Slack for now, task for later, email for FYI.
-- **Context in the alert** — link + reason, so the person can act without digging.
-- **Pairs with routing, `deal-rotting-alerts`, and SLA dashboards** — notifications are how those become action.
+- **Notify on action-required moments only** - event-spam kills all alerts' credibility.
+- **Channel = urgency** - Slack for now, task for later, email for FYI.
+- **Context in the alert** - link + reason, so the person can act without digging.
+- **Pairs with routing, `deal-rotting-alerts`, and SLA dashboards** - notifications are how those become action.
 - **Fewer, better alerts** beat comprehensive noise.
 
 ---

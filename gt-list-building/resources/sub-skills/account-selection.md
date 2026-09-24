@@ -30,13 +30,13 @@ Start with revenue targets, work backward through conversion benchmarks:
 
 ## ABM Account Prioritization
 
-This is Layer 2 of the GTM scoring framework — dynamic prioritization based on ICP fit AND engagement stage. For the full decision flow (when to use this vs ICP Fit Score), see `resources/reference/scoring-decision-framework.md`.
+This is Layer 2 of the GTM scoring framework - dynamic prioritization based on ICP fit AND engagement stage. For the full decision flow (when to use this vs ICP Fit Score), see `resources/reference/scoring-decision-framework.md`.
 
 | Tier | ICP Score | ABM Action |
 |------|-----------|-----------|
-| A | 90–100 | Tier 1 ABM (1:1 custom) |
-| B | 70–89 | Tier 2 ABM (1:few) |
-| C | 50–69 | Programmatic ABM |
+| A | 90-100 | Tier 1 ABM (1:1 custom) |
+| B | 70-89 | Tier 2 ABM (1:few) |
+| C | 50-69 | Programmatic ABM |
 | D | <50 | Exclude |
 
 ## Stage Progression Tracking
@@ -64,7 +64,7 @@ Clay, BuiltWith, Apollo, HubSpot, LinkedIn Campaign Manager, ZenABM/Fibbler
 
 ---
 
-# Account Selection — Framework
+# Account Selection - Framework
 
 How to build, score, stage, and manage target account lists for ABM campaigns.
 
@@ -105,7 +105,7 @@ $1,000,000 ÷ $50,000 = 20 deals
 | **Considering** | Booked a demo / signed up for trial | Close rate applies |
 | **Selecting** | Open deal in pipeline | Win rate applies |
 
-*Source: Growth Today — ABX benchmarks from real client programs*
+*Source: Growth Today - ABX benchmarks from real client programs*
 
 ---
 
@@ -170,7 +170,7 @@ Build lookalikes from your best customers:
 4. Score and tier
    → A-tier (90-100): Perfect fit + strong signals
    → B-tier (70-89): Good fit
-   → C-tier (50-69): Okay fit — maybe for 1:many only
+   → C-tier (50-69): Okay fit - maybe for 1:many only
    → D-tier (<50): Exclude
 
 5. Import to CRM (HubSpot)
@@ -205,7 +205,7 @@ Build lookalikes from your best customers:
 
 **Critical lesson from real ABM programs:** Teams that overcomplicate scoring by adding website visits, page-level intent signals, and weighted scores across multiple data sources struggle to execute because:
 
-- Website visitor de-anonymization is unreliable (Clearbit/Breeze identified only 1 company out of 300 visitors — themselves)
+- Website visitor de-anonymization is unreliable (Clearbit/Breeze identified only 1 company out of 300 visitors - themselves)
 - Complex scoring models break in practice
 
 **What actually works:** Use **quantitative ad engagement data from LinkedIn** pushed to CRM, plus **qualitative campaign engagement data** for personalizing outreach.
@@ -221,7 +221,7 @@ Build lookalikes from your best customers:
 
 | Stage | Threshold | Content Shown |
 |---|---|---|
-| **Identified** | Added to campaign list | — |
+| **Identified** | Added to campaign list | - |
 | **Aware** | 50+ ad impressions | Awareness content ads |
 | **Interested** | 5+ ad clicks OR 10+ engagements | Solution-oriented ads |
 | **Considering** | Booked demo / signed up for trial | Product-oriented ads + BDR outreach |
@@ -281,7 +281,7 @@ IF Impressions ≥ 50 AND ABM Stage = "Identified":
 | **ZenABM** | Pushes LinkedIn engagement data + intent to CRM, account scoring, ABM stage management, analytics dashboards | ~$59/mo+ | Bi-directional CRM sync, qualitative + quantitative data, auto-updates ABM stages |
 | **Fibbler** | Pushes LinkedIn ad engagement data to CRM | Lower cost | Quantitative engagement data (impressions, clicks, engagements) per account |
 | **Factors.ai** | Account identification + engagement tracking | $$ | Impression capping per account, cross-channel attribution |
-| **HubSpot (native)** | CRM + workflow automation | Included | Lists, workflows, audience sync — but no native LinkedIn engagement push (as of Jan 2025) |
+| **HubSpot (native)** | CRM + workflow automation | Included | Lists, workflows, audience sync - but no native LinkedIn engagement push (as of Jan 2025) |
 
 **Note:** As of early 2025, HubSpot cannot natively pull company-level engagement data from LinkedIn Campaign Manager. You need a connector tool (ZenABM, Fibbler, or custom API).
 

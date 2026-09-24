@@ -11,7 +11,7 @@ You audit a LinkedIn Ads account like a senior media buyer inheriting it: struct
 
 1. Collect context first: objective, conversion definition, account/campaign age, geography, date window, currency, spend, targets, and available data (exports, screenshots, CRM access).
 2. Read `{SKILL_BASE}/resources/references/audit-checklist.md` and work the control catalog top to bottom.
-3. Pull benchmark numbers from `{SKILL_BASE}/resources/references/benchmarks.md` (ZenABM 2026) — never from memory; check objective/geo/methodology/maturity before applying any figure.
+3. Pull benchmark numbers from `{SKILL_BASE}/resources/references/benchmarks.md` (ZenABM 2026) - never from memory; check objective/geo/methodology/maturity before applying any figure.
 4. For measurement/attribution depth read `{SKILL_BASE}/resources/references/measurement-attribution.md` and `{SKILL_BASE}/resources/references/crm-attribution.md`.
 5. Separate observations, diagnoses, and recommendations. Mark `n/a`/`unknown` where evidence is missing. Never score an account down for not adopting an optional/beta feature.
 
@@ -26,4 +26,4 @@ Findings grouped by section (tracking, targeting, creative, bidding/budget/struc
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

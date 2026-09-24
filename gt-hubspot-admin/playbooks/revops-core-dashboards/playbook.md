@@ -10,7 +10,7 @@ metadata:
 
 # RevOps Core Dashboards
 
-Stand up the small set of dashboards that make a HubSpot portal decision-ready: pipeline health, stage conversion, lifecycle velocity, forecast, and data-quality monitoring. This is the "build" counterpart to `cleanup-dashboards` — instead of removing clutter, you create the few reports that matter.
+Stand up the small set of dashboards that make a HubSpot portal decision-ready: pipeline health, stage conversion, lifecycle velocity, forecast, and data-quality monitoring. This is the "build" counterpart to `cleanup-dashboards` - instead of removing clutter, you create the few reports that matter.
 
 ## Why This Matters
 
@@ -19,12 +19,12 @@ Most portals either have no dashboards or fifty stale ones nobody trusts. Leader
 ## Prerequisites
 
 - Access to Reports > Dashboards (report creation permission)
-- A clean pipeline (`deal-pipeline-architecture`) and lifecycle stages (`fix-lifecycle-stages`) — dashboards are only as good as the underlying model
+- A clean pipeline (`deal-pipeline-architecture`) and lifecycle stages (`fix-lifecycle-stages`) - dashboards are only as good as the underlying model
 - Governed properties (`property-architecture-governance`) so report fields are trustworthy
 
 ## Critical Concept: A Dashboard Tells One Story to One Audience
 
-Each dashboard should answer a specific question for a specific audience — a leadership forecast dashboard is not a rep activity dashboard. Build few, focused dashboards, not one giant catch-all. Set sharing/permissions per audience and schedule email delivery so people don't have to go looking.
+Each dashboard should answer a specific question for a specific audience - a leadership forecast dashboard is not a rep activity dashboard. Build few, focused dashboards, not one giant catch-all. Set sharing/permissions per audience and schedule email delivery so people don't have to go looking.
 
 ## Plan
 
@@ -33,7 +33,7 @@ Each dashboard should answer a specific question for a specific audience — a l
 3. Set audience, sharing, and scheduled delivery
 4. Verify each report matches source-of-truth numbers (after state)
 
-## Execute — the 5 core dashboards
+## Execute - the 5 core dashboards
 
 ### 1. Pipeline Health (leadership + sales managers)
 - Open deals by stage (count + amount)
@@ -77,8 +77,8 @@ For each: choose the report type in the custom report builder (see `custom-repor
 
 - **Few, focused dashboards beat many.** One story, one audience per dashboard.
 - **Garbage in, garbage dashboard.** Build on a clean pipeline, lifecycle, and property layer or the numbers won't be trusted.
-- **Schedule delivery.** A dashboard nobody opens is worthless — push it to inboxes.
-- **The Data Quality Monitor closes the loop** — it makes hygiene visible and keeps the other playbooks honest.
+- **Schedule delivery.** A dashboard nobody opens is worthless - push it to inboxes.
+- **The Data Quality Monitor closes the loop** - it makes hygiene visible and keeps the other playbooks honest.
 - **Pairs with `custom-report-builder-guide`** for the how-to on each report type.
 
 ---

@@ -22,10 +22,10 @@ Settle these before pulling data. A report written without them will be argued a
 
 ## 2. Data sources and pull order
 
-1. **ZenABM MCP** — `https://app.zenabm.com/api/mcp`. Per-ad and per-format metrics, account-level ABM views, and the benchmark dataset the grading in `benchmarks.md` is anchored to. Preferred when connected: it removes the manual export step and makes the report automatable.
-2. **LinkedIn Campaign Manager export** — ad-level CSV over the window. Ask for the export, not screenshots; screenshots lose the columns that matter (landing-page clicks, dwell, per-format splits).
-3. **CRM** — HubSpot or Salesforce for leads, MQL/SQL, opportunities, pipeline. Loop and model details in `crm-attribution.md`.
-4. **Native post analytics** — required for Thought Leader Ads. Ads Manager under-reports follower and save actions on TLAs; the creator's own post analytics is the control source. Where the two disagree, name both numbers and say which one you trust.
+1. **ZenABM MCP** - `https://app.zenabm.com/api/mcp`. Per-ad and per-format metrics, account-level ABM views, and the benchmark dataset the grading in `benchmarks.md` is anchored to. Preferred when connected: it removes the manual export step and makes the report automatable.
+2. **LinkedIn Campaign Manager export** - ad-level CSV over the window. Ask for the export, not screenshots; screenshots lose the columns that matter (landing-page clicks, dwell, per-format splits).
+3. **CRM** - HubSpot or Salesforce for leads, MQL/SQL, opportunities, pipeline. Loop and model details in `crm-attribution.md`.
+4. **Native post analytics** - required for Thought Leader Ads. Ads Manager under-reports follower and save actions on TLAs; the creator's own post analytics is the control source. Where the two disagree, name both numbers and say which one you trust.
 
 **Non-negotiable:** a metric that cannot be sourced is reported as `n/a` with the reason. Never interpolate, never estimate to fill a table, never carry a number forward from a previous period as if it were current.
 
@@ -88,14 +88,14 @@ B2B cycles run 3-6 months. Monthly reporting exists to manage delivery and creat
 
 ## 6. Report structure
 
-1. **Exec summary** — verdict first, 3-5 sentences. What happened, whether it met target, the one decision being asked for.
-2. **Spend & delivery** — spend vs planned, pacing, impressions, reach, frequency, anything that broke.
-3. **Performance by format** — per-format table with the benchmark column beside the actual.
-4. **Performance by audience** — audience or account segment, with match rates and exclusions in effect.
-5. **Creative winners and losers** — top and bottom by effective CPC-to-LP and dwell, with the copy or angle named so the pattern is reusable.
-6. **Conversions & pipeline** — leads, CPL, CRM stages; pipeline only on a quarterly report. Include the attribution-gap sentence.
-7. **Benchmark grading** — each objective graded against `benchmarks.md`, with the format and geography the benchmark applies to.
-8. **Decisions for next period** — each with owner, expected effect, and how it will be measured. No more than five.
+1. **Exec summary** - verdict first, 3-5 sentences. What happened, whether it met target, the one decision being asked for.
+2. **Spend & delivery** - spend vs planned, pacing, impressions, reach, frequency, anything that broke.
+3. **Performance by format** - per-format table with the benchmark column beside the actual.
+4. **Performance by audience** - audience or account segment, with match rates and exclusions in effect.
+5. **Creative winners and losers** - top and bottom by effective CPC-to-LP and dwell, with the copy or angle named so the pattern is reusable.
+6. **Conversions & pipeline** - leads, CPL, CRM stages; pipeline only on a quarterly report. Include the attribution-gap sentence.
+7. **Benchmark grading** - each objective graded against `benchmarks.md`, with the format and geography the benchmark applies to.
+8. **Decisions for next period** - each with owner, expected effect, and how it will be measured. No more than five.
 
 Close with **"What this report cannot tell you"**: unmeasured view-through impact, the 70-80% of conversions the platform does not capture, cross-device gaps, and any `n/a` in the tables.
 
@@ -119,7 +119,7 @@ Close with **"What this report cannot tell you"**: unmeasured view-through impac
 A monthly report is a good scheduled-task candidate once the data pull is programmatic (ZenABM MCP or a stable CSV export path):
 
 - Fixed window: previous calendar month, compared against the month before.
-- Refuse to generate on missing data rather than filling gaps — an automated report that estimates is worse than one that fails loudly.
+- Refuse to generate on missing data rather than filling gaps - an automated report that estimates is worse than one that fails loudly.
 - Keep a running snapshot of prior periods so period-over-period does not depend on re-pulling history.
 - Human review before it reaches a client or a board. Automate the assembly, not the verdict.
 

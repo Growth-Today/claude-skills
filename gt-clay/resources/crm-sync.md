@@ -1,4 +1,4 @@
-# CRM Sync — HubSpot & Salesforce
+# CRM Sync - HubSpot & Salesforce
 
 ## Supported CRMs
 HubSpot, Salesforce, Pipedrive, Close, Attio
@@ -28,7 +28,7 @@ HubSpot, Salesforce, Pipedrive, Close, Attio
 2. Select Salesforce
 3. Login and grant permissions
 4. Choose: list or static report
-5. **Note:** Reports limited to 2,000 records — prefer imports from lists
+5. **Note:** Reports limited to 2,000 records - prefer imports from lists
 
 ## Push to Email Sequencers
 
@@ -48,7 +48,7 @@ Clay integrates with:
 - Automate via API connections for continuous sync
 - Test with one row first before bulk operations
 
-## CRM Enrichment Example — Salesforce Cleanup
+## CRM Enrichment Example - Salesforce Cleanup
 
 *30,000 records enriched and cleaned*
 

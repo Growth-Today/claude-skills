@@ -14,17 +14,17 @@ Partition marketing/CRM assets by team so each business unit, brand, or region s
 
 ## Why This Matters
 
-In a shared portal with multiple brands/regions/BUs, everyone sees everyone's assets by default — hundreds of lists and workflows, easy to edit the wrong one, and no boundary between teams. Asset partitioning assigns assets to teams so each group works in a clean, scoped view, reducing clutter and accidental cross-contamination.
+In a shared portal with multiple brands/regions/BUs, everyone sees everyone's assets by default - hundreds of lists and workflows, easy to edit the wrong one, and no boundary between teams. Asset partitioning assigns assets to teams so each group works in a clean, scoped view, reducing clutter and accidental cross-contamination.
 
 ## Prerequisites
 
 - **Enterprise** tier (asset partitioning is an Enterprise feature)
-- Teams set up (`users-teams-setup`) — partitioning assigns assets to teams
+- Teams set up (`users-teams-setup`) - partitioning assigns assets to teams
 - Super Admin access
 
 ## Critical Concept: Partitioning Is Team-Based Visibility, Not Security
 
-Asset partitioning controls which **team** an asset belongs to and who can see/edit it — it declutters and scopes work. It's not a hard security boundary for record data (that's permissions + `permission-sets-roles`). Assets can be assigned to one or multiple teams; a Super Admin still sees all.
+Asset partitioning controls which **team** an asset belongs to and who can see/edit it - it declutters and scopes work. It's not a hard security boundary for record data (that's permissions + `permission-sets-roles`). Assets can be assigned to one or multiple teams; a Super Admin still sees all.
 
 ## Plan
 
@@ -57,8 +57,8 @@ Pair with `permission-sets-roles` so access level (view/edit) and asset scope (w
 ## Key Technical Learnings
 
 - **Partitioning = team-scoped visibility of assets**, not a data security control (use permissions for that).
-- **Enterprise-only** — don't design around it on lower tiers.
-- **Depends on a real team structure** (`users-teams-setup`) — partitioning is only as good as the teams.
+- **Enterprise-only** - don't design around it on lower tiers.
+- **Depends on a real team structure** (`users-teams-setup`) - partitioning is only as good as the teams.
 - **Set new-asset defaults** or partitioning decays as people create ungrouped assets.
 - **Pairs with `permission-sets-roles`** for the full access picture.
 

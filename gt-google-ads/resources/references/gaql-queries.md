@@ -1,6 +1,6 @@
 # GAQL Query Templates (B2B Google Ads)
 
-Google Ads Query Language templates for read-only analysis via the API/MCP. All monetary values are in **micros** — divide by 1,000,000 for currency. Judge everything to **pipeline/SQL**, not clicks. Pull, then route findings to the relevant sub-skill.
+Google Ads Query Language templates for read-only analysis via the API/MCP. All monetary values are in **micros** - divide by 1,000,000 for currency. Judge everything to **pipeline/SQL**, not clicks. Pull, then route findings to the relevant sub-skill.
 
 ---
 
@@ -13,14 +13,14 @@ WHERE segments.date DURING LAST_30_DAYS AND campaign.status = 'ENABLED'
 ORDER BY metrics.cost_micros DESC
 ```
 
-## Wasted spend — search terms with spend, zero conversions
+## Wasted spend - search terms with spend, zero conversions
 ```sql
 SELECT search_term_view.search_term, campaign.name, metrics.cost_micros, metrics.clicks, metrics.conversions
 FROM search_term_view
 WHERE segments.date DURING LAST_30_DAYS AND metrics.conversions = 0 AND metrics.cost_micros > 50000000
 ORDER BY metrics.cost_micros DESC
 ```
-(`> 50000000` micros = >$50 spend. These are negative-keyword candidates — route to `negative-keywords`.)
+(`> 50000000` micros = >$50 spend. These are negative-keyword candidates - route to `negative-keywords`.)
 
 ## Keyword performance + Quality Score
 ```sql
@@ -38,9 +38,9 @@ FROM campaign
 WHERE segments.date DURING LAST_30_DAYS
 ORDER BY metrics.conversions_value DESC
 ```
-(With offline conversions imported, `conversions_value` = pipeline value — the number that matters. See `crm-attribution.md`.)
+(With offline conversions imported, `conversions_value` = pipeline value - the number that matters. See `crm-attribution.md`.)
 
-## Auction Insights proxy — impression share & lost IS
+## Auction Insights proxy - impression share & lost IS
 ```sql
 SELECT campaign.name, metrics.search_impression_share,
        metrics.search_budget_lost_impression_share, metrics.search_rank_lost_impression_share
@@ -63,4 +63,4 @@ FROM geographic_view WHERE segments.date DURING LAST_30_DAYS ORDER BY metrics.co
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

@@ -207,7 +207,7 @@ for i in range(0, len(all_ids), BATCH_SIZE):
         print(f"  Batch {i // BATCH_SIZE + 1}: deleted {len(batch)} contacts")
     else:
         failed_ids.extend(batch)
-        print(f"  Batch FAILED: {resp.status_code} — {resp.text[:200]}")
+        print(f"  Batch FAILED: {resp.status_code} - {resp.text[:200]}")
 
     time.sleep(0.5)  # Rate limiting between batches
 

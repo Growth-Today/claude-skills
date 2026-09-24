@@ -14,7 +14,7 @@ Design (or redesign) a deal pipeline so every stage represents something the *bu
 
 ## Why This Matters
 
-Most unreliable HubSpot forecasts trace back to the pipeline, not the reps. Two failure patterns dominate: **fake stages** that describe what the rep is doing ("Follow-up sent") instead of what the buyer committed to, and **zombie stages** like "Nurture" or "Holding" that become graveyards for dead deals. Both inflate open pipeline and corrupt stage-conversion math. A pipeline built on buyer commitments — each with an entry criterion, an exit criterion, and a probability — turns the pipeline report into an actual forecast.
+Most unreliable HubSpot forecasts trace back to the pipeline, not the reps. Two failure patterns dominate: **fake stages** that describe what the rep is doing ("Follow-up sent") instead of what the buyer committed to, and **zombie stages** like "Nurture" or "Holding" that become graveyards for dead deals. Both inflate open pipeline and corrupt stage-conversion math. A pipeline built on buyer commitments - each with an entry criterion, an exit criterion, and a probability - turns the pipeline report into an actual forecast.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Most unreliable HubSpot forecasts trace back to the pipeline, not the reps. Two 
 
 ## Critical Concept: Stages Are Buyer Commitments
 
-Each stage must answer: *"What has the buyer done to be here?"* — not *"What has the rep done?"*
+Each stage must answer: *"What has the buyer done to be here?"* - not *"What has the rep done?"*
 
 | Good (buyer commitment) | Bad (rep action / zombie) |
 |---|---|
@@ -114,7 +114,7 @@ Create a separate pipeline only when the sales *process* genuinely differs (e.g.
 
 ### Step 4: Salesforce sync caution
 
-If deals sync from Salesforce (`hs_salesforceopportunityid` present), stage mappings must be coordinated with the Salesforce admin — renaming or reordering stages can break the sync mapping. Do not restructure synced pipelines unilaterally.
+If deals sync from Salesforce (`hs_salesforceopportunityid` present), stage mappings must be coordinated with the Salesforce admin - renaming or reordering stages can break the sync mapping. Do not restructure synced pipelines unilaterally.
 
 ### Step 5: Migrate stranded deals
 
@@ -136,7 +136,7 @@ When you remove or merge a stage, move its open deals to the closest valid stage
 - **Buyer commitments, not rep actions** is the single rule that fixes most pipelines. If a stage can be "true" without the buyer doing anything, it's a fake stage.
 - **Kill zombie stages.** "Nurture"/"Holding" hide dead deals and inflate open pipeline. Dead deals belong in Closed Lost with a reason.
 - **Probabilities only help if they're honest.** Reuse historical stage-conversion rates rather than round numbers where possible.
-- **Fewer pipelines is better.** Split by process, never by team/region — that's what teams and views are for.
+- **Fewer pipelines is better.** Split by process, never by team/region - that's what teams and views are for.
 - **Pair this with `deal-stage-required-fields`** so each stage's exit criterion is actually enforced, and with `deal-rotting-alerts` so deals can't sit forever.
 
 ---

@@ -10,7 +10,7 @@ metadata:
 
 # Weekly Cleanup Routine
 
-A fast, 5-minute weekly check that catches problems early. This is not a deep audit — it is a spot-check designed to surface issues before they compound.
+A fast, 5-minute weekly check that catches problems early. This is not a deep audit - it is a spot-check designed to surface issues before they compound.
 
 ## Prerequisites
 
@@ -19,14 +19,14 @@ A fast, 5-minute weekly check that catches problems early. This is not a deep au
 
 ## The 5-Minute Checklist
 
-### Stage 1: Before — Open Dashboards
+### Stage 1: Before - Open Dashboards
 
 Open HubSpot in your browser. Have the following views ready:
 - Email health dashboard
 - Workflow dashboard
 - Contacts list view (sorted by create date, descending)
 
-### Stage 2: Execute — Five Spot Checks
+### Stage 2: Execute - Five Spot Checks
 
 #### 1. Bounce Monitoring (1 min)
 - Check the `email_health_flag` list. How many contacts were flagged this week?
@@ -57,7 +57,7 @@ Open HubSpot in your browser. Have the following views ready:
 - Check: email, company, lifecycle stage, owner.
 - If more than 2 out of 10 have gaps, flag for a deeper review.
 
-### Stage 3: After — Log and Escalate
+### Stage 3: After - Log and Escalate
 
 Keep a simple weekly log (spreadsheet or note):
 
@@ -69,13 +69,13 @@ Escalate anything that appears two weeks in a row.
 
 ### Stage 4: Rollback
 
-This is a read-only review — no rollback needed. Any fixes identified are executed through their respective skills.
+This is a read-only review - no rollback needed. Any fixes identified are executed through their respective skills.
 
 ## Scheduling
 
 - Run every Monday morning.
 - Set a recurring 15-minute calendar block (5 minutes for the check, 10 minutes buffer for any follow-up).
-- If you miss a week, do not double up — just run the next scheduled check.
+- If you miss a week, do not double up - just run the next scheduled check.
 
 ---
 

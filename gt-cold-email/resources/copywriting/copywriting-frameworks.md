@@ -1,4 +1,4 @@
-# Cold Email Copywriting — Frameworks
+# Cold Email Copywriting - Frameworks
 **Version:** 1.0
 **Last updated:** 2026-04-07
 
@@ -22,14 +22,14 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 | Leverage Content in Outbound | Using lead magnets | Ethan Parker |
 | "Why Are You Paying?" | Analogy-based persuasion | Leif Bisping |
 | Write a Good Cold Email | Problem-first structure | Josh Braun |
-| HOT Outreach | Peak interest → value → CTA | — |
+| HOT Outreach | Peak interest → value → CTA | - |
 | Manual Email Style | Casual, human, low-pressure | Josh Braun (Henry's email) |
 
 ---
 
 ## Do the Math
 
-**By Thibaut Souyris** — Best when you can put numbers to the problem.
+**By Thibaut Souyris** - Best when you can put numbers to the problem.
 
 **Template:**
 1. **Trigger:** The reason for reaching out. Better with a number.
@@ -51,7 +51,7 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 
 ## Short Trigger-Based Outreach
 
-**By Guillermo Blanco** — Best for quick, punchy, under-30-word emails.
+**By Guillermo Blanco** - Best for quick, punchy, under-30-word emails.
 
 **Template:**
 1. Relevant trigger (personalization)
@@ -70,7 +70,7 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 
 ## Challenge of Similar Companies
 
-**By Patrick Trümpi** — Best when the industry has a known, widespread pain point.
+**By Patrick Trümpi** - Best when the industry has a known, widespread pain point.
 
 **Template:**
 1. Personalization (if available)
@@ -96,12 +96,12 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 
 ## Neutral Insight
 
-**By Chelsea Castle** — Best when you have a relevant third-party resource to share.
+**By Chelsea Castle** - Best when you have a relevant third-party resource to share.
 
 **Template:**
-1. **Reference a third-party resource** — bring a trusted publication to the discussion
-2. **Explain why they should read it** — tie to their context
-3. **Explain why you're sharing it** — connect to their business needs
+1. **Reference a third-party resource** - bring a trusted publication to the discussion
+2. **Explain why they should read it** - tie to their context
+3. **Explain why you're sharing it** - connect to their business needs
 4. **Optional:** Soft ask and nod back to original CTA
 
 **Example:**
@@ -124,7 +124,7 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 
 ## Leader Responsibilities
 
-**By Vin Matano** — Best for reaching role-specific leaders with curiosity.
+**By Vin Matano** - Best for reaching role-specific leaders with curiosity.
 
 **Template:**
 
@@ -144,7 +144,7 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 
 ## Ask Before Pitch / Pattern Interrupt
 
-**By Will Allred** — Flips the typical cold email by leading with a question.
+**By Will Allred** - Flips the typical cold email by leading with a question.
 
 **Template:**
 
@@ -154,7 +154,7 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 >
 > [How product solves problem]
 >
-> PS — Relevant because _____
+> PS - Relevant because _____
 
 **Example:**
 
@@ -172,7 +172,7 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 
 ## Not Too Different Persona
 
-**Seen on BowTiedSalesGuy** — Best when you can reference peers with the same problem.
+**Seen on BowTiedSalesGuy** - Best when you can reference peers with the same problem.
 
 **Template:**
 
@@ -186,7 +186,7 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 
 ## Upfront Value
 
-**By Jordan Crawford** — Lead with free value, no pitch.
+**By Jordan Crawford** - Lead with free value, no pitch.
 
 **Template:**
 
@@ -200,7 +200,7 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 
 ## Leverage Content in Outbound
 
-**By Ethan Parker** — Use a lead magnet as the entry point.
+**By Ethan Parker** - Use a lead magnet as the entry point.
 
 **Template:**
 
@@ -208,36 +208,36 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 >
 > Can I send it over to you?
 >
-> PS — Thought this was relevant because _____
+> PS - Thought this was relevant because _____
 
 **Example:**
 
-> Hey Jason — we've compiled a cheat sheet on how folks like [social proof] are getting their AEs self-sourcing more than 30% of their own pipeline.
+> Hey Jason - we've compiled a cheat sheet on how folks like [social proof] are getting their AEs self-sourcing more than 30% of their own pipeline.
 >
 > Can I send it over to you?
 >
 > Ethan
 >
-> PS — Thought this was relevant because I saw you recently decreased your SDR headcount and are hiring 3 more AEs right now.
+> PS - Thought this was relevant because I saw you recently decreased your SDR headcount and are hiring 3 more AEs right now.
 
 ---
 
 ## "Why Are You Paying?"
 
-**By Leif Bisping** — Analogy-based persuasion.
+**By Leif Bisping** - Analogy-based persuasion.
 
 **Tips:**
 1. Set the stage by describing a typical life situation
 2. Describe an obvious choice given several options
 3. Compare it to a "choice" the prospect is making relating to your solution
 
-**Key idea:** Make the prospect realize they're overpaying or overworking for something that should be simple — through a relatable analogy, not a pitch.
+**Key idea:** Make the prospect realize they're overpaying or overworking for something that should be simple - through a relatable analogy, not a pitch.
 
 ---
 
 ## Write a Good Cold Email
 
-**By Josh Braun** — Problem-first framework.
+**By Josh Braun** - Problem-first framework.
 
 **Framework (thinking process before writing):**
 1. Who are you targeting?
@@ -250,21 +250,21 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 1. Follow the structure
 2. Be crispy or specific
 3. Stay away from generic words ("optimize," "streamline," "save time," "save money")
-4. Focus on what sucks about how they currently get the job done — not your value prop. Solutions have no value without a problem people can relate to.
+4. Focus on what sucks about how they currently get the job done - not your value prop. Solutions have no value without a problem people can relate to.
 
 **Example (for CaptivateIQ):**
 
-> James, honestly now — did you spend your youth dreaming about someday hard-pasting entire Excel pages into Google Sheets and then manually making adjustments, one sheet at a time to determine payouts?
+> James, honestly now - did you spend your youth dreaming about someday hard-pasting entire Excel pages into Google Sheets and then manually making adjustments, one sheet at a time to determine payouts?
 
 ---
 
 ## Manual Email Style
 
-**Josh Braun — Henry's cold email** — Casual, human, low-pressure.
+**Josh Braun - Henry's cold email** - Casual, human, low-pressure.
 
 **Example:**
 
-> Hey Josh — Subscribed to your email list a few weeks ago. I've been doing digital marketing for eight years — have a few unconventional ideas that might goose sales of your Badass Guide without offering discounts.
+> Hey Josh - Subscribed to your email list a few weeks ago. I've been doing digital marketing for eight years - have a few unconventional ideas that might goose sales of your Badass Guide without offering discounts.
 >
 > I don't get paid unless you make more.
 >
@@ -273,13 +273,13 @@ Named frameworks with templates and examples. Each framework is battle-tested an
 > P.S. Not sure it's a fit for you, but several course creators I'm working with are seeing a 10-12% MoM boost in sales.
 
 **Why it works:**
-- "Subscribed" — personalization
-- "Don't get paid unless you make more" — lowers zone of resistance (ZOR)
-- "Not sure it's a fit" — also lowers ZOR, sounds curious not pushy
-- "10-12% increase" — plausible and exciting social proof
-- "A few unconventional ideas" — piques curiosity
-- "I don't get paid unless you make more" — we're in this together, not a hit-and-run
-- Casual writing — feels more relatable
+- "Subscribed" - personalization
+- "Don't get paid unless you make more" - lowers zone of resistance (ZOR)
+- "Not sure it's a fit" - also lowers ZOR, sounds curious not pushy
+- "10-12% increase" - plausible and exciting social proof
+- "A few unconventional ideas" - piques curiosity
+- "I don't get paid unless you make more" - we're in this together, not a hit-and-run
+- Casual writing - feels more relatable
 
 ---
 
@@ -290,9 +290,9 @@ Three-section structure for maximum impact.
 ### Section 1: Peak Interest (the problem you found)
 
 Three options:
-1. **Say the problem you found** — "Your website is slow," "Your podcast clips are edited poorly," "Your current funnel is flawed"
-2. **Mention something not obvious** — "I listened to what you said in X," "You have a TikTok account but no TikTok shop," "You're not using email automations"
-3. **Anything related / connection** — "I also love X place," "X UFC fight was amazing yesterday"
+1. **Say the problem you found** - "Your website is slow," "Your podcast clips are edited poorly," "Your current funnel is flawed"
+2. **Mention something not obvious** - "I listened to what you said in X," "You have a TikTok account but no TikTok shop," "You're not using email automations"
+3. **Anything related / connection** - "I also love X place," "X UFC fight was amazing yesterday"
 
 ### Section 2: The Value (what makes you an expert)
 
@@ -300,7 +300,7 @@ Three options:
 
 Examples:
 - "If you change your email to long form, you will easily get a 20% open rate difference"
-- "I re-edited a video of yours — it's here and why I did XYZ"
+- "I re-edited a video of yours - it's here and why I did XYZ"
 - "I looked at your engagement, website traffic, etc. and think a TikTok shop would sell around 2K orders a month"
 
 ### Section 3: About You and CTA
@@ -321,8 +321,8 @@ Trigger-based message with soft CTA. Pick your trigger:
 
 | Trigger Type | Template Pattern |
 |---|---|
-| Case study | [One-line case study] — already done so for {{company X}} |
-| Observation | [Observation] — see you're doing X |
+| Case study | [One-line case study] - already done so for {{company X}} |
+| Observation | [Observation] - see you're doing X |
 | Hiring | Hiring for {{job_title}} who can {{job_summary}} |
 | Growth | Growing headcount across {{department}} |
 | Tech stack | Using {{software}} for {{topic}} |

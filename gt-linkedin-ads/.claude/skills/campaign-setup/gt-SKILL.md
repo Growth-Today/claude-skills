@@ -59,10 +59,10 @@ Meaningful tests:
 
 ## Key Principles
 
-- **Retargeting 50/50 split** — half value-add content, half conversion asks
-- **Quarterly optimization cycle** — continue what works, pause what doesn't, design new tests
+- **Retargeting 50/50 split** - half value-add content, half conversion asks
+- **Quarterly optimization cycle** - continue what works, pause what doesn't, design new tests
 - **Allow ~$100 spend per creative** before shutdown decisions
-- **Separate campaigns by persona** — for tailored messaging
+- **Separate campaigns by persona** - for tailored messaging
 
 ## Examples
 
@@ -75,4 +75,4 @@ Example 2: "I'm launching LinkedIn Ads for the first time"
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

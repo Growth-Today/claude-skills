@@ -1,12 +1,12 @@
-# Cold Email Copywriting — Principles
+# Cold Email Copywriting - Principles
 **Version:** 2.1
 **Last updated:** 2026-04-09
-**Changes v2.1:** Added data backing for word count (sentence-level), social proof, subject line, and CTA — sourced from Gong (85M emails), Belkins (5.5M), Instantly (billions). No structural changes. You/your vs we/our and reply-rate banned word list deferred pending testing.
+**Changes v2.1:** Added data backing for word count (sentence-level), social proof, subject line, and CTA - sourced from Gong (85M emails), Belkins (5.5M), Instantly (billions). No structural changes. You/your vs we/our and reply-rate banned word list deferred pending testing.
 
 Core philosophy, rules, components, tips, and spam avoidance for writing cold emails that actually get replies.
 
 For named frameworks, see [copywriting-frameworks.md](copywriting-frameworks.md).
-For sequence structures (Email 1–3 variations), see [copywriting-sequences.md](copywriting-sequences.md).
+For sequence structures (Email 1-3 variations), see [copywriting-sequences.md](copywriting-sequences.md).
 For e-commerce specific playbook, see [copywriting-ecom-playbook.md](copywriting-ecom-playbook.md).
 
 ---
@@ -18,24 +18,24 @@ If you want your emails to draw attention, you need to make the reader think:
 **"There's no way this email was for anyone else but me."**
 
 Three things make a cold email NOT boring:
-1. **Personal** — feels written for that one person
-2. **Short** — gets the point across in as few lines as possible
-3. **Valuable** — gives something worth their time
+1. **Personal** - feels written for that one person
+2. **Short** - gets the point across in as few lines as possible
+3. **Valuable** - gives something worth their time
 
 ### What Makes Cold Emails Boring
 
-- Impersonal or irrelevant (or both) — "industry leaders like yourself" sent to 10,000 people
-- Unnecessarily long — nobody reads essays from strangers
-- Generic value props — "optimize," "streamline," "save time"
+- Impersonal or irrelevant (or both) - "industry leaders like yourself" sent to 10,000 people
+- Unnecessarily long - nobody reads essays from strangers
+- Generic value props - "optimize," "streamline," "save time"
 
 ---
 
 ## The Rules
 
-**Bend these at your discretion — copywriting is more art than science. But these are the defaults:**
+**Bend these at your discretion - copywriting is more art than science. But these are the defaults:**
 
-1. **Under 100 words** (ideally 60–90)
-   > **Data (Gong, 85M emails + Instantly, billions):** Reply rate peaks at 3 sentences (2.9%), stays nearly identical at 4 sentences (2.7%), then drops measurably above that. Under 80 words is where elite senders operate. Note: P.S. lines, extra callouts, and breakup elements are exempt from this count — this applies to the main email body only.
+1. **Under 100 words** (ideally 60-90)
+   > **Data (Gong, 85M emails + Instantly, billions):** Reply rate peaks at 3 sentences (2.9%), stays nearly identical at 4 sentences (2.7%), then drops measurably above that. Under 80 words is where elite senders operate. Note: P.S. lines, extra callouts, and breakup elements are exempt from this count - this applies to the main email body only.
 2. **More about them than you**
 3. **Benefits over features**
 4. **Solve a problem they actually have**
@@ -51,11 +51,11 @@ Every email should have most of these:
 
 ### 1. Observation (Opener)
 
-What you noticed about them. This is your hook — it must be relevant.
+What you noticed about them. This is your hook - it must be relevant.
 
 **Two types:**
-- **Trigger-based** — a relevant event (hiring, funding, product launch, tech change)
-- **Recency-based** — something recent (news, blog post, LinkedIn activity)
+- **Trigger-based** - a relevant event (hiring, funding, product launch, tech change)
+- **Recency-based** - something recent (news, blog post, LinkedIn activity)
 
 **Good observations tie to the problem you solve:**
 - Change in their industry likely to impact their business
@@ -78,9 +78,9 @@ What you noticed about them. This is your hook — it must be relevant.
 ### 2. Value Proposition
 
 What you actually do, stated in terms of outcomes:
-- **Make money** — increase revenue, pipeline, conversions
-- **Save money** — reduce costs, prevent waste
-- **Save time** — automate, simplify, eliminate manual work
+- **Make money** - increase revenue, pipeline, conversions
+- **Save money** - reduce costs, prevent waste
+- **Save time** - automate, simplify, eliminate manual work
 
 **Be specific, not generic:**
 - Bad: "We help companies optimize their sales process"
@@ -98,35 +98,35 @@ Quantifiable results from real companies:
 - Name real companies (if they're recognizable)
 - Keep it to one sentence max
 
-> **Data (Gong, 85M emails):** Specific social proof framing delivers +41% reply rate. This only holds when the proof is concrete — a real number plus a company name (or a specific descriptor). "Significant results" is not social proof, it is a buzzword.
+> **Data (Gong, 85M emails):** Specific social proof framing delivers +41% reply rate. This only holds when the proof is concrete - a real number plus a company name (or a specific descriptor). "Significant results" is not social proof, it is a buzzword.
 >
 > **When you can't name the company (NDA etc.):** Use a number + industry descriptor. "A Series B SaaS in your space cut SDR ramp time from 90 to 34 days" is far stronger than "one of our clients saw great results." A number is proof. A vague description is not.
 
 ### 4. Call to Action (CTA)
 
-One CTA per email. Always end with a question — it invites a reply.
+One CTA per email. Always end with a question - it invites a reply.
 
-> **Data reference (Gong, 85M emails — cold outbound first-touch context):**
+> **Data reference (Gong, 85M emails - cold outbound first-touch context):**
 > - **Make an offer** ("Open to a free audit of your current sequence?") → **+28% reply rate**
-> - **Ask for interest — binary yes/no** ("Worth a quick call?" / "Does this make sense?") → **+7% reply rate**
+> - **Ask for interest - binary yes/no** ("Worth a quick call?" / "Does this make sense?") → **+7% reply rate**
 > - **Ask for a meeting directly** ("Book a 30-min demo on my calendar") → **−44% reply rate**
 >
-> This data reflects cold outbound. CTA type depends on campaign context — always follow the routing in the relevant sub-skill (cold email, inbound, postbound).
+> This data reflects cold outbound. CTA type depends on campaign context - always follow the routing in the relevant sub-skill (cold email, inbound, postbound).
 
-**Soft CTA** (lower commitment — default for cold outbound):
+**Soft CTA** (lower commitment - default for cold outbound):
 - "Would this be something you're looking to solve?"
 - "Worth exploring?"
 - "Can I share how?"
 - "Sound relevant?"
 - "What do you think?"
 
-**Hard CTA** (direct ask — appropriate for inbound and postbound where interest is established):
+**Hard CTA** (direct ask - appropriate for inbound and postbound where interest is established):
 - "Worth a chat?"
 - "Open for a quick call this week?"
 
 **Avoid:** "Let me know" and "Let's get a call" (too vague or too pushy).
 
-**Always end with a question** — it invites a reply.
+**Always end with a question** - it invites a reply.
 
 ### 5. P.S. Line (Bonus)
 
@@ -202,12 +202,12 @@ Don't make the offer too good to be true (even if it is). Plausible > grandiose.
 
 ### Subject Lines
 
-> **Data (Gong 85M + Belkins 5.5M):** 2-4 word subject lines → 46% open rate. 10+ words → 34% open rate. Lowercase delivers +11% more opens vs sentence case — reads like an internal email, not a campaign. Personalized subject (company name or specific trigger) vs generic → +133% reply rate (Belkins, 5.5M, 2024).
+> **Data (Gong 85M + Belkins 5.5M):** 2-4 word subject lines → 46% open rate. 10+ words → 34% open rate. Lowercase delivers +11% more opens vs sentence case - reads like an internal email, not a campaign. Personalized subject (company name or specific trigger) vs generic → +133% reply rate (Belkins, 5.5M, 2024).
 >
 > **What not to use in subject lines (Gong, 85M):** Questions = −4%. Generic numbers = −7%. "AI" = −9%. Social proof = −3%.
 
 **Rules:**
-- 1–4 words, all lowercase
+- 1-4 words, all lowercase
 - Add a space or two before the subject for a pattern interrupt
 - Keep it casual and curiosity-driven
 
@@ -215,8 +215,8 @@ Don't make the offer too good to be true (even if it is). Plausible > grandiose.
 
 | Pattern | Examples | Why |
 |---|---|---|
-| Possessive + specific noun | `{{company}}'s push strategy` · `your q3 pipeline` · `{{company}}'s churn` | Immediately theirs — feels relevant |
-| 2-word trigger | `event pipeline` · `push segmentation` · `hiring ops` · `webinar content` | Internal email feel — could be from a colleague |
+| Possessive + specific noun | `{{company}}'s push strategy` · `your q3 pipeline` · `{{company}}'s churn` | Immediately theirs - feels relevant |
+| 2-word trigger | `event pipeline` · `push segmentation` · `hiring ops` · `webinar content` | Internal email feel - could be from a colleague |
 | Specific number (personalized) | `12 open roles` · `3 tools` | Specificity = credibility |
 
 **Never use:**
@@ -240,7 +240,7 @@ Don't make the offer too good to be true (even if it is). Plausible > grandiose.
 - Interests/facts that prospects consistently care about
 - Observations tied to the problem you solve
 
-**Example:** Personalizing based on when the business was founded — founders are immensely proud of their longevity.
+**Example:** Personalizing based on when the business was founded - founders are immensely proud of their longevity.
 
 ---
 
@@ -257,19 +257,19 @@ Run the spam checker on every email before returning it to the user. The spam ch
 ## Resources & People to Follow
 
 ### People
-- **Josh Braun** — Cold email philosophy, before/after rewrites
-- **Thibaut Souyris** — "Do the Math" framework
-- **Jordan Crawford** — Upfront value approach
-- **Will Allred** — Pattern interrupt / ask before pitch
-- **Ethan Parker** — Leverage content in outbound
+- **Josh Braun** - Cold email philosophy, before/after rewrites
+- **Thibaut Souyris** - "Do the Math" framework
+- **Jordan Crawford** - Upfront value approach
+- **Will Allred** - Pattern interrupt / ask before pitch
+- **Ethan Parker** - Leverage content in outbound
 
 ### Videos
 - [How to Write Less Boring Cold Emails](https://www.youtube.com/watch?v=XCj3hVchj9U)
 - [How to write cold emails that get responses (45.8% reply rate)](https://www.youtube.com/watch?v=a3E7Mcvhbms)
 
 ### Articles
-- [Josh Braun — Before/After Cold Emails](https://joshbraun.com/before-after-cold-emails/)
-- [Josh Braun — Let's Write a Good Cold Email](https://joshbraun.com/lets-write-a-good-cold-email-4/)
-- [Josh Braun — Lowering Resistance](https://joshbraun.com/readmind/)
+- [Josh Braun - Before/After Cold Emails](https://joshbraun.com/before-after-cold-emails/)
+- [Josh Braun - Let's Write a Good Cold Email](https://joshbraun.com/lets-write-a-good-cold-email-4/)
+- [Josh Braun - Lowering Resistance](https://joshbraun.com/readmind/)
 
 ---

@@ -1,49 +1,49 @@
 ---
 name: gtm-skill-5-messaging
-description: "GTM Onboarding Skill 5 — Messaging Matrix. Generates Tab 8 (18 messaging variants using the 5-sentence framework). Run after Skill 2 (primary dimension confirmed) and Skill 1 (confirmed customer logos)."
+description: "GTM Onboarding Skill 5 - Messaging Matrix. Generates Tab 8 (18 messaging variants using the 5-sentence framework). Run after Skill 2 (primary dimension confirmed) and Skill 1 (confirmed customer logos)."
 ---
 
-# Skill 5 — Messaging Matrix
+# Skill 5 - Messaging Matrix
 
-**Generates:** Tab 8 (18 messaging variants — 5-sentence framework)  
+**Generates:** Tab 8 (18 messaging variants - 5-sentence framework)  
 **Input:** Skill 1 (confirmed logos) + Skill 2 (primary dimension + pain language bank) + Skill 4 (displacement angles)  
-**Next step:** Skill 6 (Excel Assembly) — only after you confirm Tab 8
+**Next step:** Skill 6 (Excel Assembly) - only after you confirm Tab 8
 
 ---
 
-## CORE PRINCIPLE — The 5-Sentence Framework
+## CORE PRINCIPLE - The 5-Sentence Framework
 
 Every variant is built from exactly 5 sentence types. S3 is always identical. The other 4 change based on the dimensions identified in Skill 2.
 
 ```
-S1 — Hook             changes by PERSONA (always)
-S2 — Consequence      changes by the SECOND DIMENSION (whatever Skill 2 identified)
-S3 — Solution         NEVER CHANGES — identical in every variant
-S4 — Differentiator   changes by COMPANY SIZE (or last dimension if size is not used)
-S5 — CTA              changes by COMPANY SIZE + ATL/BTL split
+S1 - Hook             changes by PERSONA (always)
+S2 - Consequence      changes by the SECOND DIMENSION (whatever Skill 2 identified)
+S3 - Solution         NEVER CHANGES - identical in every variant
+S4 - Differentiator   changes by COMPANY SIZE (or last dimension if size is not used)
+S5 - CTA              changes by COMPANY SIZE + ATL/BTL split
 ```
 
 S2 is not always researcher presence. S2 is whatever the second most important messaging dimension is for your company. For some companies it is funding stage. For others it is vertical. For others it is researcher presence. Skill 2 tells you what it is.
 
-**Test before generating:** read any assembled variant out loud. Does it sound like something a real person would send? Or does it sound like AI copy? If the latter — rewrite it.
+**Test before generating:** read any assembled variant out loud. Does it sound like something a real person would send? Or does it sound like AI copy? If the latter - rewrite it.
 
 ---
 
-## ATL vs BTL SPLIT — applies before writing any sentence
+## ATL vs BTL SPLIT - applies before writing any sentence
 
 Before writing S1, determine the seniority of each persona. This changes everything.
 
-**ATL (Above-the-Line) — VP, C-Level, Director:**
+**ATL (Above-the-Line) - VP, C-Level, Director:**
 - Think strategic, past and future
 - Care about: revenue impact, risk, competitive positioning, board optics
-- Message length: 2–3 sentences MAXIMUM
+- Message length: 2-3 sentences MAXIMUM
 - Language: "strategic initiative", "revenue impact", "competitive advantage"
 - Fatal mistake: operational details → instant delegation to subordinate
 
-**BTL (Below-the-Line) — Manager, IC, End User:**
+**BTL (Below-the-Line) - Manager, IC, End User:**
 - Think tactical, present
 - Care about: daily pain, time savings, workflow, looking good to their boss
-- Message length: 3–4 sentences acceptable
+- Message length: 3-4 sentences acceptable
 - Language: "stop spending X hours on", "never deal with Y again", "save Z hours/week"
 - Fatal mistake: ROI framing and strategic language → doesn't resonate, too abstract
 
@@ -60,33 +60,33 @@ Apply this split to S1 and S5 especially.
 ## INPUT REQUIRED
 
 ```
-SKILL 1 OUTPUT:  [confirmed customer logos — for S4 Enterprise only]
+SKILL 1 OUTPUT:  [confirmed customer logos - for S4 Enterprise only]
 SKILL 2 OUTPUT:  [primary dimension + states + persona types + pain language bank]
-SKILL 4 OUTPUT:  [displacement angles per competitor — feeds S4 differentiator]
+SKILL 4 OUTPUT:  [displacement angles per competitor - feeds S4 differentiator]
 ```
 
 ---
 
-## STEP 1 — Confirm Variant Structure from Skill 2
+## STEP 1 - Confirm Variant Structure from Skill 2
 
 Paste the Skill 2 dimension output. Extract the dimensions and their states. Do not assume.
 
 ```
 DIMENSIONS FROM SKILL 2:
-  Dimension 1: [name] — [N states]: [list]
-  Dimension 2: [name] — [N states]: [list]
-  Dimension 3: [name, if applicable] — [N states]: [list]
-  Dimension 4: [name, if applicable] — [N states]: [list]
+  Dimension 1: [name] - [N states]: [list]
+  Dimension 2: [name] - [N states]: [list]
+  Dimension 3: [name, if applicable] - [N states]: [list]
+  Dimension 4: [name, if applicable] - [N states]: [list]
 
 Total variants: [D1 states] x [D2 states] x [D3 if applicable] x [D4 if applicable]
 
-PERSONALIZATION VARIABLES (not dimensions — Clay handles these):
+PERSONALIZATION VARIABLES (not dimensions - Clay handles these):
   [variable]: changes [opening line / proof logo]
 ```
 
-### DIMENSIONS FOR YOUR COMPANY — mandatory table at top of Tab 8
+### DIMENSIONS FOR YOUR COMPANY - mandatory table at top of Tab 8
 
-**Before any variants, Tab 8 must open with this reference table.** This is what the Dialogue V3 playbook had and it makes the whole matrix readable — without it, 18 rows of S1–S5 are impossible to navigate.
+**Before any variants, Tab 8 must open with this reference table.** This is what the Dialogue V3 playbook had and it makes the whole matrix readable - without it, 18 rows of S1-S5 are impossible to navigate.
 
 Format (4 columns):
 ```
@@ -98,12 +98,12 @@ Example (Dialogue AI V3):
 1. Persona          | Product / UX Research / Consumer Insight     | S1 (core pain hook)    | A PM, a UXR, and a CI Manager have completely different daily pain. Same product, completely different reason to buy.
 2. Researcher       | No researcher / 1 researcher / 2+ researchers | S2 (consequence)       | The consequence of the pain is different at each state. No researcher = validation skipped. 1 researcher = backlog. 2+ = scale problem.
 3. Company size     | SMB / Enterprise                              | S4 (proof) + S5 (CTA)  | SMB gets speed/ease messaging, no logos. Enterprise gets confirmed customer logos and a pilot offer.
-4. Industry         | Ecom / Health / Fintech / Consumer tech        | Opening line + proof only — NOT S1 or S2 | An ecom PM and a health PM have the same core pain. Industry changes which proof logo is most relevant — not the message structure.
+4. Industry         | Ecom / Health / Fintech / Consumer tech        | Opening line + proof only - NOT S1 or S2 | An ecom PM and a health PM have the same core pain. Industry changes which proof logo is most relevant - not the message structure.
 ```
 
 After this table, add the S3 STATIC sentence callout:
 ```
-S3 STATIC SENTENCE — identical in all [N] variants:
+S3 STATIC SENTENCE - identical in all [N] variants:
 "[the sentence]"
 ```
 
@@ -111,7 +111,7 @@ Then the variant rows begin.
 
 ---
 
-### NOTE FOR ADAPTATIONS — footer at bottom of Tab 8
+### NOTE FOR ADAPTATIONS - footer at bottom of Tab 8
 
 After the personalization layer table, add this note:
 ```
@@ -143,23 +143,23 @@ Persona | Researcher | Company size | S1 | S2 | S3 | S4 | S5 | Framework | Level
 Persona | Researcher | Company size | Industry | S1 | S2 | S3 | S4 | S5 | Framework | Level
 ```
 
-**The Level column (ATL/BTL) is mandatory** — it tells the SDR/AE which version they are sending and governs length, tone, and CTA style. Never omit it.
+**The Level column (ATL/BTL) is mandatory** - it tells the SDR/AE which version they are sending and governs length, tone, and CTA style. Never omit it.
 
 If industry is a dimension: it gets a column. If it is a personalization variable: it does NOT get a column. It appears in the Clay layer section below the matrix.
 
 ---
 
-## STEP 2 — Write the 9 Building-Block Sentences First
+## STEP 2 - Write the 9 Building-Block Sentences First
 
 Write every unique sentence BEFORE assembling any variant. This prevents inconsistency.
 
-### S1 — Hook Sentences (one per persona type)
+### S1 - Hook Sentences (one per persona type)
 
 **Source:** Tab 4 Core Pain column from Skill 2. Take the best pain statement per persona and adapt to direct address.
 
 **Rules:**
 - Direct address ("You…") or clear first-person framing
-- Specific scenario — not a generic complaint
+- Specific scenario - not a generic complaint
 - Max 20 words
 - Must make the reader think: "that's exactly my situation"
 - BTL personas: operational, present-tense, daily frustration
@@ -169,17 +169,17 @@ Write every unique sentence BEFORE assembling any variant. This prevents inconsi
 BAD (generic): "User research is hard to scale."
 GOOD (BTL):    "You make product decisions every week, but getting real user 
                 feedback takes weeks you don't have."
-GOOD (ATL):    "Your product teams are shipping faster — but without user 
+GOOD (ATL):    "Your product teams are shipping faster - but without user 
                 validation, you're scaling risk, not growth."
 ```
 
 **Write one S1 per persona. For ATL personas, write an ATL version.**
 
-### S2 — Consequence Sentences (one per primary dimension state)
+### S2 - Consequence Sentences (one per primary dimension state)
 
 **NOT another pain statement.** S2 answers: what does S1 FORCE you to do, or PREVENT you from doing?
 
-S1 + S2 must form a cause-and-effect arc. Test: if S1 and S2 could be swapped — S2 is wrong.
+S1 + S2 must form a cause-and-effect arc. Test: if S1 and S2 could be swapped - S2 is wrong.
 
 ```
 BAD (restates S1):  "I don't have time to do interviews myself."
@@ -189,7 +189,7 @@ GOOD (consequence): "Without a dedicated researcher, you're either skipping
 
 Write one S2 per primary dimension state (e.g. one for "No researcher", one for "1 researcher", one for "2+ researchers").
 
-### S3 — Static Solution Sentence (write ONCE, never change)
+### S3 - Static Solution Sentence (write ONCE, never change)
 
 **This sentence is IDENTICAL in all variants. It never changes.**
 
@@ -206,36 +206,36 @@ Rules:
 - No marketing language
 
 Example: "Dialogue is an AI platform that runs live qualitative interviews 
-at scale, automatically — no scheduling, no moderator needed."
+at scale, automatically - no scheduling, no moderator needed."
 ```
 
-Write this sentence. Then do not change it in any variant. If it needs changing for any variant — the sentence is wrong. Rewrite it.
+Write this sentence. Then do not change it in any variant. If it needs changing for any variant - the sentence is wrong. Rewrite it.
 
-### S4 — Differentiator Sentences (one per company size)
+### S4 - Differentiator Sentences (one per company size)
 
 **SMB version:**
-- Speed and ease — no logos needed
+- Speed and ease - no logos needed
 - Specific outcome + plain language
 - Focus: time-to-insight, no expertise required
 
 ```
-Example: "No scheduling, no coordination — real interviews with real users, 
+Example: "No scheduling, no coordination - real interviews with real users, 
 results in hours not weeks."
 ```
 
 **Enterprise version:**
-- Confirmed logos ONLY — check Tab 1 Notable Customers before writing
+- Confirmed logos ONLY - check Tab 1 Notable Customers before writing
 - Never use aspirational logos
-- Never use "companies like X" — only specific confirmed names
+- Never use "companies like X" - only specific confirmed names
 
 ```
-Example: "Wayfair and Square use it to validate features before building — 
+Example: "Wayfair and Square use it to validate features before building - 
 enterprise depth at startup speed."
 ```
 
-**Rule:** If you cannot fill Enterprise S4 with confirmed logos → write `[TO ADD — confirm enterprise logos during team review]`
+**Rule:** If you cannot fill Enterprise S4 with confirmed logos → write `[TO ADD - confirm enterprise logos during team review]`
 
-### S5 — CTA Sentences (one per company size)
+### S5 - CTA Sentences (one per company size)
 
 **Rules:**
 - Always includes: specific time commitment + specific offer
@@ -258,26 +258,26 @@ GOOD (ATL): "15 minutes to see how [Company] is handling this at scale?"
 
 ---
 
-## STEP 3 — Framework Selection per Variant
+## STEP 3 - Framework Selection per Variant
 
 Before assembling, assign one of the 8 allowed cold email frameworks to each variant group. This determines the feel of the assembled email.
 
 | Framework | Best for |
 |---|---|
-| Before/After | BTL — show current state vs desired, clear transformation |
-| Ask Before Pitch | Any persona — open-ended question leads, earns right to pitch |
-| Do the Math | BTL — calculate the cost of the problem (time, money) |
-| Challenge of Similar Companies | Any — "companies doing X often struggle with Y" |
-| Pattern Interrupt | ATL — break expectations, unconventional opener |
-| Neutral Insight | ATL — share a third-party insight, build trust first |
-| Typical Problems by Role | BTL — role-specific pain that prompts reflection |
-| Upfront Value | Any — give something useful before asking |
+| Before/After | BTL - show current state vs desired, clear transformation |
+| Ask Before Pitch | Any persona - open-ended question leads, earns right to pitch |
+| Do the Math | BTL - calculate the cost of the problem (time, money) |
+| Challenge of Similar Companies | Any - "companies doing X often struggle with Y" |
+| Pattern Interrupt | ATL - break expectations, unconventional opener |
+| Neutral Insight | ATL - share a third-party insight, build trust first |
+| Typical Problems by Role | BTL - role-specific pain that prompts reflection |
+| Upfront Value | Any - give something useful before asking |
 
 For the standard 18-variant matrix, assign frameworks to variant groups, not each individual variant. Example: all Product persona variants use "Do the Math", all CI persona variants use "Challenge of Similar Companies".
 
 ---
 
-## STEP 4 — Assemble the Full Matrix
+## STEP 4 - Assemble the Full Matrix
 
 Now assemble every variant from the building blocks.
 
@@ -308,11 +308,11 @@ SDR checklist:
 - S3 is word-for-word identical to all other S3s
 - S4 Enterprise uses ONLY confirmed logos from Tab 1
 - S5 includes time commitment + specific offer
-- Total word count: 60–90 words (BTL) or 40–60 words (ATL)
+- Total word count: 60-90 words (BTL) or 40-60 words (ATL)
 
 ---
 
-## STEP 5 — Personalization Layer (Clay-ready table)
+## STEP 5 - Personalization Layer (Clay-ready table)
 
 After assembling variants, generate a dedicated **TICKETING TOOL / PLATFORM PERSONALIZATION LAYER** table at the bottom of Tab 8. This is what you plugs directly into Clay to generate custom first lines at scale.
 
@@ -323,7 +323,7 @@ Tool / Signal | Opening Line (Clay variable) | Integration proof swap (S4) | Sig
 ```
 
 **Rules:**
-- One row per tool/signal. Not per persona — the tool is the variable the opening line references.
+- One row per tool/signal. Not per persona - the tool is the variable the opening line references.
 - Opening line column = the exact Clay formula output. Should be ≤12 words. Reads like a human typed it.
 - Integration proof swap = what changes in S4 when this tool is detected. Only the tool-specific phrase changes.
 - Signal to detect = the BuiltWith/Store Leads/Claygent condition that triggers this row.
@@ -333,8 +333,8 @@ Tool / Signal | Opening Line (Clay variable) | Integration proof swap (S4) | Sig
 
 | Tool / Signal | Opening Line | S4 Integration Proof Swap | Signal | Clay Detection |
 |---|---|---|---|---|
-| Gorgias detected | "Saw [Company] is on Gorgias." | "We overlay on Gorgias — no migration." | Gorgias in BuiltWith at D2C brand | BuiltWith: gorgias_detected = true |
-| Zendesk detected | "Saw [Company] runs Zendesk." | "We work on top of Zendesk — no migration." | Zendesk in BuiltWith at D2C brand | BuiltWith: zendesk_detected = true |
+| Gorgias detected | "Saw [Company] is on Gorgias." | "We overlay on Gorgias - no migration." | Gorgias in BuiltWith at D2C brand | BuiltWith: gorgias_detected = true |
+| Zendesk detected | "Saw [Company] runs Zendesk." | "We work on top of Zendesk - no migration." | Zendesk in BuiltWith at D2C brand | BuiltWith: zendesk_detected = true |
 | No tool detected | "[Company] is on Shopify with a [size] team." | Lead with speed to value, no tool reference | Shopify + no AI tool detected | BuiltWith: shopify + absence of AI CX tools |
 
 **For your company, adapt to your actual detectable signals:**
@@ -346,18 +346,18 @@ Tool / Signal | Opening Line (Clay variable) | Integration proof swap (S4) | Sig
 
 **Note at bottom of table:**
 ```
-"This layer personalises the opening line only. The S1–S5 structure does not change.
+"This layer personalises the opening line only. The S1-S5 structure does not change.
  Every row in this table maps to one column in the Clay table."
 ```
 
 ---
 
-## STEP 6 — Assembly Test
+## STEP 6 - Assembly Test
 
 Before presenting to you, assemble and read variant #01 out loud as a complete email.
 
 ```
-ASSEMBLY TEST — Variant #01:
+ASSEMBLY TEST - Variant #01:
 
 Subject: [write one subject line per assembled variant]
 Body: [S1. S2. S3. S4. S5.]
@@ -371,7 +371,7 @@ If any answer is NO → rewrite before presenting.
 ```
 
 Subject line rules (from cold-email/subject-lines):
-- 3–5 words max
+- 3-5 words max
 - No question marks in subject line
 - References something specific: their company name, role, or a signal
 - Never: "Quick question", "Following up", "Checking in"
@@ -379,10 +379,10 @@ Subject line rules (from cold-email/subject-lines):
 
 ---
 
-## STEP 7 — Pause and Present to you
+## STEP 7 - Pause and Present to you
 
 ```
-✅ Skill 5 complete — [YourCompany]
+✅ Skill 5 complete - [YourCompany]
 
 VARIANT STRUCTURE: [N] variants
 ([dimension states] × [personas] × [sizes])
@@ -391,18 +391,18 @@ ATL/BTL split: [which personas got ATL treatment]
 
 S3 STATIC SENTENCE (appears identically in all [N] variants):
 "[the sentence]"
-— Confirm this is accurate and complete before proceeding.
+- Confirm this is accurate and complete before proceeding.
 
 S4 ENTERPRISE LOGOS USED: [list]
-— All confirmed from Tab 1. If any are wrong, correct them now.
-— If missing: [TO ADD — confirm enterprise logos]
+- All confirmed from Tab 1. If any are wrong, correct them now.
+- If missing: [TO ADD - confirm enterprise logos]
 
 PERSONALIZATION LAYER:
 - Product persona: [bucket + Clay prompt summary]
 - UX/Research persona: [bucket + Clay prompt summary]
 - CI persona: [bucket + Clay prompt summary]
 
-ASSEMBLY TEST — Variant #01 (read this out loud):
+ASSEMBLY TEST - Variant #01 (read this out loud):
 Subject: [subject line]
 [assembled email]
 Word count: [N]
@@ -439,4 +439,4 @@ Subject lines: [one per variant or per variant group]
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

@@ -1,4 +1,4 @@
-# Buying Signals — Ranked by Purchase Correlation
+# Buying Signals - Ranked by Purchase Correlation
 
 ## 6 Core Buying Signals
 

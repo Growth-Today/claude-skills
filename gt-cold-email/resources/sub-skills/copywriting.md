@@ -32,7 +32,7 @@ Read these resources based on the user's question:
 | Leverage Content in Outbound | Lead magnets as entry point | Ethan Parker |
 | "Why Are You Paying?" | Analogy-based persuasion | Leif Bisping |
 | Write a Good Cold Email | Problem-first structure | Josh Braun |
-| HOT Outreach | Peak interest + value + CTA | — |
+| HOT Outreach | Peak interest + value + CTA | - |
 | Manual Email Style | Casual, human, low-pressure | Josh Braun |
 
 ## Core Rules
@@ -51,7 +51,7 @@ For full sequence structure (email count, timing, goals, and templates per email
 
 `{SKILL_BASE}/resources/copywriting/copywriting-sequences.md`
 
-Do not define sequence structure here — it is maintained in that file only.
+Do not define sequence structure here - it is maintained in that file only.
 
 ## Examples
 

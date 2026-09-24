@@ -31,12 +31,12 @@ For Predictive Audiences, the lookalike sunset, and career-signal targeting → 
 
 ## Key Principles
 
-- **Company lists > contact lists** — 95-100% match vs 30-70%
-- **Always set exclusions** — competitors, customers, wrong seniority, login page visitors
-- **Separate personas into campaigns** — for tailored messaging
-- **500+ employees: exclude managers** — too many layers; <500: include managers
-- **Audience Expansion OFF by default** — turn on only when intentionally broadening
-- **Impression cap at 500/company/7 days** — prevents large companies from eating budget
+- **Company lists > contact lists** - 95-100% match vs 30-70%
+- **Always set exclusions** - competitors, customers, wrong seniority, login page visitors
+- **Separate personas into campaigns** - for tailored messaging
+- **500+ employees: exclude managers** - too many layers; <500: include managers
+- **Audience Expansion OFF by default** - turn on only when intentionally broadening
+- **Impression cap at 500/company/7 days** - prevents large companies from eating budget
 
 ## Examples
 
@@ -49,4 +49,4 @@ Example 2: "Set up ABM targeting for 200 accounts"
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

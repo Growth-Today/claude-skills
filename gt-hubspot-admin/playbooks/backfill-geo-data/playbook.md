@@ -62,19 +62,19 @@ Integrate with a third-party enrichment service (Clearbit, ZoomInfo, Apollo, etc
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Assess the Gap
+### Stage 1: Before - Assess the Gap
 
 1. Count contacts missing country, state, and city.
-2. Segment by source — which lead sources tend to have missing geo data?
+2. Segment by source - which lead sources tend to have missing geo data?
 3. Choose the enrichment method based on volume and budget.
 
-### Stage 2: Execute — Run Enrichment
+### Stage 2: Execute - Run Enrichment
 
 1. Apply the chosen method (or combine methods for maximum coverage).
 2. Process in batches of 100 to respect rate limits.
 3. Validate enriched values against the standardized geo format from `/standardize-geo-values`.
 
-### Stage 3: After — Verify
+### Stage 3: After - Verify
 
 1. Re-count contacts missing geographic fields. Calculate improvement percentage.
 2. Spot-check 20-30 enriched contacts for accuracy.
@@ -88,7 +88,7 @@ Integrate with a third-party enrichment service (Clearbit, ZoomInfo, Apollo, etc
 ## Tips
 
 - IP-based geolocation (from form submissions) is already captured by HubSpot in `ip_city`, `ip_state`, `ip_country`. Copy these to the standard fields if the standard fields are empty.
-- Do not overwrite manually-entered geo data with enrichment data — always check "if empty" before writing.
+- Do not overwrite manually-entered geo data with enrichment data - always check "if empty" before writing.
 
 ---
 

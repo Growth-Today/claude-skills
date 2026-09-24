@@ -1,6 +1,6 @@
 ---
 name: territory-routing
-description: "Route leads and accounts by territory — geography, segment, industry, or account ownership — so the right rep gets the right account. Builds criteria-based assignment with team round-robin inside each territory."
+description: "Route leads and accounts by territory - geography, segment, industry, or account ownership - so the right rep gets the right account. Builds criteria-based assignment with team round-robin inside each territory."
 license: MIT
 metadata:
   author: growthtoday
@@ -14,7 +14,7 @@ Assign leads and accounts to the right rep based on territory rules (region, seg
 
 ## Why This Matters
 
-Flat round-robin ignores who *should* own an account — the EMEA rep should get EMEA leads, the enterprise rep should get enterprise accounts, and named accounts should route to their owner. Territory routing enforces coverage rules so accounts land with the rep who has the context and the quota for them, and prevents two reps working the same account.
+Flat round-robin ignores who *should* own an account - the EMEA rep should get EMEA leads, the enterprise rep should get enterprise accounts, and named accounts should route to their owner. Territory routing enforces coverage rules so accounts land with the rep who has the context and the quota for them, and prevents two reps working the same account.
 
 ## Prerequisites
 
@@ -62,10 +62,10 @@ Route on the **company/account** where possible so all contacts on an account sh
 
 ## Key Technical Learnings
 
-- **Standardize inputs first** — inconsistent country/tier values silently misroute.
-- **Precedence prevents chaos** — owner > territory > round-robin fallback.
+- **Standardize inputs first** - inconsistent country/tier values silently misroute.
+- **Precedence prevents chaos** - owner > territory > round-robin fallback.
 - **Route at the account level** to avoid split ownership across a company's contacts.
-- **Always a fallback** — the top routing gap is leads matching no territory.
+- **Always a fallback** - the top routing gap is leads matching no territory.
 - **Layers on `lead-routing-round-robin`** using `users-teams-setup`, `standardize-geo-values`, `create-icp-tiers`.
 
 ---

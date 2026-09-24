@@ -1,4 +1,4 @@
-# Clay Operations — Guide
+# Clay Operations - Guide
 
 How to use Clay effectively: choosing the right data providers, managing credits, and building efficient GTM workflows.
 
@@ -11,32 +11,32 @@ For credit optimization deep dive, see [clay-operations-credit-optimization.md](
 
 ### The Principle
 
-Don't guess which provider is best — use [Clay's Data Tests](https://www.clay.com/data-tests) to see real performance by use case, region, and input type.
+Don't guess which provider is best - use [Clay's Data Tests](https://www.clay.com/data-tests) to see real performance by use case, region, and input type.
 
 ### Best Providers by Category (2025)
 
-**Mobile Phone — By Region:**
+**Mobile Phone - By Region:**
 1. BetterContact
 2. Datagma
 3. Forager
 4. Prospeo
 5. SMARTe
 
-**European Mobile Phone — By Country:**
+**European Mobile Phone - By Country:**
 1. BetterContact
 2. Zeliq
 3. Prospeo
 4. Pubrio
 5. SMARTe
 
-**European Work Email — By Country:**
+**European Work Email - By Country:**
 1. BetterContact
 2. Prospeo
 3. SMARTe
 4. Zeliq
 5. Hunter
 
-**Work Email — By Region:**
+**Work Email - By Region:**
 1. Hunter
 2. Prospeo
 3. Kitt AI
@@ -57,7 +57,7 @@ Don't guess which provider is best — use [Clay's Data Tests](https://www.clay.
 4. Enrichley
 5. Enrow
 
-**Professional Profile Finder — By Input Type:**
+**Professional Profile Finder - By Input Type:**
 1. Wiza
 2. Snov.io
 3. ReverseContact
@@ -70,7 +70,7 @@ Don't guess which provider is best — use [Clay's Data Tests](https://www.clay.
 3. Limadata
 4. Forager
 
-**Work Email — By Company Size (2024):**
+**Work Email - By Company Size (2024):**
 1. Wiza
 2. Snov.io
 3. Prospeo
@@ -88,7 +88,7 @@ The best tool for each data point, with cost and notes.
 | **News** | Serper (API) | 0 | Trustpilot/Crunchbase scraping, domain searches |
 | **Gen AI** | GPT 4o-mini (API) | 0 | Generative tasks; fallback to Neon only when 4o-mini fails |
 | **Company Growth** | LeadMagic | ~$0.009/enrichment | Replaces LinkedIn enrichment for ~90% cost savings |
-| **Finding Email** | Trykitt.ai, Prospeo, Datagma | $0.004–$0.006/email | Trykitt.ai ($0.004) is most cost-efficient |
+| **Finding Email** | Trykitt.ai, Prospeo, Datagma | $0.004-$0.006/email | Trykitt.ai ($0.004) is most cost-efficient |
 | **Email Verification** | Reoon, Debounce (API) | 0 (Reoon: one-time buy) | Buy Reoon on AppSumo for unlimited verifications |
 | **Domain Name** | Clearbit, Serper (API) | 0 | Start Clearbit (free), fallback to Serper |
 | **Website Competitors** | Serper API + GPT 4o-mini | ~$0.004/scrape | Replaces Google Search + GPT combo |
@@ -116,7 +116,7 @@ The best tool for each data point, with cost and notes.
 
 ## Waterfall Strategy
 
-For any data point, use multiple providers in sequence — stop when you get a result.
+For any data point, use multiple providers in sequence - stop when you get a result.
 
 ### Email Waterfall Example
 
@@ -134,9 +134,9 @@ For any data point, use multiple providers in sequence — stop when you get a r
 
 ### Tech Stack Detection Waterfall
 
-1. HG Insights (primary — enterprise-focused, best for Adobe/Salesforce/ServiceNow)
-2. BuiltWith (validation — web-visible tech, marketing, pixels)
-3. PredictLeads (supplemental — job posting analysis, hiring signals + tech requirements)
+1. HG Insights (primary - enterprise-focused, best for Adobe/Salesforce/ServiceNow)
+2. BuiltWith (validation - web-visible tech, marketing, pixels)
+3. PredictLeads (supplemental - job posting analysis, hiring signals + tech requirements)
 
 ---
 
@@ -144,16 +144,16 @@ For any data point, use multiple providers in sequence — stop when you get a r
 
 | Signal | Reply Rate Impact | Best Timing |
 |---|---|---|
-| Recent Job Changes (0–90 days) | 3x higher response | Days 14–45 (building their stack) |
+| Recent Job Changes (0-90 days) | 3x higher response | Days 14-45 (building their stack) |
 | Hiring for Specific Roles | Signals budget + growth | Act within days of posting |
-| Website Visitors | 25–30% reply rate | Same day (they know you) |
-| Funding Announcements | Fresh capital to spend | 2–4 weeks after announcement |
+| Website Visitors | 25-30% reply rate | Same day (they know you) |
+| Funding Announcements | Fresh capital to spend | 2-4 weeks after announcement |
 | Technology Changes | Active buying window | Act immediately |
 
 **Performance comparison:**
-- Cold prospects: 6–8% reply rate
-- Signal-based: 18–22% reply rate
-- Multi-signal stacked: 35–40% reply rate
+- Cold prospects: 6-8% reply rate
+- Signal-based: 18-22% reply rate
+- Multi-signal stacked: 35-40% reply rate
 
 ---
 
@@ -205,11 +205,11 @@ Chain multiple enrichments in one streamlined flow:
 
 ## Key Resources
 
-- [Clay Data Tests](https://www.clay.com/data-tests) — provider performance by use case
-- [Clay Help Center](https://docs.clay.com/en/) — credit tracking and tutorials
-- [Clay Templates Gallery](https://www.clay.com/templates) — official templates
-- [Clay University](https://www.clay.com/university) — learning modules
-- [Trigify.io Guide](https://b2b-boosted.subpage.co/trigify-social-signals) — campaign automation
+- [Clay Data Tests](https://www.clay.com/data-tests) - provider performance by use case
+- [Clay Help Center](https://docs.clay.com/en/) - credit tracking and tutorials
+- [Clay Templates Gallery](https://www.clay.com/templates) - official templates
+- [Clay University](https://www.clay.com/university) - learning modules
+- [Trigify.io Guide](https://b2b-boosted.subpage.co/trigify-social-signals) - campaign automation
 
 ---
 

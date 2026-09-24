@@ -14,7 +14,7 @@ description: "Set up and connect sending inboxes in EmailBison (infrastructure s
 
 > **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §5 · `{SKILL_BASE}/resources/approved-vendors.md` · **Related:** provisioning, warmup-golive, campaign-building.
 
-> 🔒 **Read-only area.** Connecting an inbox to the sequencer is done from the **email infra management system**. Follow this sub-skill for the standard each inbox must meet and to read and verify live state (setup-audit rows 1–7); do not connect, reconnect or swap inboxes by hand.
+> 🔒 **Read-only area.** Connecting an inbox to the sequencer is done from the **email infra management system**. Follow this sub-skill for the standard each inbox must meet and to read and verify live state (setup-audit rows 1-7); do not connect, reconnect or swap inboxes by hand.
 
 Set up sending inboxes in **EmailBison** (one of the sequencers Growth Today runs). Infrastructure/inbox side only, sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5. Steps below reflect the EmailBison / Bisonsphere help center; where a value is set only in the app UI, that is flagged.
 
@@ -24,7 +24,7 @@ Set up sending inboxes in **EmailBison** (one of the sequencers Growth Today run
 
 **Default: a vendor does it.** An approved vendor (e.g. ScaledMail, see `{SKILL_BASE}/resources/approved-vendors.md`) buys the domains, creates and configures the mailboxes, sets DNS, and does first QA. Growth Today hands off the domain-research output (the domain-research sub-skill) plus a brief, then verifies on delivery.
 
-**Fallback: in-house.** Connect and configure manually (Parts 2–4).
+**Fallback: in-house.** Connect and configure manually (Parts 2-4).
 
 **Growth Today always owns:** QA, warmup config, placement tests, and the handoff to the GTM Engineer.
 
@@ -42,7 +42,7 @@ Email Accounts → **Connect email account** → pick the provider.
 - **90-day token expiry:** Microsoft tokens must be refreshed every 90 days, reconnect on a schedule (Bison can export accounts with expired tokens; a bulk reconnect uploader exists).
 - **Bulk Microsoft:** supported via Bison's native bulk-uploader tool (CSV `name,email,password`; for tenant consent add one account with the Cloud App Admin role and `use_as_admin=true`).
 
-**Custom SMTP**: Connect email account → **Custom Provider** → enter your provider's SMTP + IMAP host/port/credentials (host/port table is in the instantly-setup sub-skill, Part 2 — it's provider-level, not platform-level; Bison enters both together). Bulk via **Bulk Upload Custom Provider** (sample CSV). **Amazon SES is not recommended** (violates AWS ToS for cold; Bison can't use different SMTP/IMAP usernames on one inbox).
+**Custom SMTP**: Connect email account → **Custom Provider** → enter your provider's SMTP + IMAP host/port/credentials (host/port table is in the instantly-setup sub-skill, Part 2 - it's provider-level, not platform-level; Bison enters both together). Bulk via **Bulk Upload Custom Provider** (sample CSV). **Amazon SES is not recommended** (violates AWS ToS for cold; Bison can't use different SMTP/IMAP usernames on one inbox).
 
 > A sender email can exist in **one workspace at a time**. Provider tags (Google/Microsoft) are auto-applied.
 
@@ -50,12 +50,12 @@ Email Accounts → **Connect email account** → pick the provider.
 
 ## Part 2, Warmup
 
-**You set only the max daily warmup limit, Bison automates the rest** (ramp, reply rate, timing). Set the max to the Growth Today target in `{SKILL_BASE}/resources/reference.md` §1 (Google warmup ~30, Microsoft ~15 for a fully-warmed sending inbox; during warming cold is 0–1).
+**You set only the max daily warmup limit, Bison automates the rest** (ramp, reply rate, timing). Set the max to the Growth Today target in `{SKILL_BASE}/resources/reference.md` §1 (Google warmup ~30, Microsoft ~15 for a fully-warmed sending inbox; during warming cold is 0-1).
 
-- **Ramp (automatic, Bison's own behaviour):** starts ~2/day, steps up to *the max you set*, then flexes ~±20%/day to look human. Bison controls the step; **you control the ceiling** — set it to §1 `google_warmup` / `outlook_warmup`.
-- **Ratio:** Google **1.5:1** warmup-to-cold. Microsoft is stricter, and Bison's own onboarding suggests 2–4 warmup/day with max 3 warmup replies — **that is Bison's advice for a brand-new inbox, not our target.** The ceiling for a warmed inbox is §1 `outlook_warmup`; if you leave it at Bison's starting suggestion, the inbox never gets there.
+- **Ramp (automatic, Bison's own behaviour):** starts ~2/day, steps up to *the max you set*, then flexes ~±20%/day to look human. Bison controls the step; **you control the ceiling** - set it to §1 `google_warmup` / `outlook_warmup`.
+- **Ratio:** Google **1.5:1** warmup-to-cold. Microsoft is stricter, and Bison's own onboarding suggests 2-4 warmup/day with max 3 warmup replies - **that is Bison's advice for a brand-new inbox, not our target.** The ceiling for a warmed inbox is §1 `outlook_warmup`; if you leave it at Bison's starting suggestion, the inbox never gets there.
 - **Reply rate** is under Advanced Settings but Bison strongly advises leaving it at default.
-- **Duration:** warm **≥ 21 days / 3 weeks** before any cold send (`reference.md` §5); monitor scores over 3 / 7 / 10–14-day windows; if low, cut cold temporarily and raise volume only as scores recover.
+- **Duration:** warm **≥ 21 days / 3 weeks** before any cold send (`reference.md` §5); monitor scores over 3 / 7 / 10-14-day windows; if low, cut cold temporarily and raise volume only as scores recover.
 - **Pool + filter phrase:** the warmup pool is private/self-healing; the filter phrase is a fixed per-workspace random string (not editable), no deliverability impact.
 
 > **EmailBison cold-limit floor = 1 (not 0).** An unhealthy inbox is throttled to 1, not silenced, a lead on it keeps getting sent from it (the failover gap; see the dashboard-reading and campaign-building sub-skills). Confirm the current app behavior, as this is a Growth Today operational finding, not a documented help-center value.
@@ -69,7 +69,7 @@ Email Accounts → **Connect email account** → pick the provider.
 - **No links / no custom tracking domain** in cold email by default (the provisioning sub-skill).
 - **First email plain text** (the warmup-golive sub-skill launch gate).
 - **ESP routing:** decide from the dashboard matrix (the campaign-building sub-skill), not a hard ESP-matching rule.
-- **Campaign schedule** defaults to weekdays 8am–5pm EST. Set the correct timezone for the segment. 🔒 The **send interval is not yours to set** — pacing comes from the email infra management system along with the limits. Check it and report a wrong one.
+- **Campaign schedule** defaults to weekdays 8am-5pm EST. Set the correct timezone for the segment. 🔒 The **send interval is not yours to set** - pacing comes from the email infra management system along with the limits. Check it and report a wrong one.
 
 ---
 
@@ -110,7 +110,7 @@ DELIVERABILITY
 
 VERIFY
 [ ] MX/SPF/DKIM/DMARC verified (the provisioning sub-skill)
-[ ] EmailGuard placement tests (existing Bison campaigns only — not set up for new work)
+[ ] EmailGuard placement tests (existing Bison campaigns only - not set up for new work)
 [ ] Cross-sequencer: if an inbox is also used in Lemlist, set Bison cold to 1 and tag "Lemlist"
 [ ] GTM Engineer + AM notified inboxes are ready
 ```

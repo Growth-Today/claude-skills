@@ -1,6 +1,6 @@
 ---
 name: abm-strategy
-description: LinkedIn Ads ABM planning — campaign structure, budget math, ABM ad-format mix, and ABM performance benchmarks. Use when the user asks how to structure ABM campaigns, ABM ad budget math, how many ads to run, COLD/WARM layers, account-list campaigns, ABM ad formats, or ABM-specific benchmarks. Triggers on "ABM ads", "ABM budget", "ABM campaign structure", "LinkedIn ABM", "how many ads", "ad budget math", "ABM ad formats", "account list campaign", "COLD WARM". Do NOT use for turning ad engagement into sales triggers / BDR alerts / intent signals (use ads-outbound-sync), general targeting (use audiences), or ad copy (use copy).
+description: LinkedIn Ads ABM planning - campaign structure, budget math, ABM ad-format mix, and ABM performance benchmarks. Use when the user asks how to structure ABM campaigns, ABM ad budget math, how many ads to run, COLD/WARM layers, account-list campaigns, ABM ad formats, or ABM-specific benchmarks. Triggers on "ABM ads", "ABM budget", "ABM campaign structure", "LinkedIn ABM", "how many ads", "ad budget math", "ABM ad formats", "account list campaign", "COLD WARM". Do NOT use for turning ad engagement into sales triggers / BDR alerts / intent signals (use ads-outbound-sync), general targeting (use audiences), or ad copy (use copy).
 ---
 
 # LinkedIn Ads ABM Strategy
@@ -49,7 +49,7 @@ LinkedIn Campaign Manager → ZenABM/Fibbler → HubSpot properties → Active L
 - **Qualitative:** Which specific campaigns engaged → intent detection
 
 ### BDR Trigger Threshold
-"Interested" stage (5+ clicks OR 10+ engagements) — NOT "Aware"
+"Interested" stage (5+ clicks OR 10+ engagements) - NOT "Aware"
 
 ### Multi-Touch Sequence After Trigger
 - Day 1: Email (reference JTBD/topic, not channel)
@@ -78,4 +78,4 @@ LinkedIn Campaign Manager → ZenABM/Fibbler → HubSpot properties → Active L
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

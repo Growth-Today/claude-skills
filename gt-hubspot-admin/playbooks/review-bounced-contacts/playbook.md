@@ -20,7 +20,7 @@ A weekly manual review process for contacts flagged with 3+ bounces. The bounce 
 
 ## Step-by-Step Instructions
 
-### Stage 1: Before — Pull the Review List
+### Stage 1: Before - Pull the Review List
 
 Use the HubSpot API to search for contacts where `email_health_flag` is set:
 
@@ -48,7 +48,7 @@ results = api_client.crm.contacts.search_api.do_search(search)
 
 Export results to a CSV for review.
 
-### Stage 2: Execute — Review Each Contact
+### Stage 2: Execute - Review Each Contact
 
 For each flagged contact, check:
 
@@ -66,7 +66,7 @@ For each flagged contact, check:
 | Yes | Yes | Hard | Attempt to find updated email |
 | Yes | Yes | Soft | Keep suppressed, monitor |
 
-### Stage 3: After — Execute Decisions
+### Stage 3: After - Execute Decisions
 
 1. **Delete** contacts marked for deletion via the HubSpot UI or API batch delete.
 2. **Clear** the `email_health_flag` on all reviewed contacts.

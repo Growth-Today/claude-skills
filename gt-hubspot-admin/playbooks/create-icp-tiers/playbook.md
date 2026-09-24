@@ -203,12 +203,12 @@ Additional Breeze limitations:
 - Name: `ICP TIER: Assign Tier 2 - Secondary ICP`
 - Trigger: When filter criteria is met
 
-**Filter Group 1 — Secondary industries at threshold:**
+**Filter Group 1 - Secondary industries at threshold:**
 - Number of Employees >= [e.g., 200]
 - AND Industry is any of [your secondary verticals and variants]
 - AND ICP Tier is unknown (prevents overwriting Tier 1)
 
-**Filter Group 2 — Primary industries demoted by size:**
+**Filter Group 2 - Primary industries demoted by size:**
 - Number of Employees >= [e.g., 200]
 - AND Number of Employees <= [e.g., 999]
 - AND Industry is any of [your primary verticals and variants]

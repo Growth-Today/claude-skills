@@ -69,7 +69,7 @@ Run queries for each of the following eight dimensions. Collect exact counts for
 ### 5. Duplicate Analysis
 - Duplicate email addresses (exact match)
 - Companies sharing the same `domain`
-- Companies with very similar names (fuzzy — note: API cannot do fuzzy matching natively; count exact duplicates on `name` and flag for manual review)
+- Companies with very similar names (fuzzy - note: API cannot do fuzzy matching natively; count exact duplicates on `name` and flag for manual review)
 
 ### 6. Owner Health
 - Deactivated owners who still have assigned contacts
@@ -179,15 +179,15 @@ Save the report to `reports/hubspot-audit-{YYYY-MM-DD}.md` with this structure:
 
 ## Priority Recommendations
 
-1. **[CRITICAL] Delete contacts with no email** — XX,XXX contacts with no email address
+1. **[CRITICAL] Delete contacts with no email** - XX,XXX contacts with no email address
    are unbillable dead weight. Run `/delete-no-email-contacts`.
    *Effort: 1 hour | Fully scriptable*
 
-2. **[CRITICAL] Suppress hard bounced contacts** — XX,XXX hard bounces are destroying
+2. **[CRITICAL] Suppress hard bounced contacts** - XX,XXX hard bounces are destroying
    sender reputation. Run `/suppress-hard-bounced`.
    *Effort: 1 hour | Hybrid (API + workflow)*
 
-3. **[HIGH] Reassign deactivated owner contacts** — XX,XXX contacts assigned to
+3. **[HIGH] Reassign deactivated owner contacts** - XX,XXX contacts assigned to
    X deactivated users. Run `/reassign-deactivated-owners`.
    *Effort: 2 hours | Fully scriptable*
 
@@ -201,9 +201,9 @@ Save the report to `reports/hubspot-audit-{YYYY-MM-DD}.md` with this structure:
 
 | Metric | Count | % of Total |
 |--------|-------|------------|
-| Total Contacts | XX,XXX | — |
-| Total Companies | XX,XXX | — |
-| Total Deals | X,XXX | — |
+| Total Contacts | XX,XXX | - |
+| Total Companies | XX,XXX | - |
+| Total Deals | X,XXX | - |
 | Marketing Contacts | XX,XXX | XX% |
 
 ### 2. Email Deliverability
@@ -227,13 +227,13 @@ Run `/hubspot-implementation-plan` to generate a phased cleanup plan based on th
 
 ## Skill Prescription
 
-After generating the audit report, **prescribe a specific ordered list of skills the user should run**. Do not just present findings — tell the user exactly what to do next.
+After generating the audit report, **prescribe a specific ordered list of skills the user should run**. Do not just present findings - tell the user exactly what to do next.
 
 ### Step 1: Map Findings to Skills
 
 For each audit finding that scored C or worse, map it to the appropriate skill. Use this category-ordered lookup:
 
-**Database Hygiene** (run first — billing and deliverability impact):
+**Database Hygiene** (run first - billing and deliverability impact):
 | Finding | Skill | Priority |
 |---------|-------|----------|
 | Contacts missing email | `/delete-no-email-contacts` | P0 |
@@ -243,7 +243,7 @@ For each audit finding that scored C or worse, map it to the appropriate skill. 
 | Duplicate companies | `/merge-duplicate-companies` | P1 |
 | Deactivated owners with contacts | `/reassign-deactivated-owners` | P1 |
 
-**Data Enrichment** (run second — data quality):
+**Data Enrichment** (run second - data quality):
 | Finding | Skill | Priority |
 |---------|-------|----------|
 | Missing company name | `/enrich-company-name` | P1 |
@@ -253,14 +253,14 @@ For each audit finding that scored C or worse, map it to the appropriate skill. 
 | Missing/wrong lifecycle stage | `/fix-lifecycle-stages` | P1 |
 | Unowned marketing contacts | `/assign-unowned-contacts` | P1 |
 
-**Segmentation & Scoring** (run third — targeting):
+**Segmentation & Scoring** (run third - targeting):
 | Finding | Skill | Priority |
 |---------|-------|----------|
 | No ICP classification | `/create-icp-tiers` | P2 |
 | No lead scoring | `/build-lead-scoring` | P2 |
 | No segment lists | `/build-smart-lists` | P2 |
 
-**Automation Workflows** (run fourth — prevention):
+**Automation Workflows** (run fourth - prevention):
 | Finding | Skill | Priority |
 |---------|-------|----------|
 | No new-contact hygiene | `/new-contact-hygiene-workflow` | P2 |
@@ -268,7 +268,7 @@ For each audit finding that scored C or worse, map it to the appropriate skill. 
 | No lifecycle automation | `/lifecycle-progression-workflow` | P3 |
 | No bounce monitoring | `/bounce-monitoring-workflow` | P2 |
 
-**Ongoing Maintenance** (run last — sustainability):
+**Ongoing Maintenance** (run last - sustainability):
 | Finding | Skill | Priority |
 |---------|-------|----------|
 | Unused lists | `/cleanup-lists` | P3 |
@@ -280,7 +280,7 @@ For each audit finding that scored C or worse, map it to the appropriate skill. 
 
 ### Step 2: Present the Ordered Prescription
 
-After the audit report, present a **numbered action list** — not just findings. Format like this:
+After the audit report, present a **numbered action list** - not just findings. Format like this:
 
 ```markdown
 ## Your Cleanup Prescription
@@ -288,19 +288,19 @@ After the audit report, present a **numbered action list** — not just findings
 Based on the audit, here are the skills you should run, in order:
 
 ### Immediate (this week)
-1. `/delete-no-email-contacts` — X,XXX contacts with no email are inflating your bill
-2. `/suppress-hard-bounced` — X,XXX hard bounces are hurting deliverability
-3. `/suppress-global-unsubscribes` — X,XXX unsubscribes still counting as marketing contacts
+1. `/delete-no-email-contacts` - X,XXX contacts with no email are inflating your bill
+2. `/suppress-hard-bounced` - X,XXX hard bounces are hurting deliverability
+3. `/suppress-global-unsubscribes` - X,XXX unsubscribes still counting as marketing contacts
 
 ### Next (weeks 2-3)
-4. `/reassign-deactivated-owners` — X deactivated users still own X,XXX contacts
-5. `/enrich-company-name` — XX% of contacts missing company name
-6. `/fix-lifecycle-stages` — X,XXX contacts in invalid lifecycle stages
+4. `/reassign-deactivated-owners` - X deactivated users still own X,XXX contacts
+5. `/enrich-company-name` - XX% of contacts missing company name
+6. `/fix-lifecycle-stages` - X,XXX contacts in invalid lifecycle stages
 ...
 
 ### Later (weeks 4-6)
-7. `/create-icp-tiers` — No ICP classification exists yet
-8. `/build-lead-scoring` — No scoring model in place
+7. `/create-icp-tiers` - No ICP classification exists yet
+8. `/build-lead-scoring` - No scoring model in place
 ...
 ```
 

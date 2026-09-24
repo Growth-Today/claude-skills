@@ -9,8 +9,8 @@ description: "Audit a bounce or blacklist problem to root cause and produce a fu
 
 > **These are REST endpoints, not MCP tools.** There is no EmailBison MCP connector today, so
 > `curl` is the primary path on this page, not the 50K+ fallback. The Instantly MCP *is* connected
-> and covers the same ground for an Instantly workspace — `list_accounts`, `list_campaigns`,
-> `list_emails` — but the field names differ, so don't paste a Bison field into an Instantly call.
+> and covers the same ground for an Instantly workspace - `list_accounts`, `list_campaigns`,
+> `list_emails` - but the field names differ, so don't paste a Bison field into an Instantly call.
 
 Find where a bounce or blacklist problem *actually* comes from, then produce a report the team can act on. The output is a clear root cause, **infrastructure, list/data, or copy**, plus a full bounce breakdown and the right owner. Runs on any EmailBison workspace (specify the MCP server / API host). Codes and thresholds in `{SKILL_BASE}/resources/reference.md` §7.
 
@@ -25,24 +25,24 @@ Find where a bounce or blacklist problem *actually* comes from, then produce a r
 ## Step 0, Workspace baseline
 
 > **Which platform?** Instantly is the primary one and its calls are verified below. Bison is kept
-> for campaigns still finishing there and goes when Bison does. **The field names differ — don't
+> for campaigns still finishing there and goes when Bison does. **The field names differ - don't
 > paste one platform's field into the other's call.**
 
-**Inboxes** — `list_accounts` (Instantly, MCP) · `GET /accounts` (Bison, REST). Paginate all pages:
+**Inboxes** - `list_accounts` (Instantly, MCP) · `GET /accounts` (Bison, REST). Paginate all pages:
 total inboxes, provider split, warmup-status spread.
 
-**Campaign totals** — this is the one that differs most:
+**Campaign totals** - this is the one that differs most:
 
 | | Instantly | EmailBison |
 |---|---|---|
-| Call | `analytics_campaign_overview` — `id` for one campaign, `campaign_status` or nothing for a workspace rollup | `GET /campaigns` |
+| Call | `analytics_campaign_overview` - `id` for one campaign, `campaign_status` or nothing for a workspace rollup | `GET /campaigns` |
 | People contacted | `contacted_count` | `total_leads_contacted` |
 | Messages sent | `emails_sent_count` | `emails_sent` |
 | Bounces | `bounced_count` | `bounced` |
 | Replies | `reply_count_unique` | `unique_replies` |
-| Auto-replies | `reply_count_automatic` — **separated for you** | not separated, you strip them yourself |
+| Auto-replies | `reply_count_automatic` - **separated for you** | not separated, you strip them yourself |
 
-`list_campaigns` on Instantly returns **no counts at all** — only id, name, status, schedule and
+`list_campaigns` on Instantly returns **no counts at all** - only id, name, status, schedule and
 sequences. Going there for bounce numbers returns nothing and looks like a clean workspace.
 
 > **Denominator rule:** compute bounce rate against **people contacted**, never messages sent. One
@@ -51,7 +51,7 @@ sequences. Going there for bounce numbers returns nothing and looks like a clean
 
 > **The auto-reply problem is smaller on Instantly.** It reports `reply_count_automatic`
 > separately, so the OOO inflation that turned 1,231 real Bison bounces into 2,687 does not
-> happen the same way at the analytics layer. Still verify against the raw emails in Step 1 —
+> happen the same way at the analytics layer. Still verify against the raw emails in Step 1 -
 > a separated count is not the same as a correct one, and it does not tell you *which* replies
 > were auto.
 
@@ -63,12 +63,12 @@ yourself in Step 2. The reason differs, the work doesn't.
 ### Instantly
 
 `list_emails` with `email_type: "received"`, filtered per campaign with `campaign_id`, paginated
-with `next_starting_after`. There is **no bounce type filter** — a bounce arrives as an ordinary
+with `next_starting_after`. There is **no bounce type filter** - a bounce arrives as an ordinary
 received email from the recipient's mail server, so you identify it by sender and body:
 
 | Field | What you use it for |
 |---|---|
-| `from_address_email` | `mailer-daemon@`, `postmaster@` — the first pass |
+| `from_address_email` | `mailer-daemon@`, `postmaster@` - the first pass |
 | `subject` | "Undeliverable", "Delivery Status Notification", "Mail delivery failed" |
 | `body.text` | the SMTP / DSN code. This is what Step 2 classifies on |
 | `eaccount` | which of our inboxes took the bounce |
@@ -76,12 +76,12 @@ received email from the recipient's mail server, so you identify it by sender an
 | `timestamp_email` | for the date window |
 
 > **⚠️ This only works if "Save undelivered emails in Unibox" is ON** (instantly-setup Part 4b).
-> It is OFF by default, and with it off the bounces never reach `list_emails` at all — you get a
+> It is OFF by default, and with it off the bounces never reach `list_emails` at all - you get a
 > short list and a bounce rate that looks great. Check the toggle before you trust a low number.
 
 ### EmailBison
 
-The `?type=bounced` filter on the replies endpoint is **broken** — it returns every reply type
+The `?type=bounced` filter on the replies endpoint is **broken** - it returns every reply type
 unfiltered. Pull everything and filter client-side. If a campaign exceeds ~15,000 replies (page
 1001 returns 422), switch to **cursor pagination**:
 
@@ -99,7 +99,7 @@ curl -s -H "Authorization: Bearer $KEY" \
 
 Keep ONLY records where **`type == "Bounced"` AND `folder == "Bounced"`**. Discard everything else, regardless of which endpoint returned it.
 
-> **This is why bounce numbers lie.** Auto-replies/OOO come back as **`Tracked Reply`** and our own follow-ups as **`Outgoing Email`**, neither is a bounce. Counting them turned **1,231 real bounces into 2,687** in one audit — more than double. Text markers that confirm an auto-reply if you filter the body: `Out of office`, `Auto-reply`, `automatic reply`, `on leave`, `currently away`, `will respond when`.
+> **This is why bounce numbers lie.** Auto-replies/OOO come back as **`Tracked Reply`** and our own follow-ups as **`Outgoing Email`**, neither is a bounce. Counting them turned **1,231 real bounces into 2,687** in one audit - more than double. Text markers that confirm an auto-reply if you filter the body: `Out of office`, `Auto-reply`, `automatic reply`, `on leave`, `currently away`, `will respond when`.
 
 Document the filter (this proves the real count):
 
@@ -116,12 +116,12 @@ Parse `text_body` / `html_body`, extract the SMTP status + DSN code, and bucket.
 | Pattern | Category |
 |---|---|
 | `550 5.1.1`, `550 5.1.10`, `550 5.2.1`; "does not exist", "unknown user", "invalid recipient" | **Hard**: address invalid / mailbox disabled |
-| `550 5.4.1` | **Block**: no answer from host, or Exchange Online *Access denied* — a tenant-level rejection. **Not** a bad address, so verifying the list will not fix it |
+| `550 5.4.1` | **Block**: no answer from host, or Exchange Online *Access denied* - a tenant-level rejection. **Not** a bad address, so verifying the list will not fix it |
 | `554 5.4.14` (hop count exceeded) | **Routing**: a mail loop on the recipient's side. Count it separately; don't scrub the contact on this alone |
 | `421`, `450`, `451`, `452`; "temporarily", "try again", "rate limit" | **Soft**: temporary failure |
 | `554` (no sub-code), `550 5.7.1` (policy); "blocked", "spam", "blacklist", "reputation", "policy" | **Block**: reputation/policy |
 | `550 5.7.352`, `550 5.7.193`, `550 5.7.129` (Microsoft DMARC/SPF/sender-reputation) | **Block**: Microsoft auth/reputation |
-| `554 5.2.2` (mailbox full / quota) | **Soft**: a mailbox-status condition, same family as 4.2.2 (§7). Often an abandoned mailbox — scrub only if it persists |
+| `554 5.2.2` (mailbox full / quota) | **Soft**: a mailbox-status condition, same family as 4.2.2 (§7). Often an abandoned mailbox - scrub only if it persists |
 | no code + no keyword match | **Unknown** |
 
 **Priority if multiple signals match:** Block > Hard > Routing > Soft > Unknown. (Maps to `reference.md` §7 buckets: Hard ≈ Unverified/bad-data; Block ≈ Corporate/SEG + Microsoft-tenant; Soft ≈ Other/temporary.)
@@ -133,7 +133,7 @@ Parse `text_body` / `html_body`, extract the SMTP status + DSN code, and bucket.
 ## Blacklist read (two lists only)
 
 - **Only Spamhaus DBL and URIBL count.** Listed there → treat the domain as compromised. Nothing else is a blacklist reason.
-- **Do not act on any other list.** Google and Microsoft barely weight the rest, and the email infra management system does not track them. A hit on another list must **not** tag an inbox Blacklisted, cut sending, or fire an alert — if it does, report the bug. Don't chase those delistings.
+- **Do not act on any other list.** Google and Microsoft barely weight the rest, and the email infra management system does not track them. A hit on another list must **not** tag an inbox Blacklisted, cut sending, or fire an alert - if it does, report the bug. Don't chase those delistings.
 - **One flag is domain-level, not inbox-level**: a single SEG/blacklist hit poisons the whole domain.
 - **Pre-launch gate:** blacklist-check every domain **< 60 days old** before it sends (Spamhaus DBL / URIBL).
 - **Microsoft drops:** before blaming infra for an Outlook cluster, check dates against **Microsoft BCL recalibration**: a provider-side threshold change can junk mail with no change on your end.
@@ -160,7 +160,7 @@ Also check: spintax present? complaints/unsubs overall vs on these inboxes? any 
 
 - **Never request delisting before fixing the root cause**: you'll just get re-listed.
 - **Retire vs delist** per domain, after the neutral-copy test.
-- **Rest a burnt inbox:** cold off → re-test days 2–10 → retire after 10 with no recovery (the dashboard-reading sub-skill, Part 5).
+- **Rest a burnt inbox:** cold off → re-test days 2-10 → retire after 10 with no recovery (the dashboard-reading sub-skill, Part 5).
 
 ---
 
@@ -180,11 +180,11 @@ Also check: spintax present? complaints/unsubs overall vs on these inboxes? any 
 | Unknown | X | X% | |
 | **Overall** | **X** | **X%** | |
 
-**Audit thresholds** — all four are §7 keys, read the current values there rather than the numbers here: `bounce_block_max` · `bounce_hard_max` · `bounce_total_act` · `bounce_total_critical`.
+**Audit thresholds** - all four are §7 keys, read the current values there rather than the numbers here: `bounce_block_max` · `bounce_hard_max` · `bounce_total_act` · `bounce_total_critical`.
 
 **3. Block bounces by era** (group campaigns by quarter from `[Qn]` name markers or `created_at`), shows whether block/reputation is trending up or stable.
 
-**4. Top 10–15 SMTP/DSN codes** by frequency (code · count · type).
+**4. Top 10-15 SMTP/DSN codes** by frequency (code · count · type).
 
 **5. Worst campaigns**: top 10 by real bounce count (campaign · hard · soft · block). Flag any campaign at **100% Block**: pure reputation problem.
 
@@ -217,7 +217,7 @@ Action required: 1) [most urgent] 2) … 3) …
 
 | Issue | Workaround |
 |---|---|
-| `list_campaigns` returns **no counts** — no bounces, no sends, no replies | Use `analytics_campaign_overview`. Reading counts off `list_campaigns` returns nothing and reads as a clean workspace |
+| `list_campaigns` returns **no counts** - no bounces, no sends, no replies | Use `analytics_campaign_overview`. Reading counts off `list_campaigns` returns nothing and reads as a clean workspace |
 | `get_campaign_analytics` returned an empty array on every campaign tried | Use `analytics_campaign_overview` instead. Treat `get_campaign_analytics` as unproven until someone gets a non-empty result out of it |
 | `analytics_campaign_overview` takes `id`, **not** `campaign_id` | Passing `campaign_id` errors out and names the fields it will accept |
 | No bounce filter on `list_emails` | Pull `email_type: "received"` and classify on `from_address_email` + `body.text` (Step 1) |

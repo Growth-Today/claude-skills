@@ -1,4 +1,4 @@
-# Cold Email Copywriting — Sequences
+# Cold Email Copywriting - Sequences
 **Version:** 6.0
 **Last updated:** 2026-04-07
 
@@ -6,29 +6,29 @@ How to structure a full email sequence: Email 1 variations, follow-ups, timing, 
 
 ---
 
-## Sequence Structure Overview (GT Best Practice — SMB)
+## Sequence Structure Overview (GT Best Practice - SMB)
 
 | Email | Day | Thread | Goal | Notes |
 |---|---|---|---|---|
-| **Email 1** | Day 0 | New | Get the reply | 80% of replies come here. Test 3–4 variations. |
+| **Email 1** | Day 0 | New | Get the reply | 80% of replies come here. Test 3-4 variations. |
 | **Email 2** | Day 3 | Same | Add value | Lead magnet or genuinely useful content. Fallback: Three Reasons case study. |
 | **Email 3** | Day 6 | Same | Net new angle | Different angle, no pitch repeat. |
 | **Email 4** | Day 10 | Same | Final touch | A/B/C test: Name Drop, Short Follow Up, Cost of Inaction. |
 
-Mid-market sequence (8 emails) — to be built separately.
+Mid-market sequence (8 emails) - to be built separately.
 
 ---
 
-## Email 1 — Variations
+## Email 1 - Variations
 
-80% of positive replies come from Email 1. Test 3–4 different variations of your value proposition and CTA.
+80% of positive replies come from Email 1. Test 3-4 different variations of your value proposition and CTA.
 
 ### v1: Observation + Solution + Social Proof + CTA
 
 **Template:**
 > Hey {{first_name}},
 >
-> {{observation — poke the bear question}}
+> {{observation - poke the bear question}}
 >
 > Solution
 >
@@ -39,7 +39,7 @@ Mid-market sequence (8 emails) — to be built separately.
 **Example:**
 > Hey John,
 >
-> Saw you are the head of people and culture of a 50+ people company — I was wondering how you ensure every employee is engaged & productive?
+> Saw you are the head of people and culture of a 50+ people company - I was wondering how you ensure every employee is engaged & productive?
 >
 > We developed an AI copilot that gives you a data-backed understanding of each employee, generates OKRs, summarizes performance reviews, and monitors engagement & burnout.
 >
@@ -54,7 +54,7 @@ Mid-market sequence (8 emails) — to be built separately.
 **Template:**
 > Hey {{first_name}},
 >
-> {{observation — poke the bear question}}
+> {{observation - poke the bear question}}
 >
 > {{problem}}
 >
@@ -67,7 +67,7 @@ Mid-market sequence (8 emails) — to be built separately.
 **Example:**
 > Hey G,
 >
-> Saw that there are more than 80 people at Lemlist — do you have any software upgrades or rollouts coming up?
+> Saw that there are more than 80 people at Lemlist - do you have any software upgrades or rollouts coming up?
 >
 > As tech-stacks get more complex, documenting SOPs takes hours and employees ignore training videos & documentation.
 >
@@ -82,7 +82,7 @@ Mid-market sequence (8 emails) — to be built separately.
 ### v3: First Line + Poke the Bear + Similar Companies + CTA
 
 **Template:**
-> Hey {{first_name}} — {{relevant first line}}
+> Hey {{first_name}} - {{relevant first line}}
 >
 > {{poke the bear question}}
 >
@@ -128,7 +128,7 @@ Mid-market sequence (8 emails) — to be built separately.
 ### v5: Recency + Stat + Question + Problem Link + Value CTA
 
 **Template:**
-> Hi {{first_name}} — recency waterfall
+> Hi {{first_name}} - recency waterfall
 >
 > Stat
 >
@@ -154,9 +154,9 @@ Mid-market sequence (8 emails) — to be built separately.
 ### v6: Trigger + Social Proof Achievement + CTA
 
 **Template:**
-> {{first_name}} — relevant trigger
+> {{first_name}} - relevant trigger
 >
-> Social proof — achievement
+> Social proof - achievement
 >
 > CTA
 
@@ -199,13 +199,13 @@ Mid-market sequence (8 emails) — to be built separately.
 
 ---
 
-## Email 2 — Follow-Up (Day 3, Same Thread)
+## Email 2 - Follow-Up (Day 3, Same Thread)
 
-Lead with value — always. Don't repeat the pitch.
+Lead with value - always. Don't repeat the pitch.
 
-### Email 2 Primary — Lead Magnet or Genuinely Useful Content
+### Email 2 Primary - Lead Magnet or Genuinely Useful Content
 
-Any format works — video, article, newsletter, research, playbook, benchmark. The test: would the prospect find this valuable even if they never buy?
+Any format works - video, article, newsletter, research, playbook, benchmark. The test: would the prospect find this valuable even if they never buy?
 
 **Template:**
 > {{first_name}}, here's the {{lead magnet / content}}
@@ -216,7 +216,7 @@ Any format works — video, article, newsletter, research, playbook, benchmark. 
 >
 > CTA
 
-**Example — Growth Today:**
+**Example - Growth Today:**
 > Subject: RE: [same thread]
 >
 > {{first_name}}, put together a GTM playbook on how to build a system that generates 15 meetings/month and scales to 70.
@@ -229,11 +229,11 @@ Any format works — video, article, newsletter, research, playbook, benchmark. 
 
 ---
 
-### Email 2 Fallback — No Content Available (Three Reasons)
+### Email 2 Fallback - No Content Available (Three Reasons)
 
 Use when the client has no content to share. Lead with a case study broken into 3 concrete outcomes.
 
-The case study must feel relevant to the prospect — match by vertical or persona where possible. If no exact match exists, frame the outcomes to map to the prospect's known pain. GTM Engineer decides whether to use a formula-based reframe or AI-generated framing.
+The case study must feel relevant to the prospect - match by vertical or persona where possible. If no exact match exists, frame the outcomes to map to the prospect's known pain. GTM Engineer decides whether to use a formula-based reframe or AI-generated framing.
 
 ⚠️ Case study selection and relevance framing → see `resources/prompts/personalization-prompts.md`
 
@@ -242,11 +242,11 @@ The case study must feel relevant to the prospect — match by vertical or perso
 >
 > Here's specifically what we did for [client]: (1) outcome, (2) outcome, (3) outcome
 >
-> One-liner — no fluff
+> One-liner - no fluff
 >
 > Soft CTA
 
-**Example — Growth Today:**
+**Example - Growth Today:**
 > Saw you're still on the hunt for a cold email researcher.
 >
 > Figured it was worth a follow-up. Here's specifically what we did for Growth Today: (1) cut 15 hours of weekly research time, (2) lifted positive reply rates from 0.5% to 3.6%, and (3) replaced their entire manual SDR enrichment process with a single automated workflow.
@@ -257,9 +257,9 @@ The case study must feel relevant to the prospect — match by vertical or perso
 
 ---
 
-## Email 3 — Net New Angle (Day 6, Same Thread)
+## Email 3 - Net New Angle (Day 6, Same Thread)
 
-Different angle — not a repeat of Email 1 or 2.
+Different angle - not a repeat of Email 1 or 2.
 
 **Template:**
 > Hook
@@ -287,34 +287,34 @@ Different angle — not a repeat of Email 1 or 2.
 
 ---
 
-## Email 4 — Final Touch (Day 10, Same Thread)
+## Email 4 - Final Touch (Day 10, Same Thread)
 
 Goal: any answer. Does not repeat the pitch, case study, or value prop. A/B/C test all three variations simultaneously.
 
-### 4A — Name Drop
+### 4A - Name Drop
 
-2-3 sentences. The goal is not just to drop a name — it is to prompt the prospect to either correct you ("actually I'm the right person") or redirect you to someone else. Frame it so they feel compelled to respond either way.
+2-3 sentences. The goal is not just to drop a name - it is to prompt the prospect to either correct you ("actually I'm the right person") or redirect you to someone else. Frame it so they feel compelled to respond either way.
 
 **Template:**
-> I wasn't able to find the right contact for this on your end — should I reach out to [name] instead, or are you the right person?
+> I wasn't able to find the right contact for this on your end - should I reach out to [name] instead, or are you the right person?
 >
 > Best, [first name]
 
 **Example:**
 > Hi Sarah,
 >
-> I wasn't able to find the right contact for this on your end — should I reach out to Brigitta Ruha instead, or are you the one who handles this?
+> I wasn't able to find the right contact for this on your end - should I reach out to Brigitta Ruha instead, or are you the one who handles this?
 >
 > Best, James
 
 ---
 
-### 4B — Short Follow Up
+### 4B - Short Follow Up
 
-Exactly 2 sentences. Reframe the problem — not another pitch. The case study is the focus, not you.
+Exactly 2 sentences. Reframe the problem - not another pitch. The case study is the focus, not you.
 
 **Template:**
-> Reframe question — references what another company did, not what you offer
+> Reframe question - references what another company did, not what you offer
 >
 > Callback to the original trigger
 
@@ -325,16 +325,16 @@ Exactly 2 sentences. Reframe the problem — not another pitch. The case study i
 
 ---
 
-### 4C — Cost of Inaction
+### 4C - Cost of Inaction
 
 Max 100 words. Industry trend + cost of not changing + social proof + value-oriented CTA.
 
 **Template:**
 > Industry observation
 >
-> Cost of inaction — specific, quantified where possible
+> Cost of inaction - specific, quantified where possible
 >
-> Social proof — who switched and what result
+> Social proof - who switched and what result
 >
 > Value-oriented CTA
 
@@ -351,8 +351,8 @@ Max 100 words. Industry trend + cost of not changing + social proof + value-orie
 
 ## Sequence Design Rules
 
-1. **Email 1 gets 80% of replies** — invest most effort here
-2. **Test 3–4 variations** of Email 1 simultaneously
+1. **Email 1 gets 80% of replies** - invest most effort here
+2. **Test 3-4 variations** of Email 1 simultaneously
 3. **Same thread:** Emails 2 and 4 reply to Email 1. Email 3 replies to Email 2.
-4. **Every email provides standalone value** — never write "just following up"
+4. **Every email provides standalone value** - never write "just following up"
 5. **If no reply after 4 emails** → re-engage the TAM according to the re-engagement skill and cold-email-mastery.md

@@ -161,12 +161,12 @@ For the full three-layer scoring decision framework (ICP Fit Score → ABM Accou
 
 Sales Navigator shows max 2,500 results per search. Bypass strategies:
 
-1. **Geographic Segmentation** — Split by state/city
-2. **Industry Segmentation** — Same title across different industries
-3. **Company Size** — Break 51-500 into 51-200 and 201-500
-4. **Seniority Stacking** — Separate searches per role level
-5. **First Name Split** — Filter A-F, G-L, M-R, S-Z
-6. **Time Filters** — "Changed jobs in 90 days", "Years in position"
+1. **Geographic Segmentation** - Split by state/city
+2. **Industry Segmentation** - Same title across different industries
+3. **Company Size** - Break 51-500 into 51-200 and 201-500
+4. **Seniority Stacking** - Separate searches per role level
+5. **First Name Split** - Filter A-F, G-L, M-R, S-Z
+6. **Time Filters** - "Changed jobs in 90 days", "Years in position"
 
 ### List Segmentation
 

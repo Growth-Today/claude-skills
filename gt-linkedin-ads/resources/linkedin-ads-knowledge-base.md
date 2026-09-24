@@ -1,6 +1,6 @@
 # LinkedIn Ads Master Skill - Knowledge Base
 
-> GT LinkedIn Ads knowledge base — compiled from Growth Today's managed B2B ad spend and official LinkedIn Marketing Solutions documentation.
+> GT LinkedIn Ads knowledge base - compiled from Growth Today's managed B2B ad spend and official LinkedIn Marketing Solutions documentation.
 
 ---
 
@@ -62,7 +62,7 @@
 
 ### Thought Leader Ads
 - **When**: Credibility, authority, expertise demonstration
-- **Stats**: 2.68% median CTR at $2.29 CPC (ZenABM 2026), ~6.4x single image. Posts with 2-3% organic CTR become top-performing ads. CTR does not predict pipeline (rho = -0.170) — measure on dwell + pipeline.
+- **Stats**: 2.68% median CTR at $2.29 CPC (ZenABM 2026), ~6.4x single image. Posts with 2-3% organic CTR become top-performing ads. CTR does not predict pipeline (rho = -0.170) - measure on dwell + pipeline.
 - **Key**: Non-employee influencers often outperform employee content
 - **Bidding**: CPC or CPM for engagement/reach
 - **Run as a Story Arc**: 5-7 sequenced posts (4-6 variants min) to a fixed audience over 14+ days, not a single boosted post. See `sub-skills/creative.md`.
@@ -126,7 +126,7 @@
 ### Targeting Approaches
 - **Primary**: Job titles + Company Sizes + Industries
 - **Alternative** (small audiences): Job Function + Seniority + Skills
-- **Audience sizes**: 10K-100K can both perform well. No ideal size—start targeting ideal customers, expand over time.
+- **Audience sizes**: 10K-100K can both perform well. No ideal size-start targeting ideal customers, expand over time.
 
 ### Three High-Performing Audience Types
 1. **Remarketing**: 90-day website visits + video views + ad interactions + company page visitors + lead form submissions. Extend to 180 days for long sales cycles
@@ -184,7 +184,7 @@
 | Event | Event Ad Format (no conversion objectives) |
 | Conversation | Direct messaging (cost-per-send) |
 
-**Avoid**: Reach/Brand Awareness objective — charges per impression regardless of interaction, inefficient for most B2B.
+**Avoid**: Reach/Brand Awareness objective - charges per impression regardless of interaction, inefficient for most B2B.
 
 ### Budget
 - **Minimum commitment**: 6 months for LinkedIn Ads success
@@ -253,19 +253,19 @@
 
 ### Metrics by Force
 
-**Force 1 — Reach Quality**
+**Force 1 - Reach Quality**
 - Impressions filtered by target audience
 - CPM within segments
 - Named account penetration
 - Profile views from relevant titles
 
-**Force 2 — Relevance Signals**
+**Force 2 - Relevance Signals**
 - Dwell time
 - Video completion rates
 - Message ad open rates
 - CTR, follower growth among targets
 
-**Force 3 — Engagement Depth**
+**Force 3 - Engagement Depth**
 - Qualified CTR
 - Cost-per-click within segments
 - Landing page conversion rates
@@ -286,8 +286,8 @@
 - 6-10 decision-makers per deal across channels
 
 ### Attribution Stack
-1. **LinkedIn Insight Tag** — demographics, retargeting, conversion tracking
-2. **LinkedIn Conversion API** — server-side, bypasses ad blockers
+1. **LinkedIn Insight Tag** - demographics, retargeting, conversion tracking
+2. **LinkedIn Conversion API** - server-side, bypasses ad blockers
 3. **CRM integration** (HubSpot, Salesforce) for revenue attribution
 4. **UTM parameters** with LinkedIn dynamic UTM feature
 5. **"How did you hear about us?"** field on high-intent forms
@@ -380,4 +380,4 @@
 
 ---
 
-*Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*
+*Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills*

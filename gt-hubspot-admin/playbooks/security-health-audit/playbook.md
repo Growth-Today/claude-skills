@@ -14,7 +14,7 @@ Harden the portal: minimize Super Admins, enforce two-factor authentication, rem
 
 ## Why This Matters
 
-A HubSpot portal holds the company's entire contact database, pipeline, and often PII. The most common security gaps are boring but serious: too many Super Admins, users without 2FA, and departed employees who still have active seats (and still own records). A periodic security health pass closes these before they become an incident — and frees paid seats.
+A HubSpot portal holds the company's entire contact database, pipeline, and often PII. The most common security gaps are boring but serious: too many Super Admins, users without 2FA, and departed employees who still have active seats (and still own records). A periodic security health pass closes these before they become an incident - and frees paid seats.
 
 ## Prerequisites
 
@@ -24,11 +24,11 @@ A HubSpot portal holds the company's entire contact database, pipeline, and ofte
 
 ## Critical Concept: Deactivate, Don't Just Delete
 
-Removing a user does not reassign the records they own — it can orphan contacts, companies, and deals. Always **reassign first** (see `reassign-deactivated-owners` and `cleanup-lead-owners`), then remove the seat. Deactivating stale users also recovers paid seats.
+Removing a user does not reassign the records they own - it can orphan contacts, companies, and deals. Always **reassign first** (see `reassign-deactivated-owners` and `cleanup-lead-owners`), then remove the seat. Deactivating stale users also recovers paid seats.
 
 ## Plan
 
-1. Audit users: Super Admins, seat usage, likely-stale accounts (before state — `scripts/before.py`)
+1. Audit users: Super Admins, seat usage, likely-stale accounts (before state - `scripts/before.py`)
 2. Work through HubSpot's Security Health checklist
 3. Enforce 2FA (and SSO if available)
 4. Reassign + deactivate stale users safely
@@ -43,7 +43,7 @@ cd scripts
 python before.py
 ```
 
-`scripts/before.py` lists total users, Super Admin count and who, and users flagged for review — the evidence for the hardening steps. Also open Settings > Account Defaults > **Security** to see HubSpot's own Security Health recommendations.
+`scripts/before.py` lists total users, Super Admin count and who, and users flagged for review - the evidence for the hardening steps. Also open Settings > Account Defaults > **Security** to see HubSpot's own Security Health recommendations.
 
 ## Execute
 
@@ -53,7 +53,7 @@ Settings > Account Defaults > Security. Address each flagged item: 2FA enforceme
 
 ### Step 2: Minimize Super Admins
 
-Cross-check with `permission-sets-roles` — downgrade any Super Admin who doesn't strictly need it. Target 2-3.
+Cross-check with `permission-sets-roles` - downgrade any Super Admin who doesn't strictly need it. Target 2-3.
 
 ### Step 3: Enforce 2FA / SSO
 
@@ -75,11 +75,11 @@ For departed or never-logging-in users: **first** reassign their owned records (
 
 ## Key Technical Learnings
 
-- **Reassign before you remove.** Deleting a user orphans their records — always reassign first.
+- **Reassign before you remove.** Deleting a user orphans their records - always reassign first.
 - **2FA and SSO are the highest-leverage controls.** They stop the most common account-takeover paths.
-- **Super Admin sprawl is a security issue, not just a permissions one** — minimize it here and in `permission-sets-roles`.
+- **Super Admin sprawl is a security issue, not just a permissions one** - minimize it here and in `permission-sets-roles`.
 - **Deactivating stale users saves money** by recovering paid seats.
-- **Make it recurring.** Security drifts as people join and leave — audit on a schedule.
+- **Make it recurring.** Security drifts as people join and leave - audit on a schedule.
 
 ---
 

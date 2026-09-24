@@ -1,6 +1,6 @@
-# Cold Email Mastery — 25 Lessons from 10M+ Emails
+# Cold Email Mastery - 25 Lessons from 10M+ Emails
 
-*Source: Growth Engine X — 1.5-2M emails/month for 40-50 clients*
+*Source: Growth Engine X - 1.5-2M emails/month for 40-50 clients*
 
 ## Email Infrastructure
 
@@ -36,7 +36,7 @@
 - Director of Marketing at a 20-person bank ≠ Director of Marketing at a 500-person bank
 - Generic filters (20-500 employees) don't work
 
-**Solution — Golden ICP:**
+**Solution - Golden ICP:**
 Stack signals with Clay:
 
 | Level | Signal | Example |
@@ -61,7 +61,7 @@ Stack signals with Clay:
 - Content engagement
 - Posts about certain keywords
 
-*Real example:* Offshore staffing company — the "LinkedIn post" trigger beat all other "logical" triggers (new hire, funded, international hiring, etc.)
+*Real example:* Offshore staffing company - the "LinkedIn post" trigger beat all other "logical" triggers (new hire, funded, international hiring, etc.)
 
 ## Sequence Framework
 

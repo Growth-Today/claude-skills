@@ -23,7 +23,7 @@ gt-salesforce-admin/
 ├── requirements.txt · .env.example · README.md · LICENSE
 ```
 
-## Coverage — 52 playbooks across 8 sub-skills
+## Coverage - 52 playbooks across 8 sub-skills
 
 | Sub-skill | Playbooks |
 |---|---|
@@ -39,12 +39,12 @@ gt-salesforce-admin/
 
 ## Safety
 
-Scripts read Salesforce credentials from `.env` (`SF_USERNAME/PASSWORD/SECURITY_TOKEN/DOMAIN`) — no credentials stored in the skill. Export a backup before destructive operations (Recycle Bin is ~15 days).
+Scripts read Salesforce credentials from `.env` (`SF_USERNAME/PASSWORD/SECURITY_TOKEN/DOMAIN`) - no credentials stored in the skill. Export a backup before destructive operations (Recycle Bin is ~15 days).
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
 
 ---
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills

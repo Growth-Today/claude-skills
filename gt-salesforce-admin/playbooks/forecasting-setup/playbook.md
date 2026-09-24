@@ -10,7 +10,7 @@ metadata:
 
 # Forecasting Setup
 
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
 
 Turn the pipeline into a number leadership can plan on. Salesforce **Collaborative Forecasting** rolls Opportunities up the role hierarchy by **forecast category**, against **quotas**.
 
@@ -20,12 +20,12 @@ Turn the pipeline into a number leadership can plan on. Salesforce **Collaborati
 - Realistic close dates enforced (`validation-rules-setup`)
 
 ## Critical concept
-- **Forecast categories** (Pipeline / Best Case / Commit / Omitted / Closed) come from each Opportunity's **stage mapping** — fix the stage→category mapping first (`sales-process-and-stages`).
+- **Forecast categories** (Pipeline / Best Case / Commit / Omitted / Closed) come from each Opportunity's **stage mapping** - fix the stage→category mapping first (`sales-process-and-stages`).
 - Forecast rolls up the **role hierarchy**, so that structure must be correct.
 - Choose the **forecast type** (Opportunity Revenue, Product families, etc.). Set **quotas** per user/period.
 
 ## Automation level
-Guided — Setup config; API/Data Loader to load quotas.
+Guided - Setup config; API/Data Loader to load quotas.
 
 ## Steps
 1. Confirm stage→forecast-category mapping is sane; fix in the sales process if not.
@@ -36,9 +36,9 @@ Guided — Setup config; API/Data Loader to load quotas.
 6. Surface on the leadership dashboard (`revops-reports-and-dashboards`).
 
 ## Notes
-- Garbage stages/close dates = garbage forecast — the earlier deal playbooks are prerequisites.
-- Forecast roll-up follows the role hierarchy, not profiles — fix roles first.
+- Garbage stages/close dates = garbage forecast - the earlier deal playbooks are prerequisites.
+- Forecast roll-up follows the role hierarchy, not profiles - fix roles first.
 - Pairs with `sales-process-and-stages`, `products-and-price-books`, reporting.
 
 ---
-Created by [Growth Today](https://www.growthtoday.co) — AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
+Created by [Growth Today](https://www.growthtoday.co) - AI-native GTM engineering firm. Maintained and updated by [Brigitta Ruha](https://www.linkedin.com/in/brigittaruha/). More open Claude Skills for go-to-market teams: https://www.growthtoday.co/claude-skills
