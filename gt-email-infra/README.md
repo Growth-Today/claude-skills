@@ -16,14 +16,16 @@ Full walkthrough: **https://www.growthtoday.co/claude-skills/gt-email-infra**
 
 The orchestrator routes by role and task to the right sub-skill:
 
-- **[Sales Ops] domain-research**: on-brand naming rules, spam-trap avoidance, safe multi-registrar purchasing.
-- **[Sales Ops] provisioning**: Google / Microsoft / custom-SMTP mailboxes, MX/SPF/DKIM/DMARC, masking vs redirect, DNS-drift monitoring.
-- **[Sales Ops] setup sub-skills**: connect inboxes, warmup, and advanced deliverability per sequencer: **emailbison-setup, instantly-setup, smartlead-setup, lemlist-setup** (vendor-managed or in-house).
-- **[GTM] setup-audit**: connect a live workspace and verify every setting against the GT standard (PASS / WARN / FAIL + fixes).
-- **[Sales Ops → GTM] warmup-golive**: warmup timelines, ramp schedules, the hard launch gate.
-- **[GTM] campaign-building**: route by the Lead-ESP × sending-vendor matrix (ESP matching is dead as a rule); isolate SEG leads onto dedicated domains.
-- **[GTM] dashboard-reading**: inbox classification, per-state limits, turning each panel into an action.
-- **[GTM] blacklist-bounce-audit**: strip auto-replies first, categorize bounces, read SMTP codes, trace root cause.
+| Sub-skill | Role | What it does |
+|---|---|---|
+| **domain-research** | Sales Ops | On-brand naming rules, spam-trap avoidance, safe multi-registrar purchasing |
+| **provisioning** | Sales Ops | Google / Microsoft / custom-SMTP mailboxes, MX/SPF/DKIM/DMARC, masking vs redirect, DNS-drift monitoring |
+| **setup sub-skills** - emailbison-setup, instantly-setup, smartlead-setup, lemlist-setup | Sales Ops | Connect inboxes, warmup, and advanced deliverability per sequencer (vendor-managed or in-house) |
+| **setup-audit** | GTM | Connect a live workspace and verify every setting against the GT standard (PASS / WARN / FAIL + fixes) |
+| **warmup-golive** | Sales Ops → GTM | Warmup timelines, ramp schedules, the hard launch gate |
+| **campaign-building** | GTM | Route by the Lead-ESP × sending-vendor matrix (ESP matching is dead as a rule); isolate SEG leads onto dedicated domains |
+| **dashboard-reading** | GTM | Inbox classification, per-state limits, turning each panel into an action |
+| **blacklist-bounce-audit** | GTM | Strip auto-replies first, categorize bounces, read SMTP codes, trace root cause |
 
 Plus shared resources for all numbers/limits, approved vendors, and 2026 market benchmarks.
 
@@ -70,7 +72,7 @@ uv run execute.py --monthly-goal 15000
 uv run execute.py --validate                   # regression-test against reference.md §4
 ```
 
-Read the `playbook.md` in each folder first — it holds the interview questions that decide the inputs.
+Read the `playbook.md` in each folder first - it holds the interview questions that decide the inputs.
 
 Note: this skill supports the sequencers Growth Today runs, **EmailBison, Instantly, Smartlead, and Lemlist**, via a setup sub-skill for each. The concepts are ESP-agnostic; platform-specific steps are called out inline. Adapt them to your own stack.
 

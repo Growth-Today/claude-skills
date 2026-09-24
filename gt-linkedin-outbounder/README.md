@@ -4,7 +4,16 @@ Growth Today's LinkedIn outbound skill: the full cold-outreach motion, from the 
 
 ## What it is
 
-Call this skill in Claude for anything LinkedIn outbound: connection notes and DMs, post-acceptance sequences, follow-up discipline, persona tone (ATL and BTL), rented-engine infrastructure and account safety, campaign strategy and decay, and the LinkedIn-first GTM case. The master `SKILL.md` resolves its install directory dynamically, then routes each request to one of six sub-skills.
+Call this skill in Claude for anything LinkedIn outbound. The master `SKILL.md` resolves its install directory dynamically, then routes each request to one of six sub-skills.
+
+| Sub-skill | Covers |
+|---|---|
+| **copywriting** | Connection requests and notes, DMs, copywriting, personalization |
+| **sequences** | Post-acceptance DM sequences, drip campaigns, re-engagement, the follow-up system |
+| **personas** | Persona tone - ATL and BTL messaging |
+| **infrastructure** | Rented multi-account engine and account safety |
+| **strategy** | Campaign strategy and decay, the LinkedIn-first GTM case |
+| **knowledge** | LinkedIn metrics benchmarks, HeyReach and Lemlist knowledge bases |
 
 ## Structure
 
@@ -34,7 +43,7 @@ Each `resources/<group>/` folder holds the full playbooks; the matching `.claude
 
 ## Install (private repo)
 
-Team members install from the private repo (fork and pull request) or via a shared zip. The hidden `.claude/` folder must ship with the skill. Browser and Finder uploads drop hidden folders, so publish from the terminal and confirm with `git status` that the `.claude/skills/.../gt-SKILL.md` lines are present.
+Team members install from the private repo (fork and pull request) or via a shared zip. The hidden `.claude/` folder must ship with the skill - browser and Finder uploads drop hidden folders, so publish from the terminal and confirm with `git status` that the `.claude/skills/.../gt-SKILL.md` lines are present.
 
 ## A note on benchmarks
 
