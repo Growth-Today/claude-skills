@@ -1,7 +1,7 @@
 # Cold Email Copywriting — Principles
 **Version:** 2.1
 **Last updated:** 2026-04-09
-**Changes v2.1:** Added data backing for word count (sentence-level), social proof, subject line, and CTA — sourced from Gong (85M emails), Belkins (5.5M), Instantly (billions). No structural changes. You/your vs we/our and reply-rate banned word list deferred pending testing.
+**Changes v2.1:** Added data backing for word count (sentence-level), social proof, subject line, and CTA — sourced from Gong (85M emails), Instantly (billions). No structural changes. You/your vs we/our and reply-rate banned word list deferred pending testing.
 
 Core philosophy, rules, components, tips, and spam avoidance for writing cold emails that actually get replies.
 
@@ -167,7 +167,7 @@ If you have existing clients, ask:
 
 ## Tips from the Best
 
-### Ask Yourself Before Sending (Eric Nowoslawski)
+### Ask Yourself Before Sending
 1. How can I make this email worth this person's time?
 2. How can I say it like a human would say it?
 3. What can you say in a cold email that your competitors can't say?
@@ -202,7 +202,7 @@ Don't make the offer too good to be true (even if it is). Plausible > grandiose.
 
 ### Subject Lines
 
-> **Data (Gong 85M + Belkins 5.5M):** 2-4 word subject lines → 46% open rate. 10+ words → 34% open rate. Lowercase delivers +11% more opens vs sentence case — reads like an internal email, not a campaign. Personalized subject (company name or specific trigger) vs generic → +133% reply rate (Belkins, 5.5M, 2024).
+> **Data (Gong 85M):** 2-4 word subject lines → 46% open rate. 10+ words → 34% open rate. Lowercase delivers +11% more opens vs sentence case — reads like an internal email, not a campaign. Personalized subject (company name or specific trigger) vs generic → +133% reply rate.
 >
 > **What not to use in subject lines (Gong, 85M):** Questions = −4%. Generic numbers = −7%. "AI" = −9%. Social proof = −3%.
 
