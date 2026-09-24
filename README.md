@@ -34,6 +34,7 @@ New to Claude Skills? Full walkthrough: **https://www.growthtoday.co/claude-skil
 | **gt-linkedin-ads** | B2B LinkedIn Ads — targeting, bidding, Thought Leader Ads, funnel architecture | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-content** | B2B LinkedIn organic content — hooks, storytelling, formats, CTAs, engagement, scheduling, profile, repurposing, post-production, and design briefs | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-outbounder** | LinkedIn outbound — DMs, connection requests, sequences, rented-engine setup | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-lemlist-outbounder** | Lemlist multichannel outreach — strategy layer that hands off to the official Lemlist MCP | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-cold-email-writer** | B2B cold email — copywriting frameworks, sequences, deliverability, domain warmup, SPF/DKIM/DMARC, inbox placement | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-list-builder** | B2B list building — Sales Navigator boolean search, ICP definition & scoring, data validation, list hygiene | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-buying-signal-sourcer** | Signal-based selling — buying signals, intent data, signal scoring, signal-to-action playbooks | [→](https://www.growthtoday.co/claude-skills) |
