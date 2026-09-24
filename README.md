@@ -35,11 +35,13 @@ New to Claude Skills? Full walkthrough: **https://www.growthtoday.co/claude-skil
 | **gt-linkedin-content** | B2B LinkedIn organic content — hooks, storytelling, formats, CTAs, engagement, scheduling, profile, repurposing, post-production, and design briefs | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-outbounder** | LinkedIn outbound — DMs, connection requests, sequences, rented-engine setup | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-lemlist-outbounder** | Lemlist multichannel outreach — strategy layer that hands off to the official Lemlist MCP | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-email-infra** | Cold-email infrastructure & deliverability — domains, DNS (SPF/DKIM/DMARC), mailboxes, warmup, Google Workspace / M365, blacklist & bounce audits | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-cold-email-writer** | B2B cold email — copywriting frameworks, sequences, deliverability, domain warmup, SPF/DKIM/DMARC, inbox placement | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-list-builder** | B2B list building — Sales Navigator boolean search, ICP definition & scoring, data validation, list hygiene | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-buying-signal-sourcer** | Signal-based selling — buying signals, intent data, signal scoring, signal-to-action playbooks | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-clay-builder** | Clay platform — waterfall enrichment, Claygent, Clayscript, CRM sync, credit-efficient data pipelines | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-n8n-builder** | B2B n8n workflow automation — workflow design, triggers, AI agents, expressions, code nodes, error handling, CRM & self-hosting | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-gtm-playbook-builder** | Signal-based GTM playbook generator for a target domain, built with Clay | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-gtm-strategy-advisor** | GTM strategy guidance for B2B go-to-market motions | [→](https://www.growthtoday.co/claude-skills) |
 | **clay-search-query** | Turn natural-language audience descriptions into Clay Search queries over people, companies, and jobs | [→](https://www.growthtoday.co/claude-skills) |
 
