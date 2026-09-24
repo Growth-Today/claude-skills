@@ -33,6 +33,16 @@ Company List (with domains)
 3. **Clay Find People** -- native Clay search across multiple providers
 4. **CRM Import** -- pull existing contacts from HubSpot/Salesforce
 
+## Apollo: Good Input, Not for Intent
+
+Apollo enrichment plus its people/company search work well as a **waterfall input** - Clay's
+waterfall email lands ~86-90% coverage vs Apollo single-source at ~62-68% (GT's own assessment), so
+use Apollo to seed the list and let the waterfall finish the job.
+
+**But:** Apollo **intent / buying-signal** data is **NOT exposed** through Clay's Apollo
+integration. Do not plan a signal play on it. Source intent from Bombora, Demandbase, or Warmly
+instead.
+
 ## Key Filtering Criteria
 
 - **Title keywords:** VP, Director, Head of, Manager, Chief, C-level

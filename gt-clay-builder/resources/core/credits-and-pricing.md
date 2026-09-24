@@ -12,12 +12,12 @@
 - Each row processed by AI costs credits, regardless of result quality
 - Auto-Update enabled triggers enrichments = credits consumed
 - Duplicate enrichments (re-run or re-enable columns) = new credits
-- **Failed searches also cost** — you pay for the attempt, not the result
+- **Failed searches also cost** - you pay for the attempt, not the result
 
 ## What's FREE
 
 **Prospecting & List Building:**
-- Prospecting doesn't cost credits — only enrichment does
+- Prospecting doesn't cost credits - only enrichment does
 - Google Maps, GitHub, CRM imports, web scraping sources = free
 
 **Using Your Own API Keys:**
@@ -98,6 +98,13 @@
 ### Cost per Credit by Plan
 - Starter: ~$75 / 1,000 credits
 - Pro: ~$16 / 1,000 credits (up to 7x cheaper)
+
+## Developer API / CLI Availability
+
+- The **developer API and CLI** (build/run workflows, Search, Routines) are available on **all
+  plans** - both new and legacy.
+- **Querying / reading tables** through the CLI/API requires an **Enterprise** plan.
+- See `cli-and-api.md` for install and the workflows-yes / tables-read-only caveat.
 
 ## Credit System Explained
 

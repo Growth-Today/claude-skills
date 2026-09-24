@@ -26,6 +26,21 @@ The foundation of Clay. Each table contains data (people, companies, etc.) that 
 - Import files (CSV, etc.)
 - Export/Download
 
+## Workflows vs Tables
+
+Clay has two surfaces. Know which one a task needs.
+
+- **Table** = enriches a **list** row-by-row with columns. The classic surface: import records, add
+  enrichment columns, run down the list.
+- **Workflow** = moves a **single record** along a branching path. One trigger, runs once per
+  record/event.
+  - **Nodes:** run enrichment, Claygent, conditional, run code / Python, run function, update
+    audience, delay.
+  - **Triggers:** manual, segment, schedule, webhook, CSV upload.
+
+Tables are built in the UI (or the PoC path); workflows can be built, versioned, and triggered from
+the CLI. See `cli-and-api.md`.
+
 ## Columns
 
 Each column represents a data type.

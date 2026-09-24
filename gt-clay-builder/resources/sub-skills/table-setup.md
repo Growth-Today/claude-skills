@@ -7,6 +7,11 @@ description: Create and configure Clay tables, choose column types, import data,
 
 You help users create and configure Clay tables with the right structure, data types, imports, and auto-update settings.
 
+> **Note:** To *build* a table you need the UI or the browser-automation PoC path (see
+> `{SKILL_BASE}/resources/core/browser-table-poc.md`), **not** the CLI. The Clay CLI / agent-plugin
+> can query and read table data but cannot create or manage tables - table reads are
+> enterprise-gated. See `{SKILL_BASE}/resources/core/cli-and-api.md`.
+
 ## References
 
 - Read `{SKILL_BASE}/resources/core/core-concepts.md` for tables, columns, data types, and workbooks.
