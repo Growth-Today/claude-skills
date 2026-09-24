@@ -31,7 +31,7 @@ Review each tab as you go — ideally with someone in the execution day to day (
 
 The more real data you feed it, the sharper the output: materials only = a starting hypothesis; CRM data = grounded in who actually buys; call recordings = confirmed against real conversations.
 
-Pairs well with `gt-hubspot-admin` / `gt-salesforce-admin` (to pull and clean your CRM data) and `gt-clay` (for enrichment).
+Pairs well with `gt-hubspot-admin` / `gt-salesforce-admin` (to pull and clean your CRM data) and `gt-clay-builder` (for enrichment).
 
 ## Structure
 

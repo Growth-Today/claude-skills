@@ -1,6 +1,6 @@
 ---
 name: email-infra-lemlist-setup
-description: "Set up and connect sending inboxes in Lemlist (infrastructure side), including its multichannel email + LinkedIn setup. Use for connecting Google, Microsoft, and custom-SMTP inboxes to Lemlist, lemwarm warmup, sending limits, ESP matching, inbox rotation, LinkedIn limits, blocklist/unsubscribe, and vendor-managed versus in-house setup. Triggers on Lemlist setup, lemwarm, Lemlist connect inboxes, Email Provider Matchmaker, Lemlist LinkedIn limits, Deliverability Hub. Do NOT use for writing sequences or copy (use gt-cold-email), buying domains (use the domain-research sub-skill), or another sequencer (use instantly-setup / emailbison-setup / smartlead-setup)."
+description: "Set up and connect sending inboxes in Lemlist (infrastructure side), including its multichannel email + LinkedIn setup. Use for connecting Google, Microsoft, and custom-SMTP inboxes to Lemlist, lemwarm warmup, sending limits, ESP matching, inbox rotation, LinkedIn limits, blocklist/unsubscribe, and vendor-managed versus in-house setup. Triggers on Lemlist setup, lemwarm, Lemlist connect inboxes, Email Provider Matchmaker, Lemlist LinkedIn limits, Deliverability Hub. Do NOT use for writing sequences or copy (use gt-cold-email-writer), buying domains (use the domain-research sub-skill), or another sequencer (use instantly-setup / emailbison-setup / smartlead-setup)."
 ---
 
 # Lemlist Inbox Setup · [Sales Ops]
@@ -9,7 +9,7 @@ description: "Set up and connect sending inboxes in Lemlist (infrastructure side
 
 > 🔒 **Read-only area.** Connecting an inbox to the sequencer is done from the **email infra management system**. Follow this sub-skill for the standard each inbox must meet and to read and verify live state (setup-audit rows 1–7); do not connect, reconnect or swap inboxes by hand.
 
-Set up sending inboxes in **Lemlist** (one of the sequencers Growth Today runs). Lemlist is **multichannel** (email + LinkedIn), so this covers LinkedIn limits too. Infrastructure/inbox side only, sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
+Set up sending inboxes in **Lemlist** (one of the sequencers Growth Today runs). Lemlist is **multichannel** (email + LinkedIn), so this covers LinkedIn limits too. Infrastructure/inbox side only, sequences and copy live in `gt-cold-email-writer`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
 
 ---
 

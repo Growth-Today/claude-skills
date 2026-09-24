@@ -96,7 +96,7 @@ All notable changes to this skill. Newest first.
 - The 9 sub-skills moved from `resources/sub-skills/*.md` to `.claude/skills/<name>/gt-SKILL.md`: audiences, ads-outbound-sync, bidding, campaign-setup, copy, creative, measurement, optimization, abm-strategy.
 - **Fixed a latent path bug:** sub-skills referenced `{SKILL_BASE}/references/...` but the files live under `resources/`; all references normalized to `{SKILL_BASE}/resources/references/...`.
 - Enriched routing descriptions with the v1.3.0 topics (Predictive Audiences / career signals → audiences; Accelerate → campaign-setup; CAPI + Revenue Attribution Report → measurement).
-- Corrected the master "Do NOT use" cross-links to `gt-linkedin-content` and `gt-linkedin-outbound`.
+- Corrected the master "Do NOT use" cross-links to `gt-linkedin-content` and `gt-linkedin-outbounder`.
 
 **Shared resources** (`resources/references/`, `resources/references/abm/`, knowledge base) stay at the top level — script/relative paths and requirements unaffected.
 

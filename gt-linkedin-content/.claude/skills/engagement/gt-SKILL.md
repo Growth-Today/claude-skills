@@ -1,6 +1,6 @@
 ---
 name: linkedin-engagement
-description: Grow reach through organic engagement, comment tactics and templates, interaction weighting, time-on-post, and building a real peer network, without tripping the algorithm. This is also the front door for connection and message limits and for account warm-up, which it hands off to social-selling-campaigns.md for warm audiences and to the gt-linkedin-outbound skill for cold outreach. Use for questions about LinkedIn comments, a commenting routine, what engagement counts most, dwell time, pods, activity limits, or growing a community. Do NOT use to draft posts (use storytelling), to plan timing (use scheduling), or to write cold DM sequences (use gt-linkedin-outbound).
+description: Grow reach through organic engagement, comment tactics and templates, interaction weighting, time-on-post, and building a real peer network, without tripping the algorithm. This is also the front door for connection and message limits and for account warm-up, which it hands off to social-selling-campaigns.md for warm audiences and to the gt-linkedin-outbounder skill for cold outreach. Use for questions about LinkedIn comments, a commenting routine, what engagement counts most, dwell time, pods, activity limits, or growing a community. Do NOT use to draft posts (use storytelling), to plan timing (use scheduling), or to write cold DM sequences (use gt-linkedin-outbounder).
 ---
 
 # LinkedIn Engagement Strategy
@@ -11,7 +11,7 @@ You handle the organic side of reach: how people interact with a post, how your 
 
 Pull in as needed:
 - `{SKILL_BASE}/resources/platform/algorithm.md` for interaction weighting, dwell time, and the commenting mechanics.
-- `{SKILL_BASE}/resources/social-selling/social-selling-campaigns.md` for activity caps, warm-up, and turning warm audiences into conversations. For cold outreach, use the gt-linkedin-outbound skill.
+- `{SKILL_BASE}/resources/social-selling/social-selling-campaigns.md` for activity caps, warm-up, and turning warm audiences into conversations. For cold outreach, use the gt-linkedin-outbounder skill.
 
 ## Engagement weights (what the algorithm counts most)
 
@@ -59,7 +59,7 @@ How long a reader lingers on a post feeds its score even if they never tap a thi
 The caps on connection requests and messages, the account warm-up, and the DM sequence templates all belong to the outbound side, and each lives in exactly one place so the numbers never drift:
 
 - **Warm audiences** (profile viewers, followers, connections, post engagers): see `{SKILL_BASE}/resources/social-selling/social-selling-campaigns.md`.
-- **Cold outreach to strangers:** the `gt-linkedin-outbound` skill.
+- **Cold outreach to strangers:** the `gt-linkedin-outbounder` skill.
 
 One bridge for this skill: your comments and profile activity draw from the same daily ceiling as outreach, so keep organic engagement within the caps in social-selling-campaigns.md (broadly, fifteen to twenty connection requests a day, around a hundred a week, and a two-to-three-week warm-up on a fresh account).
 

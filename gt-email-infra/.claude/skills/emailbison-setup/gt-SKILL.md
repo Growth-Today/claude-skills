@@ -1,6 +1,6 @@
 ---
 name: email-infra-emailbison-setup
-description: "Set up and connect sending inboxes in EmailBison (infrastructure side). Use for connecting Google, Microsoft, and custom-SMTP inboxes to EmailBison, warmup configuration, advanced deliverability settings, custom tracking domains, and vendor-managed versus in-house setup. Triggers on EmailBison setup, Bison connect inboxes, Bison warmup, bisonsphere, EmailGuard placement test, ScaledMail Bison, add sender emails. Do NOT use for writing sequences or copy (use gt-cold-email), buying domains (use the domain-research sub-skill), or another sequencer (use instantly-setup / smartlead-setup / lemlist-setup)."
+description: "Set up and connect sending inboxes in EmailBison (infrastructure side). Use for connecting Google, Microsoft, and custom-SMTP inboxes to EmailBison, warmup configuration, advanced deliverability settings, custom tracking domains, and vendor-managed versus in-house setup. Triggers on EmailBison setup, Bison connect inboxes, Bison warmup, bisonsphere, EmailGuard placement test, ScaledMail Bison, add sender emails. Do NOT use for writing sequences or copy (use gt-cold-email-writer), buying domains (use the domain-research sub-skill), or another sequencer (use instantly-setup / smartlead-setup / lemlist-setup)."
 ---
 
 # EmailBison Inbox Setup · [Sales Ops]
@@ -16,7 +16,7 @@ description: "Set up and connect sending inboxes in EmailBison (infrastructure s
 
 > 🔒 **Read-only area.** Connecting an inbox to the sequencer is done from the **email infra management system**. Follow this sub-skill for the standard each inbox must meet and to read and verify live state (setup-audit rows 1–7); do not connect, reconnect or swap inboxes by hand.
 
-Set up sending inboxes in **EmailBison** (one of the sequencers Growth Today runs). Infrastructure/inbox side only, sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5. Steps below reflect the EmailBison / Bisonsphere help center; where a value is set only in the app UI, that is flagged.
+Set up sending inboxes in **EmailBison** (one of the sequencers Growth Today runs). Infrastructure/inbox side only, sequences and copy live in `gt-cold-email-writer`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5. Steps below reflect the EmailBison / Bisonsphere help center; where a value is set only in the app UI, that is flagged.
 
 ---
 

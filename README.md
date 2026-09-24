@@ -28,16 +28,16 @@ New to Claude Skills? Full walkthrough: **https://www.growthtoday.co/claude-skil
 |---|---|---|
 | **gt-hubspot-admin** | HubSpot CRM administration & RevOps — 68 playbooks across data hygiene, data model, pipelines, automation, reporting, and governance | [→](https://www.growthtoday.co/claude-skills/gt-hubspot-admin) |
 | **gt-salesforce-admin** | Salesforce org administration, data hygiene, and RevOps maintenance | [→](https://www.growthtoday.co/claude-skills) |
-| **gt-data-audit** | B2B contact data audit framework — score your CRM data across 10 dimensions | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-data-auditor** | B2B contact data audit framework — score your CRM data across 10 dimensions | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-google-ads** | B2B Google Ads strategy — search, PMax, negatives, Smart Bidding, wasted-spend audits | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-meta-ads** | B2B Meta (Facebook/Instagram) Ads — Advantage+, CAPI, creative, retargeting | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-ads** | B2B LinkedIn Ads — targeting, bidding, Thought Leader Ads, funnel architecture | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-linkedin-content** | B2B LinkedIn organic content — hooks, storytelling, formats, CTAs, engagement, scheduling, profile, repurposing, post-production, and design briefs | [→](https://www.growthtoday.co/claude-skills) |
-| **gt-linkedin-outbound** | LinkedIn outbound — DMs, connection requests, sequences, rented-engine setup | [→](https://www.growthtoday.co/claude-skills) |
-| **gt-cold-email** | B2B cold email — copywriting frameworks, sequences, deliverability, domain warmup, SPF/DKIM/DMARC, inbox placement | [→](https://www.growthtoday.co/claude-skills) |
-| **gt-list-building** | B2B list building — Sales Navigator boolean search, ICP definition & scoring, data validation, list hygiene | [→](https://www.growthtoday.co/claude-skills) |
-| **gt-signal-sourcer** | Signal-based selling — buying signals, intent data, signal scoring, signal-to-action playbooks | [→](https://www.growthtoday.co/claude-skills) |
-| **gt-clay** | Clay platform — waterfall enrichment, Claygent, Clayscript, CRM sync, credit-efficient data pipelines | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-linkedin-outbounder** | LinkedIn outbound — DMs, connection requests, sequences, rented-engine setup | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-cold-email-writer** | B2B cold email — copywriting frameworks, sequences, deliverability, domain warmup, SPF/DKIM/DMARC, inbox placement | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-list-builder** | B2B list building — Sales Navigator boolean search, ICP definition & scoring, data validation, list hygiene | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-buying-signal-sourcer** | Signal-based selling — buying signals, intent data, signal scoring, signal-to-action playbooks | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-clay-builder** | Clay platform — waterfall enrichment, Claygent, Clayscript, CRM sync, credit-efficient data pipelines | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-gtm-strategy-advisor** | GTM strategy guidance for B2B go-to-market motions | [→](https://www.growthtoday.co/claude-skills) |
 | **clay-search-query** | Turn natural-language audience descriptions into Clay Search queries over people, companies, and jobs | [→](https://www.growthtoday.co/claude-skills) |
 

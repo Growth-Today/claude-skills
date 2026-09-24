@@ -5,7 +5,7 @@ description: "Warm up mailboxes and take domains live safely. Use for warmup tim
 
 # Warmup & Go-Live · [Sales Ops → GTM]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §5 · gt-list-building (list verification) · **Runs:** `{SKILL_BASE}/playbooks/dns-auth-audit` · **Related:** domain-research, provisioning, campaign-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §5 · gt-list-builder (list verification) · **Runs:** `{SKILL_BASE}/playbooks/dns-auth-audit` · **Related:** domain-research, provisioning, campaign-building.
 
 > **Launch gate, first step.** Before anything else on this page, run the DNS audit across every
 > sending domain and require a clean exit:
@@ -80,7 +80,7 @@ INFRA
 [ ] Blacklist pre-check clean on domains < 60 days (Spamhaus DBL / URIBL)
 
 LIST & COPY
-[ ] List 100% verified (re-verified if > 30 days), gt-list-building
+[ ] List 100% verified (re-verified if > 30 days), gt-list-builder
 [ ] First email plain text: no HTML / images / links
 [ ] Signature clean: no links, images, or spam words (not promotional)
 [ ] Spintax / variance present

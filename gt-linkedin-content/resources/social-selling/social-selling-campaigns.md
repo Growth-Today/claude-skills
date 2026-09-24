@@ -14,7 +14,7 @@
 ## The three flows
 
 ### Flow 1: ICP buying-committee warm-up (optional, colder)
-Proactively connecting with the buying committee at target ICP accounts. This is the one colder motion, and it can compete with your other campaigns for LinkedIn's connection limit, so check whether or not you want to use it. If you want to run it, use the `gt-linkedin-outbound` skill.
+Proactively connecting with the buying committee at target ICP accounts. This is the one colder motion, and it can compete with your other campaigns for LinkedIn's connection limit, so check whether or not you want to use it. If you want to run it, use the `gt-linkedin-outbounder` skill.
 
 ### Flow 2: Audience-based (conversation starter, no scoring)
 New followers and profile visitors don't always have strong intent, just shopping around. Start a conversation and let the reply tell you who is worth your time.

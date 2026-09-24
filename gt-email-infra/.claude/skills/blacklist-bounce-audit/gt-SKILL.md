@@ -1,11 +1,11 @@
 ---
 name: email-infra-bounce-audit
-description: "Audit a bounce or blacklist problem to root cause and produce a full bounce report. Use for pulling replies via the EmailBison MCP/API, working around the broken type=bounced filter, stripping auto-replies, classifying bounces (Hard/Soft/Block) by SMTP/DSN code, running the neutral-copy test, and tracing the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, Spamhaus, URIBL, hard bounce, soft bounce, block bounce, SMTP codes, DSN codes, bounce report, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-building)."
+description: "Audit a bounce or blacklist problem to root cause and produce a full bounce report. Use for pulling replies via the EmailBison MCP/API, working around the broken type=bounced filter, stripping auto-replies, classifying bounces (Hard/Soft/Block) by SMTP/DSN code, running the neutral-copy test, and tracing the cause to infrastructure, list/data, or copy. Triggers on bounce audit, why are my emails bouncing, blacklist, Spamhaus, URIBL, hard bounce, soft bounce, block bounce, SMTP codes, DSN codes, bounce report, deliverability drop. Do NOT use for reading the health dashboard (use the dashboard-reading sub-skill) or list verification (use gt-list-builder)."
 ---
 
 # Blacklist & Bounce Audit · [GTM Engineer]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §7 · **Tools:** the **Instantly MCP** (`list_accounts`, `analytics_campaign_overview`, `list_emails`) for the live platform, and the EmailBison **REST API** (`/accounts`, `/campaigns`, `/campaigns/{id}/replies`) for campaigns still finishing there · optional Notion MCP · **Related:** dashboard-reading, domain-research · gt-list-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §7 · **Tools:** the **Instantly MCP** (`list_accounts`, `analytics_campaign_overview`, `list_emails`) for the live platform, and the EmailBison **REST API** (`/accounts`, `/campaigns`, `/campaigns/{id}/replies`) for campaigns still finishing there · optional Notion MCP · **Related:** dashboard-reading, domain-research · gt-list-builder.
 
 > **These are REST endpoints, not MCP tools.** There is no EmailBison MCP connector today, so
 > `curl` is the primary path on this page, not the 50K+ fallback. The Instantly MCP *is* connected
@@ -150,7 +150,7 @@ The diagnostic behind most "is it the copy or the domain?" confusion. Run on eac
 | Root cause | Signal | Owner / action |
 |---|---|---|
 | **Infra / automation** | warmup ratio off, DNS/auth drift, throttling/failover | Email infra management system |
-| **List / data** | wave of Hard `5.1.1` / bad-data bounces | Verification/enrichment, confirm which verifier ran, fix the step (`gt-list-building`) |
+| **List / data** | wave of Hard `5.1.1` / bad-data bounces | Verification/enrichment, confirm which verifier ran, fix the step (`gt-list-builder`) |
 | **Copy** | consistent spam placement everywhere, empty liquid, weak variance, spam words, aggressive volume | GTM Engineer rewrites (client conversation if they supplied the copy) |
 | **Domain burned** | large share of inboxes on Spamhaus/URIBL-listed domains | Buy new domains + new infra (the domain-research and provisioning sub-skills); recycle SEG-burnt domains first |
 

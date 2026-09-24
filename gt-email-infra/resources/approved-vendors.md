@@ -89,8 +89,8 @@ Only these are approved. Anything else needs sign-off from the GTM or account ow
 
 ## Not covered here
 
-- **Email verification** providers → `gt-list-building`
-- **Cold email copy** tooling → `gt-cold-email`
+- **Email verification** providers → `gt-list-builder`
+- **Cold email copy** tooling → `gt-cold-email-writer`
 
 ---
 

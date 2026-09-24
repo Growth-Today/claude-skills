@@ -1,6 +1,6 @@
 ---
 name: gt-gtm-strategy-advisor
-description: "GTM Strategy Advisor by Growth Today (growthtoday.co) — turns your own CRM data, sales deck, website, and call recordings into a signal-based GTM playbook. Use when a VP of Sales, Head of Growth, RevOps lead, CRO, or founder wants to build, audit, or sharpen their go-to-market motion: define a data-backed ICP, map the buyer journey, document pain per persona, build a buying-signal library, write a competitor battlecard, and generate a messaging matrix. Connect your HubSpot or Salesforce or upload your materials; it outputs a ready-to-use Excel workbook. Also triggers on: GTM playbook, GTM strategy, go-to-market plan, build my ICP, ideal customer profile, buyer journey, buying signals, signal library, signal-based selling, sales battlecard, objection handling, messaging matrix, positioning, sharpen our outbound. Do NOT use for ads (gt-google-ads / gt-linkedin-ads / gt-meta-ads), CRM cleanup (gt-hubspot-admin / gt-salesforce-admin), list building (gt-list-building), or cold emails (gt-cold-email)."
+description: "GTM Strategy Advisor by Growth Today (growthtoday.co) — turns your own CRM data, sales deck, website, and call recordings into a signal-based GTM playbook. Use when a VP of Sales, Head of Growth, RevOps lead, CRO, or founder wants to build, audit, or sharpen their go-to-market motion: define a data-backed ICP, map the buyer journey, document pain per persona, build a buying-signal library, write a competitor battlecard, and generate a messaging matrix. Connect your HubSpot or Salesforce or upload your materials; it outputs a ready-to-use Excel workbook. Also triggers on: GTM playbook, GTM strategy, go-to-market plan, build my ICP, ideal customer profile, buyer journey, buying signals, signal library, signal-based selling, sales battlecard, objection handling, messaging matrix, positioning, sharpen our outbound. Do NOT use for ads (gt-google-ads / gt-linkedin-ads / gt-meta-ads), CRM cleanup (gt-hubspot-admin / gt-salesforce-admin), list building (gt-list-builder), or cold emails (gt-cold-email-writer)."
 ---
 
 # GTM Strategy Advisor
@@ -30,7 +30,7 @@ GOLD + VALIDATED  The above + call recordings / transcripts.
 
 Give the advisor as much real input as you can. Three ways, best combined:
 
-1. **Connect your CRM.** If you have a HubSpot or Salesforce connector enabled, the advisor reads your real closed-won and closed-lost patterns, contact and account fields, and deal history — this is what turns a guessed ICP into a data-backed one. (Related GT skills for pulling and cleaning this data: `gt-hubspot-admin`, `gt-salesforce-admin`, `gt-clay`.)
+1. **Connect your CRM.** If you have a HubSpot or Salesforce connector enabled, the advisor reads your real closed-won and closed-lost patterns, contact and account fields, and deal history — this is what turns a guessed ICP into a data-backed one. (Related GT skills for pulling and cleaning this data: `gt-hubspot-admin`, `gt-salesforce-admin`, `gt-clay-builder`.)
 2. **Upload your materials.** Sales deck, website copy, positioning doc, a CRM export (CSV), and any competitor notes. The more concrete, the sharper the output.
 3. **Add call recordings.** One or two recent sales-call transcripts are the single highest-leverage input — they reveal the real objections, triggers, and champion that your deck usually gets wrong.
 

@@ -1,11 +1,11 @@
 ---
 name: email-infra-campaign-building
-description: "Build cold-email campaigns and route by ESP and SEG. Use for campaign setup, the Lead-ESP by sending-vendor decision matrix (ESP matching is dead as a fixed rule), profiling a lead list by recipient ESP with the dns-auth-audit playbook in --esp-mix mode, isolating SEG leads onto dedicated domains, and the launch gate. Triggers on build campaign, ESP matching, provider matching, ESP mix, profile the lead list, what ESP are these leads on, SEG, Mimecast, Proofpoint, Barracuda, campaign routing, sending-vendor matrix. Do NOT use for writing copy or sequences (use gt-cold-email) or reading the dashboard (use the dashboard-reading sub-skill)."
+description: "Build cold-email campaigns and route by ESP and SEG. Use for campaign setup, the Lead-ESP by sending-vendor decision matrix (ESP matching is dead as a fixed rule), profiling a lead list by recipient ESP with the dns-auth-audit playbook in --esp-mix mode, isolating SEG leads onto dedicated domains, and the launch gate. Triggers on build campaign, ESP matching, provider matching, ESP mix, profile the lead list, what ESP are these leads on, SEG, Mimecast, Proofpoint, Barracuda, campaign routing, sending-vendor matrix. Do NOT use for writing copy or sequences (use gt-cold-email-writer) or reading the dashboard (use the dashboard-reading sub-skill)."
 ---
 
 # Campaign Building & ESP/SEG Routing · [GTM Engineer]
 
-> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §7, §8 · **Related:** dashboard-reading, bounce-audit · gt-list-building.
+> **Reads:** `{SKILL_BASE}/resources/reference.md` §1, §2, §7, §8 · **Related:** dashboard-reading, bounce-audit · gt-list-builder.
 
 > 🔒 **Read-only area.** The campaign build and the routing are done from the **email infra management system**, not by hand in the sequencer. Use this sub-skill to decide *what* the campaign and routing should be, read the live config to check it, and report the gap. Do not edit a campaign or a routing rule in Instantly / EmailBison / Smartlead / Lemlist directly — that creates a second source of truth. The `--esp-mix` profiling below is read-only and safe to run.
 
@@ -153,7 +153,7 @@ Build so the campaign is **visible to and managed by the inbox-management system
 ## Part 5, Launch gate (hard, before any send)
 
 
-- [ ] **List 100% verified** (and re-verified if > 30 days old), see `gt-list-building`.
+- [ ] **List 100% verified** (and re-verified if > 30 days old), see `gt-list-builder`.
 - [ ] **First email is plain text**: no HTML, no images (incl. signature), no links.
 - [ ] **Spintax / variance present** on subject + body.
 - [ ] **Blacklist pre-check** on any domain < 60 days old (Spamhaus DBL / URIBL), see the bounce-audit sub-skill.

@@ -1,6 +1,6 @@
 ---
 name: email-infra-instantly-setup
-description: "Set up and connect sending inboxes in Instantly (infrastructure side). Use for connecting Google, Microsoft and custom-SMTP inboxes, warmup configuration, advanced deliverability settings, the required Unibox toggles (Save undelivered emails is off by default and gates what the reporting can see), and vendor-managed versus in-house setup. Triggers on Instantly setup, connect inboxes, Instantly warmup, advanced deliverability, Unibox, Unibox settings, save undelivered emails, show auto-replies, ScaledMail, IMAP SMTP host, provider matching. Do NOT use for writing sequences or copy (use gt-cold-email) or buying domains (use the domain-research sub-skill)."
+description: "Set up and connect sending inboxes in Instantly (infrastructure side). Use for connecting Google, Microsoft and custom-SMTP inboxes, warmup configuration, advanced deliverability settings, the required Unibox toggles (Save undelivered emails is off by default and gates what the reporting can see), and vendor-managed versus in-house setup. Triggers on Instantly setup, connect inboxes, Instantly warmup, advanced deliverability, Unibox, Unibox settings, save undelivered emails, show auto-replies, ScaledMail, IMAP SMTP host, provider matching. Do NOT use for writing sequences or copy (use gt-cold-email-writer) or buying domains (use the domain-research sub-skill)."
 ---
 
 # Instantly Inbox Setup · [Sales Ops]
@@ -9,7 +9,7 @@ description: "Set up and connect sending inboxes in Instantly (infrastructure si
 
 > 🔒 **Read-only area.** Connecting an inbox to the sequencer is done from the **email infra management system**. Follow this sub-skill for the standard each inbox must meet and to read and verify live state (setup-audit rows 1–7); do not connect, reconnect or swap inboxes by hand.
 
-Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs). This is the **infrastructure / inbox side only** (connecting mailboxes, warmup, deliverability settings). Sequences and copy live in `gt-cold-email`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
+Set up sending inboxes in **Instantly** (one of the sequencers Growth Today runs). This is the **infrastructure / inbox side only** (connecting mailboxes, warmup, deliverability settings). Sequences and copy live in `gt-cold-email-writer`. Numbers in `{SKILL_BASE}/resources/reference.md` §1, §5.
 
 > **This sub-skill replaces the old "Setting up Domains & Inboxes with ScaledMail + Instantly" SOP.** Everything you need to execute is here; no separate SOP required.
 

@@ -31,7 +31,7 @@ It is a multi-sub-skill skill, so Claude loads only the relevant part:
 - **post-production** producing and fixing the parts of a locked post (hook, body, CTA, comments, alt text)
 - **design-briefer** turning a post into a design brief for your design tool
 
-Not for LinkedIn Ads (use `gt-linkedin-ads`) or cold outreach (use `gt-linkedin-outbound`).
+Not for LinkedIn Ads (use `gt-linkedin-ads`) or cold outreach (use `gt-linkedin-outbounder`).
 
 ## Structure
 
