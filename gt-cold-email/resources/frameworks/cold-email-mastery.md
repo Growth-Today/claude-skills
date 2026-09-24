@@ -1,7 +1,5 @@
 # Cold Email Mastery — 25 Lessons from 10M+ Emails
 
-*Source: Growth Engine X — 1.5-2M emails/month for 40-50 clients*
-
 ## Email Infrastructure
 
 **Volume per inbox:**

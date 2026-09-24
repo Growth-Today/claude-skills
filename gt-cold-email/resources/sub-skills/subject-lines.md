@@ -27,7 +27,7 @@ Read `{SKILL_BASE}/resources/prompts/personalization-prompts.md` for the AI subj
 - **Relevant to the email body** -- Deceptive subject lines destroy trust and trigger spam
 - **Same thread for follow-ups** -- Email 2 uses RE: (same subject), Email 3 gets a new subject
 
-> **Data (Gong 85M emails + Belkins 5.5M):** 2-4 word subject lines → 46% open rate vs 34% for 10+ words. Lowercase → +11% opens vs sentence case. Personalized subject (company name or specific trigger) vs generic → +133% reply rate.
+> **Data (Gong 85M emails):** 2-4 word subject lines → 46% open rate vs 34% for 10+ words. Lowercase → +11% opens vs sentence case. Personalized subject (company name or specific trigger) vs generic → +133% reply rate.
 
 ### What to avoid in subject line content (reply rate impact, Gong 85M)
 
