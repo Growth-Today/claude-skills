@@ -38,6 +38,7 @@ New to Claude Skills? Full walkthrough: **https://www.growthtoday.co/claude-skil
 | **gt-list-builder** | B2B list building — Sales Navigator boolean search, ICP definition & scoring, data validation, list hygiene | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-buying-signal-sourcer** | Signal-based selling — buying signals, intent data, signal scoring, signal-to-action playbooks | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-clay-builder** | Clay platform — waterfall enrichment, Claygent, Clayscript, CRM sync, credit-efficient data pipelines | [→](https://www.growthtoday.co/claude-skills) |
+| **gt-n8n-builder** | B2B n8n workflow automation — workflow design, triggers, AI agents, expressions, code nodes, error handling, CRM & self-hosting | [→](https://www.growthtoday.co/claude-skills) |
 | **gt-gtm-strategy-advisor** | GTM strategy guidance for B2B go-to-market motions | [→](https://www.growthtoday.co/claude-skills) |
 | **clay-search-query** | Turn natural-language audience descriptions into Clay Search queries over people, companies, and jobs | [→](https://www.growthtoday.co/claude-skills) |
 
