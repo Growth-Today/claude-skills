@@ -119,16 +119,19 @@ Someone is flagged when **either** condition holds over the trailing 3 weeks:
 ```
 weekly score < individual_floor (0.60)  in >= 2 of the last 3 weeks
 OR
->= 4 consecutive weekdays behind        within any one of those weeks
+>= 4 consecutive weekdays with nothing
+   logged at all                        in >= 2 of the last 3 weeks
 ```
 
 Two conditions because they catch two different people, and either one alone would miss half the problem.
 
 The first catches quiet under-logging: someone whose weekly score keeps landing under the floor.
 
-The second catches the person whose finished timesheet looks perfect. The streak is computed from **what had actually been entered as of each day**, not from the dates the finished entries carry. Someone who reconstructs a whole week on Friday shows up as behind on Monday, Tuesday, Wednesday and Thursday, because on those days nothing had been typed yet, even though the completed timesheet now shows five full days. Without that as-of reconstruction a backfiller is invisible to the rule, since in hindsight their hours all appear on the right dates.
+The second catches the person whose finished timesheet looks perfect. A day counts as logged only if its entry was **created within `grace_days` of the day it covers**, the same test the hygiene metric uses. Someone who reconstructs a whole week on Friday has four empty days on Monday to Thursday, because on those days nothing had been typed yet, even though the completed timesheet now shows five full days. Without that a backfiller is invisible to the rule, since in hindsight their hours all appear on the right dates.
 
-One bad week is a bad week. Two out of three is a pattern, and a four-day streak inside a single week is a habit rather than an accident. All three numbers live in `config/scoring.json` under `persistence`.
+The run counts **days with nothing in them, never days where the total came up short**. The two are easy to conflate and the difference matters: somebody working to a smaller number than their contract sits under the ratio every single day, so a shortfall-based counter never resets and pins them at the top of the escalation ladder forever. That is a conversation about scope, and no amount of chasing fixes it. Hours that are short are the scorer's job; days that are empty are this rule's job.
+
+One bad week is a bad week, under either condition. Two out of three is a pattern. All four numbers live in `config/scoring.json` under `persistence`.
 
 ## Worked examples
 

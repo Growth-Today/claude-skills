@@ -2,6 +2,28 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.11.0
+
+**Fixed**
+
+- **The escalation ladder measured the wrong thing.** `streak_behind` counted consecutive weekdays where the week-to-date total sat under `behind_ratio`, and the firm message reported that number as days running. Somebody who works to a smaller number than their contract is under the ratio on every day of every week, so their counter never reset. Fezekile sat at firm escalation for three weeks on a run of 10 while logging four days out of five and scoring 0.76, which is a scoping conversation being held as a discipline one. The ladder is now indexed by `streak_missed`: consecutive weekdays where nothing was logged at all, using the same same-day test as the hygiene metric. Short hours still earn a nudge, they just no longer earn a firmer one.
+
+- **The streak counted a day that was not over.** It started at today, so at a morning run every person picked up an extra day and the level they saw depended on what time the runner happened to fire. It now ends at the last finished weekday, and resets outright if the person has already logged today, so the firm copy can never tell somebody who has just filled in their hours that nothing has gone in.
+
+- **One bad week flagged a person for three.** The persistence rule fired on a 4-day run in any single week of the lookback. A week where somebody logs on Monday and then goes quiet is a 4-day run by itself, so Simone, Shivam and Prosper were all still flagged weeks after recovering, against the rule's own stated intent that one bad week is not a pattern. The run must now appear in `weeks_with_streak_to_flag` separate weeks, which is 2.
+
+**Changed**
+
+- `streak_short` and `streak_long` in `config/messages.json` now say days with nothing going in, rather than days behind, because that is what the number now counts.
+- `playbooks/daily-nudge.md` firm example rewritten to match the copy that actually ships. It still carried the "client hours cannot be billed" framing that was taken out of `messages.json` in 1.8.0.
+- Dropped a dead `if args.this_week` branch in `score.py` that recomputed `monday` and `windows` after scoring had finished. Its guard is preserved.
+
+**Verified**
+
+- Reconstructed all six people's last three weeks from the Friday reviews and ran the real helpers over it. Fezekile goes from firm on a run of 10 to light on 0; Olyrhey stays firm on 4; Gaze, Simone, Shivam and Prosper land on light. Logging today breaks the streak for all six.
+- `score.py --weeks 3` over the same fixture flags Olyrhey alone, on the below-floor condition, and reproduces his real weekly scores to within a rounding place (0.442 and 0.551 against the 0.44 and 0.55 reported on 25 September). It clears the other five.
+- `who_is_behind.py` and `send_nudges.py` run end to end on the fixture, dry run, nothing sent.
+
 ## 1.10.0
 
 **Added**

@@ -72,9 +72,11 @@ python score.py --weeks 3
 Read the `persistence` block. Someone is flagged when either condition holds:
 
 - their weekly score fell below the individual floor in at least 2 of the last 3 weeks, or
-- they ran 4 or more straight weekdays behind inside any one of those weeks.
+- they went 4 or more straight weekdays without logging anything at all, and did so in 2 separate weeks.
 
-Both matter because they catch different people. The first catches someone quietly under-logging. The second catches someone whose totals look fine because they reconstruct the whole week on Friday: the streak is computed from what had actually been entered on each day, so a backfiller shows up as behind all week even though the finished timesheet looks complete.
+Both matter because they catch different people. The first catches someone quietly under-logging. The second catches someone whose totals look fine because they reconstruct the whole week on Friday: a run counts days where nothing had actually been typed yet, so a backfiller shows up as four days empty even though the finished timesheet looks complete.
+
+The run is about **days with nothing in them**, never about days where the total came up short. Somebody working to a smaller number than their contract is under the ratio every single day, and counting that as a streak flags a scoping problem as a discipline problem. It also has to happen in two separate weeks: one week where a person logs on Monday and then goes quiet is a four day run on its own, and one bad week is not a pattern.
 
 If `flagged` is empty, say so and stop. Do not write a draft nobody needs.
 

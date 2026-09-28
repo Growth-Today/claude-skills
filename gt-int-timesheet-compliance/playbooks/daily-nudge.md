@@ -53,13 +53,13 @@ For each person in `nudge_now`, send one Slack DM to their `slack_member_id`. Se
 
 Tone by `escalation` value:
 
-**`light`** (first or second day behind):
+**`light`** (nothing missed, or one or two weekdays running with nothing logged):
 
 > Hey Ana, timesheet is at 12 of 24 hours this week. Two minutes and it is done: <timesheet link>
 
-**`firm`** (third day onward):
+**`firm`** (three or more weekdays running with nothing logged):
 
-> Ana, day 3 behind: 12 of 32 hours, nothing logged Mon to Wed. These need to be in before Friday cutoff or the client hours cannot be billed. <timesheet link>
+> Hey Ana, that's 3 days now with nothing going in. Mon, Tue and Wed are still empty. Can you get them in before Friday? The week closes then. <timesheet link>
 
 The tone stops escalating there. **The daily nudge never copies a manager, at any level**, and it stops entirely after four in one week. A pattern that survives that is handled once a week by the draft in `friday-review.md`, which a human reads and sends.
 

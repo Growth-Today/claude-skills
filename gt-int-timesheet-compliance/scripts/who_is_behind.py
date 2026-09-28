@@ -178,8 +178,10 @@ def main():
             )
             continue
 
-        streak = max(1, lib.streak_behind(entries, person, today, scoring))
-        level = ladder[min(streak, len(ladder)) - 1]
+        # Missed days, not short hours: see streak_missed. Somebody whose
+        # first slip is today sits at 0 and gets the gentlest rung.
+        streak = lib.streak_missed(entries, today, scoring)
+        level = ladder[min(max(streak, 1), len(ladder)) - 1]
 
         reasons = []
         if expected > 0 and logged < nudge["behind_ratio"] * expected:

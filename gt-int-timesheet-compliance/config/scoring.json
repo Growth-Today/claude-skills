@@ -32,7 +32,7 @@
   },
 
   "nudge": {
-    "_comment": "Slack DM only, daily, to the person and nobody else at every level. Nothing here copies a manager. email_enabled is off because the team lives in Slack; turn it on only for someone who genuinely does not read Slack. max_per_week is a hard stop: by the fifth day in one week the daily nudge has demonstrably not worked on that person, and a fifth identical message only teaches them to filter it. That case belongs to the weekly draft in playbooks/friday-review.md, which a human sends. behind_ratio is the share of expected hours a person must have logged week-to-date to be left alone. The window opens at window_local_hour in each person's own timezone and stays open window_hours. Six hours is not generosity, it is the observed delay on scheduled runs: GitHub fires them late by half an hour on a good day and by nearly three on a bad one, and a one-hour window turns each delay into a day when that timezone was never checked. It is only safe to be this wide because each scheduled fire owns one timezone group, so nobody can be caught twice in an afternoon.",
+    "_comment": "Slack DM only, daily, to the person and nobody else at every level. Nothing here copies a manager. email_enabled is off because the team lives in Slack; turn it on only for someone who genuinely does not read Slack. escalation_ladder is indexed by consecutive weekdays with nothing logged, which is a question about process and not about hours: somebody who writes down an hour every afternoon never climbs it, however far short of target the week ends, because a firmer reminder is the wrong tool for a scoping problem. max_per_week is a hard stop: by the fifth day in one week the daily nudge has demonstrably not worked on that person, and a fifth identical message only teaches them to filter it. That case belongs to the weekly draft in playbooks/friday-review.md, which a human sends. behind_ratio is the share of expected hours a person must have logged week-to-date to be left alone. The window opens at window_local_hour in each person's own timezone and stays open window_hours. Six hours is not generosity, it is the observed delay on scheduled runs: GitHub fires them late by half an hour on a good day and by nearly three on a bad one, and a one-hour window turns each delay into a day when that timezone was never checked. It is only safe to be this wide because each scheduled fire owns one timezone group, so nobody can be caught twice in an afternoon.",
     "behind_ratio": 0.80,
     "window_local_hour": 16,
     "window_minutes": 0,
@@ -43,10 +43,11 @@
   },
 
   "persistence": {
-    "_comment": "Defines 'constantly not following the process' for the weekly draft. Someone is flagged when either condition holds across the lookback: their weekly score fell below the gate's individual_floor in at least weeks_below_floor_to_flag of those weeks, or they ran a nudge streak of nudge_streak_to_flag or more weekdays in any single week. One bad week is a bad week; two out of three is a pattern.",
+    "_comment": "Defines 'constantly not following the process' for the weekly draft. Someone is flagged when either condition holds across the lookback: their weekly score fell below the gate's individual_floor in at least weeks_below_floor_to_flag of those weeks, or they went nudge_streak_to_flag or more weekdays without logging anything at all, and did so in weeks_with_streak_to_flag separate weeks. The second count matters: one week where somebody logged on Monday and then went quiet is a four day run on its own, so without it a single bad week flags a person for the whole lookback, which is the opposite of what this rule is for. One bad week is a bad week; two out of three is a pattern.",
     "lookback_weeks": 3,
     "weeks_below_floor_to_flag": 2,
-    "nudge_streak_to_flag": 4
+    "nudge_streak_to_flag": 4,
+    "weeks_with_streak_to_flag": 2
   },
 
   "submission": {

@@ -253,12 +253,13 @@ def evaluate_gate(periods, scoring):
     }
 
 
-def evaluate_persistence(weekly, entries_by_person, people, scoring):
+def evaluate_persistence(weekly, entries_by_person, people, scoring, today=None):
     """Who is not following the process as a pattern rather than a bad week.
 
     Feeds the weekly draft in playbooks/friday-review.md. It never sends
     anything: it names who meets the rule and why, and a person decides.
     """
+    today = today or datetime.now(timezone.utc).date()
     rule = scoring["persistence"]
     floor = scoring["gate"]["individual_floor"]
     flagged = []
@@ -278,13 +279,14 @@ def evaluate_persistence(weekly, entries_by_person, people, scoring):
             streaks.append(
                 {
                     "week_of": week["window"]["start"],
-                    "longest_streak": lib.longest_streak_in_week(
-                        entries, person, monday, scoring
+                    "longest_streak": lib.longest_missed_streak_in_week(
+                        entries, monday, scoring, as_of=today
                     ),
                 }
             )
 
         worst_streak = max((s["longest_streak"] for s in streaks), default=0)
+        run_weeks = [s for s in streaks if s["longest_streak"] >= rule["nudge_streak_to_flag"]]
         reasons = []
         if len(below) >= rule["weeks_below_floor_to_flag"]:
             reasons.append(
@@ -295,11 +297,16 @@ def evaluate_persistence(weekly, entries_by_person, people, scoring):
                     ", ".join("{} at {}".format(b["week_of"], b["score"]) for b in below),
                 )
             )
-        if worst_streak >= rule["nudge_streak_to_flag"]:
-            worst = max(streaks, key=lambda s: s["longest_streak"])
+        if len(run_weeks) >= rule.get("weeks_with_streak_to_flag", 1):
             reasons.append(
-                "ran {} straight weekdays behind in the week of {}".format(
-                    worst_streak, worst["week_of"]
+                "went {} or more straight weekdays without logging anything in {} "
+                "separate weeks ({})".format(
+                    rule["nudge_streak_to_flag"],
+                    len(run_weeks),
+                    ", ".join(
+                        "{} for {}".format(r["week_of"], r["longest_streak"])
+                        for r in run_weeks
+                    ),
                 )
             )
 
@@ -309,6 +316,7 @@ def evaluate_persistence(weekly, entries_by_person, people, scoring):
             "weeks_below_floor": below,
             "streaks_by_week": streaks,
             "worst_streak": worst_streak,
+            "weeks_with_a_run": len(run_weeks),
         }
         if reasons:
             record["reasons"] = reasons
@@ -409,10 +417,7 @@ def main():
     output = {"weights": scoring["weights"], "periods": results}
     if args.gate_anchor:
         output["gate"] = evaluate_gate(results, scoring)
-    if args.this_week:
-        monday = lib.week_start(datetime.now(timezone.utc).date())
-        windows = [(monday, monday + timedelta(days=4))]
-    elif args.weeks:
+    if args.weeks and not args.this_week:
         output["persistence"] = evaluate_persistence(
             results, lib.index_entries(raw, people), people, scoring
         )

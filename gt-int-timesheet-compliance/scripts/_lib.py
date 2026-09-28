@@ -420,6 +420,13 @@ def index_entries(entries, people):
 # ------------------------------------------------ behind / streak helpers
 # Shared by who_is_behind.py (today's nudge) and score.py (the weekly
 # persistence rule) so the definition of "behind" exists in exactly one place.
+#
+# Two different questions live here and they must not be confused. Whether to
+# say anything at all is a question about hours: is the week-to-date total
+# short. How hard to say it is a question about process: how many days running
+# did nothing go in. Someone can fail the first every day while passing the
+# second every day, and that person needs a conversation about scope, not a
+# firmer reminder.
 
 
 def logged_minutes(entries, start, end, as_of=None):
@@ -460,44 +467,75 @@ def days_with_entries(entries, grace_days):
     return covered
 
 
-def behind_as_of(entries, person, day, scoring):
-    """Was this person behind on hours at the end of the given day?"""
-    days = workdays(week_start(day), day, scoring)
-    if not days:
-        return False
-    expected = len(days) * float(person["daily_target_hours"]) * 60
-    if expected <= 0:
-        return False
-    logged = logged_minutes(entries, days[0], day, as_of=day)
-    return logged < scoring["nudge"]["behind_ratio"] * expected
+def logged_on_day(entries, day, grace_days):
+    """Did a same-day entry land for this day?
+
+    The same test the hygiene metric uses, and deliberately blind to how many
+    hours it was for. Somebody who writes down an hour every afternoon is
+    following the process, even if the week ends well short of target.
+    """
+    for entry in entries:
+        if not entry.get("entered_on"):
+            continue
+        if parse_date(entry["entered_on"]) != day:
+            continue
+        created = parse_created_at(entry.get("created_at"))
+        if created is None or (created - day).days <= grace_days:
+            return True
+    return False
 
 
-def streak_behind(entries, person, today, scoring, lookback=10):
-    """Consecutive weekdays ending behind, counting back from today."""
+def streak_missed(entries, today, scoring, lookback=10):
+    """Consecutive weekdays with nothing logged, ending yesterday.
+
+    This drives the escalation ladder, so it has to mean what the firm message
+    claims it means: days the person did not log, not days the running total
+    was short. Counting shortfall instead pinned Fezekile at firm for three
+    weeks while he logged four days out of five, because somebody working to a
+    smaller number sits under the ratio every single day and the counter never
+    resets. That is a scoping conversation, and no amount of chasing fixes it.
+
+    Today is left out because it is not over yet. Counting an unfinished day
+    adds one to everybody's streak at breakfast and makes the level a person
+    sees depend on what time the runner happened to fire. If they have already
+    logged today the streak is broken outright, so the firm copy can never tell
+    somebody who has just filled in their hours that nothing has gone in.
+    """
+    grace = scoring["hygiene"]["grace_days"]
+    if today.weekday() < 5 and logged_on_day(entries, today, grace):
+        return 0
+
     streak = 0
-    cursor = today
     checked = 0
+    cursor = today - timedelta(days=1)
     while checked < lookback:
         if cursor.weekday() < 5:
-            if behind_as_of(entries, person, cursor, scoring):
-                streak += 1
-            else:
+            if logged_on_day(entries, cursor, grace):
                 break
+            streak += 1
             checked += 1
         cursor -= timedelta(days=1)
     return streak
 
 
-def longest_streak_in_week(entries, person, monday, scoring):
-    """Longest run of consecutive weekdays behind within a single week."""
+def longest_missed_streak_in_week(entries, monday, scoring, as_of=None):
+    """Longest run of consecutive weekdays with nothing logged, inside one week.
+
+    The same definition as streak_missed, applied within a single week for the
+    persistence rule. Pass as_of to stop at the last finished day, so scoring
+    the live week on a Tuesday does not count Thursday and Friday as missed.
+    """
+    grace = scoring["hygiene"]["grace_days"]
     best = 0
     run = 0
     for day in workdays(monday, monday + timedelta(days=4), scoring):
-        if behind_as_of(entries, person, day, scoring):
+        if as_of is not None and day >= as_of:
+            break
+        if logged_on_day(entries, day, grace):
+            run = 0
+        else:
             run += 1
             best = max(best, run)
-        else:
-            run = 0
     return best
 
 
