@@ -13,6 +13,7 @@ You write the words that go into a cold LinkedIn motion: the connection request,
 - The cold connection request (the first-touch note): Read `{SKILL_BASE}/resources/copywriting/connection-request.md`
 - Note vs no-note decision and best note copy: Read `{SKILL_BASE}/resources/copywriting/connection-notes.md`
 - Personalization at scale, profile signals, Clay prompts, first lines: Read `{SKILL_BASE}/resources/copywriting/personalization.md`
+- The SENDER profile check (headline and about vs the campaign's audience, run before a campaign goes live): Read `{SKILL_BASE}/resources/copywriting/sender-profile-check.md`
 
 ## Core copy rules (full detail in copywriting.md)
 
