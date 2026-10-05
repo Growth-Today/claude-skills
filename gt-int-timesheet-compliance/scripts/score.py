@@ -30,13 +30,32 @@ def clamp(value, low=0.0, high=1.0):
     return max(low, min(high, value))
 
 
-def score_coverage(logged_minutes, expected_minutes, tolerance_ratio):
+def score_coverage(logged_minutes, expected_minutes, tolerance_ratio, hygiene=None, cap_at_hygiene=False):
+    """How close the week's total came to the contracted hours.
+
+    cap_at_hygiene stops a reconstructed week from scoring full marks here. A
+    person who logs nothing until Friday and then enters the lot has a near
+    perfect total and almost no record of when any of it happened, and without
+    the cap that week scores close to the gate: coverage and attribution both
+    read clean on reconstructed entries and together carry more weight than
+    hygiene, so the metric built to catch the behaviour barely moves the number.
+
+    The cap says you cannot score better on hours than on the discipline of
+    recording them. It only bites when coverage is above hygiene, so somebody
+    who logs every day is never touched by it however their total lands, and
+    somebody who posts one day late loses a proportionate amount rather than
+    being treated the same as somebody who posted the whole week at once.
+    """
     if expected_minutes <= 0:
         return None
     ratio = logged_minutes / expected_minutes
     if abs(1.0 - ratio) <= tolerance_ratio:
-        return 1.0
-    return clamp(1.0 - abs(logged_minutes - expected_minutes) / expected_minutes)
+        score = 1.0
+    else:
+        score = clamp(1.0 - abs(logged_minutes - expected_minutes) / expected_minutes)
+    if cap_at_hygiene and hygiene is not None:
+        score = min(score, hygiene)
+    return score
 
 
 def score_hygiene(entries, days, grace_days):
@@ -139,6 +158,7 @@ def score_window(entries_by_person, people, start, end, scoring, approvals):
     excluded = set(scoring["attribution"].get("excluded_project_gids") or [])
     grace = scoring["hygiene"]["grace_days"]
     tolerance = scoring["coverage"]["tolerance_ratio"]
+    cap_coverage = scoring["coverage"].get("cap_at_hygiene", False)
 
     # Days before the program start date are not in `days`, so entries logged on
     # them must not be in `entries` either. Otherwise attribution and coverage
@@ -160,7 +180,9 @@ def score_window(entries_by_person, people, start, end, scoring, approvals):
 
         hygiene, hygiene_degraded, backfill_share = score_hygiene(entries, days, grace)
         parts = {
-            "hours_coverage": score_coverage(logged, expected, tolerance),
+            "hours_coverage": score_coverage(
+                logged, expected, tolerance, hygiene, cap_coverage
+            ),
             "daily_hygiene": hygiene,
             "attribution": score_attribution(entries, allowlist, excluded),
             "on_time_submission": score_on_time(approvals, person["asana_gid"], weeks),
@@ -185,6 +207,12 @@ def score_window(entries_by_person, people, start, end, scoring, approvals):
                     "missing_metrics": missing,
                     "hygiene_degraded_no_created_at": hygiene_degraded,
                     "attribution_loose_no_allowlist": not allowlist,
+                    "coverage_capped_by_hygiene": bool(
+                        cap_coverage
+                        and hygiene is not None
+                        and parts["hours_coverage"] is not None
+                        and hygiene < score_coverage(logged, expected, tolerance)
+                    ),
                     "no_entries_at_all": len(entries) == 0,
                 },
             }

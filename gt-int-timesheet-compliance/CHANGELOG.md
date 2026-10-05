@@ -2,6 +2,21 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.12.0
+
+**Fixed**
+
+- **A week reconstructed at the deadline scored almost as well as a week logged as it happened.** On Friday 2 October, three of six people had logged nothing at all by 06:00 and had their full week in by the evening: 94.1 hours between them in one afternoon. The anti-backfill rule worked exactly as designed and gave each of them two days of hygiene credit out of five. They still scored 0.71, 0.71 and 0.79, the team mean read 0.773, and nobody fell below the floor. The scoreboard called it the best week since go-live.
+
+  The arithmetic is why. On reconstructed entries, hours coverage and attribution both read close to perfect, and at 0.25 and 0.30 they outweigh hygiene at 0.30 on its own. Hygiene collapsing from 1.00 to 0.40 moved the score about seven points, so the one metric built to detect the behaviour barely touched the number.
+
+  `coverage.cap_at_hygiene` now stops hours coverage scoring above daily hygiene. You cannot score better on hours than on the discipline of recording them. The cap only applies when coverage sits above hygiene, so anybody logging as they go is never touched by it however their total lands, and one late day costs proportionately less than a whole late week.
+
+**Verified**
+
+- Rebuilt the week of 28 September from the weekly run and confirmed the old rule reproduces all six reported scores. Under the cap, the three who reconstructed the week go from 0.79, 0.71 and 0.71 to 0.61 each, and the week's mean from 0.776 to 0.714. The three who logged as they went are unchanged to the decimal.
+- Weeks where everybody logged on the day come out identical under both rules, so the cap does not touch a clean week.
+
 ## 1.11.0
 
 **Fixed**

@@ -21,8 +21,9 @@
   },
 
   "coverage": {
-    "_comment": "Over-logging counts against you as much as under-logging. tolerance_ratio is the band inside which coverage scores a clean 1.0.",
-    "tolerance_ratio": 0.05
+    "_comment": "Over-logging counts against you as much as under-logging. tolerance_ratio is the band inside which coverage scores a clean 1.0. cap_at_hygiene stops a week reconstructed at the deadline from scoring full marks on hours: coverage cannot come out above daily_hygiene. Without it, a person who logs nothing until Friday and then enters the whole week reads near perfect on coverage and attribution, which together outweigh hygiene, and the one metric built to catch that behaviour moves the score by about seven points. The cap only bites when coverage sits above hygiene, so anybody logging as they go is untouched however their total lands, and one late day costs proportionately less than a whole late week.",
+    "tolerance_ratio": 0.05,
+    "cap_at_hygiene": true
   },
 
   "attribution": {
