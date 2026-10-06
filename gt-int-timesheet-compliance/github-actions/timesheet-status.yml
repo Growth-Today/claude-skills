@@ -27,6 +27,11 @@ name: Timesheet status
 
 on:
   workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back the day-by-day block covers"
+        required: false
+        default: "12"
 
 concurrency:
   group: timesheet-status
@@ -88,4 +93,16 @@ jobs:
           python summarise.py \
             --scores "$RUNNER_TEMP/week.json" \
             --targets "$RUNNER_TEMP/targets.json"
+          echo "::endgroup::"
+
+      # Last, because the log API serves a log from the end backwards and this
+      # is the block somebody reaches for when a number is disputed.
+      - name: Day by day, to check against Asana
+        working-directory: scripts
+        env:
+          ASANA_PAT: ${{ secrets.ASANA_PAT }}
+          ROSTER_JSON: ${{ secrets.ROSTER_JSON }}
+        run: |
+          echo "::group::days"
+          python day_view.py --days "${{ inputs.days || '12' }}"
           echo "::endgroup::"

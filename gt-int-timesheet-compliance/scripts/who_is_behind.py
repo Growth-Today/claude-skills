@@ -129,7 +129,7 @@ def main():
             continue
 
         entries = by_person.get(person["asana_gid"], [])
-        days = lib.workdays(lib.week_start(today), today, scoring)
+        days = lib.workdays(lib.week_start(today), today, scoring, person)
         if not days:
             # Every weekday so far this week sits before the program start date,
             # or is a holiday. Nobody owes anything yet, and without this guard
@@ -138,7 +138,8 @@ def main():
             not_started.append(
                 {
                     "name": person["name"],
-                    "why": "no countable workdays yet this week",
+                    "why": "no countable workdays yet this week, before the "
+                           "program start date or all leave",
                 }
             )
             continue
@@ -180,7 +181,7 @@ def main():
 
         # Missed days, not short hours: see streak_missed. Somebody whose
         # first slip is today sits at 0 and gets the gentlest rung.
-        streak = lib.streak_missed(entries, today, scoring)
+        streak = lib.streak_missed(entries, today, scoring, person)
         level = ladder[min(max(streak, 1), len(ladder)) - 1]
 
         reasons = []

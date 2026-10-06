@@ -2,6 +2,23 @@
 
 All notable changes to the timesheet compliance skill.
 
+## 1.13.0
+
+**Added**
+
+- **Per-person leave.** `leave_days` on a roster entry is a list of dates that person was off. They drop out of that person's expected hours, their daily hygiene denominator, their missing-day list, their streak and the weekly nudge cap, exactly as the company `holidays` list does for everybody. Hours logged on a leave day still count, because if somebody worked anyway the work is real, and over-logging costs the same as under-logging in coverage so it cannot be used to inflate a score against a reduced expectation.
+
+  Until now the only per-person lever was `active: false`, which removes somebody from every calculation entirely. There was nothing for a single day. One day of annual leave read as a day of ignoring the process: Gaze took a Thursday off, which cost her a day of hygiene, eight hours of expected time and a tick on the streak counter, and put her on the **firm** rung of the escalation ladder having done nothing wrong. With the day recorded she is on **light**, and her week of 28 September reads 0.77 rather than 0.69.
+
+- **`scripts/day_view.py`**, one line per person per weekday: hours, when they were entered, and whether that was on time, late, empty or leave. The status workflow prints it last, under a `days` group, with a `days` input defaulting to 12.
+
+  Every number this skill reports is an aggregate, and an aggregate cannot be checked. When somebody says that is not what my timesheet says, the only useful answer is a list of days next to the same list in Asana so the missing row can be pointed at. Output is pipe-delimited and brace-free for the same reason `summarise.py` is.
+
+**Verified**
+
+- Rebuilt Gaze's week of 28 September. With the Thursday recorded as leave: expected 32 rather than 40, hygiene 0.75 rather than 0.60, score 0.77 rather than 0.69, and the Tuesday escalation level light rather than firm. A colleague logging every day is unchanged to the decimal in both runs, so the field only moves the person who took the day.
+- `day_view.py` output contains zero brace characters, so secret masking cannot mangle it.
+
 ## 1.12.0
 
 **Fixed**

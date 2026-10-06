@@ -168,6 +168,9 @@ def score_window(entries_by_person, people, start, end, scoring, approvals):
 
     rows = []
     for person in people:
+        # Their own days, so a day of leave is not a day of not following the
+        # process. The window above stays shared; only what is expected moves.
+        person_days = lib.workdays(start, end, scoring, person)
         entries = entries_by_person.get(person["asana_gid"], [])
         if first is None:
             entries = []
@@ -176,9 +179,9 @@ def score_window(entries_by_person, people, start, end, scoring, approvals):
                 e for e in entries if first <= lib.parse_date(e["entered_on"]) <= last
             ]
         logged = sum(e.get("duration_minutes") or 0 for e in entries)
-        expected = len(days) * float(person["daily_target_hours"]) * 60
+        expected = len(person_days) * float(person["daily_target_hours"]) * 60
 
-        hygiene, hygiene_degraded, backfill_share = score_hygiene(entries, days, grace)
+        hygiene, hygiene_degraded, backfill_share = score_hygiene(entries, person_days, grace)
         parts = {
             "hours_coverage": score_coverage(
                 logged, expected, tolerance, hygiene, cap_coverage
@@ -195,9 +198,10 @@ def score_window(entries_by_person, people, start, end, scoring, approvals):
                 "asana_gid": person["asana_gid"],
                 "logged_hours": round(logged / 60, 2),
                 "expected_hours": round(expected / 60, 2),
-                "workdays": len(days),
+                "workdays": len(person_days),
+                "days_off": len(days) - len(person_days),
                 "days_logged_on_time": (
-                    None if hygiene is None else int(round(hygiene * len(days)))
+                    None if hygiene is None else int(round(hygiene * len(person_days)))
                 ),
                 "backfilled_share_of_hours": round(backfill_share, 3),
                 "metrics": {k: (None if v is None else round(v, 3)) for k, v in parts.items()},
@@ -308,7 +312,7 @@ def evaluate_persistence(weekly, entries_by_person, people, scoring, today=None)
                 {
                     "week_of": week["window"]["start"],
                     "longest_streak": lib.longest_missed_streak_in_week(
-                        entries, monday, scoring, as_of=today
+                        entries, monday, scoring, as_of=today, person=person
                     ),
                 }
             )

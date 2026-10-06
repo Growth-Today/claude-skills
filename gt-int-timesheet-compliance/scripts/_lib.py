@@ -137,6 +137,14 @@ def load_roster():
         for field in ("asana_gid", "name", "timezone", "daily_target_hours"):
             if not person.get(field):
                 die("roster entry {} is missing {}".format(person.get("name", "?"), field))
+        for day in person.get("leave_days") or []:
+            try:
+                parse_date(day)
+            except Exception:
+                die(
+                    "{} has leave_days entry {!r}, which is not a YYYY-MM-DD "
+                    "date".format(person["name"], day)
+                )
         if person.get("target_confirmed") is False:
             warn(
                 "{}'s daily_target_hours is {} and marked unconfirmed, so their hours "
@@ -331,16 +339,38 @@ def program_start(scoring):
     return parse_date(value) if value else None
 
 
-def workdays(start, end, scoring=None):
-    """Monday to Friday between start and end inclusive, minus holidays.
+def leave_days(person):
+    """Dates this one person was not expected to log, from the roster.
+
+    Separate from the company holidays list because a day off is personal.
+    Without it a single day of leave reads as a day of not following the
+    process: expected hours stay at a full week, the day counts against daily
+    hygiene, and the streak counter ticks. One such day was enough to put
+    somebody on the firm rung of the escalation ladder who had done nothing
+    wrong, which is the worst thing this automation can do.
+
+    Hours logged on a leave day still count. If somebody worked anyway the work
+    is real; they were simply not obliged to. Over-logging costs the same as
+    under-logging in the coverage metric, so this cannot be used to inflate a
+    score against a reduced expectation.
+    """
+    return {parse_date(d) for d in ((person or {}).get("leave_days") or [])}
+
+
+def workdays(start, end, scoring=None, person=None):
+    """Monday to Friday between start and end inclusive, minus days off.
 
     Takes the whole scoring config rather than just the holiday list, so the
     program start date is applied in one place. Every window, streak and nudge
     is built from this function, so flooring here is what makes "nothing before
     go-live counts" true everywhere instead of in whichever caller remembered.
+
+    Pass person and their own leave days drop out too, which is what makes a
+    day off cost nothing anywhere: expected hours, the hygiene denominator, the
+    missing-day list, the streak and the weekly nudge cap all read from here.
     """
     scoring = scoring or {}
-    skip = {parse_date(h) for h in (scoring.get("holidays") or [])}
+    skip = {parse_date(h) for h in (scoring.get("holidays") or [])} | leave_days(person)
     floor = program_start(scoring)
     if floor and start < floor:
         start = floor
@@ -485,7 +515,7 @@ def logged_on_day(entries, day, grace_days):
     return False
 
 
-def streak_missed(entries, today, scoring, lookback=10):
+def streak_missed(entries, today, scoring, person=None, lookback=10):
     """Consecutive weekdays with nothing logged, ending yesterday.
 
     This drives the escalation ladder, so it has to mean what the firm message
@@ -502,14 +532,15 @@ def streak_missed(entries, today, scoring, lookback=10):
     somebody who has just filled in their hours that nothing has gone in.
     """
     grace = scoring["hygiene"]["grace_days"]
-    if today.weekday() < 5 and logged_on_day(entries, today, grace):
+    off = {parse_date(h) for h in (scoring.get("holidays") or [])} | leave_days(person)
+    if today.weekday() < 5 and today not in off and logged_on_day(entries, today, grace):
         return 0
 
     streak = 0
     checked = 0
     cursor = today - timedelta(days=1)
     while checked < lookback:
-        if cursor.weekday() < 5:
+        if cursor.weekday() < 5 and cursor not in off:
             if logged_on_day(entries, cursor, grace):
                 break
             streak += 1
@@ -518,7 +549,7 @@ def streak_missed(entries, today, scoring, lookback=10):
     return streak
 
 
-def longest_missed_streak_in_week(entries, monday, scoring, as_of=None):
+def longest_missed_streak_in_week(entries, monday, scoring, as_of=None, person=None):
     """Longest run of consecutive weekdays with nothing logged, inside one week.
 
     The same definition as streak_missed, applied within a single week for the
@@ -528,7 +559,7 @@ def longest_missed_streak_in_week(entries, monday, scoring, as_of=None):
     grace = scoring["hygiene"]["grace_days"]
     best = 0
     run = 0
-    for day in workdays(monday, monday + timedelta(days=4), scoring):
+    for day in workdays(monday, monday + timedelta(days=4), scoring, person):
         if as_of is not None and day >= as_of:
             break
         if logged_on_day(entries, day, grace):
@@ -558,7 +589,7 @@ def was_nudge_target_on(entries, person, day, scoring):
     only what had actually been entered by that day. That makes the count
     reproducible from the entries alone, so a weekly cap needs no stored counter.
     """
-    days = workdays(week_start(day), day, scoring)
+    days = workdays(week_start(day), day, scoring, person)
     if not days:
         return False
 
@@ -582,7 +613,7 @@ def nudges_this_week(entries, person, today, scoring):
     return len(
         [
             d
-            for d in workdays(week_start(today), today, scoring)
+            for d in workdays(week_start(today), today, scoring, person)
             if was_nudge_target_on(entries, person, d, scoring)
         ]
     )
