@@ -331,6 +331,7 @@ Review [Clay's data provider tests](https://www.clay.com/data-tests) for provide
 - Evaboot (LinkedIn Sales Nav export)
 - Instant Data Scraper (Chrome extension, free)
 - Apify (web scraping)
+  - **To pull leads from a scrape:** open [Apify Console](https://console.apify.com) → go to the Actor/Task's **Runs** and select the run you want to scrape data from → open that run's dataset/output view and copy the export link in the format you want (CSV, JSON, Excel, etc.) → open a new browser tab/window and paste the link in — it downloads the file directly, no separate export step needed.
 - Claygent (built-in AI web research)
 
 ### Enrichment in Clay
