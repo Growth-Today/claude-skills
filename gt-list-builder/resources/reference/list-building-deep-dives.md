@@ -263,6 +263,141 @@ See [list-building-directories.md](list-building-directories.md) for curated ind
 
 ---
 
+## Store Leads (E-Commerce List Building)
+
+### Overview
+
+Store Leads tracks millions of e-commerce stores across Shopify, Magento, Salesforce Commerce Cloud, and WooCommerce, providing data like installed apps, technologies, social following, and platform rank for building targeted e-commerce lists.
+
+**Benefits:**
+- **Better targeting** — filter by platform, sales, location, or tech stack to match the client's ICP.
+- **Save Clay credits/time** — export a company list into Clay and enrich it for free using GT's Store Leads API key, instead of exporting every field manually.
+- **Automate prospecting** — set up Store Leads workflows to auto-pull new matching companies so you're not rebuilding campaigns from scratch.
+- **Personalized outreach** — use app/tech-stack insights to write more relevant, specific messaging.
+
+### Where It Fits in the Sourcing Stack
+
+| Source | Role | Notes |
+|---|---|---|
+| **Store Leads** | Primary — always start here | Most accurate/comprehensive source for e-commerce; GT has an active subscription |
+| **Sales Navigator** | Secondary — only to extend a list | Less accurate; cross-check new companies against your existing Store Leads list in Clay, and only use an AI-agent website check for the ones that don't already appear (AI agent visits in Clay get expensive at scale, so use sparingly) |
+| **Charm** | Not recommended | ~$800; 99% of Shopify stores are already covered by Store Leads, making it mostly redundant |
+| **BuiltWith** | Optional | Find e-commerce sites by tech filter → cross-reference with Apollo/Scrubby for emails → LinkedIn/Apollo/BetterContact for decision-makers (Owner, CEO, VP E-Commerce, Marketing Manager) → validate emails with MillionVerifier. For very large lists, ExportApollo (see the Apollo section above) is usually the better path — most of the time Clay alone covers contact needs |
+
+**Pro tip:** Default to Store Leads for accuracy and efficiency. Use Sales Navigator sparingly to fill gaps, verify anything new before adding it to a campaign, and skip Charm unless there's a specific reason Store Leads can't cover it.
+
+### Account Access (Shared Account — VPN Required)
+
+> GT uses one shared enterprise Store Leads account. Logging in from multiple locations at the same time gets the account flagged and suspended.
+
+1. Before accessing Store Leads, connect to a VPN (NordVPN) — install the desktop app, log in with the credentials stored in 1Password, and set the country to Hungary.
+2. Confirm the VPN connection is active before opening the Store Leads site.
+3. Check the **#help-me** Slack channel first to make sure no one else is using the account at the same time.
+4. For login access, ask in **#help-me** — don't create a new account or guess at credentials.
+
+### How to Use Store Leads (High-Level)
+
+1. **Apps & Technologies** — look up the top apps/technologies in any category; useful for spotting trends or picking a specific tool to target in outreach.
+2. **Domains** — build the company list itself.
+   - **Advanced Search (recommended):** filter by keywords, installed apps/technologies, country, and platform for a precisely qualified list.
+   - **Basic Search (not recommended):** a simple platform/country search — too broad for real targeting.
+3. **Workflows** — auto-add new matching companies into Clay or a CRM on a schedule, keeping lists evergreen without manual rebuilding.
+4. **Help** — Store Leads' own help articles.
+5. **Support** — Store Leads support directly, for account-level issues.
+
+### Filter Logic & Search Mechanics
+
+- **Or:** matches stores with *any* of the checked values.
+- **Not Or:** excludes stores matching *any* of the checked values.
+- **And:** matches stores meeting *all* of the checked values.
+- **Not And:** excludes stores meeting *all* of the checked values.
+- See [Store Leads' Advanced Search docs](https://storeleads.app/help/features/advanced-search) for worked examples of each.
+- Save a search as a list (⭐ button) so you can revisit and edit the exact filters later instead of rebuilding from scratch.
+- **Exporting to Clay:** you don't need to export every field from Store Leads — pull the list into Clay and enrich it with GT's Store Leads API key instead.
+- When building an apps/technologies list, use the **combined list** (apps + tech together) — not all apps are tracked as technologies and vice versa, so a single-category list under-covers the market.
+- Full supported lists: [Apps](https://storeleads.app/help/faq/list-of-supported-apps) · [Technologies](https://storeleads.app/help/faq/list-of-supported-technologies)
+
+### Data Points & Filters Reference
+
+| Filter | Definition | Usage | Notes/Best Practices |
+|---|---|---|---|
+| Platform | E-commerce platform used (Shopify, WooCommerce, etc.) | Target specific platforms, or use "last platform change" to spot migrations | Common platforms: Shopify, Magento, Salesforce, WooCommerce, custom carts |
+| Apps & Technologies | Apps = installed tools; Technologies = broader integrations (e.g. payment gateways) | Build separate lists for each to ensure full coverage | Not all apps are categorized as technologies and vice versa — check both |
+| Categories | Industry/product type (beauty, fitness, etc.) | Use main categories for broad targeting | Avoid subcategories unless the campaign needs very specific segmentation |
+| Estimated Sales | Approximate store revenue | Target a sales range to prioritize by size | Approximate only — not fully accurate |
+| Product Price | Min/max product price range | Target high-ticket or budget stores | Useful for luxury vs. low-cost market targeting |
+| Platform Rank | Store's rank within its platform (e.g. top 50K Shopify) | Target top performers on a specific platform | Specify a rank range to filter tightly |
+| Rank | Overall rank across all platforms | Broader, cross-platform targeting | Use for global campaigns |
+| Combined Followers | Total social followers across platforms | Use only if social presence matters to the campaign | Not a reliable growth indicator on its own |
+| Reviews & Ratings | Combined reviews + average rating | Target larger, established stores with good reviews | More useful for bigger brands |
+| E-Commerce Features | Store features (POS, mobile app, etc.) | Build competitor or capability-based lists | Good for identifying unique store capabilities |
+| Store Status | Active vs. inactive | Always filter to active stores | Avoids wasting outreach on dead stores |
+| Country | Store location | Include/exclude by the client's ICP geography | — |
+| Shipping Carriers | Logistics providers used | Target by shipping capability | Useful for logistics/3PL campaigns |
+| Meta Description | Store's self-description | Read like a LinkedIn bio for positioning/products | Good signal for what the store actually sells |
+| Monthly App Spend | Estimated monthly app spend | Use only if explicitly required | Not always reliable |
+| Statuses | Live vs. inactive | Filter to live stores only | Always prioritize active stores |
+
+### Pro Tips
+
+- **ICP first:** define the client's ICP before touching filters — narrow by platform, estimated sales, and country first.
+- **Segment by campaign type:** adjust filters differently for TAM lists vs. competitor lists.
+- **Combine filters smartly:** e.g. Platform Rank + Apps & Technologies to find high performers using a specific tool.
+- **Competitive targeting:** track platform migrations (a store switching platforms is a sales opportunity), target specific app/tech usage among competitors' customers, and use meta descriptions to confirm product/service fit.
+- **Data validation:** not all apps are tracked as technologies and vice versa — build (or use the combined) list for both.
+- **Integrations:** export domains to Clay, Apollo, or Sales Navigator to find contacts (see below).
+- **Workflow automation:** use webhooks to auto-add new matching companies on a schedule (e.g., new Shopify stores ranked 1–10,000, weekly) and keep lists evergreen.
+
+**Example scenarios:**
+- **TAM list:** Shopify, Platform Rank 1–50,000, Category: Beauty & Fitness, Active status → a list of high-performing Shopify beauty brands.
+- **Competitor list:** Magento, a specific competitor technology installed, Category: Home & Living → stores using that technology in that vertical.
+- **High-ticket targeting:** Shopify, Product Price > $500, Estimated Sales $1M+ → high-value stores for a luxury-goods campaign.
+
+### Verifying Store Leads Data Accuracy
+
+Store Leads' platform-migration and upgrade data (e.g., a store upgrading to Shopify Plus, or migrating from another platform to Shopify) should be spot-checked before relying on it for a campaign — see [this walkthrough](https://www.tella.tv/video/store-leads-upgrades-migrates-to-shopify-co51) for the verification method GT uses.
+
+### Building a Company List (Step by Step)
+
+**One-time / one-off list:**
+1. Build the list with Advanced Search criteria, pulling top apps/technologies if relevant to the client's onboarding form.
+2. Duplicate GT's internal List Sizing Template and save the copy in the client's folder.
+3. Use the client's onboarding form to decide which Store Leads filters to apply, and log every filter used in the template's Description column.
+4. Click Execute Search, then save the result as a list (⭐).
+5. Copy the saved list's name into the template and link it — so filters can be adjusted later without starting over.
+6. Log the number of domains found.
+7. Once the list is in Clay, log how the contact list itself was built (Clay, Apollo, or Sales Navigator — see next section).
+
+**Evergreen (always-on) list:** set up the same search as a saved Workflow with a webhook (see "Automating Outreach with Webhooks" below) so new matching stores flow in automatically instead of rebuilding the list manually.
+
+### Getting Contacts for the Companies You Found
+
+1. **Export into Clay** — best for smaller, more targeted lists where deeper enrichment matters.
+2. **Export into Apollo, verify with ExportApollo** — best for large lists (15,000+ prospects/month). ExportApollo is paid, so confirm with the client's CSM whether the cost is covered by GT or billed to the client.
+3. **Export/upload into Sales Navigator** — use to extend the contact list further, then run the results through Clay's email waterfall to get verified emails.
+
+Pick the method by list size: Clay for small/targeted, Apollo + ExportApollo for large-scale, Sales Navigator to supplement.
+
+### Automating Outreach with Webhooks + Clay
+
+Turn a saved Store Leads list into an evergreen Clay feed:
+1. In Store Leads, open **List** → select the saved list.
+2. Click **Create Workflow** → **+ Add Action to Workflow** → **Webhook action**.
+3. In the client's Clay account, create a new Table → search "webhook" → select **Monitor Webhook** → New blank table.
+4. Copy the webhook URL Clay generates.
+5. Back in Store Leads, paste that URL into the workflow's Webhook URL field and Save.
+6. Send a test webhook (⋯ menu → Send Test) and confirm it lands in the Clay table.
+7. The webhook pulls new matches into Clay automatically every 24 hours, timestamped per row.
+
+### Known Gaps
+
+- The source knowledge base references a few training videos tied to a specific past client's workflow examples (a post-purchase-apps list and a full evergreen workflow walkthrough) — these are illustrative only; rebuild the list criteria and workflow for your actual client rather than reusing them verbatim.
+- GT's internal List Sizing / Market Sizing Google Sheet templates are referenced by name but not linked here, since they require internal Google Workspace access and aren't usable outside GT — ask in #help-me for the current template link.
+- The "verifying data accuracy" SOP is a single worked example (Shopify Plus upgrades/migrations), not a general accuracy-checking framework — treat it as one example of the verification habit, not exhaustive QA guidance.
+- Store Leads login/access specifics (new-joiner process, internal Slack thread) are intentionally generalized here — ask in #help-me for current access instructions.
+
+---
+
 ## TAM Scoping via DiscoLike
 
 **When to use:** When Apollo, Clay, and LinkedIn aren't finding your targets.
