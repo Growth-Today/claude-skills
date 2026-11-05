@@ -3,7 +3,7 @@
 ## Email Infrastructure
 
 **Volume per inbox:**
-- Cold emails per inbox per day, once fully warmed: Google 20, Outlook 5 (warmup sends not counted)
+- Per-inbox send limits live in `gt-email-infra` (`resources/reference.md` §1), not in this skill
 - Scale horizontally (more inboxes, not more volume per inbox)
 
 **Open rate targets:**
