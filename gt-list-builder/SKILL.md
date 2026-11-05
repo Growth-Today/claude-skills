@@ -20,6 +20,7 @@ Expert B2B list builder for campaigns sending 100K+ cold emails per month.
 | Remove duplicates, merge data sources | `resources/sub-skills/deduplication.md` |
 | ABM account selection, revenue reverse-engineering, how many accounts | `resources/sub-skills/account-selection.md` |
 | Buying committee mapping, persona-based messaging, champion vs buyer | `resources/sub-skills/persona-mapping.md` |
+| Automate Apollo actions (Workflows/Plays), CRM enrichment automation | `resources/sub-skills/apollo-workflows.md` |
 
 ## Decision Flow
 
@@ -33,6 +34,7 @@ User Request
     ├─ Removing DUPLICATES? ------------> deduplicate
     ├─ ABM account selection/sizing? ---> account-selection
     ├─ Buying committee/personas? ------> persona-mapping
+    ├─ Automating Apollo itself? -------> apollo-workflows
     └─ Full workflow / "build me a list"?
         ├─ Beginner? → resources/templates/beginner-workflow.md
         ├─ Advanced? → chain: icp-definition → company-sourcing → contact-discovery → account-qualification → email-validation → deduplication
