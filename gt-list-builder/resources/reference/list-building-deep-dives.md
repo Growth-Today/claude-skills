@@ -165,6 +165,12 @@ Build a 0–100 scoring system in Clay as a formula column that auto-scores ever
 
 **Cost:** Free tier: 50 exports/month | Basic $49/mo (10K) | Pro $79/mo (unlimited).
 
+**Need more than Apollo's native export allows? Use ExportApollo:**
+1. Sign in to [ExportApollo](https://exportapollo.com) (credentials in 1Password).
+2. In Apollo, run the Search you want to export — ExportApollo only scrapes from a live Search, not Saved Lists, Buying Intent, CSV Imports, the Companies tab, Net New, or Saved tabs.
+3. In ExportApollo, enter a List Name, paste the Apollo Search URL, and set Number of Contacts to match Apollo's result count, then click Scrape.
+4. Once processed, download the finished file from the ExportApollo dashboard.
+
 ### Source 3: LinkedIn Sales Navigator
 
 1. Sales Navigator → Company Search
