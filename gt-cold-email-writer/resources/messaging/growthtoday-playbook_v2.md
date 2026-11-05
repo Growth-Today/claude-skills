@@ -124,7 +124,6 @@ Would it make sense to see what {{company}} qualifies for?
 | Open rate | 50%+ |
 | Positive reply rate | 5-8% |
 | Meeting book rate | 2-4% |
-| Emails per inbox/day | 50-100 max |
 
 ---
 

@@ -53,7 +53,7 @@ For deep copywriting guidance beyond the sub-skill's quick reference:
 
 ### Quick Deliverability Reference
 
-- 30 emails max per inbox per day
+- Per-inbox send limits are deliverability, not copy: use `gt-email-infra` (`resources/reference.md` §1)
 - 3-5 outreach domains (NEVER send cold from primary domain)
 - Warmup 4-8 weeks before first cold send
 - Verify 100% of emails before any campaign

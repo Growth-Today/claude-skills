@@ -3,7 +3,7 @@
 ## Email Infrastructure
 
 **Volume per inbox:**
-- 30 emails max per inbox
+- Per-inbox send limits live in `gt-email-infra` (`resources/reference.md` §1), not in this skill
 - Scale horizontally (more inboxes, not more volume per inbox)
 
 **Open rate targets:**
