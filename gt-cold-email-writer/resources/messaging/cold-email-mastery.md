@@ -3,7 +3,7 @@
 ## Email Infrastructure
 
 **Volume per inbox:**
-- 30 emails max per inbox
+- Cold emails per inbox per day, once fully warmed: Google 20, Outlook 5 (warmup sends not counted)
 - Scale horizontally (more inboxes, not more volume per inbox)
 
 **Open rate targets:**
