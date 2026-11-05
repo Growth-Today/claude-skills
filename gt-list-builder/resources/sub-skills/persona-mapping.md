@@ -1,6 +1,6 @@
 ---
 name: persona-mapping
-description: Map buying committee personas within target accounts for ABM and outbound campaigns. Use when the user asks about persona mapping, buying committee identification, persona-based messaging, JTBD mapping, champion vs economic buyer targeting, persona prioritization, or campaign naming for persona tracking. Triggers on "persona mapping", "buying committee", "champion", "economic buyer", "technical evaluator", "persona", "JTBD", "jobs to be done", "who to target at account", "persona messaging", "persona budget allocation", "campaign naming convention". Do NOT use for general ICP definition (use icp-definition) or cold email writing (use cold-email skill).
+description: Map buying committee personas within target accounts for ABM and outbound campaigns, and create/save the matching persona filters in Apollo. Use when the user asks about persona mapping, buying committee identification, persona-based messaging, JTBD mapping, champion vs economic buyer targeting, persona prioritization, campaign naming for persona tracking, or how to create/save a persona in Apollo. Triggers on "persona mapping", "buying committee", "champion", "economic buyer", "technical evaluator", "persona", "JTBD", "jobs to be done", "who to target at account", "persona messaging", "persona budget allocation", "campaign naming convention", "create a persona in Apollo", "save a persona in Apollo", "Apollo personas section". Do NOT use for general ICP definition (use icp-definition) or cold email writing (use cold-email skill).
 ---
 
 # Persona Mapping
@@ -62,6 +62,9 @@ Each persona needs:
 **Example 3:** "How should I name my campaigns for persona tracking?"
 → Use naming convention: [Campaign]-[Persona]-[AdType]-[JTBD]-[Stage]. Enables intent detection from campaign engagement data.
 
+**Example 4:** "How do I actually create and save a persona in Apollo?"
+→ Build the title/seniority/department filter combination in Apollo's People Search, then save it from the Personas section so it's reusable across future account lists. See "Creating Personas in Apollo" below.
+
 ---
 
 # Persona Mapping — Framework
@@ -120,6 +123,47 @@ For each persona, document:
 | **Success metrics** | How their performance is measured | Activation rate, time-to-value, NPS |
 | **Content preferences** | What content resonates | Case studies, data/benchmarks, peer recommendations |
 | **Buying role** | Champion / Economic Buyer / Evaluator / User / Blocker | Champion |
+
+---
+
+## Creating Personas in Apollo
+
+Once you've identified the buying-committee roles and title/seniority attributes above, the next step is to turn each one into a reusable persona inside Apollo — so you're not rebuilding the same title/seniority combination every time you search a new batch of target accounts.
+
+### Why Use Apollo's Personas Section (vs. a One-Off Title Search)
+
+- Combines multiple title variants, seniority levels, and keywords into a single saved filter set instead of searching one title at a time.
+- Broadening the title list (synonyms, alternate spellings, adjacent titles) inside a persona increases match volume while seniority/department filters keep it targeted — this is what "maximizing the titles" means in practice.
+- A saved persona carries over to every new account list — apply the same "VP Marketing" persona across each new batch of target companies instead of re-entering filters.
+- Personas can also be saved in LinkedIn Sales Navigator, so the same persona definition powers both Apollo-based list building and Sales Navigator outreach (see Known Gaps below).
+
+### How to Create a Persona in Apollo
+
+1. Go to **Search → People** in Apollo.
+2. In the left filter panel, open the **Job Titles** filter and add every title variant relevant to the persona (e.g., "VP Marketing", "Head of Marketing", "Marketing Director") — the more relevant title variants included, the higher the match volume.
+3. Layer in **Management Level / Seniority** and, where relevant, **Department / Job Function** filters to keep the persona targeted (e.g., Director+ within Marketing).
+4. With the filter combination set, use the **Personas** section of the filter panel to save it as a named, reusable persona rather than a one-off search.
+5. Name the persona to match the Buying Committee Roles table above (e.g., "Champion - Marketing", "Economic Buyer - Finance") so it's identifiable when reused across campaigns and accounts.
+
+### Saving and Reusing Personas
+
+- Saved personas appear in the Personas list and can be applied to any new company or account-based search without rebuilding the title/seniority filters.
+- Apply a saved persona to a new batch of target accounts to pull the right contacts for that buying-committee role immediately.
+- Revisit and edit a saved persona's titles/seniority over time as you learn which title variants actually convert (see Measuring Persona Effectiveness below).
+
+### Creating Additional Personas
+
+- Create a separate persona for each buying-committee role you're targeting (Champion, Economic Buyer, End User, Technical Evaluator) rather than one broad persona spanning multiple roles.
+- Repeat the same process — new title/seniority/keyword combination, saved as a new persona — for each role. This keeps messaging and LinkedIn targeting clean since each persona maps to one row in the Messaging Matrix below.
+
+### Reference Video
+
+[Apollo - Personas (Tella walkthrough, ~10 min)](https://www.tella.tv/video/my-video-feuk) — screen recording showing the Personas section in Apollo end-to-end: building the title/seniority filters, saving them as a persona, and creating additional personas. Treat this as the canonical click-by-click reference, since Apollo's exact UI labels and menu placement shift over time.
+
+### Known Gaps
+
+- The source SOP links only this screen-recording video with no written steps alongside it. The walkthrough above reflects Apollo's general Personas/saved-filter mechanism; it was not transcribed frame-by-frame from the video, so exact button labels and menu placement should be verified against the video or the current Apollo UI before treating this as an exact click path.
+- The SOP mentions personas can "also" be saved in Sales Navigator but does not document how an Apollo persona maps or exports to a Sales Navigator saved search — no specifics on replicating the same filter combination there.
 
 ---
 

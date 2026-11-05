@@ -19,7 +19,7 @@ Expert B2B list builder for campaigns sending 100K+ cold emails per month.
 | Verify emails/phones, bounce rates, list hygiene | `resources/sub-skills/email-validation.md` |
 | Remove duplicates, merge data sources | `resources/sub-skills/deduplication.md` |
 | ABM account selection, revenue reverse-engineering, how many accounts | `resources/sub-skills/account-selection.md` |
-| Buying committee mapping, persona-based messaging, champion vs buyer | `resources/sub-skills/persona-mapping.md` |
+| Buying committee mapping, persona-based messaging, champion vs buyer, creating/saving personas in Apollo | `resources/sub-skills/persona-mapping.md` |
 
 ## Decision Flow
 
