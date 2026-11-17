@@ -5,7 +5,21 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); versions use
 [SemVer](https://semver.org/) (patch = fix, minor = additive, major = breaking
 layout/restructure).
 
-## [v5.1.0] - 2026-08-11
+## [v5.2.0] - 2026-11-17
+
+Blacklist monitoring and Low Reply, from the Master Automated Inbox Management System (Notion §8) and the OpsLabs update of 13 Nov 2026.
+
+### Added
+- **reference.md:** Low Reply inbox status (full limits, auto-added to campaigns) in §1 limits and §2 classification.
+- **reference.md:** Blacklist monitoring section: daily 04:00 UTC scan and digest, what a listing does, excluded-inbox caveat, ~15-day auto-expiry pattern, 3-day recovery timeline.
+- **dashboard-reading:** Low Reply row; Blacklisted row points to the daily digest and recovery timeline.
+
+### Changed
+- **reference.md:** Blacklisted now stops cold sending (cold 0) instead of "volume auto-reduced".
+- **reference.md:** `reply_active` note: the open "under review" proposal is resolved by Low Reply.
+
+### Removed
+- **reference.md:** the "Blacklisted has never actually worked" warning. OpsLabs confirmed Spamhaus DBL scanning is live and matches direct DNS checks.## [v5.1.0] - 2026-08-11
 
 Lemlist sub-skill additions from the internal Notion SOP.
 
@@ -21,6 +35,7 @@ Lemlist sub-skill additions from the internal Notion SOP.
 - **lemlist-setup:** bi-directional cross-sequencer rule, written out
  platform-neutral, whichever sequencer's lead gets a positive or neutral
  reply first stops that lead in the other sequencer(s).
+
 ## [v5.1.0] - 2026-08-26
 
 Knowledge corrections, the first executable playbooks, a terminology rename,
