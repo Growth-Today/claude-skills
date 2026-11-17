@@ -24,9 +24,10 @@ and it is never something GT retags. Every row here is `Write? never`.
 |---|---|---|---|
 | **New Inbox** | lifetime sends < `new_inbox_sends`; routing also excludes age < `new_inbox_age_days` | `list_accounts` → `timestamp_created` · `analytics_daily_account` → lifetime sent | Don't scale it; let it graduate |
 | **Active** | placement `placement_active` · bounce `bounce_active` · reply `reply_active` · warmup `warmup_score_active` | `list_accounts` → `stat_warmup_score` · `inbox_placement_analytics_*` · `get_campaign_analytics` | Safe to send at full cold limit |
-| **Warmup Needed** | anything not New/Active/Burnt; placement `placement_forced_warmup` hard-forces it | same reads as Active | Throttled to cold 0–1, stays attached; investigate placement |
+| **Low Reply** | passes Active on placement, bounce and warmup, but reply < `reply_active` | same reads as Active | Full limits, auto-added to new campaigns; work on copy/targeting, not the inbox |
+| **Warmup Needed** | anything not New/Active/Low Reply/Burnt; placement `placement_forced_warmup` hard-forces it | same reads as Active | Throttled to cold 0–1, stays attached; investigate placement |
 | **Burnt** | bounce `bounce_burnt` AND reply < `reply_active` AND warmup `warmup_score_burnt` — **all three** | same reads as Active | Excluded from campaigns; rest & re-test (Part 5) |
-| **Blacklisted** | domain on `blacklists_that_count` (Spamhaus DBL / URIBL) — nothing else | check at source (Spamhaus DBL / URIBL). The blacklist card itself now follows the client filter correctly (Part 2b) | Volume cut; go to the bounce-audit sub-skill |
+| **Blacklisted** | domain on `blacklists_that_count` (Spamhaus DBL / URIBL) — nothing else | daily Blacklist digest in #spam-results-all-gt; confirm at source (Spamhaus DBL / URIBL) if in doubt | Cold sending stopped; pause any *excluded* inboxes on the domain by hand; recovery timeline in `reference.md` §2 *Blacklist monitoring* |
 
 > **What a mismatch means.** If an inbox reads Active on the dashboard but the live numbers put
 > it in Burnt, that is a classification-engine finding to raise, not a tag for you to correct.
