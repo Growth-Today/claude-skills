@@ -21,6 +21,8 @@ Single source of truth for every number, limit, timeline, threshold, and taxonom
 | First 21 days (warming) | 0–1 * | 25 | 0–1 * | 8 |
 | After warmup (sending) | 20 | 30 | 5 | 15 |
 | Warmup Needed / Burnt (throttled) | 0–1 * | 25 | 0–1 * | 8 |
+| Blacklisted (domain listed) | 0 * | 25 | 0 * | 8 |
+| Low Reply | 20 | 30 | 5 | 15 |
 
 \* During warming and when throttled, cold is effectively off. Instantly/Smartlead can set **0**; **EmailBison's minimum is 1** (it cannot do 0), the failover gap below.
 
@@ -64,9 +66,10 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 |---|---|
 | **New Inbox** | Total emails ever sent **< 100**. (Campaign routing also excludes any inbox **< 14 days** old by creation date.) **Cold send limit = 1/day** for both Google and Outlook. |
 | **Active** | Placement **≥ 70/100** AND bounce **< 2%** AND reply **≥ 0.5%** AND warmup score **≥ 97**. |
+| **Low Reply** | Placement **≥ 70/100** AND bounce **< 2%** AND warmup score **≥ 97**, but reply **< 0.5%**. Keeps full sending limits and is auto-added to new campaigns. |
 | **Burnt** | Bounce **> 3%** AND reply **< 0.5%** AND warmup score **< 95** (all three). |
-| **Warmup Needed** | Anything that is not New / Active / Burnt. |
-| **Blacklisted** | Domain listed on a blacklist that counts (Spamhaus DBL / URIBL). Volume auto-reduced. **See the warning below — this has not been working.** |
+| **Warmup Needed** | Anything that is not New / Active / Low Reply / Burnt. |
+| **Blacklisted** | Domain listed on a blacklist that counts (Spamhaus DBL / URIBL). Every inbox on the domain is tagged Blacklisted and cold sending stops (cold 0, warmup continues). See **Blacklist monitoring** below. |
 
 **Placement overrides:** placement **< 70** forces Warmup Needed even if everything else is strong; placement **< 50** hard-forces Warmup Needed. When placement recovers, the inbox returns to Active automatically.
 
@@ -81,7 +84,7 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 | `placement_forced_warmup` | < 50 | Hard-forces Warmup Needed |
 | `bounce_active` | < 2% | Bounce ceiling for Active |
 | `bounce_burnt` | > 3% | Bounce floor for Burnt (all three Burnt conditions must hold) |
-| `reply_active` | ≥ 0.5% | Reply floor for Active. ⏸️ **Under review (Aug 2026):** this one threshold can tag an otherwise-healthy inbox as Warmup Needed, which then stops it attaching to campaigns. A proposal to drop it from the Warmup Needed definition is open. Check before quoting |
+| `reply_active` | ≥ 0.5% | Reply floor for Active. An inbox that passes everything else but sits below this is tagged **Low Reply**, not Warmup Needed, so it keeps full limits and stays in campaigns |
 | `warmup_score_active` | ≥ 97 | Warmup score for Active |
 | `warmup_score_burnt` | < 95 | Warmup score for Burnt |
 | `blacklists_that_count` | Spamhaus DBL, URIBL | The only two. No other list is a blacklist reason |
@@ -95,14 +98,32 @@ Exact thresholds the classification engine uses. These are also the thresholds a
 > check warmup age against §5 first. The 14-day rule lives in the email infra management system; raise it with the team that maintains it if we
 > want the two aligned.
 
-> **⚠️ Blacklisted has never actually worked as written.** The email infra management system review confirmed that Spamhaus and
-> URIBL were both silently failing in the app — URIBL was blocking them, and Spamhaus returned
-> "clean" for every domain, so every Blacklisted tag GT has ever seen came from a list we no
-> longer track. **Only Spamhaus DBL and URIBL count as a blacklist reason.** The agreed fix turns
-> both on (they are free — GT supplies a free Spamhaus DQS key, registered as *Individual*, not
-> *Organisation*) and adds a self-test so a list going quiet is caught automatically.
-> Until that ships, a Blacklisted tag is **not evidence of a real listing** — verify at source
-> (Spamhaus DBL / URIBL) before acting on it.
+### Blacklist monitoring
+
+**Lists that count: Spamhaus DBL and URIBL** (`blacklists_that_count`). SURBL is still scanned but is low priority: SURBL listings haven't affected sending, bounces or spam rates. Checks are direct DNS lookups, with no third-party API or paid monitoring service.
+
+**Schedule and alerts.** OpsLabs scans every sending domain once a day at **04:00 UTC**. One **Blacklist digest** posts about an hour later in #spam-results-all-gt, grouped by workspace: *Newly blacklisted* (domain, list + code, inboxes moved to Blacklisted), *Delisted*, *Back in use*, plus how many domains are still listed. A thread under the digest lists the affected inboxes. No message means nothing changed. The Monday summary still runs.
+
+**When a domain is listed:**
+- Every inbox on the domain is tagged **Blacklisted** and its cold limit drops to 0 (EmailBison floor is 1, see §1). Warmup continues: Google 25, Outlook 8.
+- **Excluded inboxes are not paused.** They keep sending from a listed domain until someone pauses them by hand. (28 Oct 2026: 134 of Stord's 136 inboxes on listed domains were excluded and still sending.)
+- The client loses sending capacity until the domain recovers; their GTM engineer lowers volume or moves to other mailboxes.
+- Placement tests run while the domain is listed score low, and can hold inboxes for up to a week after recovery.
+
+**How long listings last.** Listings have tended to clear on their own after about **15 days** (28 Oct 2026: Spamhaus DBL listed 306 GT domains across 12 workspaces; 273 came off on 12 Nov, 6 on 13 Nov). Seen once only, so don't promise it to clients. **A relisting restarts the clock.**
+
+**Recovery timeline after a domain is delisted:**
+
+| When (UTC) | What happens |
+|---|---|
+| Day 1, ~04:00–05:00 | First clean scan. Domain → **Recovering**. Inboxes Blacklisted → **Warmup Needed**. Cold sending stays off. |
+| Day 2, ~04:00–05:00 | Second clean scan in a row. Domain → **Clean** ("Back in use" in the digest). |
+| Day 3, 02:00 | Inboxes regraded on their own numbers: **Active**, **Low Reply** or **New Inbox** if they pass. |
+| Day 3, 06:00 | Normal daily sending limits restored. |
+
+Delisting to full sending takes **up to about 3 days**, with no extra cooldown.
+
+**Still Warmup Needed after recovery?** The listing is no longer the reason; the inbox's own numbers are holding it: lifetime bounce **≥ 2%**, warmup score **< 97**, or a recent placement test **< 50** (**< 70** keeps it out of Active and Low Reply). A low placement score from a test run while the domain was listed clears when the next weekend test replaces it or it ages out.
 
 ---
 
